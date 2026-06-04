@@ -81,3 +81,5 @@ https://YOUR_USERNAME.github.io/market-morning-brief/
 NSE endpoints can sometimes block requests depending on network, cookies, IP, or request timing. The code is defensive: if one source fails, the report still generates and shows fetch warnings.
 
 This report is for meeting discussion and research only. It is not financial advice.
+
+
