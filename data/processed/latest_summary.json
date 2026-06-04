@@ -14,13 +14,13 @@
         "name": "US markets",
         "score": 0,
         "status": "Neutral",
-        "reason": "Average move 0.05% across 3 indices."
+        "reason": "Average move 0.12% across 3 indices."
       },
       {
         "name": "Europe markets",
         "score": 1,
         "status": "Bullish",
-        "reason": "Average move 0.65% across 3 indices."
+        "reason": "Average move 0.51% across 3 indices."
       },
       {
         "name": "Asia markets",
@@ -66,54 +66,54 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26620.6796875,
-        "change": -233.30078125,
-        "change_pct": -0.8687754186813844,
+        "close": 26612.33984375,
+        "change": -241.640625,
+        "change_pct": -0.8998316852177554,
         "date": "2026-06-04"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 51302.9296875,
-        "change": 615.859375,
-        "change_pct": 1.2150226304322864,
+        "close": 51395.1015625,
+        "change": 708.03125,
+        "change_pct": 1.3968675751721076,
         "date": "2026-06-04"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7539.10009765625,
-        "change": -14.580078125,
-        "change_pct": -0.19301953201231523,
+        "close": 7542.33984375,
+        "change": -11.34033203125,
+        "change_pct": -0.15012989387093173,
         "date": "2026-06-04"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
-        "close": 10327.8798828125,
-        "change": -4.419921875,
-        "change_pct": -0.042777716080158595,
+        "close": 10327.849609375,
+        "change": -4.4501953125,
+        "change_pct": -0.04307071413550215,
         "date": "2026-06-04"
       },
       {
         "name": "CAC 40",
         "ticker": "^FCHI",
         "region": "Europe",
-        "close": 8248.83984375,
-        "change": 98.419921875,
-        "change_pct": 1.2075441856787,
+        "close": 8230.4296875,
+        "change": 80.009765625,
+        "change_pct": 0.9816643362173392,
         "date": "2026-06-04"
       },
       {
         "name": "DAX",
         "ticker": "^GDAXI",
         "region": "Europe",
-        "close": 24989.08984375,
-        "change": 193.150390625,
-        "change_pct": 0.7789597606904042,
+        "close": 24940.130859375,
+        "change": 144.19140625,
+        "change_pct": 0.5815121726788527,
         "date": "2026-06-04"
       },
       {
