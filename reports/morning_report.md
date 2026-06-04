@@ -1,6 +1,6 @@
 # Morning Market Brief - 04 June 2026
 
-Generated at: **04 Jun 2026, 09:55 PM IST**
+Generated at: **04 Jun 2026, 09:58 PM IST**
 
 ## Final View
 
@@ -18,9 +18,9 @@ Generated at: **04 Jun 2026, 09:55 PM IST**
 
 | Region | Index | Close | Change % | Date |
 |---|---:|---:|---:|---:|
-| US | Nasdaq | 26,803 | -0.19% | 2026-06-04 |
-| US | Dow Jones | 51,623 | 1.85% | 2026-06-04 |
-| US | S&P 500 | 7,579 | 0.33% | 2026-06-04 |
+| US | Nasdaq | 26,808 | -0.17% | 2026-06-04 |
+| US | Dow Jones | 51,617 | 1.83% | 2026-06-04 |
+| US | S&P 500 | 7,580 | 0.34% | 2026-06-04 |
 | Europe | FTSE 100 | 10,360 | 0.27% | 2026-06-04 |
 | Europe | CAC 40 | 8,244 | 1.15% | 2026-06-04 |
 | Europe | DAX | 24,945 | 0.60% | 2026-06-04 |
@@ -57,7 +57,7 @@ Generated at: **04 Jun 2026, 09:55 PM IST**
 | Signal | Score | Status | Reason |
 |---|---:|---|---|
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
-| US markets | 1 | Bullish | Average move 0.66% across 3 indices. |
+| US markets | 1 | Bullish | Average move 0.67% across 3 indices. |
 | Europe markets | 1 | Bullish | Average move 0.67% across 3 indices. |
 | Asia markets | 1 | Bullish | Average move 0.47% across 2 indices. |
 | FII/DII flow | 0 | Neutral | FII net -4447.06 Cr, DII net 4360.14 Cr, combined -86.92 Cr. |
