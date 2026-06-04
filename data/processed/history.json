@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-06-04",
-    "generated_at": "2026-06-04 21:58:30 IST",
+    "generated_at": "2026-06-04 22:00:12 IST",
     "bias": "Bullish",
     "score": 7,
     "confidence": "High",
@@ -16,7 +16,7 @@
     "banknifty_pcr": 0.9189655638475502,
     "banknifty_support": 54000.0,
     "banknifty_resistance": 60000.0,
-    "us_avg_change_pct": 0.6682749986426408,
+    "us_avg_change_pct": 0.6680673568814196,
     "europe_avg_change_pct": 0.6746195964626628,
     "asia_avg_change_pct": 0.47174131977714207,
     "top_sector": "NIFTY MEDIA",

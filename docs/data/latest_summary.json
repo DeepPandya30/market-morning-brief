@@ -66,27 +66,27 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26807.859375,
-        "change": -46.12109375,
-        "change_pct": -0.17174769976343415,
+        "close": 26804.048828125,
+        "change": -49.931640625,
+        "change_pct": -0.1859375770497245,
         "date": "2026-06-04"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 51616.98828125,
-        "change": 929.91796875,
-        "change_pct": 1.8346256017891645,
+        "close": 51626.2109375,
+        "change": 939.140625,
+        "change_pct": 1.8528208855038075,
         "date": "2026-06-04"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7579.509765625,
-        "change": 25.82958984375,
-        "change_pct": 0.34194709390219236,
+        "close": 7579.16015625,
+        "change": 25.47998046875,
+        "change_pct": 0.3373187621901757,
         "date": "2026-06-04"
       },
       {
@@ -3452,7 +3452,7 @@
   "history": [
     {
       "date": "2026-06-04",
-      "generated_at": "2026-06-04 21:58:30 IST",
+      "generated_at": "2026-06-04 22:00:12 IST",
       "bias": "Bullish",
       "score": 7,
       "confidence": "High",
@@ -3467,7 +3467,7 @@
       "banknifty_pcr": 0.9189655638475502,
       "banknifty_support": 54000.0,
       "banknifty_resistance": 60000.0,
-      "us_avg_change_pct": 0.6682749986426408,
+      "us_avg_change_pct": 0.6680673568814196,
       "europe_avg_change_pct": 0.6746195964626628,
       "asia_avg_change_pct": 0.47174131977714207,
       "top_sector": "NIFTY MEDIA",

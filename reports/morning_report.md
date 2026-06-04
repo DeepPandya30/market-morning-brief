@@ -1,6 +1,6 @@
 # Morning Market Brief - 04 June 2026
 
-Generated at: **04 Jun 2026, 09:58 PM IST**
+Generated at: **04 Jun 2026, 10:00 PM IST**
 
 ## Final View
 
@@ -18,9 +18,9 @@ Generated at: **04 Jun 2026, 09:58 PM IST**
 
 | Region | Index | Close | Change % | Date |
 |---|---:|---:|---:|---:|
-| US | Nasdaq | 26,808 | -0.17% | 2026-06-04 |
-| US | Dow Jones | 51,617 | 1.83% | 2026-06-04 |
-| US | S&P 500 | 7,580 | 0.34% | 2026-06-04 |
+| US | Nasdaq | 26,804 | -0.19% | 2026-06-04 |
+| US | Dow Jones | 51,626 | 1.85% | 2026-06-04 |
+| US | S&P 500 | 7,579 | 0.34% | 2026-06-04 |
 | Europe | FTSE 100 | 10,360 | 0.27% | 2026-06-04 |
 | Europe | CAC 40 | 8,244 | 1.15% | 2026-06-04 |
 | Europe | DAX | 24,945 | 0.60% | 2026-06-04 |
