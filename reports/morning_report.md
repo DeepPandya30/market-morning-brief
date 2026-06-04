@@ -1,13 +1,13 @@
 # Morning Market Brief - 04 June 2026
 
-Generated at: **04 Jun 2026, 07:24 PM IST**
+Generated at: **04 Jun 2026, 09:55 PM IST**
 
 ## Final View
 
-- **Market Bias:** Mild Bullish
-- **Score:** 4
+- **Market Bias:** Bullish
+- **Score:** 7
 - **Confidence:** High
-- **Meeting View:** Market setup is Mild Bullish. Prefer buy-on-dip only if Nifty sustains above support near 22,500.
+- **Meeting View:** Market setup is Bullish. Prefer buy-on-dip only if Nifty sustains above support near 22,500.
 
 ## Expected Opening
 
@@ -18,14 +18,14 @@ Generated at: **04 Jun 2026, 07:24 PM IST**
 
 | Region | Index | Close | Change % | Date |
 |---|---:|---:|---:|---:|
-| US | Nasdaq | 26,612 | -0.90% | 2026-06-04 |
-| US | Dow Jones | 51,395 | 1.40% | 2026-06-04 |
-| US | S&P 500 | 7,542 | -0.15% | 2026-06-04 |
-| Europe | FTSE 100 | 10,328 | -0.04% | 2026-06-04 |
-| Europe | CAC 40 | 8,230 | 0.98% | 2026-06-04 |
-| Europe | DAX | 24,940 | 0.58% | 2026-06-04 |
-| Asia | Hang Seng | 25,253 | -1.48% | 2026-06-04 |
-| Asia | Nikkei 225 | 67,471 | -1.36% | 2026-06-04 |
+| US | Nasdaq | 26,803 | -0.19% | 2026-06-04 |
+| US | Dow Jones | 51,623 | 1.85% | 2026-06-04 |
+| US | S&P 500 | 7,579 | 0.33% | 2026-06-04 |
+| Europe | FTSE 100 | 10,360 | 0.27% | 2026-06-04 |
+| Europe | CAC 40 | 8,244 | 1.15% | 2026-06-04 |
+| Europe | DAX | 24,945 | 0.60% | 2026-06-04 |
+| Asia | Hang Seng | 25,633 | -1.56% | 2026-06-03 |
+| Asia | Nikkei 225 | 68,402 | 2.50% | 2026-06-03 |
 
 ## FII / DII Flow
 
@@ -57,9 +57,9 @@ Generated at: **04 Jun 2026, 07:24 PM IST**
 | Signal | Score | Status | Reason |
 |---|---:|---|---|
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
-| US markets | 0 | Neutral | Average move 0.12% across 3 indices. |
-| Europe markets | 1 | Bullish | Average move 0.51% across 3 indices. |
-| Asia markets | -1 | Bearish | Average move -1.42% across 2 indices. |
+| US markets | 1 | Bullish | Average move 0.66% across 3 indices. |
+| Europe markets | 1 | Bullish | Average move 0.67% across 3 indices. |
+| Asia markets | 1 | Bullish | Average move 0.47% across 2 indices. |
 | FII/DII flow | 0 | Neutral | FII net -4447.06 Cr, DII net 4360.14 Cr, combined -86.92 Cr. |
 | Nifty OI | 1 | Bullish | PCR 0.96, support 22500.0, resistance 24000.0. |
 | Bank Nifty OI | 1 | Bullish | PCR 0.92, support 54000.0, resistance 60000.0. |
@@ -68,7 +68,7 @@ Generated at: **04 Jun 2026, 07:24 PM IST**
 
 ## Discussion Plan
 
-- Market setup is Mild Bullish. Prefer buy-on-dip only if Nifty sustains above support near 22,500.
+- Market setup is Bullish. Prefer buy-on-dip only if Nifty sustains above support near 22,500.
 - Bank Nifty levels to monitor: support 54,000, resistance 60,000.
 - Avoid aggressive trades in the first 5–10 minutes if opening gap is large.
 - Confirm direction with Nifty/Bank Nifty holding above support or rejecting near resistance.

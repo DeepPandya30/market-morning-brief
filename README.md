@@ -1,85 +1,98 @@
-# Market Morning Brief
+# Interactive Morning Market Brief
 
-Fully automated pre-market report generator for Indian market morning meetings.
+Fully automated pre-market dashboard for Indian market morning meetings.
 
-It fetches:
+The workflow fetches market data, scores signals, generates a meeting-ready report, and publishes an interactive GitHub Pages dashboard.
 
-- Global market indices: Nasdaq, Dow Jones, S&P 500, FTSE, CAC, DAX, Hang Seng, Nikkei
-- NSE index snapshot, India VIX, Indian sector indices
-- FII/DII institutional flow
-- Nifty and Bank Nifty option-chain support, resistance and PCR
-- Optional GIFT Nifty if available in fetched index snapshot
+## What it covers
 
-It generates:
+- GIFT Nifty / NSE index snapshot where available
+- FII / DII cash market flow
+- Nifty option-chain support, resistance and PCR
+- Bank Nifty option-chain support, resistance and PCR
+- India VIX
+- US markets: Nasdaq, Dow Jones, S&P 500
+- Europe markets: FTSE 100, CAC 40, DAX
+- Asia markets: Hang Seng, Nikkei 225
+- India sector-wise market view
+- Signal score breakdown
+- Historical bias trend
+- Interactive filters, charts, copy buttons, print/PDF option, and browser text-to-speech
 
-- `reports/morning_report.md`
-- `dashboard/index.html`
-- `docs/index.html` for GitHub Pages
-- raw and processed JSON data files
-
-## Local Run
-
-### Mac/Linux
+## Local run
 
 ```bash
-cd market-morning-brief
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade -r requirements.txt
 python scripts/generate_report.py
-open dashboard/index.html
+open docs/index.html
 ```
 
-### Windows PowerShell
+For Windows PowerShell:
 
 ```powershell
-cd market-morning-brief
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install --upgrade -r requirements.txt
 python scripts\generate_report.py
-start dashboard\index.html
+start docs\index.html
 ```
 
-## GitHub Action
-
-The workflow is already included:
+## Output files
 
 ```text
-.github/workflows/morning-report.yml
+reports/morning_report.md
+runtime dashboard/index.html
+GitHub Pages docs/index.html
+data/processed/latest_summary.json
+data/processed/history.json
+docs/data/latest_summary.json
+docs/data/history.json
 ```
 
-It runs Monday to Friday at `03:00 UTC`, which is `08:30 AM IST`.
+## GitHub Pages
 
-You can also run it manually from GitHub Actions using `workflow_dispatch`.
-
-## GitHub Pages Hosting
-
-This project writes the dashboard to:
+Use GitHub Pages with:
 
 ```text
-docs/index.html
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
 ```
 
-In GitHub:
-
-1. Open repository Settings
-2. Go to Pages
-3. Source: Deploy from branch
-4. Branch: `main`
-5. Folder: `/docs`
-6. Save
-
-Your report will be hosted as:
+Dashboard URL:
 
 ```text
 https://YOUR_USERNAME.github.io/market-morning-brief/
 ```
 
-## Important Notes
+## GitHub Action
 
-NSE endpoints can sometimes block requests depending on network, cookies, IP, or request timing. The code is defensive: if one source fails, the report still generates and shows fetch warnings.
+The workflow runs Monday to Friday at 7:50 AM IST so the dashboard is ready before 8:00 AM.
 
-This report is for meeting discussion and research only. It is not financial advice.
+Cron used:
 
+```yaml
+cron: "20 2 * * 1-5"
+```
 
+GitHub cron uses UTC, so 02:20 UTC equals 07:50 IST.
+
+## Interactive dashboard features
+
+- Tabs: Overview, Global Markets, Sectors, Signals, History, Full Report
+- Global market filter by region
+- Sector search and positive/negative filter
+- Signal status filter
+- Auto-updating score charts
+- Historical bias score line chart
+- Listen to meeting summary or full report using browser text-to-speech
+- Copy meeting summary
+- Copy full markdown report
+- Download markdown report
+- Print / save as PDF
+
+## Important note
+
+This project is for morning discussion and internal market preparation only. It is not financial advice.

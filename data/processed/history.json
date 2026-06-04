@@ -1,0 +1,27 @@
+[
+  {
+    "date": "2026-06-04",
+    "generated_at": "2026-06-04 21:55:59 IST",
+    "bias": "Bullish",
+    "score": 7,
+    "confidence": "High",
+    "fii_net": -4447.06,
+    "dii_net": 4360.14,
+    "combined_flow": -86.92000000000007,
+    "gift_nifty_change_pct": null,
+    "india_vix_change_pct": -2.41,
+    "nifty_pcr": 0.9636319800835063,
+    "nifty_support": 22500.0,
+    "nifty_resistance": 24000.0,
+    "banknifty_pcr": 0.9189655638475502,
+    "banknifty_support": 54000.0,
+    "banknifty_resistance": 60000.0,
+    "us_avg_change_pct": 0.6633785342435274,
+    "europe_avg_change_pct": 0.6746195964626628,
+    "asia_avg_change_pct": 0.47174131977714207,
+    "top_sector": "NIFTY MEDIA",
+    "top_sector_change_pct": 2.19,
+    "weak_sector": "NIFTY METAL",
+    "weak_sector_change_pct": -0.73
+  }
+]

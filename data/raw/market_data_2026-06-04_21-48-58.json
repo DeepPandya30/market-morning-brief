@@ -4,73 +4,73 @@
       "name": "Nasdaq",
       "ticker": "^IXIC",
       "region": "US",
-      "close": 26620.6796875,
-      "change": -233.30078125,
-      "change_pct": -0.8687754186813844,
+      "close": 26806.05078125,
+      "change": -47.9296875,
+      "change_pct": -0.1784826184549282,
       "date": "2026-06-04"
     },
     {
       "name": "Dow Jones",
       "ticker": "^DJI",
       "region": "US",
-      "close": 51302.9296875,
-      "change": 615.859375,
-      "change_pct": 1.2150226304322864,
+      "close": 51621.94140625,
+      "change": 934.87109375,
+      "change_pct": 1.8443975711877953,
       "date": "2026-06-04"
     },
     {
       "name": "S&P 500",
       "ticker": "^GSPC",
       "region": "US",
-      "close": 7539.10009765625,
-      "change": -14.580078125,
-      "change_pct": -0.19301953201231523,
+      "close": 7579.919921875,
+      "change": 26.23974609375,
+      "change_pct": 0.3473769802682454,
       "date": "2026-06-04"
     },
     {
       "name": "FTSE 100",
       "ticker": "^FTSE",
       "region": "Europe",
-      "close": 10327.8798828125,
-      "change": -4.419921875,
-      "change_pct": -0.042777716080158595,
+      "close": 10360.3203125,
+      "change": 28.0205078125,
+      "change_pct": 0.27119332909588834,
       "date": "2026-06-04"
     },
     {
       "name": "CAC 40",
       "ticker": "^FCHI",
       "region": "Europe",
-      "close": 8248.83984375,
-      "change": 98.419921875,
-      "change_pct": 1.2075441856787,
+      "close": 8244.2900390625,
+      "change": 93.8701171875,
+      "change_pct": 1.1517212375225108,
       "date": "2026-06-04"
     },
     {
       "name": "DAX",
       "ticker": "^GDAXI",
       "region": "Europe",
-      "close": 24989.08984375,
-      "change": 193.150390625,
-      "change_pct": 0.7789597606904042,
+      "close": 24944.94921875,
+      "change": 149.009765625,
+      "change_pct": 0.6009442227695894,
       "date": "2026-06-04"
     },
     {
       "name": "Hang Seng",
       "ticker": "^HSI",
       "region": "Asia",
-      "close": 25253.400390625,
-      "change": -379.810546875,
-      "change_pct": -1.4817127194914068,
-      "date": "2026-06-04"
+      "close": 25633.2109375,
+      "change": -405.109375,
+      "change_pct": -1.5558199228600875,
+      "date": "2026-06-03"
     },
     {
       "name": "Nikkei 225",
       "ticker": "^N225",
       "region": "Asia",
-      "close": 67470.6875,
-      "change": -931.4453125,
-      "change_pct": -1.3617196923569976,
-      "date": "2026-06-04"
+      "close": 68402.1328125,
+      "change": 1667.890625,
+      "change_pct": 2.4993025624143717,
+      "date": "2026-06-03"
     }
   ],
   "nse_indices": {

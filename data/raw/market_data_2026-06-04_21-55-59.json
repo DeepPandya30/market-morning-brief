@@ -4,73 +4,73 @@
       "name": "Nasdaq",
       "ticker": "^IXIC",
       "region": "US",
-      "close": 26853.98046875,
-      "change": -239.919921875,
-      "change_pct": -0.8855126741294761,
-      "date": "2026-06-03"
+      "close": 26803.138671875,
+      "change": -50.841796875,
+      "change_pct": -0.18932685578648067,
+      "date": "2026-06-04"
     },
     {
       "name": "Dow Jones",
       "ticker": "^DJI",
       "region": "US",
-      "close": 50687.0703125,
-      "change": -620.71875,
-      "change_pct": -1.209794382766871,
-      "date": "2026-06-03"
+      "close": 51622.6796875,
+      "change": 935.609375,
+      "change_pct": 1.8458541186770234,
+      "date": "2026-06-04"
     },
     {
       "name": "S&P 500",
       "ticker": "^GSPC",
       "region": "US",
-      "close": 7553.68017578125,
-      "change": -56.099609375,
-      "change_pct": -0.7372041104846258,
-      "date": "2026-06-03"
+      "close": 7578.8798828125,
+      "change": 25.19970703125,
+      "change_pct": 0.33360833984003946,
+      "date": "2026-06-04"
     },
     {
       "name": "FTSE 100",
       "ticker": "^FTSE",
       "region": "Europe",
-      "close": 10324.3798828125,
-      "change": -7.919921875,
-      "change_pct": -0.07665207189794215,
+      "close": 10360.3203125,
+      "change": 28.0205078125,
+      "change_pct": 0.27119332909588834,
       "date": "2026-06-04"
     },
     {
       "name": "CAC 40",
       "ticker": "^FCHI",
       "region": "Europe",
-      "close": 8246.490234375,
-      "change": 96.0703125,
-      "change_pct": 1.1787161081376416,
+      "close": 8244.2900390625,
+      "change": 93.8701171875,
+      "change_pct": 1.1517212375225108,
       "date": "2026-06-04"
     },
     {
       "name": "DAX",
       "ticker": "^GDAXI",
       "region": "Europe",
-      "close": 24973.919921875,
-      "change": 177.98046875,
-      "change_pct": 0.7177807039191224,
+      "close": 24944.94921875,
+      "change": 149.009765625,
+      "change_pct": 0.6009442227695894,
       "date": "2026-06-04"
     },
     {
       "name": "Hang Seng",
       "ticker": "^HSI",
       "region": "Asia",
-      "close": 25253.400390625,
-      "change": -379.810546875,
-      "change_pct": -1.4817127194914068,
-      "date": "2026-06-04"
+      "close": 25633.2109375,
+      "change": -405.109375,
+      "change_pct": -1.5558199228600875,
+      "date": "2026-06-03"
     },
     {
       "name": "Nikkei 225",
       "ticker": "^N225",
       "region": "Asia",
-      "close": 67470.6875,
-      "change": -931.4453125,
-      "change_pct": -1.3617196923569976,
-      "date": "2026-06-04"
+      "close": 68402.1328125,
+      "change": 1667.890625,
+      "change_pct": 2.4993025624143717,
+      "date": "2026-06-03"
     }
   ],
   "nse_indices": {
@@ -1030,613 +1030,613 @@
       "symbol": "NIFTY",
       "source": "nse_nextapi",
       "underlying": 23416.55,
-      "pcr": 0.9571649508693547,
-      "total_call_oi": 2112429.0,
-      "total_put_oi": 2021943.0,
+      "pcr": 0.9636319800835063,
+      "total_call_oi": 2086311.0,
+      "total_put_oi": 2010436.0,
       "support": 22500.0,
       "resistance": 24000.0,
-      "support_put_oi": 150644.0,
-      "resistance_call_oi": 180116.0,
+      "support_put_oi": 150517.0,
+      "resistance_call_oi": 179205.0,
       "expiry": "09-Jun-2026",
       "rows": [
         {
           "strike": 23400.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 58856.0,
-          "put_oi": 83906.0,
-          "call_change_oi": 16749.0,
-          "put_change_oi": 25850.0
+          "call_oi": 58284.0,
+          "put_oi": 83373.0,
+          "call_change_oi": 16177.0,
+          "put_change_oi": 25317.0
         },
         {
           "strike": 23300.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 62646.0,
-          "put_oi": 119513.0,
-          "call_change_oi": -5738.0,
-          "put_change_oi": 21281.0
+          "call_oi": 62127.0,
+          "put_oi": 117679.0,
+          "call_change_oi": -6257.0,
+          "put_change_oi": 19447.0
         },
         {
           "strike": 23500.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 108316.0,
-          "put_oi": 73977.0,
-          "call_change_oi": -3949.0,
-          "put_change_oi": 853.0
+          "call_oi": 106943.0,
+          "put_oi": 72811.0,
+          "call_change_oi": -5322.0,
+          "put_change_oi": -313.0
         },
         {
           "strike": 23200.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 18575.0,
-          "put_oi": 72262.0,
-          "call_change_oi": -2153.0,
-          "put_change_oi": 13418.0
+          "call_oi": 18479.0,
+          "put_oi": 71496.0,
+          "call_change_oi": -2249.0,
+          "put_change_oi": 12652.0
         },
         {
           "strike": 23450.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 33813.0,
-          "put_oi": 35438.0,
-          "call_change_oi": 14935.0,
-          "put_change_oi": 22270.0
+          "call_oi": 33220.0,
+          "put_oi": 35029.0,
+          "call_change_oi": 14342.0,
+          "put_change_oi": 21861.0
         },
         {
           "strike": 23350.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 19532.0,
-          "put_oi": 41769.0,
-          "call_change_oi": 5898.0,
-          "put_change_oi": 18573.0
+          "call_oi": 19278.0,
+          "put_oi": 41606.0,
+          "call_change_oi": 5644.0,
+          "put_change_oi": 18410.0
         },
         {
           "strike": 23000.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 9830.0,
-          "put_oi": 123070.0,
-          "call_change_oi": -223.0,
-          "put_change_oi": 27175.0
+          "call_oi": 9678.0,
+          "put_oi": 122993.0,
+          "call_change_oi": -375.0,
+          "put_change_oi": 27098.0
         },
         {
           "strike": 24000.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 180116.0,
-          "put_oi": 18824.0,
-          "call_change_oi": 48249.0,
-          "put_change_oi": 808.0
+          "call_oi": 179205.0,
+          "put_oi": 18821.0,
+          "call_change_oi": 47338.0,
+          "put_change_oi": 805.0
         },
         {
           "strike": 23600.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 63235.0,
-          "put_oi": 30629.0,
-          "call_change_oi": 13991.0,
-          "put_change_oi": 1594.0
+          "call_oi": 62582.0,
+          "put_oi": 30606.0,
+          "call_change_oi": 13338.0,
+          "put_change_oi": 1571.0
         },
         {
           "strike": 23700.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 80016.0,
-          "put_oi": 34172.0,
-          "call_change_oi": 20226.0,
-          "put_change_oi": -448.0
+          "call_oi": 78975.0,
+          "put_oi": 34133.0,
+          "call_change_oi": 19185.0,
+          "put_change_oi": -487.0
         },
         {
           "strike": 23100.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 4890.0,
-          "put_oi": 49551.0,
-          "call_change_oi": -289.0,
-          "put_change_oi": 11867.0
+          "call_oi": 4875.0,
+          "put_oi": 49373.0,
+          "call_change_oi": -304.0,
+          "put_change_oi": 11689.0
         },
         {
           "strike": 23800.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 88006.0,
-          "put_oi": 11928.0,
-          "call_change_oi": 25980.0,
-          "put_change_oi": -442.0
+          "call_oi": 86669.0,
+          "put_oi": 11851.0,
+          "call_change_oi": 24643.0,
+          "put_change_oi": -519.0
         },
         {
           "strike": 23250.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 8748.0,
-          "put_oi": 46570.0,
-          "call_change_oi": -273.0,
-          "put_change_oi": 21149.0
+          "call_oi": 8685.0,
+          "put_oi": 45790.0,
+          "call_change_oi": -336.0,
+          "put_change_oi": 20369.0
         },
         {
           "strike": 23150.0,
           "expiry": "09-Jun-2026",
           "call_oi": 1964.0,
-          "put_oi": 53258.0,
+          "put_oi": 53087.0,
           "call_change_oi": -570.0,
-          "put_change_oi": 30995.0
+          "put_change_oi": 30824.0
         },
         {
           "strike": 23550.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 21254.0,
-          "put_oi": 8210.0,
-          "call_change_oi": 3035.0,
-          "put_change_oi": 650.0
+          "call_oi": 21073.0,
+          "put_oi": 8196.0,
+          "call_change_oi": 2854.0,
+          "put_change_oi": 636.0
         },
         {
           "strike": 23650.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 22180.0,
-          "put_oi": 4524.0,
-          "call_change_oi": 7424.0,
-          "put_change_oi": 829.0
+          "call_oi": 21522.0,
+          "put_oi": 4473.0,
+          "call_change_oi": 6766.0,
+          "put_change_oi": 778.0
         },
         {
           "strike": 22900.0,
           "expiry": "09-Jun-2026",
           "call_oi": 1355.0,
-          "put_oi": 64811.0,
+          "put_oi": 64808.0,
           "call_change_oi": 6.0,
-          "put_change_oi": 12831.0
+          "put_change_oi": 12828.0
         },
         {
           "strike": 22800.0,
           "expiry": "09-Jun-2026",
           "call_oi": 1167.0,
-          "put_oi": 63969.0,
+          "put_oi": 61935.0,
           "call_change_oi": -274.0,
-          "put_change_oi": 9231.0
+          "put_change_oi": 7197.0
         },
         {
           "strike": 23900.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 48302.0,
-          "put_oi": 6976.0,
-          "call_change_oi": 7556.0,
-          "put_change_oi": -507.0
+          "call_oi": 47762.0,
+          "put_oi": 6968.0,
+          "call_change_oi": 7016.0,
+          "put_change_oi": -515.0
         },
         {
           "strike": 24500.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 125742.0,
+          "call_oi": 124675.0,
           "put_oi": 5211.0,
-          "call_change_oi": 47400.0,
+          "call_change_oi": 46333.0,
           "put_change_oi": -111.0
         },
         {
           "strike": 22500.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 2506.0,
-          "put_oi": 150644.0,
-          "call_change_oi": 14.0,
-          "put_change_oi": 65340.0
+          "call_oi": 2503.0,
+          "put_oi": 150517.0,
+          "call_change_oi": 11.0,
+          "put_change_oi": 65213.0
         },
         {
           "strike": 24200.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 97856.0,
-          "put_oi": 2231.0,
-          "call_change_oi": 49047.0,
-          "put_change_oi": 710.0
+          "call_oi": 97433.0,
+          "put_oi": 2230.0,
+          "call_change_oi": 48624.0,
+          "put_change_oi": 709.0
         },
         {
           "strike": 23750.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 31526.0,
-          "put_oi": 2154.0,
-          "call_change_oi": 13744.0,
-          "put_change_oi": 164.0
+          "call_oi": 31043.0,
+          "put_oi": 2083.0,
+          "call_change_oi": 13261.0,
+          "put_change_oi": 93.0
         },
         {
           "strike": 23050.0,
           "expiry": "09-Jun-2026",
           "call_oi": 647.0,
-          "put_oi": 26395.0,
+          "put_oi": 26366.0,
           "call_change_oi": -59.0,
-          "put_change_oi": 12159.0
+          "put_change_oi": 12130.0
         },
         {
           "strike": 24100.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 53013.0,
-          "put_oi": 2448.0,
-          "call_change_oi": 2421.0,
-          "put_change_oi": 73.0
+          "call_oi": 52989.0,
+          "put_oi": 2445.0,
+          "call_change_oi": 2397.0,
+          "put_change_oi": 70.0
         },
         {
           "strike": 25000.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 140754.0,
+          "call_oi": 133862.0,
           "put_oi": 4080.0,
-          "call_change_oi": 32632.0,
+          "call_change_oi": 25740.0,
           "put_change_oi": 79.0
         },
         {
           "strike": 22000.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 512.0,
-          "put_oi": 119502.0,
-          "call_change_oi": 42.0,
-          "put_change_oi": 19463.0
+          "call_oi": 531.0,
+          "put_oi": 119496.0,
+          "call_change_oi": 61.0,
+          "put_change_oi": 19457.0
         },
         {
           "strike": 23850.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 20459.0,
-          "put_oi": 1819.0,
-          "call_change_oi": 7964.0,
-          "put_change_oi": 67.0
+          "call_oi": 20331.0,
+          "put_oi": 1761.0,
+          "call_change_oi": 7836.0,
+          "put_change_oi": 9.0
         },
         {
           "strike": 24400.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 59466.0,
-          "put_oi": 1678.0,
-          "call_change_oi": 14824.0,
-          "put_change_oi": 99.0
+          "call_oi": 59656.0,
+          "put_oi": 1673.0,
+          "call_change_oi": 15014.0,
+          "put_change_oi": 94.0
         },
         {
           "strike": 22700.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 410.0,
-          "put_oi": 50935.0,
-          "call_change_oi": 14.0,
-          "put_change_oi": 5124.0
+          "call_oi": 409.0,
+          "put_oi": 50766.0,
+          "call_change_oi": 13.0,
+          "put_change_oi": 4955.0
         },
         {
           "strike": 22950.0,
           "expiry": "09-Jun-2026",
           "call_oi": 443.0,
-          "put_oi": 20181.0,
+          "put_oi": 19991.0,
           "call_change_oi": -55.0,
-          "put_change_oi": 6078.0
+          "put_change_oi": 5888.0
         },
         {
           "strike": 22600.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 454.0,
-          "put_oi": 47685.0,
-          "call_change_oi": -451.0,
-          "put_change_oi": 7723.0
+          "call_oi": 453.0,
+          "put_oi": 47281.0,
+          "call_change_oi": -452.0,
+          "put_change_oi": 7319.0
         },
         {
           "strike": 24300.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 49694.0,
+          "call_oi": 49355.0,
           "put_oi": 1335.0,
-          "call_change_oi": 6489.0,
+          "call_change_oi": 6150.0,
           "put_change_oi": -2.0
         },
         {
           "strike": 22850.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 331.0,
-          "put_oi": 20442.0,
-          "call_change_oi": 102.0,
-          "put_change_oi": 7052.0
+          "call_oi": 330.0,
+          "put_oi": 20372.0,
+          "call_change_oi": 101.0,
+          "put_change_oi": 6982.0
         },
         {
           "strike": 22300.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 59.0,
-          "put_oi": 48570.0,
-          "call_change_oi": 14.0,
-          "put_change_oi": 15505.0
+          "call_oi": 57.0,
+          "put_oi": 48303.0,
+          "call_change_oi": 12.0,
+          "put_change_oi": 15238.0
         },
         {
           "strike": 23950.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 26712.0,
-          "put_oi": 1818.0,
-          "call_change_oi": 12053.0,
-          "put_change_oi": -50.0
+          "call_oi": 26645.0,
+          "put_oi": 1811.0,
+          "call_change_oi": 11986.0,
+          "put_change_oi": -57.0
         },
         {
           "strike": 24050.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 21847.0,
-          "put_oi": 1350.0,
-          "call_change_oi": 5497.0,
-          "put_change_oi": 54.0
+          "call_oi": 21530.0,
+          "put_oi": 1345.0,
+          "call_change_oi": 5180.0,
+          "put_change_oi": 49.0
         },
         {
           "strike": 22400.0,
           "expiry": "09-Jun-2026",
           "call_oi": 61.0,
-          "put_oi": 39196.0,
+          "put_oi": 39041.0,
           "call_change_oi": 12.0,
-          "put_change_oi": 3995.0
+          "put_change_oi": 3840.0
         },
         {
           "strike": 24600.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 51918.0,
-          "put_oi": 271.0,
-          "call_change_oi": 9054.0,
-          "put_change_oi": 5.0
+          "call_oi": 49697.0,
+          "put_oi": 270.0,
+          "call_change_oi": 6833.0,
+          "put_change_oi": 4.0
         },
         {
           "strike": 24700.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 54503.0,
-          "put_oi": 104.0,
-          "call_change_oi": 15048.0,
-          "put_change_oi": -1.0
+          "call_oi": 54043.0,
+          "put_oi": 103.0,
+          "call_change_oi": 14588.0,
+          "put_change_oi": -2.0
         },
         {
           "strike": 24150.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 27088.0,
-          "put_oi": 376.0,
-          "call_change_oi": 12217.0,
-          "put_change_oi": 23.0
+          "call_oi": 26847.0,
+          "put_oi": 371.0,
+          "call_change_oi": 11976.0,
+          "put_change_oi": 18.0
         },
         {
           "strike": 24800.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 67587.0,
-          "put_oi": 817.0,
-          "call_change_oi": 31869.0,
-          "put_change_oi": 11.0
+          "call_oi": 66608.0,
+          "put_oi": 813.0,
+          "call_change_oi": 30890.0,
+          "put_change_oi": 7.0
         },
         {
           "strike": 22750.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 153.0,
-          "put_oi": 20221.0,
-          "call_change_oi": 29.0,
-          "put_change_oi": 6838.0
+          "call_oi": 152.0,
+          "put_oi": 20156.0,
+          "call_change_oi": 28.0,
+          "put_change_oi": 6773.0
         },
         {
           "strike": 22200.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 39782.0,
+          "put_oi": 39589.0,
           "call_change_oi": 0,
-          "put_change_oi": 3326.0
+          "put_change_oi": 3133.0
         },
         {
           "strike": 22650.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 56.0,
-          "put_oi": 25866.0,
-          "call_change_oi": 14.0,
-          "put_change_oi": 7065.0
+          "call_oi": 57.0,
+          "put_oi": 25748.0,
+          "call_change_oi": 15.0,
+          "put_change_oi": 6947.0
         },
         {
           "strike": 24250.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 15449.0,
-          "put_oi": 297.0,
-          "call_change_oi": 1206.0,
-          "put_change_oi": -4.0
+          "call_oi": 14914.0,
+          "put_oi": 296.0,
+          "call_change_oi": 671.0,
+          "put_change_oi": -5.0
         },
         {
           "strike": 24350.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 20870.0,
-          "put_oi": 103.0,
-          "call_change_oi": 6239.0,
-          "put_change_oi": 12.0
+          "call_oi": 20556.0,
+          "put_oi": 106.0,
+          "call_change_oi": 5925.0,
+          "put_change_oi": 15.0
         },
         {
           "strike": 24900.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 43656.0,
+          "call_oi": 41836.0,
           "put_oi": 278.0,
-          "call_change_oi": 11379.0,
+          "call_change_oi": 9559.0,
           "put_change_oi": 0.0
         },
         {
           "strike": 25500.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 69735.0,
-          "put_oi": 1028.0,
-          "call_change_oi": 7919.0,
-          "put_change_oi": -4.0
+          "call_oi": 69303.0,
+          "put_oi": 1027.0,
+          "call_change_oi": 7487.0,
+          "put_change_oi": -5.0
         },
         {
           "strike": 21500.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 90086.0,
+          "put_oi": 90128.0,
           "call_change_oi": 0,
-          "put_change_oi": 11820.0
+          "put_change_oi": 11862.0
         },
         {
           "strike": 22100.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 24293.0,
+          "put_oi": 23936.0,
           "call_change_oi": 0,
-          "put_change_oi": -1847.0
+          "put_change_oi": -2204.0
         },
         {
           "strike": 21100.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 109508.0,
+          "put_oi": 109551.0,
           "call_change_oi": 0,
-          "put_change_oi": 10589.0
+          "put_change_oi": 10632.0
         },
         {
           "strike": 21900.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 31865.0,
+          "put_oi": 31859.0,
           "call_change_oi": 0,
-          "put_change_oi": 10633.0
+          "put_change_oi": 10627.0
         },
         {
           "strike": 21800.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 27228.0,
+          "put_oi": 27140.0,
           "call_change_oi": 0,
-          "put_change_oi": 2385.0
+          "put_change_oi": 2297.0
         },
         {
           "strike": 22550.0,
           "expiry": "09-Jun-2026",
           "call_oi": 30.0,
-          "put_oi": 16544.0,
+          "put_oi": 16411.0,
           "call_change_oi": 15.0,
-          "put_change_oi": -583.0
+          "put_change_oi": -716.0
         },
         {
           "strike": 22450.0,
           "expiry": "09-Jun-2026",
           "call_oi": 5.0,
-          "put_oi": 16359.0,
+          "put_oi": 16217.0,
           "call_change_oi": 1.0,
-          "put_change_oi": 3147.0
+          "put_change_oi": 3005.0
         },
         {
           "strike": 24450.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 17248.0,
-          "put_oi": 82.0,
-          "call_change_oi": 8539.0,
-          "put_change_oi": 38.0
+          "call_oi": 17049.0,
+          "put_oi": 93.0,
+          "call_change_oi": 8340.0,
+          "put_change_oi": 49.0
         },
         {
           "strike": 22250.0,
           "expiry": "09-Jun-2026",
           "call_oi": 12.0,
-          "put_oi": 18469.0,
+          "put_oi": 18286.0,
           "call_change_oi": 3.0,
-          "put_change_oi": 8519.0
+          "put_change_oi": 8336.0
         },
         {
           "strike": 22350.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 25.0,
-          "put_oi": 17545.0,
-          "call_change_oi": -6.0,
-          "put_change_oi": 6545.0
+          "call_oi": 24.0,
+          "put_oi": 17390.0,
+          "call_change_oi": -7.0,
+          "put_change_oi": 6390.0
         },
         {
           "strike": 24550.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 18326.0,
+          "call_oi": 18225.0,
           "put_oi": 25.0,
-          "call_change_oi": 6776.0,
+          "call_change_oi": 6675.0,
           "put_change_oi": 4.0
         },
         {
           "strike": 24750.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 14212.0,
+          "call_oi": 14130.0,
           "put_oi": 0,
-          "call_change_oi": 2620.0,
+          "call_change_oi": 2538.0,
           "put_change_oi": 0
         },
         {
           "strike": 24650.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 8853.0,
+          "call_oi": 8813.0,
           "put_oi": 67.0,
-          "call_change_oi": 3443.0,
+          "call_change_oi": 3403.0,
           "put_change_oi": 64.0
         },
         {
           "strike": 25100.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 22860.0,
+          "call_oi": 22859.0,
           "put_oi": 12.0,
-          "call_change_oi": -195.0,
+          "call_change_oi": -196.0,
           "put_change_oi": 0.0
         },
         {
           "strike": 25200.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 34970.0,
+          "call_oi": 34955.0,
           "put_oi": 0,
-          "call_change_oi": -221.0,
+          "call_change_oi": -236.0,
           "put_change_oi": 0
         },
         {
           "strike": 21700.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 11232.0,
+          "put_oi": 11216.0,
           "call_change_oi": 0,
-          "put_change_oi": -18.0
+          "put_change_oi": -34.0
         },
         {
           "strike": 26000.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 37534.0,
-          "put_oi": 1019.0,
-          "call_change_oi": 3728.0,
-          "put_change_oi": 18.0
+          "call_oi": 37735.0,
+          "put_oi": 1020.0,
+          "call_change_oi": 3929.0,
+          "put_change_oi": 19.0
         },
         {
           "strike": 21200.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 22661.0,
+          "put_oi": 22659.0,
           "call_change_oi": 0,
-          "put_change_oi": 1094.0
+          "put_change_oi": 1092.0
         },
         {
           "strike": 24850.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 10700.0,
+          "call_oi": 10687.0,
           "put_oi": 6.0,
-          "call_change_oi": 5532.0,
+          "call_change_oi": 5519.0,
           "put_change_oi": 2.0
         },
         {
           "strike": 22150.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 4931.0,
+          "put_oi": 4847.0,
           "call_change_oi": 0,
-          "put_change_oi": -190.0
+          "put_change_oi": -274.0
         },
         {
           "strike": 22050.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 3869.0,
+          "put_oi": 3727.0,
           "call_change_oi": 0,
-          "put_change_oi": -623.0
+          "put_change_oi": -765.0
         },
         {
           "strike": 21600.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 9107.0,
+          "put_oi": 9097.0,
           "call_change_oi": 0,
-          "put_change_oi": 1288.0
+          "put_change_oi": 1278.0
         },
         {
           "strike": 24950.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 15229.0,
+          "call_oi": 14939.0,
           "put_oi": 11.0,
-          "call_change_oi": 6271.0,
+          "call_change_oi": 5981.0,
           "put_change_oi": 1.0
         },
         {
           "strike": 21850.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 3336.0,
+          "put_oi": 3369.0,
           "call_change_oi": 0,
-          "put_change_oi": -2848.0
+          "put_change_oi": -2815.0
         },
         {
           "strike": 21950.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 4173.0,
+          "put_oi": 4111.0,
           "call_change_oi": 0,
-          "put_change_oi": 1092.0
+          "put_change_oi": 1030.0
         },
         {
           "strike": 25300.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 23385.0,
+          "call_oi": 23384.0,
           "put_oi": 0,
-          "call_change_oi": -244.0,
+          "call_change_oi": -245.0,
           "put_change_oi": 0
         },
         {
@@ -1651,81 +1651,81 @@
           "strike": 21300.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 9148.0,
+          "put_oi": 9141.0,
           "call_change_oi": 0,
-          "put_change_oi": 458.0
+          "put_change_oi": 451.0
         },
         {
           "strike": 25050.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 11101.0,
+          "call_oi": 11110.0,
           "put_oi": 0,
-          "call_change_oi": 2517.0,
+          "call_change_oi": 2526.0,
           "put_change_oi": 0
         },
         {
           "strike": 21750.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 1885.0,
+          "put_oi": 1883.0,
           "call_change_oi": 0,
-          "put_change_oi": -1942.0
+          "put_change_oi": -1944.0
         },
         {
           "strike": 25600.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 9101.0,
+          "call_oi": 9084.0,
           "put_oi": 0,
-          "call_change_oi": 917.0,
+          "call_change_oi": 900.0,
           "put_change_oi": 0
         },
         {
           "strike": 21400.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 8147.0,
+          "put_oi": 8200.0,
           "call_change_oi": 0,
-          "put_change_oi": -651.0
+          "put_change_oi": -598.0
         },
         {
           "strike": 25400.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 9730.0,
-          "put_oi": 43.0,
-          "call_change_oi": 577.0,
-          "put_change_oi": 0.0
+          "call_oi": 9729.0,
+          "put_oi": 42.0,
+          "call_change_oi": 576.0,
+          "put_change_oi": -1.0
         },
         {
           "strike": 21650.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 2634.0,
+          "put_oi": 2636.0,
           "call_change_oi": 0,
-          "put_change_oi": 454.0
+          "put_change_oi": 456.0
         },
         {
           "strike": 25150.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 6271.0,
+          "call_oi": 6270.0,
           "put_oi": 0,
-          "call_change_oi": 883.0,
+          "call_change_oi": 882.0,
           "put_change_oi": 0
         },
         {
           "strike": 21550.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 1887.0,
+          "put_oi": 1875.0,
           "call_change_oi": 0,
-          "put_change_oi": -523.0
+          "put_change_oi": -535.0
         },
         {
           "strike": 21450.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 1177.0,
+          "put_oi": 1172.0,
           "call_change_oi": 0,
-          "put_change_oi": -982.0
+          "put_change_oi": -987.0
         },
         {
           "strike": 25800.0,
@@ -1746,65 +1746,65 @@
         {
           "strike": 25700.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 4949.0,
+          "call_oi": 4958.0,
           "put_oi": 0,
-          "call_change_oi": 1462.0,
+          "call_change_oi": 1471.0,
           "put_change_oi": 0
         },
         {
           "strike": 25250.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 6641.0,
+          "call_oi": 6645.0,
           "put_oi": 0,
-          "call_change_oi": 1921.0,
+          "call_change_oi": 1925.0,
           "put_change_oi": 0
         },
         {
           "strike": 21250.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 1191.0,
+          "put_oi": 1189.0,
           "call_change_oi": 0,
-          "put_change_oi": -235.0
+          "put_change_oi": -237.0
         },
         {
           "strike": 25550.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 3621.0,
+          "call_oi": 3616.0,
           "put_oi": 0,
-          "call_change_oi": 399.0,
+          "call_change_oi": 394.0,
           "put_change_oi": 0
         },
         {
           "strike": 21350.0,
           "expiry": "09-Jun-2026",
           "call_oi": 0,
-          "put_oi": 949.0,
+          "put_oi": 948.0,
           "call_change_oi": 0,
-          "put_change_oi": -454.0
+          "put_change_oi": -455.0
         },
         {
           "strike": 25350.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 4020.0,
+          "call_oi": 4022.0,
           "put_oi": 0,
-          "call_change_oi": 440.0,
+          "call_change_oi": 442.0,
           "put_change_oi": 0
         },
         {
           "strike": 25900.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 2729.0,
+          "call_oi": 2724.0,
           "put_oi": 0,
-          "call_change_oi": 721.0,
+          "call_change_oi": 716.0,
           "put_change_oi": 0
         },
         {
           "strike": 25450.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 2595.0,
+          "call_oi": 2575.0,
           "put_oi": 0,
-          "call_change_oi": -585.0,
+          "call_change_oi": -605.0,
           "put_change_oi": 0
         },
         {
@@ -1818,17 +1818,17 @@
         {
           "strike": 25850.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 1068.0,
+          "call_oi": 1066.0,
           "put_oi": 0,
-          "call_change_oi": -233.0,
+          "call_change_oi": -235.0,
           "put_change_oi": 0
         },
         {
           "strike": 25650.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 1164.0,
+          "call_oi": 1160.0,
           "put_oi": 0,
-          "call_change_oi": -228.0,
+          "call_change_oi": -232.0,
           "put_change_oi": 0
         },
         {
@@ -1842,9 +1842,9 @@
         {
           "strike": 26050.0,
           "expiry": "09-Jun-2026",
-          "call_oi": 1529.0,
+          "call_oi": 1483.0,
           "put_oi": 0,
-          "call_change_oi": 58.0,
+          "call_change_oi": 12.0,
           "put_change_oi": 0
         }
       ]
@@ -1853,222 +1853,222 @@
       "symbol": "BANKNIFTY",
       "source": "nse_nextapi",
       "underlying": 54307.85,
-      "pcr": 0.9171533640648469,
-      "total_call_oi": 482675.0,
-      "total_put_oi": 442687.0,
+      "pcr": 0.9189655638475502,
+      "total_call_oi": 480919.0,
+      "total_put_oi": 441948.0,
       "support": 54000.0,
       "resistance": 60000.0,
-      "support_put_oi": 42694.0,
-      "resistance_call_oi": 68560.0,
+      "support_put_oi": 42695.0,
+      "resistance_call_oi": 68547.0,
       "expiry": "30-Jun-2026",
       "rows": [
         {
           "strike": 54000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 36892.0,
-          "put_oi": 42694.0,
-          "call_change_oi": -19.0,
-          "put_change_oi": 1400.0
+          "call_oi": 36873.0,
+          "put_oi": 42695.0,
+          "call_change_oi": -38.0,
+          "put_change_oi": 1401.0
         },
         {
           "strike": 55000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 32753.0,
-          "put_oi": 20769.0,
-          "call_change_oi": 1262.0,
-          "put_change_oi": 264.0
+          "call_oi": 32823.0,
+          "put_oi": 20775.0,
+          "call_change_oi": 1332.0,
+          "put_change_oi": 270.0
         },
         {
           "strike": 54500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 16838.0,
-          "put_oi": 12259.0,
-          "call_change_oi": 2093.0,
-          "put_change_oi": 755.0
+          "call_oi": 16842.0,
+          "put_oi": 12242.0,
+          "call_change_oi": 2097.0,
+          "put_change_oi": 738.0
         },
         {
           "strike": 56000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 30403.0,
-          "put_oi": 10981.0,
-          "call_change_oi": 1406.0,
-          "put_change_oi": -76.0
+          "call_oi": 29756.0,
+          "put_oi": 10972.0,
+          "call_change_oi": 759.0,
+          "put_change_oi": -85.0
         },
         {
           "strike": 57000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 25659.0,
-          "put_oi": 9240.0,
-          "call_change_oi": 1374.0,
-          "put_change_oi": 124.0
+          "call_oi": 25611.0,
+          "put_oi": 9239.0,
+          "call_change_oi": 1326.0,
+          "put_change_oi": 123.0
         },
         {
           "strike": 54200.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 3032.0,
-          "put_oi": 3465.0,
-          "call_change_oi": 420.0,
-          "put_change_oi": 358.0
+          "call_oi": 3014.0,
+          "put_oi": 3206.0,
+          "call_change_oi": 402.0,
+          "put_change_oi": 99.0
         },
         {
           "strike": 54300.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 3656.0,
-          "put_oi": 3805.0,
-          "call_change_oi": 1134.0,
-          "put_change_oi": 1345.0
+          "call_oi": 3654.0,
+          "put_oi": 3815.0,
+          "call_change_oi": 1132.0,
+          "put_change_oi": 1355.0
         },
         {
           "strike": 60000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 68560.0,
-          "put_oi": 41563.0,
-          "call_change_oi": -2041.0,
-          "put_change_oi": -108.0
+          "call_oi": 68547.0,
+          "put_oi": 41562.0,
+          "call_change_oi": -2054.0,
+          "put_change_oi": -109.0
         },
         {
           "strike": 53000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 5024.0,
-          "put_oi": 20858.0,
-          "call_change_oi": -70.0,
-          "put_change_oi": 283.0
+          "call_oi": 5025.0,
+          "put_oi": 20860.0,
+          "call_change_oi": -69.0,
+          "put_change_oi": 285.0
         },
         {
           "strike": 58000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 23758.0,
+          "call_oi": 23648.0,
           "put_oi": 8723.0,
-          "call_change_oi": 264.0,
+          "call_change_oi": 154.0,
           "put_change_oi": -2.0
         },
         {
           "strike": 54100.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2035.0,
-          "put_oi": 2579.0,
-          "call_change_oi": -387.0,
-          "put_change_oi": 280.0
+          "call_oi": 2034.0,
+          "put_oi": 2570.0,
+          "call_change_oi": -388.0,
+          "put_change_oi": 271.0
         },
         {
           "strike": 52000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2176.0,
+          "call_oi": 2175.0,
           "put_oi": 15345.0,
-          "call_change_oi": -216.0,
+          "call_change_oi": -217.0,
           "put_change_oi": 528.0
         },
         {
           "strike": 51000.0,
           "expiry": "30-Jun-2026",
           "call_oi": 1126.0,
-          "put_oi": 18488.0,
+          "put_oi": 18473.0,
           "call_change_oi": -549.0,
-          "put_change_oi": -122.0
+          "put_change_oi": -137.0
         },
         {
           "strike": 54400.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2487.0,
-          "put_oi": 2537.0,
-          "call_change_oi": 25.0,
-          "put_change_oi": 334.0
+          "call_oi": 2468.0,
+          "put_oi": 2532.0,
+          "call_change_oi": 6.0,
+          "put_change_oi": 329.0
         },
         {
           "strike": 53500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 12431.0,
-          "put_oi": 19222.0,
-          "call_change_oi": -678.0,
-          "put_change_oi": 410.0
+          "call_oi": 12389.0,
+          "put_oi": 19198.0,
+          "call_change_oi": -720.0,
+          "put_change_oi": 386.0
         },
         {
           "strike": 55500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 22939.0,
-          "put_oi": 15373.0,
-          "call_change_oi": 520.0,
-          "put_change_oi": -11.0
+          "call_oi": 22774.0,
+          "put_oi": 15376.0,
+          "call_change_oi": 355.0,
+          "put_change_oi": -8.0
         },
         {
           "strike": 54600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 4731.0,
-          "put_oi": 3210.0,
-          "call_change_oi": 2116.0,
-          "put_change_oi": 764.0
+          "call_oi": 4746.0,
+          "put_oi": 3209.0,
+          "call_change_oi": 2131.0,
+          "put_change_oi": 763.0
         },
         {
           "strike": 50000.0,
           "expiry": "30-Jun-2026",
           "call_oi": 2365.0,
-          "put_oi": 22061.0,
+          "put_oi": 22051.0,
           "call_change_oi": -337.0,
-          "put_change_oi": -49.0
+          "put_change_oi": -59.0
         },
         {
           "strike": 53900.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1112.0,
-          "put_oi": 1883.0,
-          "call_change_oi": -906.0,
-          "put_change_oi": -396.0
+          "call_oi": 1111.0,
+          "put_oi": 1866.0,
+          "call_change_oi": -907.0,
+          "put_change_oi": -413.0
         },
         {
           "strike": 56500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 13267.0,
+          "call_oi": 13244.0,
           "put_oi": 3892.0,
-          "call_change_oi": 807.0,
+          "call_change_oi": 784.0,
           "put_change_oi": -16.0
         },
         {
           "strike": 59000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 15934.0,
-          "put_oi": 5016.0,
-          "call_change_oi": -1628.0,
-          "put_change_oi": -1.0
+          "call_oi": 15901.0,
+          "put_oi": 5017.0,
+          "call_change_oi": -1661.0,
+          "put_change_oi": 0.0
         },
         {
           "strike": 57500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 10587.0,
-          "put_oi": 4136.0,
-          "call_change_oi": 131.0,
-          "put_change_oi": -6.0
+          "call_oi": 10513.0,
+          "put_oi": 4135.0,
+          "call_change_oi": 57.0,
+          "put_change_oi": -7.0
         },
         {
           "strike": 52500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 877.0,
-          "put_oi": 8004.0,
-          "call_change_oi": -22.0,
-          "put_change_oi": -144.0
+          "call_oi": 847.0,
+          "put_oi": 7913.0,
+          "call_change_oi": -52.0,
+          "put_change_oi": -235.0
         },
         {
           "strike": 53800.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1810.0,
-          "put_oi": 2763.0,
-          "call_change_oi": -271.0,
-          "put_change_oi": 218.0
+          "call_oi": 1795.0,
+          "put_oi": 2765.0,
+          "call_change_oi": -286.0,
+          "put_change_oi": 220.0
         },
         {
           "strike": 58500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 12471.0,
-          "put_oi": 2858.0,
-          "call_change_oi": 310.0,
-          "put_change_oi": -14.0
+          "call_oi": 12194.0,
+          "put_oi": 2859.0,
+          "call_change_oi": 33.0,
+          "put_change_oi": -13.0
         },
         {
           "strike": 49000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 605.0,
-          "put_oi": 11577.0,
-          "call_change_oi": -60.0,
-          "put_change_oi": -70.0
+          "call_oi": 603.0,
+          "put_oi": 11562.0,
+          "call_change_oi": -62.0,
+          "put_change_oi": -85.0
         },
         {
           "strike": 69000.0,
@@ -2081,186 +2081,186 @@
         {
           "strike": 59500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 9215.0,
+          "call_oi": 9214.0,
           "put_oi": 0,
-          "call_change_oi": 1182.0,
+          "call_change_oi": 1181.0,
           "put_change_oi": 0
         },
         {
           "strike": 54700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2528.0,
-          "put_oi": 1486.0,
-          "call_change_oi": 599.0,
-          "put_change_oi": 329.0
+          "call_oi": 2524.0,
+          "put_oi": 1489.0,
+          "call_change_oi": 595.0,
+          "put_change_oi": 332.0
         },
         {
           "strike": 51500.0,
           "expiry": "30-Jun-2026",
           "call_oi": 280.0,
-          "put_oi": 9633.0,
+          "put_oi": 9589.0,
           "call_change_oi": 0.0,
-          "put_change_oi": -180.0
+          "put_change_oi": -224.0
         },
         {
           "strike": 48000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 419.0,
-          "put_oi": 9487.0,
-          "call_change_oi": 25.0,
-          "put_change_oi": -1115.0
+          "call_oi": 421.0,
+          "put_oi": 9479.0,
+          "call_change_oi": 27.0,
+          "put_change_oi": -1123.0
         },
         {
           "strike": 54900.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2598.0,
-          "put_oi": 1137.0,
-          "call_change_oi": 142.0,
-          "put_change_oi": 198.0
+          "call_oi": 2602.0,
+          "put_oi": 1123.0,
+          "call_change_oi": 146.0,
+          "put_change_oi": 184.0
         },
         {
           "strike": 54800.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 3348.0,
-          "put_oi": 1573.0,
-          "call_change_oi": 227.0,
-          "put_change_oi": 359.0
+          "call_oi": 3344.0,
+          "put_oi": 1556.0,
+          "call_change_oi": 223.0,
+          "put_change_oi": 342.0
         },
         {
           "strike": 49500.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 9400.0,
+          "put_oi": 9387.0,
           "call_change_oi": 0,
-          "put_change_oi": 79.0
+          "put_change_oi": 66.0
         },
         {
           "strike": 61000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 13439.0,
-          "put_oi": 1658.0,
-          "call_change_oi": 1049.0,
-          "put_change_oi": 3.0
+          "call_oi": 13375.0,
+          "put_oi": 1659.0,
+          "call_change_oi": 985.0,
+          "put_change_oi": 4.0
         },
         {
           "strike": 62000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 8602.0,
-          "put_oi": 2061.0,
-          "call_change_oi": -19.0,
-          "put_change_oi": 12.0
+          "call_oi": 8597.0,
+          "put_oi": 2062.0,
+          "call_change_oi": -24.0,
+          "put_change_oi": 13.0
         },
         {
           "strike": 55900.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 816.0,
+          "call_oi": 815.0,
           "put_oi": 392.0,
-          "call_change_oi": 42.0,
+          "call_change_oi": 41.0,
           "put_change_oi": 1.0
         },
         {
           "strike": 55700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1495.0,
-          "put_oi": 684.0,
-          "call_change_oi": 39.0,
-          "put_change_oi": 12.0
+          "call_oi": 1494.0,
+          "put_oi": 685.0,
+          "call_change_oi": 38.0,
+          "put_change_oi": 13.0
         },
         {
           "strike": 53600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2218.0,
-          "put_oi": 2426.0,
-          "call_change_oi": -183.0,
-          "put_change_oi": -577.0
+          "call_oi": 2210.0,
+          "put_oi": 2413.0,
+          "call_change_oi": -191.0,
+          "put_change_oi": -590.0
         },
         {
           "strike": 53700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1355.0,
-          "put_oi": 2154.0,
-          "call_change_oi": -135.0,
-          "put_change_oi": -3.0
+          "call_oi": 1346.0,
+          "put_oi": 2147.0,
+          "call_change_oi": -144.0,
+          "put_change_oi": -10.0
         },
         {
           "strike": 55200.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 3077.0,
+          "call_oi": 3048.0,
           "put_oi": 1795.0,
-          "call_change_oi": 474.0,
+          "call_change_oi": 445.0,
           "put_change_oi": -82.0
         },
         {
           "strike": 55300.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2910.0,
+          "call_oi": 2912.0,
           "put_oi": 1505.0,
-          "call_change_oi": -27.0,
+          "call_change_oi": -25.0,
           "put_change_oi": 3.0
         },
         {
           "strike": 50500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 31.0,
-          "put_oi": 7389.0,
-          "call_change_oi": 1.0,
-          "put_change_oi": -376.0
+          "call_oi": 29.0,
+          "put_oi": 7381.0,
+          "call_change_oi": -1.0,
+          "put_change_oi": -384.0
         },
         {
           "strike": 64000.0,
           "expiry": "30-Jun-2026",
           "call_oi": 5688.0,
-          "put_oi": 1040.0,
+          "put_oi": 1039.0,
           "call_change_oi": -30.0,
-          "put_change_oi": 0.0
+          "put_change_oi": -1.0
         },
         {
           "strike": 55100.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 3732.0,
-          "put_oi": 1647.0,
-          "call_change_oi": 398.0,
-          "put_change_oi": -151.0
+          "call_oi": 3758.0,
+          "put_oi": 1648.0,
+          "call_change_oi": 424.0,
+          "put_change_oi": -150.0
         },
         {
           "strike": 53200.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 789.0,
-          "put_oi": 2467.0,
-          "call_change_oi": -141.0,
-          "put_change_oi": 61.0
+          "call_oi": 782.0,
+          "put_oi": 2466.0,
+          "call_change_oi": -148.0,
+          "put_change_oi": 60.0
         },
         {
           "strike": 53300.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 933.0,
-          "put_oi": 1815.0,
-          "call_change_oi": -81.0,
-          "put_change_oi": 280.0
+          "call_oi": 934.0,
+          "put_oi": 1814.0,
+          "call_change_oi": -80.0,
+          "put_change_oi": 279.0
         },
         {
           "strike": 56200.0,
           "expiry": "30-Jun-2026",
           "call_oi": 1957.0,
-          "put_oi": 235.0,
+          "put_oi": 234.0,
           "call_change_oi": -11.0,
-          "put_change_oi": 0.0
+          "put_change_oi": -1.0
         },
         {
           "strike": 56300.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 975.0,
-          "put_oi": 235.0,
-          "call_change_oi": -169.0,
-          "put_change_oi": -3.0
+          "call_oi": 971.0,
+          "put_oi": 233.0,
+          "call_change_oi": -173.0,
+          "put_change_oi": -5.0
         },
         {
           "strike": 55400.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2550.0,
-          "put_oi": 1356.0,
-          "call_change_oi": 47.0,
-          "put_change_oi": -22.0
+          "call_oi": 2547.0,
+          "put_oi": 1355.0,
+          "call_change_oi": 44.0,
+          "put_change_oi": -23.0
         },
         {
           "strike": 48500.0,
@@ -2273,34 +2273,34 @@
         {
           "strike": 47000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 64.0,
-          "put_oi": 5266.0,
-          "call_change_oi": 0.0,
-          "put_change_oi": -361.0
+          "call_oi": 65.0,
+          "put_oi": 5262.0,
+          "call_change_oi": 1.0,
+          "put_change_oi": -365.0
         },
         {
           "strike": 53400.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 635.0,
-          "put_oi": 2140.0,
-          "call_change_oi": -59.0,
-          "put_change_oi": 216.0
+          "call_oi": 634.0,
+          "put_oi": 2139.0,
+          "call_change_oi": -60.0,
+          "put_change_oi": 215.0
         },
         {
           "strike": 56400.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1118.0,
+          "call_oi": 1108.0,
           "put_oi": 104.0,
-          "call_change_oi": -299.0,
+          "call_change_oi": -309.0,
           "put_change_oi": 0.0
         },
         {
           "strike": 55800.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1729.0,
-          "put_oi": 692.0,
-          "call_change_oi": -112.0,
-          "put_change_oi": 3.0
+          "call_oi": 1727.0,
+          "put_oi": 691.0,
+          "call_change_oi": -114.0,
+          "put_change_oi": 2.0
         },
         {
           "strike": 56100.0,
@@ -2314,17 +2314,17 @@
           "strike": 53100.0,
           "expiry": "30-Jun-2026",
           "call_oi": 413.0,
-          "put_oi": 1270.0,
+          "put_oi": 1267.0,
           "call_change_oi": -25.0,
-          "put_change_oi": 23.0
+          "put_change_oi": 20.0
         },
         {
           "strike": 56700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1023.0,
-          "put_oi": 98.0,
-          "call_change_oi": -1.0,
-          "put_change_oi": 4.0
+          "call_oi": 1022.0,
+          "put_oi": 95.0,
+          "call_change_oi": -2.0,
+          "put_change_oi": 1.0
         },
         {
           "strike": 56600.0,
@@ -2337,17 +2337,17 @@
         {
           "strike": 57200.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1357.0,
+          "call_oi": 1364.0,
           "put_oi": 21.0,
-          "call_change_oi": -107.0,
+          "call_change_oi": -100.0,
           "put_change_oi": -1.0
         },
         {
           "strike": 56800.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1206.0,
+          "call_oi": 1203.0,
           "put_oi": 0,
-          "call_change_oi": 154.0,
+          "call_change_oi": 151.0,
           "put_change_oi": 0
         },
         {
@@ -2361,65 +2361,65 @@
         {
           "strike": 65000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 3537.0,
-          "put_oi": 1736.0,
-          "call_change_oi": 46.0,
-          "put_change_oi": 0.0
+          "call_oi": 3538.0,
+          "put_oi": 1737.0,
+          "call_change_oi": 47.0,
+          "put_change_oi": 1.0
         },
         {
           "strike": 52100.0,
           "expiry": "30-Jun-2026",
           "call_oi": 53.0,
-          "put_oi": 989.0,
+          "put_oi": 982.0,
           "call_change_oi": 0.0,
-          "put_change_oi": 225.0
-        },
-        {
-          "strike": 52300.0,
-          "expiry": "30-Jun-2026",
-          "call_oi": 64.0,
-          "put_oi": 1027.0,
-          "call_change_oi": -12.0,
-          "put_change_oi": 151.0
+          "put_change_oi": 218.0
         },
         {
           "strike": 60500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 4558.0,
+          "call_oi": 4431.0,
           "put_oi": 0,
-          "call_change_oi": -356.0,
+          "call_change_oi": -483.0,
           "put_change_oi": 0
+        },
+        {
+          "strike": 52300.0,
+          "expiry": "30-Jun-2026",
+          "call_oi": 62.0,
+          "put_oi": 998.0,
+          "call_change_oi": -14.0,
+          "put_change_oi": 122.0
         },
         {
           "strike": 52200.0,
           "expiry": "30-Jun-2026",
           "call_oi": 51.0,
-          "put_oi": 1088.0,
+          "put_oi": 1082.0,
           "call_change_oi": -21.0,
-          "put_change_oi": 176.0
+          "put_change_oi": 170.0
         },
         {
           "strike": 58200.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1480.0,
+          "call_oi": 1481.0,
           "put_oi": 0,
-          "call_change_oi": 713.0,
+          "call_change_oi": 714.0,
           "put_change_oi": 0
         },
         {
           "strike": 52800.0,
           "expiry": "30-Jun-2026",
           "call_oi": 102.0,
-          "put_oi": 1227.0,
+          "put_oi": 1223.0,
           "call_change_oi": -25.0,
-          "put_change_oi": 30.0
+          "put_change_oi": 26.0
         },
         {
           "strike": 57600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 790.0,
+          "call_oi": 784.0,
           "put_oi": 0,
-          "call_change_oi": -63.0,
+          "call_change_oi": -69.0,
           "put_change_oi": 0
         },
         {
@@ -2433,34 +2433,34 @@
         {
           "strike": 56900.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 985.0,
+          "call_oi": 981.0,
           "put_oi": 0,
-          "call_change_oi": 72.0,
+          "call_change_oi": 68.0,
           "put_change_oi": 0
         },
         {
           "strike": 52900.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 213.0,
-          "put_oi": 1215.0,
-          "call_change_oi": -12.0,
-          "put_change_oi": -27.0
+          "call_oi": 212.0,
+          "put_oi": 1230.0,
+          "call_change_oi": -13.0,
+          "put_change_oi": -12.0
         },
         {
           "strike": 57100.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1024.0,
+          "call_oi": 1027.0,
           "put_oi": 46.0,
-          "call_change_oi": 32.0,
+          "call_change_oi": 35.0,
           "put_change_oi": 0.0
         },
         {
           "strike": 55600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1681.0,
-          "put_oi": 669.0,
-          "call_change_oi": 5.0,
-          "put_change_oi": -7.0
+          "call_oi": 1666.0,
+          "put_oi": 668.0,
+          "call_change_oi": -10.0,
+          "put_change_oi": -8.0
         },
         {
           "strike": 46000.0,
@@ -2474,121 +2474,121 @@
           "strike": 43000.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 3368.0,
+          "put_oi": 3362.0,
           "call_change_oi": 0,
-          "put_change_oi": -44.0
+          "put_change_oi": -50.0
         },
         {
           "strike": 61500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 2281.0,
+          "call_oi": 2249.0,
           "put_oi": 0,
-          "call_change_oi": -256.0,
+          "call_change_oi": -288.0,
           "put_change_oi": 0
         },
         {
           "strike": 52700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 92.0,
+          "call_oi": 91.0,
           "put_oi": 944.0,
-          "call_change_oi": -2.0,
+          "call_change_oi": -3.0,
           "put_change_oi": -123.0
         },
         {
           "strike": 52400.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 57.0,
-          "put_oi": 1009.0,
-          "call_change_oi": -16.0,
-          "put_change_oi": -110.0
+          "call_oi": 56.0,
+          "put_oi": 1002.0,
+          "call_change_oi": -17.0,
+          "put_change_oi": -117.0
         },
         {
           "strike": 45000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 732.0,
+          "call_oi": 734.0,
           "put_oi": 6407.0,
-          "call_change_oi": 0.0,
+          "call_change_oi": 2.0,
           "put_change_oi": 69.0
         },
         {
           "strike": 57400.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 795.0,
+          "call_oi": 794.0,
           "put_oi": 0,
-          "call_change_oi": -11.0,
+          "call_change_oi": -12.0,
           "put_change_oi": 0
         },
         {
           "strike": 57700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1158.0,
-          "put_oi": 15.0,
-          "call_change_oi": 2.0,
-          "put_change_oi": 0.0
+          "call_oi": 1145.0,
+          "put_oi": 14.0,
+          "call_change_oi": -11.0,
+          "put_change_oi": -1.0
         },
         {
           "strike": 52600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 75.0,
-          "put_oi": 646.0,
-          "call_change_oi": -7.0,
-          "put_change_oi": 88.0
+          "call_oi": 65.0,
+          "put_oi": 644.0,
+          "call_change_oi": -17.0,
+          "put_change_oi": 86.0
         },
         {
           "strike": 57300.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 852.0,
+          "call_oi": 834.0,
           "put_oi": 0,
-          "call_change_oi": -42.0,
+          "call_change_oi": -60.0,
           "put_change_oi": 0
         },
         {
           "strike": 50400.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 804.0,
+          "put_oi": 791.0,
           "call_change_oi": 0,
-          "put_change_oi": -21.0
+          "put_change_oi": -34.0
         },
         {
           "strike": 49600.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 976.0,
+          "put_oi": 974.0,
           "call_change_oi": 0,
-          "put_change_oi": 566.0
-        },
-        {
-          "strike": 58400.0,
-          "expiry": "30-Jun-2026",
-          "call_oi": 504.0,
-          "put_oi": 0,
-          "call_change_oi": 66.0,
-          "put_change_oi": 0
+          "put_change_oi": 564.0
         },
         {
           "strike": 58300.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1087.0,
+          "call_oi": 1045.0,
           "put_oi": 0,
-          "call_change_oi": 6.0,
+          "call_change_oi": -36.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 58400.0,
+          "expiry": "30-Jun-2026",
+          "call_oi": 502.0,
+          "put_oi": 0,
+          "call_change_oi": 64.0,
           "put_change_oi": 0
         },
         {
           "strike": 51900.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 850.0,
+          "put_oi": 842.0,
           "call_change_oi": 0,
-          "put_change_oi": 55.0
+          "put_change_oi": 47.0
         },
         {
           "strike": 51200.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 1468.0,
+          "put_oi": 1464.0,
           "call_change_oi": 0,
-          "put_change_oi": -31.0
+          "put_change_oi": -35.0
         },
         {
           "strike": 57800.0,
@@ -2601,41 +2601,41 @@
         {
           "strike": 57900.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 690.0,
+          "call_oi": 689.0,
           "put_oi": 0,
-          "call_change_oi": 51.0,
+          "call_change_oi": 50.0,
           "put_change_oi": 0
         },
         {
           "strike": 58700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 680.0,
-          "put_oi": 85.0,
-          "call_change_oi": -22.0,
-          "put_change_oi": 0.0
+          "call_oi": 679.0,
+          "put_oi": 86.0,
+          "call_change_oi": -23.0,
+          "put_change_oi": 1.0
         },
         {
           "strike": 51700.0,
           "expiry": "30-Jun-2026",
           "call_oi": 64.0,
-          "put_oi": 896.0,
+          "put_oi": 892.0,
           "call_change_oi": 0.0,
-          "put_change_oi": 39.0
+          "put_change_oi": 35.0
         },
         {
           "strike": 51800.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 757.0,
+          "put_oi": 755.0,
           "call_change_oi": 0,
-          "put_change_oi": 3.0
+          "put_change_oi": 1.0
         },
         {
           "strike": 58100.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 846.0,
+          "call_oi": 847.0,
           "put_oi": 0,
-          "call_change_oi": -36.0,
+          "call_change_oi": -35.0,
           "put_change_oi": 0
         },
         {
@@ -2650,32 +2650,32 @@
           "strike": 44000.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 1263.0,
+          "put_oi": 1233.0,
           "call_change_oi": 0,
-          "put_change_oi": -34.0
+          "put_change_oi": -64.0
         },
         {
           "strike": 51600.0,
           "expiry": "30-Jun-2026",
           "call_oi": 65.0,
-          "put_oi": 534.0,
+          "put_oi": 531.0,
           "call_change_oi": -1.0,
-          "put_change_oi": 10.0
+          "put_change_oi": 7.0
         },
         {
           "strike": 50800.0,
           "expiry": "30-Jun-2026",
           "call_oi": 1.0,
-          "put_oi": 946.0,
+          "put_oi": 942.0,
           "call_change_oi": 0.0,
-          "put_change_oi": 35.0
+          "put_change_oi": 31.0
         },
         {
           "strike": 58600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 999.0,
+          "call_oi": 993.0,
           "put_oi": 0,
-          "call_change_oi": -11.0,
+          "call_change_oi": -17.0,
           "put_change_oi": 0
         },
         {
@@ -2690,9 +2690,9 @@
           "strike": 50900.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 635.0,
+          "put_oi": 633.0,
           "call_change_oi": 0,
-          "put_change_oi": 59.0
+          "put_change_oi": 57.0
         },
         {
           "strike": 51400.0,
@@ -2705,9 +2705,9 @@
         {
           "strike": 64500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 434.0,
+          "call_oi": 432.0,
           "put_oi": 0,
-          "call_change_oi": 69.0,
+          "call_change_oi": 67.0,
           "put_change_oi": 0
         },
         {
@@ -2729,18 +2729,18 @@
         {
           "strike": 59100.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 981.0,
+          "call_oi": 979.0,
           "put_oi": 0,
-          "call_change_oi": 25.0,
+          "call_change_oi": 23.0,
           "put_change_oi": 0
         },
         {
           "strike": 50200.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 944.0,
+          "put_oi": 942.0,
           "call_change_oi": 0,
-          "put_change_oi": 51.0
+          "put_change_oi": 49.0
         },
         {
           "strike": 50100.0,
@@ -2778,9 +2778,9 @@
           "strike": 50300.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 732.0,
+          "put_oi": 735.0,
           "call_change_oi": 0,
-          "put_change_oi": -84.0
+          "put_change_oi": -81.0
         },
         {
           "strike": 49900.0,
@@ -2801,25 +2801,25 @@
         {
           "strike": 59700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 313.0,
+          "call_oi": 296.0,
           "put_oi": 0,
-          "call_change_oi": -55.0,
+          "call_change_oi": -72.0,
           "put_change_oi": 0
         },
         {
           "strike": 49800.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 1010.0,
+          "put_oi": 1011.0,
           "call_change_oi": 0,
-          "put_change_oi": -40.0
+          "put_change_oi": -39.0
         },
         {
           "strike": 58800.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 487.0,
+          "call_oi": 490.0,
           "put_oi": 0,
-          "call_change_oi": 15.0,
+          "call_change_oi": 18.0,
           "put_change_oi": 0
         },
         {
@@ -2833,9 +2833,9 @@
         {
           "strike": 59600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 299.0,
+          "call_oi": 300.0,
           "put_oi": 0,
-          "call_change_oi": 1.0,
+          "call_change_oi": 2.0,
           "put_change_oi": 0
         },
         {
@@ -2849,9 +2849,9 @@
         {
           "strike": 60100.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 359.0,
+          "call_oi": 309.0,
           "put_oi": 0,
-          "call_change_oi": -20.0,
+          "call_change_oi": -70.0,
           "put_change_oi": 0
         },
         {
@@ -2874,57 +2874,65 @@
           "strike": 46500.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 1160.0,
+          "put_oi": 1163.0,
           "call_change_oi": 0,
-          "put_change_oi": 55.0
+          "put_change_oi": 58.0
         },
         {
           "strike": 43500.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 513.0,
+          "put_oi": 518.0,
           "call_change_oi": 0,
-          "put_change_oi": 62.0
+          "put_change_oi": 67.0
         },
         {
           "strike": 49700.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 367.0,
+          "put_oi": 365.0,
           "call_change_oi": 0,
-          "put_change_oi": 21.0
+          "put_change_oi": 19.0
         },
         {
           "strike": 61700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 130.0,
+          "call_oi": 247.0,
           "put_oi": 0,
-          "call_change_oi": 8.0,
+          "call_change_oi": 125.0,
           "put_change_oi": 0
         },
         {
           "strike": 62500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 814.0,
+          "call_oi": 813.0,
           "put_oi": 0,
-          "call_change_oi": -6.0,
+          "call_change_oi": -7.0,
           "put_change_oi": 0
         },
         {
           "strike": 59400.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 964.0,
+          "call_oi": 965.0,
           "put_oi": 0,
-          "call_change_oi": 32.0,
+          "call_change_oi": 33.0,
           "put_change_oi": 0
         },
         {
           "strike": 67500.0,
           "expiry": "30-Jun-2026",
           "call_oi": 872.0,
-          "put_oi": 190.0,
+          "put_oi": 189.0,
           "call_change_oi": -13.0,
-          "put_change_oi": 0.0
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 48800.0,
+          "expiry": "30-Jun-2026",
+          "call_oi": 0,
+          "put_oi": 241.0,
+          "call_change_oi": 0,
+          "put_change_oi": -108.0
         },
         {
           "strike": 45500.0,
@@ -2935,20 +2943,12 @@
           "put_change_oi": 105.0
         },
         {
-          "strike": 48800.0,
-          "expiry": "30-Jun-2026",
-          "call_oi": 0,
-          "put_oi": 242.0,
-          "call_change_oi": 0,
-          "put_change_oi": -107.0
-        },
-        {
           "strike": 48100.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 270.0,
+          "put_oi": 266.0,
           "call_change_oi": 0,
-          "put_change_oi": 33.0
+          "put_change_oi": 29.0
         },
         {
           "strike": 59800.0,
@@ -2970,9 +2970,9 @@
           "strike": 49400.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 344.0,
+          "put_oi": 362.0,
           "call_change_oi": 0,
-          "put_change_oi": -9.0
+          "put_change_oi": 9.0
         },
         {
           "strike": 59900.0,
@@ -2986,33 +2986,33 @@
           "strike": 49300.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 499.0,
+          "put_oi": 475.0,
           "call_change_oi": 0,
-          "put_change_oi": 26.0
+          "put_change_oi": 2.0
         },
         {
           "strike": 66000.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 1378.0,
+          "call_oi": 1379.0,
           "put_oi": 0,
-          "call_change_oi": -77.0,
+          "call_change_oi": -76.0,
           "put_change_oi": 0
         },
         {
           "strike": 63500.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 332.0,
+          "call_oi": 330.0,
           "put_oi": 0,
-          "call_change_oi": -28.0,
+          "call_change_oi": -30.0,
           "put_change_oi": 0
         },
         {
           "strike": 48700.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 197.0,
+          "put_oi": 191.0,
           "call_change_oi": 0,
-          "put_change_oi": -25.0
+          "put_change_oi": -31.0
         },
         {
           "strike": 45300.0,
@@ -3026,32 +3026,32 @@
           "strike": 48600.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 237.0,
+          "put_oi": 241.0,
           "call_change_oi": 0,
-          "put_change_oi": -33.0
+          "put_change_oi": -29.0
         },
         {
           "strike": 61100.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 163.0,
+          "call_oi": 162.0,
           "put_oi": 0,
-          "call_change_oi": 15.0,
-          "put_change_oi": 0
-        },
-        {
-          "strike": 60800.0,
-          "expiry": "30-Jun-2026",
-          "call_oi": 188.0,
-          "put_oi": 0,
-          "call_change_oi": -41.0,
+          "call_change_oi": 14.0,
           "put_change_oi": 0
         },
         {
           "strike": 61200.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 281.0,
+          "call_oi": 280.0,
           "put_oi": 0,
-          "call_change_oi": -51.0,
+          "call_change_oi": -52.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 60800.0,
+          "expiry": "30-Jun-2026",
+          "call_oi": 223.0,
+          "put_oi": 0,
+          "call_change_oi": -6.0,
           "put_change_oi": 0
         },
         {
@@ -3074,9 +3074,9 @@
           "strike": 48300.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 173.0,
+          "put_oi": 151.0,
           "call_change_oi": 0,
-          "put_change_oi": 20.0
+          "put_change_oi": -2.0
         },
         {
           "strike": 61900.0,
@@ -3090,9 +3090,9 @@
           "strike": 47800.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 92.0,
+          "put_oi": 91.0,
           "call_change_oi": 0,
-          "put_change_oi": -26.0
+          "put_change_oi": -27.0
         },
         {
           "strike": 62100.0,
@@ -3105,33 +3105,33 @@
         {
           "strike": 61800.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 74.0,
+          "call_oi": 75.0,
           "put_oi": 0,
-          "call_change_oi": -15.0,
+          "call_change_oi": -14.0,
           "put_change_oi": 0
         },
         {
           "strike": 45600.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 209.0,
+          "put_oi": 206.0,
           "call_change_oi": 0,
-          "put_change_oi": 61.0
+          "put_change_oi": 58.0
         },
         {
           "strike": 48400.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 203.0,
+          "put_oi": 200.0,
           "call_change_oi": 0,
-          "put_change_oi": -26.0
+          "put_change_oi": -29.0
         },
         {
           "strike": 60600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 218.0,
+          "call_oi": 219.0,
           "put_oi": 0,
-          "call_change_oi": 30.0,
+          "call_change_oi": 31.0,
           "put_change_oi": 0
         },
         {
@@ -3146,9 +3146,9 @@
           "strike": 47300.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 82.0,
+          "put_oi": 86.0,
           "call_change_oi": 0,
-          "put_change_oi": -28.0
+          "put_change_oi": -24.0
         },
         {
           "strike": 61400.0,
@@ -3161,9 +3161,9 @@
         {
           "strike": 61300.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 65.0,
+          "call_oi": 73.0,
           "put_oi": 0,
-          "call_change_oi": -30.0,
+          "call_change_oi": -22.0,
           "put_change_oi": 0
         },
         {
@@ -3177,25 +3177,25 @@
         {
           "strike": 62900.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 76.0,
+          "call_oi": 74.0,
           "put_oi": 0,
-          "call_change_oi": -12.0,
+          "call_change_oi": -14.0,
           "put_change_oi": 0
         },
         {
           "strike": 47600.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 63.0,
+          "put_oi": 62.0,
           "call_change_oi": 0,
-          "put_change_oi": 4.0
+          "put_change_oi": 3.0
         },
         {
           "strike": 61600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 104.0,
+          "call_oi": 102.0,
           "put_oi": 0,
-          "call_change_oi": -2.0,
+          "call_change_oi": -4.0,
           "put_change_oi": 0
         },
         {
@@ -3233,26 +3233,18 @@
         {
           "strike": 60700.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 106.0,
+          "call_oi": 105.0,
           "put_oi": 0,
-          "call_change_oi": -1.0,
+          "call_change_oi": -2.0,
           "put_change_oi": 0
         },
         {
           "strike": 62300.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 59.0,
+          "call_oi": 58.0,
           "put_oi": 0,
-          "call_change_oi": -7.0,
+          "call_change_oi": -8.0,
           "put_change_oi": 0
-        },
-        {
-          "strike": 47100.0,
-          "expiry": "30-Jun-2026",
-          "call_oi": 0,
-          "put_oi": 66.0,
-          "call_change_oi": 0,
-          "put_change_oi": -1.0
         },
         {
           "strike": 62200.0,
@@ -3263,19 +3255,27 @@
           "put_change_oi": 0
         },
         {
+          "strike": 47100.0,
+          "expiry": "30-Jun-2026",
+          "call_oi": 0,
+          "put_oi": 64.0,
+          "call_change_oi": 0,
+          "put_change_oi": -3.0
+        },
+        {
           "strike": 47900.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 117.0,
+          "put_oi": 118.0,
           "call_change_oi": 0,
-          "put_change_oi": -22.0
+          "put_change_oi": -21.0
         },
         {
           "strike": 62600.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 82.0,
+          "call_oi": 81.0,
           "put_oi": 0,
-          "call_change_oi": 19.0,
+          "call_change_oi": 18.0,
           "put_change_oi": 0
         },
         {
@@ -3289,18 +3289,18 @@
         {
           "strike": 62400.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 90.0,
+          "call_oi": 91.0,
           "put_oi": 0,
-          "call_change_oi": -6.0,
+          "call_change_oi": -5.0,
           "put_change_oi": 0
         },
         {
           "strike": 46200.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 49.0,
+          "put_oi": 50.0,
           "call_change_oi": 0,
-          "put_change_oi": 20.0
+          "put_change_oi": 21.0
         },
         {
           "strike": 62800.0,
@@ -3313,34 +3313,34 @@
         {
           "strike": 60900.0,
           "expiry": "30-Jun-2026",
-          "call_oi": 106.0,
+          "call_oi": 105.0,
           "put_oi": 0,
-          "call_change_oi": 4.0,
+          "call_change_oi": 3.0,
           "put_change_oi": 0
         },
         {
           "strike": 46300.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 47.0,
+          "put_oi": 45.0,
           "call_change_oi": 0,
-          "put_change_oi": 20.0
+          "put_change_oi": 18.0
         },
         {
           "strike": 47400.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 66.0,
+          "put_oi": 65.0,
           "call_change_oi": 0,
-          "put_change_oi": 2.0
+          "put_change_oi": 1.0
         },
         {
           "strike": 46600.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
-          "put_oi": 78.0,
+          "put_oi": 77.0,
           "call_change_oi": 0,
-          "put_change_oi": -1.0
+          "put_change_oi": -2.0
         },
         {
           "strike": 45700.0,
@@ -3367,18 +3367,18 @@
           "put_change_oi": -1.0
         },
         {
-          "strike": 46400.0,
-          "expiry": "30-Jun-2026",
-          "call_oi": 0,
-          "put_oi": 21.0,
-          "call_change_oi": 0,
-          "put_change_oi": 0.0
-        },
-        {
           "strike": 46100.0,
           "expiry": "30-Jun-2026",
           "call_oi": 0,
           "put_oi": 24.0,
+          "call_change_oi": 0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 46400.0,
+          "expiry": "30-Jun-2026",
+          "call_oi": 0,
+          "put_oi": 21.0,
           "call_change_oi": 0,
           "put_change_oi": 0.0
         }
