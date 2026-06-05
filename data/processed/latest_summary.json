@@ -1,7 +1,7 @@
 {
   "score": {
-    "score": 7,
-    "bias": "Bullish",
+    "score": 3,
+    "bias": "Mild Bullish",
     "confidence": "High",
     "components": [
       {
@@ -14,19 +14,19 @@
         "name": "US markets",
         "score": 1,
         "status": "Bullish",
-        "reason": "Average move 0.67% across 3 indices."
+        "reason": "Average move 0.68% across 3 indices."
       },
       {
         "name": "Europe markets",
-        "score": 1,
-        "status": "Bullish",
-        "reason": "Average move 0.67% across 3 indices."
+        "score": -1,
+        "status": "Bearish",
+        "reason": "Average move -0.81% across 3 indices."
       },
       {
         "name": "Asia markets",
-        "score": 1,
-        "status": "Bullish",
-        "reason": "Average move 0.47% across 2 indices."
+        "score": -1,
+        "status": "Bearish",
+        "reason": "Average move -2.27% across 2 indices."
       },
       {
         "name": "FII/DII flow",
@@ -66,73 +66,73 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26804.048828125,
-        "change": -49.931640625,
-        "change_pct": -0.1859375770497245,
+        "close": 26830.95703125,
+        "change": -23.0234375,
+        "change_pct": -0.08573566040532574,
         "date": "2026-06-04"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 51626.2109375,
-        "change": 939.140625,
-        "change_pct": 1.8528208855038075,
+        "close": 51561.9296875,
+        "change": 874.859375,
+        "change_pct": 1.7260010681348255,
         "date": "2026-06-04"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7579.16015625,
-        "change": 25.47998046875,
-        "change_pct": 0.3373187621901757,
+        "close": 7584.31005859375,
+        "change": 30.6298828125,
+        "change_pct": 0.4054961568363207,
         "date": "2026-06-04"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
-        "close": 10360.3203125,
-        "change": 28.0205078125,
-        "change_pct": 0.27119332909588834,
-        "date": "2026-06-04"
+        "close": 10332.2998046875,
+        "change": -41.2001953125,
+        "change_pct": -0.3971677381067142,
+        "date": "2026-06-03"
       },
       {
         "name": "CAC 40",
         "ticker": "^FCHI",
         "region": "Europe",
-        "close": 8244.2900390625,
-        "change": 93.8701171875,
-        "change_pct": 1.1517212375225108,
-        "date": "2026-06-04"
+        "close": 8150.419921875,
+        "change": -58.669921875,
+        "change_pct": -0.7146946006403915,
+        "date": "2026-06-03"
       },
       {
         "name": "DAX",
         "ticker": "^GDAXI",
         "region": "Europe",
-        "close": 24944.94921875,
-        "change": 149.009765625,
-        "change_pct": 0.6009442227695894,
-        "date": "2026-06-04"
+        "close": 24795.939453125,
+        "change": -328.23046875,
+        "change_pct": -1.3064330872249743,
+        "date": "2026-06-03"
       },
       {
         "name": "Hang Seng",
         "ticker": "^HSI",
         "region": "Asia",
-        "close": 25633.2109375,
-        "change": -405.109375,
-        "change_pct": -1.5558199228600875,
-        "date": "2026-06-03"
+        "close": 25123.51953125,
+        "change": -509.69140625,
+        "change_pct": -1.9884024966390343,
+        "date": "2026-06-05"
       },
       {
         "name": "Nikkei 225",
         "ticker": "^N225",
         "region": "Asia",
-        "close": 68402.1328125,
-        "change": 1667.890625,
-        "change_pct": 2.4993025624143717,
-        "date": "2026-06-03"
+        "close": 66661.46875,
+        "change": -1740.6640625,
+        "change_pct": -2.544751151651087,
+        "date": "2026-06-05"
       }
     ],
     "nse_indices": {
@@ -2477,20 +2477,20 @@
             "put_change_oi": 26.0
           },
           {
-            "strike": 57600.0,
-            "expiry": "30-Jun-2026",
-            "call_oi": 784.0,
-            "put_oi": 0,
-            "call_change_oi": -69.0,
-            "put_change_oi": 0
-          },
-          {
             "strike": 47500.0,
             "expiry": "30-Jun-2026",
             "call_oi": 0,
             "put_oi": 2021.0,
             "call_change_oi": 0,
             "put_change_oi": 538.0
+          },
+          {
+            "strike": 57600.0,
+            "expiry": "30-Jun-2026",
+            "call_oi": 784.0,
+            "put_oi": 0,
+            "call_change_oi": -69.0,
+            "put_change_oi": 0
           },
           {
             "strike": 56900.0,
@@ -2989,20 +2989,20 @@
             "put_change_oi": -1.0
           },
           {
-            "strike": 48800.0,
-            "expiry": "30-Jun-2026",
-            "call_oi": 0,
-            "put_oi": 241.0,
-            "call_change_oi": 0,
-            "put_change_oi": -108.0
-          },
-          {
             "strike": 45500.0,
             "expiry": "30-Jun-2026",
             "call_oi": 0,
             "put_oi": 788.0,
             "call_change_oi": 0,
             "put_change_oi": 105.0
+          },
+          {
+            "strike": 48800.0,
+            "expiry": "30-Jun-2026",
+            "call_oi": 0,
+            "put_oi": 241.0,
+            "call_change_oi": 0,
+            "put_change_oi": -108.0
           },
           {
             "strike": 48100.0,
@@ -3309,20 +3309,20 @@
             "put_change_oi": 0
           },
           {
-            "strike": 62200.0,
-            "expiry": "30-Jun-2026",
-            "call_oi": 41.0,
-            "put_oi": 0,
-            "call_change_oi": 0.0,
-            "put_change_oi": 0
-          },
-          {
             "strike": 47100.0,
             "expiry": "30-Jun-2026",
             "call_oi": 0,
             "put_oi": 64.0,
             "call_change_oi": 0,
             "put_change_oi": -3.0
+          },
+          {
+            "strike": 62200.0,
+            "expiry": "30-Jun-2026",
+            "call_oi": 41.0,
+            "put_oi": 0,
+            "call_change_oi": 0.0,
+            "put_change_oi": 0
           },
           {
             "strike": 47900.0,
@@ -3470,6 +3470,31 @@
       "us_avg_change_pct": 0.6680673568814196,
       "europe_avg_change_pct": 0.6746195964626628,
       "asia_avg_change_pct": 0.47174131977714207,
+      "top_sector": "NIFTY MEDIA",
+      "top_sector_change_pct": 2.19,
+      "weak_sector": "NIFTY METAL",
+      "weak_sector_change_pct": -0.73
+    },
+    {
+      "date": "2026-06-05",
+      "generated_at": "2026-06-05 08:36:42 IST",
+      "bias": "Mild Bullish",
+      "score": 3,
+      "confidence": "High",
+      "fii_net": -4447.06,
+      "dii_net": 4360.14,
+      "combined_flow": -86.92000000000007,
+      "gift_nifty_change_pct": null,
+      "india_vix_change_pct": -2.41,
+      "nifty_pcr": 0.9636319800835063,
+      "nifty_support": 22500.0,
+      "nifty_resistance": 24000.0,
+      "banknifty_pcr": 0.9189655638475502,
+      "banknifty_support": 54000.0,
+      "banknifty_resistance": 60000.0,
+      "us_avg_change_pct": 0.6819205215219402,
+      "europe_avg_change_pct": -0.8060984753240267,
+      "asia_avg_change_pct": -2.266576824145061,
       "top_sector": "NIFTY MEDIA",
       "top_sector_change_pct": 2.19,
       "weak_sector": "NIFTY METAL",
