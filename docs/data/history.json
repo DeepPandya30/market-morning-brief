@@ -48,5 +48,30 @@
     "top_sector_change_pct": 3.09,
     "weak_sector": "NIFTY METAL",
     "weak_sector_change_pct": -1.11
+  },
+  {
+    "date": "2026-06-08",
+    "generated_at": "2026-06-08 12:39:52 IST",
+    "bias": "Mild Bearish",
+    "score": -3,
+    "confidence": "High",
+    "fii_net": -8776.25,
+    "dii_net": 9133.57,
+    "combined_flow": 357.3199999999997,
+    "gift_nifty_change_pct": null,
+    "india_vix_change_pct": 7.33,
+    "nifty_pcr": 0.9546627202367858,
+    "nifty_support": 23200.0,
+    "nifty_resistance": 23500.0,
+    "banknifty_pcr": 0.91970303894003,
+    "banknifty_support": 54000.0,
+    "banknifty_resistance": 60000.0,
+    "us_avg_change_pct": -2.724235631781072,
+    "europe_avg_change_pct": -0.32864105599309684,
+    "asia_avg_change_pct": -2.755966499696472,
+    "top_sector": "NIFTY HEALTHCARE INDEX",
+    "top_sector_change_pct": 0.75,
+    "weak_sector": "NIFTY METAL",
+    "weak_sector_change_pct": -1.53
   }
 ]
