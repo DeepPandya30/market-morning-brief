@@ -73,5 +73,30 @@
     "top_sector_change_pct": 0.09,
     "weak_sector": "NIFTY REALTY",
     "weak_sector_change_pct": -2.56
+  },
+  {
+    "date": "2026-06-09",
+    "generated_at": "2026-06-09 11:59:55 IST",
+    "bias": "Mild Bullish",
+    "score": 3,
+    "confidence": "High",
+    "fii_net": -5555.67,
+    "dii_net": 5165.24,
+    "combined_flow": -390.4300000000003,
+    "gift_nifty_change_pct": null,
+    "india_vix_change_pct": -5.82,
+    "nifty_pcr": 0.665519615596581,
+    "nifty_support": 23100.0,
+    "nifty_resistance": 23200.0,
+    "banknifty_pcr": 0.9395818009877062,
+    "banknifty_support": 54000.0,
+    "banknifty_resistance": 60000.0,
+    "us_avg_change_pct": 0.3318800983417896,
+    "europe_avg_change_pct": -0.25275743120777444,
+    "asia_avg_change_pct": 0.9862675285037621,
+    "top_sector": "NIFTY PSU BANK",
+    "top_sector_change_pct": 2.76,
+    "weak_sector": "NIFTY IT",
+    "weak_sector_change_pct": -0.49
   }
 ]
