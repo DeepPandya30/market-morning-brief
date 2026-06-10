@@ -98,5 +98,30 @@
     "top_sector_change_pct": 2.76,
     "weak_sector": "NIFTY IT",
     "weak_sector_change_pct": -0.49
+  },
+  {
+    "date": "2026-06-10",
+    "generated_at": "2026-06-10 12:15:47 IST",
+    "bias": "Mild Bullish",
+    "score": 4,
+    "confidence": "High",
+    "fii_net": -4566.03,
+    "dii_net": 6159.48,
+    "combined_flow": 1593.4499999999998,
+    "gift_nifty_change_pct": null,
+    "india_vix_change_pct": -0.59,
+    "nifty_pcr": 1.210758098034565,
+    "nifty_support": 23300.0,
+    "nifty_resistance": 23400.0,
+    "banknifty_pcr": 0.9907440411393076,
+    "banknifty_support": 54000.0,
+    "banknifty_resistance": 60000.0,
+    "us_avg_change_pct": 0.3318800983417896,
+    "europe_avg_change_pct": -0.25275743120777444,
+    "asia_avg_change_pct": -0.42804147152214,
+    "top_sector": "NIFTY FMCG",
+    "top_sector_change_pct": 1.56,
+    "weak_sector": "NIFTY MEDIA",
+    "weak_sector_change_pct": -1.31
   }
 ]
