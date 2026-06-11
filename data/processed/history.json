@@ -123,5 +123,30 @@
     "top_sector_change_pct": 1.56,
     "weak_sector": "NIFTY MEDIA",
     "weak_sector_change_pct": -1.31
+  },
+  {
+    "date": "2026-06-11",
+    "generated_at": "2026-06-11 12:41:29 IST",
+    "bias": "Neutral / Range-bound",
+    "score": 0,
+    "confidence": "High",
+    "fii_net": -2124.98,
+    "dii_net": 3123.95,
+    "combined_flow": 998.9699999999998,
+    "gift_nifty_change_pct": null,
+    "india_vix_change_pct": -0.41,
+    "nifty_pcr": 1.2335341881061423,
+    "nifty_support": 23200.0,
+    "nifty_resistance": 24000.0,
+    "banknifty_pcr": 0.9907299847110466,
+    "banknifty_support": 54000.0,
+    "banknifty_resistance": 60000.0,
+    "us_avg_change_pct": -0.3518316384232958,
+    "europe_avg_change_pct": -0.7000292644669118,
+    "asia_avg_change_pct": -1.6899552923412933,
+    "top_sector": "NIFTY PRIVATE BANK",
+    "top_sector_change_pct": 1.51,
+    "weak_sector": "NIFTY IT",
+    "weak_sector_change_pct": -1.28
   }
 ]
