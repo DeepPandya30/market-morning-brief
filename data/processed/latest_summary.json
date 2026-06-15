@@ -14,13 +14,13 @@
         "name": "US markets",
         "score": 1,
         "status": "Bullish",
-        "reason": "Average move 1.88% across 3 indices."
+        "reason": "Average move 1.89% across 3 indices."
       },
       {
         "name": "Europe markets",
         "score": 1,
         "status": "Bullish",
-        "reason": "Average move 0.48% across 3 indices."
+        "reason": "Average move 0.45% across 3 indices."
       },
       {
         "name": "Asia markets",
@@ -62,13 +62,13 @@
         "name": "Global commodities",
         "score": 1,
         "status": "Bullish",
-        "reason": "Crude/Brent average down -4.79%, which is supportive for India market sentiment."
+        "reason": "Crude/Brent average down -4.88%, which is supportive for India market sentiment."
       },
       {
         "name": "Crypto risk appetite",
         "score": 1,
         "status": "Bullish",
-        "reason": "Major crypto basket average move 3.53% across 5 coins."
+        "reason": "Major crypto basket average move 3.79% across 5 coins."
       },
       {
         "name": "Currency pressure",
@@ -84,54 +84,54 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26570.140625,
-        "change": 681.30078125,
-        "change_pct": 2.631638904492962,
+        "close": 26583.609375,
+        "change": 694.76953125,
+        "change_pct": 2.6836642176444574,
         "date": "2026-06-15"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 51867.08984375,
-        "change": 664.828125,
-        "change_pct": 1.2984350743173194,
+        "close": 51847.33984375,
+        "change": 645.078125,
+        "change_pct": 1.2598625594770863,
         "date": "2026-06-15"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7557.490234375,
-        "change": 126.0302734375,
-        "change_pct": 1.6959019371693005,
+        "close": 7559.81005859375,
+        "change": 128.35009765625,
+        "change_pct": 1.727118201953661,
         "date": "2026-06-15"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
-        "close": 10430.919921875,
-        "change": -40.7802734375,
-        "change_pct": -0.3894331644039492,
+        "close": 10429.4697265625,
+        "change": -42.23046875,
+        "change_pct": -0.40328187364363083,
         "date": "2026-06-15"
       },
       {
         "name": "CAC 40",
         "ticker": "^FCHI",
         "region": "Europe",
-        "close": 8404.7001953125,
-        "change": 53.830078125,
-        "change_pct": 0.6446044228877253,
+        "close": 8400.9501953125,
+        "change": 50.080078125,
+        "change_pct": 0.599698922653901,
         "date": "2026-06-15"
       },
       {
         "name": "DAX",
         "ticker": "^GDAXI",
         "region": "Europe",
-        "close": 24923.55078125,
-        "change": 288.25,
-        "change_pct": 1.1700689289711776,
+        "close": 24918.7890625,
+        "change": 283.48828125,
+        "change_pct": 1.1507400854052643,
         "date": "2026-06-15"
       },
       {
@@ -158,45 +158,45 @@
         "name": "Gold",
         "ticker": "GC=F",
         "group": "Commodities",
-        "close": 4378.10009765625,
-        "change": 163.10009765625,
-        "change_pct": 3.8695159586298935,
+        "close": 4373.10009765625,
+        "change": 158.10009765625,
+        "change_pct": 3.750891996589561,
         "date": "2026-06-15"
       },
       {
         "name": "Silver",
         "ticker": "SI=F",
         "group": "Commodities",
-        "close": 70.81999969482422,
-        "change": 2.96099853515625,
-        "change_pct": 4.3634572931440685,
+        "close": 70.57499694824219,
+        "change": 2.7159957885742188,
+        "change_pct": 4.002410501421397,
         "date": "2026-06-15"
       },
       {
         "name": "Crude Oil WTI",
         "ticker": "CL=F",
         "group": "Commodities",
-        "close": 80.70999908447266,
-        "change": -4.1699981689453125,
-        "change_pct": -4.912816097879167,
+        "close": 80.61000061035156,
+        "change": -4.269996643066406,
+        "change_pct": -5.030627687602171,
         "date": "2026-06-15"
       },
       {
         "name": "Copper",
         "ticker": "HG=F",
         "group": "Commodities",
-        "close": 6.491000175476074,
-        "change": 0.060500144958496094,
-        "change_pct": 0.9408311122210905,
+        "close": 6.490499973297119,
+        "change": 0.059999942779541016,
+        "change_pct": 0.9330525230510222,
         "date": "2026-06-15"
       },
       {
         "name": "Brent Oil",
         "ticker": "BZ=F",
         "group": "Commodities",
-        "close": 83.26000213623047,
-        "change": -4.069999694824219,
-        "change_pct": -4.660482777382606,
+        "close": 83.19999694824219,
+        "change": -4.1300048828125,
+        "change_pct": -4.729193629014518,
         "date": "2026-06-15"
       }
     ],
@@ -205,45 +205,45 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 66554.0,
-        "change": 843.6015625,
-        "change_pct": 1.2838174513618053,
+        "close": 66630.359375,
+        "change": 919.9609375,
+        "change_pct": 1.4000233743446475,
         "date": "2026-06-15"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 1813.9200439453125,
-        "change": 89.3067626953125,
-        "change_pct": 5.178364545040668,
+        "close": 1815.6800537109375,
+        "change": 91.0667724609375,
+        "change_pct": 5.280416975272989,
         "date": "2026-06-15"
       },
       {
         "name": "Solana",
         "ticker": "SOL-USD",
         "group": "Crypto",
-        "close": 73.81999969482422,
-        "change": 2.6538162231445312,
-        "change_pct": 3.729041089017521,
+        "close": 73.9000015258789,
+        "change": 2.7338180541992188,
+        "change_pct": 3.841456603173235,
         "date": "2026-06-15"
       },
       {
         "name": "Cardano",
         "ticker": "ADA-USD",
         "group": "Crypto",
-        "close": 0.18709999322891235,
-        "change": 0.004314988851547241,
-        "change_pct": 2.3606908379851648,
+        "close": 0.18729999661445618,
+        "change": 0.0045149922370910645,
+        "change_pct": 2.470110856451729,
         "date": "2026-06-15"
       },
       {
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.246000051498413,
-        "change": 0.06017100811004639,
-        "change_pct": 5.074172238024701,
+        "close": 1.2562999725341797,
+        "change": 0.07047092914581299,
+        "change_pct": 5.942756212518679,
         "date": "2026-06-15"
       }
     ],
@@ -252,9 +252,9 @@
         "name": "GBP/USD",
         "ticker": "GBPUSD=X",
         "group": "Currency",
-        "close": 1.343706727027893,
-        "change": 0.0023251771926879883,
-        "change_pct": 0.17334196917898917,
+        "close": 1.3438512086868286,
+        "change": 0.002469658851623535,
+        "change_pct": 0.18411307744071356,
         "date": "2026-06-15"
       },
       {
@@ -270,27 +270,27 @@
         "name": "USD/CHF",
         "ticker": "CHF=X",
         "group": "Currency",
-        "close": 0.7930399775505066,
-        "change": -0.002010047435760498,
-        "change_pct": -0.25282024685116106,
+        "close": 0.7931200265884399,
+        "change": -0.0019299983978271484,
+        "change_pct": -0.2427518190267946,
         "date": "2026-06-15"
       },
       {
         "name": "USD/JPY",
         "ticker": "JPY=X",
         "group": "Currency",
-        "close": 160.1439971923828,
-        "change": 0.0139923095703125,
-        "change_pct": 0.008738093513799899,
+        "close": 160.14700317382812,
+        "change": 0.016998291015625,
+        "change_pct": 0.010615306624180029,
         "date": "2026-06-15"
       },
       {
         "name": "DXY",
         "ticker": "DX-Y.NYB",
         "group": "Currency",
-        "close": 99.5270004272461,
-        "change": -0.22299957275390625,
-        "change_pct": -0.2235584689262218,
+        "close": 99.5250015258789,
+        "change": -0.22499847412109375,
+        "change_pct": -0.2255623800712719,
         "date": "2026-06-15"
       },
       {
@@ -3652,7 +3652,7 @@
   "history": [
     {
       "date": "2026-06-15",
-      "generated_at": "2026-06-15 20:46:45 IST",
+      "generated_at": "2026-06-15 20:53:44 IST",
       "bias": "Bullish",
       "score": 12,
       "confidence": "High",
@@ -3667,19 +3667,19 @@
       "banknifty_pcr": 1.037410149768094,
       "banknifty_support": 54000.0,
       "banknifty_resistance": 60000.0,
-      "us_avg_change_pct": 1.8753253053265275,
-      "europe_avg_change_pct": 0.47508006248498463,
+      "us_avg_change_pct": 1.890214993025068,
+      "europe_avg_change_pct": 0.44905237813851145,
       "asia_avg_change_pct": 1.655630516817499,
       "top_sector": "NIFTY REALTY",
       "top_sector_change_pct": 3.96,
       "weak_sector": "NIFTY PHARMA",
       "weak_sector_change_pct": -0.66,
-      "gold_change_pct": 3.8695159586298935,
-      "crude_oil_change_pct": -4.912816097879167,
-      "brent_oil_change_pct": -4.660482777382606,
-      "bitcoin_change_pct": 1.2838174513618053,
-      "ethereum_change_pct": 5.178364545040668,
-      "dxy_change_pct": -0.2235584689262218,
+      "gold_change_pct": 3.750891996589561,
+      "crude_oil_change_pct": -5.030627687602171,
+      "brent_oil_change_pct": -4.729193629014518,
+      "bitcoin_change_pct": 1.4000233743446475,
+      "ethereum_change_pct": 5.280416975272989,
+      "dxy_change_pct": -0.2255623800712719,
       "usdinr_change_pct": -1.1070418217215707
     }
   ]

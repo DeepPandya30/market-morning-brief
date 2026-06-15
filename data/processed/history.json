@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-06-15",
-    "generated_at": "2026-06-15 20:46:45 IST",
+    "generated_at": "2026-06-15 20:53:44 IST",
     "bias": "Bullish",
     "score": 12,
     "confidence": "High",
@@ -16,19 +16,19 @@
     "banknifty_pcr": 1.037410149768094,
     "banknifty_support": 54000.0,
     "banknifty_resistance": 60000.0,
-    "us_avg_change_pct": 1.8753253053265275,
-    "europe_avg_change_pct": 0.47508006248498463,
+    "us_avg_change_pct": 1.890214993025068,
+    "europe_avg_change_pct": 0.44905237813851145,
     "asia_avg_change_pct": 1.655630516817499,
     "top_sector": "NIFTY REALTY",
     "top_sector_change_pct": 3.96,
     "weak_sector": "NIFTY PHARMA",
     "weak_sector_change_pct": -0.66,
-    "gold_change_pct": 3.8695159586298935,
-    "crude_oil_change_pct": -4.912816097879167,
-    "brent_oil_change_pct": -4.660482777382606,
-    "bitcoin_change_pct": 1.2838174513618053,
-    "ethereum_change_pct": 5.178364545040668,
-    "dxy_change_pct": -0.2235584689262218,
+    "gold_change_pct": 3.750891996589561,
+    "crude_oil_change_pct": -5.030627687602171,
+    "brent_oil_change_pct": -4.729193629014518,
+    "bitcoin_change_pct": 1.4000233743446475,
+    "ethereum_change_pct": 5.280416975272989,
+    "dxy_change_pct": -0.2255623800712719,
     "usdinr_change_pct": -1.1070418217215707
   }
 ]
