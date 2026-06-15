@@ -173,5 +173,30 @@
     "top_sector_change_pct": 1.42,
     "weak_sector": "NIFTY IT",
     "weak_sector_change_pct": 0.11
+  },
+  {
+    "date": "2026-06-15",
+    "generated_at": "2026-06-15 13:12:23 IST",
+    "bias": "Bullish",
+    "score": 8,
+    "confidence": "High",
+    "fii_net": -1082.18,
+    "dii_net": 5341.29,
+    "combined_flow": 4259.11,
+    "gift_nifty_change_pct": null,
+    "india_vix_change_pct": -4.05,
+    "nifty_pcr": 1.0578397316714352,
+    "nifty_support": 23900.0,
+    "nifty_resistance": 24000.0,
+    "banknifty_pcr": 1.025487518232578,
+    "banknifty_support": 54000.0,
+    "banknifty_resistance": 60000.0,
+    "us_avg_change_pct": 0.5015188590035952,
+    "europe_avg_change_pct": 1.2620027045704518,
+    "asia_avg_change_pct": 2.8524239670281357,
+    "top_sector": "NIFTY REALTY",
+    "top_sector_change_pct": 4.27,
+    "weak_sector": "NIFTY PHARMA",
+    "weak_sector_change_pct": -0.58
   }
 ]
