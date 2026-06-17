@@ -67,7 +67,7 @@ Folder: /docs
 Dashboard URL:
 
 ```text
-https://YOUR_USERNAME.github.io/market-morning-brief/
+https://DeepPandya30.github.io/market-morning-brief/
 ```
 
 ## GitHub Action
