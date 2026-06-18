@@ -1,11 +1,11 @@
-# Morning Market Brief - 17 June 2026
+# Morning Market Brief - 18 June 2026
 
-Generated at: **17 Jun 2026, 08:42 PM IST**
+Generated at: **18 Jun 2026, 08:39 AM IST**
 
 ## Final View
 
 - **Market Bias:** Mild Bullish
-- **Score:** 2
+- **Score:** 3
 - **Confidence:** High
 - **Meeting View:** Market setup is Mild Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,000.
 
@@ -18,45 +18,45 @@ Generated at: **17 Jun 2026, 08:42 PM IST**
 
 | Region | Index | Close | Change % | Date |
 |---|---:|---:|---:|---:|
-| US | Nasdaq | 26,298 | -0.30% | 2026-06-17 |
-| US | Dow Jones | 52,083 | 0.16% | 2026-06-17 |
-| US | S&P 500 | 7,503 | -0.11% | 2026-06-17 |
-| Europe | FTSE 100 | 10,492 | -0.02% | 2026-06-17 |
-| Europe | CAC 40 | 8,427 | -0.24% | 2026-06-17 |
-| Europe | DAX | 24,890 | -0.08% | 2026-06-17 |
-| Asia | Hang Seng | 24,312 | -0.74% | 2026-06-17 |
-| Asia | Nikkei 225 | 69,404 | 0.13% | 2026-06-16 |
+| US | Nasdaq | 26,022 | -1.34% | 2026-06-17 |
+| US | Dow Jones | 51,493 | -0.98% | 2026-06-17 |
+| US | S&P 500 | 7,420 | -1.21% | 2026-06-17 |
+| Europe | FTSE 100 | 10,509 | 0.14% | 2026-06-17 |
+| Europe | CAC 40 | 8,431 | -0.20% | 2026-06-17 |
+| Europe | DAX | 24,935 | 0.10% | 2026-06-17 |
+| Asia | Hang Seng | 23,891 | -1.73% | 2026-06-18 |
+| Asia | Nikkei 225 | 71,052 | 1.65% | 2026-06-18 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,365 | 34.30 | 0.79% | 2026-06-17 |
-| Silver | SI=F | 70.32 | 0.43 | 0.61% | 2026-06-17 |
-| Crude Oil WTI | CL=F | 76.83 | 0.78 | 1.03% | 2026-06-17 |
-| Copper | HG=F | 6.48 | -0.00 | -0.08% | 2026-06-17 |
-| Brent Oil | BZ=F | 80.48 | 1.52 | 1.93% | 2026-06-17 |
+| Gold | GC=F | 4,331 | 0.20 | 0.00% | 2026-06-17 |
+| Silver | SI=F | 68.92 | -0.98 | -1.41% | 2026-06-17 |
+| Crude Oil WTI | CL=F | 74.83 | -1.22 | -1.60% | 2026-06-17 |
+| Copper | HG=F | 6.38 | -0.11 | -1.70% | 2026-06-17 |
+| Brent Oil | BZ=F | 78.57 | -0.39 | -0.49% | 2026-06-17 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 65,033 | -567.75 | -0.87% | 2026-06-17 |
-| Ethereum | ETH-USD | 1,752 | -37.90 | -2.12% | 2026-06-17 |
-| Solana | SOL-USD | 72.49 | -0.92 | -1.26% | 2026-06-17 |
-| Cardano | ADA-USD | 0.17 | -0.00 | -2.47% | 2026-06-17 |
-| Ripple | XRP-USD | 1.19 | -0.02 | -1.78% | 2026-06-17 |
+| Bitcoin | BTC-USD | 64,520 | -1,081 | -1.65% | 2026-06-18 |
+| Ethereum | ETH-USD | 1,752 | -38.90 | -2.17% | 2026-06-18 |
+| Solana | SOL-USD | 72.35 | -1.06 | -1.45% | 2026-06-18 |
+| Cardano | ADA-USD | 0.17 | -0.00 | -2.12% | 2026-06-18 |
+| Ripple | XRP-USD | 1.19 | -0.03 | -2.45% | 2026-06-18 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.34 | -0.00 | -0.18% | 2026-06-17 |
-| EUR/USD | EURUSD=X | 1.16 | -0.00 | -0.02% | 2026-06-17 |
-| USD/CHF | CHF=X | 0.79 | -0.00 | -0.13% | 2026-06-17 |
-| USD/JPY | JPY=X | 160.29 | 0.06 | 0.04% | 2026-06-17 |
-| DXY | DX-Y.NYB | 99.71 | 0.17 | 0.17% | 2026-06-17 |
-| USD/INR | INR=X | 94.51 | -0.23 | -0.24% | 2026-06-17 |
+| GBP/USD | GBPUSD=X | 1.33 | -0.01 | -0.84% | 2026-06-18 |
+| EUR/USD | EURUSD=X | 1.15 | -0.01 | -0.77% | 2026-06-18 |
+| USD/CHF | CHF=X | 0.80 | 0.01 | 0.72% | 2026-06-18 |
+| USD/JPY | JPY=X | 160.60 | 0.18 | 0.11% | 2026-06-18 |
+| DXY | DX-Y.NYB | 100.26 | 0.72 | 0.73% | 2026-06-17 |
+| USD/INR | INR=X | 94.51 | -0.37 | -0.39% | 2026-06-18 |
 
 ## FII / DII Flow
 
@@ -88,17 +88,17 @@ Generated at: **17 Jun 2026, 08:42 PM IST**
 | Signal | Score | Status | Reason |
 |---|---:|---|---|
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
-| US markets | 0 | Neutral | Average move -0.08% across 3 indices. |
-| Europe markets | 0 | Neutral | Average move -0.11% across 3 indices. |
-| Asia markets | 0 | Neutral | Average move -0.31% across 2 indices. |
+| US markets | -1 | Bearish | Average move -1.18% across 3 indices. |
+| Europe markets | 0 | Neutral | Average move 0.01% across 3 indices. |
+| Asia markets | 0 | Neutral | Average move -0.04% across 2 indices. |
 | FII/DII flow | 2 | Bullish | FII net 101.59 Cr, DII net 1561.40 Cr, combined 1662.99 Cr. |
 | Nifty OI | 1 | Bullish | PCR 1.07, support 24000.0, resistance 25000.0. |
 | Bank Nifty OI | 1 | Bullish | PCR 1.09, support 54000.0, resistance 60000.0. |
 | India VIX | 1 | Bullish | India VIX change -1.30%. |
 | Sector breadth | -1 | Bearish | 6 sectors positive and 8 sectors negative. |
-| Global commodities | -1 | Bearish | Crude/Brent average up 1.48%, which can pressure India inflation and import costs. |
-| Crypto risk appetite | -1 | Bearish | Major crypto basket average move -1.70% across 5 coins. |
-| Currency pressure | 0 | Neutral | DXY/USDINR pressure average -0.03%; rising dollar/rupee pressure is usually negative for India. |
+| Global commodities | 1 | Bullish | Crude/Brent average down -1.05%, which is supportive for India market sentiment. |
+| Crypto risk appetite | -1 | Bearish | Major crypto basket average move -1.97% across 5 coins. |
+| Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.17%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
