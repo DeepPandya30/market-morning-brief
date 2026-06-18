@@ -1,39 +1,124 @@
-name: Generate Morning Market Report
+name: Morning Market Report
 
 on:
   schedule:
+    # GitHub Actions cron is UTC.
+    # 02:05 UTC = 07:35 AM IST
+    # 02:20 UTC = 07:50 AM IST
+    - cron: "5 2 * * 1-5"
     - cron: "20 2 * * 1-5"
+
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: morning-market-report
+  cancel-in-progress: false
 
 jobs:
   generate-report:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync with remote main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
 
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install --upgrade -r requirements.txt
 
-      - name: Generate report
+      - name: Generate morning report
         run: |
           python scripts/generate_report.py
 
-      - name: Commit updated report
+      - name: Force build timestamp
+        run: |
+          python - <<'PY'
+          from datetime import datetime, timezone, timedelta
+          from pathlib import Path
+          import json
+          import re
+
+          ist = timezone(timedelta(hours=5, minutes=30))
+          now = datetime.now(ist)
+          ts = now.strftime("%d %b %Y, %I:%M:%S %p IST")
+
+          Path("docs").mkdir(exist_ok=True)
+          Path("docs/.nojekyll").write_text("", encoding="utf-8")
+
+          Path("docs/build_info.json").write_text(
+              json.dumps(
+                  {
+                      "generated_at": ts,
+                      "generated_at_iso": now.isoformat(),
+                      "source": "github-actions"
+                  },
+                  indent=2
+              ),
+              encoding="utf-8"
+          )
+
+          for file_name in ["docs/index.html", "dashboard/index.html"]:
+              path = Path(file_name)
+              if not path.exists():
+                  continue
+
+              html = path.read_text(encoding="utf-8")
+
+              meta_tag = f'<meta name="dashboard-build-time" content="{ts}">'
+              if 'name="dashboard-build-time"' in html:
+                  html = re.sub(
+                      r'<meta name="dashboard-build-time" content="[^"]*">',
+                      meta_tag,
+                      html
+                  )
+              else:
+                  html = html.replace("</head>", f"  {meta_tag}\n</head>", 1)
+
+              path.write_text(html, encoding="utf-8")
+
+          print(f"Forced dashboard build timestamp: {ts}")
+          PY
+
+      - name: Show generated date
+        run: |
+          echo "Latest docs build info:"
+          cat docs/build_info.json || true
+
+          echo ""
+          echo "Generated report files:"
+          ls -la docs || true
+          ls -la reports || true
+          ls -la data/processed || true
+          ls -la data/raw || true
+
+      - name: Commit and push updated dashboard
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add data/raw/ data/processed/ reports/ dashboard/ docs/
-          git commit -m "Update morning market report" || echo "No changes to commit"
-          git push
+
+          git add docs/ dashboard/ reports/ data/processed/ data/raw/
+
+          if git diff --cached --quiet; then
+            echo "No generated dashboard changes found"
+          else
+            git commit -m "Update morning market report"
+            git push origin main
+          fi
