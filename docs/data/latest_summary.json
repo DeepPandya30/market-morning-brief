@@ -26,7 +26,7 @@
         "name": "Asia markets",
         "score": 0,
         "status": "Neutral",
-        "reason": "Average move -0.04% across 2 indices."
+        "reason": "Average move -0.07% across 2 indices."
       },
       {
         "name": "FII/DII flow",
@@ -62,13 +62,13 @@
         "name": "Global commodities",
         "score": 1,
         "status": "Bullish",
-        "reason": "Crude/Brent average down -1.05%, which is supportive for India market sentiment."
+        "reason": "Crude/Brent average down -1.28%, which is supportive for India market sentiment."
       },
       {
         "name": "Crypto risk appetite",
         "score": -1,
         "status": "Bearish",
-        "reason": "Major crypto basket average move -1.97% across 5 coins."
+        "reason": "Major crypto basket average move -2.16% across 5 coins."
       },
       {
         "name": "Currency pressure",
@@ -138,9 +138,9 @@
         "name": "Hang Seng",
         "ticker": "^HSI",
         "region": "Asia",
-        "close": 23891.490234375,
-        "change": -420.669921875,
-        "change_pct": -1.7302860756569056,
+        "close": 23879.16015625,
+        "change": -433.0,
+        "change_pct": -1.7810017588613465,
         "date": "2026-06-18"
       },
       {
@@ -158,45 +158,45 @@
         "name": "Gold",
         "ticker": "GC=F",
         "group": "Commodities",
-        "close": 4331.10009765625,
-        "change": 0.2001953125,
-        "change_pct": 0.004622487635691151,
+        "close": 4333.5,
+        "change": 2.60009765625,
+        "change_pct": 0.060035967463549715,
         "date": "2026-06-17"
       },
       {
         "name": "Silver",
         "ticker": "SI=F",
         "group": "Commodities",
-        "close": 68.91500091552734,
-        "change": -0.9840011596679688,
-        "change_pct": -1.4077470785769,
+        "close": 68.93499755859375,
+        "change": -0.9640045166015625,
+        "change_pct": -1.3791391693468162,
         "date": "2026-06-17"
       },
       {
         "name": "Crude Oil WTI",
         "ticker": "CL=F",
         "group": "Commodities",
-        "close": 74.83000183105469,
-        "change": -1.220001220703125,
-        "change_pct": -1.6042092988120216,
+        "close": 74.69999694824219,
+        "change": -1.350006103515625,
+        "change_pct": -1.7751558834216523,
         "date": "2026-06-17"
       },
       {
         "name": "Copper",
         "ticker": "HG=F",
         "group": "Commodities",
-        "close": 6.378499984741211,
-        "change": -0.11049985885620117,
-        "change_pct": -1.7028796658891823,
+        "close": 6.374499797821045,
+        "change": -0.11450004577636719,
+        "change_pct": -1.764525328034065,
         "date": "2026-06-17"
       },
       {
         "name": "Brent Oil",
         "ticker": "BZ=F",
         "group": "Commodities",
-        "close": 78.56999969482422,
-        "change": -0.3899993896484375,
-        "change_pct": -0.49392020538299397,
+        "close": 78.33999633789062,
+        "change": -0.6200027465820312,
+        "change_pct": -0.7852111876530578,
         "date": "2026-06-17"
       }
     ],
@@ -205,45 +205,45 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 64520.0,
-        "change": -1080.640625,
-        "change_pct": -1.6473019389816361,
+        "close": 64434.71875,
+        "change": -1165.921875,
+        "change_pct": -1.7773025749319806,
         "date": "2026-06-18"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 1751.5,
-        "change": -38.898193359375,
-        "change_pct": -2.172600123461319,
+        "close": 1750.300048828125,
+        "change": -40.09814453125,
+        "change_pct": -2.239621592558285,
         "date": "2026-06-18"
       },
       {
         "name": "Solana",
         "ticker": "SOL-USD",
         "group": "Crypto",
-        "close": 72.3499984741211,
-        "change": -1.0637893676757812,
-        "change_pct": -1.4490321218245752,
+        "close": 72.18000030517578,
+        "change": -1.2337875366210938,
+        "change_pct": -1.6805937588724416,
         "date": "2026-06-18"
       },
       {
         "name": "Cardano",
         "ticker": "ADA-USD",
         "group": "Crypto",
-        "close": 0.16850000619888306,
-        "change": -0.0036479979753494263,
-        "change_pct": -2.1191055875717595,
+        "close": 0.1678999960422516,
+        "change": -0.004248008131980896,
+        "change_pct": -2.4676487841714683,
         "date": "2026-06-18"
       },
       {
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.1862000226974487,
-        "change": -0.029788970947265625,
-        "change_pct": -2.4497730738481764,
+        "close": 1.184000015258789,
+        "change": -0.03198897838592529,
+        "change_pct": -2.6306963757989226,
         "date": "2026-06-18"
       }
     ],
@@ -252,45 +252,45 @@
         "name": "GBP/USD",
         "ticker": "GBPUSD=X",
         "group": "Currency",
-        "close": 1.3313274383544922,
-        "change": -0.011314988136291504,
-        "change_pct": -0.8427402496035435,
+        "close": 1.3314337730407715,
+        "change": -0.011208653450012207,
+        "change_pct": -0.8348204427971089,
         "date": "2026-06-18"
       },
       {
         "name": "EUR/USD",
         "ticker": "EURUSD=X",
         "group": "Currency",
-        "close": 1.1520737409591675,
-        "change": -0.008921504020690918,
-        "change_pct": -0.7684358794118656,
+        "close": 1.152339220046997,
+        "change": -0.008656024932861328,
+        "change_pct": -0.7455693699254985,
         "date": "2026-06-18"
       },
       {
         "name": "USD/CHF",
         "ticker": "CHF=X",
         "group": "Currency",
-        "close": 0.798799991607666,
-        "change": 0.00568997859954834,
-        "change_pct": 0.7174261459601698,
+        "close": 0.7986999750137329,
+        "change": 0.005589962005615234,
+        "change_pct": 0.7048154624115204,
         "date": "2026-06-18"
       },
       {
         "name": "USD/JPY",
         "ticker": "JPY=X",
         "group": "Currency",
-        "close": 160.59800720214844,
-        "change": 0.1790008544921875,
-        "change_pct": 0.111583320809419,
+        "close": 160.56700134277344,
+        "change": 0.1479949951171875,
+        "change_pct": 0.09225527478736295,
         "date": "2026-06-18"
       },
       {
         "name": "DXY",
         "ticker": "DX-Y.NYB",
         "group": "Currency",
-        "close": 100.26399993896484,
-        "change": 0.7239990234375,
-        "change_pct": 0.7273448028716691,
+        "close": 100.26599884033203,
+        "change": 0.7259979248046875,
+        "change_pct": 0.7293529416588929,
         "date": "2026-06-17"
       },
       {
@@ -3716,7 +3716,7 @@
     },
     {
       "date": "2026-06-18",
-      "generated_at": "2026-06-18 08:39:47 IST",
+      "generated_at": "2026-06-18 08:49:18 IST",
       "bias": "Mild Bullish",
       "score": 3,
       "confidence": "High",
@@ -3733,17 +3733,17 @@
       "banknifty_resistance": 60000.0,
       "us_avg_change_pct": -1.1782569486925552,
       "europe_avg_change_pct": 0.013171504959731864,
-      "asia_avg_change_pct": -0.04253226707357727,
+      "asia_avg_change_pct": -0.0678901086757977,
       "top_sector": "NIFTY CONSUMER DURABLES",
       "top_sector_change_pct": 2.11,
       "weak_sector": "NIFTY AUTO",
       "weak_sector_change_pct": -0.62,
-      "gold_change_pct": 0.004622487635691151,
-      "crude_oil_change_pct": -1.6042092988120216,
-      "brent_oil_change_pct": -0.49392020538299397,
-      "bitcoin_change_pct": -1.6473019389816361,
-      "ethereum_change_pct": -2.172600123461319,
-      "dxy_change_pct": 0.7273448028716691,
+      "gold_change_pct": 0.060035967463549715,
+      "crude_oil_change_pct": -1.7751558834216523,
+      "brent_oil_change_pct": -0.7852111876530578,
+      "bitcoin_change_pct": -1.7773025749319806,
+      "ethereum_change_pct": -2.239621592558285,
+      "dxy_change_pct": 0.7293529416588929,
       "usdinr_change_pct": -0.3937288653856374
     }
   ]

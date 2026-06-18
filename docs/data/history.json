@@ -97,7 +97,7 @@
   },
   {
     "date": "2026-06-18",
-    "generated_at": "2026-06-18 08:39:47 IST",
+    "generated_at": "2026-06-18 08:49:18 IST",
     "bias": "Mild Bullish",
     "score": 3,
     "confidence": "High",
@@ -114,17 +114,17 @@
     "banknifty_resistance": 60000.0,
     "us_avg_change_pct": -1.1782569486925552,
     "europe_avg_change_pct": 0.013171504959731864,
-    "asia_avg_change_pct": -0.04253226707357727,
+    "asia_avg_change_pct": -0.0678901086757977,
     "top_sector": "NIFTY CONSUMER DURABLES",
     "top_sector_change_pct": 2.11,
     "weak_sector": "NIFTY AUTO",
     "weak_sector_change_pct": -0.62,
-    "gold_change_pct": 0.004622487635691151,
-    "crude_oil_change_pct": -1.6042092988120216,
-    "brent_oil_change_pct": -0.49392020538299397,
-    "bitcoin_change_pct": -1.6473019389816361,
-    "ethereum_change_pct": -2.172600123461319,
-    "dxy_change_pct": 0.7273448028716691,
+    "gold_change_pct": 0.060035967463549715,
+    "crude_oil_change_pct": -1.7751558834216523,
+    "brent_oil_change_pct": -0.7852111876530578,
+    "bitcoin_change_pct": -1.7773025749319806,
+    "ethereum_change_pct": -2.239621592558285,
+    "dxy_change_pct": 0.7293529416588929,
     "usdinr_change_pct": -0.3937288653856374
   }
 ]

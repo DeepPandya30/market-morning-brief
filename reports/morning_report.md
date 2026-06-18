@@ -1,6 +1,6 @@
 # Morning Market Brief - 18 June 2026
 
-Generated at: **18 Jun 2026, 08:39 AM IST**
+Generated at: **18 Jun 2026, 08:49 AM IST**
 
 ## Final View
 
@@ -24,38 +24,38 @@ Generated at: **18 Jun 2026, 08:39 AM IST**
 | Europe | FTSE 100 | 10,509 | 0.14% | 2026-06-17 |
 | Europe | CAC 40 | 8,431 | -0.20% | 2026-06-17 |
 | Europe | DAX | 24,935 | 0.10% | 2026-06-17 |
-| Asia | Hang Seng | 23,891 | -1.73% | 2026-06-18 |
+| Asia | Hang Seng | 23,879 | -1.78% | 2026-06-18 |
 | Asia | Nikkei 225 | 71,052 | 1.65% | 2026-06-18 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,331 | 0.20 | 0.00% | 2026-06-17 |
-| Silver | SI=F | 68.92 | -0.98 | -1.41% | 2026-06-17 |
-| Crude Oil WTI | CL=F | 74.83 | -1.22 | -1.60% | 2026-06-17 |
-| Copper | HG=F | 6.38 | -0.11 | -1.70% | 2026-06-17 |
-| Brent Oil | BZ=F | 78.57 | -0.39 | -0.49% | 2026-06-17 |
+| Gold | GC=F | 4,334 | 2.60 | 0.06% | 2026-06-17 |
+| Silver | SI=F | 68.93 | -0.96 | -1.38% | 2026-06-17 |
+| Crude Oil WTI | CL=F | 74.70 | -1.35 | -1.78% | 2026-06-17 |
+| Copper | HG=F | 6.37 | -0.11 | -1.76% | 2026-06-17 |
+| Brent Oil | BZ=F | 78.34 | -0.62 | -0.79% | 2026-06-17 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 64,520 | -1,081 | -1.65% | 2026-06-18 |
-| Ethereum | ETH-USD | 1,752 | -38.90 | -2.17% | 2026-06-18 |
-| Solana | SOL-USD | 72.35 | -1.06 | -1.45% | 2026-06-18 |
-| Cardano | ADA-USD | 0.17 | -0.00 | -2.12% | 2026-06-18 |
-| Ripple | XRP-USD | 1.19 | -0.03 | -2.45% | 2026-06-18 |
+| Bitcoin | BTC-USD | 64,435 | -1,166 | -1.78% | 2026-06-18 |
+| Ethereum | ETH-USD | 1,750 | -40.10 | -2.24% | 2026-06-18 |
+| Solana | SOL-USD | 72.18 | -1.23 | -1.68% | 2026-06-18 |
+| Cardano | ADA-USD | 0.17 | -0.00 | -2.47% | 2026-06-18 |
+| Ripple | XRP-USD | 1.18 | -0.03 | -2.63% | 2026-06-18 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.33 | -0.01 | -0.84% | 2026-06-18 |
-| EUR/USD | EURUSD=X | 1.15 | -0.01 | -0.77% | 2026-06-18 |
-| USD/CHF | CHF=X | 0.80 | 0.01 | 0.72% | 2026-06-18 |
-| USD/JPY | JPY=X | 160.60 | 0.18 | 0.11% | 2026-06-18 |
-| DXY | DX-Y.NYB | 100.26 | 0.72 | 0.73% | 2026-06-17 |
+| GBP/USD | GBPUSD=X | 1.33 | -0.01 | -0.83% | 2026-06-18 |
+| EUR/USD | EURUSD=X | 1.15 | -0.01 | -0.75% | 2026-06-18 |
+| USD/CHF | CHF=X | 0.80 | 0.01 | 0.70% | 2026-06-18 |
+| USD/JPY | JPY=X | 160.57 | 0.15 | 0.09% | 2026-06-18 |
+| DXY | DX-Y.NYB | 100.27 | 0.73 | 0.73% | 2026-06-17 |
 | USD/INR | INR=X | 94.51 | -0.37 | -0.39% | 2026-06-18 |
 
 ## FII / DII Flow
@@ -90,14 +90,14 @@ Generated at: **18 Jun 2026, 08:39 AM IST**
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
 | US markets | -1 | Bearish | Average move -1.18% across 3 indices. |
 | Europe markets | 0 | Neutral | Average move 0.01% across 3 indices. |
-| Asia markets | 0 | Neutral | Average move -0.04% across 2 indices. |
+| Asia markets | 0 | Neutral | Average move -0.07% across 2 indices. |
 | FII/DII flow | 2 | Bullish | FII net 101.59 Cr, DII net 1561.40 Cr, combined 1662.99 Cr. |
 | Nifty OI | 1 | Bullish | PCR 1.07, support 24000.0, resistance 25000.0. |
 | Bank Nifty OI | 1 | Bullish | PCR 1.09, support 54000.0, resistance 60000.0. |
 | India VIX | 1 | Bullish | India VIX change -1.30%. |
 | Sector breadth | -1 | Bearish | 6 sectors positive and 8 sectors negative. |
-| Global commodities | 1 | Bullish | Crude/Brent average down -1.05%, which is supportive for India market sentiment. |
-| Crypto risk appetite | -1 | Bearish | Major crypto basket average move -1.97% across 5 coins. |
+| Global commodities | 1 | Bullish | Crude/Brent average down -1.28%, which is supportive for India market sentiment. |
+| Crypto risk appetite | -1 | Bearish | Major crypto basket average move -2.16% across 5 coins. |
 | Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.17%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
