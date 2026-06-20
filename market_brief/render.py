@@ -123,6 +123,22 @@ def render_markdown(context: dict[str, Any]) -> str:
     lines.append("- Avoid aggressive trades in the first 5–10 minutes if opening gap is large.")
     lines.append("- Confirm direction with Nifty/Bank Nifty holding above support or rejecting near resistance.")
     lines.append("")
+    lines.append("## Important Market News")
+    lines.append("")
+    news_rows = data.get("market_news", [])[:10]
+    if news_rows:
+        for item in news_rows:
+            title = item.get("title") or "Untitled"
+            source = item.get("source") or "News"
+            link = item.get("link") or ""
+            if link:
+                lines.append(f"- **{title}** — {source}  ")
+                lines.append(f"  {link}")
+            else:
+                lines.append(f"- **{title}** — {source}")
+    else:
+        lines.append("- No market news available.")
+    lines.append("")
     if context["warnings"]:
         lines.append("## Fetch Warnings")
         lines.append("")
@@ -135,9 +151,11 @@ def render_markdown(context: dict[str, Any]) -> str:
 
 
 def render_html(context: dict[str, Any]) -> str:
+    
     markdown = render_markdown(context)
     payload = _dashboard_payload(context, markdown)
     payload_json = json.dumps(payload, ensure_ascii=False, default=str).replace("</", "<\\/")
+    
 
     return """<!doctype html>
 <html lang="en">
@@ -215,6 +233,144 @@ def render_html(context: dict[str, Any]) -> str:
       body { background: white; }
       .card { box-shadow: none; border: 1px solid #ddd; }
     }
+    .heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.heatmap-cell {
+  border-radius: 14px;
+  padding: 14px;
+  min-height: 92px;
+  border: 1px solid rgba(15,23,42,.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.heatmap-cell:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15,23,42,.18);
+}
+
+.heatmap-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 4px 0 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.heatmap-legend .swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heatmap-legend .box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(15,23,42,.12);
+}
+
+.heatmap-cell strong {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.heat-value {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.heat-strong-up {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.heat-up {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.heat-flat {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.heat-down {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.heat-strong-down {
+  background: #fecaca;
+  color: #7f1d1d;
+}
+
+.pcr-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.pcr-mini-card {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.news-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.news-card a {
+  color: var(--brand);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.news-meta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.meeting-mode {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+}
+
+.meeting-mode .muted {
+  color: #cbd5e1;
+}
+
+.big-plan {
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 800;
+}
+
+
   </style>
 </head>
 <body>
@@ -237,8 +393,17 @@ def render_html(context: dict[str, Any]) -> str:
     <button class="tab-btn" data-tab="sectors">Sectors</button>
     <button class="tab-btn" data-tab="signals">Signals</button>
     <button class="tab-btn" data-tab="history">History</button>
+    <button class="tab-btn" data-tab="news">News</button>
     <button class="tab-btn" data-tab="report">Full Report</button>
+    
   </nav>
+
+  <div class="card meeting-mode">
+  <h2>Meeting Mode</h2>
+  <div id="todayPlan" class="big-plan"></div>
+  <p id="topSignals" class="summary"></p>
+  <p id="mainRisk" class="summary muted"></p>
+</div>
 
   <section id="overview" class="panel active">
     <div id="metricGrid" class="grid"></div>
@@ -372,6 +537,15 @@ def render_html(context: dict[str, Any]) -> str:
       <canvas id="sectorChart" height="360"></canvas>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Sector</th><th>Last</th><th>Change</th><th>Change %</th></tr></thead><tbody id="sectorRows"></tbody></table></div>
     </div>
+    <h3>Sector Heatmap</h3>
+    <div class="heatmap-legend">
+      <span class="swatch"><span class="box" style="background:#bbf7d0"></span>Strong up (&ge;1.5%)</span>
+      <span class="swatch"><span class="box" style="background:#dcfce7"></span>Up</span>
+      <span class="swatch"><span class="box" style="background:#fef3c7"></span>Flat</span>
+      <span class="swatch"><span class="box" style="background:#fee2e2"></span>Down</span>
+      <span class="swatch"><span class="box" style="background:#fecaca"></span>Strong down (&le;-1.5%)</span>
+    </div>
+<div id="sectorHeatmap" class="heatmap-grid"></div>
   </section>
 
   <section id="signals" class="panel">
@@ -399,7 +573,50 @@ def render_html(context: dict[str, Any]) -> str:
       <canvas id="historyChart" height="320"></canvas>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Date</th><th>Bias</th><th>Score</th><th>Confidence</th><th>FII Net</th><th>DII Net</th><th>Nifty PCR</th><th>Top Sector</th></tr></thead><tbody id="historyRows"></tbody></table></div>
     </div>
+    <div class="card">
+  <h2>5-Day Rolling Put-Call Ratio</h2>
+  <p class="muted">
+    Tracks Nifty and Bank Nifty PCR trend using the last 5 generated reports.
+  </p>
+
+  <div id="pcrSummaryGrid" class="pcr-summary-grid"></div>
+
+  <canvas id="pcrRollingChart" height="320"></canvas>
+
+  <div class="table-wrap" style="margin-top:14px">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Nifty PCR</th>
+          <th>Nifty 5D Avg</th>
+          <th>Bank Nifty PCR</th>
+          <th>Bank Nifty 5D Avg</th>
+        </tr>
+      </thead>
+      <tbody id="pcrRollingRows"></tbody>
+    </table>
+  </div>
+</div>
   </section>
+
+  <section id="news" class="panel">
+  <div class="card">
+    <h2>Important Market News</h2>
+    <p class="muted">
+      Latest important market headlines from RSS sources. Use this as context, not as trading advice.
+    </p>
+
+    <div class="controls">
+      <input id="newsSearch" placeholder="Search news..." />
+      <select id="newsSourceFilter">
+        <option value="All">All sources</option>
+      </select>
+    </div>
+
+    <div id="newsGrid" class="news-grid"></div>
+  </div>
+</section>
 
   <section id="report" class="panel">
     <div class="card">
@@ -640,6 +857,7 @@ function renderSectors() {
     sentiment: document.getElementById('sectorSentimentFilter').value,
     sort: document.getElementById('sectorSort').value,
   });
+  renderSectorHeatmap(rows);
   document.getElementById('sectorRows').innerHTML = rows.map(r => `
     <tr><td>${escapeHtml(r.name)}</td><td>${num(r.last)}</td><td>${num(r.change)}</td><td>${badge(pct(r.change_pct))}</td></tr>
   `).join('') || '<tr><td colspan="4">No sector data available</td></tr>';
@@ -676,6 +894,10 @@ function downloadText(filename, text) {
   a.href = url; a.download = filename; a.click(); URL.revokeObjectURL(url);
 }
 function renderAll() {
+  renderPcrRolling();
+populateNewsSources();
+renderNews();
+renderMeetingMode();
   document.getElementById('generatedAt').textContent = `Generated at ${APP.generated_at}`;
   document.getElementById('marketView').textContent = APP.market_view || '';
   document.getElementById('riskNote').textContent = APP.risk_note || '';
@@ -685,6 +907,281 @@ function renderAll() {
   drawBarChart('sectorMiniChart', ((APP.data.nse_indices || {}).sectors || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('commodityMiniChart', (APP.data.commodities || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('cryptoMiniChart', (APP.data.crypto || []).slice(0, 8), 'name', 'change_pct', 'Change %');
+const newsSearch = document.getElementById('newsSearch');
+
+  }
+
+function heatmapClass(value) {
+  const n = Number(value || 0);
+
+  if (n >= 1.5) return 'heat-strong-up';
+  if (n > 0.25) return 'heat-up';
+  if (n <= -1.5) return 'heat-strong-down';
+  if (n < -0.25) return 'heat-down';
+
+  return 'heat-flat';
+}
+
+function renderSectorHeatmap(rows) {
+  const el = document.getElementById('sectorHeatmap');
+  if (!el) return;
+
+  const sorted = [...rows].sort((a, b) => Number(b.change_pct || 0) - Number(a.change_pct || 0));
+
+  el.innerHTML = sorted.map(r => `
+    <div class="heatmap-cell ${heatmapClass(r.change_pct)}" title="${escapeHtml(r.name || 'N/A')} — ${pct(r.change_pct)} (Last ${num(r.last)}, Chg ${num(r.change)})">
+      <strong>${escapeHtml(r.name || 'N/A')}</strong>
+      <div class="heat-value">${pct(r.change_pct)}</div>
+      <div class="small">Last: ${num(r.last)}</div>
+    </div>
+  `).join('') || '<p class="muted">No sector heatmap data available.</p>';
+}
+
+function average(values) {
+  const clean = values
+    .map(v => Number(v))
+    .filter(v => !Number.isNaN(v));
+
+  if (!clean.length) return null;
+
+  return clean.reduce((a, b) => a + b, 0) / clean.length;
+}
+
+function getPcrHistoryRows() {
+  const history = Array.isArray(APP.history) ? [...APP.history] : [];
+
+  return history
+    .filter(row => row.date)
+    .map(row => ({
+      date: row.date,
+      nifty_pcr: row.nifty_pcr ?? null,
+      banknifty_pcr: row.banknifty_pcr ?? null,
+    }));
+}
+
+function calculateRollingPcr(rows) {
+  return rows.map((row, index) => {
+    const windowRows = rows.slice(Math.max(0, index - 4), index + 1);
+
+    return {
+      ...row,
+      nifty_pcr_5d: average(windowRows.map(r => r.nifty_pcr)),
+      banknifty_pcr_5d: average(windowRows.map(r => r.banknifty_pcr)),
+    };
+  });
+}
+
+function pcrStatusText(current, rolling) {
+  if (current === null || current === undefined || rolling === null || rolling === undefined) {
+    return 'Not enough data';
+  }
+
+  const diff = Number(current) - Number(rolling);
+
+  if (diff > 0.08) return 'PCR rising';
+  if (diff < -0.08) return 'PCR falling';
+
+  return 'PCR stable';
+}
+
+function renderPcrRolling() {
+  const rows = calculateRollingPcr(getPcrHistoryRows());
+
+  const summaryEl = document.getElementById('pcrSummaryGrid');
+  const tableEl = document.getElementById('pcrRollingRows');
+
+  if (!summaryEl || !tableEl) return;
+
+  const latest = rows[rows.length - 1] || {};
+
+  summaryEl.innerHTML = `
+    <div class="pcr-mini-card">
+      <div class="muted">Nifty PCR</div>
+      <div class="metric">${num(latest.nifty_pcr)}</div>
+      <div class="small muted">5D Avg: ${num(latest.nifty_pcr_5d)} | ${pcrStatusText(latest.nifty_pcr, latest.nifty_pcr_5d)}</div>
+    </div>
+    <div class="pcr-mini-card">
+      <div class="muted">Bank Nifty PCR</div>
+      <div class="metric">${num(latest.banknifty_pcr)}</div>
+      <div class="small muted">5D Avg: ${num(latest.banknifty_pcr_5d)} | ${pcrStatusText(latest.banknifty_pcr, latest.banknifty_pcr_5d)}</div>
+    </div>
+  `;
+
+  tableEl.innerHTML = rows.slice().reverse().map(row => `
+    <tr>
+      <td>${escapeHtml(row.date)}</td>
+      <td>${num(row.nifty_pcr)}</td>
+      <td>${num(row.nifty_pcr_5d)}</td>
+      <td>${num(row.banknifty_pcr)}</td>
+      <td>${num(row.banknifty_pcr_5d)}</td>
+    </tr>
+  `).join('') || '<tr><td colspan="5">PCR history will appear after workflow runs.</td></tr>';
+
+  drawPcrRollingChart('pcrRollingChart', rows);
+}
+
+function drawPcrRollingChart(canvasId, rows) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+
+  const { ctx, w, h } = clearCanvas(canvas);
+
+  const data = rows
+    .filter(r => r.nifty_pcr !== null || r.banknifty_pcr !== null)
+    .slice(-30);
+
+  if (data.length < 2) {
+    ctx.fillStyle = '#667085';
+    ctx.font = '13px Arial';
+    ctx.fillText('PCR rolling chart will appear after multiple workflow runs.', 16, 32);
+    return;
+  }
+
+  const padL = 50;
+  const padR = 20;
+  const padT = 28;
+  const padB = 42;
+
+  const allValues = data.flatMap(r => [
+    r.nifty_pcr,
+    r.banknifty_pcr,
+    r.nifty_pcr_5d,
+    r.banknifty_pcr_5d,
+  ]).filter(v => v !== null && v !== undefined && !Number.isNaN(Number(v)));
+
+  const min = Math.min(...allValues, 0.5);
+  const max = Math.max(...allValues, 1.5);
+
+  const xStep = (w - padL - padR) / Math.max(data.length - 1, 1);
+
+  const yFor = value => {
+    const v = Number(value);
+    return padT + (max - v) / (max - min || 1) * (h - padT - padB);
+  };
+
+  ctx.strokeStyle = '#e5e7eb';
+  ctx.lineWidth = 1;
+
+  for (let i = 0; i <= 5; i++) {
+    const val = min + ((max - min) / 5) * i;
+    const y = yFor(val);
+
+    ctx.beginPath();
+    ctx.moveTo(padL, y);
+    ctx.lineTo(w - padR, y);
+    ctx.stroke();
+
+    ctx.fillStyle = '#667085';
+    ctx.font = '11px Arial';
+    ctx.fillText(val.toFixed(2), 8, y + 4);
+  }
+
+  function drawLine(key, color, label, dash = []) {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.setLineDash(dash);
+    ctx.beginPath();
+
+    let started = false;
+
+    data.forEach((row, i) => {
+      const value = row[key];
+
+      if (value === null || value === undefined || Number.isNaN(Number(value))) {
+        return;
+      }
+
+      const x = padL + i * xStep;
+      const y = yFor(value);
+
+      if (!started) {
+        ctx.moveTo(x, y);
+        started = true;
+      } else {
+        ctx.lineTo(x, y);
+      }
+    });
+
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.fillStyle = color;
+    ctx.font = '12px Arial';
+    ctx.fillText(label, padL, 16 + drawLine.labelOffset);
+    drawLine.labelOffset += 16;
+  }
+
+  drawLine.labelOffset = 0;
+
+  drawLine('nifty_pcr', '#2563eb', 'Nifty PCR');
+  drawLine('nifty_pcr_5d', '#1d4ed8', 'Nifty 5D Avg', [5, 4]);
+  drawLine('banknifty_pcr', '#16a34a', 'Bank Nifty PCR');
+  drawLine('banknifty_pcr_5d', '#15803d', 'Bank Nifty 5D Avg', [5, 4]);
+}
+
+function populateNewsSources() {
+  const select = document.getElementById('newsSourceFilter');
+  if (!select) return;
+
+  const sources = [...new Set((APP.data.market_news || []).map(row => row.source).filter(Boolean))];
+
+  select.innerHTML = '<option value="All">All sources</option>' +
+    sources.map(source => `<option value="${escapeHtml(source)}">${escapeHtml(source)}</option>`).join('');
+}
+
+function renderNews() {
+  const grid = document.getElementById('newsGrid');
+  if (!grid) return;
+
+  const searchValue = (document.getElementById('newsSearch')?.value || '').toLowerCase();
+  const sourceValue = document.getElementById('newsSourceFilter')?.value || 'All';
+
+  let rows = APP.data.market_news || [];
+
+  if (sourceValue !== 'All') {
+    rows = rows.filter(row => row.source === sourceValue);
+  }
+
+  if (searchValue) {
+    rows = rows.filter(row =>
+      String(row.title || '').toLowerCase().includes(searchValue) ||
+      String(row.summary || '').toLowerCase().includes(searchValue)
+    );
+  }
+
+  grid.innerHTML = rows.slice(0, 10).map(row => `
+    <div class="news-card">
+      <a href="${escapeHtml(row.link || '#')}" target="_blank" rel="noopener noreferrer">
+        ${escapeHtml(row.title || 'Untitled')}
+      </a>
+      <p class="small">${escapeHtml(row.summary || '')}</p>
+      <div class="news-meta">
+        ${escapeHtml(row.source || 'News')} · ${escapeHtml(row.published || '')}
+      </div>
+    </div>
+  `).join('') || '<p class="muted">No news found.</p>';
+}
+
+function renderMeetingMode() {
+  const planEl = document.getElementById('todayPlan');
+  const topSignalsEl = document.getElementById('topSignals');
+  const riskEl = document.getElementById('mainRisk');
+
+  if (!planEl || !topSignalsEl || !riskEl) return;
+
+  const components = APP.score.components || [];
+  const topPositive = components.filter(x => Number(x.score || 0) > 0).slice(0, 3);
+  const topNegative = components.filter(x => Number(x.score || 0) < 0).slice(0, 3);
+
+  planEl.textContent = `Today’s Plan: ${APP.score.bias}. ${APP.market_view || ''}`;
+
+  topSignalsEl.textContent = `Supportive signals: ${
+    topPositive.map(x => x.name).join(', ') || 'None'
+  }. Risk signals: ${
+    topNegative.map(x => x.name).join(', ') || 'None'
+  }.`;
+
+  riskEl.textContent = APP.risk_note || '';
 }
 
 document.querySelectorAll('.tab-btn').forEach(btn => {
