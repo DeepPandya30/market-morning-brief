@@ -1,11 +1,11 @@
 # Morning Market Brief - 20 June 2026
 
-Generated at: **20 Jun 2026, 04:21 PM IST**
+Generated at: **20 Jun 2026, 04:25 PM IST**
 
 ## Final View
 
 - **Market Bias:** Neutral / Range-bound
-- **Score:** -1
+- **Score:** 1
 - **Confidence:** High
 - **Meeting View:** Market setup is range-bound. Watch Nifty support near 23,500 and resistance near 25,000.
 
@@ -18,14 +18,14 @@ Generated at: **20 Jun 2026, 04:21 PM IST**
 
 | Region | Index | Close | Change % | Date |
 |---|---:|---:|---:|---:|
-| US | Nasdaq | 26,022 | -1.34% | 2026-06-17 |
-| US | Dow Jones | 51,493 | -0.98% | 2026-06-17 |
-| US | S&P 500 | 7,420 | -1.21% | 2026-06-17 |
-| Europe | FTSE 100 | 10,363 | -1.38% | 2026-06-19 |
-| Europe | CAC 40 | 8,421 | -0.11% | 2026-06-19 |
-| Europe | DAX | 24,986 | 0.21% | 2026-06-19 |
-| Asia | Hang Seng | 24,312 | -0.74% | 2026-06-17 |
-| Asia | Nikkei 225 | 71,250 | 1.93% | 2026-06-19 |
+| US | Nasdaq | 26,518 | 1.91% | 2026-06-18 |
+| US | Dow Jones | 51,565 | 0.14% | 2026-06-18 |
+| US | S&P 500 | 7,501 | 1.08% | 2026-06-18 |
+| Europe | FTSE 100 | 10,363 | -0.35% | 2026-06-19 |
+| Europe | CAC 40 | 8,421 | -0.55% | 2026-06-19 |
+| Europe | DAX | 24,986 | -0.16% | 2026-06-19 |
+| Asia | Hang Seng | 23,925 | -1.59% | 2026-06-18 |
+| Asia | Nikkei 225 | 71,250 | 0.28% | 2026-06-19 |
 
 ## Global Commodities
 
@@ -41,11 +41,11 @@ Generated at: **20 Jun 2026, 04:21 PM IST**
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 63,589 | 48.22 | 0.08% | 2026-06-20 |
-| Ethereum | ETH-USD | 1,726 | 15.13 | 0.88% | 2026-06-20 |
-| Solana | SOL-USD | 71.62 | 1.90 | 2.72% | 2026-06-20 |
+| Bitcoin | BTC-USD | 63,611 | 70.12 | 0.11% | 2026-06-20 |
+| Ethereum | ETH-USD | 1,726 | 15.42 | 0.90% | 2026-06-20 |
+| Solana | SOL-USD | 71.61 | 1.89 | 2.71% | 2026-06-20 |
 | Cardano | ADA-USD | 0.16 | 0.00 | 0.50% | 2026-06-20 |
-| Ripple | XRP-USD | 1.15 | 0.01 | 1.07% | 2026-06-20 |
+| Ripple | XRP-USD | 1.15 | 0.01 | 1.06% | 2026-06-20 |
 
 ## Currency Market
 
@@ -55,7 +55,7 @@ Generated at: **20 Jun 2026, 04:21 PM IST**
 | EUR/USD | EURUSD=X | 1.15 | -0.00 | -0.33% | 2026-06-19 |
 | USD/CHF | CHF=X | 0.81 | 0.00 | 0.19% | 2026-06-20 |
 | USD/JPY | JPY=X | 161.27 | -0.01 | -0.01% | 2026-06-20 |
-| DXY | DX-Y.NYB | 100.85 | 0.76 | 0.76% | 2026-06-19 |
+| DXY | DX-Y.NYB | 100.85 | -0.00 | -0.00% | 2026-06-19 |
 | USD/INR | INR=X | 94.31 | -0.55 | -0.58% | 2026-06-19 |
 
 ## FII / DII Flow
@@ -88,17 +88,17 @@ Generated at: **20 Jun 2026, 04:21 PM IST**
 | Signal | Score | Status | Reason |
 |---|---:|---|---|
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
-| US markets | -1 | Bearish | Average move -1.18% across 3 indices. |
-| Europe markets | -1 | Bearish | Average move -0.43% across 3 indices. |
-| Asia markets | 1 | Bullish | Average move 0.59% across 2 indices. |
+| US markets | 1 | Bullish | Average move 1.04% across 3 indices. |
+| Europe markets | -1 | Bearish | Average move -0.36% across 3 indices. |
+| Asia markets | 0 | Neutral | Average move -0.66% across 2 indices. |
 | FII/DII flow | 1 | Bullish | FII net 4859.07 Cr, DII net -1159.64 Cr, combined 3699.43 Cr. |
 | Nifty OI | 0 | Neutral | PCR 0.78, support 23500.0, resistance 25000.0. |
 | Bank Nifty OI | 1 | Bullish | PCR 1.08, support 54000.0, resistance 60000.0. |
 | India VIX | -1 | Bearish | India VIX change 2.34%. |
 | Sector breadth | -1 | Bearish | 4 sectors positive and 10 sectors negative. |
 | Global commodities | 0 | Neutral | Crude/Brent average move 0.42%, commodity pressure is limited. |
-| Crypto risk appetite | 0 | Neutral | Major crypto basket average move 1.05% across 5 coins. |
-| Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.09%; rising dollar/rupee pressure is usually negative for India. |
+| Crypto risk appetite | 0 | Neutral | Major crypto basket average move 1.06% across 5 coins. |
+| Currency pressure | 1 | Bullish | DXY/USDINR pressure average -0.29%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 

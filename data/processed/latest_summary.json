@@ -1,6 +1,6 @@
 {
   "score": {
-    "score": -1,
+    "score": 1,
     "bias": "Neutral / Range-bound",
     "confidence": "High",
     "components": [
@@ -12,21 +12,21 @@
       },
       {
         "name": "US markets",
-        "score": -1,
-        "status": "Bearish",
-        "reason": "Average move -1.18% across 3 indices."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Average move 1.04% across 3 indices."
       },
       {
         "name": "Europe markets",
         "score": -1,
         "status": "Bearish",
-        "reason": "Average move -0.43% across 3 indices."
+        "reason": "Average move -0.36% across 3 indices."
       },
       {
         "name": "Asia markets",
-        "score": 1,
-        "status": "Bullish",
-        "reason": "Average move 0.59% across 2 indices."
+        "score": 0,
+        "status": "Neutral",
+        "reason": "Average move -0.66% across 2 indices."
       },
       {
         "name": "FII/DII flow",
@@ -68,13 +68,13 @@
         "name": "Crypto risk appetite",
         "score": 0,
         "status": "Neutral",
-        "reason": "Major crypto basket average move 1.05% across 5 coins."
+        "reason": "Major crypto basket average move 1.06% across 5 coins."
       },
       {
         "name": "Currency pressure",
-        "score": 0,
-        "status": "Neutral",
-        "reason": "DXY/USDINR pressure average 0.09%; rising dollar/rupee pressure is usually negative for India."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "DXY/USDINR pressure average -0.29%; rising dollar/rupee pressure is usually negative for India."
       }
     ]
   },
@@ -84,36 +84,36 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26021.66015625,
-        "change": -354.6796875,
-        "change_pct": -1.3446887991323901,
-        "date": "2026-06-17"
+        "close": 26517.9296875,
+        "change": 496.26953125,
+        "change_pct": 1.907140160428249,
+        "date": "2026-06-18"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 51492.55078125,
-        "change": -507.12109375,
-        "change_pct": -0.9752390264481837,
-        "date": "2026-06-17"
+        "close": 51564.69921875,
+        "change": 72.1484375,
+        "change_pct": 0.14011432023730983,
+        "date": "2026-06-18"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7420.10009765625,
-        "change": -91.25,
-        "change_pct": -1.214828210822879,
-        "date": "2026-06-17"
+        "close": 7500.580078125,
+        "change": 80.47998046875,
+        "change_pct": 1.0846212235623454,
+        "date": "2026-06-18"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
         "close": 10363.2998046875,
-        "change": -145.2998046875,
-        "change_pct": -1.382675238267468,
+        "change": -36.400390625,
+        "change_pct": -0.35001384598958823,
         "date": "2026-06-19"
       },
       {
@@ -121,8 +121,8 @@
         "ticker": "^FCHI",
         "region": "Europe",
         "close": 8421.1396484375,
-        "change": -9.650390625,
-        "change_pct": -0.11446602964000653,
+        "change": -46.8408203125,
+        "change_pct": -0.5531522006381576,
         "date": "2026-06-19"
       },
       {
@@ -130,26 +130,26 @@
         "ticker": "^GDAXI",
         "region": "Europe",
         "close": 24985.8203125,
-        "change": 51.150390625,
-        "change_pct": 0.20513762879261596,
+        "change": -40.98046875,
+        "change_pct": -0.16374633381307943,
         "date": "2026-06-19"
       },
       {
         "name": "Hang Seng",
         "ticker": "^HSI",
         "region": "Asia",
-        "close": 24312.16015625,
-        "change": -181.7890625,
-        "change_pct": -0.7421794700253618,
-        "date": "2026-06-17"
+        "close": 23924.810546875,
+        "change": -387.349609375,
+        "change_pct": -1.5932340313882922,
+        "date": "2026-06-18"
       },
       {
         "name": "Nikkei 225",
         "ticker": "^N225",
         "region": "Asia",
         "close": 71250.0625,
-        "change": 1347.8125,
-        "change_pct": 1.9281389368725612,
+        "change": 196.5703125,
+        "change_pct": 0.27665116301571646,
         "date": "2026-06-19"
       }
     ],
@@ -205,27 +205,27 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 63589.05859375,
-        "change": 48.22265625,
-        "change_pct": 0.07589238564225491,
+        "close": 63610.9609375,
+        "change": 70.125,
+        "change_pct": 0.11036209858645282,
         "date": "2026-06-20"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 1726.1099853515625,
-        "change": 15.1275634765625,
-        "change_pct": 0.8841448797577232,
+        "close": 1726.4000244140625,
+        "change": 15.4176025390625,
+        "change_pct": 0.9010964894757328,
         "date": "2026-06-20"
       },
       {
         "name": "Solana",
         "ticker": "SOL-USD",
         "group": "Crypto",
-        "close": 71.62000274658203,
-        "change": 1.8993988037109375,
-        "change_pct": 2.7243005600859407,
+        "close": 71.61000061035156,
+        "change": 1.8893966674804688,
+        "change_pct": 2.7099545337109188,
         "date": "2026-06-20"
       },
       {
@@ -241,9 +241,9 @@
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.1484999656677246,
-        "change": 0.012115955352783203,
-        "change_pct": 1.0661849553326033,
+        "close": 1.1483999490737915,
+        "change": 0.012015938758850098,
+        "change_pct": 1.0573836528657208,
         "date": "2026-06-20"
       }
     ],
@@ -289,8 +289,8 @@
         "ticker": "DX-Y.NYB",
         "group": "Currency",
         "close": 100.8489990234375,
-        "change": 0.759002685546875,
-        "change_pct": 0.7583202251147878,
+        "change": -0.00099945068359375,
+        "change_pct": -0.0009910269694750832,
         "date": "2026-06-19"
       },
       {
@@ -3878,9 +3878,9 @@
     },
     {
       "date": "2026-06-20",
-      "generated_at": "2026-06-20 16:21:52 IST",
+      "generated_at": "2026-06-20 16:25:19 IST",
       "bias": "Neutral / Range-bound",
-      "score": -1,
+      "score": 1,
       "confidence": "High",
       "fii_net": 4859.07,
       "dii_net": -1159.64,
@@ -3893,9 +3893,9 @@
       "banknifty_pcr": 1.0755450539671605,
       "banknifty_support": 54000.0,
       "banknifty_resistance": 60000.0,
-      "us_avg_change_pct": -1.1782520121344844,
-      "europe_avg_change_pct": -0.43066787970495285,
-      "asia_avg_change_pct": 0.5929797334235998,
+      "us_avg_change_pct": 1.043958568075968,
+      "europe_avg_change_pct": -0.3556374601469417,
+      "asia_avg_change_pct": -0.6582914341862879,
       "top_sector": "NIFTY HEALTHCARE INDEX",
       "top_sector_change_pct": 0.74,
       "weak_sector": "NIFTY IT",
@@ -3903,9 +3903,9 @@
       "gold_change_pct": -1.212097112492872,
       "crude_oil_change_pct": -0.07832579606906893,
       "brent_oil_change_pct": 0.9267349754669816,
-      "bitcoin_change_pct": 0.07589238564225491,
-      "ethereum_change_pct": 0.8841448797577232,
-      "dxy_change_pct": 0.7583202251147878,
+      "bitcoin_change_pct": 0.11036209858645282,
+      "ethereum_change_pct": 0.9010964894757328,
+      "dxy_change_pct": -0.0009910269694750832,
       "usdinr_change_pct": -0.5786535659829622
     }
   ]
