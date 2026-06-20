@@ -1,6 +1,6 @@
 # Morning Market Brief - 20 June 2026
 
-Generated at: **20 Jun 2026, 04:25 PM IST**
+Generated at: **20 Jun 2026, 06:34 PM IST**
 
 ## Final View
 

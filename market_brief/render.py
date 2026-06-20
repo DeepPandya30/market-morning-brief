@@ -225,6 +225,10 @@ def render_html(context: dict[str, Any]) -> str:
     tr:hover td { background: #f8fafc; }
     pre { white-space: pre-wrap; background: #0b1020; color: #e5e7eb; padding: 16px; border-radius: 12px; overflow-x: auto; line-height: 1.45; }
     canvas { width: 100%; max-height: 360px; border: 1px solid var(--line); border-radius: 12px; background: white; }
+    canvas.interactive { cursor: crosshair; }
+    .chart-tooltip { position: fixed; z-index: 60; pointer-events: none; display: none; background: rgba(15,23,42,.95); color: #f8fafc; padding: 8px 11px; border-radius: 9px; font-size: 12px; line-height: 1.45; box-shadow: 0 8px 24px rgba(15,23,42,.35); max-width: 250px; }
+    .chart-tooltip strong { color: #fff; }
+    .chart-tooltip .swatch-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
     .oi-card { border-left: 5px solid var(--brand); }
     .footer-note { text-align: center; color: var(--muted); padding: 18px 0 34px; }
     @media print {
@@ -694,6 +698,82 @@ function clearCanvas(canvas) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   return { ctx, w: canvas.width / dpr, h: canvas.height / dpr };
 }
+
+/* ---- Interactive chart tooltips, hover highlight & crosshair ---- */
+const CHART_STATE = {};
+let _chartTip = null;
+function chartTip() {
+  if (!_chartTip) {
+    _chartTip = document.createElement('div');
+    _chartTip.className = 'chart-tooltip';
+    document.body.appendChild(_chartTip);
+  }
+  return _chartTip;
+}
+function showChartTip(html, clientX, clientY) {
+  const tip = chartTip();
+  tip.innerHTML = html;
+  tip.style.display = 'block';
+  const r = tip.getBoundingClientRect();
+  let x = clientX + 14, y = clientY + 14;
+  if (x + r.width > window.innerWidth - 8) x = clientX - r.width - 14;
+  if (y + r.height > window.innerHeight - 8) y = clientY - r.height - 14;
+  tip.style.left = Math.max(8, x) + 'px';
+  tip.style.top = Math.max(8, y) + 'px';
+}
+function hideChartTip() { if (_chartTip) _chartTip.style.display = 'none'; }
+function findChartHit(state, mx, my) {
+  if (!state || !state.hits || !state.hits.length) return null;
+  if (state.type === 'bar') {
+    return state.hits.find(b => mx >= b.x && mx <= b.x + b.w && my >= b.y && my <= b.y + b.h) || null;
+  }
+  let best = null, bestDx = Infinity;
+  for (const p of state.hits) {
+    const dx = Math.abs(mx - p.x);
+    if (dx < bestDx) { bestDx = dx; best = p; }
+  }
+  return best && bestDx <= (state.snap || 22) ? best : null;
+}
+function attachChartInteractivity(canvasId) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas || canvas.dataset.interactive === '1') return;
+  canvas.dataset.interactive = '1';
+  canvas.classList.add('interactive');
+  let activeKey = null;
+  canvas.addEventListener('mousemove', e => {
+    const state = CHART_STATE[canvasId];
+    if (!state) return;
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    const hit = findChartHit(state, mx, my);
+    if (hit) {
+      canvas.style.cursor = 'pointer';
+      showChartTip(hit.tip, e.clientX, e.clientY);
+      if (activeKey !== hit.key) {
+        activeKey = hit.key;
+        if (state.redraw) state.redraw();
+        const fresh = CHART_STATE[canvasId];
+        if (fresh && fresh.highlight) fresh.highlight(hit);
+      }
+    } else {
+      canvas.style.cursor = 'default';
+      hideChartTip();
+      if (activeKey !== null) {
+        activeKey = null;
+        if (state.redraw) state.redraw();
+      }
+    }
+  });
+  canvas.addEventListener('mouseleave', () => {
+    const state = CHART_STATE[canvasId];
+    canvas.style.cursor = 'default';
+    hideChartTip();
+    if (activeKey !== null && state && state.redraw) state.redraw();
+    activeKey = null;
+  });
+}
+
 function drawBarChart(canvasId, rows, labelKey, valueKey, title) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
@@ -703,6 +783,7 @@ function drawBarChart(canvasId, rows, labelKey, valueKey, title) {
   ctx.fillStyle = '#667085';
   if (!data.length) {
     ctx.fillText('No data available', 16, 32);
+    CHART_STATE[canvasId] = { type: 'bar', hits: [] };
     return;
   }
   const padL = 126, padR = 24, padT = 28, padB = 26;
@@ -715,6 +796,8 @@ function drawBarChart(canvasId, rows, labelKey, valueKey, title) {
   ctx.fillStyle = '#172033';
   ctx.font = 'bold 13px Arial';
   ctx.fillText(title || '', 12, 18);
+  const hits = [];
+  const isPct = valueKey === 'change_pct';
   data.forEach((r, i) => {
     const y = padT + i * (barH + 7);
     const value = Number(r[valueKey] || 0);
@@ -728,7 +811,31 @@ function drawBarChart(canvasId, rows, labelKey, valueKey, title) {
     ctx.fillText(label, 8, y + barH - 2);
     ctx.fillStyle = '#667085';
     ctx.fillText(value.toFixed(2), value >= 0 ? x + len + 5 : x - 42, y + barH - 2);
+    const extra = [];
+    if (r.close !== undefined && r.close !== null) extra.push('Close ' + num(r.close));
+    if (r.change !== undefined && r.change !== null) extra.push('Change ' + num(r.change));
+    hits.push({
+      key: String(r[labelKey] || i),
+      x: 0, y: y - 3, w: w, h: barH + 6,
+      barX: x, barW: len, barY: y, barH: barH,
+      tip: '<strong>' + escapeHtml(String(r[labelKey] || '')) + '</strong><br>'
+        + (isPct ? value.toFixed(2) + '%' : value.toFixed(2))
+        + (extra.length ? '<br>' + escapeHtml(extra.join(' · ')) : '')
+    });
   });
+  CHART_STATE[canvasId] = {
+    type: 'bar',
+    hits: hits,
+    redraw: () => drawBarChart(canvasId, rows, labelKey, valueKey, title),
+    highlight: (hit) => {
+      ctx.save();
+      ctx.strokeStyle = '#0f172a';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(hit.barX - 1.5, hit.barY - 1.5, Math.max(hit.barW, 2) + 3, hit.barH + 3);
+      ctx.restore();
+    }
+  };
+  attachChartInteractivity(canvasId);
 }
 function drawScoreChart(canvasId, rows) {
   drawBarChart(canvasId, rows.map(r => ({ name: r.name, score: r.score })), 'name', 'score', 'Signal score by component');
@@ -742,6 +849,7 @@ function drawLineChart(canvasId, history) {
     ctx.fillStyle = '#667085';
     ctx.font = '13px Arial';
     ctx.fillText('History will appear after multiple daily workflow runs.', 16, 32);
+    CHART_STATE[canvasId] = { type: 'line', hits: [] };
     return;
   }
   const padL = 44, padR = 18, padT = 26, padB = 42;
@@ -780,6 +888,30 @@ function drawLineChart(canvasId, history) {
       ctx.save(); ctx.translate(x, h - 18); ctx.rotate(-0.5); ctx.fillText(String(r.date).slice(5), 0, 0); ctx.restore();
     }
   });
+  const hits = data.map((r, i) => ({
+    key: String(r.date || i),
+    x: padL + i * xStep,
+    y: yFor(Number(r.score)),
+    tip: '<strong>' + escapeHtml(String(r.date || '')) + '</strong><br>Score ' + Number(r.score).toFixed(2)
+  }));
+  CHART_STATE[canvasId] = {
+    type: 'line', hits: hits, snap: 26,
+    redraw: () => drawLineChart(canvasId, history),
+    highlight: (hit) => {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(15,23,42,.35)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath(); ctx.moveTo(hit.x, padT - 6); ctx.lineTo(hit.x, h - padB + 4); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#0f172a';
+      ctx.beginPath(); ctx.arc(hit.x, hit.y, 6, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.arc(hit.x, hit.y, 2.5, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    }
+  };
+  attachChartInteractivity(canvasId);
 }
 
 function renderMetrics() {
@@ -1034,6 +1166,7 @@ function drawPcrRollingChart(canvasId, rows) {
     ctx.fillStyle = '#667085';
     ctx.font = '13px Arial';
     ctx.fillText('PCR rolling chart will appear after multiple workflow runs.', 16, 32);
+    CHART_STATE[canvasId] = { type: 'line', hits: [] };
     return;
   }
 
@@ -1117,6 +1250,50 @@ function drawPcrRollingChart(canvasId, rows) {
   drawLine('nifty_pcr_5d', '#1d4ed8', 'Nifty 5D Avg', [5, 4]);
   drawLine('banknifty_pcr', '#16a34a', 'Bank Nifty PCR');
   drawLine('banknifty_pcr_5d', '#15803d', 'Bank Nifty 5D Avg', [5, 4]);
+
+  const series = [
+    { key: 'nifty_pcr', color: '#2563eb', label: 'Nifty PCR' },
+    { key: 'nifty_pcr_5d', color: '#1d4ed8', label: 'Nifty 5D Avg' },
+    { key: 'banknifty_pcr', color: '#16a34a', label: 'Bank Nifty PCR' },
+    { key: 'banknifty_pcr_5d', color: '#15803d', label: 'Bank Nifty 5D Avg' },
+  ];
+  const hits = data.map((row, i) => {
+    const lines = series
+      .filter(s => row[s.key] !== null && row[s.key] !== undefined && !Number.isNaN(Number(row[s.key])))
+      .map(s => '<span class="swatch-dot" style="background:' + s.color + '"></span>' + s.label + ': <strong>' + Number(row[s.key]).toFixed(2) + '</strong>');
+    return {
+      key: String(row.date || i),
+      x: padL + i * xStep,
+      y: padT,
+      tip: '<strong>' + escapeHtml(String(row.date || '')) + '</strong><br>' + lines.join('<br>')
+    };
+  });
+  CHART_STATE[canvasId] = {
+    type: 'line', hits: hits, snap: 24,
+    redraw: () => drawPcrRollingChart(canvasId, rows),
+    highlight: (hit) => {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(15,23,42,.4)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath(); ctx.moveTo(hit.x, padT - 6); ctx.lineTo(hit.x, h - padB + 4); ctx.stroke();
+      ctx.setLineDash([]);
+      const idx = data.findIndex((row, i) => String(row.date || i) === hit.key);
+      if (idx >= 0) {
+        series.forEach(s => {
+          const v = data[idx][s.key];
+          if (v === null || v === undefined || Number.isNaN(Number(v))) return;
+          const y = yFor(v);
+          ctx.fillStyle = s.color;
+          ctx.beginPath(); ctx.arc(hit.x, y, 5, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath(); ctx.arc(hit.x, y, 2, 0, Math.PI * 2); ctx.fill();
+        });
+      }
+      ctx.restore();
+    }
+  };
+  attachChartInteractivity(canvasId);
 }
 
 function populateNewsSources() {
