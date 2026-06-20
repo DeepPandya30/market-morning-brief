@@ -3,9 +3,12 @@ from __future__ import annotations
 from collections.abc import Iterable
 from datetime import datetime
 from typing import Any
+import feedparser
+from datetime import datetime, timezone
 
 import pandas as pd
 import yfinance as yf
+from .config import NEWS_FEEDS, NEWS_KEYWORDS
 
 from .config import (
     ASIA_MARKETS,
@@ -519,6 +522,7 @@ def _find_dict_rows(raw: Any) -> list[dict[str, Any]]:
 
 def build_data_bundle() -> dict[str, Any]:
     warnings: list[str] = []
+    
     client = NSEClient()
 
     global_markets = fetch_global_markets(warnings)
@@ -529,6 +533,7 @@ def build_data_bundle() -> dict[str, Any]:
     fii_dii = fetch_fii_dii(client, warnings)
     nifty_options = fetch_option_chain(client, "NIFTY", warnings, nse_indices.get("nifty_spot"))
     banknifty_options = fetch_option_chain(client, "BANKNIFTY", warnings, nse_indices.get("banknifty_spot"))
+    
 
     return {
         "global_markets": global_markets,
@@ -540,6 +545,91 @@ def build_data_bundle() -> dict[str, Any]:
         "option_chains": {
             "NIFTY": nifty_options,
             "BANKNIFTY": banknifty_options,
+            "market_news": fetch_market_news(limit=10),
         },
         "warnings": warnings,
     }
+
+def fetch_market_news(limit: int = 10) -> list[dict]:
+    news_items: list[dict] = []
+    seen_links: set[str] = set()
+
+    for feed in NEWS_FEEDS:
+        feed_name = feed.get("name", "News")
+        feed_url = feed.get("url")
+
+        if not feed_url:
+            continue
+
+        try:
+            parsed = feedparser.parse(feed_url)
+
+            for entry in parsed.entries:
+                title = str(entry.get("title", "")).strip()
+                link = str(entry.get("link", "")).strip()
+                summary = str(entry.get("summary", "")).strip()
+
+                if not title or not link:
+                    continue
+
+                if link in seen_links:
+                    continue
+
+                text_blob = f"{title} {summary}".lower()
+                relevance_score = sum(1 for keyword in NEWS_KEYWORDS if keyword.lower() in text_blob)
+
+                published = (
+                    entry.get("published")
+                    or entry.get("updated")
+                    or ""
+                )
+
+                news_items.append(
+                    {
+                        "title": title,
+                        "link": link,
+                        "summary": _clean_news_summary(summary),
+                        "published": published,
+                        "source": feed_name,
+                        "relevance_score": relevance_score,
+                    }
+                )
+
+                seen_links.add(link)
+
+        except Exception as exc:
+            # Do not fail whole dashboard if news fails
+            news_items.append(
+                {
+                    "title": "News fetch warning",
+                    "link": "",
+                    "summary": f"{feed_name} failed: {exc}",
+                    "published": "",
+                    "source": feed_name,
+                    "relevance_score": -1,
+                    "is_warning": True,
+                }
+            )
+
+    news_items = sorted(
+        news_items,
+        key=lambda row: (
+            row.get("is_warning", False),
+            -(row.get("relevance_score") or 0),
+            row.get("published") or "",
+        ),
+    )
+
+    return news_items[:limit]
+
+
+def _clean_news_summary(summary: str, max_len: int = 220) -> str:
+    import re
+
+    text = re.sub(r"<[^>]+>", " ", summary or "")
+    text = re.sub(r"\s+", " ", text).strip()
+
+    if len(text) > max_len:
+        return text[:max_len].rstrip() + "..."
+
+    return text

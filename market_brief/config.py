@@ -92,3 +92,37 @@ OPTION_CHAIN_REFERERS = {
     "NIFTY": "https://www.nseindia.com/get-quote/optionchain/NIFTY/NIFTY-50",
     "BANKNIFTY": "https://www.nseindia.com/get-quotes/derivatives?symbol=BANKNIFTY",
 }
+
+NEWS_FEEDS = [
+    {
+        "name": "Investing India News",
+        "url": "https://in.investing.com/rss/news.rss",
+    },
+    {
+        "name": "Investing Global News",
+        "url": "https://www.investing.com/rss/news.rss",
+    },
+]
+
+NEWS_KEYWORDS = [
+    "nifty",
+    "sensex",
+    "india",
+    "rbi",
+    "fed",
+    "inflation",
+    "crude",
+    "oil",
+    "gold",
+    "dollar",
+    "rupee",
+    "usd/inr",
+    "nasdaq",
+    "dow",
+    "china",
+    "japan",
+    "bank",
+    "fii",
+    "dii",
+    "earnings",
+]
