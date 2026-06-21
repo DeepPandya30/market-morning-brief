@@ -1,6 +1,6 @@
 {
   "score": {
-    "score": 1,
+    "score": 0,
     "bias": "Neutral / Range-bound",
     "confidence": "High",
     "components": [
@@ -12,21 +12,21 @@
       },
       {
         "name": "US markets",
-        "score": 1,
-        "status": "Bullish",
-        "reason": "Average move 1.04% across 3 indices."
+        "score": -1,
+        "status": "Bearish",
+        "reason": "Average move -1.18% across 3 indices."
       },
       {
         "name": "Europe markets",
         "score": -1,
         "status": "Bearish",
-        "reason": "Average move -0.36% across 3 indices."
+        "reason": "Average move -0.43% across 3 indices."
       },
       {
         "name": "Asia markets",
-        "score": 0,
-        "status": "Neutral",
-        "reason": "Average move -0.66% across 2 indices."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Average move 0.59% across 2 indices."
       },
       {
         "name": "FII/DII flow",
@@ -68,13 +68,13 @@
         "name": "Crypto risk appetite",
         "score": 1,
         "status": "Bullish",
-        "reason": "Major crypto basket average move 1.76% across 5 coins."
+        "reason": "Major crypto basket average move 1.73% across 5 coins."
       },
       {
         "name": "Currency pressure",
         "score": 0,
         "status": "Neutral",
-        "reason": "DXY/USDINR pressure average 0.09%; rising dollar/rupee pressure is usually negative for India."
+        "reason": "DXY/USDINR pressure average -0.01%; rising dollar/rupee pressure is usually negative for India."
       }
     ]
   },
@@ -84,36 +84,36 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26517.9296875,
-        "change": 496.26953125,
-        "change_pct": 1.907140160428249,
-        "date": "2026-06-18"
+        "close": 26021.66015625,
+        "change": -354.6796875,
+        "change_pct": -1.3446887991323901,
+        "date": "2026-06-17"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 51564.69921875,
-        "change": 72.1484375,
-        "change_pct": 0.14011432023730983,
-        "date": "2026-06-18"
+        "close": 51492.55078125,
+        "change": -507.12109375,
+        "change_pct": -0.9752390264481837,
+        "date": "2026-06-17"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7500.580078125,
-        "change": 80.47998046875,
-        "change_pct": 1.0846212235623454,
-        "date": "2026-06-18"
+        "close": 7420.10009765625,
+        "change": -91.25,
+        "change_pct": -1.214828210822879,
+        "date": "2026-06-17"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
         "close": 10363.2998046875,
-        "change": -36.400390625,
-        "change_pct": -0.35001384598958823,
+        "change": -145.2998046875,
+        "change_pct": -1.382675238267468,
         "date": "2026-06-19"
       },
       {
@@ -121,8 +121,8 @@
         "ticker": "^FCHI",
         "region": "Europe",
         "close": 8421.1396484375,
-        "change": -46.8408203125,
-        "change_pct": -0.5531522006381576,
+        "change": -9.650390625,
+        "change_pct": -0.11446602964000653,
         "date": "2026-06-19"
       },
       {
@@ -130,26 +130,26 @@
         "ticker": "^GDAXI",
         "region": "Europe",
         "close": 24985.8203125,
-        "change": -40.98046875,
-        "change_pct": -0.16374633381307943,
+        "change": 51.150390625,
+        "change_pct": 0.20513762879261596,
         "date": "2026-06-19"
       },
       {
         "name": "Hang Seng",
         "ticker": "^HSI",
         "region": "Asia",
-        "close": 23924.810546875,
-        "change": -387.349609375,
-        "change_pct": -1.5932340313882922,
-        "date": "2026-06-18"
+        "close": 24312.16015625,
+        "change": -181.7890625,
+        "change_pct": -0.7421794700253618,
+        "date": "2026-06-17"
       },
       {
         "name": "Nikkei 225",
         "ticker": "^N225",
         "region": "Asia",
         "close": 71250.0625,
-        "change": 196.5703125,
-        "change_pct": 0.27665116301571646,
+        "change": 1347.8125,
+        "change_pct": 1.9281389368725612,
         "date": "2026-06-19"
       }
     ],
@@ -205,18 +205,18 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 64318.0,
-        "change": 777.1640625,
-        "change_pct": 1.2230938593008656,
+        "close": 64322.87109375,
+        "change": 782.03515625,
+        "change_pct": 1.2307599431320435,
         "date": "2026-06-21"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 1734.1600341796875,
-        "change": 23.1776123046875,
-        "change_pct": 1.354637663622987,
+        "close": 1733.949951171875,
+        "change": 22.967529296875,
+        "change_pct": 1.3423591618028294,
         "date": "2026-06-21"
       },
       {
@@ -232,18 +232,18 @@
         "name": "Cardano",
         "ticker": "ADA-USD",
         "group": "Crypto",
-        "close": 0.16200000047683716,
-        "change": -9.399652481079102e-05,
-        "change_pct": -0.057988899372896203,
+        "close": 0.16169999539852142,
+        "change": -0.0003940016031265259,
+        "change_pct": -0.2430698301076012,
         "date": "2026-06-21"
       },
       {
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.1475000381469727,
-        "change": 0.01111602783203125,
-        "change_pct": 0.9781929111225804,
+        "close": 1.1476999521255493,
+        "change": 0.01131594181060791,
+        "change_pct": 0.9957850258269448,
         "date": "2026-06-21"
       }
     ],
@@ -288,10 +288,10 @@
         "name": "DXY",
         "ticker": "DX-Y.NYB",
         "group": "Currency",
-        "close": 100.8499984741211,
-        "change": 0.7600021362304688,
-        "change_pct": 0.7593187771381286,
-        "date": "2026-06-18"
+        "close": 100.08999633789062,
+        "change": 0.5499954223632812,
+        "change_pct": 0.5525370879090347,
+        "date": "2026-06-17"
       },
       {
         "name": "USD/INR",
@@ -3661,90 +3661,90 @@
             "put_change_oi": -2.0
           }
         ]
-      },
-      "market_news": [
-        {
-          "title": "RBI MPC minutes: Policy misstep fears drove rate pause amid West Asia uncertainty",
-          "link": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-mpc-minutes-policy-misstep-fears-drove-rate-pause-amid-west-asia-uncertainty/articleshow/131869393.cms",
-          "summary": "The Reserve Bank of India's Monetary Policy Committee has opted for a cautious \"wait and watch\" stance, holding the repo rate steady due to significant geopolitical and weather-related uncertainties. Concerns over rising...",
-          "published": "Fri, 19 Jun 2026 19:56:02 +0530",
-          "source": "Economic Times Markets",
-          "relevance_score": 6
-        },
-        {
-          "title": "Rupee records strongest week in 11 as bond inflows, softer oil prices lend support",
-          "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-records-strongest-week-in-11-as-bond-inflows-softer-oil-prices-lend-support/articleshow/131856516.cms",
-          "summary": "The Indian rupee maintained steady ground against the dollar last Friday, closing almost flat. The day’s trading featured some ups and downs, yet the rupee celebrated its best weekly performance in eleven weeks, thanks t...",
-          "published": "Fri, 19 Jun 2026 16:04:47 +0530",
-          "source": "Economic Times Markets",
-          "relevance_score": 5
-        },
-        {
-          "title": "SBI, Axis Bank among lenders set for $2 billion ECB fundraising via RBI swap",
-          "link": "https://economictimes.indiatimes.com/markets/stocks/news/sbi-axis-bank-among-lenders-set-for-2-billion-ecb-fundraising-via-rbi-swap/articleshow/131869244.cms",
-          "summary": "Major Indian banks, including SBI, Axis Bank, and Bank of Baroda, alongside Power Finance Corporation, are set to raise over $2 billion from overseas markets next week. This move capitalizes on the Reserve Bank of India'...",
-          "published": "Sat, 20 Jun 2026 05:30:00 +0530",
-          "source": "Economic Times Markets",
-          "relevance_score": 5
-        },
-        {
-          "title": "US stock markets this week: Nasdaq leads Wall Street rally as AI stocks surge; S&P 500, Dow Jones also up around 1%",
-          "link": "https://www.livemint.com/market/stock-market-news/us-stock-markets-this-week-nasdaq-leads-wall-street-rally-as-ai-stocks-surge-s-p-500-dow-jones-also-up-around-1-11781933706079.html",
-          "summary": "Wall Street saw strong gains despite Federal Reserve's hawkish tone. Major indices rose, led by tech stocks, while easing geopolitical tensions helped stabilize markets. Crude prices settled lower, and investors remained...",
-          "published": "Sat, 20 Jun 2026 11:24:21 +0530",
-          "source": "LiveMint Markets",
-          "relevance_score": 5
-        },
-        {
-          "title": "F&O Talk: Mid, smallcaps look strong on charts; Sudeep Shah picks 8 stocks, outlines Infosys, IFCI strategy",
-          "link": "https://economictimes.indiatimes.com/markets/expert-view/fo-talk-mid-smallcaps-look-strong-on-charts-sudeep-shah-picks-8-stocks-outlines-infosys-ifci-strategy/articleshow/131872773.cms",
-          "summary": "Indian equities faltered on Friday, ending a five-day rally as IT stocks plunged and global cues weakened. The Sensex and Nifty saw significant dips. Analyst Sudeep Shah discussed Nifty's indecisive weekly chart, Bank Ni...",
-          "published": "Sat, 20 Jun 2026 13:53:21 +0530",
-          "source": "Economic Times Markets",
-          "relevance_score": 5
-        },
-        {
-          "title": "US-Iran peace deal to crude oil prices: Top five triggers that may dictate the Indian stock market this week",
-          "link": "https://www.livemint.com/market/stock-market-news/usiran-peace-deal-to-crude-oil-prices-top-five-triggers-that-may-dictate-the-indian-stock-market-this-week-11782008676186.html",
-          "summary": "Indian stock market: On Friday, the Sensex fell 607 points, or 0.78%, to close at 76,802.90, while the Nifty 50 declined 154.90 points, or 0.64%, ending the session at 24,013.10.",
-          "published": "Sun, 21 Jun 2026 08:16:04 +0530",
-          "source": "LiveMint Markets",
-          "relevance_score": 5
-        },
-        {
-          "title": "Bharat Forge among 6 stocks hitting 52-week highs; surge up to 25% in a month",
-          "link": "https://economictimes.indiatimes.com/markets/stocks/news/bharat-forge-among-6-stocks-hitting-52-week-highs-surge-up-to-25-in-a-month/slideshow/131859579.cms",
-          "summary": "Despite a significant dip in the benchmark Sensex, six stocks within the BSE200 index achieved new 52-week highs on Friday, signaling robust investor confidence. These outperformers, including GE Vernova T&D India, The F...",
-          "published": "Fri, 19 Jun 2026 18:18:49 +0530",
-          "source": "Economic Times Markets",
-          "relevance_score": 4
-        },
-        {
-          "title": "Nifty, Sensex extend weekly gains; lower oil prices, FII inflows offset IT-led selloff - Moneycontrol.com",
-          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSzNkVEpDQ25UWWV2cC10TktJZkJWNGxDdEFETll3bEF5LU5Sd0FGdlNzNTRPVHJNZGo4ZmVyZ01Vb05hV2l0OEZmUllhNVhQOGZZUzVlUGlZSWxZS1QzREc0YWdub0ZJVTJnTWdhWE9sR3J3YllySDhIdy03Uk15ZHZLNWdSLXhjcU5RMFBnOWdHMFFaXy1pN0tfSmFhcFUxVUp1YVo3N3psdGpmVXFJWW9SVklFSkdzSkhLcjBzZHh6dUxjSTZYMnhhb0xRM1J6UVl3eUtmSC1ZX0otZ0lYd05ia0JxaU44LVZJ0gHwAUFVX3lxTE9pSFZSeU5EYi1zbzlaaGR5b2ktdm12WGN2VTlXNkFuMWw3SnlwZS1Jc2xzdmQyM0hfR21leG1xWGN1TjdSU1Y0M2ZIQlZBTGpDQTRlRUZFTW9SNUNiZ1dBWmxES3dvWHdkYnZfZWRuRHY0TEloTUtya0ZsSnlxckdJNjZRTmNzY0VRTzVGNDFuZm5MUDNwWmpXMW5VcDMtOXB2UXpfVWNfcDcxOUJEY2UzWWZjNEM4QTFpQTFSbTh3R1JVTWM4cHlBSjgwTnhvZVl0RmV1MGJSTFlTZGhZNFo2TUZsYlRtNlZQU2ljZG9XLQ?oc=5",
-          "summary": "Nifty, Sensex extend weekly gains; lower oil prices, FII inflows offset IT-led selloff Moneycontrol.com",
-          "published": "Sat, 20 Jun 2026 04:47:57 GMT",
-          "source": "Google News - India Markets",
-          "relevance_score": 4
-        },
-        {
-          "title": "Stock market today: Sensex closes over 600 points down, Nifty50 above 24,000 - not just IT stocks, HDFC Bank & RIL also drag down indices - MSN",
-          "link": "https://news.google.com/rss/articles/CBMi1wNBVV95cUxPVzRDWnNTckJ4Nm0zeE1tc0x4d0hsN2phNTlxNTdHYmRXVVBqREgyaTAwU1Y5aWFMeTZLSVd3Z0d0eEV6TTJJVmdOU0JPNk5qNHlMeEg1Si11U0NWbVl2NWx4dGNGTDlKcUtFM2VFYzZiMlZ5cnZtYWhHVFZHWHBDczk2cl94bC1Eb2Zpdm1YNm4zc3p6c25jdmxJT05JRF9xMHNWeVcwR21ZdjFQVFFqeEIzYUpidW1FTXVVcHVmNlRpaldqTVhVcGYzUDdYUWZjb1Z5OWg1X3VHRHk5WjJJYkFYajRvY1htS0VpZVBRTkdsMU5ZSHI3TnFNc3FHdlo2Z0FYbnRQbmxCb2IwaFpsMjlhTFdsSGtkOXg1NGRsMTd4UFBZMXVxWW1YV0pYTmxhUnNLYk8wcHY1OXNsN2p2eS1qMkZOWVNVVG9xQ2owd2pYS1gtR09xQ1VYaW01LVp6YzFXbUZoR0lDazFkemtzOTBQSUFEUFNwekdqYllLcXZxUXZ2YVE4MUJwZXUwc1ZBc01mOGlGNHZGODVLRFpMRHZSRVFERFlRcnc0TWRTMG5GQ1RpVDRsUEFOT29xNWVlaFRVbi1qaEpBTVBtdFdKZnE5TzhrQUU?oc=5",
-          "summary": "Stock market today: Sensex closes over 600 points down, Nifty50 above 24,000 - not just IT stocks, HDFC Bank & RIL also drag down indices MSN",
-          "published": "Sat, 20 Jun 2026 06:01:47 GMT",
-          "source": "Google News - India Markets",
-          "relevance_score": 4
-        },
-        {
-          "title": "Canadian dollar hits 14-month low as Fed-BoC gap widens and gold takes over from oil - VT Markets",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTWdnc0o3c2l6NnJTWUhRZmtndm5UVktIUXp1MVVsSENXSTNoS3JrUEIxNl8zMWYwNU9udWhzNkVlM3ZNdjV2N1dScHB2Tm54UkZjLWxYSjJ0Z1RuY215RVpYaXRiYzRzcTEtMXlxd1Btd0stN0pGQU5MMEMtVWx2VGFEOHNrSHFBR21hNE1uT1R6MkI0U09ScnZmZFpmY0RPYkp6TWdqNUpNc0ZBcU5STlRReDhVbnF4TnJ0a0NIeHFzTWg5M0E?oc=5",
-          "summary": "Canadian dollar hits 14-month low as Fed-BoC gap widens and gold takes over from oil VT Markets",
-          "published": "Sat, 20 Jun 2026 10:15:20 GMT",
-          "source": "Google News - Global Markets",
-          "relevance_score": 4
-        }
-      ]
+      }
     },
+    "market_news": [
+      {
+        "title": "RBI MPC minutes: Policy misstep fears drove rate pause amid West Asia uncertainty",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-mpc-minutes-policy-misstep-fears-drove-rate-pause-amid-west-asia-uncertainty/articleshow/131869393.cms",
+        "summary": "The Reserve Bank of India's Monetary Policy Committee has opted for a cautious \"wait and watch\" stance, holding the repo rate steady due to significant geopolitical and weather-related uncertainties. Concerns over rising...",
+        "published": "Fri, 19 Jun 2026 19:56:02 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 6
+      },
+      {
+        "title": "Rupee records strongest week in 11 as bond inflows, softer oil prices lend support",
+        "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-records-strongest-week-in-11-as-bond-inflows-softer-oil-prices-lend-support/articleshow/131856516.cms",
+        "summary": "The Indian rupee maintained steady ground against the dollar last Friday, closing almost flat. The day’s trading featured some ups and downs, yet the rupee celebrated its best weekly performance in eleven weeks, thanks t...",
+        "published": "Fri, 19 Jun 2026 16:04:47 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 5
+      },
+      {
+        "title": "SBI, Axis Bank among lenders set for $2 billion ECB fundraising via RBI swap",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/sbi-axis-bank-among-lenders-set-for-2-billion-ecb-fundraising-via-rbi-swap/articleshow/131869244.cms",
+        "summary": "Major Indian banks, including SBI, Axis Bank, and Bank of Baroda, alongside Power Finance Corporation, are set to raise over $2 billion from overseas markets next week. This move capitalizes on the Reserve Bank of India'...",
+        "published": "Sat, 20 Jun 2026 05:30:00 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 5
+      },
+      {
+        "title": "US stock markets this week: Nasdaq leads Wall Street rally as AI stocks surge; S&P 500, Dow Jones also up around 1%",
+        "link": "https://www.livemint.com/market/stock-market-news/us-stock-markets-this-week-nasdaq-leads-wall-street-rally-as-ai-stocks-surge-s-p-500-dow-jones-also-up-around-1-11781933706079.html",
+        "summary": "Wall Street saw strong gains despite Federal Reserve's hawkish tone. Major indices rose, led by tech stocks, while easing geopolitical tensions helped stabilize markets. Crude prices settled lower, and investors remained...",
+        "published": "Sat, 20 Jun 2026 11:24:21 +0530",
+        "source": "LiveMint Markets",
+        "relevance_score": 5
+      },
+      {
+        "title": "F&O Talk: Mid, smallcaps look strong on charts; Sudeep Shah picks 8 stocks, outlines Infosys, IFCI strategy",
+        "link": "https://economictimes.indiatimes.com/markets/expert-view/fo-talk-mid-smallcaps-look-strong-on-charts-sudeep-shah-picks-8-stocks-outlines-infosys-ifci-strategy/articleshow/131872773.cms",
+        "summary": "Indian equities faltered on Friday, ending a five-day rally as IT stocks plunged and global cues weakened. The Sensex and Nifty saw significant dips. Analyst Sudeep Shah discussed Nifty's indecisive weekly chart, Bank Ni...",
+        "published": "Sat, 20 Jun 2026 13:53:21 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 5
+      },
+      {
+        "title": "US-Iran peace deal to crude oil prices: Top five triggers that may dictate the Indian stock market this week",
+        "link": "https://www.livemint.com/market/stock-market-news/usiran-peace-deal-to-crude-oil-prices-top-five-triggers-that-may-dictate-the-indian-stock-market-this-week-11782008676186.html",
+        "summary": "Indian stock market: On Friday, the Sensex fell 607 points, or 0.78%, to close at 76,802.90, while the Nifty 50 declined 154.90 points, or 0.64%, ending the session at 24,013.10.",
+        "published": "Sun, 21 Jun 2026 08:16:04 +0530",
+        "source": "LiveMint Markets",
+        "relevance_score": 5
+      },
+      {
+        "title": "Bharat Forge among 6 stocks hitting 52-week highs; surge up to 25% in a month",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/bharat-forge-among-6-stocks-hitting-52-week-highs-surge-up-to-25-in-a-month/slideshow/131859579.cms",
+        "summary": "Despite a significant dip in the benchmark Sensex, six stocks within the BSE200 index achieved new 52-week highs on Friday, signaling robust investor confidence. These outperformers, including GE Vernova T&D India, The F...",
+        "published": "Fri, 19 Jun 2026 18:18:49 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 4
+      },
+      {
+        "title": "Nifty, Sensex extend weekly gains; lower oil prices, FII inflows offset IT-led selloff - Moneycontrol.com",
+        "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSzNkVEpDQ25UWWV2cC10TktJZkJWNGxDdEFETll3bEF5LU5Sd0FGdlNzNTRPVHJNZGo4ZmVyZ01Vb05hV2l0OEZmUllhNVhQOGZZUzVlUGlZSWxZS1QzREc0YWdub0ZJVTJnTWdhWE9sR3J3YllySDhIdy03Uk15ZHZLNWdSLXhjcU5RMFBnOWdHMFFaXy1pN0tfSmFhcFUxVUp1YVo3N3psdGpmVXFJWW9SVklFSkdzSkhLcjBzZHh6dUxjSTZYMnhhb0xRM1J6UVl3eUtmSC1ZX0otZ0lYd05ia0JxaU44LVZJ0gHwAUFVX3lxTE9pSFZSeU5EYi1zbzlaaGR5b2ktdm12WGN2VTlXNkFuMWw3SnlwZS1Jc2xzdmQyM0hfR21leG1xWGN1TjdSU1Y0M2ZIQlZBTGpDQTRlRUZFTW9SNUNiZ1dBWmxES3dvWHdkYnZfZWRuRHY0TEloTUtya0ZsSnlxckdJNjZRTmNzY0VRTzVGNDFuZm5MUDNwWmpXMW5VcDMtOXB2UXpfVWNfcDcxOUJEY2UzWWZjNEM4QTFpQTFSbTh3R1JVTWM4cHlBSjgwTnhvZVl0RmV1MGJSTFlTZGhZNFo2TUZsYlRtNlZQU2ljZG9XLQ?oc=5",
+        "summary": "Nifty, Sensex extend weekly gains; lower oil prices, FII inflows offset IT-led selloff Moneycontrol.com",
+        "published": "Sat, 20 Jun 2026 04:47:57 GMT",
+        "source": "Google News - India Markets",
+        "relevance_score": 4
+      },
+      {
+        "title": "Stock market today: Sensex closes over 600 points down, Nifty50 above 24,000 - not just IT stocks, HDFC Bank & RIL also drag down indices - MSN",
+        "link": "https://news.google.com/rss/articles/CBMi1wNBVV95cUxPVzRDWnNTckJ4Nm0zeE1tc0x4d0hsN2phNTlxNTdHYmRXVVBqREgyaTAwU1Y5aWFMeTZLSVd3Z0d0eEV6TTJJVmdOU0JPNk5qNHlMeEg1Si11U0NWbVl2NWx4dGNGTDlKcUtFM2VFYzZiMlZ5cnZtYWhHVFZHWHBDczk2cl94bC1Eb2Zpdm1YNm4zc3p6c25jdmxJT05JRF9xMHNWeVcwR21ZdjFQVFFqeEIzYUpidW1FTXVVcHVmNlRpaldqTVhVcGYzUDdYUWZjb1Z5OWg1X3VHRHk5WjJJYkFYajRvY1htS0VpZVBRTkdsMU5ZSHI3TnFNc3FHdlo2Z0FYbnRQbmxCb2IwaFpsMjlhTFdsSGtkOXg1NGRsMTd4UFBZMXVxWW1YV0pYTmxhUnNLYk8wcHY1OXNsN2p2eS1qMkZOWVNVVG9xQ2owd2pYS1gtR09xQ1VYaW01LVp6YzFXbUZoR0lDazFkemtzOTBQSUFEUFNwekdqYllLcXZxUXZ2YVE4MUJwZXUwc1ZBc01mOGlGNHZGODVLRFpMRHZSRVFERFlRcnc0TWRTMG5GQ1RpVDRsUEFOT29xNWVlaFRVbi1qaEpBTVBtdFdKZnE5TzhrQUU?oc=5",
+        "summary": "Stock market today: Sensex closes over 600 points down, Nifty50 above 24,000 - not just IT stocks, HDFC Bank & RIL also drag down indices MSN",
+        "published": "Sat, 20 Jun 2026 06:01:47 GMT",
+        "source": "Google News - India Markets",
+        "relevance_score": 4
+      },
+      {
+        "title": "Canadian dollar hits 14-month low as Fed-BoC gap widens and gold takes over from oil - VT Markets",
+        "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTWdnc0o3c2l6NnJTWUhRZmtndm5UVktIUXp1MVVsSENXSTNoS3JrUEIxNl8zMWYwNU9udWhzNkVlM3ZNdjV2N1dScHB2Tm54UkZjLWxYSjJ0Z1RuY215RVpYaXRiYzRzcTEtMXlxd1Btd0stN0pGQU5MMEMtVWx2VGFEOHNrSHFBR21hNE1uT1R6MkI0U09ScnZmZFpmY0RPYkp6TWdqNUpNc0ZBcU5STlRReDhVbnF4TnJ0a0NIeHFzTWg5M0E?oc=5",
+        "summary": "Canadian dollar hits 14-month low as Fed-BoC gap widens and gold takes over from oil VT Markets",
+        "published": "Sat, 20 Jun 2026 10:15:20 GMT",
+        "source": "Google News - Global Markets",
+        "relevance_score": 4
+      }
+    ],
     "warnings": []
   },
   "history": [
@@ -3910,9 +3910,9 @@
     },
     {
       "date": "2026-06-21",
-      "generated_at": "2026-06-21 09:39:34 IST",
+      "generated_at": "2026-06-21 09:44:55 IST",
       "bias": "Neutral / Range-bound",
-      "score": 1,
+      "score": 0,
       "confidence": "High",
       "fii_net": 4859.07,
       "dii_net": -1159.64,
@@ -3925,9 +3925,9 @@
       "banknifty_pcr": 1.0755450539671605,
       "banknifty_support": 54000.0,
       "banknifty_resistance": 60000.0,
-      "us_avg_change_pct": 1.043958568075968,
-      "europe_avg_change_pct": -0.3556374601469417,
-      "asia_avg_change_pct": -0.6582914341862879,
+      "us_avg_change_pct": -1.1782520121344844,
+      "europe_avg_change_pct": -0.43066787970495296,
+      "asia_avg_change_pct": 0.5929797334235998,
       "top_sector": "NIFTY HEALTHCARE INDEX",
       "top_sector_change_pct": 0.74,
       "weak_sector": "NIFTY IT",
@@ -3935,9 +3935,9 @@
       "gold_change_pct": -1.212097112492872,
       "crude_oil_change_pct": -0.07832579606906893,
       "brent_oil_change_pct": 0.9267349754669816,
-      "bitcoin_change_pct": 1.2230938593008656,
-      "ethereum_change_pct": 1.354637663622987,
-      "dxy_change_pct": 0.7593187771381286,
+      "bitcoin_change_pct": 1.2307599431320435,
+      "ethereum_change_pct": 1.3423591618028294,
+      "dxy_change_pct": 0.5525370879090347,
       "usdinr_change_pct": -0.5786535659829622
     }
   ]
