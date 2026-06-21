@@ -374,6 +374,89 @@ def render_html(context: dict[str, Any]) -> str:
   font-weight: 800;
 }
 
+/* ---------- First-impression polish ---------- */
+
+/* Animated header gradient + live pulse */
+header {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #0f172a);
+  background-size: 200% 200%;
+  animation: headerShift 14s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+header::after {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 20%, rgba(59,130,246,.25), transparent 45%);
+  pointer-events: none;
+}
+@keyframes headerShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+h1 { position: relative; }
+.live-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: #4ade80; display: inline-block;
+  box-shadow: 0 0 0 0 rgba(74,222,128,.7);
+  animation: livePulse 1.8s infinite;
+}
+@keyframes livePulse {
+  0% { box-shadow: 0 0 0 0 rgba(74,222,128,.7); }
+  70% { box-shadow: 0 0 0 10px rgba(74,222,128,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+
+/* Hero sentiment banner */
+.hero {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 26px;
+  margin: 0 0 20px;
+  box-shadow: 0 10px 40px rgba(15,23,42,.10);
+  border: 1px solid rgba(15,23,42,.05);
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 28px;
+  align-items: center;
+}
+@media (max-width: 720px) { .hero { grid-template-columns: 1fr; text-align: center; } }
+.gauge-wrap { display: flex; flex-direction: column; align-items: center; }
+.gauge-svg { width: 100%; max-width: 260px; }
+.gauge-arc-fg { transition: stroke-dashoffset 1.4s cubic-bezier(.22,1,.36,1); }
+.gauge-needle { transform-box: fill-box; transform-origin: bottom center; transition: transform 1.4s cubic-bezier(.34,1.56,.64,1); }
+.gauge-score { font-size: 46px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.gauge-score-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+.hero-bias { display: inline-flex; align-items: center; gap: 10px; font-size: 30px; font-weight: 800; letter-spacing: -.02em; }
+.hero-bias .dot { width: 16px; height: 16px; border-radius: 50%; }
+.hero-sub { margin-top: 10px; font-size: 16px; line-height: 1.55; color: var(--text); }
+.hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.hero-chip { background: #f1f5f9; border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 13px; font-weight: 600; display: inline-flex; gap: 6px; align-items: center; }
+.hero-chip b { font-weight: 800; }
+.tone-good { color: var(--good); } .tone-bad { color: var(--bad); } .tone-neutral { color: var(--neutral); }
+
+/* Entrance reveal (staggered) */
+.reveal { opacity: 0; transform: translateY(16px); }
+.reveal.in { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s cubic-bezier(.22,1,.36,1); }
+
+/* Card hover lift + tab transitions */
+.card { transition: transform .18s ease, box-shadow .18s ease; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(15,23,42,.13); }
+.card.meeting-mode:hover, .hero:hover { transform: none; }
+.tab-btn { transition: background .18s ease, color .18s ease, transform .12s ease; }
+.tab-btn:hover { transform: translateY(-1px); }
+.panel.active { animation: panelFade .4s ease; }
+@keyframes panelFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.pop { animation: popIn .55s cubic-bezier(.22,1,.36,1) both; }
+@keyframes popIn { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, header, .live-dot { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
 
   </style>
 </head>
@@ -384,10 +467,12 @@ def render_html(context: dict[str, Any]) -> str:
       <h1>Interactive Morning Market Brief</h1>
       <div id="generatedAt" class="muted" style="color:#cbd5e1"></div>
     </div>
-    <div class="pill"><span>Auto-generated</span><strong>Pre-market</strong></div>
+    <div class="pill"><span class="live-dot"></span><span>Live</span><strong>Pre-market</strong></div>
   </div>
 </header>
 <main>
+  <section id="hero" class="hero reveal"></section>
+
   <nav class="tabs" aria-label="Dashboard tabs">
     <button class="tab-btn active" data-tab="overview">Overview</button>
     <button class="tab-btn" data-tab="global">Global Markets</button>
@@ -1339,6 +1424,107 @@ function renderNews() {
   `).join('') || '<p class="muted">No news found.</p>';
 }
 
+function biasTone(bias) {
+  const b = String(bias || '').toLowerCase();
+  if (b.includes('bull')) return { tone: 'good', color: '#047857' };
+  if (b.includes('bear')) return { tone: 'bad', color: '#b91c1c' };
+  return { tone: 'neutral', color: '#b45309' };
+}
+
+function animateCount(el, to, opts) {
+  opts = opts || {};
+  const decimals = opts.decimals || 0;
+  const prefix = opts.prefix || '';
+  const suffix = opts.suffix || '';
+  const dur = opts.dur || 1100;
+  const start = performance.now();
+  const from = 0;
+  function frame(now) {
+    const t = Math.min(1, (now - start) / dur);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const val = from + (to - from) * eased;
+    el.textContent = prefix + val.toFixed(decimals) + suffix;
+    if (t < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+
+function renderHero() {
+  const el = document.getElementById('hero');
+  if (!el) return;
+
+  const score = Number(APP.score.score || 0);
+  const bias = APP.score.bias || 'Neutral';
+  const conf = APP.score.confidence || '';
+  const { tone, color } = biasTone(bias);
+
+  // Map score (clamped -10..+10) to a 180deg semicircle (left=bearish, right=bullish)
+  const clamped = Math.max(-10, Math.min(10, score));
+  const ratio = (clamped + 10) / 20;            // 0..1
+  const angle = -90 + ratio * 180;              // -90..+90 degrees
+  const R = 80, CX = 100, CY = 100;
+  const circ = Math.PI * R;                     // half-circle length
+  const dashOffset = circ * (1 - ratio);
+
+  const nse = APP.data.nse_indices || {};
+  const flow = APP.data.fii_dii || {};
+  const nifty = (APP.data.option_chains || {}).NIFTY || {};
+  const combined = Number(flow.fii_net || 0) + Number(flow.dii_net || 0);
+
+  const chips = [
+    ['FII+DII', money(combined), combined >= 0 ? 'tone-good' : 'tone-bad'],
+    ['India VIX', pct((nse.india_vix || {}).change_pct), Number((nse.india_vix || {}).change_pct || 0) <= 0 ? 'tone-good' : 'tone-bad'],
+    ['Nifty PCR', num(nifty.pcr), ''],
+    ['Confidence', conf, ''],
+  ];
+
+  el.innerHTML = `
+    <div class="gauge-wrap">
+      <svg class="gauge-svg" viewBox="0 0 200 120" aria-hidden="true">
+        <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#e5e7eb" stroke-width="16" stroke-linecap="round"/>
+        <path class="gauge-arc-fg" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="${color}" stroke-width="16" stroke-linecap="round"
+              stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${circ.toFixed(1)}"/>
+        <g class="gauge-needle" style="transform: rotate(0deg);">
+          <line x1="100" y1="100" x2="100" y2="38" stroke="${color}" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <circle cx="100" cy="100" r="6" fill="${color}"/>
+      </svg>
+      <div style="text-align:center;margin-top:2px">
+        <div class="gauge-score tone-${tone}">0</div>
+        <div class="gauge-score-label">Signal score</div>
+      </div>
+    </div>
+    <div>
+      <div class="gauge-score-label">Market bias</div>
+      <div class="hero-bias"><span class="dot" style="background:${color}"></span><span class="tone-${tone}">${escapeHtml(bias)}</span></div>
+      <div class="hero-sub">${escapeHtml(APP.market_view || '')}</div>
+      <div class="hero-chips">
+        ${chips.map(([k, v, t]) => `<span class="hero-chip">${escapeHtml(k)} <b class="${t}">${v}</b></span>`).join('')}
+      </div>
+    </div>`;
+
+  // Animate gauge after a tick so transitions fire
+  requestAnimationFrame(() => {
+    const arc = el.querySelector('.gauge-arc-fg');
+    const needle = el.querySelector('.gauge-needle');
+    const scoreEl = el.querySelector('.gauge-score');
+    if (arc) arc.style.strokeDashoffset = dashOffset.toFixed(1);
+    if (needle) needle.style.transform = `rotate(${angle.toFixed(1)}deg)`;
+    if (scoreEl) animateCount(scoreEl, score, { decimals: 0 });
+  });
+}
+
+function playEntrance() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const hero = document.getElementById('hero');
+  if (hero) requestAnimationFrame(() => hero.classList.add('in'));
+  const cards = document.querySelectorAll('#overview .card, .card.meeting-mode');
+  cards.forEach((c, i) => {
+    c.classList.add('pop');
+    c.style.animationDelay = (i * 70) + 'ms';
+  });
+}
+
 function renderMeetingMode() {
   const planEl = document.getElementById('todayPlan');
   const topSignalsEl = document.getElementById('topSignals');
@@ -1463,6 +1649,8 @@ document.getElementById('stopSpeakBtn').addEventListener('click', stopSpeech);
 window.addEventListener('beforeunload', stopSpeech);
 window.addEventListener('resize', () => setTimeout(renderAll, 100));
 renderAll();
+renderHero();
+playEntrance();
 </script>
 </body>
 </html>""".replace("__APP_DATA__", payload_json)
