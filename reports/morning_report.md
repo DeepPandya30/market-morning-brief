@@ -1,6 +1,6 @@
-# Morning Market Brief - 20 June 2026
+# Morning Market Brief - 21 June 2026
 
-Generated at: **20 Jun 2026, 06:34 PM IST**
+Generated at: **21 Jun 2026, 09:39 AM IST**
 
 ## Final View
 
@@ -41,21 +41,21 @@ Generated at: **20 Jun 2026, 06:34 PM IST**
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 63,611 | 70.12 | 0.11% | 2026-06-20 |
-| Ethereum | ETH-USD | 1,726 | 15.42 | 0.90% | 2026-06-20 |
-| Solana | SOL-USD | 71.61 | 1.89 | 2.71% | 2026-06-20 |
-| Cardano | ADA-USD | 0.16 | 0.00 | 0.50% | 2026-06-20 |
-| Ripple | XRP-USD | 1.15 | 0.01 | 1.06% | 2026-06-20 |
+| Bitcoin | BTC-USD | 64,318 | 777.16 | 1.22% | 2026-06-21 |
+| Ethereum | ETH-USD | 1,734 | 23.18 | 1.35% | 2026-06-21 |
+| Solana | SOL-USD | 73.42 | 3.70 | 5.31% | 2026-06-21 |
+| Cardano | ADA-USD | 0.16 | -0.00 | -0.06% | 2026-06-21 |
+| Ripple | XRP-USD | 1.15 | 0.01 | 0.98% | 2026-06-21 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.32 | 0.00 | 0.27% | 2026-06-20 |
+| GBP/USD | GBPUSD=X | 1.32 | 0.00 | 0.27% | 2026-06-21 |
 | EUR/USD | EURUSD=X | 1.15 | -0.00 | -0.33% | 2026-06-19 |
 | USD/CHF | CHF=X | 0.81 | 0.00 | 0.19% | 2026-06-20 |
 | USD/JPY | JPY=X | 161.27 | -0.01 | -0.01% | 2026-06-20 |
-| DXY | DX-Y.NYB | 100.85 | -0.00 | -0.00% | 2026-06-19 |
+| DXY | DX-Y.NYB | 100.85 | 0.76 | 0.76% | 2026-06-18 |
 | USD/INR | INR=X | 94.31 | -0.55 | -0.58% | 2026-06-19 |
 
 ## FII / DII Flow
@@ -97,8 +97,8 @@ Generated at: **20 Jun 2026, 06:34 PM IST**
 | India VIX | -1 | Bearish | India VIX change 2.34%. |
 | Sector breadth | -1 | Bearish | 4 sectors positive and 10 sectors negative. |
 | Global commodities | 0 | Neutral | Crude/Brent average move 0.42%, commodity pressure is limited. |
-| Crypto risk appetite | 0 | Neutral | Major crypto basket average move 1.06% across 5 coins. |
-| Currency pressure | 1 | Bullish | DXY/USDINR pressure average -0.29%; rising dollar/rupee pressure is usually negative for India. |
+| Crypto risk appetite | 1 | Bullish | Major crypto basket average move 1.76% across 5 coins. |
+| Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.09%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
