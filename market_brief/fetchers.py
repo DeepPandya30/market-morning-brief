@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 from collections.abc import Iterable
 from datetime import datetime
 from typing import Any
@@ -8,7 +9,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 import yfinance as yf
-from .config import NEWS_FEEDS, NEWS_KEYWORDS
+from .config import NEWS_FEEDS, NEWS_KEYWORDS, NEWS_USER_AGENT
 
 from .config import (
     ASIA_MARKETS,
@@ -562,10 +563,12 @@ def fetch_market_news(limit: int = 10) -> list[dict]:
             continue
 
         try:
-            parsed = feedparser.parse(feed_url)
+            # Send a browser User-Agent so feeds that block the default
+            # urllib agent (common from datacenter IPs) still respond.
+            parsed = feedparser.parse(feed_url, agent=NEWS_USER_AGENT)
 
             for entry in parsed.entries:
-                title = str(entry.get("title", "")).strip()
+                title = html.unescape(str(entry.get("title", "")).strip())
                 link = str(entry.get("link", "")).strip()
                 summary = str(entry.get("summary", "")).strip()
 
@@ -627,6 +630,7 @@ def _clean_news_summary(summary: str, max_len: int = 220) -> str:
     import re
 
     text = re.sub(r"<[^>]+>", " ", summary or "")
+    text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
 
     if len(text) > max_len:

@@ -93,14 +93,42 @@ OPTION_CHAIN_REFERERS = {
     "BANKNIFTY": "https://www.nseindia.com/get-quotes/derivatives?symbol=BANKNIFTY",
 }
 
+# Browser-like User-Agent. Some feeds (e.g. investing.com) return HTTP 403 to
+# the default urllib/feedparser agent, especially from datacenter IPs such as
+# GitHub Actions runners. Sending a real browser UA avoids those blocks.
+NEWS_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+)
+
+# Reliable RSS sources that do not block bots / datacenter IPs. Google News
+# search RSS is the most robust fallback and is listed first.
 NEWS_FEEDS = [
     {
-        "name": "Investing India News",
-        "url": "https://in.investing.com/rss/news.rss",
+        "name": "Google News - India Markets",
+        "url": (
+            "https://news.google.com/rss/search?"
+            "q=nifty+sensex+india+stock+market+when:1d&hl=en-IN&gl=IN&ceid=IN:en"
+        ),
     },
     {
-        "name": "Investing Global News",
-        "url": "https://www.investing.com/rss/news.rss",
+        "name": "Google News - Global Markets",
+        "url": (
+            "https://news.google.com/rss/search?"
+            "q=stock+market+fed+crude+oil+gold+when:1d&hl=en-US&gl=US&ceid=US:en"
+        ),
+    },
+    {
+        "name": "Economic Times Markets",
+        "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms",
+    },
+    {
+        "name": "LiveMint Markets",
+        "url": "https://www.livemint.com/rss/markets",
+    },
+    {
+        "name": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/news/rssindex",
     },
 ]
 
