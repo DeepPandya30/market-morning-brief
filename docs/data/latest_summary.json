@@ -1,6 +1,6 @@
 {
   "score": {
-    "score": 0,
+    "score": 1,
     "bias": "Neutral / Range-bound",
     "confidence": "High",
     "components": [
@@ -12,21 +12,21 @@
       },
       {
         "name": "US markets",
-        "score": -1,
-        "status": "Bearish",
-        "reason": "Average move -1.18% across 3 indices."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Average move 1.04% across 3 indices."
       },
       {
         "name": "Europe markets",
         "score": -1,
         "status": "Bearish",
-        "reason": "Average move -0.43% across 3 indices."
+        "reason": "Average move -0.36% across 3 indices."
       },
       {
         "name": "Asia markets",
-        "score": 1,
-        "status": "Bullish",
-        "reason": "Average move 0.59% across 2 indices."
+        "score": 0,
+        "status": "Neutral",
+        "reason": "Average move -0.66% across 2 indices."
       },
       {
         "name": "FII/DII flow",
@@ -68,13 +68,13 @@
         "name": "Crypto risk appetite",
         "score": 1,
         "status": "Bullish",
-        "reason": "Major crypto basket average move 1.73% across 5 coins."
+        "reason": "Major crypto basket average move 1.76% across 5 coins."
       },
       {
         "name": "Currency pressure",
         "score": 0,
         "status": "Neutral",
-        "reason": "DXY/USDINR pressure average -0.01%; rising dollar/rupee pressure is usually negative for India."
+        "reason": "DXY/USDINR pressure average 0.09%; rising dollar/rupee pressure is usually negative for India."
       }
     ]
   },
@@ -84,36 +84,36 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26021.66015625,
-        "change": -354.6796875,
-        "change_pct": -1.3446887991323901,
-        "date": "2026-06-17"
+        "close": 26517.9296875,
+        "change": 496.26953125,
+        "change_pct": 1.907140160428249,
+        "date": "2026-06-18"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 51492.55078125,
-        "change": -507.12109375,
-        "change_pct": -0.9752390264481837,
-        "date": "2026-06-17"
+        "close": 51564.69921875,
+        "change": 72.1484375,
+        "change_pct": 0.14011432023730983,
+        "date": "2026-06-18"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7420.10009765625,
-        "change": -91.25,
-        "change_pct": -1.214828210822879,
-        "date": "2026-06-17"
+        "close": 7500.580078125,
+        "change": 80.47998046875,
+        "change_pct": 1.0846212235623454,
+        "date": "2026-06-18"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
         "close": 10363.2998046875,
-        "change": -145.2998046875,
-        "change_pct": -1.382675238267468,
+        "change": -36.400390625,
+        "change_pct": -0.35001384598958823,
         "date": "2026-06-19"
       },
       {
@@ -121,8 +121,8 @@
         "ticker": "^FCHI",
         "region": "Europe",
         "close": 8421.1396484375,
-        "change": -9.650390625,
-        "change_pct": -0.11446602964000653,
+        "change": -46.8408203125,
+        "change_pct": -0.5531522006381576,
         "date": "2026-06-19"
       },
       {
@@ -130,26 +130,26 @@
         "ticker": "^GDAXI",
         "region": "Europe",
         "close": 24985.8203125,
-        "change": 51.150390625,
-        "change_pct": 0.20513762879261596,
+        "change": -40.98046875,
+        "change_pct": -0.16374633381307943,
         "date": "2026-06-19"
       },
       {
         "name": "Hang Seng",
         "ticker": "^HSI",
         "region": "Asia",
-        "close": 24312.16015625,
-        "change": -181.7890625,
-        "change_pct": -0.7421794700253618,
-        "date": "2026-06-17"
+        "close": 23924.810546875,
+        "change": -387.349609375,
+        "change_pct": -1.5932340313882922,
+        "date": "2026-06-18"
       },
       {
         "name": "Nikkei 225",
         "ticker": "^N225",
         "region": "Asia",
         "close": 71250.0625,
-        "change": 1347.8125,
-        "change_pct": 1.9281389368725612,
+        "change": 196.5703125,
+        "change_pct": 0.27665116301571646,
         "date": "2026-06-19"
       }
     ],
@@ -205,45 +205,45 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 64322.87109375,
-        "change": 782.03515625,
-        "change_pct": 1.2307599431320435,
+        "close": 64394.98828125,
+        "change": 854.15234375,
+        "change_pct": 1.344257328610157,
         "date": "2026-06-21"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 1733.949951171875,
-        "change": 22.967529296875,
-        "change_pct": 1.3423591618028294,
+        "close": 1734.780029296875,
+        "change": 23.797607421875,
+        "change_pct": 1.3908738697499952,
         "date": "2026-06-21"
       },
       {
         "name": "Solana",
         "ticker": "SOL-USD",
         "group": "Crypto",
-        "close": 73.41999816894531,
-        "change": 3.6993942260742188,
-        "change_pct": 5.306027224183964,
+        "close": 73.61000061035156,
+        "change": 3.8893966674804688,
+        "change_pct": 5.578547011249976,
         "date": "2026-06-21"
       },
       {
         "name": "Cardano",
         "ticker": "ADA-USD",
         "group": "Crypto",
-        "close": 0.16169999539852142,
-        "change": -0.0003940016031265259,
-        "change_pct": -0.2430698301076012,
+        "close": 0.16120000183582306,
+        "change": -0.0008939951658248901,
+        "change_pct": -0.5515288550851154,
         "date": "2026-06-21"
       },
       {
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.1476999521255493,
-        "change": 0.01131594181060791,
-        "change_pct": 0.9957850258269448,
+        "close": 1.1482000350952148,
+        "change": 0.011816024780273438,
+        "change_pct": 1.0397915381613565,
         "date": "2026-06-21"
       }
     ],
@@ -273,7 +273,7 @@
         "close": 0.8064000010490417,
         "change": 0.0015000104904174805,
         "change_pct": 0.1863598593629538,
-        "date": "2026-06-20"
+        "date": "2026-06-21"
       },
       {
         "name": "USD/JPY",
@@ -282,16 +282,16 @@
         "close": 161.27499389648438,
         "change": -0.014007568359375,
         "change_pct": -0.008684763518998063,
-        "date": "2026-06-20"
+        "date": "2026-06-21"
       },
       {
         "name": "DXY",
         "ticker": "DX-Y.NYB",
         "group": "Currency",
-        "close": 100.08999633789062,
-        "change": 0.5499954223632812,
-        "change_pct": 0.5525370879090347,
-        "date": "2026-06-17"
+        "close": 100.8499984741211,
+        "change": 0.7600021362304688,
+        "change_pct": 0.7593187771381286,
+        "date": "2026-06-18"
       },
       {
         "name": "USD/INR",
@@ -3721,18 +3721,18 @@
         "relevance_score": 4
       },
       {
-        "title": "Nifty, Sensex extend weekly gains; lower oil prices, FII inflows offset IT-led selloff - Moneycontrol.com",
-        "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSzNkVEpDQ25UWWV2cC10TktJZkJWNGxDdEFETll3bEF5LU5Sd0FGdlNzNTRPVHJNZGo4ZmVyZ01Vb05hV2l0OEZmUllhNVhQOGZZUzVlUGlZSWxZS1QzREc0YWdub0ZJVTJnTWdhWE9sR3J3YllySDhIdy03Uk15ZHZLNWdSLXhjcU5RMFBnOWdHMFFaXy1pN0tfSmFhcFUxVUp1YVo3N3psdGpmVXFJWW9SVklFSkdzSkhLcjBzZHh6dUxjSTZYMnhhb0xRM1J6UVl3eUtmSC1ZX0otZ0lYd05ia0JxaU44LVZJ0gHwAUFVX3lxTE9pSFZSeU5EYi1zbzlaaGR5b2ktdm12WGN2VTlXNkFuMWw3SnlwZS1Jc2xzdmQyM0hfR21leG1xWGN1TjdSU1Y0M2ZIQlZBTGpDQTRlRUZFTW9SNUNiZ1dBWmxES3dvWHdkYnZfZWRuRHY0TEloTUtya0ZsSnlxckdJNjZRTmNzY0VRTzVGNDFuZm5MUDNwWmpXMW5VcDMtOXB2UXpfVWNfcDcxOUJEY2UzWWZjNEM4QTFpQTFSbTh3R1JVTWM4cHlBSjgwTnhvZVl0RmV1MGJSTFlTZGhZNFo2TUZsYlRtNlZQU2ljZG9XLQ?oc=5",
-        "summary": "Nifty, Sensex extend weekly gains; lower oil prices, FII inflows offset IT-led selloff Moneycontrol.com",
-        "published": "Sat, 20 Jun 2026 04:47:57 GMT",
-        "source": "Google News - India Markets",
-        "relevance_score": 4
-      },
-      {
         "title": "Stock market today: Sensex closes over 600 points down, Nifty50 above 24,000 - not just IT stocks, HDFC Bank & RIL also drag down indices - MSN",
         "link": "https://news.google.com/rss/articles/CBMi1wNBVV95cUxPVzRDWnNTckJ4Nm0zeE1tc0x4d0hsN2phNTlxNTdHYmRXVVBqREgyaTAwU1Y5aWFMeTZLSVd3Z0d0eEV6TTJJVmdOU0JPNk5qNHlMeEg1Si11U0NWbVl2NWx4dGNGTDlKcUtFM2VFYzZiMlZ5cnZtYWhHVFZHWHBDczk2cl94bC1Eb2Zpdm1YNm4zc3p6c25jdmxJT05JRF9xMHNWeVcwR21ZdjFQVFFqeEIzYUpidW1FTXVVcHVmNlRpaldqTVhVcGYzUDdYUWZjb1Z5OWg1X3VHRHk5WjJJYkFYajRvY1htS0VpZVBRTkdsMU5ZSHI3TnFNc3FHdlo2Z0FYbnRQbmxCb2IwaFpsMjlhTFdsSGtkOXg1NGRsMTd4UFBZMXVxWW1YV0pYTmxhUnNLYk8wcHY1OXNsN2p2eS1qMkZOWVNVVG9xQ2owd2pYS1gtR09xQ1VYaW01LVp6YzFXbUZoR0lDazFkemtzOTBQSUFEUFNwekdqYllLcXZxUXZ2YVE4MUJwZXUwc1ZBc01mOGlGNHZGODVLRFpMRHZSRVFERFlRcnc0TWRTMG5GQ1RpVDRsUEFOT29xNWVlaFRVbi1qaEpBTVBtdFdKZnE5TzhrQUU?oc=5",
         "summary": "Stock market today: Sensex closes over 600 points down, Nifty50 above 24,000 - not just IT stocks, HDFC Bank & RIL also drag down indices MSN",
         "published": "Sat, 20 Jun 2026 06:01:47 GMT",
+        "source": "Google News - India Markets",
+        "relevance_score": 4
+      },
+      {
+        "title": "Weekly wrap: Sensex rallies 1,275 pts, Nifty reclaims 24,000; investors gain ₹15.5 lakh cr as FIIs pump in ₹3,400 cr - Fortune India",
+        "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNMUhybS05SThfUjByUF9BbDg1aU1oT2w3cllVQXRvSzQxQTgtMDlCQ0ktVzlOdUtqelIyR1IzR1dJSGVKMUdiRDNwbk5CWi1jNm9WS29nLTFOc3BKVjJwSmZMR3VMeEFaMUU2UHUyTHMyVGtoWlhzQ2JXem50Z0RuX0VacWNiRVFKZmdmQmhWTFZDMEdqVDFIUTN6c0lGT0x0YU5BSGxYRk1RUVpiSUh4RkVkRUtEcnZ3U04zZnZPZWJjNVhUSFVHS2NBbjFWWTJxLVF0N2NQNV9vRjd6VGY2RXdQNjJiUdIB8wFBVV95cUxNLUJtd3pEWjBBREs0S2ptN3EtVnkwV1FLd3Q5SzBmYml2aG1FcC1hUExqRGowdHFNV2dCMXg5d3hPdmU1MG5mM0lxWURSZS1tYTRZS1JSRDQ1N19TWmczYXE3TEtVdXIzQjlMZ2xNMlB0U2NHeFpKeHdZblVXNWN6SngtQi1tVXVxUHhmQWNhbVduX0hQZVBINklLTkxabG5kNkZFTllLZEc0VW5jaTNCY1FSajFyeWtsRm9rS0sxczExZ25IWVNfZkhYZ0YtdlZrSlo4NTdFREthLUJ2c3RtWTd3WXczcG9abUlTZjVwODJDUUk?oc=5",
+        "summary": "Weekly wrap: Sensex rallies 1,275 pts, Nifty reclaims 24,000; investors gain ₹15.5 lakh cr as FIIs pump in ₹3,400 cr Fortune India",
+        "published": "Sat, 20 Jun 2026 06:50:28 GMT",
         "source": "Google News - India Markets",
         "relevance_score": 4
       },
@@ -3910,9 +3910,9 @@
     },
     {
       "date": "2026-06-21",
-      "generated_at": "2026-06-21 09:44:55 IST",
+      "generated_at": "2026-06-21 10:18:59 IST",
       "bias": "Neutral / Range-bound",
-      "score": 0,
+      "score": 1,
       "confidence": "High",
       "fii_net": 4859.07,
       "dii_net": -1159.64,
@@ -3925,9 +3925,9 @@
       "banknifty_pcr": 1.0755450539671605,
       "banknifty_support": 54000.0,
       "banknifty_resistance": 60000.0,
-      "us_avg_change_pct": -1.1782520121344844,
-      "europe_avg_change_pct": -0.43066787970495296,
-      "asia_avg_change_pct": 0.5929797334235998,
+      "us_avg_change_pct": 1.043958568075968,
+      "europe_avg_change_pct": -0.3556374601469417,
+      "asia_avg_change_pct": -0.6582914341862879,
       "top_sector": "NIFTY HEALTHCARE INDEX",
       "top_sector_change_pct": 0.74,
       "weak_sector": "NIFTY IT",
@@ -3935,9 +3935,9 @@
       "gold_change_pct": -1.212097112492872,
       "crude_oil_change_pct": -0.07832579606906893,
       "brent_oil_change_pct": 0.9267349754669816,
-      "bitcoin_change_pct": 1.2307599431320435,
-      "ethereum_change_pct": 1.3423591618028294,
-      "dxy_change_pct": 0.5525370879090347,
+      "bitcoin_change_pct": 1.344257328610157,
+      "ethereum_change_pct": 1.3908738697499952,
+      "dxy_change_pct": 0.7593187771381286,
       "usdinr_change_pct": -0.5786535659829622
     }
   ]
