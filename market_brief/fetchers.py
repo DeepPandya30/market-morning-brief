@@ -546,8 +546,8 @@ def build_data_bundle() -> dict[str, Any]:
         "option_chains": {
             "NIFTY": nifty_options,
             "BANKNIFTY": banknifty_options,
-            "market_news": fetch_market_news(limit=10),
         },
+        "market_news": fetch_market_news(limit=10),
         "warnings": warnings,
     }
 
