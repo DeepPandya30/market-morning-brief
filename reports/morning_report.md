@@ -1,6 +1,6 @@
 # Morning Market Brief - 22 June 2026
 
-Generated at: **22 Jun 2026, 01:06 PM IST**
+Generated at: **22 Jun 2026, 01:15 PM IST**
 
 ## Final View
 
@@ -12,7 +12,7 @@ Generated at: **22 Jun 2026, 01:06 PM IST**
 ## Expected Opening
 
 - GIFT Nifty: Not available from current source. Use available global and NSE signals.
-- India VIX: 12.89 (-0.63%)
+- India VIX: 12.88 (-0.73%)
 
 ## Global Market Cues
 
@@ -21,42 +21,42 @@ Generated at: **22 Jun 2026, 01:06 PM IST**
 | US | Nasdaq | 26,518 | 1.91% | 2026-06-18 |
 | US | Dow Jones | 51,565 | 0.14% | 2026-06-18 |
 | US | S&P 500 | 7,501 | 1.08% | 2026-06-18 |
-| Europe | FTSE 100 | 10,356 | -0.07% | 2026-06-22 |
-| Europe | CAC 40 | 8,413 | -0.10% | 2026-06-22 |
-| Europe | DAX | 25,042 | 0.22% | 2026-06-22 |
-| Asia | Hang Seng | 23,822 | -0.43% | 2026-06-22 |
+| Europe | FTSE 100 | 10,365 | 0.01% | 2026-06-22 |
+| Europe | CAC 40 | 8,420 | -0.01% | 2026-06-22 |
+| Europe | DAX | 25,063 | 0.31% | 2026-06-22 |
+| Asia | Hang Seng | 23,814 | -0.46% | 2026-06-22 |
 | Asia | Nikkei 225 | 72,354 | 1.55% | 2026-06-22 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,216 | -8.00 | -0.19% | 2026-06-22 |
-| Silver | SI=F | 66.66 | 0.41 | 0.61% | 2026-06-22 |
-| Crude Oil WTI | CL=F | 75.54 | -1.06 | -1.38% | 2026-06-22 |
-| Copper | HG=F | 6.37 | -0.01 | -0.11% | 2026-06-22 |
-| Brent Oil | BZ=F | 79.31 | -0.54 | -0.68% | 2026-06-22 |
+| Gold | GC=F | 4,216 | -7.80 | -0.18% | 2026-06-22 |
+| Silver | SI=F | 66.62 | 0.37 | 0.56% | 2026-06-22 |
+| Crude Oil WTI | CL=F | 75.39 | -1.21 | -1.58% | 2026-06-22 |
+| Copper | HG=F | 6.37 | -0.01 | -0.09% | 2026-06-22 |
+| Brent Oil | BZ=F | 79.30 | -0.55 | -0.69% | 2026-06-22 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 64,223 | 985.28 | 1.56% | 2026-06-22 |
-| Ethereum | ETH-USD | 1,747 | 42.22 | 2.48% | 2026-06-22 |
-| Solana | SOL-USD | 74.18 | 1.76 | 2.43% | 2026-06-22 |
-| Cardano | ADA-USD | 0.16 | 0.00 | 3.04% | 2026-06-22 |
-| Ripple | XRP-USD | 1.14 | 0.01 | 1.10% | 2026-06-22 |
+| Bitcoin | BTC-USD | 64,174 | 936.55 | 1.48% | 2026-06-22 |
+| Ethereum | ETH-USD | 1,746 | 41.32 | 2.42% | 2026-06-22 |
+| Solana | SOL-USD | 74.10 | 1.68 | 2.32% | 2026-06-22 |
+| Cardano | ADA-USD | 0.16 | 0.00 | 2.92% | 2026-06-22 |
+| Ripple | XRP-USD | 1.14 | 0.01 | 1.06% | 2026-06-22 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.32 | -0.00 | -0.03% | 2026-06-22 |
-| EUR/USD | EURUSD=X | 1.15 | -0.00 | -0.07% | 2026-06-22 |
-| USD/CHF | CHF=X | 0.81 | 0.00 | 0.45% | 2026-06-22 |
-| USD/JPY | JPY=X | 161.73 | 0.44 | 0.27% | 2026-06-22 |
-| DXY | DX-Y.NYB | 100.92 | 0.07 | 0.07% | 2026-06-22 |
-| USD/INR | INR=X | 94.63 | 0.29 | 0.31% | 2026-06-22 |
+| GBP/USD | GBPUSD=X | 1.32 | -0.00 | -0.06% | 2026-06-22 |
+| EUR/USD | EURUSD=X | 1.14 | -0.00 | -0.09% | 2026-06-22 |
+| USD/CHF | CHF=X | 0.81 | 0.00 | 0.50% | 2026-06-22 |
+| USD/JPY | JPY=X | 161.77 | 0.48 | 0.30% | 2026-06-22 |
+| DXY | DX-Y.NYB | 100.96 | 0.11 | 0.11% | 2026-06-22 |
+| USD/INR | INR=X | 94.66 | 0.32 | 0.34% | 2026-06-22 |
 
 ## FII / DII Flow
 
@@ -68,20 +68,20 @@ Generated at: **22 Jun 2026, 01:06 PM IST**
 
 | Index | Spot | PCR | Support | Resistance | Source |
 |---|---:|---:|---:|---:|---|
-| Nifty | 24,114 | 1.02 | 24,100 | 24,200 | nse_nextapi |
-| Bank Nifty | 57,842 | 1.07 | 54,000 | 60,000 | nse_nextapi |
+| Nifty | 24,112 | 0.97 | 24,100 | 24,200 | nse_nextapi |
+| Bank Nifty | 57,825 | 1.07 | 54,000 | 60,000 | nse_nextapi |
 
 ## Sector View
 
 ### Strong Sectors
-- NIFTY MEDIA: 1.33%
-- NIFTY IT: 1.03%
-- NIFTY PHARMA: 0.90%
+- NIFTY MEDIA: 1.08%
+- NIFTY IT: 0.99%
+- NIFTY PHARMA: 0.95%
 
 ### Weak Sectors
-- NIFTY FMCG: -0.45%
-- NIFTY CONSUMER DURABLES: -0.44%
-- NIFTY PSU BANK: 0.15%
+- NIFTY FMCG: -0.55%
+- NIFTY CONSUMER DURABLES: -0.42%
+- NIFTY PSU BANK: 0.08%
 
 ## Signal Score Breakdown
 
@@ -89,16 +89,16 @@ Generated at: **22 Jun 2026, 01:06 PM IST**
 |---|---:|---|---|
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
 | US markets | 1 | Bullish | Average move 1.04% across 3 indices. |
-| Europe markets | 0 | Neutral | Average move 0.02% across 3 indices. |
-| Asia markets | 1 | Bullish | Average move 0.56% across 2 indices. |
+| Europe markets | 0 | Neutral | Average move 0.10% across 3 indices. |
+| Asia markets | 1 | Bullish | Average move 0.54% across 2 indices. |
 | FII/DII flow | 1 | Bullish | FII net 4859.07 Cr, DII net -1159.64 Cr, combined 3699.43 Cr. |
-| Nifty OI | 1 | Bullish | PCR 1.02, support 24100.0, resistance 24200.0. |
+| Nifty OI | 1 | Bullish | PCR 0.97, support 24100.0, resistance 24200.0. |
 | Bank Nifty OI | 1 | Bullish | PCR 1.07, support 54000.0, resistance 60000.0. |
-| India VIX | 0 | Neutral | India VIX change -0.63%. |
+| India VIX | 0 | Neutral | India VIX change -0.73%. |
 | Sector breadth | 1 | Bullish | 12 sectors positive and 2 sectors negative. |
-| Global commodities | 1 | Bullish | Crude/Brent average down -1.03%, which is supportive for India market sentiment. |
-| Crypto risk appetite | 1 | Bullish | Major crypto basket average move 2.12% across 5 coins. |
-| Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.19%; rising dollar/rupee pressure is usually negative for India. |
+| Global commodities | 1 | Bullish | Crude/Brent average down -1.13%, which is supportive for India market sentiment. |
+| Crypto risk appetite | 1 | Bullish | Major crypto basket average move 2.04% across 5 coins. |
+| Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.22%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
@@ -127,8 +127,8 @@ Generated at: **22 Jun 2026, 01:06 PM IST**
   https://news.google.com/rss/articles/CBMiwgFBVV95cUxQRVpoOEpuVkRmUFQwSnhlT3lyTGN1R0ZVTERCR3pXTllVWldnX0huTy1sV1NaYlZBSTRJV2g4Y1ZQUkR1dVA3V280cVBPRVBxX1V5c0JHOW1KcExaQjFoTnM4VFl5NW1aQzRKa2ZmTklGcWY3aTBETjBXbWZ1d1dRUk1oYkpPaDJoNTg1dzBsRnFWWGRjYnAzZ0pQbTRZZlFpZkZqTU5WdGN0V1pCNGJHRlNqclQ3RDNkejU3S0RGLWowdw?oc=5
 - **IT rebound lifts Sensex, Nifty at open; rupee slips 9 paise, gold and silver firm on MCX - newsdrum.in** — Google News - India Markets  
   https://news.google.com/rss/articles/CBMixgFBVV95cUxNOTExbkdhanFVamRqMm53aEJwWVkwU3o0Nll5WDZYM2VReDZUc1dEZ3kyV0JTOHFUZlljRTYtZktMY0dGTDN0NDU1VjVGRHAwZUR3M0xzVFA4d2RwTFhVR2N6TzhVNXBveWFIVndpVHk3VXdhTnlyLVUwMk9BMndYbDlDRFE3RjFfd2tLXzJ6VW1pNVBJRGxPQ2txYjFLNHNHQy1lT1BRT1VBbERTV3hoNkNBOFYyMVBfbFBSNWJNSzAtckVST1HSAcYBQVVfeXFMTTkxMW5HYWpxVWpkajJud2hCcFlZMFN6NDZZeVg2WDNlUXg2VHNXRGd5MldCUzhxVGZZY0U2LWZLTGNHRkwzdDQ1NVY1RkRwMGVEdzNMc1RQOHdkcExYVUdjek84VTVwb3lhSFZ3aVR5N1V3YU55ci1VMDJPQTJ3WGw5Q0RRN0YxX3drS18yelVtaTVQSURsT0NrcWIxSzRzR0MtZU9QUU9VQWxEU1d4aDZDQThWMjFQX2xQUjViTUswLXJFUk9R?oc=5
-- **Stock Markets Today: Sensex, Nifty Gain As Crude Prices Fall, Buying In Blue-chips - Rediff** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi0gFBVV95cUxNWllGSXlKdUlPWTdkTi1CbERUd3RHcFY1Q2pJaXBaU3Z0WHk0WnRoeEVxZGZycnB6ZmdfZGJCQzJNWlpPZjhnVGxHTTZaYUg1NC1KSHlRVndtXzFsbTdoWmY2NmxrdFhaX3JnOGdPOTlWeTBWNWtMZFdaOHZ6UTRQU3g0ZGczd2pPVnlRSmtBUTRtaHpmM2s2Ml9TZUxZWDl5REpEZFlQNlRsZDBsVXd2V1RHeEs0amZ2RlJFNE1qMjB3Szh2dERPZ3NEU3h0UjZrVFHSAdQBQVVfeXFMTlU0LWFYdGdWQkFsbld3a19YWHlwb1FjYXJBZzhwVElIZUJKN3JUWU5fSmw0TklSSUwwX21OWE4xdjRFZ20weFZHUFE1dzNoMG14ZGtsZlU5VlJuSlpxak5HVXFvaHg4aWxsVUlYNUZUM2tqaC0yNWo2MVB2UDdySzFKWFFYZUpPSlN5MVJnSjNFNzRTTnVyS291MFd3QzN1ck40ZVdBYzd2M253cGVTTDlRaDQtR3ZLbWhzd2FmcTF2QnFtdE5pUE1pMVUyb3R5eDdqYzQ?oc=5
+- **Global Market Today: Asian stocks slip, oil up on peace doubts** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-asian-stocks-slip-oil-up-on-peace-doubts/articleshow/131899539.cms
 
 ---
 This report is generated automatically for pre-market discussion. It is not financial advice.
