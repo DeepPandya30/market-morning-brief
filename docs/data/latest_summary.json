@@ -24,9 +24,9 @@
       },
       {
         "name": "Asia markets",
-        "score": 0,
-        "status": "Neutral",
-        "reason": "Average move -0.66% across 2 indices."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Average move 0.48% across 2 indices."
       },
       {
         "name": "FII/DII flow",
@@ -62,19 +62,19 @@
         "name": "Global commodities",
         "score": 0,
         "status": "Neutral",
-        "reason": "Crude/Brent average move 0.42%, commodity pressure is limited."
+        "reason": "Crude/Brent average move -0.99%, commodity pressure is limited."
       },
       {
         "name": "Crypto risk appetite",
-        "score": 1,
-        "status": "Bullish",
-        "reason": "Major crypto basket average move 1.76% across 5 coins."
+        "score": 0,
+        "status": "Neutral",
+        "reason": "Major crypto basket average move -0.81% across 5 coins."
       },
       {
         "name": "Currency pressure",
         "score": 0,
         "status": "Neutral",
-        "reason": "DXY/USDINR pressure average 0.09%; rising dollar/rupee pressure is usually negative for India."
+        "reason": "DXY/USDINR pressure average -0.03%; rising dollar/rupee pressure is usually negative for India."
       }
     ]
   },
@@ -138,19 +138,19 @@
         "name": "Hang Seng",
         "ticker": "^HSI",
         "region": "Asia",
-        "close": 23924.810546875,
-        "change": -387.349609375,
-        "change_pct": -1.5932340313882922,
-        "date": "2026-06-18"
+        "close": 23686.400390625,
+        "change": -238.41015625,
+        "change_pct": -0.9964975721872145,
+        "date": "2026-06-22"
       },
       {
         "name": "Nikkei 225",
         "ticker": "^N225",
         "region": "Asia",
-        "close": 71250.0625,
-        "change": 196.5703125,
-        "change_pct": 0.27665116301571646,
-        "date": "2026-06-19"
+        "close": 72648.46875,
+        "change": 1398.40625,
+        "change_pct": 1.9626737169528798,
+        "date": "2026-06-22"
       }
     ],
     "commodities": [
@@ -158,46 +158,46 @@
         "name": "Gold",
         "ticker": "GC=F",
         "group": "Commodities",
-        "close": 4172.89990234375,
-        "change": -51.2001953125,
-        "change_pct": -1.212097112492872,
-        "date": "2026-06-19"
+        "close": 4206.5,
+        "change": -17.60009765625,
+        "change_pct": -0.4166591048828471,
+        "date": "2026-06-21"
       },
       {
         "name": "Silver",
         "ticker": "SI=F",
         "group": "Commodities",
-        "close": 64.91000366210938,
-        "change": -1.3449935913085938,
-        "change_pct": -2.0300258804089046,
-        "date": "2026-06-19"
+        "close": 65.76000213623047,
+        "change": -0.4949951171875,
+        "change_pct": -0.7471060866461121,
+        "date": "2026-06-21"
       },
       {
         "name": "Crude Oil WTI",
         "ticker": "CL=F",
         "group": "Commodities",
-        "close": 76.54000091552734,
-        "change": -0.05999755859375,
-        "change_pct": -0.07832579606906893,
-        "date": "2026-06-19"
+        "close": 75.58000183105469,
+        "change": -1.0199966430664062,
+        "change_pct": -1.3315883334005636,
+        "date": "2026-06-21"
       },
       {
         "name": "Copper",
         "ticker": "HG=F",
         "group": "Commodities",
-        "close": 6.336999893188477,
-        "change": -0.03749990463256836,
-        "change_pct": -0.5882799564192741,
-        "date": "2026-06-19"
+        "close": 6.300000190734863,
+        "change": -0.07449960708618164,
+        "change_pct": -1.168712988455147,
+        "date": "2026-06-21"
       },
       {
         "name": "Brent Oil",
         "ticker": "BZ=F",
         "group": "Commodities",
-        "close": 80.58999633789062,
-        "change": 0.7399978637695312,
-        "change_pct": 0.9267349754669816,
-        "date": "2026-06-19"
+        "close": 79.33999633789062,
+        "change": -0.5100021362304688,
+        "change_pct": -0.6387002454305085,
+        "date": "2026-06-21"
       }
     ],
     "crypto": [
@@ -205,46 +205,46 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 64394.98828125,
-        "change": 854.15234375,
-        "change_pct": 1.344257328610157,
-        "date": "2026-06-21"
+        "close": 64040.0,
+        "change": -199.67578125,
+        "change_pct": -0.3108293726916357,
+        "date": "2026-06-22"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 1734.780029296875,
-        "change": 23.797607421875,
-        "change_pct": 1.3908738697499952,
-        "date": "2026-06-21"
+        "close": 1730.8800048828125,
+        "change": -8.42138671875,
+        "change_pct": -0.48418214114090485,
+        "date": "2026-06-22"
       },
       {
         "name": "Solana",
         "ticker": "SOL-USD",
         "group": "Crypto",
-        "close": 73.61000061035156,
-        "change": 3.8893966674804688,
-        "change_pct": 5.578547011249976,
-        "date": "2026-06-21"
+        "close": 73.58000183105469,
+        "change": 0.4073486328125,
+        "change_pct": 0.5566951791523744,
+        "date": "2026-06-22"
       },
       {
         "name": "Cardano",
         "ticker": "ADA-USD",
         "group": "Crypto",
-        "close": 0.16120000183582306,
-        "change": -0.0008939951658248901,
-        "change_pct": -0.5515288550851154,
-        "date": "2026-06-21"
+        "close": 0.15919999778270721,
+        "change": -0.0038760006427764893,
+        "change_pct": -2.3768063235544727,
+        "date": "2026-06-22"
       },
       {
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.1482000350952148,
-        "change": 0.011816024780273438,
-        "change_pct": 1.0397915381613565,
-        "date": "2026-06-21"
+        "close": 1.132699966430664,
+        "change": -0.016352057456970215,
+        "change_pct": -1.4230911322574966,
+        "date": "2026-06-22"
       }
     ],
     "currencies": [
@@ -252,55 +252,55 @@
         "name": "GBP/USD",
         "ticker": "GBPUSD=X",
         "group": "Currency",
-        "close": 1.3237143754959106,
-        "change": 0.0035126209259033203,
-        "change_pct": 0.2660669790616502,
-        "date": "2026-06-21"
+        "close": 1.3222966194152832,
+        "change": 0.002094864845275879,
+        "change_pct": 0.15867762923540282,
+        "date": "2026-06-22"
       },
       {
         "name": "EUR/USD",
         "ticker": "EURUSD=X",
         "group": "Currency",
-        "close": 1.1469204425811768,
-        "change": -0.0038143396377563477,
-        "change_pct": -0.3314699178903111,
-        "date": "2026-06-19"
+        "close": 1.1466574668884277,
+        "change": 0.0008014440536499023,
+        "change_pct": 0.06994282332846483,
+        "date": "2026-06-22"
       },
       {
         "name": "USD/CHF",
         "ticker": "CHF=X",
         "group": "Currency",
-        "close": 0.8064000010490417,
-        "change": 0.0015000104904174805,
-        "change_pct": 0.1863598593629538,
-        "date": "2026-06-21"
+        "close": 0.8075399994850159,
+        "change": 0.0026400089263916016,
+        "change_pct": 0.32799216764300837,
+        "date": "2026-06-22"
       },
       {
         "name": "USD/JPY",
         "ticker": "JPY=X",
         "group": "Currency",
-        "close": 161.27499389648438,
-        "change": -0.014007568359375,
-        "change_pct": -0.008684763518998063,
-        "date": "2026-06-21"
+        "close": 161.552001953125,
+        "change": 0.26300048828125,
+        "change_pct": 0.16306163835887866,
+        "date": "2026-06-22"
       },
       {
         "name": "DXY",
         "ticker": "DX-Y.NYB",
         "group": "Currency",
-        "close": 100.8499984741211,
-        "change": 0.7600021362304688,
-        "change_pct": 0.7593187771381286,
-        "date": "2026-06-18"
+        "close": 100.81600189208984,
+        "change": -0.03399658203125,
+        "change_pct": -0.03371004714489291,
+        "date": "2026-06-21"
       },
       {
         "name": "USD/INR",
         "ticker": "INR=X",
         "group": "Currency",
         "close": 94.30999755859375,
-        "change": -0.5489044189453125,
-        "change_pct": -0.5786535659829622,
-        "date": "2026-06-19"
+        "change": -0.02989959716796875,
+        "change_pct": -0.0316934807747378,
+        "date": "2026-06-22"
       }
     ],
     "nse_indices": {
@@ -3309,14 +3309,6 @@
             "put_change_oi": -7.0
           },
           {
-            "strike": 51100.0,
-            "expiry": "30-Jun-2026",
-            "call_oi": 0,
-            "put_oi": 361.0,
-            "call_change_oi": 0,
-            "put_change_oi": -23.0
-          },
-          {
             "strike": 65500.0,
             "expiry": "30-Jun-2026",
             "call_oi": 29.0,
@@ -3325,12 +3317,12 @@
             "put_change_oi": 0
           },
           {
-            "strike": 46200.0,
+            "strike": 51100.0,
             "expiry": "30-Jun-2026",
             "call_oi": 0,
-            "put_oi": 86.0,
+            "put_oi": 361.0,
             "call_change_oi": 0,
-            "put_change_oi": -7.0
+            "put_change_oi": -23.0
           },
           {
             "strike": 51900.0,
@@ -3339,6 +3331,14 @@
             "put_oi": 558.0,
             "call_change_oi": 0,
             "put_change_oi": -20.0
+          },
+          {
+            "strike": 46200.0,
+            "expiry": "30-Jun-2026",
+            "call_oi": 0,
+            "put_oi": 86.0,
+            "call_change_oi": 0,
+            "put_change_oi": -7.0
           },
           {
             "strike": 50900.0,
@@ -3357,20 +3357,20 @@
             "put_change_oi": 0
           },
           {
-            "strike": 62400.0,
-            "expiry": "30-Jun-2026",
-            "call_oi": 325.0,
-            "put_oi": 0,
-            "call_change_oi": -11.0,
-            "put_change_oi": 0
-          },
-          {
             "strike": 49400.0,
             "expiry": "30-Jun-2026",
             "call_oi": 0,
             "put_oi": 303.0,
             "call_change_oi": 0,
             "put_change_oi": -5.0
+          },
+          {
+            "strike": 62400.0,
+            "expiry": "30-Jun-2026",
+            "call_oi": 325.0,
+            "put_oi": 0,
+            "call_change_oi": -11.0,
+            "put_change_oi": 0
           },
           {
             "strike": 48700.0,
@@ -3397,20 +3397,20 @@
             "put_change_oi": -15.0
           },
           {
-            "strike": 48800.0,
-            "expiry": "30-Jun-2026",
-            "call_oi": 0,
-            "put_oi": 256.0,
-            "call_change_oi": 0,
-            "put_change_oi": -2.0
-          },
-          {
             "strike": 62200.0,
             "expiry": "30-Jun-2026",
             "call_oi": 91.0,
             "put_oi": 0,
             "call_change_oi": -2.0,
             "put_change_oi": 0
+          },
+          {
+            "strike": 48800.0,
+            "expiry": "30-Jun-2026",
+            "call_oi": 0,
+            "put_oi": 256.0,
+            "call_change_oi": 0,
+            "put_change_oi": -2.0
           },
           {
             "strike": 43500.0,
@@ -3581,18 +3581,18 @@
             "put_change_oi": -7.0
           },
           {
-            "strike": 46800.0,
-            "expiry": "30-Jun-2026",
-            "call_oi": 0,
-            "put_oi": 83.0,
-            "call_change_oi": 0,
-            "put_change_oi": 1.0
-          },
-          {
             "strike": 45700.0,
             "expiry": "30-Jun-2026",
             "call_oi": 0,
             "put_oi": 146.0,
+            "call_change_oi": 0,
+            "put_change_oi": 1.0
+          },
+          {
+            "strike": 46800.0,
+            "expiry": "30-Jun-2026",
+            "call_oi": 0,
+            "put_oi": 83.0,
             "call_change_oi": 0,
             "put_change_oi": 1.0
           },
@@ -3603,14 +3603,6 @@
             "put_oi": 32.0,
             "call_change_oi": 0,
             "put_change_oi": -1.0
-          },
-          {
-            "strike": 47200.0,
-            "expiry": "30-Jun-2026",
-            "call_oi": 0,
-            "put_oi": 217.0,
-            "call_change_oi": 0,
-            "put_change_oi": 0.0
           },
           {
             "strike": 47300.0,
@@ -3629,12 +3621,12 @@
             "put_change_oi": 0.0
           },
           {
-            "strike": 48400.0,
+            "strike": 47200.0,
             "expiry": "30-Jun-2026",
             "call_oi": 0,
-            "put_oi": 109.0,
+            "put_oi": 217.0,
             "call_change_oi": 0,
-            "put_change_oi": -2.0
+            "put_change_oi": 0.0
           },
           {
             "strike": 46900.0,
@@ -3643,6 +3635,14 @@
             "put_oi": 19.0,
             "call_change_oi": 0,
             "put_change_oi": 0.0
+          },
+          {
+            "strike": 48400.0,
+            "expiry": "30-Jun-2026",
+            "call_oi": 0,
+            "put_oi": 109.0,
+            "call_change_oi": 0,
+            "put_change_oi": -2.0
           },
           {
             "strike": 48100.0,
@@ -3665,26 +3665,34 @@
     },
     "market_news": [
       {
-        "title": "RBI MPC minutes: Policy misstep fears drove rate pause amid West Asia uncertainty",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-mpc-minutes-policy-misstep-fears-drove-rate-pause-amid-west-asia-uncertainty/articleshow/131869393.cms",
-        "summary": "The Reserve Bank of India's Monetary Policy Committee has opted for a cautious \"wait and watch\" stance, holding the repo rate steady due to significant geopolitical and weather-related uncertainties. Concerns over rising...",
-        "published": "Fri, 19 Jun 2026 19:56:02 +0530",
+        "title": "Gold rebounds from one-week low as Iran cites progress in peace talks",
+        "link": "https://economictimes.indiatimes.com/markets/commodities/news/gold-rebounds-from-one-week-low-as-iran-cites-progress-in-peace-talks/articleshow/131899712.cms",
+        "summary": "Gold prices surged over 1% as easing U.S.-Iran tensions and falling crude oil prices reduced inflation and interest rate hike fears. While investors anticipate the Fed holding rates steady, Indian gold demand saw a dip a...",
+        "published": "Mon, 22 Jun 2026 07:13:02 +0530",
         "source": "Economic Times Markets",
         "relevance_score": 6
       },
       {
-        "title": "Rupee records strongest week in 11 as bond inflows, softer oil prices lend support",
-        "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-records-strongest-week-in-11-as-bond-inflows-softer-oil-prices-lend-support/articleshow/131856516.cms",
-        "summary": "The Indian rupee maintained steady ground against the dollar last Friday, closing almost flat. The day’s trading featured some ups and downs, yet the rupee celebrated its best weekly performance in eleven weeks, thanks t...",
-        "published": "Fri, 19 Jun 2026 16:04:47 +0530",
-        "source": "Economic Times Markets",
-        "relevance_score": 5
+        "title": "Stock market today: Gift Nifty hints positive start; US-Iran deal, gold to crude oil prices - 8 stocks to buy or sell",
+        "link": "https://www.livemint.com/market/stock-market-news/stock-market-today-gift-nifty-hints-positive-start-us-iran-deal-gold-to-crude-oil-prices-8-stocks-to-buy-or-sell-11782092230110.html",
+        "summary": "Indian stock markets are set to open positively amid mixed global cues, with investors cautious over US-Iran talks and rising crude oil prices. Sensex fell 607.08 points on Friday, while the Gift Nifty indicates a positi...",
+        "published": "Mon, 22 Jun 2026 07:53:27 +0530",
+        "source": "LiveMint Markets",
+        "relevance_score": 6
       },
       {
-        "title": "SBI, Axis Bank among lenders set for $2 billion ECB fundraising via RBI swap",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/sbi-axis-bank-among-lenders-set-for-2-billion-ecb-fundraising-via-rbi-swap/articleshow/131869244.cms",
-        "summary": "Major Indian banks, including SBI, Axis Bank, and Bank of Baroda, alongside Power Finance Corporation, are set to raise over $2 billion from overseas markets next week. This move capitalizes on the Reserve Bank of India'...",
-        "published": "Sat, 20 Jun 2026 05:30:00 +0530",
+        "title": "Will Sensex, Nifty bounce back on Monday? Iran peace deal risks among 5 factors to drive D-St this week",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/will-sensex-nifty-bounce-back-on-monday-iran-peace-deal-risks-among-5-factors-to-drive-d-st-this-week/articleshow/131885966.cms",
+        "summary": "Indian stock markets experienced a sharp decline on Friday, breaking a five-day winning streak. Key factors influencing Dalal Street next week include potential US-Iran peace deal risks, volatile oil prices, a significan...",
+        "published": "Sun, 21 Jun 2026 09:55:14 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 6
+      },
+      {
+        "title": "There are little signs of economy overheating: Saugata Bhattacharya",
+        "link": "https://economictimes.indiatimes.com/markets/expert-view/there-are-little-signs-of-economy-overheating-saugata-bhattacharya/articleshow/131899502.cms",
+        "summary": "Falling crude oil prices might boost growth beyond central bank forecasts, potentially easing rate hike needs. However, supply chain disruptions and embedded input cost pressures require close monitoring. While financial...",
+        "published": "Mon, 22 Jun 2026 06:22:05 +0530",
         "source": "Economic Times Markets",
         "relevance_score": 5
       },
@@ -3713,34 +3721,26 @@
         "relevance_score": 5
       },
       {
-        "title": "Bharat Forge among 6 stocks hitting 52-week highs; surge up to 25% in a month",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/bharat-forge-among-6-stocks-hitting-52-week-highs-surge-up-to-25-in-a-month/slideshow/131859579.cms",
-        "summary": "Despite a significant dip in the benchmark Sensex, six stocks within the BSE200 index achieved new 52-week highs on Friday, signaling robust investor confidence. These outperformers, including GE Vernova T&D India, The F...",
-        "published": "Fri, 19 Jun 2026 18:18:49 +0530",
-        "source": "Economic Times Markets",
-        "relevance_score": 4
-      },
-      {
-        "title": "Stock market today: Sensex closes over 600 points down, Nifty50 above 24,000 - not just IT stocks, HDFC Bank & RIL also drag down indices - MSN",
-        "link": "https://news.google.com/rss/articles/CBMi1wNBVV95cUxPVzRDWnNTckJ4Nm0zeE1tc0x4d0hsN2phNTlxNTdHYmRXVVBqREgyaTAwU1Y5aWFMeTZLSVd3Z0d0eEV6TTJJVmdOU0JPNk5qNHlMeEg1Si11U0NWbVl2NWx4dGNGTDlKcUtFM2VFYzZiMlZ5cnZtYWhHVFZHWHBDczk2cl94bC1Eb2Zpdm1YNm4zc3p6c25jdmxJT05JRF9xMHNWeVcwR21ZdjFQVFFqeEIzYUpidW1FTXVVcHVmNlRpaldqTVhVcGYzUDdYUWZjb1Z5OWg1X3VHRHk5WjJJYkFYajRvY1htS0VpZVBRTkdsMU5ZSHI3TnFNc3FHdlo2Z0FYbnRQbmxCb2IwaFpsMjlhTFdsSGtkOXg1NGRsMTd4UFBZMXVxWW1YV0pYTmxhUnNLYk8wcHY1OXNsN2p2eS1qMkZOWVNVVG9xQ2owd2pYS1gtR09xQ1VYaW01LVp6YzFXbUZoR0lDazFkemtzOTBQSUFEUFNwekdqYllLcXZxUXZ2YVE4MUJwZXUwc1ZBc01mOGlGNHZGODVLRFpMRHZSRVFERFlRcnc0TWRTMG5GQ1RpVDRsUEFOT29xNWVlaFRVbi1qaEpBTVBtdFdKZnE5TzhrQUU?oc=5",
-        "summary": "Stock market today: Sensex closes over 600 points down, Nifty50 above 24,000 - not just IT stocks, HDFC Bank & RIL also drag down indices MSN",
-        "published": "Sat, 20 Jun 2026 06:01:47 GMT",
+        "title": "From Gift Nifty, US-Iran peace talks to crude oil prices: 10 things that changed for Indian stock market over weekend - Mint",
+        "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNTkJyRlhQSDM3VjhRaDl6UFliQ3hoTjZnMndOd1oyc3JMRDc2c2g2N2RnOXU2ajh0YWt3clJ0ZzBKeXFlSjNuR1A0ZTdQTmY3NXk4R2lSbTl1aEs3TElwTlhuTWZVTmFFS2ZOUUNTR1VZdEpkUGsxSU52TndtcTdZSXpjR2hONzFfY3hQRE5nWThKZGdXTjJUZHVKVWlwT2YwS2Y1YkRaeFVHRGhiaHhKMlBMWXozUHNGS2ZBR2dLZFo3NTVRMVRaMGxzbVpkUzh1T1lQb25uUjM4NEdMSk4ydU5qQlFwVjJfNVRtbVpxalBTTTZwNHVIa3lFWnRnSDVFemRYT3lpYmJjTjhRN0Z3c1lEb9IBmAJBVV95cUxOOVF0ZTItc2ZQaFczS244Qm40dzN1SjRtcng0b3RPX1JialJrWWV0a0RGWDdJVXlUalhFc3dNMGNhSllmZmZ4WTJGMFRkVlhVZ0F2QVhvTjdRQkVsOGZoMU12aVFxZG83QmNkYm5YeTRpOXpJLTM3NzllNUI4Y2JTMTAtNVRiUE44eWlsTS14bmZ4a3NacmVTZzRSdkVObUFGdHBaeWRKRi0xSjRBYkFFSkFnVTFabVlNTkFYTEhhaHhQdGl1Y2dKanJ4YlB5SVNHSFZKT3JVd3dsODhpcHZVRm8xajhsU3MwelhDbm9ELTUza2tEVmFyT1hoOG15amxhVXJUQlJVck5WZmx0dE9URHM4ek9TMkJs?oc=5",
+        "summary": "From Gift Nifty, US-Iran peace talks to crude oil prices: 10 things that changed for Indian stock market over weekend Mint",
+        "published": "Mon, 22 Jun 2026 01:44:01 GMT",
         "source": "Google News - India Markets",
         "relevance_score": 4
       },
       {
-        "title": "Weekly wrap: Sensex rallies 1,275 pts, Nifty reclaims 24,000; investors gain ₹15.5 lakh cr as FIIs pump in ₹3,400 cr - Fortune India",
-        "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNMUhybS05SThfUjByUF9BbDg1aU1oT2w3cllVQXRvSzQxQTgtMDlCQ0ktVzlOdUtqelIyR1IzR1dJSGVKMUdiRDNwbk5CWi1jNm9WS29nLTFOc3BKVjJwSmZMR3VMeEFaMUU2UHUyTHMyVGtoWlhzQ2JXem50Z0RuX0VacWNiRVFKZmdmQmhWTFZDMEdqVDFIUTN6c0lGT0x0YU5BSGxYRk1RUVpiSUh4RkVkRUtEcnZ3U04zZnZPZWJjNVhUSFVHS2NBbjFWWTJxLVF0N2NQNV9vRjd6VGY2RXdQNjJiUdIB8wFBVV95cUxNLUJtd3pEWjBBREs0S2ptN3EtVnkwV1FLd3Q5SzBmYml2aG1FcC1hUExqRGowdHFNV2dCMXg5d3hPdmU1MG5mM0lxWURSZS1tYTRZS1JSRDQ1N19TWmczYXE3TEtVdXIzQjlMZ2xNMlB0U2NHeFpKeHdZblVXNWN6SngtQi1tVXVxUHhmQWNhbVduX0hQZVBINklLTkxabG5kNkZFTllLZEc0VW5jaTNCY1FSajFyeWtsRm9rS0sxczExZ25IWVNfZkhYZ0YtdlZrSlo4NTdFREthLUJ2c3RtWTd3WXczcG9abUlTZjVwODJDUUk?oc=5",
-        "summary": "Weekly wrap: Sensex rallies 1,275 pts, Nifty reclaims 24,000; investors gain ₹15.5 lakh cr as FIIs pump in ₹3,400 cr Fortune India",
-        "published": "Sat, 20 Jun 2026 06:50:28 GMT",
+        "title": "Stock market today: Gift Nifty hints positive start; US-Iran deal, gold to crude oil prices - 8 stocks to buy or sell - Mint",
+        "link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNTlF5ekdEU2YzcG1CdXViazlOY1BaY084TmVyUmV3WGgxZEdNajFxS0NONkI4c2ZpTWFFRE14Vzd4c2U0V2NBODIwYmkzVjQ3dVJaM1B0MWFfb2VMaktLbk00N3BwUkNNYkxTYzZfclN6U0VRZzRrZmJLTXQxODdzRWlUdXZDNGV0MXZkN0hTNk83S1d6MmZMblI4SlktaGVRTHY5SEdSNjRtQ3ozTjN0S3FPdzRfUkphR1ZfWVpYQlh3cTktYUJrbGxQS1BOTE5PSzduR1ZOWVJXaFJEbGkxSmUtOGFrQmoxemxVR3JpRUI5N29XcnZIMU9HUk9xaEJZckwzMkJjdmpiNGpJcE5v?oc=5",
+        "summary": "Stock market today: Gift Nifty hints positive start; US-Iran deal, gold to crude oil prices - 8 stocks to buy or sell Mint",
+        "published": "Mon, 22 Jun 2026 02:23:27 GMT",
         "source": "Google News - India Markets",
         "relevance_score": 4
       },
       {
-        "title": "Canadian dollar hits 14-month low as Fed-BoC gap widens and gold takes over from oil - VT Markets",
-        "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTWdnc0o3c2l6NnJTWUhRZmtndm5UVktIUXp1MVVsSENXSTNoS3JrUEIxNl8zMWYwNU9udWhzNkVlM3ZNdjV2N1dScHB2Tm54UkZjLWxYSjJ0Z1RuY215RVpYaXRiYzRzcTEtMXlxd1Btd0stN0pGQU5MMEMtVWx2VGFEOHNrSHFBR21hNE1uT1R6MkI0U09ScnZmZFpmY0RPYkp6TWdqNUpNc0ZBcU5STlRReDhVbnF4TnJ0a0NIeHFzTWg5M0E?oc=5",
-        "summary": "Canadian dollar hits 14-month low as Fed-BoC gap widens and gold takes over from oil VT Markets",
-        "published": "Sat, 20 Jun 2026 10:15:20 GMT",
+        "title": "Crude oil jumps above $80/bbl after Trump’s latest threat amid final peace deal negotiations; gold down 0.8% - Upstox",
+        "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNcm5HVGFNci01dFpQSnJYX0tMM0ZjeDU5OE03VndTSnRCd0t4SWpQdDJNXzgtanpaY1g3WUgtU2RvZ3ZCOFYyNlhPaGVKZXpjeVU3UVhScllnV05kTUtYdGRZSGk1Q0txQUN3VkNSYy1IUjVmdHdVWm5BLUJsdE9qV0gxNWI3Q2pmcnNDWngxdGN2bGJCOERILUxDemllS3dsNXJpXzVyQXptb055RHVhV3FkajRodUJsZUVvck9nY3hXT0lzenRLVnFRSkJHUkZWU3B4NVpwNXRHVjd1N25aT3c5clFZaDRZeEhFQUxmOVJFQnZGSV94VktXbVIzUQ?oc=5",
+        "summary": "Crude oil jumps above $80/bbl after Trump’s latest threat amid final peace deal negotiations; gold down 0.8% Upstox",
+        "published": "Mon, 22 Jun 2026 02:28:31 GMT",
         "source": "Google News - Global Markets",
         "relevance_score": 4
       }
@@ -3939,6 +3939,38 @@
       "ethereum_change_pct": 1.3908738697499952,
       "dxy_change_pct": 0.7593187771381286,
       "usdinr_change_pct": -0.5786535659829622
+    },
+    {
+      "date": "2026-06-22",
+      "generated_at": "2026-06-22 08:43:51 IST",
+      "bias": "Neutral / Range-bound",
+      "score": 1,
+      "confidence": "High",
+      "fii_net": 4859.07,
+      "dii_net": -1159.64,
+      "combined_flow": 3699.4299999999994,
+      "gift_nifty_change_pct": null,
+      "india_vix_change_pct": 2.34,
+      "nifty_pcr": 0.7763082204626882,
+      "nifty_support": 23500.0,
+      "nifty_resistance": 25000.0,
+      "banknifty_pcr": 1.0755450539671605,
+      "banknifty_support": 54000.0,
+      "banknifty_resistance": 60000.0,
+      "us_avg_change_pct": 1.043958568075968,
+      "europe_avg_change_pct": -0.3556374601469417,
+      "asia_avg_change_pct": 0.4830880723828327,
+      "top_sector": "NIFTY HEALTHCARE INDEX",
+      "top_sector_change_pct": 0.74,
+      "weak_sector": "NIFTY IT",
+      "weak_sector_change_pct": -3.65,
+      "gold_change_pct": -0.4166591048828471,
+      "crude_oil_change_pct": -1.3315883334005636,
+      "brent_oil_change_pct": -0.6387002454305085,
+      "bitcoin_change_pct": -0.3108293726916357,
+      "ethereum_change_pct": -0.48418214114090485,
+      "dxy_change_pct": -0.03371004714489291,
+      "usdinr_change_pct": -0.0316934807747378
     }
   ]
 }
