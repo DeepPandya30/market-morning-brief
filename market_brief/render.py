@@ -224,11 +224,11 @@ def render_html(context: dict[str, Any]) -> str:
     th { background: #f1f5f9; cursor: pointer; user-select: none; position: sticky; top: 0; }
     tr:hover td { background: #f8fafc; }
     pre { white-space: pre-wrap; background: #0b1020; color: #e5e7eb; padding: 16px; border-radius: 12px; overflow-x: auto; line-height: 1.45; }
-    canvas { width: 100%; max-height: 360px; border: 1px solid var(--line); border-radius: 12px; background: white; }
-    canvas.interactive { cursor: crosshair; }
-    .chart-tooltip { position: fixed; z-index: 60; pointer-events: none; display: none; background: rgba(15,23,42,.95); color: #f8fafc; padding: 8px 11px; border-radius: 9px; font-size: 12px; line-height: 1.45; box-shadow: 0 8px 24px rgba(15,23,42,.35); max-width: 250px; }
-    .chart-tooltip strong { color: #fff; }
-    .chart-tooltip .swatch-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+    .chart-box { position: relative; width: 100%; height: 380px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(180deg, #ffffff, #fbfcfe); padding: 12px 14px 8px; box-shadow: inset 0 0 0 1px rgba(15,23,42,.02); }
+    .chart-box.mini { height: 300px; }
+    .chart-box.tall { height: 440px; }
+    .chart-box canvas { width: 100% !important; height: 100% !important; }
+    @media (max-width: 640px) { .chart-box { height: 320px; } .chart-box.mini { height: 270px; } .chart-box.tall { height: 380px; } }
     .oi-card { border-left: 5px solid var(--brand); }
     .footer-note { text-align: center; color: var(--muted); padding: 18px 0 34px; }
     @media print {
@@ -459,6 +459,7 @@ h1 { position: relative; }
 }
 
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <header>
@@ -528,12 +529,12 @@ h1 { position: relative; }
       <p id="ttsStatus" class="small muted"></p>
     </div>
     <div class="grid-2">
-      <div class="card"><h2>Global Snapshot</h2><canvas id="globalMiniChart" height="260"></canvas></div>
-      <div class="card"><h2>Sector Snapshot</h2><canvas id="sectorMiniChart" height="260"></canvas></div>
+      <div class="card"><h2>Global Snapshot</h2><div class="chart-box mini"><canvas id="globalMiniChart"></canvas></div></div>
+      <div class="card"><h2>Sector Snapshot</h2><div class="chart-box mini"><canvas id="sectorMiniChart"></canvas></div></div>
     </div>
     <div class="grid-2">
-      <div class="card"><h2>Commodity Snapshot</h2><canvas id="commodityMiniChart" height="260"></canvas></div>
-      <div class="card"><h2>Crypto Snapshot</h2><canvas id="cryptoMiniChart" height="260"></canvas></div>
+      <div class="card"><h2>Commodity Snapshot</h2><div class="chart-box mini"><canvas id="commodityMiniChart"></canvas></div></div>
+      <div class="card"><h2>Crypto Snapshot</h2><div class="chart-box mini"><canvas id="cryptoMiniChart"></canvas></div></div>
     </div>
     <div class="grid-2" id="oiCards"></div>
   </section>
@@ -554,7 +555,7 @@ h1 { position: relative; }
           <option value="name">Name A to Z</option>
         </select>
       </div>
-      <canvas id="globalChart" height="320"></canvas>
+      <div class="chart-box"><canvas id="globalChart"></canvas></div>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Region</th><th>Index</th><th>Close</th><th>Change</th><th>Change %</th><th>Date</th></tr></thead><tbody id="globalRows"></tbody></table></div>
     </div>
   </section>
@@ -570,7 +571,7 @@ h1 { position: relative; }
           <option value="name">Name A to Z</option>
         </select>
       </div>
-      <canvas id="commodityChart" height="320"></canvas>
+      <div class="chart-box"><canvas id="commodityChart"></canvas></div>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Commodity</th><th>Ticker</th><th>Close</th><th>Change</th><th>Change %</th><th>Date</th></tr></thead><tbody id="commodityRows"></tbody></table></div>
     </div>
   </section>
@@ -586,7 +587,7 @@ h1 { position: relative; }
           <option value="name">Name A to Z</option>
         </select>
       </div>
-      <canvas id="cryptoChart" height="320"></canvas>
+      <div class="chart-box"><canvas id="cryptoChart"></canvas></div>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Coin</th><th>Ticker</th><th>Close</th><th>Change</th><th>Change %</th><th>Date</th></tr></thead><tbody id="cryptoRows"></tbody></table></div>
     </div>
   </section>
@@ -602,7 +603,7 @@ h1 { position: relative; }
           <option value="name">Name A to Z</option>
         </select>
       </div>
-      <canvas id="currencyChart" height="320"></canvas>
+      <div class="chart-box"><canvas id="currencyChart"></canvas></div>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Pair / Index</th><th>Ticker</th><th>Close</th><th>Change</th><th>Change %</th><th>Date</th></tr></thead><tbody id="currencyRows"></tbody></table></div>
     </div>
   </section>
@@ -623,7 +624,7 @@ h1 { position: relative; }
           <option value="name">Name A to Z</option>
         </select>
       </div>
-      <canvas id="sectorChart" height="360"></canvas>
+      <div class="chart-box tall"><canvas id="sectorChart"></canvas></div>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Sector</th><th>Last</th><th>Change</th><th>Change %</th></tr></thead><tbody id="sectorRows"></tbody></table></div>
     </div>
     <h3>Sector Heatmap</h3>
@@ -649,7 +650,7 @@ h1 { position: relative; }
           <option value="Unavailable">Unavailable</option>
         </select>
       </div>
-      <canvas id="signalChart" height="320"></canvas>
+      <div class="chart-box tall"><canvas id="signalChart"></canvas></div>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Signal</th><th>Score</th><th>Status</th><th>Reason</th></tr></thead><tbody id="signalRows"></tbody></table></div>
     </div>
     <div id="warningsCard"></div>
@@ -659,7 +660,7 @@ h1 { position: relative; }
     <div class="card">
       <h2>Historical Bias Trend</h2>
       <p class="muted">This chart grows automatically after each successful GitHub Action run.</p>
-      <canvas id="historyChart" height="320"></canvas>
+      <div class="chart-box"><canvas id="historyChart"></canvas></div>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Date</th><th>Bias</th><th>Score</th><th>Confidence</th><th>FII Net</th><th>DII Net</th><th>Nifty PCR</th><th>Top Sector</th></tr></thead><tbody id="historyRows"></tbody></table></div>
     </div>
     <div class="card">
@@ -670,7 +671,7 @@ h1 { position: relative; }
 
   <div id="pcrSummaryGrid" class="pcr-summary-grid"></div>
 
-  <canvas id="pcrRollingChart" height="320"></canvas>
+  <div class="chart-box"><canvas id="pcrRollingChart"></canvas></div>
 
   <div class="table-wrap" style="margin-top:14px">
     <table>
@@ -773,230 +774,177 @@ function filteredSorted(rows, filters) {
   return out;
 }
 
-function clearCanvas(canvas) {
-  const dpr = window.devicePixelRatio || 1;
-  const rect = canvas.getBoundingClientRect();
-  canvas.width = Math.max(320, Math.floor(rect.width * dpr));
-  canvas.height = Math.floor((Number(canvas.getAttribute('height')) || 300) * dpr);
-  const ctx = canvas.getContext('2d');
-  ctx.scale(dpr, dpr);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  return { ctx, w: canvas.width / dpr, h: canvas.height / dpr };
+/* ---------- Chart.js powered visualizations ---------- */
+const CHARTS = {};
+const C = {
+  up: '#16a34a', upFill: 'rgba(22,163,74,.82)',
+  down: '#dc2626', downFill: 'rgba(220,38,38,.82)',
+  flat: '#94a3b8', flatFill: 'rgba(148,163,184,.7)',
+  brand: '#2563eb', brand2: '#1d4ed8',
+  green: '#16a34a', green2: '#15803d',
+  grid: 'rgba(148,163,184,.16)', axis: '#64748b'
+};
+if (window.Chart) {
+  Chart.defaults.font.family = 'Inter, Arial, sans-serif';
+  Chart.defaults.font.size = 12;
+  Chart.defaults.color = C.axis;
+  Chart.defaults.animation = { duration: 700, easing: 'easeOutQuart' };
+  Chart.defaults.animations.colors = false;
+  const tip = Chart.defaults.plugins.tooltip;
+  tip.backgroundColor = 'rgba(15,23,42,.95)';
+  tip.padding = 11;
+  tip.cornerRadius = 9;
+  tip.titleColor = '#fff';
+  tip.titleFont = { weight: '700', size: 13 };
+  tip.bodyColor = '#e2e8f0';
+  tip.boxPadding = 5;
+  tip.usePointStyle = true;
 }
-
-/* ---- Interactive chart tooltips, hover highlight & crosshair ---- */
-const CHART_STATE = {};
-let _chartTip = null;
-function chartTip() {
-  if (!_chartTip) {
-    _chartTip = document.createElement('div');
-    _chartTip.className = 'chart-tooltip';
-    document.body.appendChild(_chartTip);
-  }
-  return _chartTip;
+function barFill(v) {
+  const n = Number(v) || 0;
+  if (n > 0.02) return C.upFill;
+  if (n < -0.02) return C.downFill;
+  return C.flatFill;
 }
-function showChartTip(html, clientX, clientY) {
-  const tip = chartTip();
-  tip.innerHTML = html;
-  tip.style.display = 'block';
-  const r = tip.getBoundingClientRect();
-  let x = clientX + 14, y = clientY + 14;
-  if (x + r.width > window.innerWidth - 8) x = clientX - r.width - 14;
-  if (y + r.height > window.innerHeight - 8) y = clientY - r.height - 14;
-  tip.style.left = Math.max(8, x) + 'px';
-  tip.style.top = Math.max(8, y) + 'px';
+function barEdge(v) {
+  const n = Number(v) || 0;
+  if (n > 0.02) return C.up;
+  if (n < -0.02) return C.down;
+  return C.flat;
 }
-function hideChartTip() { if (_chartTip) _chartTip.style.display = 'none'; }
-function findChartHit(state, mx, my) {
-  if (!state || !state.hits || !state.hits.length) return null;
-  if (state.type === 'bar') {
-    return state.hits.find(b => mx >= b.x && mx <= b.x + b.w && my >= b.y && my <= b.y + b.h) || null;
-  }
-  let best = null, bestDx = Infinity;
-  for (const p of state.hits) {
-    const dx = Math.abs(mx - p.x);
-    if (dx < bestDx) { bestDx = dx; best = p; }
-  }
-  return best && bestDx <= (state.snap || 22) ? best : null;
-}
-function attachChartInteractivity(canvasId) {
+function mountChart(canvasId, config) {
   const canvas = document.getElementById(canvasId);
-  if (!canvas || canvas.dataset.interactive === '1') return;
-  canvas.dataset.interactive = '1';
-  canvas.classList.add('interactive');
-  let activeKey = null;
-  canvas.addEventListener('mousemove', e => {
-    const state = CHART_STATE[canvasId];
-    if (!state) return;
-    const rect = canvas.getBoundingClientRect();
-    const mx = e.clientX - rect.left;
-    const my = e.clientY - rect.top;
-    const hit = findChartHit(state, mx, my);
-    if (hit) {
-      canvas.style.cursor = 'pointer';
-      showChartTip(hit.tip, e.clientX, e.clientY);
-      if (activeKey !== hit.key) {
-        activeKey = hit.key;
-        if (state.redraw) state.redraw();
-        const fresh = CHART_STATE[canvasId];
-        if (fresh && fresh.highlight) fresh.highlight(hit);
-      }
-    } else {
-      canvas.style.cursor = 'default';
-      hideChartTip();
-      if (activeKey !== null) {
-        activeKey = null;
-        if (state.redraw) state.redraw();
-      }
+  if (!canvas || !window.Chart) return;
+  if (CHARTS[canvasId]) CHARTS[canvasId].destroy();
+  CHARTS[canvasId] = new Chart(canvas.getContext('2d'), config);
+}
+function emptyMessagePlugin(message) {
+  return {
+    id: 'emptyMessage',
+    afterDraw(chart) {
+      const has = (chart.data.datasets || []).some(d => (d.data || [])
+        .some(v => v !== null && v !== undefined && !Number.isNaN(Number(v))));
+      if (has) return;
+      const { ctx, chartArea } = chart;
+      if (!chartArea) return;
+      ctx.save();
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '13px Inter, Arial, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(message || 'No data available',
+        (chartArea.left + chartArea.right) / 2, (chartArea.top + chartArea.bottom) / 2);
+      ctx.restore();
     }
-  });
-  canvas.addEventListener('mouseleave', () => {
-    const state = CHART_STATE[canvasId];
-    canvas.style.cursor = 'default';
-    hideChartTip();
-    if (activeKey !== null && state && state.redraw) state.redraw();
-    activeKey = null;
-  });
+  };
 }
 
 function drawBarChart(canvasId, rows, labelKey, valueKey, title) {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas) return;
-  const { ctx, w, h } = clearCanvas(canvas);
-  const data = rows.filter(r => r[valueKey] !== null && r[valueKey] !== undefined).slice(0, 14);
-  ctx.font = '12px Arial';
-  ctx.fillStyle = '#667085';
-  if (!data.length) {
-    ctx.fillText('No data available', 16, 32);
-    CHART_STATE[canvasId] = { type: 'bar', hits: [] };
-    return;
-  }
-  const padL = 126, padR = 24, padT = 28, padB = 26;
-  const innerW = w - padL - padR;
-  const barH = Math.max(14, (h - padT - padB) / data.length - 7);
-  const maxAbs = Math.max(...data.map(r => Math.abs(Number(r[valueKey] || 0))), 1);
-  const zeroX = padL + innerW / 2;
-  ctx.strokeStyle = '#e5e7eb';
-  ctx.beginPath(); ctx.moveTo(zeroX, padT - 6); ctx.lineTo(zeroX, h - padB + 4); ctx.stroke();
-  ctx.fillStyle = '#172033';
-  ctx.font = 'bold 13px Arial';
-  ctx.fillText(title || '', 12, 18);
-  const hits = [];
+  const data = (rows || []).filter(r => r[valueKey] !== null && r[valueKey] !== undefined).slice(0, 16);
+  const labels = data.map(r => String(r[labelKey] || '').replace('NIFTY ', ''));
+  const values = data.map(r => Number(r[valueKey] || 0));
   const isPct = valueKey === 'change_pct';
-  data.forEach((r, i) => {
-    const y = padT + i * (barH + 7);
-    const value = Number(r[valueKey] || 0);
-    const len = Math.abs(value) / maxAbs * (innerW / 2 - 8);
-    const x = value >= 0 ? zeroX : zeroX - len;
-    ctx.fillStyle = value >= 0 ? '#047857' : '#b91c1c';
-    ctx.fillRect(x, y, len, barH);
-    ctx.fillStyle = '#172033';
-    ctx.font = '12px Arial';
-    const label = String(r[labelKey] || '').replace('NIFTY ', '').slice(0, 22);
-    ctx.fillText(label, 8, y + barH - 2);
-    ctx.fillStyle = '#667085';
-    ctx.fillText(value.toFixed(2), value >= 0 ? x + len + 5 : x - 42, y + barH - 2);
-    const extra = [];
-    if (r.close !== undefined && r.close !== null) extra.push('Close ' + num(r.close));
-    if (r.change !== undefined && r.change !== null) extra.push('Change ' + num(r.change));
-    hits.push({
-      key: String(r[labelKey] || i),
-      x: 0, y: y - 3, w: w, h: barH + 6,
-      barX: x, barW: len, barY: y, barH: barH,
-      tip: '<strong>' + escapeHtml(String(r[labelKey] || '')) + '</strong><br>'
-        + (isPct ? value.toFixed(2) + '%' : value.toFixed(2))
-        + (extra.length ? '<br>' + escapeHtml(extra.join(' · ')) : '')
-    });
-  });
-  CHART_STATE[canvasId] = {
+  mountChart(canvasId, {
     type: 'bar',
-    hits: hits,
-    redraw: () => drawBarChart(canvasId, rows, labelKey, valueKey, title),
-    highlight: (hit) => {
-      ctx.save();
-      ctx.strokeStyle = '#0f172a';
-      ctx.lineWidth = 2;
-      ctx.strokeRect(hit.barX - 1.5, hit.barY - 1.5, Math.max(hit.barW, 2) + 3, hit.barH + 3);
-      ctx.restore();
-    }
-  };
-  attachChartInteractivity(canvasId);
+    data: {
+      labels,
+      datasets: [{
+        label: title || 'Value',
+        data: values,
+        backgroundColor: values.map(barFill),
+        borderColor: values.map(barEdge),
+        borderWidth: 1.2,
+        borderRadius: 5,
+        borderSkipped: false,
+        maxBarThickness: 30,
+        hoverBackgroundColor: values.map(barEdge)
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { right: 18, top: 4 } },
+      scales: {
+        x: {
+          grid: { color: C.grid, drawBorder: false },
+          border: { display: false },
+          ticks: { callback: v => isPct ? v + '%' : v }
+        },
+        y: { grid: { display: false }, border: { display: false }, ticks: { autoSkip: false, font: { size: 11 } } }
+      },
+      plugins: {
+        legend: { display: false },
+        title: { display: !!title, text: title, align: 'start', font: { size: 13, weight: '700' }, color: '#172033', padding: { bottom: 8 } },
+        tooltip: {
+          callbacks: {
+            label(ctx) {
+              const r = data[ctx.dataIndex] || {};
+              const out = [(isPct ? ctx.parsed.x.toFixed(2) + '%' : ctx.parsed.x.toFixed(2))];
+              if (r.close !== undefined && r.close !== null) out.push('Close: ' + num(r.close));
+              if (r.change !== undefined && r.change !== null) out.push('Change: ' + num(r.change));
+              if (r.status) out.push('Status: ' + r.status);
+              return out;
+            }
+          }
+        }
+      }
+    },
+    plugins: [emptyMessagePlugin('No data available')]
+  });
 }
 function drawScoreChart(canvasId, rows) {
-  drawBarChart(canvasId, rows.map(r => ({ name: r.name, score: r.score })), 'name', 'score', 'Signal score by component');
+  drawBarChart(canvasId, (rows || []).map(r => ({ name: r.name, score: r.score, status: r.status })), 'name', 'score', 'Signal score by component');
 }
 function drawLineChart(canvasId, history) {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas) return;
-  const { ctx, w, h } = clearCanvas(canvas);
-  const data = (history || []).filter(r => r.score !== null && r.score !== undefined).slice(-45);
-  if (data.length < 2) {
-    ctx.fillStyle = '#667085';
-    ctx.font = '13px Arial';
-    ctx.fillText('History will appear after multiple daily workflow runs.', 16, 32);
-    CHART_STATE[canvasId] = { type: 'line', hits: [] };
-    return;
-  }
-  const padL = 44, padR = 18, padT = 26, padB = 42;
+  const data = (history || []).filter(r => r.score !== null && r.score !== undefined).slice(-60);
+  const labels = data.map(r => String(r.date || '').slice(5));
   const values = data.map(r => Number(r.score));
-  const min = Math.min(-6, ...values);
-  const max = Math.max(6, ...values);
-  const xStep = (w - padL - padR) / Math.max(data.length - 1, 1);
-  const yFor = v => padT + (max - v) / (max - min) * (h - padT - padB);
-  ctx.strokeStyle = '#e5e7eb';
-  ctx.lineWidth = 1;
-  for (let v = Math.ceil(min); v <= Math.floor(max); v += 2) {
-    const y = yFor(v);
-    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(w - padR, y); ctx.stroke();
-    ctx.fillStyle = '#667085'; ctx.font = '11px Arial'; ctx.fillText(String(v), 10, y + 4);
-  }
-  ctx.strokeStyle = '#2563eb';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  data.forEach((r, i) => {
-    const x = padL + i * xStep;
-    const y = yFor(Number(r.score));
-    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  mountChart(canvasId, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Signal score',
+        data: values,
+        borderColor: C.brand,
+        backgroundColor: ctx => {
+          const { chartArea, ctx: c } = ctx.chart;
+          if (!chartArea) return 'rgba(37,99,235,.12)';
+          const g = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+          g.addColorStop(0, 'rgba(37,99,235,.28)');
+          g.addColorStop(1, 'rgba(37,99,235,.01)');
+          return g;
+        },
+        fill: true,
+        tension: 0.34,
+        pointRadius: data.length > 30 ? 0 : 3,
+        pointHoverRadius: 6,
+        pointBackgroundColor: values.map(v => v >= 0 ? C.up : C.down),
+        pointBorderColor: '#fff',
+        borderWidth: 2.5
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, border: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+        y: { grid: { color: C.grid, drawBorder: false }, border: { display: false }, suggestedMin: -6, suggestedMax: 6 }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: items => 'Date ' + (data[items[0].dataIndex]?.date || ''),
+            label: ctx => 'Score: ' + ctx.parsed.y.toFixed(2)
+          }
+        }
+      }
+    },
+    plugins: [emptyMessagePlugin('History will appear after multiple daily workflow runs.')]
   });
-  ctx.stroke();
-  data.forEach((r, i) => {
-    const x = padL + i * xStep;
-    const y = yFor(Number(r.score));
-    ctx.fillStyle = Number(r.score) >= 0 ? '#047857' : '#b91c1c';
-    ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
-  });
-  ctx.fillStyle = '#667085';
-  ctx.font = '11px Arial';
-  data.forEach((r, i) => {
-    if (i % Math.ceil(data.length / 6) === 0 || i === data.length - 1) {
-      const x = padL + i * xStep;
-      ctx.save(); ctx.translate(x, h - 18); ctx.rotate(-0.5); ctx.fillText(String(r.date).slice(5), 0, 0); ctx.restore();
-    }
-  });
-  const hits = data.map((r, i) => ({
-    key: String(r.date || i),
-    x: padL + i * xStep,
-    y: yFor(Number(r.score)),
-    tip: '<strong>' + escapeHtml(String(r.date || '')) + '</strong><br>Score ' + Number(r.score).toFixed(2)
-  }));
-  CHART_STATE[canvasId] = {
-    type: 'line', hits: hits, snap: 26,
-    redraw: () => drawLineChart(canvasId, history),
-    highlight: (hit) => {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(15,23,42,.35)';
-      ctx.lineWidth = 1;
-      ctx.setLineDash([4, 3]);
-      ctx.beginPath(); ctx.moveTo(hit.x, padT - 6); ctx.lineTo(hit.x, h - padB + 4); ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.fillStyle = '#0f172a';
-      ctx.beginPath(); ctx.arc(hit.x, hit.y, 6, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = '#ffffff';
-      ctx.beginPath(); ctx.arc(hit.x, hit.y, 2.5, 0, Math.PI * 2); ctx.fill();
-      ctx.restore();
-    }
-  };
-  attachChartInteractivity(canvasId);
 }
 
 function renderMetrics() {
@@ -1238,147 +1186,56 @@ function renderPcrRolling() {
 }
 
 function drawPcrRollingChart(canvasId, rows) {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas) return;
-
-  const { ctx, w, h } = clearCanvas(canvas);
-
-  const data = rows
-    .filter(r => r.nifty_pcr !== null || r.banknifty_pcr !== null)
-    .slice(-30);
-
-  if (data.length < 2) {
-    ctx.fillStyle = '#667085';
-    ctx.font = '13px Arial';
-    ctx.fillText('PCR rolling chart will appear after multiple workflow runs.', 16, 32);
-    CHART_STATE[canvasId] = { type: 'line', hits: [] };
-    return;
-  }
-
-  const padL = 50;
-  const padR = 20;
-  const padT = 28;
-  const padB = 42;
-
-  const allValues = data.flatMap(r => [
-    r.nifty_pcr,
-    r.banknifty_pcr,
-    r.nifty_pcr_5d,
-    r.banknifty_pcr_5d,
-  ]).filter(v => v !== null && v !== undefined && !Number.isNaN(Number(v)));
-
-  const min = Math.min(...allValues, 0.5);
-  const max = Math.max(...allValues, 1.5);
-
-  const xStep = (w - padL - padR) / Math.max(data.length - 1, 1);
-
-  const yFor = value => {
-    const v = Number(value);
-    return padT + (max - v) / (max - min || 1) * (h - padT - padB);
-  };
-
-  ctx.strokeStyle = '#e5e7eb';
-  ctx.lineWidth = 1;
-
-  for (let i = 0; i <= 5; i++) {
-    const val = min + ((max - min) / 5) * i;
-    const y = yFor(val);
-
-    ctx.beginPath();
-    ctx.moveTo(padL, y);
-    ctx.lineTo(w - padR, y);
-    ctx.stroke();
-
-    ctx.fillStyle = '#667085';
-    ctx.font = '11px Arial';
-    ctx.fillText(val.toFixed(2), 8, y + 4);
-  }
-
-  function drawLine(key, color, label, dash = []) {
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.setLineDash(dash);
-    ctx.beginPath();
-
-    let started = false;
-
-    data.forEach((row, i) => {
-      const value = row[key];
-
-      if (value === null || value === undefined || Number.isNaN(Number(value))) {
-        return;
-      }
-
-      const x = padL + i * xStep;
-      const y = yFor(value);
-
-      if (!started) {
-        ctx.moveTo(x, y);
-        started = true;
-      } else {
-        ctx.lineTo(x, y);
-      }
-    });
-
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    ctx.fillStyle = color;
-    ctx.font = '12px Arial';
-    ctx.fillText(label, padL, 16 + drawLine.labelOffset);
-    drawLine.labelOffset += 16;
-  }
-
-  drawLine.labelOffset = 0;
-
-  drawLine('nifty_pcr', '#2563eb', 'Nifty PCR');
-  drawLine('nifty_pcr_5d', '#1d4ed8', 'Nifty 5D Avg', [5, 4]);
-  drawLine('banknifty_pcr', '#16a34a', 'Bank Nifty PCR');
-  drawLine('banknifty_pcr_5d', '#15803d', 'Bank Nifty 5D Avg', [5, 4]);
-
+  const data = (rows || []).filter(r => r.nifty_pcr !== null || r.banknifty_pcr !== null).slice(-30);
+  const labels = data.map(r => String(r.date || '').slice(5));
   const series = [
-    { key: 'nifty_pcr', color: '#2563eb', label: 'Nifty PCR' },
-    { key: 'nifty_pcr_5d', color: '#1d4ed8', label: 'Nifty 5D Avg' },
-    { key: 'banknifty_pcr', color: '#16a34a', label: 'Bank Nifty PCR' },
-    { key: 'banknifty_pcr_5d', color: '#15803d', label: 'Bank Nifty 5D Avg' },
+    { key: 'nifty_pcr', color: '#2563eb', label: 'Nifty PCR', dash: [] },
+    { key: 'nifty_pcr_5d', color: '#60a5fa', label: 'Nifty 5D Avg', dash: [6, 4] },
+    { key: 'banknifty_pcr', color: '#16a34a', label: 'Bank Nifty PCR', dash: [] },
+    { key: 'banknifty_pcr_5d', color: '#4ade80', label: 'Bank Nifty 5D Avg', dash: [6, 4] },
   ];
-  const hits = data.map((row, i) => {
-    const lines = series
-      .filter(s => row[s.key] !== null && row[s.key] !== undefined && !Number.isNaN(Number(row[s.key])))
-      .map(s => '<span class="swatch-dot" style="background:' + s.color + '"></span>' + s.label + ': <strong>' + Number(row[s.key]).toFixed(2) + '</strong>');
-    return {
-      key: String(row.date || i),
-      x: padL + i * xStep,
-      y: padT,
-      tip: '<strong>' + escapeHtml(String(row.date || '')) + '</strong><br>' + lines.join('<br>')
-    };
+  const col = key => data.map(r => {
+    const v = r[key];
+    return (v === null || v === undefined || Number.isNaN(Number(v))) ? null : Number(v);
   });
-  CHART_STATE[canvasId] = {
-    type: 'line', hits: hits, snap: 24,
-    redraw: () => drawPcrRollingChart(canvasId, rows),
-    highlight: (hit) => {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(15,23,42,.4)';
-      ctx.lineWidth = 1;
-      ctx.setLineDash([4, 3]);
-      ctx.beginPath(); ctx.moveTo(hit.x, padT - 6); ctx.lineTo(hit.x, h - padB + 4); ctx.stroke();
-      ctx.setLineDash([]);
-      const idx = data.findIndex((row, i) => String(row.date || i) === hit.key);
-      if (idx >= 0) {
-        series.forEach(s => {
-          const v = data[idx][s.key];
-          if (v === null || v === undefined || Number.isNaN(Number(v))) return;
-          const y = yFor(v);
-          ctx.fillStyle = s.color;
-          ctx.beginPath(); ctx.arc(hit.x, y, 5, 0, Math.PI * 2); ctx.fill();
-          ctx.fillStyle = '#ffffff';
-          ctx.beginPath(); ctx.arc(hit.x, y, 2, 0, Math.PI * 2); ctx.fill();
-        });
+  mountChart(canvasId, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: series.map(s => ({
+        label: s.label,
+        data: col(s.key),
+        borderColor: s.color,
+        backgroundColor: s.color,
+        borderDash: s.dash,
+        borderWidth: 2,
+        tension: 0.3,
+        pointRadius: data.length > 20 ? 0 : 2.5,
+        pointHoverRadius: 5,
+        spanGaps: true,
+        fill: false
+      }))
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, border: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+        y: { grid: { color: C.grid, drawBorder: false }, border: { display: false }, suggestedMin: 0.5, suggestedMax: 1.5 }
+      },
+      plugins: {
+        legend: { position: 'top', labels: { usePointStyle: true, boxWidth: 8, padding: 14 } },
+        tooltip: {
+          callbacks: {
+            title: items => 'Date ' + (data[items[0].dataIndex]?.date || ''),
+            label: ctx => ctx.dataset.label + ': ' + (ctx.parsed.y === null ? 'N/A' : ctx.parsed.y.toFixed(2))
+          }
+        }
       }
-      ctx.restore();
-    }
-  };
-  attachChartInteractivity(canvasId);
+    },
+    plugins: [emptyMessagePlugin('PCR rolling chart will appear after multiple workflow runs.')]
+  });
 }
 
 function populateNewsSources() {
