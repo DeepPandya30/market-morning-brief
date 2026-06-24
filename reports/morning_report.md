@@ -1,134 +1,134 @@
-# Morning Market Brief - 23 June 2026
+# Morning Market Brief - 24 June 2026
 
-Generated at: **23 Jun 2026, 11:47 AM IST**
+Generated at: **24 Jun 2026, 08:21 AM IST**
 
 ## Final View
 
-- **Market Bias:** Neutral / Range-bound
-- **Score:** 0
+- **Market Bias:** Mild Bearish
+- **Score:** -4
 - **Confidence:** High
-- **Meeting View:** Market setup is range-bound. Watch Nifty support near 24,000 and resistance near 24,100.
+- **Meeting View:** Market setup is Mild Bearish. Avoid chasing upside unless Nifty reclaims resistance near 23,850.
 
 ## Expected Opening
 
 - GIFT Nifty: Not available from current source. Use available global and NSE signals.
-- India VIX: 12.80 (-0.35%)
+- India VIX: 13.94 (8.56%)
 
 ## Global Market Cues
 
 | Region | Index | Close | Change % | Date |
 |---|---:|---:|---:|---:|
-| US | Nasdaq | 26,167 | -1.32% | 2026-06-22 |
-| US | Dow Jones | 51,713 | 0.29% | 2026-06-22 |
-| US | S&P 500 | 7,473 | -0.37% | 2026-06-22 |
-| Europe | FTSE 100 | 10,438 | 0.72% | 2026-06-22 |
-| Europe | CAC 40 | 8,400 | -0.25% | 2026-06-22 |
-| Europe | DAX | 25,140 | 0.62% | 2026-06-22 |
-| Asia | Hang Seng | 23,356 | -1.74% | 2026-06-23 |
-| Asia | Nikkei 225 | 70,252 | -2.91% | 2026-06-23 |
+| US | Nasdaq | 25,587 | -2.21% | 2026-06-23 |
+| US | Dow Jones | 51,667 | -0.09% | 2026-06-23 |
+| US | S&P 500 | 7,365 | -1.44% | 2026-06-23 |
+| Europe | FTSE 100 | 10,429 | -0.09% | 2026-06-23 |
+| Europe | CAC 40 | 8,341 | -0.71% | 2026-06-23 |
+| Europe | DAX | 24,894 | -0.98% | 2026-06-23 |
+| Asia | Hang Seng | 23,321 | -0.07% | 2026-06-24 |
+| Asia | Nikkei 225 | 69,524 | -0.38% | 2026-06-24 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,138 | -43.70 | -1.04% | 2026-06-23 |
-| Silver | SI=F | 62.47 | -3.06 | -4.67% | 2026-06-23 |
-| Crude Oil WTI | CL=F | 72.95 | -1.87 | -2.50% | 2026-06-23 |
-| Copper | HG=F | 6.23 | -0.13 | -1.98% | 2026-06-23 |
-| Brent Oil | BZ=F | 76.84 | -1.06 | -1.36% | 2026-06-23 |
+| Gold | GC=F | 4,076 | -106.10 | -2.54% | 2026-06-23 |
+| Silver | SI=F | 61.26 | -4.27 | -6.51% | 2026-06-23 |
+| Crude Oil WTI | CL=F | 72.53 | -2.29 | -3.06% | 2026-06-23 |
+| Copper | HG=F | 6.12 | -0.24 | -3.71% | 2026-06-23 |
+| Brent Oil | BZ=F | 76.44 | -1.46 | -1.87% | 2026-06-23 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 63,161 | -76.72 | -0.12% | 2026-06-23 |
-| Ethereum | ETH-USD | 1,707 | 2.36 | 0.14% | 2026-06-23 |
-| Solana | SOL-USD | 70.74 | -1.68 | -2.32% | 2026-06-23 |
-| Cardano | ADA-USD | 0.16 | 0.00 | 0.23% | 2026-06-23 |
-| Ripple | XRP-USD | 1.11 | -0.01 | -0.94% | 2026-06-23 |
+| Bitcoin | BTC-USD | 62,622 | -1,330 | -2.08% | 2026-06-24 |
+| Ethereum | ETH-USD | 1,664 | -62.82 | -3.64% | 2026-06-24 |
+| Solana | SOL-USD | 69.45 | -2.46 | -3.42% | 2026-06-24 |
+| Cardano | ADA-USD | 0.15 | -0.01 | -3.61% | 2026-06-24 |
+| Ripple | XRP-USD | 1.11 | -0.02 | -2.07% | 2026-06-24 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.32 | 0.00 | 0.25% | 2026-06-23 |
-| EUR/USD | EURUSD=X | 1.14 | -0.00 | -0.30% | 2026-06-23 |
-| USD/CHF | CHF=X | 0.81 | 0.00 | 0.10% | 2026-06-23 |
-| USD/JPY | JPY=X | 161.66 | 0.23 | 0.14% | 2026-06-23 |
-| DXY | DX-Y.NYB | 101.06 | 0.04 | 0.03% | 2026-06-23 |
-| USD/INR | INR=X | 94.71 | 0.37 | 0.40% | 2026-06-23 |
+| GBP/USD | GBPUSD=X | 1.32 | -0.01 | -0.39% | 2026-06-24 |
+| EUR/USD | EURUSD=X | 1.14 | -0.01 | -0.47% | 2026-06-24 |
+| USD/CHF | CHF=X | 0.81 | 0.00 | 0.18% | 2026-06-24 |
+| USD/JPY | JPY=X | 161.54 | -0.03 | -0.02% | 2026-06-24 |
+| DXY | DX-Y.NYB | 101.41 | 0.39 | 0.39% | 2026-06-23 |
+| USD/INR | INR=X | 94.72 | 0.02 | 0.03% | 2026-06-24 |
 
 ## FII / DII Flow
 
-- FII net: **₹-635.91 Cr**
-- DII net: **₹1,035.72 Cr**
-- Combined institutional flow: **₹399.81 Cr**
+- FII net: **₹17.86 Cr**
+- DII net: **₹680.21 Cr**
+- Combined institutional flow: **₹698.07 Cr**
 
 ## Open Interest View
 
 | Index | Spot | PCR | Support | Resistance | Source |
 |---|---:|---:|---:|---:|---|
-| Nifty | 24,046 | 0.85 | 24,000 | 24,100 | nse_nextapi |
-| Bank Nifty | 57,653 | 1.00 | 54,000 | 58,000 | nse_nextapi |
+| Nifty | 23,824 | 0.58 | 23,800 | 23,850 | nse_nextapi |
+| Bank Nifty | 57,184 | 0.88 | 54,000 | 58,000 | nse_nextapi |
 
 ## Sector View
 
 ### Strong Sectors
-- NIFTY PHARMA: 1.27%
-- NIFTY HEALTHCARE INDEX: 1.01%
-- NIFTY REALTY: 0.96%
+- NIFTY PHARMA: 0.92%
+- NIFTY HEALTHCARE INDEX: 0.54%
+- NIFTY FMCG: -0.60%
 
 ### Weak Sectors
-- NIFTY METAL: -2.32%
-- NIFTY IT: -2.07%
-- NIFTY PSU BANK: -1.34%
+- NIFTY METAL: -3.22%
+- NIFTY IT: -2.23%
+- NIFTY PSU BANK: -1.97%
 
 ## Signal Score Breakdown
 
 | Signal | Score | Status | Reason |
 |---|---:|---|---|
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
-| US markets | -1 | Bearish | Average move -0.47% across 3 indices. |
-| Europe markets | 1 | Bullish | Average move 0.36% across 3 indices. |
-| Asia markets | -1 | Bearish | Average move -2.32% across 2 indices. |
-| FII/DII flow | 0 | Neutral | FII net -635.91 Cr, DII net 1035.72 Cr, combined 399.81 Cr. |
-| Nifty OI | 0 | Neutral | PCR 0.85, support 24000.0, resistance 24100.0. |
-| Bank Nifty OI | 1 | Bullish | PCR 1.00, support 54000.0, resistance 58000.0. |
-| India VIX | 0 | Neutral | India VIX change -0.35%. |
-| Sector breadth | -1 | Bearish | 3 sectors positive and 11 sectors negative. |
-| Global commodities | 1 | Bullish | Crude/Brent average down -1.93%, which is supportive for India market sentiment. |
-| Crypto risk appetite | 0 | Neutral | Major crypto basket average move -0.60% across 5 coins. |
-| Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.22%; rising dollar/rupee pressure is usually negative for India. |
+| US markets | -1 | Bearish | Average move -1.25% across 3 indices. |
+| Europe markets | -1 | Bearish | Average move -0.59% across 3 indices. |
+| Asia markets | -1 | Bearish | Average move -0.22% across 2 indices. |
+| FII/DII flow | 2 | Bullish | FII net 17.86 Cr, DII net 680.21 Cr, combined 698.07 Cr. |
+| Nifty OI | -1 | Bearish | PCR 0.58, support 23800.0, resistance 23850.0. |
+| Bank Nifty OI | 0 | Neutral | PCR 0.88, support 54000.0, resistance 58000.0. |
+| India VIX | -1 | Bearish | India VIX change 8.56%. |
+| Sector breadth | -1 | Bearish | 2 sectors positive and 12 sectors negative. |
+| Global commodities | 1 | Bullish | Crude/Brent average down -2.47%, which is supportive for India market sentiment. |
+| Crypto risk appetite | -1 | Bearish | Major crypto basket average move -2.96% across 5 coins. |
+| Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.21%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
-- Market setup is range-bound. Watch Nifty support near 24,000 and resistance near 24,100.
+- Market setup is Mild Bearish. Avoid chasing upside unless Nifty reclaims resistance near 23,850.
 - Bank Nifty levels to monitor: support 54,000, resistance 58,000.
 - Avoid aggressive trades in the first 5–10 minutes if opening gap is large.
 - Confirm direction with Nifty/Bank Nifty holding above support or rejecting near resistance.
 
 ## Important Market News
 
-- **US Stock Market Today: Dow Rises, Nasdaq & S&P 500 Edge Lower on Tech Weakness as Crude Oil Surges, Gold & Silver Prices Gain & Dollar Hits High Amid US-Iran Peace Talks | What Investors Should Watch - The Sunday Guardian** — Google News - Global Markets  
-  https://news.google.com/rss/articles/CBMi2wJBVV95cUxOQ1k4a0pPVjBnbERXLXFMb1NITlA4NDF1LTMwMEVmMWxnTE4xb0Jldm5GX21SSEc2WmpxUzE3SXpJajZGVlZIQjVNdWgtSlZ1UnBUTlpEREk1REVhWkZZSk0tcHFnc3BLTTRNb2J0dmRoc3hzRFkzdk5PRWIySDFndlN5UHVkZUh5c1Jtb1B2cGZhdHRpeWN6OVZ2YW84RVM1OElYczc2SGQ2V2doZDhvUWwxWVZCVlgtTk9lbG45U2RJaFZidm5hNVdvbzJLREZmWWJmR1VVVDZtQmdQTjh1aWVtdi1hTnlmVVBCX0JObzFab1RLOE56RFFwcnNicnFUemE0c3BvZktCemNJT29ubng0a1o3aFhlaXBfR2puRTR3OTg2Qmktc0hTVThEeXhjWldIUWtoUTU3WmZROEdrdVphQ0ZvS2x5QXBwalhZcXNFOFc0RlJWQnM3MNIB2wJBVV95cUxOQ1k4a0pPVjBnbERXLXFMb1NITlA4NDF1LTMwMEVmMWxnTE4xb0Jldm5GX21SSEc2WmpxUzE3SXpJajZGVlZIQjVNdWgtSlZ1UnBUTlpEREk1REVhWkZZSk0tcHFnc3BLTTRNb2J0dmRoc3hzRFkzdk5PRWIySDFndlN5UHVkZUh5c1Jtb1B2cGZhdHRpeWN6OVZ2YW84RVM1OElYczc2SGQ2V2doZDhvUWwxWVZCVlgtTk9lbG45U2RJaFZidm5hNVdvbzJLREZmWWJmR1VVVDZtQmdQTjh1aWVtdi1hTnlmVVBCX0JObzFab1RLOE56RFFwcnNicnFUemE0c3BvZktCemNJT29ubng0a1o3aFhlaXBfR2puRTR3OTg2Qmktc0hTVThEeXhjWldIUWtoUTU3WmZROEdrdVphQ0ZvS2x5QXBwalhZcXNFOFc0RlJWQnM3MA?oc=5
-- **Rupee opens 1 paise lower at 94.69 against US dollar** — LiveMint Markets  
-  https://www.livemint.com/market/stock-market-news/rupee-opens-1-paise-lower-at-94-69-against-us-dollar-11782185525553.html
-- **Sensex trades on choppy note, Nifty below 24,100 as IT stocks drag benchmarks lower** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/stocks/news/sensex-trades-on-choppy-note-nifty-below-24100-as-it-stocks-drag-benchmarks-lower/articleshow/131924522.cms
-- **Stock market today: Gift Nifty hints muted start; US-Iran peace talks to crude oil prices - 8 stocks to buy** — LiveMint Markets  
-  https://www.livemint.com/market/stock-market-news/stock-market-today-gift-nifty-hints-muted-start-us-iran-peace-talks-to-crude-oil-prices-8-stocks-to-buy-11782178948481.html
-- **Global Market: Standard Chartered bullish on Asia ex-Japan equities, sees strong AI-led growth** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-standard-chartered-bullish-on-asia-ex-japan-equities-sees-strong-ai-led-growth/articleshow/131925130.cms
-- **Stocks to buy: Sagar Doshi suggests Olectra Greentech, Gail, HAL shares to buy** — LiveMint Markets  
-  https://www.livemint.com/market/stocks-to-buy-sagar-doshi-suggests-olectra-greentech-gail-hal-shares-to-buy-11782187046403.html
-- **Indian Stock Market Today: SENSEX TODAY | NIFTY50 | RUPEE TODAY - Dailyhunt** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi4AFBVV95cUxOZFBkTFRxbDFlaVVLTDZZaWhFdG1sZkdCMUd5NFUwU1QyUmtheUxrVzFDOHZoS1gxY2pDb01jWEpralFMM0NQUHVVQ3NrQmtxdXVHMkhLOGxGMW5fc3dZYXpJOGtGOVBnXzhaVXo5bW5QbTlHcjZSTEZ3UnRDTWxQbE40S0VjamkxbUZJTi1UR2MyYVJYeWthQXFweTh3QURyU0R3cnpRYVA4V2FTc1ZrVFFSRk9rLVdIT3V1aWpldWxIQklyakgwdzNfSElGbGlJMUFiT3Qxc2pTRkRWa3A3LQ?oc=5
-- **Stock market today: Gift Nifty hints positive start; US-Iran deal, gold to crude oil prices - 8 stocks to buy or sell - Dailyhunt** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMipAJBVV95cUxOOHNiLXJOeXhfakFzZ0VqcjJ5cGg1TVZpS20xdEZVd0pYWFVlczI4Mmt2MDdpUFUxdTBQOGY3cHQxT19DazdCWjI3Rk1JclM5U1hqRkxUSEhaV2NKZi14NFdoYWhBV0RxLVh4eHJXaTd1Q1d4a0VPNkk3eU1wWmhHZ01ZcXBIXzJPVkVJVWVwT1R0cW1GYjFpYzFQa3d3LTJpLTRoaDVVYlliUTRkXzFYOVNRUFExcGpYOWhlQjNZNmNCWXQxbEZ1UnBJeWlCcFk3R2lfSHBvMzhYc2hIRVVHX3dZZ2JPLWJrWEFFRmxkTVBfVlZ0d2JPT1R0aHJmNk9DbW01UGR5Y0NMaUNlM1hscDY4a2E5eDVQSEM0M0hNbVhyOHJq?oc=5
-- **Sensex rises 291 points, Nifty tops 24,100 on cooling crude and FII support - Business Standard** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi7AFBVV95cUxNeWNxZ0t3T3pTbWNIV2hvNUIwWVlONnBkNEJEQ3UzXzRZWkZFaEdPWTBscmcyOFFZVVhSbTNJd0N1ZElMTXI4TmZzY2RWOXBndWFLZGEyLXZESmFJeXJ2eklRbXRiakZKcXU4ZktwWFJ4WjFFa0Fva2hfUXZwNlNlYzVuMk9rMk5feGpfbzlXMlpKcUc5UExlUGppd3F5UXliNHdCbWlyemh2SmtPNVZSamxlbnY5RDMtbUQ3RHE2VHhjRklZVWF3MC1QQjVNUmVfWEFIVzBzVXV3N0FsY3QxTDdjYjc0d1VNSGpOONIB8gFBVV95cUxPV0dRUUNjYWJmWERzZV9HSzZFU05FSlRuQmVYMGlVbHVkZWlnZmdZVDN0NHd2VmRJYmp3dE40T3BDUGhMLVFXNlRROUxJZndZT1JvZHRwMUE4b0stN2poRGdjLVRHTUhNcUlXcGc1RWk2cV9XVDcwSUptMVpPUENZOWV5S2ZkcTUzUEpSQ2JCb01QMHYtYXd3Y3BGUVpRaHRrMVB4UlV6UFZiSl9FQ0xZRjBSREc5N09NSDRIUWxYTU1ZcXNkc1V2MWtXZnMxSkpjenAxSkd4Z3VwdXY1c0JpcHg4OWZ5OC1qclJGTkh1RXNEdw?oc=5
-- **Sensex aur Nifty ne Pakdi Speed! Crude Oil Sasta Hua, IT aur Pharma Stocks Ne Kiya Kamaal - Whalesbook** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMiwAFBVV95cUxPeHRXSUhsWnMzVWlJWERsbmZaME1ubldWLTZ1Vi1pbVlfcFVlMm1vbnZGWVcxWUF2emtJVnFsbEtwM1NRMDFjcU9EWVJEa2tjRFcxNlg4SFY0OWRfUEowRjVBN1BEeFVZcl9qakR6c3hXZzVJa0ZMV3VzZFNoc3lhX05PdnpkeVZIZk9wSnRINGdRVjNTNWctdVkxUlBtSGdjUXNHODJkcGVNaUwzT0NvVzAzaHlHaExnbmdQTUEzMTg?oc=5
+- **US Stock Market Today: Dow Climbs, Nasdaq & S&P 500 Crashes on Tech Weakens as Crude Oil Surges, Gold & Silver Prices Gain & Dollar Hits High Amid US-Iran Talks | What Investors Should Watch - The Sunday Guardian** — Google News - Global Markets  
+  https://news.google.com/rss/articles/CBMizwJBVV95cUxOa0Q1V2pFbXNWclBwaUlxVUYzWFd5NF9vMVo1ZFFzYVljdVJLOFExd2hIeU9qWEdaVXd4NEowU0FRSXJFZWRvUHRWYWNuNks1RnNMdmlQUEYtbXVSc2JYdFVpQUVJTVBnNWJrcFpKWXFZbkNxU1dNMkpoazFSaDlYdnEwdVdXbmNFNldYN0dab3VWWW4yTHRmN19naDZ4b3U4OWhCOGhzck92aVRFWmJnQzRhdHlTUVRmMXBpRGk1N0tPQVRPT2FxVGdOMV8tRzhkQ2tQei1VdHk2LUI1OEF1LTNodmlYRGR0dFloS1FpazVNSHVzWlpydXBvUnJfRzdKUTBPTmp2ek5qUXNxaUhYM1VCS25jcVB5d3lGd05TQjlya0w1a0JDbURfejktN0pScjItSVRwZ1Mya0FDNlNXM1VxaFBVVFFBSGRsWkQwQdIBzwJBVV95cUxOa0Q1V2pFbXNWclBwaUlxVUYzWFd5NF9vMVo1ZFFzYVljdVJLOFExd2hIeU9qWEdaVXd4NEowU0FRSXJFZWRvUHRWYWNuNks1RnNMdmlQUEYtbXVSc2JYdFVpQUVJTVBnNWJrcFpKWXFZbkNxU1dNMkpoazFSaDlYdnEwdVdXbmNFNldYN0dab3VWWW4yTHRmN19naDZ4b3U4OWhCOGhzck92aVRFWmJnQzRhdHlTUVRmMXBpRGk1N0tPQVRPT2FxVGdOMV8tRzhkQ2tQei1VdHk2LUI1OEF1LTNodmlYRGR0dFloS1FpazVNSHVzWlpydXBvUnJfRzdKUTBPTmp2ek5qUXNxaUhYM1VCS25jcVB5d3lGd05TQjlya0w1a0JDbURfejktN0pScjItSVRwZ1Mya0FDNlNXM1VxaFBVVFFBSGRsWkQwQQ?oc=5
+- **Stock Market LIVE Updates: Sensex, Nifty Trade Flat on Mixed Global Cues; Crude Oil Holds Above $78 per... - The Hans India** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMi7AFBVV95cUxQeTJSR0d6ckt3WnRMdTFSLUtrYTUxaFIzWDRjRF94b1I5dWJRU2I3UEp3MUxsR1NPYjBGVEhLUUozandoTEk1N1lHTEtRTHhRYVNDSDB0TWt1WUhlUTVXeS1VTnBuUS1lT3kxNVFKQnZZOE9KQVJkbTFaaXp6MGxHZ1ZMV0x3VHdtYmpPMHJFUUVGSlZ2aFZ2WnMwYTZqMXNBYkpOcGc3UmlwLXFCTmdtb3FxTS1hQlhmTjBmRmd3V0xsUV9OTWFjOWI3VU83dDJUSFIzRi1weERodW50YTQtTTE0NzBHd0xuNTJ2aNIB7AFBVV95cUxQeTJSR0d6ckt3WnRMdTFSLUtrYTUxaFIzWDRjRF94b1I5dWJRU2I3UEp3MUxsR1NPYjBGVEhLUUozandoTEk1N1lHTEtRTHhRYVNDSDB0TWt1WUhlUTVXeS1VTnBuUS1lT3kxNVFKQnZZOE9KQVJkbTFaaXp6MGxHZ1ZMV0x3VHdtYmpPMHJFUUVGSlZ2aFZ2WnMwYTZqMXNBYkpOcGc3UmlwLXFCTmdtb3FxTS1hQlhmTjBmRmd3V0xsUV9OTWFjOWI3VU83dDJUSFIzRi1weERodW50YTQtTTE0NzBHd0xuNTJ2aA?oc=5
+- **From Gift Nifty, Nasdaq selloff, US dollar to oil prices: 10 key things that changed for Indian stock market overnight - Mint** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMikwJBVV95cUxOdlNrb1pvNGZFNldqRnlMb2drb0lpYTZoWjlqbDVEMmFObFU4NGlrS1R1UGVveGM2T21IN2lkeDQ0M2FweUR0SjdvcF8wX005TVdFTWZYOFFEOVB5ZGlfamZoQWZobXN1T01INUl1bVZ6Wl81cW5GM25aQTd2dGM5LTJ2WHJQYlUtODhDZmRzSTFGN2o0X0VTWG95V0hieTVpWTFwWDRfWDRyd1ZWZG1QRk1FcHA4aHdpWXUtUW5NNHhNSXhCdmozOWJOYUZ3Zl9SRllfYmhJdlZZaDEzVHB5V2dZeTlOTnFGQnZTdGlpTmh6MnZDQjNEU3pENGF4NkJiekp1NWlCU2hET1NsSDJCU01GQdIBmAJBVV95cUxNQXNqcUtGdFZ5RGhyNnlNNjRka1VpRV9RcnRSWDJTVzduZEhaUEY3eDlGNmpjWkJZcXNOMV9MeUs0NU54UC11ZXpaeGZQZmllTFU3bTI1ZUZ3b2hvWlFRd0dycW5nRnUtVE55RXVNRGZteGJWUTliaDROMEVLZGRhRXF4a2FIUy1aTUdIdGVqSjZXXzE0X0RHcm45ZXlfdU15OE0za2pEaDhZc2tVdEF6eVlHVl9jZkwxelc5U2EzSXA3YUN4bUpONWJmYnF5LWNfaEZSM0t6T0VPQWNab00zUnN2RnJFVnhFQ0F2UXl4QnhZMVlOV0dQdzFmUndqbGdvTm84ZENNU0lDcEFrZFd5cV9rTU9aQ29r?oc=5
+- **Tech-Led global selloff, Fed rate fears weigh on Indian equities** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/news/tech-led-global-selloff-fed-rate-fears-weigh-on-indian-equities/articleshow/131952279.cms
+- **D-Street set for a positive opening as GIFT Nifty trades higher** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/news/pre-market-action-heres-the-trade-setup-for-todays-session/articleshow/131944434.cms
+- **From Gift Nifty, Nasdaq selloff, US dollar to oil prices: 10 key things that changed for Indian stock market overnight** — LiveMint Markets  
+  https://www.livemint.com/market/stock-market-news/from-gift-nifty-nasdaq-selloff-us-dollar-to-oil-prices-10-key-things-that-changed-for-indian-stock-market-overnight-11782263263946.html
+- **Sensex opens 170 points lower; Nifty tops 24,000; Infosys down 3% - India Today** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUDdNUDJ6Zm54MXBOUGh0LUd2aXZVZ0xSZHBBQWdocGN6RHdfdGpETmhHc0pFN1B3OUszZ3dVSk81OG04b01aV1JEcWRLU2h2Vkw1bWZ4TENBWGh2c1d2eXNuS01yU0tfV3BRNWZJY2Y0bkh1dVE3MkpkYTVqWXM4SHhpbWlpN0hHbFZrMHZEOTBvaVVjOWxPdS1PU0k2N0Z0b3BMbmozMTJJdS02ZlNBRmdObnAyd1U4c0w2YkhfVFN3R2V1ajVTXzB6RWJ0OVRiXzFCcNIB2gFBVV95cUxQRHZOMl9UUUF6Qnp1VFVGb2tBUHFvbWZYb2l1Q0RIeWx3OGhTMDh3anFfVlNOa3BqcHJvNkw3VlVUNXZ5bmE2YzNHZUR0TTZucU1SWVNnMXREa2ZJaFUzZ1VOeUZXSXVoSnpiTFJLSkU2eklvVElSTGFyeDNab01Ta0NyaDV1akZZWi15T0llVUM4MjhOQkdrY0U3VkRjS21UeXh3eTVoeUhfUHhKbkc5Vzh6NUFsWlh3eTFxSmZ2cnZDY3BTQWZTWk51RDJQdGdTLUhxYm1mc0ctdw?oc=5
+- **Why Sensex, Nifty trading steadily? Banking stocks rise, IT under pressure; what investors should note - DNA India** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMi6wFBVV95cUxORmE3VklvQ2pEOU5PS0FDbFhsX080b19ld0RDcUhXRERQd0F1eXBFd1o3N3k0VWZKQTN3eDRfQUFFSVY2T3h5OVZ2dXR6SHdZVnB6T1NFNGhrcWhZc3QxbkpLN1BxUjZmV1RSMHVROFdyeHZXV0F0WGpJNkxjNWU5OWNxSGFkdnZyN1dydFZiYUoxVEdiNHFldUdSMWltcEFvczUwZXNpRzEyMEdfYWJaai1MZ0d3aF9wX2pUZXJKbE9kMzc3ZE1PdDRyR21Uc044dC03cTFlMG9xZG9rYTZUUTNUdXZvUGhubHFz0gHrAUFVX3lxTE5GYTdWSW9DakQ5Tk9LQUNsWGxfTzRvX2V3RENxSFdERFB3QXV5cEV3Wjc3eTRVZkpBM3d4NF9BQUVJVjZPeHk5VnZ1dHpId1lWcHpPU0U0aGtxaFlzdDFuSks3UHFSNmZXVFIwdVE4V3J4dldXQXRYakk2TGM1ZTk5Y3FIYWR2dnI3V3J0VmJhSjFUR2I0cWV1R1IxaW1wQW9zNTBlc2lHMTIwR19hYlpqLUxnR3doX3BfalRlckpsT2QzNzdkTU90NHJHbVRzTjh0LTdxMWUwb3Fkb2thNlRRM1R1dm9QaG5scXM?oc=5
+- **Stock Market News: Oil Relief Fails To Lift Markets, Sensex Falls 893 Points, Nifty Slips Below 23,900 - Outlook Money** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMi3AFBVV95cUxNeWpENTh6RWxCOTBNYU4yMXJYODlHTVNoRktITzM0TllJZ3pnbU1rRDNZbVpQQzFwRUJZZ3BhdU9VZEE1THRmRUVtUVJJb185X0d5b0tNTnNZTHZ3THhneTBOc1lBTVRiYm9aZnpPZEhfc3dOdTd6SEFGSDUzXy1YX1dxY196ZjQ1Zi1qeGtMdmlCR3pHUkhLX3VhaTR4NVJsYUowbGQxVHFzdjV0dEtCbWloTzhXT1FGRXpfdVhIekhKeWJIelczS01Pd1F6Sk9xRHR1NWhmdUYyVXNn0gHcAUFVX3lxTE15akQ1OHpFbEI5ME1hTjIxclg4OUdNU2hGS0hPMzROWUlnemdtTWtEM1ltWlBDMXBFQllncGF1T1VkQTVMdGZFRW1RUklvXzlfR3lvS01Oc1lMdndMeGd5ME5zWUFNVGJib1pmek9kSF9zd051N3pIQUZINTNfLVhfV3FjX3pmNDVmLWp4a0x2aUJHekdSSEtfdWFpNHg1UmxhSjBsZDFUcXN2NXR0S0JtaWhPOFdPUUZFel91WEh6SEp5Ykh6VzNLTU93UXpKT3FEdHU1aGZ1RjJVc2c?oc=5
+- **Indian markets slump as Nifty down 300-plus Sensex down 500-plus - NewsBytes** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMisgFBVV95cUxONGh1RER1MGtJSkNTNmxpUEo2OG16dTJBR28yazVIakNuRlRsNDcxSGJaVk1xTG5wUG1FOW1aUUp0dmx2Rm11VXlDdnJibWoyNHRTNVZ4NVp3Rng0Ymh0RzNPSkhqNUpnbnNJMGUteGxEVzJMTDZQMVFxUnBMeE5VdEI5cWk0cTJCT3UtX21sVzVJVVQ2VzJjYW91NUFSZHRTZWZLeVdFaE9vUXVzbVo2UTBB?oc=5
 
 ---
 This report is generated automatically for pre-market discussion. It is not financial advice.
