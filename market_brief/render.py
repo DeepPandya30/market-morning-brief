@@ -563,7 +563,7 @@ h1 { position: relative; }
   <section id="commodities" class="panel">
     <div class="card">
       <h2>Global Commodities</h2>
-      <p class="muted">Gold, Silver, Crude Oil WTI, Copper, and Brent Oil.</p>
+      <p class="muted">Gold, Silver, Crude Oil WTI, Copper, Brent Oil, and Natural Gas.</p>
       <div class="controls">
         <select id="commoditySort">
           <option value="change_desc">Change % high to low</option>

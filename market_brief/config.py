@@ -29,6 +29,7 @@ COMMODITY_TICKERS = {
     "Crude Oil WTI": "CL=F",
     "Copper": "HG=F",
     "Brent Oil": "BZ=F",
+    "Natural Gas": "NG=F",
 }
 
 CRYPTO_TICKERS = {
