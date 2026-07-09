@@ -14,13 +14,13 @@
         "name": "US markets",
         "score": 1,
         "status": "Bullish",
-        "reason": "Average move 0.28% across 3 indices."
+        "reason": "Average move 0.42% across 3 indices."
       },
       {
         "name": "Europe markets",
         "score": 1,
         "status": "Bullish",
-        "reason": "Average move 0.30% across 3 indices."
+        "reason": "Average move 0.26% across 3 indices."
       },
       {
         "name": "Asia markets",
@@ -62,19 +62,19 @@
         "name": "Global commodities",
         "score": 0,
         "status": "Neutral",
-        "reason": "Crude/Brent average move -0.59%, commodity pressure is limited."
+        "reason": "Crude/Brent average move -0.71%, commodity pressure is limited."
       },
       {
         "name": "Crypto risk appetite",
         "score": 0,
         "status": "Neutral",
-        "reason": "Major crypto basket average move 0.56% across 5 coins."
+        "reason": "Major crypto basket average move 0.84% across 5 coins."
       },
       {
         "name": "Currency pressure",
         "score": 0,
         "status": "Neutral",
-        "reason": "DXY/USDINR pressure average -0.17%; rising dollar/rupee pressure is usually negative for India."
+        "reason": "DXY/USDINR pressure average -0.18%; rising dollar/rupee pressure is usually negative for India."
       }
     ]
   },
@@ -84,54 +84,54 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 25995.53125,
-        "change": 124.880859375,
-        "change_pct": 0.48271248495652164,
+        "close": 26048.32421875,
+        "change": 177.673828125,
+        "change_pct": 0.6867775855739034,
         "date": "2026-07-09"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 52360.75,
-        "change": 12.359375,
-        "change_pct": 0.023609847126986057,
+        "close": 52413.76953125,
+        "change": 65.37890625,
+        "change_pct": 0.12489191256775146,
         "date": "2026-07-09"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7506.89013671875,
-        "change": 24.18017578125,
-        "change_pct": 0.32314730769306066,
+        "close": 7515.41015625,
+        "change": 32.7001953125,
+        "change_pct": 0.4370100603017764,
         "date": "2026-07-09"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
-        "close": 10452.419921875,
-        "change": -36.580078125,
-        "change_pct": -0.34874705048145677,
+        "close": 10445.33984375,
+        "change": -43.66015625,
+        "change_pct": -0.41624708027457336,
         "date": "2026-07-09"
       },
       {
         "name": "CAC 40",
         "ticker": "^FCHI",
         "region": "Europe",
-        "close": 8310.23046875,
-        "change": 57.5703125,
-        "change_pct": 0.6975970342896065,
+        "close": 8306.6904296875,
+        "change": 54.0302734375,
+        "change_pct": 0.6547013013322882,
         "date": "2026-07-09"
       },
       {
         "name": "DAX",
         "ticker": "^GDAXI",
         "region": "Europe",
-        "close": 25037.609375,
-        "change": 140.16015625,
-        "change_pct": 0.5629498629299218,
+        "close": 25028.58984375,
+        "change": 131.140625,
+        "change_pct": 0.5267231347588789,
         "date": "2026-07-09"
       },
       {
@@ -158,54 +158,54 @@
         "name": "Gold",
         "ticker": "GC=F",
         "group": "Commodities",
-        "close": 4132.60009765625,
-        "change": 61.7001953125,
-        "change_pct": 1.5156401973179734,
+        "close": 4135.2001953125,
+        "change": 64.30029296875,
+        "change_pct": 1.5795105384863486,
         "date": "2026-07-09"
       },
       {
         "name": "Silver",
         "ticker": "SI=F",
         "group": "Commodities",
-        "close": 60.439998626708984,
-        "change": 2.2759971618652344,
-        "change_pct": 3.913068400634235,
+        "close": 60.66999816894531,
+        "change": 2.5059967041015625,
+        "change_pct": 4.308501205193508,
         "date": "2026-07-09"
       },
       {
         "name": "Crude Oil WTI",
         "ticker": "CL=F",
         "group": "Commodities",
-        "close": 72.94000244140625,
-        "change": -0.5799942016601562,
-        "change_pct": -0.7888931285946338,
+        "close": 72.83999633789062,
+        "change": -0.6800003051757812,
+        "change_pct": -0.9249188468779824,
         "date": "2026-07-09"
       },
       {
         "name": "Copper",
         "ticker": "HG=F",
         "group": "Commodities",
-        "close": 6.251999855041504,
-        "change": 0.19749975204467773,
-        "change_pct": 3.262032350894177,
+        "close": 6.263000011444092,
+        "change": 0.20849990844726562,
+        "change_pct": 3.443717976717242,
         "date": "2026-07-09"
       },
       {
         "name": "Brent Oil",
         "ticker": "BZ=F",
         "group": "Commodities",
-        "close": 77.72000122070312,
-        "change": -0.29999542236328125,
-        "change_pct": -0.384510939850113,
+        "close": 77.62999725341797,
+        "change": -0.3899993896484375,
+        "change_pct": -0.4998710669428061,
         "date": "2026-07-09"
       },
       {
         "name": "Natural Gas",
         "ticker": "NG=F",
         "group": "Commodities",
-        "close": 3.122999906539917,
-        "change": -0.08899998664855957,
-        "change_pct": -2.7708589541767195,
+        "close": 3.1019999980926514,
+        "change": -0.1099998950958252,
+        "change_pct": -3.4246543821217528,
         "date": "2026-07-09"
       }
     ],
@@ -214,45 +214,45 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 62868.91015625,
-        "change": 611.3359375,
-        "change_pct": 0.9819462855266293,
+        "close": 62979.55078125,
+        "change": 721.9765625,
+        "change_pct": 1.1596606060545218,
         "date": "2026-07-09"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 1741.4000244140625,
-        "change": -1.277587890625,
-        "change_pct": -0.07331177502965638,
+        "close": 1746.1800537109375,
+        "change": 3.50244140625,
+        "change_pct": 0.20098045568038417,
         "date": "2026-07-09"
       },
       {
         "name": "Solana",
         "ticker": "SOL-USD",
         "group": "Crypto",
-        "close": 77.88999938964844,
-        "change": 0.10297393798828125,
-        "change_pct": 0.13237932340306957,
+        "close": 78.18000030517578,
+        "change": 0.392974853515625,
+        "change_pct": 0.5051933162810482,
         "date": "2026-07-09"
       },
       {
         "name": "Cardano",
         "ticker": "ADA-USD",
         "group": "Crypto",
-        "close": 0.1687999963760376,
-        "change": 0.001900002360343933,
-        "change_pct": 1.1384076863209924,
+        "close": 0.16940000653266907,
+        "change": 0.002500012516975403,
+        "change_pct": 1.4979104892839756,
         "date": "2026-07-09"
       },
       {
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.0966999530792236,
-        "change": 0.006726980209350586,
-        "change_pct": 0.6171694506918467,
+        "close": 1.0988999605178833,
+        "change": 0.008926987648010254,
+        "change_pct": 0.8190100002668603,
         "date": "2026-07-09"
       }
     ],
@@ -261,45 +261,45 @@
         "name": "GBP/USD",
         "ticker": "GBPUSD=X",
         "group": "Currency",
-        "close": 1.3398897647857666,
-        "change": 0.004999041557312012,
-        "change_pct": 0.37449069577933314,
+        "close": 1.3406982421875,
+        "change": 0.00580751895904541,
+        "change_pct": 0.4350557583470078,
         "date": "2026-07-09"
       },
       {
         "name": "EUR/USD",
         "ticker": "EURUSD=X",
         "group": "Currency",
-        "close": 1.1439030170440674,
-        "change": 0.003522157669067383,
-        "change_pct": 0.3088580135409976,
+        "close": 1.144688606262207,
+        "change": 0.004307746887207031,
+        "change_pct": 0.3777463337615072,
         "date": "2026-07-09"
       },
       {
         "name": "USD/CHF",
         "ticker": "CHF=X",
         "group": "Currency",
-        "close": 0.8070899844169617,
-        "change": -0.0017300248146057129,
-        "change_pct": -0.21389490799681765,
+        "close": 0.806439995765686,
+        "change": -0.0023800134658813477,
+        "change_pct": -0.2942574910013067,
         "date": "2026-07-09"
       },
       {
         "name": "USD/JPY",
         "ticker": "JPY=X",
         "group": "Currency",
-        "close": 162.33900451660156,
-        "change": -0.0240020751953125,
-        "change_pct": -0.014782970394023959,
+        "close": 162.3090057373047,
+        "change": -0.0540008544921875,
+        "change_pct": -0.03325933389984157,
         "date": "2026-07-09"
       },
       {
         "name": "DXY",
         "ticker": "DX-Y.NYB",
         "group": "Currency",
-        "close": 100.94300079345703,
-        "change": -0.10700225830078125,
-        "change_pct": -0.10589040580827563,
+        "close": 100.91400146484375,
+        "change": -0.1360015869140625,
+        "change_pct": -0.13458840455888207,
         "date": "2026-07-09"
       },
       {
@@ -3482,19 +3482,19 @@
         "relevance_score": 4
       },
       {
-        "title": "India’s top 3 fuel retailers may report Rs 47,700 crore loss in Q1. What’s behind this?",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/indias-top-3-fuel-retailers-may-report-rs-47700-crore-loss-in-q1-whats-behind-this/articleshow/132277434.cms",
-        "summary": "India's three largest fuel retailers—HPCL, BPCL and IOCL—are expected to report a combined EBITDA loss of up to Rs 47,700 crore in Q1FY27 as soaring crude oil prices, LPG under-recoveries, weak fuel marketing margins and...",
-        "published": "Thu, 09 Jul 2026 10:26:50 +0530",
-        "source": "Economic Times Markets",
-        "relevance_score": 4
-      },
-      {
         "title": "Sensex rebounds 238 points, Nifty closes above 23,960 led by realty and PSU bank stocks - The Hans India",
         "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxONGRzVlJHdlVJYUVJcEhhbFdBRU1CcDQwX05tZko2b2lETmx3UTBQcUpDSE5GWEJQWjdmT1RfY1dmVkJBRGJSX1JRbVY3S0VPS1kwemVYOXlKeXNnbjZKRzlZSlozWDVtZnpGaFR1ZTFBQ0w0dHUwbUV6M19RNF9iRjZfQlZqRFkwT2I2OGFZYlF5ZWpya3N0XzFKdzRMeWpwLV9qZTRpMjhwb3pPdXJqdndBRkRyeXg2ckdMSEVuNjlKM2JEcHhHaHY3b9IB0AFBVV95cUxOMGlfNmUydVZtY1NIWS00WFFRR3JSaGRvTWEwTElBRkRBVFkwWXBzaGNfd1NhYjZVc3IzTmVEem1TV3BZbTNhZEpBakVfZmU2YnlSRjMwejI3NVZ5dEQ0bWVPUEJQNFBlZ1M0WmZhd2tRTHNKUFVyNzdxbTNvS296QjVCM0NEM2F5aE4yRTRHOWZIT2V6VlFhTEVlMHV2MEpDMGJsdDZBQ2VLMklqb3NOdTFqcmZLYUYzNWg4aFRSN29vWWt5NzVzMl9KZTFVUjlZ?oc=5",
         "summary": "Sensex rebounds 238 points, Nifty closes above 23,960 led by realty and PSU bank stocks The Hans India",
         "published": "Thu, 09 Jul 2026 10:48:45 GMT",
         "source": "Google News - India Markets",
+        "relevance_score": 4
+      },
+      {
+        "title": "INDIA BONDS-India bonds pause after slump as oil, Treasury risks linger",
+        "link": "https://economictimes.indiatimes.com/markets/bonds/india-bonds-india-bonds-pause-after-slump-as-oil-treasury-risks-linger/articleshow/132278835.cms",
+        "summary": "Indian government bonds traded narrowly on Thursday after a sharp selloff. Surging oil prices and higher U.S. Treasury yields pressured local debt markets. The U.S. military launched fresh strikes on Iran, impacting peac...",
+        "published": "Thu, 09 Jul 2026 11:45:41 +0530",
+        "source": "Economic Times Markets",
         "relevance_score": 4
       }
     ],
@@ -4111,7 +4111,7 @@
     },
     {
       "date": "2026-07-09",
-      "generated_at": "2026-07-09 19:21:03 IST",
+      "generated_at": "2026-07-09 19:32:37 IST",
       "bias": "Bullish",
       "score": 6,
       "confidence": "High",
@@ -4126,19 +4126,19 @@
       "banknifty_pcr": 0.8503895291234291,
       "banknifty_support": 57000.0,
       "banknifty_resistance": 59000.0,
-      "us_avg_change_pct": 0.2764898799255228,
-      "europe_avg_change_pct": 0.30393328224602384,
+      "us_avg_change_pct": 0.4162265194811438,
+      "europe_avg_change_pct": 0.25505911860553127,
       "asia_avg_change_pct": 0.3422593195000628,
       "top_sector": "NIFTY REALTY",
       "top_sector_change_pct": 3.54,
       "weak_sector": "NIFTY IT",
       "weak_sector_change_pct": -0.3,
-      "gold_change_pct": 1.5156401973179734,
-      "crude_oil_change_pct": -0.7888931285946338,
-      "brent_oil_change_pct": -0.384510939850113,
-      "bitcoin_change_pct": 0.9819462855266293,
-      "ethereum_change_pct": -0.07331177502965638,
-      "dxy_change_pct": -0.10589040580827563,
+      "gold_change_pct": 1.5795105384863486,
+      "crude_oil_change_pct": -0.9249188468779824,
+      "brent_oil_change_pct": -0.4998710669428061,
+      "bitcoin_change_pct": 1.1596606060545218,
+      "ethereum_change_pct": 0.20098045568038417,
+      "dxy_change_pct": -0.13458840455888207,
       "usdinr_change_pct": -0.2253300938623987
     }
   ]
