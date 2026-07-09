@@ -330,9 +330,34 @@ def render_html(context: dict[str, Any]) -> str:
 .pcr-mini-card {
   background: #f8fafc;
   border: 1px solid var(--line);
+  border-left: 5px solid var(--line);
   border-radius: 14px;
   padding: 14px;
+  transition: border-color .3s ease, background .3s ease;
 }
+.pcr-mini-card.pcr-bullish {
+  background: var(--good-soft);
+  border-color: var(--good);
+  border-left-color: var(--good);
+}
+.pcr-mini-card.pcr-bearish {
+  background: var(--bad-soft);
+  border-color: var(--bad);
+  border-left-color: var(--bad);
+}
+.pcr-mini-card.pcr-neutral {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  border-left-color: #f59e0b;
+}
+.pcr-mini-card .metric { transition: color .3s ease; }
+.pcr-mini-card.pcr-bullish .metric { color: var(--good); }
+.pcr-mini-card.pcr-bearish .metric { color: var(--bad); }
+.pcr-mini-card.pcr-neutral .metric { color: #b45309; }
+.pcr-status { font-weight: 700; }
+.pcr-mini-card.pcr-bullish .pcr-status { color: var(--good); }
+.pcr-mini-card.pcr-bearish .pcr-status { color: var(--bad); }
+.pcr-mini-card.pcr-neutral .pcr-status { color: #b45309; }
 
 .news-grid {
   display: grid;
@@ -664,10 +689,22 @@ h1 { position: relative; }
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Date</th><th>Bias</th><th>Score</th><th>Confidence</th><th>FII Net</th><th>DII Net</th><th>Nifty PCR</th><th>Top Sector</th></tr></thead><tbody id="historyRows"></tbody></table></div>
     </div>
     <div class="card">
-  <h2>5-Day Rolling Put-Call Ratio</h2>
+  <h2 id="pcrHeading">5-Day Rolling Put-Call Ratio</h2>
   <p class="muted">
-    Tracks Nifty and Bank Nifty PCR trend using the last 5 generated reports.
+    Tracks Nifty and Bank Nifty PCR trend across the last generated reports.
+    Card colour shows momentum vs the rolling average — green rising, red falling, amber stable.
   </p>
+
+  <div class="controls">
+    <label>Rolling window
+      <select id="pcrWindow">
+        <option value="5" selected>5 days</option>
+        <option value="10">10 days</option>
+        <option value="15">15 days</option>
+        <option value="20">20 days</option>
+      </select>
+    </label>
+  </div>
 
   <div id="pcrSummaryGrid" class="pcr-summary-grid"></div>
 
@@ -679,9 +716,9 @@ h1 { position: relative; }
         <tr>
           <th>Date</th>
           <th>Nifty PCR</th>
-          <th>Nifty 5D Avg</th>
+          <th id="pcrNiftyAvgHead">Nifty 5D Avg</th>
           <th>Bank Nifty PCR</th>
-          <th>Bank Nifty 5D Avg</th>
+          <th id="pcrBankAvgHead">Bank Nifty 5D Avg</th>
         </tr>
       </thead>
       <tbody id="pcrRollingRows"></tbody>
@@ -1124,14 +1161,21 @@ function getPcrHistoryRows() {
     }));
 }
 
-function calculateRollingPcr(rows) {
+function getPcrWindowSize() {
+  const select = document.getElementById('pcrWindow');
+  const size = select ? parseInt(select.value, 10) : 5;
+  return Number.isFinite(size) && size > 0 ? size : 5;
+}
+
+function calculateRollingPcr(rows, windowSize) {
+  const span = Number.isFinite(windowSize) && windowSize > 0 ? windowSize : 5;
   return rows.map((row, index) => {
-    const windowRows = rows.slice(Math.max(0, index - 4), index + 1);
+    const windowRows = rows.slice(Math.max(0, index - (span - 1)), index + 1);
 
     return {
       ...row,
-      nifty_pcr_5d: average(windowRows.map(r => r.nifty_pcr)),
-      banknifty_pcr_5d: average(windowRows.map(r => r.banknifty_pcr)),
+      nifty_pcr_avg: average(windowRows.map(r => r.nifty_pcr)),
+      banknifty_pcr_avg: average(windowRows.map(r => r.banknifty_pcr)),
     };
   });
 }
@@ -1149,26 +1193,48 @@ function pcrStatusText(current, rolling) {
   return 'PCR stable';
 }
 
+function pcrSentimentClass(current, rolling) {
+  if (current === null || current === undefined || rolling === null || rolling === undefined) {
+    return '';
+  }
+
+  const diff = Number(current) - Number(rolling);
+
+  if (diff > 0.08) return 'pcr-bullish';
+  if (diff < -0.08) return 'pcr-bearish';
+
+  return 'pcr-neutral';
+}
+
 function renderPcrRolling() {
-  const rows = calculateRollingPcr(getPcrHistoryRows());
+  const windowSize = getPcrWindowSize();
+  const rows = calculateRollingPcr(getPcrHistoryRows(), windowSize);
 
   const summaryEl = document.getElementById('pcrSummaryGrid');
   const tableEl = document.getElementById('pcrRollingRows');
 
   if (!summaryEl || !tableEl) return;
 
+  const heading = document.getElementById('pcrHeading');
+  if (heading) heading.textContent = `${windowSize}-Day Rolling Put-Call Ratio`;
+
+  const niftyHead = document.getElementById('pcrNiftyAvgHead');
+  if (niftyHead) niftyHead.textContent = `Nifty ${windowSize}D Avg`;
+  const bankHead = document.getElementById('pcrBankAvgHead');
+  if (bankHead) bankHead.textContent = `Bank Nifty ${windowSize}D Avg`;
+
   const latest = rows[rows.length - 1] || {};
 
   summaryEl.innerHTML = `
-    <div class="pcr-mini-card">
+    <div class="pcr-mini-card ${pcrSentimentClass(latest.nifty_pcr, latest.nifty_pcr_avg)}">
       <div class="muted">Nifty PCR</div>
       <div class="metric">${num(latest.nifty_pcr)}</div>
-      <div class="small muted">5D Avg: ${num(latest.nifty_pcr_5d)} | ${pcrStatusText(latest.nifty_pcr, latest.nifty_pcr_5d)}</div>
+      <div class="small muted">${windowSize}D Avg: ${num(latest.nifty_pcr_avg)} | <span class="pcr-status">${pcrStatusText(latest.nifty_pcr, latest.nifty_pcr_avg)}</span></div>
     </div>
-    <div class="pcr-mini-card">
+    <div class="pcr-mini-card ${pcrSentimentClass(latest.banknifty_pcr, latest.banknifty_pcr_avg)}">
       <div class="muted">Bank Nifty PCR</div>
       <div class="metric">${num(latest.banknifty_pcr)}</div>
-      <div class="small muted">5D Avg: ${num(latest.banknifty_pcr_5d)} | ${pcrStatusText(latest.banknifty_pcr, latest.banknifty_pcr_5d)}</div>
+      <div class="small muted">${windowSize}D Avg: ${num(latest.banknifty_pcr_avg)} | <span class="pcr-status">${pcrStatusText(latest.banknifty_pcr, latest.banknifty_pcr_avg)}</span></div>
     </div>
   `;
 
@@ -1176,9 +1242,9 @@ function renderPcrRolling() {
     <tr>
       <td>${escapeHtml(row.date)}</td>
       <td>${num(row.nifty_pcr)}</td>
-      <td>${num(row.nifty_pcr_5d)}</td>
+      <td>${num(row.nifty_pcr_avg)}</td>
       <td>${num(row.banknifty_pcr)}</td>
-      <td>${num(row.banknifty_pcr_5d)}</td>
+      <td>${num(row.banknifty_pcr_avg)}</td>
     </tr>
   `).join('') || '<tr><td colspan="5">PCR history will appear after workflow runs.</td></tr>';
 
@@ -1190,9 +1256,9 @@ function drawPcrRollingChart(canvasId, rows) {
   const labels = data.map(r => String(r.date || '').slice(5));
   const series = [
     { key: 'nifty_pcr', color: '#2563eb', label: 'Nifty PCR', dash: [] },
-    { key: 'nifty_pcr_5d', color: '#60a5fa', label: 'Nifty 5D Avg', dash: [6, 4] },
+    { key: 'nifty_pcr_avg', color: '#60a5fa', label: 'Nifty Avg', dash: [6, 4] },
     { key: 'banknifty_pcr', color: '#16a34a', label: 'Bank Nifty PCR', dash: [] },
-    { key: 'banknifty_pcr_5d', color: '#4ade80', label: 'Bank Nifty 5D Avg', dash: [6, 4] },
+    { key: 'banknifty_pcr_avg', color: '#4ade80', label: 'Bank Nifty Avg', dash: [6, 4] },
   ];
   const col = key => data.map(r => {
     const v = r[key];
@@ -1419,6 +1485,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 ['currencySort'].forEach(id => document.getElementById(id).addEventListener('change', renderCurrency));
 ['sectorSearch','sectorSentimentFilter','sectorSort'].forEach(id => document.getElementById(id).addEventListener(id === 'sectorSearch' ? 'input' : 'change', renderSectors));
 document.getElementById('signalStatusFilter').addEventListener('change', renderSignals);
+document.getElementById('pcrWindow')?.addEventListener('change', renderPcrRolling);
 document.getElementById('copySummaryBtn').addEventListener('click', () => copyText(`${APP.score.bias} | Score ${APP.score.score}\n${APP.market_view}\n${APP.risk_note}`));
 document.getElementById('copyReportBtn').addEventListener('click', () => copyText(APP.markdown || ''));
 document.getElementById('downloadReportBtn').addEventListener('click', () => downloadText('morning_market_brief.md', APP.markdown || ''));
