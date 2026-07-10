@@ -1,18 +1,18 @@
 # Morning Market Brief - 10 July 2026
 
-Generated at: **10 Jul 2026, 08:36 AM IST**
+Generated at: **10 Jul 2026, 11:46 AM IST**
 
 ## Final View
 
 - **Market Bias:** Bullish
-- **Score:** 8
+- **Score:** 10
 - **Confidence:** High
-- **Meeting View:** Market setup is Bullish. Prefer buy-on-dip only if Nifty sustains above support near 23,600.
+- **Meeting View:** Market setup is Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,150.
 
 ## Expected Opening
 
 - GIFT Nifty: Not available from current source. Use available global and NSE signals.
-- India VIX: 13.36 (-8.97%)
+- India VIX: 12.37 (-7.42%)
 
 ## Global Market Cues
 
@@ -24,40 +24,40 @@ Generated at: **10 Jul 2026, 08:36 AM IST**
 | Europe | FTSE 100 | 10,472 | -0.16% | 2026-07-09 |
 | Europe | CAC 40 | 8,327 | 0.90% | 2026-07-09 |
 | Europe | DAX | 25,118 | 0.89% | 2026-07-09 |
-| Asia | Hang Seng | 24,473 | 1.84% | 2026-07-10 |
-| Asia | Nikkei 225 | 68,944 | 1.77% | 2026-07-10 |
+| Asia | Hang Seng | 24,309 | 1.16% | 2026-07-10 |
+| Asia | Nikkei 225 | 68,728 | 1.45% | 2026-07-10 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,136 | 65.50 | 1.61% | 2026-07-09 |
-| Silver | SI=F | 60.83 | 2.66 | 4.57% | 2026-07-09 |
-| Crude Oil WTI | CL=F | 72.36 | -1.16 | -1.58% | 2026-07-09 |
-| Copper | HG=F | 6.30 | 0.25 | 4.06% | 2026-07-09 |
-| Brent Oil | BZ=F | 76.55 | -1.47 | -1.88% | 2026-07-09 |
-| Natural Gas | NG=F | 3.01 | -0.20 | -6.16% | 2026-07-09 |
+| Gold | GC=F | 4,127 | -4.00 | -0.10% | 2026-07-10 |
+| Silver | SI=F | 60.64 | 0.26 | 0.43% | 2026-07-10 |
+| Crude Oil WTI | CL=F | 71.94 | -0.14 | -0.19% | 2026-07-10 |
+| Copper | HG=F | 6.29 | 0.08 | 1.25% | 2026-07-10 |
+| Brent Oil | BZ=F | 76.18 | -0.12 | -0.16% | 2026-07-10 |
+| Natural Gas | NG=F | 3.01 | -0.01 | -0.23% | 2026-07-10 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 63,855 | 1,597 | 2.57% | 2026-07-10 |
-| Ethereum | ETH-USD | 1,768 | 25.80 | 1.48% | 2026-07-10 |
-| Solana | SOL-USD | 78.74 | 0.95 | 1.23% | 2026-07-10 |
-| Cardano | ADA-USD | 0.17 | 0.00 | 0.78% | 2026-07-10 |
-| Ripple | XRP-USD | 1.11 | 0.02 | 1.38% | 2026-07-10 |
+| Bitcoin | BTC-USD | 64,007 | 1,750 | 2.81% | 2026-07-10 |
+| Ethereum | ETH-USD | 1,776 | 33.81 | 1.94% | 2026-07-10 |
+| Solana | SOL-USD | 79.05 | 1.26 | 1.62% | 2026-07-10 |
+| Cardano | ADA-USD | 0.17 | 0.00 | 0.00% | 2026-07-10 |
+| Ripple | XRP-USD | 1.11 | 0.02 | 1.64% | 2026-07-10 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.34 | 0.01 | 0.38% | 2026-07-10 |
-| EUR/USD | EURUSD=X | 1.15 | 0.00 | 0.33% | 2026-07-10 |
-| USD/CHF | CHF=X | 0.80 | -0.00 | -0.58% | 2026-07-10 |
-| USD/JPY | JPY=X | 161.48 | -1.06 | -0.65% | 2026-07-10 |
-| DXY | DX-Y.NYB | 100.62 | -0.43 | -0.43% | 2026-07-09 |
-| USD/INR | INR=X | 95.37 | -0.49 | -0.51% | 2026-07-10 |
+| GBP/USD | GBPUSD=X | 1.34 | 0.00 | 0.26% | 2026-07-10 |
+| EUR/USD | EURUSD=X | 1.14 | 0.00 | 0.21% | 2026-07-10 |
+| USD/CHF | CHF=X | 0.80 | -0.00 | -0.41% | 2026-07-10 |
+| USD/JPY | JPY=X | 161.50 | -1.04 | -0.64% | 2026-07-10 |
+| DXY | DX-Y.NYB | 100.77 | -0.17 | -0.17% | 2026-07-10 |
+| USD/INR | INR=X | 95.31 | -0.55 | -0.57% | 2026-07-10 |
 
 ## FII / DII Flow
 
@@ -69,20 +69,20 @@ Generated at: **10 Jul 2026, 08:36 AM IST**
 
 | Index | Spot | PCR | Support | Resistance | Source |
 |---|---:|---:|---:|---:|---|
-| Nifty | 23,963 | 0.80 | 23,600 | 24,500 | nse_nextapi |
-| Bank Nifty | 57,252 | 0.85 | 57,000 | 59,000 | nse_nextapi |
+| Nifty | 24,173 | 1.14 | 24,150 | 24,200 | nse_nextapi |
+| Bank Nifty | 57,879 | 0.93 | 57,000 | 59,000 | nse_nextapi |
 
 ## Sector View
 
 ### Strong Sectors
-- NIFTY REALTY: 3.54%
-- NIFTY MEDIA: 2.09%
-- NIFTY CONSUMER DURABLES: 1.68%
+- NIFTY IT: 1.85%
+- NIFTY METAL: 1.61%
+- NIFTY REALTY: 1.37%
 
 ### Weak Sectors
-- NIFTY IT: -0.30%
-- NIFTY AUTO: -0.21%
-- NIFTY METAL: 0.28%
+- NIFTY FMCG: -0.12%
+- NIFTY HEALTHCARE INDEX: -0.03%
+- NIFTY PHARMA: 0.01%
 
 ## Signal Score Breakdown
 
@@ -91,39 +91,39 @@ Generated at: **10 Jul 2026, 08:36 AM IST**
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
 | US markets | 1 | Bullish | Average move 0.79% across 3 indices. |
 | Europe markets | 1 | Bullish | Average move 0.54% across 3 indices. |
-| Asia markets | 1 | Bullish | Average move 1.81% across 2 indices. |
+| Asia markets | 1 | Bullish | Average move 1.31% across 2 indices. |
 | FII/DII flow | 1 | Bullish | FII net -532.86 Cr, DII net 2057.79 Cr, combined 1524.93 Cr. |
-| Nifty OI | 0 | Neutral | PCR 0.80, support 23600.0, resistance 24500.0. |
-| Bank Nifty OI | 0 | Neutral | PCR 0.85, support 57000.0, resistance 59000.0. |
-| India VIX | 1 | Bullish | India VIX change -8.97%. |
+| Nifty OI | 1 | Bullish | PCR 1.14, support 24150.0, resistance 24200.0. |
+| Bank Nifty OI | 1 | Bullish | PCR 0.93, support 57000.0, resistance 59000.0. |
+| India VIX | 1 | Bullish | India VIX change -7.42%. |
 | Sector breadth | 1 | Bullish | 12 sectors positive and 2 sectors negative. |
-| Global commodities | 1 | Bullish | Crude/Brent average down -1.73%, which is supportive for India market sentiment. |
-| Crypto risk appetite | 0 | Neutral | Major crypto basket average move 1.49% across 5 coins. |
-| Currency pressure | 1 | Bullish | DXY/USDINR pressure average -0.47%; rising dollar/rupee pressure is usually negative for India. |
+| Global commodities | 0 | Neutral | Crude/Brent average move -0.18%, commodity pressure is limited. |
+| Crypto risk appetite | 1 | Bullish | Major crypto basket average move 1.60% across 5 coins. |
+| Currency pressure | 1 | Bullish | DXY/USDINR pressure average -0.37%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
-- Market setup is Bullish. Prefer buy-on-dip only if Nifty sustains above support near 23,600.
+- Market setup is Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,150.
 - Bank Nifty levels to monitor: support 57,000, resistance 59,000.
 - Avoid aggressive trades in the first 5–10 minutes if opening gap is large.
 - Confirm direction with Nifty/Bank Nifty holding above support or rejecting near resistance.
 
 ## Important Market News
 
-- **Rupee edges up as oil prices dip** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-edges-up-as-oil-prices-dip/articleshow/132300629.cms
+- **Rupee little changed as traders tread gingerly with eye on oil, dollar** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-little-changed-as-traders-tread-gingerly-with-eye-on-oil-dollar/articleshow/132304107.cms
+- **Rupee opens 13 paise higher at 95.26 against US dollar** — LiveMint Markets  
+  https://www.livemint.com/market/stock-market-news/rupee-opens-13-paise-higher-at-95-26-against-us-dollar-11783654562520.html
 - **US Stock Market Today: Dow Jones, Nasdaq & S&P 500 Edge Higher as AI Chip Stocks Rally & Dollar Strengthen, Crude Oil, Gold & Silver Prices Crashes Amid US-Iran Tension | What Investors Should Watch - The Sunday Guardian** — Google News - Global Markets  
   https://news.google.com/rss/articles/CBMi2AJBVV95cUxPdDE0Sko3LXRxcHV5eXVHQ2N2OWxfYUxRUWpQR3VyeXFWLTJBbElZSzcxN2Z0QlJodjkxcVdaaVA4SmhRVDNvZDNWdl9TQlZXRlVOa1B1cURYMXAxdmxuZDk1eFRQZmNQVmJ0OWRJWEZVQUdvOUcyQjdNVzZURktjZEkyVlhSVHpEbVhpdWMyMnFEYmhVWTEwVTdDU2JRd3lkT2tyWU0tMU1pcl94Ym1lVTcyY2JuWnRKbzB6ZlNpSGVIWFJ5T3NmcjdGcXI5NjFBRU1WWWZXSlRPYjZ4bU5KLTZxbEtDM2FCd1JSQVVILS1nOFI2X3lTaE8tZ3dmSUFRRjdia3VQZng4Z1RQQ2VBaUpDZ2pRejM5Ykl5RGh2eDlubUFudTh4OHkxVFRZTWZwdWN0eGYxeHdTenc1ZlpsUVZmMFgzXzA2ejhDSmRSUV9XV0NENkRqcdIB2AJBVV95cUxPdDE0Sko3LXRxcHV5eXVHQ2N2OWxfYUxRUWpQR3VyeXFWLTJBbElZSzcxN2Z0QlJodjkxcVdaaVA4SmhRVDNvZDNWdl9TQlZXRlVOa1B1cURYMXAxdmxuZDk1eFRQZmNQVmJ0OWRJWEZVQUdvOUcyQjdNVzZURktjZEkyVlhSVHpEbVhpdWMyMnFEYmhVWTEwVTdDU2JRd3lkT2tyWU0tMU1pcl94Ym1lVTcyY2JuWnRKbzB6ZlNpSGVIWFJ5T3NmcjdGcXI5NjFBRU1WWWZXSlRPYjZ4bU5KLTZxbEtDM2FCd1JSQVVILS1nOFI2X3lTaE8tZ3dmSUFRRjdia3VQZng4Z1RQQ2VBaUpDZ2pRejM5Ykl5RGh2eDlubUFudTh4OHkxVFRZTWZwdWN0eGYxeHdTenc1ZlpsUVZmMFgzXzA2ejhDSmRSUV9XV0NENkRqcQ?oc=5
-- **RBI intervention, oil price dip help rupee edge modestly higher** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/forex/forex-news/rbi-intervention-oil-price-dip-help-rupee-edge-modestly-higher/articleshow/132283770.cms
-- **As West Asia boils again, RBI likely to assess FCNR flows** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/stocks/news/as-west-asia-boils-again-rbi-likely-to-assess-fcnr-flows/articleshow/132300717.cms
-- **Fragile yen set for weekly decline as intervention risks mount** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/forex/forex-news/fragile-yen-set-for-weekly-decline-as-intervention-risks-mount/articleshow/132300971.cms
-- **Sensex jumps over 300 points, Nifty nears 24,000 as Indian markets rebound despite spike in crude oil prices - ET CFO** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi-gFBVV95cUxOTU1rVnZ6YTFYZmI3MG1GYzI5R2wzWXNhMk5NRnhoSjlsRFQ5dU13dDlBNFJiTi1zRmh1cE02dWhtWm0wYjhsVmVLQktJV1Rsc1FFVW9EUDVCc1RvZ3A1NlliczlNWFFERDg5VnI4YVhiXzZxcERVOWxuREFnc1lvYVV0QVlmWWp0M0xTRGl0bklYWC1ETnUyMjlDUEF5Q0ozRjhRZFNXZ3NDb0t0WmJuN3VKRERnLVlaV3VIU0tIcWlrUy1QV1RXOTlzYkEtODZlNFc2NEFXVkVFZ2ZXdWxEN2FaVjFOdGdwZURhazlud2VTSGhpM1J2ME9B0gH6AUFVX3lxTE5NTWtWdnphMVhmYjcwbUZjMjlHbDNZc2EyTk1GeGhKOWxEVDl1TXd0OUE0UmJOLXNGaHVwTTZ1aG1abTBiOGxWZUtCS0lXVGxzUUVVb0RQNUJzVG9ncDU2WWJzOU1YUUREODlWcjhhWGJfNnFwRFU5bG5EQWdzWW9hVXRBWWZZanQzTFNEaXRuSVhYLUROdTIyOUNQQXlDSjNGOFFkU1dnc0NvS3RaYm43dUpERGctWVpXdUhTS0hxaWtTLVBXVFc5OXNiQS04NmU0VzY0QVdWRUVnZld1bEQ3YVpWMU50Z3BlRGFrOW53ZVNIaGkzUnYwT0E?oc=5
-- **Ahead of Market: 10 things that will decide stock market action on Friday** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-friday/articleshow/132292024.cms
+- **Stocks to Watch Today (July 10): TCS, Maruti Suzuki, JSW Steel, NALCO, SAIL, Federal Bank, Dr Reddy And More in Focus; Nifty & Sensex Expected To Open Higher - The Sunday Guardian** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMiowJBVV95cUxPSTV2VlNBRlJSVjhWZzZ4S0ZFRndJQUxmVl95c1JxNk5uMjZuN2p6azlKQ0QteEZZUEhKdm5raHIzQ0FmSXhqM2xoN3FqdUFnb3VQLTR6VWZRX2FjSkpBS1luM0o5Sjc4Uzd0cjZEeDRITTJkYTVGQnV4VzlPMFVoMUs1YkliYkllbmJaYXR0YU5NR2RVOHY4YlZhVjNRQVRSTmNHTnpseTMtT0xBVEo2dHRxVGZ4cks2ZjZDMHFWZmFWZjQzTWkyeWNmSHRIVHQ4N3hkal9HbzI2ODRhM1ZtWHM0ekY3OW91WVdSZlpBRHoyd2VTQm1mRW9naWR6bWFZR0VUNV9lX3RUa2dnVVRRLW1zV0RDaUNfbGppUlRqM3RuZXPSAaMCQVVfeXFMT0k1dlZTQUZSUlY4Vmc2eEtGRUZ3SUFMZlZfeXNScTZObjI2bjdqems5SkNELXhGWVBISnZua2hyM0NBZkl4ajNsaDdxanVBZ291UC00elVmUV9hY0pKQUtZbjNKOUo3OFM3dHI2RHg0SE0yZGE1RkJ1eFc5TzBVaDFLNWJJYmJJZW5iWmF0dGFOTUdkVTh2OGJWYVYzUUFUUk5jR056bHkzLU9MQVRKNnR0cVRmeHJLNmY2QzBxVmZhVmY0M01pMnljZkh0SFR0ODd4ZGpfR28yNjg0YTNWbVhzNHpGNzlvdVlXUmZaQUR6MndlU0JtZkVvZ2lkem1hWUdFVDVfZV90VGtnZ1VUUS1tc1dEQ2lDX2xqaVJUajN0bmVz?oc=5
+- **Gold prices fall to Rs 1.44 lakh/10 gram; silver dips Rs 6,300 this week as Iran war raises inflation worries. What’s next?** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/commodities/news/gold-prices-fall-to-rs-1-44-lakh/10-gram-silver-dips-rs-6300-this-week-as-iran-war-raises-inflation-worries-whats-next/articleshow/132302618.cms
+- **Rs 5 lakh crore wealth boost! Top 5 factors fuelling today's 800-point Sensex rally** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/news/why-is-market-rising-today-sensex-jumps-over-700-points-nifty-above-24100-5-key-factors-behind-todays-d-st-rally/articleshow/132302461.cms
+- **India bonds rise as softer oil; Treasury gains offset debt sale caution** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/bonds/india-bonds-rise-as-softer-oil-treasury-gains-offset-debt-sale-caution/articleshow/132304050.cms
 - **Sensex Recovers 238 Points, Nifty Ends Above 23,960 As Realty, Banks Lead Recovery; India VIX Falls 9% - News18** — Google News - India Markets  
   https://news.google.com/rss/articles/CBMi7AFBVV95cUxNbXoyWmF3R1ZRQWRQRWlKR2VDaXlkNU1aTG53R0pBNXhialI3U0xnRDlSNmRjdDR2Z3JjSDJCSlRONFNmVHdqNXVhSUpTckZLNnFLeDFKT1Eyb0E2N1ZRXy1tbjhPTzZkX0kwVEh1M0dkSDQ4d2JPQ2RPVExscmVGTDd0R1F1elU0N3B5b0tYYVFOSEMtd2JHX2pCTS1laUlzQ3l0SldEMVh6a2QwVERmSERCOUUxTzRlck1MUFc2REJfNWFuQmxTQTJCdlBvRVAzWThrdnY0emw5Vzl2MDNIaWV2VGtYR29mWGNNTNIB8gFBVV95cUxNNjY3NFMzLVpRUzk1SVhPTXhTWkc2VnpoWEFNLXdvWnJEcl8xNk9zN2ZYbDd6LXdDR3dVMWNIU1lNZ0NXTTl0ejF2N0NBd2UzVVN2bVlJQ2hMdGUxN0tPWTBhREQ0Z0tET2F6blVGd1Q0YkEwQi1JYmRnZUNfZ3I5SlRyaDc4a0xQVF9KaVZQNk5nanVtTEZHcjVPSmE1M01odXkzU1NPZDA3bVFIU3V6LVRpUkNBRk5JMnlLY1RhMXY2T2VtYnNST0pndFBVLUxhc1l4NjkyTUREUXlEYTZJbUwybTVlTEVib0t2NnNpMTRndw?oc=5
 - **Sensex, Nifty rebound as realty and PSU banks lead gains - MSN** — Google News - India Markets  
