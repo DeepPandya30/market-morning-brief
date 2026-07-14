@@ -1,6 +1,6 @@
 # Morning Market Brief - 14 July 2026
 
-Generated at: **14 Jul 2026, 10:17 AM IST**
+Generated at: **14 Jul 2026, 10:41 AM IST**
 
 ## Final View
 
@@ -12,7 +12,7 @@ Generated at: **14 Jul 2026, 10:17 AM IST**
 ## Expected Opening
 
 - GIFT Nifty: Not available from current source. Use available global and NSE signals.
-- India VIX: 13.68 (2.97%)
+- India VIX: 13.72 (3.27%)
 
 ## Global Market Cues
 
@@ -25,39 +25,39 @@ Generated at: **14 Jul 2026, 10:17 AM IST**
 | Europe | CAC 40 | 8,365 | 0.31% | 2026-07-13 |
 | Europe | DAX | 25,114 | 0.19% | 2026-07-13 |
 | Asia | Hang Seng | 24,100 | -0.47% | 2026-07-14 |
-| Asia | Nikkei 225 | 66,976 | -0.40% | 2026-07-14 |
+| Asia | Nikkei 225 | 67,394 | 0.22% | 2026-07-14 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,029 | 32.30 | 0.81% | 2026-07-14 |
-| Silver | SI=F | 58.06 | 0.42 | 0.73% | 2026-07-14 |
-| Crude Oil WTI | CL=F | 79.81 | 1.67 | 2.14% | 2026-07-14 |
-| Copper | HG=F | 6.36 | 0.13 | 2.08% | 2026-07-14 |
-| Brent Oil | BZ=F | 84.90 | 1.60 | 1.92% | 2026-07-14 |
-| Natural Gas | NG=F | 2.88 | -0.01 | -0.48% | 2026-07-14 |
+| Gold | GC=F | 4,029 | 31.80 | 0.80% | 2026-07-14 |
+| Silver | SI=F | 58.17 | 0.54 | 0.93% | 2026-07-14 |
+| Crude Oil WTI | CL=F | 79.79 | 1.65 | 2.11% | 2026-07-14 |
+| Copper | HG=F | 6.36 | 0.13 | 2.12% | 2026-07-14 |
+| Brent Oil | BZ=F | 84.89 | 1.59 | 1.91% | 2026-07-14 |
+| Natural Gas | NG=F | 2.88 | -0.01 | -0.45% | 2026-07-14 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 63,758 | -43.81 | -0.07% | 2026-07-12 |
-| Ethereum | ETH-USD | 1,806 | 17.69 | 0.99% | 2026-07-12 |
-| Solana | SOL-USD | 76.87 | 0.05 | 0.06% | 2026-07-12 |
-| Cardano | ADA-USD | 0.16 | -0.00 | -2.41% | 2026-07-12 |
-| Ripple | XRP-USD | 1.09 | -0.01 | -1.08% | 2026-07-12 |
+| Bitcoin | BTC-USD | 62,770 | -988.54 | -1.55% | 2026-07-14 |
+| Ethereum | ETH-USD | 1,789 | -16.98 | -0.94% | 2026-07-14 |
+| Solana | SOL-USD | 75.31 | -1.56 | -2.03% | 2026-07-14 |
+| Cardano | ADA-USD | 0.16 | -0.00 | -1.83% | 2026-07-14 |
+| Ripple | XRP-USD | 1.07 | -0.01 | -1.33% | 2026-07-14 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.34 | -0.00 | -0.19% | 2026-07-14 |
-| EUR/USD | EURUSD=X | 1.14 | -0.00 | -0.09% | 2026-07-14 |
-| USD/CHF | CHF=X | 0.81 | 0.00 | 0.55% | 2026-07-14 |
-| USD/JPY | JPY=X | 162.31 | 0.43 | 0.27% | 2026-07-14 |
-| DXY | DX-Y.NYB | 101.19 | -0.09 | -0.09% | 2026-07-14 |
-| USD/INR | INR=X | 96.14 | 0.81 | 0.85% | 2026-07-14 |
+| GBP/USD | GBPUSD=X | 1.34 | -0.00 | -0.18% | 2026-07-14 |
+| EUR/USD | EURUSD=X | 1.14 | -0.00 | -0.07% | 2026-07-14 |
+| USD/CHF | CHF=X | 0.81 | 0.00 | 0.53% | 2026-07-14 |
+| USD/JPY | JPY=X | 162.30 | 0.42 | 0.26% | 2026-07-14 |
+| DXY | DX-Y.NYB | 101.20 | -0.08 | -0.08% | 2026-07-14 |
+| USD/INR | INR=X | 96.14 | 0.82 | 0.86% | 2026-07-14 |
 
 ## FII / DII Flow
 
@@ -69,20 +69,20 @@ Generated at: **14 Jul 2026, 10:17 AM IST**
 
 | Index | Spot | PCR | Support | Resistance | Source |
 |---|---:|---:|---:|---:|---|
-| Nifty | 24,083 | 1.06 | 24,000 | 24,100 | nse_nextapi |
-| Bank Nifty | 57,497 | 0.88 | 57,000 | 59,000 | nse_nextapi |
+| Nifty | 24,092 | 1.09 | 24,000 | 24,100 | nse_nextapi |
+| Bank Nifty | 57,464 | 0.87 | 57,000 | 59,000 | nse_nextapi |
 
 ## Sector View
 
 ### Strong Sectors
-- NIFTY METAL: 0.86%
-- NIFTY HEALTHCARE INDEX: 0.75%
-- NIFTY PHARMA: 0.73%
+- NIFTY METAL: 1.02%
+- NIFTY PHARMA: 0.76%
+- NIFTY HEALTHCARE INDEX: 0.71%
 
 ### Weak Sectors
-- NIFTY AUTO: -1.58%
-- NIFTY REALTY: -1.56%
-- NIFTY PSU BANK: -1.48%
+- NIFTY REALTY: -1.82%
+- NIFTY PSU BANK: -1.57%
+- NIFTY AUTO: -1.56%
 
 ## Signal Score Breakdown
 
@@ -91,15 +91,15 @@ Generated at: **14 Jul 2026, 10:17 AM IST**
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
 | US markets | -1 | Bearish | Average move -0.87% across 3 indices. |
 | Europe markets | 0 | Neutral | Average move 0.17% across 3 indices. |
-| Asia markets | -1 | Bearish | Average move -0.43% across 2 indices. |
+| Asia markets | 0 | Neutral | Average move -0.12% across 2 indices. |
 | FII/DII flow | 0 | Neutral | FII net -3062.27 Cr, DII net 2171.70 Cr, combined -890.57 Cr. |
-| Nifty OI | 1 | Bullish | PCR 1.06, support 24000.0, resistance 24100.0. |
-| Bank Nifty OI | 0 | Neutral | PCR 0.88, support 57000.0, resistance 59000.0. |
-| India VIX | -1 | Bearish | India VIX change 2.97%. |
-| Sector breadth | -1 | Bearish | 5 sectors positive and 9 sectors negative. |
-| Global commodities | -1 | Bearish | Crude/Brent average up 2.03%, which can pressure India inflation and import costs. |
-| Crypto risk appetite | 0 | Neutral | Major crypto basket average move -0.50% across 5 coins. |
-| Currency pressure | -1 | Bearish | DXY/USDINR pressure average 0.38%; rising dollar/rupee pressure is usually negative for India. |
+| Nifty OI | 1 | Bullish | PCR 1.09, support 24000.0, resistance 24100.0. |
+| Bank Nifty OI | 0 | Neutral | PCR 0.87, support 57000.0, resistance 59000.0. |
+| India VIX | -1 | Bearish | India VIX change 3.27%. |
+| Sector breadth | -1 | Bearish | 6 sectors positive and 8 sectors negative. |
+| Global commodities | -1 | Bearish | Crude/Brent average up 2.01%, which can pressure India inflation and import costs. |
+| Crypto risk appetite | -1 | Bearish | Major crypto basket average move -1.54% across 5 coins. |
+| Currency pressure | -1 | Bearish | DXY/USDINR pressure average 0.39%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
@@ -112,6 +112,8 @@ Generated at: **14 Jul 2026, 10:17 AM IST**
 
 - **Stock market today: Gift Nifty hints a gap-down start; eight day trading stocks to buy on Tuesday, 14 July** — LiveMint Markets  
   https://www.livemint.com/market/stock-market-news/stock-market-today-gift-nifty-hints-a-gap-down-start-eight-day-trading-stocks-to-buy-on-tuesday-14-july-11783993683343.html
+- **Stocks to buy: Sagar Doshi suggests Anant Raj, Sobha, PNB Housing Finance shares to buy** — LiveMint Markets  
+  https://www.livemint.com/market/stock-market-news/stocks-to-buy-sagar-doshi-suggests-anant-raj-sobha-pnb-housing-finance-shares-to-buy-11784002408057.html
 - **Gold, silver prices today: Comex gold, silver extend losses as Middle East tensions lift Fed rate hike fears** — LiveMint Markets  
   https://www.livemint.com/market/commodities/gold-silver-prices-today-comex-gold-silver-extend-losses-as-middle-east-tensions-lift-fed-rate-hike-fears-11783952274681.html
 - **US Stock Market Today: Dow Jones Gains Over 120 Points While Nasdaq & S&P 500 Slips as Crude Oil Surges 3%, Gold & Silver Prices Fall Amid US-Iran War Tensions | What Investors Should Watch - The Sunday Guardian** — Google News - Global Markets  
@@ -120,16 +122,14 @@ Generated at: **14 Jul 2026, 10:17 AM IST**
   https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQ3VpWFA1TDZudXktMmtQb2EySkxLWGpBMGExSFVjalMyMmU1Y2RLOTZrM2p5eWdhejZyc3VEanVWMmFaUkYzNC1Sc1hYYng3bVBEcEdrcUJFWDBuOWNNNm5XbEozd1FmbkJNYzBQc25vV2tZaVRiX21CbE9PSUhZRWI0b1ZRUjNOYWdRQjRjclk2dXRvX2FuTV9mU0FJaXJYOHZJVUhGSS1Nb00?oc=5
 - **Gift Nifty, US-Iran war, crude oil prices to India inflation: 10 things that changed for Indian stock market overnight - livemint.com** — Google News - India Markets  
   https://news.google.com/rss/articles/CBMikwJBVV95cUxNaHNMM1NydV85dWlyTXIxOUw2b0d1cG82aEozQzltb0c0VUlNOGJEd1ZJd1hRYzVEZG9xT21Tc3BsZ3ZYZGEyMlJlM243dThwTVZqSG9ZajV5djJ5cEhSYzRVSWZ6V1NhT0NWbUJGY2NmN2daQmNEWlBXZExldm50NHN2OGpkM0ExVDhGVmJQTEtxRXBJdXkyV2lCaGRQTUZob0p0cEJyZm5QZ2dnVGs3ZGZMUmFCYVZtdmFNV2FJOXlZTmMxeV94YW02WXVsdWwzMzRFX09pRE5YS2RrUkZQOXUzY1lJY1Z2QTd0cWUxR1JkbjB2N012ckN1Wlp3NFAtWmZ5U25RMk8tY1AxNU9IWjZTc9IBmAJBVV95cUxOU1lySjlSOTBQOG96bmRmRjRXWmJyVm9CVVBodjIyaHc0SVlpSjVEeDFVTjh0NExTVTh3UWF3MVpWRjB1eHB0V0J6cVNPc2d1aDNYQ0xQWjRJR0JvWVZGV0xCUWhtdGFhYlhzTDlBLUxScHRfUGZldXlRUE4xWE16Y2M3elExSjJUQkRZVXBWWVdaX1lHazB0LXdCTjc3RDc0VkhlcTVfSHlhTExUR3kwM1VzNnE4VDhpZ2NJanpBQVlYOFVyZXhnYkZWd0k5eXZ4aHd2V1lQSFRvNXhoZUVYWE1Ocjh5R1lnMldsZ284SU9wdEl6c3ZrQkU5NDhrbko0dXBWR0NYdUFFWkhxNDJUdTBubURFelBo?oc=5
+- **Nifty, Sensex fall on July 14: Bank Nifty down 1%, India VIX surges 3.77% - Business Upturn** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMiygFBVV95cUxQWWpNVkkwSFpxQjBSbHo4bU50Y3VNMXRMVjFoUk5iVU01STRjTndVeFZqTUNiUmJkUnVyS1V4d2RhdUxwenR0dnRsOUhoVFNnaUZpajRUdVBZRHF6LVhFU05lNUJnd25Xck83LXMxb29UbG5zaVJtUnROaXZUQ3l6YTA3M2RwMUU1dzQtZWNIVXJfVE9qNjlRSlZsbzAxbVplWHIyakNoWTMtOEktVHk2LU03Sms1UmRaSVdRc1FhVGEyODFvNWZEdk9B?oc=5
 - **Gift Nifty, US-Iran war, crude oil prices to India inflation: 10 things that changed for Indian stock market overnight** — LiveMint Markets  
   https://www.livemint.com/market/stock-market-news/gift-nifty-us-iran-war-crude-oil-prices-to-india-inflation-10-things-that-changed-for-indian-stock-market-overnight-11783992713706.html
 - **Rupee depreciates 33 paise to open at 95.95 against US dollar** — LiveMint Markets  
   https://www.livemint.com/market/stock-market-news/rupee-depreciates-33-paise-to-open-at-95-95-against-us-dollar-11783999981758.html
 - **Gold, Silver Rates Today: MCX gold price rises near  ₹1.41 lakh per 10 grams, silver gains** — LiveMint Markets  
   https://www.livemint.com/market/commodities/gold-silver-rates-today-mcx-gold-price-rises-near-rs-1-41-lakh-per-10-grams-silver-gains-11784000416110.html
-- **Rupee drops past 96 per dollar as oil prices climb on renewed US-Iran tensions** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-drops-past-96-per-dollar-as-oil-prices-climb-on-renewed-us-iran-tensions/articleshow/132380415.cms
-- **Sensex drops over 500 points, Nifty 50 comes back to 24,050- 5 key factors behind the stock market decline explained** — LiveMint Markets  
-  https://www.livemint.com/market/stock-market-news/sensex-drops-over-500-points-nifty-50-comes-back-to-24-050-5-key-factors-behind-the-stock-market-decline-explained-11783997605147.html
 
 ---
 This report is generated automatically for pre-market discussion. It is not financial advice.
