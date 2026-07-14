@@ -165,11 +165,41 @@ def render_html(context: dict[str, Any]) -> str:
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interactive Morning Market Brief</title>
+  <title>Market Morning Brief — Pre-Market Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
+      /* Dark-first trader cockpit palette */
+      --bg: #0B0F19;
+      --bg-grad: radial-gradient(1200px 600px at 12% -8%, rgba(37,99,235,.14), transparent 60%), radial-gradient(1000px 500px at 100% 0%, rgba(34,197,94,.06), transparent 55%), #0B0F19;
+      --card: #111827;
+      --elev: rgba(255,255,255,.045);
+      --elev-strong: rgba(255,255,255,.08);
+      --input-bg: #0e1526;
+      --text: #F9FAFB;
+      --muted: #9CA3AF;
+      --line: #1F2937;
+      --dark: #0B0F19;
+      --brand: #2563EB;
+      --brand-soft: rgba(37,99,235,.16);
+      --good: #22C55E;
+      --good-soft: rgba(34,197,94,.15);
+      --bad: #EF4444;
+      --bad-soft: rgba(239,68,68,.15);
+      --neutral: #F59E0B;
+      --neutral-soft: rgba(245,158,11,.15);
+      --shadow: 0 8px 30px rgba(0,0,0,.45);
+      --radius: 16px;
+    }
+    :root[data-theme="light"] {
       --bg: #f5f7fb;
+      --bg-grad: radial-gradient(1200px 600px at 12% -8%, rgba(37,99,235,.10), transparent 60%), #f5f7fb;
       --card: #ffffff;
+      --elev: #f1f5f9;
+      --elev-strong: #e2e8f0;
+      --input-bg: #ffffff;
       --text: #172033;
       --muted: #667085;
       --line: #e5e7eb;
@@ -182,6 +212,7 @@ def render_html(context: dict[str, Any]) -> str:
       --bad-soft: #fee2e2;
       --neutral: #92400e;
       --neutral-soft: #fef3c7;
+      --shadow: 0 8px 26px rgba(15,23,42,.10);
     }
     * { box-sizing: border-box; }
     body { font-family: Inter, Arial, sans-serif; margin: 0; background: var(--bg); color: var(--text); }
@@ -483,20 +514,189 @@ h1 { position: relative; }
   .reveal { opacity: 1; transform: none; }
 }
 
+    /* ===================================================================
+       COCKPIT REDESIGN — dark-first overrides + new components
+       =================================================================== */
+    body { background: var(--bg-grad); background-attachment: fixed; color: var(--text); -webkit-font-smoothing: antialiased; }
+    main { max-width: 1600px; padding: 22px 26px 60px; }
+    h1 { font-size: 24px; letter-spacing: -.01em; }
+    .section-title { font-size: 20px; margin: 26px 2px 12px; display: flex; align-items: center; gap: 9px; }
+    .card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: var(--radius); padding: 20px; }
+    .card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .card-head h2 { margin: 0; font-size: 18px; }
+    .metric { color: var(--text); }
+    .muted { color: var(--muted); }
+
+    /* Sticky glass nav */
+    .navbar { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; gap: 16px;
+      padding: 12px 26px; background: rgba(11,15,25,.72); backdrop-filter: blur(14px) saturate(140%);
+      border-bottom: 1px solid var(--line); }
+    :root[data-theme="light"] .navbar { background: rgba(255,255,255,.78); }
+    .nav-brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 16px; letter-spacing: -.01em; white-space: nowrap; }
+    .nav-logo { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--brand), #1e40af); color: #fff; font-size: 16px; box-shadow: 0 3px 12px rgba(37,99,235,.5); }
+    .nav-brand small { display: block; font-size: 11px; font-weight: 600; color: var(--muted); }
+    .nav-spacer { flex: 1; }
+    .nav-search { position: relative; flex: 0 1 320px; }
+    .nav-search input { width: 100%; padding: 9px 12px 9px 34px; border-radius: 10px; border: 1px solid var(--line);
+      background: var(--input-bg); color: var(--text); font-size: 14px; }
+    .nav-search input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+    .nav-search .si { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 13px; }
+    .nav-search kbd { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--muted);
+      border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; background: var(--elev); }
+    .nav-clock { text-align: right; line-height: 1.25; white-space: nowrap; }
+    .nav-clock b { font-variant-numeric: tabular-nums; font-size: 15px; }
+    .nav-clock small { display: block; color: var(--muted); font-size: 11px; }
+    .icon-btn { border: 1px solid var(--line); background: var(--elev); color: var(--text); width: 38px; height: 38px;
+      border-radius: 10px; cursor: pointer; font-size: 15px; display: grid; place-items: center; transition: all .18s ease; }
+    .icon-btn:hover { background: var(--elev-strong); transform: translateY(-1px); }
+    .nav-live { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; color: var(--good);
+      border: 1px solid var(--good-soft); background: var(--good-soft); padding: 6px 11px; border-radius: 999px; }
+
+    /* Section nav (former tabs) */
+    .tabs { background: rgba(11,15,25,.85); border: 1px solid var(--line); border-radius: 14px; padding: 8px; top: 66px;
+      backdrop-filter: blur(10px); gap: 6px; }
+    :root[data-theme="light"] .tabs { background: rgba(255,255,255,.9); }
+    .tab-btn { background: transparent; border: 1px solid transparent; color: var(--muted); font-weight: 600; padding: 8px 14px; }
+    .tab-btn:hover { color: var(--text); background: var(--elev); }
+    .tab-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); box-shadow: 0 4px 14px rgba(37,99,235,.4); }
+
+    /* Inputs / buttons / tables (dark) */
+    .controls input, .controls select { background: var(--input-bg); color: var(--text); border-color: var(--line); }
+    .controls input:focus, .controls select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+    .action-btn { background: var(--elev); border: 1px solid var(--line); color: var(--text); font-weight: 600; transition: all .18s ease; }
+    .action-btn:hover { background: var(--elev-strong); transform: translateY(-1px); }
+    .action-btn.secondary { background: var(--brand); border-color: var(--brand); color: #fff; }
+    .action-btn.danger { background: var(--bad); border-color: var(--bad); color: #fff; }
+    .table-wrap { border-color: var(--line); }
+    table { background: transparent; color: var(--text); }
+    th { background: var(--elev); color: var(--muted); border-color: var(--line); font-weight: 700; }
+    td { border-color: var(--line); }
+    tr:hover td { background: var(--elev); }
+    .chart-box { background: var(--input-bg); border-color: var(--line); box-shadow: inset 0 0 0 1px rgba(255,255,255,.02); }
+    .tts-panel { background: var(--elev); border-color: var(--line); }
+    .news-card { background: var(--input-bg); border-color: var(--line); }
+    .pcr-mini-card { background: var(--elev); }
+    .hero-chip { background: var(--elev); border-color: var(--line); color: var(--text); }
+    .oi-card { background: var(--input-bg); }
+    pre { background: #060911; }
+
+    /* Hero stat tiles */
+    .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 0 0 20px; }
+    .stat-tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .stat-tile::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--tint, var(--brand)); }
+    .stat-tile .st-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
+    .stat-tile .st-value { font-size: 30px; font-weight: 800; letter-spacing: -.02em; margin-top: 4px; line-height: 1.05; }
+    .stat-tile .st-sub { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+    .st-good { --tint: var(--good); } .st-bad { --tint: var(--bad); } .st-neutral { --tint: var(--neutral); } .st-brand { --tint: var(--brand); }
+    .st-good .st-value { color: var(--good); } .st-bad .st-value { color: var(--bad); } .st-neutral .st-value { color: var(--neutral); }
+
+    /* AI summary */
+    .ai-card { background: linear-gradient(135deg, rgba(37,99,235,.10), var(--card) 55%); border-color: rgba(37,99,235,.3); }
+    .summary-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .summary-list li { display: flex; gap: 11px; align-items: flex-start; font-size: 15.5px; line-height: 1.45; }
+    .summary-list li .dot { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; margin-top: 8px; background: var(--brand); }
+
+    /* Checklist + progress */
+    .progress { height: 8px; border-radius: 999px; background: var(--elev); overflow: hidden; margin-bottom: 14px; }
+    .progress span { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--brand), var(--good)); transition: width .5s cubic-bezier(.22,1,.36,1); }
+    .chip-strong { font-weight: 800; font-size: 14px; color: var(--good); }
+    .checklist { display: grid; gap: 8px; }
+    .check-item { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; transition: all .16s ease; user-select: none; }
+    .check-item:hover { background: var(--elev); }
+    .check-item.done { background: var(--good-soft); border-color: var(--good); }
+    .check-box { width: 18px; height: 18px; border-radius: 6px; border: 2px solid var(--muted); display: grid; place-items: center; font-size: 12px; color: #fff; flex: 0 0 auto; }
+    .check-item.done .check-box { background: var(--good); border-color: var(--good); }
+    .check-item.done .check-label { text-decoration: line-through; color: var(--muted); }
+    .check-label { font-size: 14.5px; }
+
+    /* Alerts */
+    .alerts { display: grid; gap: 9px; }
+    .alert { display: flex; gap: 11px; align-items: flex-start; padding: 11px 13px; border-radius: 11px; border: 1px solid var(--line); background: var(--elev); font-size: 14px; }
+    .alert .ic { font-size: 16px; line-height: 1.2; }
+    .alert.warn { border-color: var(--neutral); background: var(--neutral-soft); }
+    .alert.bad { border-color: var(--bad); background: var(--bad-soft); }
+    .alert.good { border-color: var(--good); background: var(--good-soft); }
+    .alert b { font-weight: 700; }
+
+    /* Levels */
+    .levels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .level-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+    .level-card h3 { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+    .level-card .spot { font-size: 13px; color: var(--muted); font-weight: 600; }
+    .level-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .level-box { border-radius: 12px; padding: 12px 14px; border: 1px solid var(--line); }
+    .level-box.res { background: var(--bad-soft); border-color: rgba(239,68,68,.35); }
+    .level-box.sup { background: var(--good-soft); border-color: rgba(34,197,94,.35); }
+    .level-box .lk { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
+    .level-box.res .lk { color: var(--bad); } .level-box.sup .lk { color: var(--good); }
+    .level-box .lv { font-size: 22px; font-weight: 800; letter-spacing: -.02em; margin-top: 3px; }
+    .level-meta { margin-top: 12px; font-size: 12.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 10px; }
+
+    /* Indicators */
+    .indicator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+    .ind-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 15px 16px; box-shadow: var(--shadow); transition: transform .16s ease, box-shadow .16s ease; }
+    .ind-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.5); }
+    .ind-top { display: flex; align-items: center; justify-content: space-between; }
+    .ind-name { font-size: 13px; color: var(--muted); font-weight: 700; }
+    .ind-arrow { font-size: 15px; font-weight: 800; }
+    .ind-value { font-size: 26px; font-weight: 800; letter-spacing: -.02em; margin: 6px 0 2px; }
+    .ind-interp { font-size: 12.5px; font-weight: 700; }
+    .ind-interp.good { color: var(--good); } .ind-interp.bad { color: var(--bad); } .ind-interp.neutral { color: var(--neutral); }
+
+    /* FII/DII flow */
+    .flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+    .flow-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+    .flow-card .fh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-weight: 700; }
+    .flow-row { display: flex; justify-content: space-between; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14px; }
+    .flow-row:first-of-type { border-top: 0; }
+    .flow-row b { font-variant-numeric: tabular-nums; }
+
+    /* Timeline */
+    .timeline { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; }
+    .tl-step { flex: 1 1 150px; min-width: 140px; background: var(--elev); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; position: relative; }
+    .tl-step .tl-t { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .tl-step .tl-v { font-size: 17px; font-weight: 800; margin-top: 4px; }
+    .tl-step .tl-s { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .tl-step.pred { background: var(--brand-soft); border-color: var(--brand); }
+    .tl-arrow { display: grid; place-items: center; color: var(--muted); font-size: 18px; }
+    @media (max-width: 760px) { .tl-arrow { transform: rotate(90deg); } .timeline { flex-direction: column; } }
+
+    .footer-note { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 22px; }
+    .site-footer { display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 13px; padding: 22px 2px 0; border-top: 1px solid var(--line); margin-top: 30px; }
+    .site-footer a { color: var(--brand); text-decoration: none; }
+    .site-footer .fcol { display: grid; gap: 4px; }
+
+    @media (max-width: 720px) {
+      .navbar { flex-wrap: wrap; padding: 10px 16px; }
+      .nav-search { order: 3; flex: 1 0 100%; }
+      main { padding: 16px 14px 50px; }
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
-<header>
-  <div class="top-line">
-    <div>
-      <h1>Interactive Morning Market Brief</h1>
-      <div id="generatedAt" class="muted" style="color:#cbd5e1"></div>
-    </div>
-    <div class="pill"><span class="live-dot"></span><span>Live</span><strong>Pre-market</strong></div>
+<nav class="navbar" aria-label="Primary">
+  <div class="nav-brand">
+    <span class="nav-logo">📈</span>
+    <span>Market Morning Brief<small id="generatedAt">Pre-market cockpit</small></span>
   </div>
-</header>
+  <span class="nav-live"><span class="live-dot"></span>Live · Pre-market</span>
+  <div class="nav-spacer"></div>
+  <div class="nav-search">
+    <span class="si">🔎</span>
+    <input id="globalSearch" type="search" placeholder="Search stocks, sectors, indicators..." aria-label="Search dashboard">
+    <kbd>Ctrl K</kbd>
+  </div>
+  <div class="nav-clock">
+    <b id="navClock">--:--:--</b>
+    <small id="navUpdated">Updated —</small>
+  </div>
+  <button class="icon-btn" id="themeToggle" title="Toggle theme (T)" aria-label="Toggle theme">🌙</button>
+  <button class="icon-btn" id="refreshBtn" title="Refresh (R)" aria-label="Refresh">↻</button>
+</nav>
 <main>
+  <div id="heroStats" class="hero-stats reveal"></div>
   <section id="hero" class="hero reveal"></section>
 
   <nav class="tabs" aria-label="Dashboard tabs">
@@ -513,15 +713,39 @@ h1 { position: relative; }
     
   </nav>
 
-  <div class="card meeting-mode">
-  <h2>Meeting Mode</h2>
-  <div id="todayPlan" class="big-plan"></div>
-  <p id="topSignals" class="summary"></p>
-  <p id="mainRisk" class="summary muted"></p>
-</div>
-
   <section id="overview" class="panel active">
-    <div id="metricGrid" class="grid"></div>
+    <div class="card ai-card">
+      <div class="card-head"><h2>🧠 AI Morning Summary</h2><span class="badge info">Auto-generated</span></div>
+      <ul id="aiSummary" class="summary-list"></ul>
+    </div>
+
+    <h3 class="section-title">📌 Important Levels</h3>
+    <div id="levelsGrid" class="levels-grid"></div>
+
+    <h3 class="section-title">📊 Market Indicators</h3>
+    <div id="indicatorGrid" class="indicator-grid"></div>
+
+    <h3 class="section-title">🏦 FII / DII Activity <span class="muted" style="font-size:13px;font-weight:500">· provisional, last completed session (₹ Cr)</span></h3>
+    <div id="flowCards" class="flow-grid"></div>
+
+    <div class="card" style="margin-top:18px">
+      <div class="card-head"><h2>🕒 Market Timeline</h2></div>
+      <div id="marketTimeline" class="timeline"></div>
+    </div>
+
+    <h3 class="section-title">✅ Pre-Market Prep</h3>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-head"><h2>Trading Checklist</h2><span id="checklistPct" class="chip-strong">0%</span></div>
+        <div class="progress"><span id="checklistProgress"></span></div>
+        <div id="checklist" class="checklist"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>🚨 Alerts</h2></div>
+        <div id="alertsPanel" class="alerts"></div>
+      </div>
+    </div>
+
     <div class="card">
       <h2>Meeting Summary</h2>
       <p id="marketView" class="summary"></p>
@@ -756,7 +980,21 @@ h1 { position: relative; }
     </div>
   </section>
 
-  <p class="footer-note">Generated automatically for pre-market discussion. Not financial advice.</p>
+  <footer class="site-footer">
+    <div class="fcol">
+      <strong style="color:var(--text)">Market Morning Brief</strong>
+      <span>Pre-market decision cockpit · Not financial advice</span>
+    </div>
+    <div class="fcol">
+      <span>Data: NSE · Yahoo Finance · RSS feeds</span>
+      <span id="footerUpdated">Last update —</span>
+    </div>
+    <div class="fcol">
+      <a href="https://github.com/DeepPandya30/market-morning-brief" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="mailto:dk15pandya@gmail.com">Feedback</a>
+      <span>v2.0 · Cockpit UI</span>
+    </div>
+  </footer>
 </main>
 <script id="app-data" type="application/json">__APP_DATA__</script>
 <script>
@@ -912,7 +1150,7 @@ function drawBarChart(canvasId, rows, labelKey, valueKey, title) {
       },
       plugins: {
         legend: { display: false },
-        title: { display: !!title, text: title, align: 'start', font: { size: 13, weight: '700' }, color: '#172033', padding: { bottom: 8 } },
+        title: { display: !!title, text: title, align: 'start', font: { size: 13, weight: '700' }, color: '#94a3b8', padding: { bottom: 8 } },
         tooltip: {
           callbacks: {
             label(ctx) {
@@ -1100,17 +1338,21 @@ function renderAll() {
 populateNewsSources();
 renderNews();
 renderMeetingMode();
-  document.getElementById('generatedAt').textContent = `Generated at ${APP.generated_at}`;
+  const brandSub = document.getElementById('generatedAt');
+  if (brandSub) brandSub.textContent = APP.generated_at ? `Updated ${APP.generated_at}` : 'Pre-market cockpit';
+  const navUpd = document.getElementById('navUpdated');
+  if (navUpd) navUpd.textContent = APP.generated_at ? `Updated ${APP.generated_at}` : 'Updated —';
+  const footUpd = document.getElementById('footerUpdated');
+  if (footUpd) footUpd.textContent = APP.generated_at ? `Last update ${APP.generated_at}` : 'Last update —';
   document.getElementById('marketView').textContent = APP.market_view || '';
   document.getElementById('riskNote').textContent = APP.risk_note || '';
   document.getElementById('markdownReport').textContent = APP.markdown || '';
-  renderMetrics(); renderOICards(); renderGlobal(); renderCommodities(); renderCrypto(); renderCurrency(); renderSectors(); renderSignals(); renderHistory(); renderWarnings();
+  renderOICards(); renderGlobal(); renderCommodities(); renderCrypto(); renderCurrency(); renderSectors(); renderSignals(); renderHistory(); renderWarnings();
+  renderHeroStats(); renderAiSummary(); renderChecklist(); renderAlerts(); renderLevels(); renderIndicators(); renderFlow(); renderTimeline();
   drawBarChart('globalMiniChart', (APP.data.global_markets || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('sectorMiniChart', ((APP.data.nse_indices || {}).sectors || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('commodityMiniChart', (APP.data.commodities || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('cryptoMiniChart', (APP.data.crypto || []).slice(0, 8), 'name', 'change_pct', 'Change %');
-const newsSearch = document.getElementById('newsSearch');
-
   }
 
 function heatmapClass(value) {
@@ -1404,7 +1646,7 @@ function renderHero() {
   el.innerHTML = `
     <div class="gauge-wrap">
       <svg class="gauge-svg" viewBox="0 0 200 120" aria-hidden="true">
-        <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#e5e7eb" stroke-width="16" stroke-linecap="round"/>
+        <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="rgba(148,163,184,.25)" stroke-width="16" stroke-linecap="round"/>
         <path class="gauge-arc-fg" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="${color}" stroke-width="16" stroke-linecap="round"
               stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${circ.toFixed(1)}"/>
         <g class="gauge-needle" style="transform: rotate(0deg);">
@@ -1439,8 +1681,7 @@ function renderHero() {
 
 function playEntrance() {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const hero = document.getElementById('hero');
-  if (hero) requestAnimationFrame(() => hero.classList.add('in'));
+  document.querySelectorAll('.reveal').forEach(el => requestAnimationFrame(() => el.classList.add('in')));
   const cards = document.querySelectorAll('#overview .card, .card.meeting-mode');
   cards.forEach((c, i) => {
     c.classList.add('pop');
@@ -1469,6 +1710,360 @@ function renderMeetingMode() {
 
   riskEl.textContent = APP.risk_note || '';
 }
+
+/* ================= Cockpit decision-layer renderers ================= */
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+function sum(arr) { return arr.reduce((a, b) => a + (Number(b) || 0), 0); }
+function arrow(v) {
+  const n = Number(v || 0);
+  if (n > 0.02) return { s: '▲', cls: 'good' };
+  if (n < -0.02) return { s: '▼', cls: 'bad' };
+  return { s: '▬', cls: 'neutral' };
+}
+function morningScore() {
+  const s = clamp(Number(APP.score.score || 0), -10, 10);
+  return Math.round((s + 10) / 20 * 100);
+}
+function bullishProb() {
+  const s = Number(APP.score.score || 0);
+  return clamp(Math.round(50 + s * 4.5), 3, 97);
+}
+function volatilityInfo() {
+  const vix = (APP.data.nse_indices || {}).india_vix || {};
+  const v = Number(vix.last);
+  if (!Number.isFinite(v)) return { label: 'N/A', tone: 'neutral', sub: 'India VIX unavailable' };
+  if (v < 13) return { label: 'Low', tone: 'good', sub: 'Calm — trend trades favoured' };
+  if (v < 16) return { label: 'Medium', tone: 'neutral', sub: 'Normal intraday range' };
+  if (v < 20) return { label: 'Elevated', tone: 'bad', sub: 'Wider swings likely' };
+  return { label: 'High', tone: 'bad', sub: 'Risk-off, size down' };
+}
+
+function renderHeroStats() {
+  const el = document.getElementById('heroStats');
+  if (!el) return;
+  const bias = APP.score.bias || 'Neutral';
+  const bt = biasTone(bias);
+  const vol = volatilityInfo();
+  const prob = bullishProb();
+  const tiles = [
+    { label: 'Morning Score', value: morningScore() + '<span style="font-size:16px;color:var(--muted)">/100</span>', sub: 'Composite signal strength', cls: 'st-brand' },
+    { label: 'Bullish Probability', value: prob + '%', sub: prob >= 55 ? 'Odds favour upside' : prob <= 45 ? 'Odds favour downside' : 'Balanced setup', cls: prob >= 55 ? 'st-good' : prob <= 45 ? 'st-bad' : 'st-neutral' },
+    { label: 'Volatility', value: vol.label, sub: vol.sub, cls: 'st-' + vol.tone },
+    { label: 'Market Sentiment', value: escapeHtml(bias), sub: (APP.score.confidence || '') + ' confidence', cls: 'st-' + bt.tone },
+    { label: 'Confidence', value: escapeHtml(APP.score.confidence || 'N/A'), sub: 'Signal agreement', cls: 'st-brand' },
+  ];
+  el.innerHTML = tiles.map(t => `
+    <div class="stat-tile ${t.cls}">
+      <div class="st-label">${t.label}</div>
+      <div class="st-value">${t.value}</div>
+      <div class="st-sub">${t.sub}</div>
+    </div>`).join('');
+}
+
+function regionAvg(region) {
+  const rows = (APP.data.global_markets || []).filter(r => r.region === region && r.change_pct !== null && r.change_pct !== undefined);
+  if (!rows.length) return null;
+  return sum(rows.map(r => r.change_pct)) / rows.length;
+}
+function findAsset(list, name) { return (list || []).find(r => r.name === name) || {}; }
+
+function renderAiSummary() {
+  const el = document.getElementById('aiSummary');
+  if (!el) return;
+  const nse = APP.data.nse_indices || {};
+  const sectors = nse.sectors || [];
+  const flow = APP.data.fii_dii || {};
+  const nifty = (APP.data.option_chains || {}).NIFTY || {};
+  const vix = nse.india_vix || {};
+  const bias = APP.score.bias || 'Neutral';
+  const bt = biasTone(bias);
+  const bullets = [];
+  bullets.push({ tone: bt.color, text: `Market bias is <b>${escapeHtml(bias)}</b> (${escapeHtml(APP.score.confidence || 'N/A')} confidence, score ${morningScore()}/100).` });
+  const us = regionAvg('US'), asia = regionAvg('Asia');
+  if (us !== null) bullets.push({ tone: us >= 0 ? '#22C55E' : '#EF4444', text: `US markets closed ${us >= 0 ? 'higher' : 'lower'} (${pct(us)} avg) — ${us >= 0 ? 'supportive' : 'a drag'} for the open.` });
+  if (asia !== null) bullets.push({ tone: asia >= 0 ? '#22C55E' : '#EF4444', text: `Asian peers are ${asia >= 0 ? 'green' : 'red'} (${pct(asia)} avg) this morning.` });
+  const sorted = [...sectors].sort((a, b) => Number(b.change_pct || 0) - Number(a.change_pct || 0));
+  if (sorted.length) {
+    const top = sorted[0];
+    bullets.push({ tone: '#22C55E', text: `<b>${escapeHtml(top.name)}</b> leads sectors (${pct(top.change_pct)}); watch for follow-through.` });
+  }
+  const combined = Number(flow.fii_net || 0) + Number(flow.dii_net || 0);
+  bullets.push({ tone: combined >= 0 ? '#22C55E' : '#EF4444', text: `Institutional flow is net ${combined >= 0 ? 'positive' : 'negative'} (FII ${money(flow.fii_net)}, DII ${money(flow.dii_net)}).` });
+  const pcrv = Number(nifty.pcr);
+  if (Number.isFinite(pcrv)) bullets.push({ tone: '#2563EB', text: `Nifty PCR at <b>${num(nifty.pcr)}</b> — ${pcrv < 0.8 ? 'cautious/oversold' : pcrv > 1.1 ? 'complacent/overbought' : 'balanced'}; support ${num(nifty.support)}, resistance ${num(nifty.resistance)}.` });
+  const news = (APP.data.market_news || [])[0];
+  if (news && news.title) bullets.push({ tone: '#F59E0B', text: `Top headline: ${escapeHtml(news.title)}` });
+  el.innerHTML = bullets.slice(0, 5).map(b => `
+    <li><span class="dot" style="background:${b.tone}"></span><span>${b.text}</span></li>`).join('');
+}
+
+const CHECKLIST_ITEMS = ['Global Markets', 'India VIX', 'FII / DII', 'Option Chain', 'PCR', 'Support / Resistance', 'Major News', 'Sector Performance'];
+function checklistKey() { return 'mmb_check_' + (APP.date || 'today'); }
+function loadChecklist() { try { return new Set(JSON.parse(localStorage.getItem(checklistKey()) || '[]')); } catch (e) { return new Set(); } }
+function saveChecklist(set) { try { localStorage.setItem(checklistKey(), JSON.stringify([...set])); } catch (e) {} }
+function updateChecklistProgress(set) {
+  const pct = Math.round(set.size / CHECKLIST_ITEMS.length * 100);
+  const bar = document.getElementById('checklistProgress');
+  const lbl = document.getElementById('checklistPct');
+  if (bar) bar.style.width = pct + '%';
+  if (lbl) lbl.textContent = pct + '% Complete';
+}
+function renderChecklist() {
+  const el = document.getElementById('checklist');
+  if (!el) return;
+  const done = loadChecklist();
+  el.innerHTML = CHECKLIST_ITEMS.map(name => `
+    <div class="check-item ${done.has(name) ? 'done' : ''}" role="checkbox" tabindex="0" aria-checked="${done.has(name)}" data-item="${escapeHtml(name)}">
+      <span class="check-box">${done.has(name) ? '✓' : ''}</span>
+      <span class="check-label">${escapeHtml(name)}</span>
+    </div>`).join('');
+  updateChecklistProgress(done);
+  const toggle = node => {
+    const set = loadChecklist();
+    const name = node.dataset.item;
+    if (set.has(name)) set.delete(name); else set.add(name);
+    saveChecklist(set);
+    node.classList.toggle('done', set.has(name));
+    node.setAttribute('aria-checked', set.has(name));
+    node.querySelector('.check-box').textContent = set.has(name) ? '✓' : '';
+    updateChecklistProgress(set);
+  };
+  el.querySelectorAll('.check-item').forEach(node => {
+    node.addEventListener('click', () => toggle(node));
+    node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(node); } });
+  });
+}
+
+function renderAlerts() {
+  const el = document.getElementById('alertsPanel');
+  if (!el) return;
+  const nse = APP.data.nse_indices || {};
+  const vix = nse.india_vix || {};
+  const flow = APP.data.fii_dii || {};
+  const nifty = (APP.data.option_chains || {}).NIFTY || {};
+  const crude = findAsset(APP.data.commodities, 'Crude Oil WTI').close ? findAsset(APP.data.commodities, 'Crude Oil WTI') : findAsset(APP.data.commodities, 'Brent Oil');
+  const dxy = findAsset(APP.data.currencies, 'DXY');
+  const alerts = [];
+  const vixLast = Number(vix.last), vixChg = Number(vix.change_pct);
+  if (Number.isFinite(vixLast) && vixLast >= 18) alerts.push({ cls: 'bad', ic: '⚠️', text: `<b>India VIX ${num(vix.last)}</b> — elevated volatility, trade smaller size.` });
+  else if (Number.isFinite(vixChg) && vixChg >= 5) alerts.push({ cls: 'warn', ic: '⚠️', text: `<b>India VIX rising ${pct(vix.change_pct)}</b> — expect wider swings.` });
+  const pcrv = Number(nifty.pcr);
+  if (Number.isFinite(pcrv) && pcrv < 0.7) alerts.push({ cls: 'warn', ic: '📉', text: `<b>Nifty PCR ${num(nifty.pcr)}</b> — below 0.70, caution / possible oversold bounce.` });
+  else if (Number.isFinite(pcrv) && pcrv > 1.3) alerts.push({ cls: 'warn', ic: '📈', text: `<b>Nifty PCR ${num(nifty.pcr)}</b> — above 1.30, market may be complacent.` });
+  if (Number(flow.fii_net || 0) < -1000) alerts.push({ cls: 'bad', ic: '🏦', text: `<b>Heavy FII selling</b> (${money(flow.fii_net)}) — bearish pressure on index.` });
+  if (crude && Number(crude.close) >= 90) alerts.push({ cls: 'warn', ic: '🛢️', text: `<b>Crude above $90</b> (${num(crude.close)}) — inflation / OMC pressure.` });
+  else if (crude && Number(crude.change_pct) >= 3) alerts.push({ cls: 'warn', ic: '🛢️', text: `<b>Crude spiking ${pct(crude.change_pct)}</b> — watch energy-sensitive names.` });
+  if (dxy && Number(dxy.change_pct) >= 0.5) alerts.push({ cls: 'warn', ic: '💵', text: `<b>Dollar strengthening ${pct(dxy.change_pct)}</b> — pressure on EM equities.` });
+  const us = regionAvg('US');
+  if (us !== null && us <= -1) alerts.push({ cls: 'bad', ic: '🌎', text: `<b>US markets fell</b> (${pct(us)} avg) — cautious global cue.` });
+  if (!alerts.length) alerts.push({ cls: 'good', ic: '✅', text: 'No major alerts — calm pre-market setup.' });
+  el.innerHTML = alerts.map(a => `<div class="alert ${a.cls}"><span class="ic">${a.ic}</span><span>${a.text}</span></div>`).join('');
+}
+
+function renderLevels() {
+  const el = document.getElementById('levelsGrid');
+  if (!el) return;
+  const chains = APP.data.option_chains || {};
+  const items = ['NIFTY', 'BANKNIFTY'].map(k => chains[k] || { symbol: k });
+  const distTxt = (spot, lvl) => {
+    const s = Number(spot), l = Number(lvl);
+    if (!Number.isFinite(s) || !Number.isFinite(l) || s === 0) return '';
+    return (Math.abs((l - s) / s) * 100).toFixed(2) + '% away';
+  };
+  el.innerHTML = items.map(it => `
+    <div class="level-card">
+      <h3><span>${escapeHtml(it.symbol || '')}</span><span class="spot">Spot ${num(it.underlying)}</span></h3>
+      <div class="level-row">
+        <div class="level-box sup"><div class="lk">Support</div><div class="lv">${num(it.support)}</div><div class="st-sub">${distTxt(it.underlying, it.support)}</div></div>
+        <div class="level-box res"><div class="lk">Resistance</div><div class="lv">${num(it.resistance)}</div><div class="st-sub">${distTxt(it.underlying, it.resistance)}</div></div>
+      </div>
+      <div class="level-meta"><span>PCR ${num(it.pcr)}</span><span>Expiry ${escapeHtml(it.expiry || 'N/A')}</span></div>
+    </div>`).join('') || '<p class="muted">No option-chain levels available.</p>';
+}
+
+function indCard(name, value, changePct, interp, interpCls) {
+  const a = arrow(changePct);
+  return `
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-name">${escapeHtml(name)}</span><span class="ind-arrow ind-interp ${a.cls}">${a.s}</span></div>
+      <div class="ind-value">${value}</div>
+      <div class="ind-interp ${interpCls}">${escapeHtml(interp)}</div>
+    </div>`;
+}
+function renderIndicators() {
+  const el = document.getElementById('indicatorGrid');
+  if (!el) return;
+  const nse = APP.data.nse_indices || {};
+  const sectors = nse.sectors || [];
+  const vix = nse.india_vix || {};
+  const nifty = (APP.data.option_chains || {}).NIFTY || {};
+  const bank = (APP.data.option_chains || {}).BANKNIFTY || {};
+  const dxy = findAsset(APP.data.currencies, 'DXY');
+  const crude = findAsset(APP.data.commodities, 'Crude Oil WTI');
+  const gold = findAsset(APP.data.commodities, 'Gold');
+  const btc = findAsset(APP.data.crypto, 'Bitcoin');
+  const up = sectors.filter(s => Number(s.change_pct || 0) > 0).length;
+  const down = sectors.filter(s => Number(s.change_pct || 0) < 0).length;
+  const breadth = (up + down) ? Math.round(up / (up + down) * 100) : 0;
+  const vol = volatilityInfo();
+  const pcrInterp = v => { const n = Number(v); if (!Number.isFinite(n)) return ['N/A', 'neutral']; if (n < 0.8) return ['Bearish / oversold', 'bad']; if (n > 1.1) return ['Bullish / toppy', 'good']; return ['Neutral', 'neutral']; };
+  const nP = pcrInterp(nifty.pcr), bP = pcrInterp(bank.pcr);
+  const cards = [
+    indCard('India VIX', num(vix.last), vix.change_pct, vol.label + ' volatility', vol.tone),
+    indCard('Nifty PCR', num(nifty.pcr), (Number(nifty.pcr) - 1), nP[0], nP[1]),
+    indCard('Bank Nifty PCR', num(bank.pcr), (Number(bank.pcr) - 1), bP[0], bP[1]),
+    indCard('Advance / Decline', up + ' : ' + down, (up - down), up >= down ? 'More sectors advancing' : 'More sectors declining', up >= down ? 'good' : 'bad'),
+    indCard('Market Breadth', breadth + '%', (breadth - 50), breadth >= 55 ? 'Broad participation' : breadth <= 45 ? 'Weak participation' : 'Mixed breadth', breadth >= 55 ? 'good' : breadth <= 45 ? 'bad' : 'neutral'),
+    indCard('Dollar Index', num(dxy.close), dxy.change_pct, Number(dxy.change_pct || 0) > 0 ? 'Stronger USD — EM headwind' : 'Softer USD — EM tailwind', Number(dxy.change_pct || 0) > 0 ? 'bad' : 'good'),
+    indCard('Crude Oil', num(crude.close), crude.change_pct, Number(crude.change_pct || 0) > 0 ? 'Rising — inflation watch' : 'Easing — supportive', Number(crude.change_pct || 0) > 0 ? 'bad' : 'good'),
+    indCard('Gold', num(gold.close), gold.change_pct, Number(gold.change_pct || 0) > 0 ? 'Bid — some risk-off' : 'Soft — risk-on', Number(gold.change_pct || 0) > 0 ? 'neutral' : 'good'),
+    indCard('Bitcoin', num(btc.close), btc.change_pct, Number(btc.change_pct || 0) >= 0 ? 'Risk appetite healthy' : 'Risk appetite fading', Number(btc.change_pct || 0) >= 0 ? 'good' : 'bad'),
+  ];
+  el.innerHTML = cards.join('');
+}
+
+function shortDate(iso) {
+  if (!iso) return '';
+  const p = String(iso).split('-');
+  if (p.length < 3) return iso;
+  const m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return p[2] + ' ' + (m[parseInt(p[1], 10) - 1] || '');
+}
+function renderFlow() {
+  const el = document.getElementById('flowCards');
+  if (!el) return;
+  const flow = APP.data.fii_dii || {};
+  const hist = (APP.history || []).filter(h => h.date);
+  const lastN = (key, n) => hist.slice(-n).map(h => h[key]);
+  const dataDate = hist.length ? hist[hist.length - 1].date : null;
+  const prevDate = hist.length >= 2 ? hist[hist.length - 2].date : null;
+  const yFii = hist.length >= 2 ? hist[hist.length - 2].fii_net : null;
+  const yDii = hist.length >= 2 ? hist[hist.length - 2].dii_net : null;
+  const dLbl = dataDate ? shortDate(dataDate) : 'last close';
+  const pLbl = prevDate ? shortDate(prevDate) : '—';
+  const toneVal = v => `<b class="${Number(v || 0) >= 0 ? 'ind-interp good' : 'ind-interp bad'}">${money(v)}</b>`;
+  const card = (title, today, yest, key) => `
+    <div class="flow-card">
+      <div class="fh"><span>${title}</span><span class="muted small">${dLbl}</span></div>
+      <div class="flow-row"><span>Net (last session)</span>${toneVal(today)}</div>
+      <div class="flow-row"><span>Prior (${pLbl})</span>${toneVal(yest)}</div>
+      <div class="flow-row"><span>5-session net</span>${toneVal(sum(lastN(key, 5)))}</div>
+      <div class="flow-row"><span>22-session net</span>${toneVal(sum(lastN(key, 22)))}</div>
+    </div>`;
+  const combinedToday = Number(flow.fii_net || 0) + Number(flow.dii_net || 0);
+  el.innerHTML =
+    card('FII / FPI', flow.fii_net, yFii, 'fii_net') +
+    card('DII', flow.dii_net, yDii, 'dii_net') +
+    `<div class="flow-card">
+      <div class="fh"><span>Combined</span><span class="muted small">${dLbl}</span></div>
+      <div class="flow-row"><span>Net (FII + DII)</span>${toneVal(combinedToday)}</div>
+      <div class="flow-row"><span>Read</span><b>${combinedToday >= 0 ? 'Net buying' : 'Net selling'}</b></div>
+      <div class="flow-row"><span>Bias impact</span><b class="${combinedToday >= 0 ? 'ind-interp good' : 'ind-interp bad'}">${combinedToday >= 0 ? 'Supportive' : 'Bearish'}</b></div>
+      <div class="flow-row"><span>Source</span><span class="muted small">${escapeHtml((flow.source || 'N/A')).toUpperCase()} · provisional</span></div>
+    </div>`;
+}
+
+function renderTimeline() {
+  const el = document.getElementById('marketTimeline');
+  if (!el) return;
+  const nse = APP.data.nse_indices || {};
+  const us = regionAvg('US'), asia = regionAvg('Asia'), eu = regionAvg('Europe');
+  const gift = nse.gift_nifty;
+  const bias = APP.score.bias || 'Neutral';
+  const bt = biasTone(bias);
+  const steps = [
+    { t: 'Yesterday Close', v: num(nse.nifty_spot), s: 'Nifty spot' },
+    { t: 'US Market', v: us === null ? 'N/A' : pct(us), s: us === null ? 'no data' : (us >= 0 ? 'positive cue' : 'negative cue') },
+    { t: 'Europe', v: eu === null ? 'N/A' : pct(eu), s: eu === null ? 'no data' : (eu >= 0 ? 'positive' : 'negative') },
+    { t: 'Asian Market', v: asia === null ? 'N/A' : pct(asia), s: asia === null ? 'no data' : (asia >= 0 ? 'positive' : 'negative') },
+    { t: 'Gift Nifty', v: gift === null || gift === undefined ? 'N/A' : num(gift), s: 'gap indicator' },
+    { t: 'Opening Prediction', v: escapeHtml(bias), s: (APP.score.confidence || '') + ' confidence', pred: true },
+  ];
+  el.innerHTML = steps.map((st, i) => `
+    <div class="tl-step ${st.pred ? 'pred' : ''}"${st.pred ? ` style="border-color:${bt.color}"` : ''}>
+      <div class="tl-t">${st.t}</div>
+      <div class="tl-v"${st.pred ? ` style="color:${bt.color}"` : ''}>${st.v}</div>
+      <div class="tl-s">${st.s}</div>
+    </div>${i < steps.length - 1 ? '<div class="tl-arrow">→</div>' : ''}`).join('');
+}
+
+/* ================= Nav: clock, theme, refresh, search, shortcuts ================= */
+function activateTab(name) {
+  const btn = document.querySelector(`.tab-btn[data-tab="${name}"]`);
+  if (!btn) return;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const panel = document.getElementById(name);
+  if (panel) { panel.classList.add('active'); panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  setTimeout(renderAll, 20);
+}
+function startClock() {
+  const el = document.getElementById('navClock');
+  if (!el) return;
+  const tick = () => { el.textContent = new Date().toLocaleTimeString('en-IN', { hour12: false }); };
+  tick();
+  setInterval(tick, 1000);
+}
+function applyTheme(theme) {
+  const root = document.documentElement;
+  if (theme === 'light') root.setAttribute('data-theme', 'light');
+  else root.removeAttribute('data-theme');
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = theme === 'light' ? '☀️' : '🌙';
+}
+(function initTheme() {
+  let saved = 'dark';
+  try { saved = localStorage.getItem('mmb_theme') || 'dark'; } catch (e) {}
+  applyTheme(saved);
+})();
+function toggleTheme() {
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  const next = isLight ? 'dark' : 'light';
+  applyTheme(next);
+  try { localStorage.setItem('mmb_theme', next); } catch (e) {}
+  setTimeout(renderAll, 30);
+}
+const SEARCH_MAP = [
+  { k: ['global', 'us', 'europe', 'asia', 'dow', 'nasdaq'], tab: 'global' },
+  { k: ['commodit', 'gold', 'crude', 'oil', 'silver', 'copper', 'gas'], tab: 'commodities' },
+  { k: ['crypto', 'bitcoin', 'btc', 'ether', 'eth', 'solana'], tab: 'crypto' },
+  { k: ['currency', 'dxy', 'dollar', 'usd', 'inr', 'eur', 'jpy'], tab: 'currency' },
+  { k: ['sector', 'bank', 'it', 'auto', 'pharma', 'fmcg', 'metal'], tab: 'sectors' },
+  { k: ['signal', 'score', 'bias'], tab: 'signals' },
+  { k: ['history', 'pcr', 'trend'], tab: 'history' },
+  { k: ['news', 'headline'], tab: 'news' },
+  { k: ['report', 'markdown', 'summary'], tab: 'report' },
+];
+function runSearch(q) {
+  const s = String(q || '').trim().toLowerCase();
+  if (!s) return;
+  const hit = SEARCH_MAP.find(m => m.k.some(w => s.includes(w)));
+  if (hit) {
+    activateTab(hit.tab);
+    if (hit.tab === 'sectors') { const box = document.getElementById('sectorSearch'); if (box) { box.value = q; renderSectors(); } }
+    if (hit.tab === 'news') { const box = document.getElementById('newsSearch'); if (box) { box.value = q; renderNews(); } }
+  }
+}
+(function initNav() {
+  startClock();
+  document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
+  document.getElementById('refreshBtn')?.addEventListener('click', () => location.reload());
+  const search = document.getElementById('globalSearch');
+  if (search) search.addEventListener('keydown', e => { if (e.key === 'Enter') runSearch(search.value); });
+  document.addEventListener('keydown', e => {
+    const typing = /^(input|select|textarea)$/i.test(e.target.tagName);
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); search?.focus(); return; }
+    if (e.key === 'Escape') { if (search) { search.value = ''; search.blur(); } return; }
+    if (typing) return;
+    const k = e.key.toLowerCase();
+    if (k === 'r') { e.preventDefault(); location.reload(); }
+    else if (k === 'n') activateTab('news');
+    else if (k === 's') activateTab('sectors');
+    else if (k === 'm') activateTab('overview');
+    else if (k === 't') toggleTheme();
+  });
+})();
 
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
