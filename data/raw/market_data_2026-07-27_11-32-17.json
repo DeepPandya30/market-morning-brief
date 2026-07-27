@@ -1,0 +1,3454 @@
+{
+  "global_markets": [
+    {
+      "name": "Nasdaq",
+      "ticker": "^IXIC",
+      "region": "US",
+      "close": 24975.8203125,
+      "change": -161.869140625,
+      "change_pct": -0.6439300673470496,
+      "date": "2026-07-24"
+    },
+    {
+      "name": "Dow Jones",
+      "ticker": "^DJI",
+      "region": "US",
+      "close": 51947.25,
+      "change": 235.6015625,
+      "change_pct": 0.45560636649352604,
+      "date": "2026-07-24"
+    },
+    {
+      "name": "S&P 500",
+      "ticker": "^GSPC",
+      "region": "US",
+      "close": 7411.97998046875,
+      "change": 3.68017578125,
+      "change_pct": 0.04967638835190524,
+      "date": "2026-07-24"
+    },
+    {
+      "name": "FTSE 100",
+      "ticker": "^FTSE",
+      "region": "Europe",
+      "close": 10736.2001953125,
+      "change": 97.0,
+      "change_pct": 0.9117226691789952,
+      "date": "2026-07-24"
+    },
+    {
+      "name": "CAC 40",
+      "ticker": "^FCHI",
+      "region": "Europe",
+      "close": 8372.2802734375,
+      "change": 73.1904296875,
+      "change_pct": 0.8819091137158772,
+      "date": "2026-07-24"
+    },
+    {
+      "name": "DAX",
+      "ticker": "^GDAXI",
+      "region": "Europe",
+      "close": 25099.0,
+      "change": 335.880859375,
+      "change_pct": 1.3563754124332927,
+      "date": "2026-07-24"
+    },
+    {
+      "name": "Hang Seng",
+      "ticker": "^HSI",
+      "region": "Asia",
+      "close": 25152.919921875,
+      "change": 189.689453125,
+      "change_pct": 0.7598754230245203,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Nikkei 225",
+      "ticker": "^N225",
+      "region": "Asia",
+      "close": 64776.671875,
+      "change": 165.5234375,
+      "change_pct": 0.25618402010005287,
+      "date": "2026-07-27"
+    }
+  ],
+  "commodities": [
+    {
+      "name": "Gold",
+      "ticker": "GC=F",
+      "group": "Commodities",
+      "close": 4088.89990234375,
+      "change": 21.2998046875,
+      "change_pct": 0.5236454955287503,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Silver",
+      "ticker": "SI=F",
+      "group": "Commodities",
+      "close": 59.59000015258789,
+      "change": 0.9340019226074219,
+      "change_pct": 1.5923382958130807,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Crude Oil WTI",
+      "ticker": "CL=F",
+      "group": "Commodities",
+      "close": 84.5199966430664,
+      "change": -4.790000915527344,
+      "change_pct": -5.363342342927241,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Copper",
+      "ticker": "HG=F",
+      "group": "Commodities",
+      "close": 6.356500148773193,
+      "change": 0.036499977111816406,
+      "change_pct": 0.5775312677281373,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Brent Oil",
+      "ticker": "BZ=F",
+      "group": "Commodities",
+      "close": 91.69000244140625,
+      "change": -5.089996337890625,
+      "change_pct": -5.259347387984752,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Natural Gas",
+      "ticker": "NG=F",
+      "group": "Commodities",
+      "close": 2.8269999027252197,
+      "change": -0.04400014877319336,
+      "change_pct": -1.5325722042474048,
+      "date": "2026-07-27"
+    }
+  ],
+  "crypto": [
+    {
+      "name": "Bitcoin",
+      "ticker": "BTC-USD",
+      "group": "Crypto",
+      "close": 65410.48828125,
+      "change": 1098.67578125,
+      "change_pct": 1.7083576695183331,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Ethereum",
+      "ticker": "ETH-USD",
+      "group": "Crypto",
+      "close": 1962.9000244140625,
+      "change": 89.6776123046875,
+      "change_pct": 4.787344616686731,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Solana",
+      "ticker": "SOL-USD",
+      "group": "Crypto",
+      "close": 76.4800033569336,
+      "change": 2.0514373779296875,
+      "change_pct": 2.7562500377991865,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Cardano",
+      "ticker": "ADA-USD",
+      "group": "Crypto",
+      "close": 0.16590000689029694,
+      "change": 0.0012640058994293213,
+      "change_pct": 0.7677578973139878,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "Ripple",
+      "ticker": "XRP-USD",
+      "group": "Crypto",
+      "close": 1.1094000339508057,
+      "change": 0.012072086334228516,
+      "change_pct": 1.1001347737883993,
+      "date": "2026-07-27"
+    }
+  ],
+  "currencies": [
+    {
+      "name": "GBP/USD",
+      "ticker": "GBPUSD=X",
+      "group": "Currency",
+      "close": 1.3355236053466797,
+      "change": 0.0042493343353271484,
+      "change_pct": 0.3191930038653103,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "EUR/USD",
+      "ticker": "EURUSD=X",
+      "group": "Currency",
+      "close": 1.1411616802215576,
+      "change": 0.0034793615341186523,
+      "change_pct": 0.30582891875588286,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "USD/CHF",
+      "ticker": "CHF=X",
+      "group": "Currency",
+      "close": 0.8148499727249146,
+      "change": -0.0020200014114379883,
+      "change_pct": -0.2472855503807278,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "USD/JPY",
+      "ticker": "JPY=X",
+      "group": "Currency",
+      "close": 163.58900451660156,
+      "change": -0.2429962158203125,
+      "change_pct": -0.14832036154962505,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "DXY",
+      "ticker": "DX-Y.NYB",
+      "group": "Currency",
+      "close": 101.19499969482422,
+      "change": -0.27500152587890625,
+      "change_pct": -0.27101756437428437,
+      "date": "2026-07-27"
+    },
+    {
+      "name": "USD/INR",
+      "ticker": "INR=X",
+      "group": "Currency",
+      "close": 96.19999694824219,
+      "change": -0.6769027709960938,
+      "change_pct": -0.6987246422602758,
+      "date": "2026-07-27"
+    }
+  ],
+  "nse_indices": {
+    "indices": [
+      {
+        "name": "NIFTY 50",
+        "last": 23966.65,
+        "change": 199.2,
+        "change_pct": 0.84
+      },
+      {
+        "name": "NIFTY NEXT 50",
+        "last": 72444.35,
+        "change": 678.35,
+        "change_pct": 0.95
+      },
+      {
+        "name": "NIFTY BANK",
+        "last": 57051.55,
+        "change": 358.05,
+        "change_pct": 0.63
+      },
+      {
+        "name": "NIFTY FINANCIAL SERVICES",
+        "last": 26071.1,
+        "change": 161.2,
+        "change_pct": 0.62
+      },
+      {
+        "name": "NIFTY MIDCAP SELECT",
+        "last": 14583.85,
+        "change": 147.8,
+        "change_pct": 1.02
+      },
+      {
+        "name": "NIFTY 100",
+        "last": 25053.5,
+        "change": 212.75,
+        "change_pct": 0.86
+      },
+      {
+        "name": "NIFTY 200",
+        "last": 13888.5,
+        "change": 126.1,
+        "change_pct": 0.92
+      },
+      {
+        "name": "NIFTY 500",
+        "last": 23127.4,
+        "change": 214.1,
+        "change_pct": 0.93
+      },
+      {
+        "name": "NIFTY MIDCAP 50",
+        "last": 17939.55,
+        "change": 230.1,
+        "change_pct": 1.3
+      },
+      {
+        "name": "NIFTY MIDCAP 100",
+        "last": 62335.0,
+        "change": 712.65,
+        "change_pct": 1.16
+      },
+      {
+        "name": "NIFTY SMALLCAP 100",
+        "last": 19093.35,
+        "change": 218.4,
+        "change_pct": 1.16
+      },
+      {
+        "name": "INDIA VIX",
+        "last": 13.09,
+        "change": -0.94,
+        "change_pct": -6.68
+      },
+      {
+        "name": "NIFTY MIDCAP 150",
+        "last": 22930.05,
+        "change": 244.8,
+        "change_pct": 1.08
+      },
+      {
+        "name": "NIFTY SMALLCAP 50",
+        "last": 9476.8,
+        "change": 114.15,
+        "change_pct": 1.22
+      },
+      {
+        "name": "NIFTY SMALLCAP 250",
+        "last": 17803.6,
+        "change": 202.4,
+        "change_pct": 1.15
+      },
+      {
+        "name": "NIFTY MIDSMALLCAP 400",
+        "last": 21061.1,
+        "change": 229.8,
+        "change_pct": 1.1
+      },
+      {
+        "name": "NIFTY500 MULTICAP 50:25:25",
+        "last": 16373.0,
+        "change": 159.7,
+        "change_pct": 0.98
+      },
+      {
+        "name": "NIFTY LARGEMIDCAP 250",
+        "last": 16578.35,
+        "change": 158.9,
+        "change_pct": 0.97
+      },
+      {
+        "name": "NIFTY TOTAL MARKET",
+        "last": 13051.7,
+        "change": 122.5,
+        "change_pct": 0.95
+      },
+      {
+        "name": "NIFTY MICROCAP 250",
+        "last": 25234.05,
+        "change": 307.4,
+        "change_pct": 1.23
+      },
+      {
+        "name": "NIFTY500 LARGEMIDSMALL EQUAL-CAP WEIGHTED",
+        "last": 18295.55,
+        "change": 186.15,
+        "change_pct": 1.03
+      },
+      {
+        "name": "NIFTY INDIA FPI 150",
+        "last": 1553.75,
+        "change": 14.9,
+        "change_pct": 0.97
+      },
+      {
+        "name": "NIFTY SMALLCAP 500",
+        "last": 20257.25,
+        "change": 234.3,
+        "change_pct": 1.17
+      },
+      {
+        "name": "NIFTY MIDSMALLCAP400 50:50",
+        "last": 20501.05,
+        "change": 225.95,
+        "change_pct": 1.11
+      },
+      {
+        "name": "NIFTY AUTO",
+        "last": 27544.25,
+        "change": 326.3,
+        "change_pct": 1.2
+      },
+      {
+        "name": "NIFTY FINANCIAL SERVICES 25/50",
+        "last": 28534.2,
+        "change": 182.8,
+        "change_pct": 0.64
+      },
+      {
+        "name": "NIFTY FMCG",
+        "last": 49551.65,
+        "change": 498.35,
+        "change_pct": 1.02
+      },
+      {
+        "name": "NIFTY IT",
+        "last": 29528.2,
+        "change": 760.25,
+        "change_pct": 2.64
+      },
+      {
+        "name": "NIFTY MEDIA",
+        "last": 1553.3,
+        "change": 25.85,
+        "change_pct": 1.69
+      },
+      {
+        "name": "NIFTY METAL",
+        "last": 12478.65,
+        "change": 77.1,
+        "change_pct": 0.62
+      },
+      {
+        "name": "NIFTY PHARMA",
+        "last": 25883.15,
+        "change": 335.0,
+        "change_pct": 1.31
+      },
+      {
+        "name": "NIFTY PSU BANK",
+        "last": 8368.4,
+        "change": 22.75,
+        "change_pct": 0.27
+      },
+      {
+        "name": "NIFTY PRIVATE BANK",
+        "last": 27372.8,
+        "change": 95.25,
+        "change_pct": 0.35
+      },
+      {
+        "name": "NIFTY REALTY",
+        "last": 896.3,
+        "change": 14.5,
+        "change_pct": 1.64
+      },
+      {
+        "name": "NIFTY HEALTHCARE INDEX",
+        "last": 16428.3,
+        "change": 192.05,
+        "change_pct": 1.18
+      },
+      {
+        "name": "NIFTY CONSUMER DURABLES",
+        "last": 39114.8,
+        "change": 166.4,
+        "change_pct": 0.43
+      },
+      {
+        "name": "NIFTY OIL & GAS",
+        "last": 11116.7,
+        "change": 39.7,
+        "change_pct": 0.36
+      },
+      {
+        "name": "NIFTY MIDSMALL HEALTHCARE",
+        "last": 51287.8,
+        "change": 947.2,
+        "change_pct": 1.88
+      },
+      {
+        "name": "NIFTY FINANCIAL SERVICES EX-BANK",
+        "last": 31700.75,
+        "change": 414.3,
+        "change_pct": 1.32
+      },
+      {
+        "name": "NIFTY MIDSMALL FINANCIAL SERVICES",
+        "last": 22126.7,
+        "change": 243.0,
+        "change_pct": 1.11
+      },
+      {
+        "name": "NIFTY MIDSMALL IT & TELECOM",
+        "last": 9443.9,
+        "change": 119.25,
+        "change_pct": 1.28
+      },
+      {
+        "name": "NIFTY CHEMICALS",
+        "last": 30361.25,
+        "change": 320.3,
+        "change_pct": 1.07
+      },
+      {
+        "name": "NIFTY500 HEALTHCARE",
+        "last": 21251.9,
+        "change": 290.0,
+        "change_pct": 1.38
+      },
+      {
+        "name": "NIFTY REITS & REALTY",
+        "last": 1944.4,
+        "change": 23.75,
+        "change_pct": 1.24
+      },
+      {
+        "name": "NIFTY CEMENT",
+        "last": 15346.9,
+        "change": 83.95,
+        "change_pct": 0.55
+      },
+      {
+        "name": "NIFTY DIVIDEND OPPORTUNITIES 50",
+        "last": 5870.8,
+        "change": 73.8,
+        "change_pct": 1.27
+      },
+      {
+        "name": "NIFTY GROWTH SECTORS 15",
+        "last": 11236.0,
+        "change": 169.4,
+        "change_pct": 1.53
+      },
+      {
+        "name": "NIFTY100 QUALITY 30",
+        "last": 5603.25,
+        "change": 65.8,
+        "change_pct": 1.19
+      },
+      {
+        "name": "NIFTY50 VALUE 20",
+        "last": 11854.65,
+        "change": 69.15,
+        "change_pct": 0.59
+      },
+      {
+        "name": "NIFTY50 TR 2X LEVERAGE",
+        "last": 17992.5,
+        "change": 291.1,
+        "change_pct": 1.64
+      },
+      {
+        "name": "NIFTY50 PR 2X LEVERAGE",
+        "last": 11838.1,
+        "change": 190.35,
+        "change_pct": 1.63
+      },
+      {
+        "name": "NIFTY50 TR 1X INVERSE",
+        "last": 179.7,
+        "change": -1.45,
+        "change_pct": -0.8
+      },
+      {
+        "name": "NIFTY50 PR 1X INVERSE",
+        "last": 221.15,
+        "change": -1.75,
+        "change_pct": -0.79
+      },
+      {
+        "name": "NIFTY50 DIVIDEND POINTS",
+        "last": 158.29,
+        "change": 1.25,
+        "change_pct": 0.8
+      },
+      {
+        "name": "NIFTY ALPHA 50",
+        "last": 53531.3,
+        "change": 509.9,
+        "change_pct": 0.96
+      },
+      {
+        "name": "NIFTY50 EQUAL WEIGHT",
+        "last": 32818.7,
+        "change": 317.6,
+        "change_pct": 0.98
+      },
+      {
+        "name": "NIFTY100 EQUAL WEIGHT",
+        "last": 34593.85,
+        "change": 329.75,
+        "change_pct": 0.96
+      },
+      {
+        "name": "NIFTY100 LOW VOLATILITY 30",
+        "last": 20216.0,
+        "change": 169.7,
+        "change_pct": 0.85
+      },
+      {
+        "name": "NIFTY200 QUALITY 30",
+        "last": 20413.45,
+        "change": 257.25,
+        "change_pct": 1.28
+      },
+      {
+        "name": "NIFTY ALPHA LOW-VOLATILITY 30",
+        "last": 27047.9,
+        "change": 164.9,
+        "change_pct": 0.61
+      },
+      {
+        "name": "NIFTY200 MOMENTUM 30",
+        "last": 30314.3,
+        "change": 255.9,
+        "change_pct": 0.85
+      },
+      {
+        "name": "NIFTY MIDCAP150 QUALITY 50",
+        "last": 24096.05,
+        "change": 226.25,
+        "change_pct": 0.95
+      },
+      {
+        "name": "NIFTY200 ALPHA 30",
+        "last": 25909.05,
+        "change": 258.2,
+        "change_pct": 1.01
+      },
+      {
+        "name": "NIFTY MIDCAP150 MOMENTUM 50",
+        "last": 62082.5,
+        "change": 612.7,
+        "change_pct": 1.0
+      },
+      {
+        "name": "NIFTY500 MOMENTUM 50",
+        "last": 52828.25,
+        "change": 395.45,
+        "change_pct": 0.75
+      },
+      {
+        "name": "NIFTY MIDSMALLCAP400 MOMENTUM QUALITY 100",
+        "last": 50451.2,
+        "change": 595.25,
+        "change_pct": 1.19
+      },
+      {
+        "name": "NIFTY SMALLCAP250 MOMENTUM QUALITY 100",
+        "last": 46898.8,
+        "change": 357.6,
+        "change_pct": 0.77
+      },
+      {
+        "name": "NIFTY TOP 10 EQUAL WEIGHT",
+        "last": 8526.15,
+        "change": 81.75,
+        "change_pct": 0.97
+      },
+      {
+        "name": "NIFTY ALPHA QUALITY LOW-VOLATILITY 30",
+        "last": 23046.65,
+        "change": 229.65,
+        "change_pct": 1.01
+      },
+      {
+        "name": "NIFTY ALPHA QUALITY VALUE LOW-VOLATILITY 30",
+        "last": 20343.0,
+        "change": 144.75,
+        "change_pct": 0.72
+      },
+      {
+        "name": "NIFTY HIGH BETA 50",
+        "last": 4360.15,
+        "change": 42.9,
+        "change_pct": 0.99
+      },
+      {
+        "name": "NIFTY LOW VOLATILITY 50",
+        "last": 24733.9,
+        "change": 221.45,
+        "change_pct": 0.9
+      },
+      {
+        "name": "NIFTY QUALITY LOW-VOLATILITY 30",
+        "last": 16719.5,
+        "change": 184.4,
+        "change_pct": 1.12
+      },
+      {
+        "name": "NIFTY SMALLCAP250 QUALITY 50",
+        "last": 25168.6,
+        "change": 227.2,
+        "change_pct": 0.91
+      },
+      {
+        "name": "NIFTY TOP 15 EQUAL WEIGHT",
+        "last": 9726.8,
+        "change": 111.8,
+        "change_pct": 1.16
+      },
+      {
+        "name": "NIFTY100 ALPHA 30",
+        "last": 17948.75,
+        "change": 102.55,
+        "change_pct": 0.57
+      },
+      {
+        "name": "NIFTY200 VALUE 30",
+        "last": 15079.85,
+        "change": 108.1,
+        "change_pct": 0.72
+      },
+      {
+        "name": "NIFTY500 EQUAL WEIGHT",
+        "last": 14810.25,
+        "change": 160.45,
+        "change_pct": 1.1
+      },
+      {
+        "name": "NIFTY500 MULTICAP MOMENTUM QUALITY 50",
+        "last": 40761.7,
+        "change": 344.0,
+        "change_pct": 0.85
+      },
+      {
+        "name": "NIFTY500 VALUE 50",
+        "last": 16010.9,
+        "change": 112.25,
+        "change_pct": 0.71
+      },
+      {
+        "name": "NIFTY TOP 20 EQUAL WEIGHT",
+        "last": 8773.4,
+        "change": 116.35,
+        "change_pct": 1.34
+      },
+      {
+        "name": "NIFTY500 QUALITY 50",
+        "last": 19640.7,
+        "change": 184.35,
+        "change_pct": 0.95
+      },
+      {
+        "name": "NIFTY500 LOW VOLATILITY 50",
+        "last": 22419.55,
+        "change": 175.05,
+        "change_pct": 0.79
+      },
+      {
+        "name": "NIFTY500 MULTIFACTOR MQVLV 50",
+        "last": 31019.5,
+        "change": 287.65,
+        "change_pct": 0.94
+      },
+      {
+        "name": "NIFTY50 USD",
+        "last": 8632.25,
+        "change": 104.1,
+        "change_pct": 1.22
+      },
+      {
+        "name": "NIFTY500 FLEXICAP QUALITY 30",
+        "last": 9957.6,
+        "change": 121.0,
+        "change_pct": 1.23
+      },
+      {
+        "name": "NIFTY TOTAL MARKET MOMENTUM QUALITY 50",
+        "last": 43221.25,
+        "change": 372.7,
+        "change_pct": 0.87
+      },
+      {
+        "name": "NIFTY COMMODITIES",
+        "last": 9814.3,
+        "change": 49.55,
+        "change_pct": 0.51
+      },
+      {
+        "name": "NIFTY INDIA CONSUMPTION",
+        "last": 11852.9,
+        "change": 152.75,
+        "change_pct": 1.31
+      },
+      {
+        "name": "NIFTY CPSE",
+        "last": 6651.05,
+        "change": 2.95,
+        "change_pct": 0.04
+      },
+      {
+        "name": "NIFTY ENERGY",
+        "last": 38896.05,
+        "change": 74.25,
+        "change_pct": 0.19
+      },
+      {
+        "name": "NIFTY INFRASTRUCTURE",
+        "last": 9300.2,
+        "change": 59.35,
+        "change_pct": 0.64
+      },
+      {
+        "name": "NIFTY100 LIQUID 15",
+        "last": 7422.5,
+        "change": 90.0,
+        "change_pct": 1.23
+      },
+      {
+        "name": "NIFTY MIDCAP LIQUID 15",
+        "last": 16553.0,
+        "change": 172.1,
+        "change_pct": 1.05
+      },
+      {
+        "name": "NIFTY MNC",
+        "last": 32664.35,
+        "change": 303.6,
+        "change_pct": 0.94
+      },
+      {
+        "name": "NIFTY PSE",
+        "last": 10016.4,
+        "change": 64.1,
+        "change_pct": 0.64
+      },
+      {
+        "name": "NIFTY SERVICES SECTOR",
+        "last": 30708.85,
+        "change": 266.55,
+        "change_pct": 0.88
+      },
+      {
+        "name": "NIFTY100 ESG SECTOR LEADERS",
+        "last": 4033.75,
+        "change": 33.8,
+        "change_pct": 0.85
+      },
+      {
+        "name": "NIFTY INDIA DIGITAL",
+        "last": 8253.6,
+        "change": 165.9,
+        "change_pct": 2.05
+      },
+      {
+        "name": "NIFTY100 ESG",
+        "last": 4973.6,
+        "change": 52.6,
+        "change_pct": 1.07
+      },
+      {
+        "name": "NIFTY INDIA MANUFACTURING",
+        "last": 15996.55,
+        "change": 151.6,
+        "change_pct": 0.96
+      },
+      {
+        "name": "NIFTY INDIA CORPORATE GROUP INDEX - TATA GROUP 25% CAP",
+        "last": 14268.85,
+        "change": 182.9,
+        "change_pct": 1.3
+      },
+      {
+        "name": "NIFTY500 MULTICAP INDIA MANUFACTURING 50:30:20",
+        "last": 16424.9,
+        "change": 160.0,
+        "change_pct": 0.98
+      },
+      {
+        "name": "NIFTY500 MULTICAP INFRASTRUCTURE 50:30:20",
+        "last": 14507.6,
+        "change": 90.95,
+        "change_pct": 0.63
+      },
+      {
+        "name": "NIFTY INDIA DEFENCE",
+        "last": 9381.15,
+        "change": 26.7,
+        "change_pct": 0.29
+      },
+      {
+        "name": "NIFTY INDIA TOURISM",
+        "last": 7908.35,
+        "change": 155.2,
+        "change_pct": 2.0
+      },
+      {
+        "name": "NIFTY CAPITAL MARKETS",
+        "last": 5285.1,
+        "change": 41.25,
+        "change_pct": 0.79
+      },
+      {
+        "name": "NIFTY EV & NEW AGE AUTOMOTIVE",
+        "last": 3178.4,
+        "change": 28.4,
+        "change_pct": 0.9
+      },
+      {
+        "name": "NIFTY INDIA NEW AGE CONSUMPTION",
+        "last": 11736.25,
+        "change": 161.25,
+        "change_pct": 1.39
+      },
+      {
+        "name": "NIFTY INDIA SELECT 5 CORPORATE GROUPS (MAATR)",
+        "last": 38556.65,
+        "change": 239.0,
+        "change_pct": 0.62
+      },
+      {
+        "name": "NIFTY MOBILITY",
+        "last": 22669.15,
+        "change": 361.5,
+        "change_pct": 1.62
+      },
+      {
+        "name": "NIFTY100 ENHANCED ESG",
+        "last": 5007.3,
+        "change": 52.8,
+        "change_pct": 1.07
+      },
+      {
+        "name": "NIFTY CORE HOUSING",
+        "last": 15752.65,
+        "change": 162.2,
+        "change_pct": 1.04
+      },
+      {
+        "name": "NIFTY HOUSING",
+        "last": 11897.35,
+        "change": 75.3,
+        "change_pct": 0.64
+      },
+      {
+        "name": "NIFTY IPO",
+        "last": 2297.5,
+        "change": 17.3,
+        "change_pct": 0.76
+      },
+      {
+        "name": "NIFTY MIDSMALL INDIA CONSUMPTION",
+        "last": 18782.8,
+        "change": 184.0,
+        "change_pct": 0.99
+      },
+      {
+        "name": "NIFTY NON-CYCLICAL CONSUMER",
+        "last": 15384.65,
+        "change": 220.4,
+        "change_pct": 1.45
+      },
+      {
+        "name": "NIFTY RURAL",
+        "last": 15424.35,
+        "change": 142.0,
+        "change_pct": 0.93
+      },
+      {
+        "name": "NIFTY SHARIAH 25",
+        "last": 7995.55,
+        "change": 99.4,
+        "change_pct": 1.26
+      },
+      {
+        "name": "NIFTY TRANSPORTATION & LOGISTICS",
+        "last": 25257.15,
+        "change": 409.4,
+        "change_pct": 1.65
+      },
+      {
+        "name": "NIFTY50 SHARIAH",
+        "last": 4283.75,
+        "change": 68.15,
+        "change_pct": 1.62
+      },
+      {
+        "name": "NIFTY500 SHARIAH",
+        "last": 6927.6,
+        "change": 91.3,
+        "change_pct": 1.34
+      },
+      {
+        "name": "NIFTY SME EMERGE",
+        "last": 14017.4,
+        "change": 89.25,
+        "change_pct": 0.64
+      },
+      {
+        "name": "NIFTY INDIA INTERNET",
+        "last": 1325.65,
+        "change": 27.35,
+        "change_pct": 2.11
+      },
+      {
+        "name": "NIFTY WAVES",
+        "last": 1936.5,
+        "change": 16.75,
+        "change_pct": 0.87
+      },
+      {
+        "name": "NIFTY INDIA INFRASTRUCTURE & LOGISTICS",
+        "last": 12107.75,
+        "change": 77.55,
+        "change_pct": 0.64
+      },
+      {
+        "name": "NIFTY INDIA RAILWAYS PSU",
+        "last": 2859.2,
+        "change": 43.45,
+        "change_pct": 1.54
+      },
+      {
+        "name": "NIFTY CONGLOMERATE 50",
+        "last": 14887.35,
+        "change": 173.65,
+        "change_pct": 1.18
+      },
+      {
+        "name": "NIFTY 8-13 YR G-SEC",
+        "last": 3054.5,
+        "change": 10.28,
+        "change_pct": 0.33
+      },
+      {
+        "name": "NIFTY 10 YR BENCHMARK G-SEC",
+        "last": 2676.79,
+        "change": 10.07,
+        "change_pct": 0.37
+      },
+      {
+        "name": "NIFTY 10 YR BENCHMARK G-SEC (CLEAN PRICE)",
+        "last": 878.6,
+        "change": 3.18,
+        "change_pct": 0.36
+      },
+      {
+        "name": "NIFTY 4-8 YR G-SEC INDEX",
+        "last": 3334.5,
+        "change": 9.12,
+        "change_pct": 0.27
+      },
+      {
+        "name": "NIFTY 11-15 YR G-SEC INDEX",
+        "last": 3378.03,
+        "change": 14.04,
+        "change_pct": 0.41
+      },
+      {
+        "name": "NIFTY 15 YR AND ABOVE G-SEC INDEX",
+        "last": 3566.1,
+        "change": 18.2,
+        "change_pct": 0.51
+      },
+      {
+        "name": "NIFTY COMPOSITE G-SEC INDEX",
+        "last": 3144.78,
+        "change": 11.82,
+        "change_pct": 0.37
+      },
+      {
+        "name": "NIFTY BHARAT BOND INDEX - APRIL 2030",
+        "last": 1605.05,
+        "change": 0.93,
+        "change_pct": 0.01
+      },
+      {
+        "name": "NIFTY BHARAT BOND INDEX - APRIL 2031",
+        "last": 1460.73,
+        "change": 0.84,
+        "change_pct": 0.01
+      },
+      {
+        "name": "NIFTY BHARAT BOND INDEX - APRIL 2032",
+        "last": 1328.97,
+        "change": 0.76,
+        "change_pct": 0.01
+      },
+      {
+        "name": "NIFTY BHARAT BOND INDEX - APRIL 2033",
+        "last": 1288.7,
+        "change": 0.75,
+        "change_pct": 0.01
+      }
+    ],
+    "sectors": [
+      {
+        "name": "NIFTY IT",
+        "last": 29528.2,
+        "change": 760.25,
+        "change_pct": 2.64
+      },
+      {
+        "name": "NIFTY MEDIA",
+        "last": 1553.3,
+        "change": 25.85,
+        "change_pct": 1.69
+      },
+      {
+        "name": "NIFTY REALTY",
+        "last": 896.3,
+        "change": 14.5,
+        "change_pct": 1.64
+      },
+      {
+        "name": "NIFTY PHARMA",
+        "last": 25883.15,
+        "change": 335.0,
+        "change_pct": 1.31
+      },
+      {
+        "name": "NIFTY AUTO",
+        "last": 27544.25,
+        "change": 326.3,
+        "change_pct": 1.2
+      },
+      {
+        "name": "NIFTY HEALTHCARE INDEX",
+        "last": 16428.3,
+        "change": 192.05,
+        "change_pct": 1.18
+      },
+      {
+        "name": "NIFTY FMCG",
+        "last": 49551.65,
+        "change": 498.35,
+        "change_pct": 1.02
+      },
+      {
+        "name": "NIFTY BANK",
+        "last": 57051.55,
+        "change": 358.05,
+        "change_pct": 0.63
+      },
+      {
+        "name": "NIFTY FINANCIAL SERVICES",
+        "last": 26071.1,
+        "change": 161.2,
+        "change_pct": 0.62
+      },
+      {
+        "name": "NIFTY METAL",
+        "last": 12478.65,
+        "change": 77.1,
+        "change_pct": 0.62
+      },
+      {
+        "name": "NIFTY CONSUMER DURABLES",
+        "last": 39114.8,
+        "change": 166.4,
+        "change_pct": 0.43
+      },
+      {
+        "name": "NIFTY OIL & GAS",
+        "last": 11116.7,
+        "change": 39.7,
+        "change_pct": 0.36
+      },
+      {
+        "name": "NIFTY PRIVATE BANK",
+        "last": 27372.8,
+        "change": 95.25,
+        "change_pct": 0.35
+      },
+      {
+        "name": "NIFTY PSU BANK",
+        "last": 8368.4,
+        "change": 22.75,
+        "change_pct": 0.27
+      }
+    ],
+    "india_vix": {
+      "name": "INDIA VIX",
+      "last": 13.09,
+      "change": -0.94,
+      "change_pct": -6.68
+    },
+    "nifty_spot": 23966.65,
+    "banknifty_spot": 57051.55,
+    "gift_nifty": null
+  },
+  "fii_dii": {
+    "source": "nse",
+    "fii_net": -3892.77,
+    "dii_net": 5453.55,
+    "rows": [
+      {
+        "category": "DII",
+        "buy": 18959.43,
+        "sell": 13505.88,
+        "net": 5453.55
+      },
+      {
+        "category": "FII/FPI",
+        "buy": 11123.86,
+        "sell": 15016.63,
+        "net": -3892.77
+      }
+    ]
+  },
+  "option_chains": {
+    "NIFTY": {
+      "symbol": "NIFTY",
+      "source": "nse_nextapi",
+      "underlying": 23964.95,
+      "pcr": 0.8807784254701575,
+      "total_call_oi": 3828292.0,
+      "total_put_oi": 3371877.0,
+      "support": 23900.0,
+      "resistance": 24000.0,
+      "support_put_oi": 299211.0,
+      "resistance_call_oi": 376815.0,
+      "expiry": "28-Jul-2026",
+      "rows": [
+        {
+          "strike": 23900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 185437.0,
+          "put_oi": 299211.0,
+          "call_change_oi": 94711.0,
+          "put_change_oi": 250370.0
+        },
+        {
+          "strike": 24000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 376815.0,
+          "put_oi": 203632.0,
+          "call_change_oi": 169443.0,
+          "put_change_oi": 131513.0
+        },
+        {
+          "strike": 23950.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 209816.0,
+          "put_oi": 188205.0,
+          "call_change_oi": 164146.0,
+          "put_change_oi": 168037.0
+        },
+        {
+          "strike": 23800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 78015.0,
+          "put_oi": 228299.0,
+          "call_change_oi": -33408.0,
+          "put_change_oi": 103739.0
+        },
+        {
+          "strike": 24100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 242649.0,
+          "put_oi": 53654.0,
+          "call_change_oi": 85475.0,
+          "put_change_oi": 15117.0
+        },
+        {
+          "strike": 23850.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 58456.0,
+          "put_oi": 119539.0,
+          "call_change_oi": 2843.0,
+          "put_change_oi": 85017.0
+        },
+        {
+          "strike": 24050.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 129126.0,
+          "put_oi": 34983.0,
+          "call_change_oi": 68204.0,
+          "put_change_oi": 24229.0
+        },
+        {
+          "strike": 24200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 252444.0,
+          "put_oi": 40782.0,
+          "call_change_oi": 48587.0,
+          "put_change_oi": -1949.0
+        },
+        {
+          "strike": 23700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 37597.0,
+          "put_oi": 173416.0,
+          "call_change_oi": -23951.0,
+          "put_change_oi": 45566.0
+        },
+        {
+          "strike": 23750.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 16334.0,
+          "put_oi": 88993.0,
+          "call_change_oi": -10854.0,
+          "put_change_oi": 29099.0
+        },
+        {
+          "strike": 23600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 12334.0,
+          "put_oi": 140676.0,
+          "call_change_oi": -3757.0,
+          "put_change_oi": 18926.0
+        },
+        {
+          "strike": 24150.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 107341.0,
+          "put_oi": 8137.0,
+          "call_change_oi": 42952.0,
+          "put_change_oi": 2759.0
+        },
+        {
+          "strike": 23500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 12906.0,
+          "put_oi": 162916.0,
+          "call_change_oi": -1989.0,
+          "put_change_oi": 3671.0
+        },
+        {
+          "strike": 23650.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 15261.0,
+          "put_oi": 89648.0,
+          "call_change_oi": -2649.0,
+          "put_change_oi": 27469.0
+        },
+        {
+          "strike": 24500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 202001.0,
+          "put_oi": 29125.0,
+          "call_change_oi": 22245.0,
+          "put_change_oi": -4926.0
+        },
+        {
+          "strike": 23400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1835.0,
+          "put_oi": 107183.0,
+          "call_change_oi": -192.0,
+          "put_change_oi": 638.0
+        },
+        {
+          "strike": 24300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 159879.0,
+          "put_oi": 17720.0,
+          "call_change_oi": 22164.0,
+          "put_change_oi": -340.0
+        },
+        {
+          "strike": 23300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1390.0,
+          "put_oi": 105476.0,
+          "call_change_oi": -111.0,
+          "put_change_oi": -14419.0
+        },
+        {
+          "strike": 24400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 120946.0,
+          "put_oi": 11088.0,
+          "call_change_oi": 11911.0,
+          "put_change_oi": -232.0
+        },
+        {
+          "strike": 23000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 6404.0,
+          "put_oi": 211304.0,
+          "call_change_oi": -954.0,
+          "put_change_oi": 7895.0
+        },
+        {
+          "strike": 24250.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 121543.0,
+          "put_oi": 7381.0,
+          "call_change_oi": 60854.0,
+          "put_change_oi": 1158.0
+        },
+        {
+          "strike": 23200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 843.0,
+          "put_oi": 95016.0,
+          "call_change_oi": -72.0,
+          "put_change_oi": 1557.0
+        },
+        {
+          "strike": 23550.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 3113.0,
+          "put_oi": 59598.0,
+          "call_change_oi": -388.0,
+          "put_change_oi": 16274.0
+        },
+        {
+          "strike": 23450.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1345.0,
+          "put_oi": 52446.0,
+          "call_change_oi": 58.0,
+          "put_change_oi": 11326.0
+        },
+        {
+          "strike": 24350.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 64647.0,
+          "put_oi": 1914.0,
+          "call_change_oi": 25215.0,
+          "put_change_oi": 120.0
+        },
+        {
+          "strike": 24450.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 55431.0,
+          "put_oi": 956.0,
+          "call_change_oi": 23612.0,
+          "put_change_oi": -273.0
+        },
+        {
+          "strike": 23350.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 946.0,
+          "put_oi": 55067.0,
+          "call_change_oi": -84.0,
+          "put_change_oi": 10080.0
+        },
+        {
+          "strike": 25000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 208450.0,
+          "put_oi": 20674.0,
+          "call_change_oi": -23077.0,
+          "put_change_oi": -977.0
+        },
+        {
+          "strike": 24600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 96275.0,
+          "put_oi": 3383.0,
+          "call_change_oi": 15413.0,
+          "put_change_oi": -1010.0
+        },
+        {
+          "strike": 23100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 737.0,
+          "put_oi": 61826.0,
+          "call_change_oi": -17.0,
+          "put_change_oi": 8957.0
+        },
+        {
+          "strike": 24700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 89050.0,
+          "put_oi": 2103.0,
+          "call_change_oi": 7300.0,
+          "put_change_oi": -295.0
+        },
+        {
+          "strike": 24800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 124968.0,
+          "put_oi": 2313.0,
+          "call_change_oi": 26672.0,
+          "put_change_oi": -391.0
+        },
+        {
+          "strike": 22500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2895.0,
+          "put_oi": 76291.0,
+          "call_change_oi": -176.0,
+          "put_change_oi": -31318.0
+        },
+        {
+          "strike": 22900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 838.0,
+          "put_oi": 49228.0,
+          "call_change_oi": -5.0,
+          "put_change_oi": 6705.0
+        },
+        {
+          "strike": 23250.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 228.0,
+          "put_oi": 34135.0,
+          "call_change_oi": -4.0,
+          "put_change_oi": -2459.0
+        },
+        {
+          "strike": 22800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 277.0,
+          "put_oi": 48406.0,
+          "call_change_oi": -2.0,
+          "put_change_oi": -17291.0
+        },
+        {
+          "strike": 22700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 89.0,
+          "put_oi": 39320.0,
+          "call_change_oi": 1.0,
+          "put_change_oi": -8500.0
+        },
+        {
+          "strike": 24550.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 46868.0,
+          "put_oi": 803.0,
+          "call_change_oi": 15218.0,
+          "put_change_oi": -248.0
+        },
+        {
+          "strike": 24650.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 42678.0,
+          "put_oi": 491.0,
+          "call_change_oi": -1356.0,
+          "put_change_oi": -80.0
+        },
+        {
+          "strike": 23150.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 129.0,
+          "put_oi": 34251.0,
+          "call_change_oi": 2.0,
+          "put_change_oi": 5803.0
+        },
+        {
+          "strike": 22950.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 24.0,
+          "put_oi": 21339.0,
+          "call_change_oi": 1.0,
+          "put_change_oi": -2009.0
+        },
+        {
+          "strike": 25200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 81817.0,
+          "put_oi": 1193.0,
+          "call_change_oi": -4946.0,
+          "put_change_oi": -383.0
+        },
+        {
+          "strike": 24900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 58167.0,
+          "put_oi": 937.0,
+          "call_change_oi": 4439.0,
+          "put_change_oi": -69.0
+        },
+        {
+          "strike": 23050.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 27.0,
+          "put_oi": 23713.0,
+          "call_change_oi": -1.0,
+          "put_change_oi": 4676.0
+        },
+        {
+          "strike": 22600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 20398.0,
+          "call_change_oi": 0,
+          "put_change_oi": -17624.0
+        },
+        {
+          "strike": 25500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 93385.0,
+          "put_oi": 12618.0,
+          "call_change_oi": -24224.0,
+          "put_change_oi": -87.0
+        },
+        {
+          "strike": 24750.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 29559.0,
+          "put_oi": 506.0,
+          "call_change_oi": 1948.0,
+          "put_change_oi": -5.0
+        },
+        {
+          "strike": 25300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 72342.0,
+          "put_oi": 260.0,
+          "call_change_oi": -22192.0,
+          "put_change_oi": -5.0
+        },
+        {
+          "strike": 22850.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 11146.0,
+          "call_change_oi": 0,
+          "put_change_oi": -5549.0
+        },
+        {
+          "strike": 22000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 5550.0,
+          "put_oi": 56788.0,
+          "call_change_oi": -492.0,
+          "put_change_oi": -17302.0
+        },
+        {
+          "strike": 25100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 49932.0,
+          "put_oi": 541.0,
+          "call_change_oi": -282.0,
+          "put_change_oi": -51.0
+        },
+        {
+          "strike": 24850.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 32750.0,
+          "put_oi": 289.0,
+          "call_change_oi": 12006.0,
+          "put_change_oi": -5.0
+        },
+        {
+          "strike": 25400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 37263.0,
+          "put_oi": 162.0,
+          "call_change_oi": -18343.0,
+          "put_change_oi": -51.0
+        },
+        {
+          "strike": 26000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 67168.0,
+          "put_oi": 21230.0,
+          "call_change_oi": -13426.0,
+          "put_change_oi": -824.0
+        },
+        {
+          "strike": 24950.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 23133.0,
+          "put_oi": 199.0,
+          "call_change_oi": 3861.0,
+          "put_change_oi": 1.0
+        },
+        {
+          "strike": 22750.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 9200.0,
+          "call_change_oi": 0,
+          "put_change_oi": -5879.0
+        },
+        {
+          "strike": 22400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 16557.0,
+          "call_change_oi": 0,
+          "put_change_oi": -8146.0
+        },
+        {
+          "strike": 21500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 4908.0,
+          "put_oi": 28769.0,
+          "call_change_oi": -746.0,
+          "put_change_oi": -6276.0
+        },
+        {
+          "strike": 22300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 16008.0,
+          "call_change_oi": 0,
+          "put_change_oi": -6789.0
+        },
+        {
+          "strike": 22650.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 10456.0,
+          "call_change_oi": 0,
+          "put_change_oi": -950.0
+        },
+        {
+          "strike": 22200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 12219.0,
+          "call_change_oi": 0,
+          "put_change_oi": -3348.0
+        },
+        {
+          "strike": 25050.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 14013.0,
+          "put_oi": 37.0,
+          "call_change_oi": 3992.0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 25150.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 13893.0,
+          "put_oi": 30.0,
+          "call_change_oi": 2491.0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 25600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 15623.0,
+          "put_oi": 173.0,
+          "call_change_oi": -6980.0,
+          "put_change_oi": -17.0
+        },
+        {
+          "strike": 22450.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 6994.0,
+          "call_change_oi": 0,
+          "put_change_oi": 2185.0
+        },
+        {
+          "strike": 22550.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 5163.0,
+          "call_change_oi": 0,
+          "put_change_oi": 510.0
+        },
+        {
+          "strike": 25800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 17599.0,
+          "put_oi": 289.0,
+          "call_change_oi": -198.0,
+          "put_change_oi": -34.0
+        },
+        {
+          "strike": 22350.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 4751.0,
+          "call_change_oi": 0,
+          "put_change_oi": -1168.0
+        },
+        {
+          "strike": 21300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 11728.0,
+          "call_change_oi": 0,
+          "put_change_oi": -337.0
+        },
+        {
+          "strike": 25250.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 16995.0,
+          "put_oi": 0,
+          "call_change_oi": 536.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 21800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2.0,
+          "put_oi": 15911.0,
+          "call_change_oi": 0.0,
+          "put_change_oi": -3329.0
+        },
+        {
+          "strike": 25350.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 31832.0,
+          "put_oi": 24.0,
+          "call_change_oi": -2054.0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 26300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 14170.0,
+          "put_oi": 6436.0,
+          "call_change_oi": -2490.0,
+          "put_change_oi": -633.0
+        },
+        {
+          "strike": 25450.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 8039.0,
+          "put_oi": 0,
+          "call_change_oi": -3703.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 22100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 8890.0,
+          "call_change_oi": 0,
+          "put_change_oi": -2493.0
+        },
+        {
+          "strike": 25550.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 8041.0,
+          "put_oi": 0,
+          "call_change_oi": -3360.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 21600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 4772.0,
+          "call_change_oi": 0,
+          "put_change_oi": -725.0
+        },
+        {
+          "strike": 21100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 376.0,
+          "put_oi": 39436.0,
+          "call_change_oi": -28.0,
+          "put_change_oi": -1222.0
+        },
+        {
+          "strike": 21400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 5968.0,
+          "call_change_oi": 0,
+          "put_change_oi": 610.0
+        },
+        {
+          "strike": 25700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 11519.0,
+          "put_oi": 180.0,
+          "call_change_oi": 176.0,
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 21700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 4037.0,
+          "call_change_oi": 0,
+          "put_change_oi": 180.0
+        },
+        {
+          "strike": 22250.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 3938.0,
+          "call_change_oi": 0,
+          "put_change_oi": -838.0
+        },
+        {
+          "strike": 21900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 3139.0,
+          "call_change_oi": 0,
+          "put_change_oi": -1210.0
+        },
+        {
+          "strike": 26100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 4280.0,
+          "put_oi": 359.0,
+          "call_change_oi": -411.0,
+          "put_change_oi": -23.0
+        },
+        {
+          "strike": 25750.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 3448.0,
+          "put_oi": 0,
+          "call_change_oi": 960.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 25900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 5204.0,
+          "put_oi": 39.0,
+          "call_change_oi": -870.0,
+          "put_change_oi": -19.0
+        },
+        {
+          "strike": 22150.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1113.0,
+          "call_change_oi": 0,
+          "put_change_oi": 25.0
+        },
+        {
+          "strike": 21150.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 2540.0,
+          "call_change_oi": 0,
+          "put_change_oi": 499.0
+        },
+        {
+          "strike": 21200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 11022.0,
+          "call_change_oi": 0,
+          "put_change_oi": -706.0
+        },
+        {
+          "strike": 26200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 4870.0,
+          "put_oi": 545.0,
+          "call_change_oi": 346.0,
+          "put_change_oi": -54.0
+        },
+        {
+          "strike": 22050.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1449.0,
+          "call_change_oi": 0,
+          "put_change_oi": 152.0
+        },
+        {
+          "strike": 26250.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2317.0,
+          "put_oi": 0,
+          "call_change_oi": -802.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 25650.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 3380.0,
+          "put_oi": 8.0,
+          "call_change_oi": -806.0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 21350.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 2533.0,
+          "call_change_oi": 0,
+          "put_change_oi": -193.0
+        },
+        {
+          "strike": 25950.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2356.0,
+          "put_oi": 0,
+          "call_change_oi": 38.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 25850.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2215.0,
+          "put_oi": 4.0,
+          "call_change_oi": -27.0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 21650.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1043.0,
+          "call_change_oi": 0,
+          "put_change_oi": 327.0
+        },
+        {
+          "strike": 26050.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2444.0,
+          "put_oi": 0,
+          "call_change_oi": -444.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 21950.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1132.0,
+          "call_change_oi": 0,
+          "put_change_oi": 410.0
+        },
+        {
+          "strike": 26150.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1315.0,
+          "put_oi": 0,
+          "call_change_oi": -390.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 21250.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1149.0,
+          "call_change_oi": 0,
+          "put_change_oi": 583.0
+        },
+        {
+          "strike": 21750.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 897.0,
+          "call_change_oi": 0,
+          "put_change_oi": 138.0
+        },
+        {
+          "strike": 21450.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 402.0,
+          "call_change_oi": 0,
+          "put_change_oi": -364.0
+        },
+        {
+          "strike": 21550.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 885.0,
+          "call_change_oi": 0,
+          "put_change_oi": 238.0
+        },
+        {
+          "strike": 21850.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 744.0,
+          "call_change_oi": 0,
+          "put_change_oi": 174.0
+        }
+      ]
+    },
+    "BANKNIFTY": {
+      "symbol": "BANKNIFTY",
+      "source": "nse_nextapi",
+      "underlying": 57056.15,
+      "pcr": 0.7489504677610689,
+      "total_call_oi": 844662.0,
+      "total_put_oi": 632610.0,
+      "support": 57000.0,
+      "resistance": 58000.0,
+      "support_put_oi": 49032.0,
+      "resistance_call_oi": 70174.0,
+      "expiry": "28-Jul-2026",
+      "rows": [
+        {
+          "strike": 57000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 55853.0,
+          "put_oi": 49032.0,
+          "call_change_oi": 22021.0,
+          "put_change_oi": 27096.0
+        },
+        {
+          "strike": 57500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 52753.0,
+          "put_oi": 14278.0,
+          "call_change_oi": 18868.0,
+          "put_change_oi": 3634.0
+        },
+        {
+          "strike": 57200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 36669.0,
+          "put_oi": 15583.0,
+          "call_change_oi": 27468.0,
+          "put_change_oi": 13363.0
+        },
+        {
+          "strike": 57300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 36873.0,
+          "put_oi": 11096.0,
+          "call_change_oi": 27468.0,
+          "put_change_oi": 8487.0
+        },
+        {
+          "strike": 57100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 25507.0,
+          "put_oi": 18664.0,
+          "call_change_oi": 19275.0,
+          "put_change_oi": 16668.0
+        },
+        {
+          "strike": 56500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 12197.0,
+          "put_oi": 28640.0,
+          "call_change_oi": -4027.0,
+          "put_change_oi": 4533.0
+        },
+        {
+          "strike": 58000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 70174.0,
+          "put_oi": 25598.0,
+          "call_change_oi": 7487.0,
+          "put_change_oi": -1236.0
+        },
+        {
+          "strike": 56800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 10950.0,
+          "put_oi": 18549.0,
+          "call_change_oi": -6616.0,
+          "put_change_oi": 5201.0
+        },
+        {
+          "strike": 56900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 10130.0,
+          "put_oi": 14442.0,
+          "call_change_oi": 1823.0,
+          "put_change_oi": 9159.0
+        },
+        {
+          "strike": 57400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 18830.0,
+          "put_oi": 5232.0,
+          "call_change_oi": 9503.0,
+          "put_change_oi": 2046.0
+        },
+        {
+          "strike": 56700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 10401.0,
+          "put_oi": 16066.0,
+          "call_change_oi": -5501.0,
+          "put_change_oi": -1552.0
+        },
+        {
+          "strike": 56000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 6602.0,
+          "put_oi": 41326.0,
+          "call_change_oi": -1678.0,
+          "put_change_oi": 7791.0
+        },
+        {
+          "strike": 59000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 45120.0,
+          "put_oi": 15423.0,
+          "call_change_oi": -8529.0,
+          "put_change_oi": -2823.0
+        },
+        {
+          "strike": 56600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2787.0,
+          "put_oi": 9060.0,
+          "call_change_oi": -1483.0,
+          "put_change_oi": 1068.0
+        },
+        {
+          "strike": 58500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 43090.0,
+          "put_oi": 9458.0,
+          "call_change_oi": 2879.0,
+          "put_change_oi": -647.0
+        },
+        {
+          "strike": 55500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1359.0,
+          "put_oi": 22701.0,
+          "call_change_oi": -69.0,
+          "put_change_oi": -5881.0
+        },
+        {
+          "strike": 57600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 15245.0,
+          "put_oi": 2718.0,
+          "call_change_oi": 6499.0,
+          "put_change_oi": 19.0
+        },
+        {
+          "strike": 57700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 17112.0,
+          "put_oi": 3791.0,
+          "call_change_oi": 6619.0,
+          "put_change_oi": 75.0
+        },
+        {
+          "strike": 57800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 20413.0,
+          "put_oi": 4533.0,
+          "call_change_oi": 8186.0,
+          "put_change_oi": -17.0
+        },
+        {
+          "strike": 56400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1737.0,
+          "put_oi": 10341.0,
+          "call_change_oi": -754.0,
+          "put_change_oi": 749.0
+        },
+        {
+          "strike": 56300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2295.0,
+          "put_oi": 11316.0,
+          "call_change_oi": -564.0,
+          "put_change_oi": 1410.0
+        },
+        {
+          "strike": 55000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2571.0,
+          "put_oi": 28556.0,
+          "call_change_oi": -376.0,
+          "put_change_oi": -1345.0
+        },
+        {
+          "strike": 56200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2393.0,
+          "put_oi": 13310.0,
+          "call_change_oi": -461.0,
+          "put_change_oi": 110.0
+        },
+        {
+          "strike": 57900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 14743.0,
+          "put_oi": 4281.0,
+          "call_change_oi": 3291.0,
+          "put_change_oi": 98.0
+        },
+        {
+          "strike": 56100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2475.0,
+          "put_oi": 11461.0,
+          "call_change_oi": -229.0,
+          "put_change_oi": 1914.0
+        },
+        {
+          "strike": 60000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 50028.0,
+          "put_oi": 17219.0,
+          "call_change_oi": -2368.0,
+          "put_change_oi": -54.0
+        },
+        {
+          "strike": 59500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 26768.0,
+          "put_oi": 853.0,
+          "call_change_oi": 1045.0,
+          "put_change_oi": -18.0
+        },
+        {
+          "strike": 58300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 14180.0,
+          "put_oi": 3086.0,
+          "call_change_oi": 4074.0,
+          "put_change_oi": -153.0
+        },
+        {
+          "strike": 58200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 15390.0,
+          "put_oi": 4076.0,
+          "call_change_oi": 2854.0,
+          "put_change_oi": -117.0
+        },
+        {
+          "strike": 58600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 15617.0,
+          "put_oi": 1893.0,
+          "call_change_oi": 3315.0,
+          "put_change_oi": -51.0
+        },
+        {
+          "strike": 58100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 12433.0,
+          "put_oi": 3047.0,
+          "call_change_oi": 296.0,
+          "put_change_oi": -223.0
+        },
+        {
+          "strike": 58400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 13187.0,
+          "put_oi": 3574.0,
+          "call_change_oi": 1422.0,
+          "put_change_oi": -56.0
+        },
+        {
+          "strike": 55800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 653.0,
+          "put_oi": 12341.0,
+          "call_change_oi": -26.0,
+          "put_change_oi": 1222.0
+        },
+        {
+          "strike": 55900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1432.0,
+          "put_oi": 6066.0,
+          "call_change_oi": -122.0,
+          "put_change_oi": 870.0
+        },
+        {
+          "strike": 54500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 526.0,
+          "put_oi": 15340.0,
+          "call_change_oi": -199.0,
+          "put_change_oi": -313.0
+        },
+        {
+          "strike": 55300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 143.0,
+          "put_oi": 5480.0,
+          "call_change_oi": -5.0,
+          "put_change_oi": -744.0
+        },
+        {
+          "strike": 54000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1172.0,
+          "put_oi": 18453.0,
+          "call_change_oi": -80.0,
+          "put_change_oi": -304.0
+        },
+        {
+          "strike": 53000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1635.0,
+          "put_oi": 18190.0,
+          "call_change_oi": -56.0,
+          "put_change_oi": -3747.0
+        },
+        {
+          "strike": 58900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 8113.0,
+          "put_oi": 1208.0,
+          "call_change_oi": 3053.0,
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 55700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 246.0,
+          "put_oi": 5321.0,
+          "call_change_oi": 7.0,
+          "put_change_oi": 810.0
+        },
+        {
+          "strike": 55600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 121.0,
+          "put_oi": 4029.0,
+          "call_change_oi": -4.0,
+          "put_change_oi": -293.0
+        },
+        {
+          "strike": 55400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 128.0,
+          "put_oi": 3563.0,
+          "call_change_oi": -2.0,
+          "put_change_oi": -675.0
+        },
+        {
+          "strike": 58800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 8857.0,
+          "put_oi": 719.0,
+          "call_change_oi": 2668.0,
+          "put_change_oi": -6.0
+        },
+        {
+          "strike": 58700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 9393.0,
+          "put_oi": 1352.0,
+          "call_change_oi": 1399.0,
+          "put_change_oi": -19.0
+        },
+        {
+          "strike": 60500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 15491.0,
+          "put_oi": 465.0,
+          "call_change_oi": -1128.0,
+          "put_change_oi": -65.0
+        },
+        {
+          "strike": 61000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 16970.0,
+          "put_oi": 1327.0,
+          "call_change_oi": -42.0,
+          "put_change_oi": -156.0
+        },
+        {
+          "strike": 55200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 93.0,
+          "put_oi": 4166.0,
+          "call_change_oi": 0.0,
+          "put_change_oi": 452.0
+        },
+        {
+          "strike": 59300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 7706.0,
+          "put_oi": 266.0,
+          "call_change_oi": 138.0,
+          "put_change_oi": -3.0
+        },
+        {
+          "strike": 53500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 302.0,
+          "put_oi": 9364.0,
+          "call_change_oi": -13.0,
+          "put_change_oi": -298.0
+        },
+        {
+          "strike": 55100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 88.0,
+          "put_oi": 3840.0,
+          "call_change_oi": -1.0,
+          "put_change_oi": -250.0
+        },
+        {
+          "strike": 59200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 4828.0,
+          "put_oi": 254.0,
+          "call_change_oi": 667.0,
+          "put_change_oi": -9.0
+        },
+        {
+          "strike": 52000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 402.0,
+          "put_oi": 6519.0,
+          "call_change_oi": -78.0,
+          "put_change_oi": -2265.0
+        },
+        {
+          "strike": 62000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 16043.0,
+          "put_oi": 2193.0,
+          "call_change_oi": -1163.0,
+          "put_change_oi": -46.0
+        },
+        {
+          "strike": 59100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 4662.0,
+          "put_oi": 413.0,
+          "call_change_oi": 883.0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 54800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 2966.0,
+          "call_change_oi": 0,
+          "put_change_oi": -367.0
+        },
+        {
+          "strike": 59700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2980.0,
+          "put_oi": 90.0,
+          "call_change_oi": 1131.0,
+          "put_change_oi": -2.0
+        },
+        {
+          "strike": 54700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 2347.0,
+          "call_change_oi": 0,
+          "put_change_oi": -802.0
+        },
+        {
+          "strike": 54600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 45.0,
+          "put_oi": 2479.0,
+          "call_change_oi": 0.0,
+          "put_change_oi": 778.0
+        },
+        {
+          "strike": 59800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 3820.0,
+          "put_oi": 0,
+          "call_change_oi": 1316.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 54200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 26.0,
+          "put_oi": 1245.0,
+          "call_change_oi": 0.0,
+          "put_change_oi": -1694.0
+        },
+        {
+          "strike": 54900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 15.0,
+          "put_oi": 3235.0,
+          "call_change_oi": 0.0,
+          "put_change_oi": 213.0
+        },
+        {
+          "strike": 59400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2112.0,
+          "put_oi": 0,
+          "call_change_oi": -17.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 59600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 3819.0,
+          "put_oi": 0,
+          "call_change_oi": 1392.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 52500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 58.0,
+          "put_oi": 5428.0,
+          "call_change_oi": -1.0,
+          "put_change_oi": -148.0
+        },
+        {
+          "strike": 50000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1478.0,
+          "put_oi": 14171.0,
+          "call_change_oi": -106.0,
+          "put_change_oi": 97.0
+        },
+        {
+          "strike": 65000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 10369.0,
+          "put_oi": 1508.0,
+          "call_change_oi": 1145.0,
+          "put_change_oi": -259.0
+        },
+        {
+          "strike": 59900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 3201.0,
+          "put_oi": 0,
+          "call_change_oi": 775.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 54400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1150.0,
+          "call_change_oi": 0,
+          "put_change_oi": -634.0
+        },
+        {
+          "strike": 61500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 5033.0,
+          "put_oi": 569.0,
+          "call_change_oi": -380.0,
+          "put_change_oi": -20.0
+        },
+        {
+          "strike": 60100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2174.0,
+          "put_oi": 0,
+          "call_change_oi": 704.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 63000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 8272.0,
+          "put_oi": 1603.0,
+          "call_change_oi": -951.0,
+          "put_change_oi": -219.0
+        },
+        {
+          "strike": 53700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 15.0,
+          "put_oi": 1408.0,
+          "call_change_oi": 0.0,
+          "put_change_oi": -1236.0
+        },
+        {
+          "strike": 54100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 26.0,
+          "put_oi": 1968.0,
+          "call_change_oi": 0.0,
+          "put_change_oi": 387.0
+        },
+        {
+          "strike": 60300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2069.0,
+          "put_oi": 0,
+          "call_change_oi": 611.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 54300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1117.0,
+          "call_change_oi": 0,
+          "put_change_oi": -141.0
+        },
+        {
+          "strike": 52200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 484.0,
+          "call_change_oi": 0,
+          "put_change_oi": 262.0
+        },
+        {
+          "strike": 60200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1925.0,
+          "put_oi": 0,
+          "call_change_oi": 0.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 51000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 113.0,
+          "put_oi": 6940.0,
+          "call_change_oi": -33.0,
+          "put_change_oi": 246.0
+        },
+        {
+          "strike": 53800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 746.0,
+          "call_change_oi": 0,
+          "put_change_oi": -139.0
+        },
+        {
+          "strike": 62500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 4694.0,
+          "put_oi": 0,
+          "call_change_oi": -215.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 60400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1396.0,
+          "put_oi": 0,
+          "call_change_oi": 155.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 53600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 454.0,
+          "call_change_oi": 0,
+          "put_change_oi": -517.0
+        },
+        {
+          "strike": 66000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2860.0,
+          "put_oi": 0,
+          "call_change_oi": -31.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 46000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 620.0,
+          "put_oi": 4703.0,
+          "call_change_oi": -11.0,
+          "put_change_oi": -13.0
+        },
+        {
+          "strike": 53900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 560.0,
+          "call_change_oi": 0,
+          "put_change_oi": -250.0
+        },
+        {
+          "strike": 60900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 721.0,
+          "put_oi": 0,
+          "call_change_oi": 108.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 60700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1193.0,
+          "put_oi": 0,
+          "call_change_oi": 88.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 61200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 1241.0,
+          "put_oi": 0,
+          "call_change_oi": 191.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 64200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 237.0,
+          "put_oi": 0,
+          "call_change_oi": -290.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 63500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2423.0,
+          "put_oi": 135.0,
+          "call_change_oi": -19.0,
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 53200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 458.0,
+          "call_change_oi": 0,
+          "put_change_oi": -214.0
+        },
+        {
+          "strike": 51500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 12.0,
+          "put_oi": 2476.0,
+          "call_change_oi": 0.0,
+          "put_change_oi": -106.0
+        },
+        {
+          "strike": 53400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 515.0,
+          "call_change_oi": 0,
+          "put_change_oi": -76.0
+        },
+        {
+          "strike": 64000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2990.0,
+          "put_oi": 62.0,
+          "call_change_oi": -94.0,
+          "put_change_oi": -3.0
+        },
+        {
+          "strike": 65500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 2738.0,
+          "put_oi": 88.0,
+          "call_change_oi": -98.0,
+          "put_change_oi": -50.0
+        },
+        {
+          "strike": 61800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 942.0,
+          "put_oi": 0,
+          "call_change_oi": -42.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 53100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 306.0,
+          "call_change_oi": 0,
+          "put_change_oi": 23.0
+        },
+        {
+          "strike": 60600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 838.0,
+          "put_oi": 0,
+          "call_change_oi": 63.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 52900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 360.0,
+          "call_change_oi": 0,
+          "put_change_oi": -69.0
+        },
+        {
+          "strike": 60800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 559.0,
+          "put_oi": 0,
+          "call_change_oi": 36.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 48000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 99.0,
+          "put_oi": 2006.0,
+          "call_change_oi": -2.0,
+          "put_change_oi": 40.0
+        },
+        {
+          "strike": 61100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 764.0,
+          "put_oi": 0,
+          "call_change_oi": 64.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 64500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 996.0,
+          "put_oi": 0,
+          "call_change_oi": -94.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 47000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 89.0,
+          "put_oi": 2279.0,
+          "call_change_oi": -20.0,
+          "put_change_oi": -50.0
+        },
+        {
+          "strike": 46500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 4.0,
+          "put_oi": 583.0,
+          "call_change_oi": -42.0,
+          "put_change_oi": 28.0
+        },
+        {
+          "strike": 52800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 236.0,
+          "call_change_oi": 0,
+          "put_change_oi": 44.0
+        },
+        {
+          "strike": 53300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 542.0,
+          "call_change_oi": 0,
+          "put_change_oi": 54.0
+        },
+        {
+          "strike": 52400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 90.0,
+          "call_change_oi": 0,
+          "put_change_oi": 1.0
+        },
+        {
+          "strike": 61400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 925.0,
+          "put_oi": 0,
+          "call_change_oi": 0.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 52600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 139.0,
+          "call_change_oi": 0,
+          "put_change_oi": 7.0
+        },
+        {
+          "strike": 47500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 353.0,
+          "call_change_oi": 0,
+          "put_change_oi": -101.0
+        },
+        {
+          "strike": 52700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 185.0,
+          "call_change_oi": 0,
+          "put_change_oi": 8.0
+        },
+        {
+          "strike": 48400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 139.0,
+          "call_change_oi": 0,
+          "put_change_oi": 91.0
+        },
+        {
+          "strike": 61300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 395.0,
+          "put_oi": 0,
+          "call_change_oi": -43.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 51100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 155.0,
+          "call_change_oi": 0,
+          "put_change_oi": 37.0
+        },
+        {
+          "strike": 52300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 115.0,
+          "call_change_oi": 0,
+          "put_change_oi": -29.0
+        },
+        {
+          "strike": 51400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 136.0,
+          "call_change_oi": 0,
+          "put_change_oi": 13.0
+        },
+        {
+          "strike": 48500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 368.0,
+          "call_change_oi": 0,
+          "put_change_oi": -6.0
+        },
+        {
+          "strike": 50500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1495.0,
+          "call_change_oi": 0,
+          "put_change_oi": 2.0
+        },
+        {
+          "strike": 49000.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 1893.0,
+          "call_change_oi": 0,
+          "put_change_oi": -14.0
+        },
+        {
+          "strike": 51700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 56.0,
+          "call_change_oi": 0,
+          "put_change_oi": -17.0
+        },
+        {
+          "strike": 61600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 725.0,
+          "put_oi": 0,
+          "call_change_oi": -26.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 52100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 95.0,
+          "call_change_oi": 0,
+          "put_change_oi": -13.0
+        },
+        {
+          "strike": 63700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 940.0,
+          "put_oi": 0,
+          "call_change_oi": 18.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 51800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 129.0,
+          "call_change_oi": 0,
+          "put_change_oi": -18.0
+        },
+        {
+          "strike": 62600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 220.0,
+          "put_oi": 0,
+          "call_change_oi": 6.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 50400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 55.0,
+          "call_change_oi": 0,
+          "put_change_oi": -2.0
+        },
+        {
+          "strike": 51900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 153.0,
+          "call_change_oi": 0,
+          "put_change_oi": -31.0
+        },
+        {
+          "strike": 62200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 323.0,
+          "put_oi": 0,
+          "call_change_oi": 1.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 51300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 61.0,
+          "call_change_oi": 0,
+          "put_change_oi": -20.0
+        },
+        {
+          "strike": 50900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 282.0,
+          "call_change_oi": 0,
+          "put_change_oi": 34.0
+        },
+        {
+          "strike": 51200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 256.0,
+          "call_change_oi": 0,
+          "put_change_oi": -18.0
+        },
+        {
+          "strike": 62300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 798.0,
+          "put_oi": 0,
+          "call_change_oi": -34.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 62800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 179.0,
+          "put_oi": 0,
+          "call_change_oi": -1.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 63800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 167.0,
+          "put_oi": 0,
+          "call_change_oi": 20.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 62900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 138.0,
+          "put_oi": 0,
+          "call_change_oi": 3.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 49800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 73.0,
+          "call_change_oi": 0,
+          "put_change_oi": -30.0
+        },
+        {
+          "strike": 61700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 269.0,
+          "put_oi": 0,
+          "call_change_oi": 3.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 62100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 251.0,
+          "put_oi": 0,
+          "call_change_oi": -12.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 61900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 527.0,
+          "put_oi": 0,
+          "call_change_oi": -5.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 48700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 32.0,
+          "call_change_oi": 0,
+          "put_change_oi": 20.0
+        },
+        {
+          "strike": 63100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 174.0,
+          "put_oi": 0,
+          "call_change_oi": 4.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 49500.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 349.0,
+          "call_change_oi": 0,
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 62400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 277.0,
+          "put_oi": 0,
+          "call_change_oi": -5.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 50800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 103.0,
+          "call_change_oi": 0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 51600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 80.0,
+          "call_change_oi": 0,
+          "put_change_oi": -4.0
+        },
+        {
+          "strike": 64100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 22.0,
+          "put_oi": 0,
+          "call_change_oi": -5.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 63300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 89.0,
+          "put_oi": 0,
+          "call_change_oi": 5.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 63400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 134.0,
+          "put_oi": 0,
+          "call_change_oi": -2.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 62700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 93.0,
+          "put_oi": 0,
+          "call_change_oi": -3.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 50100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 76.0,
+          "call_change_oi": 0,
+          "put_change_oi": -4.0
+        },
+        {
+          "strike": 50300.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 64.0,
+          "call_change_oi": 0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 50700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 93.0,
+          "call_change_oi": 0,
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 63600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 164.0,
+          "put_oi": 0,
+          "call_change_oi": 10.0,
+          "put_change_oi": 0
+        },
+        {
+          "strike": 49200.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 18.0,
+          "call_change_oi": 0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 50600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 74.0,
+          "call_change_oi": 0,
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 49400.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 34.0,
+          "call_change_oi": 0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 49100.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 15.0,
+          "call_change_oi": 0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 49600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 46.0,
+          "call_change_oi": 0,
+          "put_change_oi": 0.0
+        },
+        {
+          "strike": 49700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 19.0,
+          "call_change_oi": 0,
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 48900.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 28.0,
+          "call_change_oi": 0,
+          "put_change_oi": -1.0
+        },
+        {
+          "strike": 47700.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 23.0,
+          "call_change_oi": 0,
+          "put_change_oi": 1.0
+        },
+        {
+          "strike": 47600.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 31.0,
+          "call_change_oi": 0,
+          "put_change_oi": 1.0
+        },
+        {
+          "strike": 47800.0,
+          "expiry": "28-Jul-2026",
+          "call_oi": 0,
+          "put_oi": 8.0,
+          "call_change_oi": 0,
+          "put_change_oi": 0.0
+        }
+      ]
+    }
+  },
+  "market_news": [
+    {
+      "title": "Global Market Today: Oil falls, Asian stocks rise as Iran tensions ease",
+      "link": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-oil-falls-asian-stocks-rise-as-iran-tensions-ease/articleshow/132650610.cms",
+      "summary": "Global markets saw oil prices fall and stocks rise as US and Iran paused retaliatory strikes. The dollar weakened against peers while Treasuries gained as inflation concerns receded. Traders now await Federal Reserve int...",
+      "published": "Mon, 27 Jul 2026 06:54:20 +0530",
+      "source": "Economic Times Markets",
+      "relevance_score": 6
+    },
+    {
+      "title": "Nasdaq, S&P 500, Dow Futures Rise As Iran Pause Eases Oil Fears Ahead Of Big Tech Earnings, Fed Meeting: ORCL, NVDA, VG, DEL In Focus - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNRHlra1N1d2VFTUU4dkJTOTRHdldlNDVScnMtZVdIbVRXTnhLUl9mY1Awd3J6ZXNNN2VQRERuUGEtdThiT3oyYUI2Nm0xVGJwYzE4UXJfNnFVeE9jVjBnTFkyckx2LUkwWC1BU2FHZmw4YW1IN2xVZUotMnFBcXJlRzQ3R0Y3ZVVSaHJvbEg5LWE1Y0dEOFJrc1ZKSzRKeUhVWHV0dkN2SkV1VHdFdDBUVHBsVGJyd3p0ZlByWHRmbTJfN0ZjM1o3T3RYTjgwUHR3S0RZMkk5SUJGZGJuQTc3ZUw4ekUybDU4cTJ5WS1TLU4ySlptNHF4MkFNcGlGVDRBUTA5SjBrUDZqVjVVNkR1S0RuVjVFQQ?oc=5",
+      "summary": "Nasdaq, S&P 500, Dow Futures Rise As Iran Pause Eases Oil Fears Ahead Of Big Tech Earnings, Fed Meeting: ORCL, NVDA, VG, DEL In Focus TradingView",
+      "published": "Mon, 27 Jul 2026 02:22:00 GMT",
+      "source": "Google News - Global Markets",
+      "relevance_score": 5
+    },
+    {
+      "title": "Gold, silver prices rise up to 1% on MCX as dollar, crude oil drop; US Fed policy decision in focus - livemint.com",
+      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPZE1Gb0tNYkZRLVp4VjhUVEI1SVF0ckZkcF9RU2FEYTlmcGExbEZXcTFXVG1mLWY4OHloNkRtMEd3emlGQTV0Q0FRQmJ4YlRfc2NmNDJpV0Ita21XZXhpY1FHSkN0eXpVTDBKZ212ZWMtX2RZMWsyV3pIaDdoZkJmMEhiOHBNTEw2VDIzRGhfWXkza3V2ZXZIUnpYcC1XTGhLeEVPb1Frbkh1VmE0MVpUYXRIcVhoS3NiQURodi1NSDNscDREU3RaWU11VUZSbVdwQ0FTSHJqWHhPRDd6WDdWLTRwV0NEN1Y3RkVndVdlS0lSX3hoWmJod2p30gH_AUFVX3lxTFBZSXJ2WXp2THc3bVI0WGNTM3NJSHlhS0p4VW9saE5EaTktWElzUEViY0hHSFBKMVFWcHpaSkJhS2x1Ykw2T0dRQlhUV2MtRnhwOEpGazNDd3RQRFRyemxvNjRoX3ZMd0o4Y2dHb2JiYlRvRXprUjdVRVdqbGc3WkxyYmVwLXFsamgza3kxWmE4OENINVBtcHF2SzBCTHZ4Q2FuSUkzZkhTWVFNc2pGTHBueFNCZEdiNWl0Vl8zYWc1YVBzWE9FVC1KWmtGcmZVcERuU28wMHVraE9Ya2xnUGFqYTZmeHA0WGsxczN3azd2cFJoRW5nV05QVktMclJ0Zw?oc=5",
+      "summary": "Gold, silver prices rise up to 1% on MCX as dollar, crude oil drop; US Fed policy decision in focus livemint.com",
+      "published": "Mon, 27 Jul 2026 03:36:09 GMT",
+      "source": "Google News - Global Markets",
+      "relevance_score": 5
+    },
+    {
+      "title": "27 July, 2026 Stock Market Updates: Sensex surges 550 points, Nifty above 23,900 as crude oil falls 5% - India TV News",
+      "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQRkdRSXFRcm5hT29qVzVUT0FIdUJRREJSTE1ZLTMyNjVyUTdjUXZBNkdReU8teW9HLUJBNVczTXVxU0xsS0pqWVlPRW9BTkx3N196ZkRmMjMyeVREVnI5M1F3VVpGQmxTajBJSWtnT1NRT2Z5d2J4UE1aSnJ1ZVVwNi1hQ1ZkZnYzLXk4UXJ3d0RfUy13WmFKc1ZOTU1YVF9TMzA0bmVUaW05VWo4TURuLU4wZ2xrWFM1aHBNNElZVE02ZmZUWnUzZUhjcjNGZzdhUURoTUY5OEF1VDBqNEpwTFIxVEdPcGN6MXBFLWRoWXBHbEpaS3ItMGpPMFlhd9IBgwJBVV95cUxQb2ZITS12UVU3bDBUS2Fidm10d1k0OGFPSk9tS0QyeWJGZEQtMmlxMk9sSnVwUWRBT2lsS2JBa0VoNGZKS29FWDNOUzI3MTFwbHZfV0FhQVBTNmRxUXptVHBjVnU3MHNvekxnVlJIMElGZTdqTXpWczVWLXZXUVh1SzFMNEtmM1ctVUV0UXRKbVcwX0VmWnJqOUVsV3E3LUxpYW5hdkFxUlU3UWxLemZtbDZEb2VpTUQtVWNJVGpNTTd2V041QkFqQndIN2NGaHNTdHhET2o3bm1ubWFxZUo2eExJZUppSElGWmJMSk9YS3R0bFpWS29QQnFUdGtKeFlmTkRN?oc=5",
+      "summary": "27 July, 2026 Stock Market Updates: Sensex surges 550 points, Nifty above 23,900 as crude oil falls 5% India TV News",
+      "published": "Mon, 27 Jul 2026 03:58:37 GMT",
+      "source": "Google News - India Markets",
+      "relevance_score": 5
+    },
+    {
+      "title": "Why Are Sensex and Nifty Up Today? Indian Stock Market Rallies as Brent Crude Falls Over 4% and Positive Earnings Boost Investor Sentiment - The Sunday Guardian",
+      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPNlRZOFJuVHlmSjhlUFBRRTNIQUc0N25xQlg5VExmUnZKQkxhWFVxc0dsM2J0QkRoa1JDaEl3bGx0djkwU1FJaHdFbHpORGFCTEF6SThmcTlPM1BEOTUxd2Fnc29xZlBSV1JRM1YwRUxuRDN5bGRDSDk3dDlpVkFRb0JXZ0ZXVHFmWXZoaEpnMWhDcDhkdGpGVUNJTDQyWDY5QnJzYVZ5UjNZV2RvU0E1VnNvNWRJcVowZ2NSVGg2aHBPV3ozdTRIVVhLeXQyaWo4aW9XYlJORjRudnhrbmkxR2gzNEwwcEZ1TllKX3VjbDh1c1hWQU5RSjJ1el9BbVJRTXhZeDBab01YLVpJWXJJTXl30gGXAkFVX3lxTE9YbzBSNnJZYnNZRnhlaklXRDhyRDRodDN0ZHlXRlFKdzVPYm1kTExNUDNoZVVheTR4Q3RDQlUyZXlvUGZrUHNGUlp1d0ZuWkxNNVJlUTRHaGF0SEdmMXZ1NzNCV05fNnZiTzFNUjh6bmFZVVVkTjFmOHR1RDkzRWY4bVBtR2Fpc1hJSmwtQjBGcG04emtzUTJTWkZ0cHg3MWwzTVdWVzE5aW1iZ29xUWpoSnA2aVVyckJTeGtwalowLUNTVGN4RlZJdUhWYXVKZ1NhNXFBeU1FUmRrbHZHQ0VBTkxoR1lJeVJ5N1M2VlFUQkliMlgzZHhwclRrQ3pvSjdDYVRQZkFtWnBKSmp2NTV6VS1KdDNjTQ?oc=5",
+      "summary": "Why Are Sensex and Nifty Up Today? Indian Stock Market Rallies as Brent Crude Falls Over 4% and Positive Earnings Boost Investor Sentiment The Sunday Guardian",
+      "published": "Mon, 27 Jul 2026 05:56:53 GMT",
+      "source": "Google News - India Markets",
+      "relevance_score": 5
+    },
+    {
+      "title": "Rupee nears record low amid rising oil prices and geopolitical risks",
+      "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-nears-record-low-amid-rising-oil-prices-and-geopolitical-risks-rbi-defends-96-55-96-60-zone/articleshow/132650452.cms",
+      "summary": "The Indian rupee is nearing a record low against the dollar this week. Elevated oil prices and geopolitical tensions are increasing pressure on the currency. Foreign currency inflows are helping manage the rupee around c...",
+      "published": "Mon, 27 Jul 2026 06:29:48 +0530",
+      "source": "Economic Times Markets",
+      "relevance_score": 5
+    },
+    {
+      "title": "Nifty 50, Sensex prediction today: Check how Indian stock market is expected to trade on 27 July",
+      "link": "https://www.livemint.com/market/stock-market-news/nifty-50-sensex-prediction-today-check-how-indian-stock-market-is-expected-to-trade-on-27-july-11785116055711.html",
+      "summary": "The Indian stock market is set to open higher on Monday, influenced by positive global cues and declining crude oil prices. Key indices Sensex and Nifty 50 closed lower for five consecutive sessions, with important suppo...",
+      "published": "Mon, 27 Jul 2026 07:42:47 +0530",
+      "source": "LiveMint Markets",
+      "relevance_score": 5
+    },
+    {
+      "title": "Rupee opens 41 paise higher at 96.15 against US dollar amid easing crude oil prices",
+      "link": "https://www.livemint.com/market/stock-market-news/rupee-opens-41-paise-higher-at-96-15-against-us-dollar-amid-easing-crude-oil-prices-11785123125497.html",
+      "summary": "The Indian rupee strengthened to 96.15 against the dollar due to a drop in crude oil prices. Despite temporary relief, experts warn of ongoing geopolitical risks and seasonal pressures that could challenge the currency's...",
+      "published": "Mon, 27 Jul 2026 09:04:18 +0530",
+      "source": "LiveMint Markets",
+      "relevance_score": 5
+    },
+    {
+      "title": "Gold, silver prices rise up to 1% on MCX as dollar, crude oil drop; US Fed policy decision in focus",
+      "link": "https://www.livemint.com/market/commodities/gold-silver-prices-rise-up-to-1-on-mcx-as-dollar-crude-oil-prices-drop-us-fed-policy-decision-in-focus-11785122423086.html",
+      "summary": "MCX gold August contract rose about 0.50% to ₹1,43,784 per 10 grams, while MCX silver September futures jumped more than 1% to ₹2,24,550 per kg in morning trade on Monday.",
+      "published": "Mon, 27 Jul 2026 09:06:09 +0530",
+      "source": "LiveMint Markets",
+      "relevance_score": 5
+    },
+    {
+      "title": "Why is market rising today? Sensex soars 600 points, Nifty above 23,900. 6 key factors driving the rally",
+      "link": "https://economictimes.indiatimes.com/markets/stocks/news/why-is-market-rising-today-sensex-soars-nearly-600-points-nifty-above-23900-6-factors-driving-the-rally/articleshow/132652024.cms",
+      "summary": "The Indian stock market ended its losing streak as tensions between Iran and the US eased. Falling crude oil prices also contributed to a significant boost in investor sentiment. The Sensex and Nifty experienced sharp ga...",
+      "published": "Mon, 27 Jul 2026 09:33:59 +0530",
+      "source": "Economic Times Markets",
+      "relevance_score": 5
+    }
+  ],
+  "warnings": []
+}
