@@ -109,6 +109,10 @@ def render_markdown(context: dict[str, Any]) -> str:
     if not context["weak_sectors"]:
         lines.append("- Sector data not available.")
     lines.append("")
+    lines.extend(_index_technicals_markdown(data.get("index_technicals", {})))
+    lines.append("")
+    lines.extend(_nifty50_markdown(data.get("nifty50", {})))
+    lines.append("")
     lines.append("## Signal Score Breakdown")
     lines.append("")
     lines.append("| Signal | Score | Status | Reason |")
@@ -667,10 +671,51 @@ h1 { position: relative; }
     .site-footer a { color: var(--brand); text-decoration: none; }
     .site-footer .fcol { display: grid; gap: 4px; }
 
+    /* Nifty 50 pivot table */
+    .pivot-wrap { max-height: 640px; overflow: auto; }
+    .pivot-table td, .pivot-table th { padding: 9px 11px; font-size: 13.5px; }
+    .pivot-table th { position: sticky; top: 0; z-index: 2; }
+    .pivot-table td.num, .pivot-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .pivot-table .sym { font-weight: 700; }
+    .pivot-table .sym small { display: block; font-weight: 500; color: var(--muted); font-size: 11.5px; }
+    .pivot-table .lvl { color: var(--muted); }
+    .pivot-table tbody tr.grp-head td { background: var(--elev); font-weight: 800; text-transform: uppercase;
+      letter-spacing: .05em; font-size: 12px; color: var(--muted); }
+    .cell-up { color: var(--good); font-weight: 700; background: color-mix(in srgb, var(--good) 9%, transparent); }
+    .cell-down { color: var(--bad); font-weight: 700; background: color-mix(in srgb, var(--bad) 9%, transparent); }
+    .cell-flat { color: var(--muted); font-weight: 600; }
+    .zone-tag { font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 3px 8px; border: 1px solid var(--line);
+      background: var(--elev); white-space: nowrap; }
+    .zone-tag.up { color: var(--good); border-color: var(--good-soft); background: var(--good-soft); }
+    .zone-tag.down { color: var(--bad); border-color: var(--bad-soft); background: var(--bad-soft); }
+    .breadth-bar { display: flex; height: 10px; border-radius: 999px; overflow: hidden; margin: 4px 0 12px; background: var(--elev); }
+    .breadth-bar i { display: block; height: 100%; }
+    .breadth-bar .adv { background: var(--good); }
+    .breadth-bar .dec { background: var(--bad); }
+    .breadth-bar .unc { background: var(--neutral); }
+
+    /* Index technicals */
+    .tech-head { display: flex; flex-wrap: wrap; gap: 18px; align-items: baseline; margin-bottom: 6px; }
+    .tech-head .tv { font-size: 34px; font-weight: 800; letter-spacing: -.02em; }
+    .ind-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 4px; }
+    .ind-tile { background: var(--elev); border: 1px solid var(--line); border-radius: 13px; padding: 14px 16px; }
+    .ind-tile .it-name { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .ind-tile .it-val { font-size: 25px; font-weight: 800; margin: 5px 0 3px; letter-spacing: -.02em; }
+    .ind-tile .it-note { font-size: 12px; color: var(--muted); line-height: 1.4; }
+    .ma-ladder { display: grid; gap: 8px; margin-top: 4px; }
+    .ma-row { display: grid; grid-template-columns: 74px 1fr auto; gap: 12px; align-items: center; padding: 9px 12px;
+      border: 1px solid var(--line); border-radius: 11px; background: var(--elev); }
+    .ma-row b { font-variant-numeric: tabular-nums; }
+    .ma-track { position: relative; height: 8px; border-radius: 999px; background: var(--input-bg); overflow: hidden; }
+    .ma-track i { position: absolute; top: 0; bottom: 0; border-radius: 999px; }
+    .ma-track i.up { background: var(--good); left: 50%; }
+    .ma-track i.down { background: var(--bad); right: 50%; }
+
     @media (max-width: 720px) {
       .navbar { flex-wrap: wrap; padding: 10px 16px; }
       .nav-search { order: 3; flex: 1 0 100%; }
       main { padding: 16px 14px 50px; }
+      .ma-row { grid-template-columns: 62px 1fr auto; }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
@@ -706,6 +751,8 @@ h1 { position: relative; }
     <button class="tab-btn" data-tab="crypto">Crypto</button>
     <button class="tab-btn" data-tab="currency">Currency</button>
     <button class="tab-btn" data-tab="sectors">Sectors</button>
+    <button class="tab-btn" data-tab="nifty50">Nifty 50</button>
+    <button class="tab-btn" data-tab="technicals">Technicals</button>
     <button class="tab-btn" data-tab="signals">Signals</button>
     <button class="tab-btn" data-tab="history">History</button>
     <button class="tab-btn" data-tab="news">News</button>
@@ -885,6 +932,120 @@ h1 { position: relative; }
       <span class="swatch"><span class="box" style="background:#fecaca"></span>Strong down (&le;-1.5%)</span>
     </div>
 <div id="sectorHeatmap" class="heatmap-grid"></div>
+  </section>
+
+  <section id="nifty50" class="panel">
+    <div class="card">
+      <div class="card-head">
+        <h2>📋 Nifty 50 Pivot Table</h2>
+        <span id="nifty50AsOf" class="badge info">—</span>
+      </div>
+      <p class="small muted" style="margin:0 0 10px">Classic floor-trader pivots from the last completed session, with NSE % change across daily, weekly (5 sessions) and monthly (21 sessions) horizons.</p>
+      <div id="nifty50Breadth" class="hero-stats" style="margin-bottom:14px"></div>
+      <div class="breadth-bar" id="nifty50BreadthBar"></div>
+      <div class="controls">
+        <input id="nifty50Search" placeholder="Search stock or symbol..." />
+        <select id="nifty50Sector">
+          <option value="All">All sectors</option>
+        </select>
+        <select id="nifty50Sort">
+          <option value="change_pct_desc">Daily % high to low</option>
+          <option value="change_pct_asc">Daily % low to high</option>
+          <option value="week_pct_desc">Weekly % high to low</option>
+          <option value="month_pct_desc">Monthly % high to low</option>
+          <option value="vs_pivot_pct_desc">Distance from pivot</option>
+          <option value="rsi_desc">RSI high to low</option>
+          <option value="name">Name A to Z</option>
+        </select>
+        <select id="nifty50View">
+          <option value="flat">Flat list</option>
+          <option value="grouped">Group by sector</option>
+        </select>
+        <select id="nifty50Zone">
+          <option value="All">All pivot zones</option>
+          <option value="above">Above pivot</option>
+          <option value="below">Below pivot</option>
+        </select>
+        <button class="action-btn secondary" id="nifty50Csv">Download CSV</button>
+      </div>
+      <div class="table-wrap pivot-wrap">
+        <table class="pivot-table">
+          <thead>
+            <tr>
+              <th>Stock</th>
+              <th class="num">LTP</th>
+              <th class="num">Daily %</th>
+              <th class="num">Weekly %</th>
+              <th class="num">Monthly %</th>
+              <th class="num">S2</th>
+              <th class="num">S1</th>
+              <th class="num">Pivot</th>
+              <th class="num">R1</th>
+              <th class="num">R2</th>
+              <th class="num">vs Pivot</th>
+              <th class="num">RSI</th>
+              <th>Zone</th>
+            </tr>
+          </thead>
+          <tbody id="nifty50Rows"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-head"><h2>Sector Roll-Up</h2><span class="badge info">Average % change</span></div>
+        <div class="chart-box"><canvas id="nifty50SectorChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Multi-Timeframe Leaders</h2><span class="badge info">Top 12 by daily move</span></div>
+        <div class="chart-box"><canvas id="nifty50TimeframeChart"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="technicals" class="panel">
+    <div class="card">
+      <div class="card-head">
+        <h2>📈 Index Moving Averages &amp; Indicators</h2>
+        <span id="technicalAsOf" class="badge info">—</span>
+      </div>
+      <div class="controls">
+        <select id="technicalIndex"></select>
+        <select id="technicalMaOverlay">
+          <option value="sma">Simple moving averages</option>
+          <option value="bollinger">Bollinger bands (20,2)</option>
+        </select>
+      </div>
+      <div class="tech-head" id="technicalHead"></div>
+      <div class="ind-grid" id="technicalIndicators"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Price vs Moving Averages</h2><span id="technicalTrend" class="badge info">—</span></div>
+      <div class="chart-box tall"><canvas id="maChart"></canvas></div>
+      <div class="ma-ladder" id="maLadder" style="margin-top:14px"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-head"><h2>RSI (14)</h2><span class="badge info">70 / 30 bands</span></div>
+        <div class="chart-box mini"><canvas id="rsiChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>MACD (12, 26, 9)</h2><span class="badge info">Line, signal, histogram</span></div>
+        <div class="chart-box mini"><canvas id="macdChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Index Pivot Levels</h2><span class="badge info">Last completed session</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Index</th><th class="num">Close</th><th class="num">S3</th><th class="num">S2</th><th class="num">S1</th><th class="num">Pivot</th><th class="num">R1</th><th class="num">R2</th><th class="num">R3</th><th>Trend</th></tr></thead>
+          <tbody id="indexPivotRows"></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
   <section id="signals" class="panel">
@@ -1303,6 +1464,446 @@ function renderSectors() {
   `).join('') || '<tr><td colspan="4">No sector data available</td></tr>';
   drawBarChart('sectorChart', rows, 'name', 'change_pct', 'Sector change %');
 }
+/* ---------- Nifty 50 pivot table ---------- */
+function nifty50Data() {
+  return APP.data.nifty50 || { rows: [], sectors: [], breadth: {} };
+}
+function cellClass(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return 'cell-flat';
+  if (n > 0.05) return 'cell-up';
+  if (n < -0.05) return 'cell-down';
+  return 'cell-flat';
+}
+function pctCell(value) {
+  return `<td class="num ${cellClass(value)}">${pct(value)}</td>`;
+}
+function zoneTag(row) {
+  const vs = Number(row.vs_pivot_pct);
+  const cls = Number.isFinite(vs) ? (vs >= 0 ? 'up' : 'down') : '';
+  return `<span class="zone-tag ${cls}">${escapeHtml(row.zone || 'N/A')}</span>`;
+}
+function populateNifty50Sectors() {
+  const select = document.getElementById('nifty50Sector');
+  if (!select || select.dataset.filled) return;
+  const sectors = [...new Set(nifty50Data().rows.map(r => r.sector).filter(Boolean))].sort();
+  select.insertAdjacentHTML('beforeend', sectors.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join(''));
+  select.dataset.filled = '1';
+}
+function nifty50Filtered() {
+  const search = (document.getElementById('nifty50Search')?.value || '').trim().toLowerCase();
+  const sector = document.getElementById('nifty50Sector')?.value || 'All';
+  const zone = document.getElementById('nifty50Zone')?.value || 'All';
+  const sort = document.getElementById('nifty50Sort')?.value || 'change_pct_desc';
+
+  let rows = nifty50Data().rows.slice();
+  if (search) rows = rows.filter(r => `${r.symbol} ${r.name}`.toLowerCase().includes(search));
+  if (sector !== 'All') rows = rows.filter(r => r.sector === sector);
+  if (zone === 'above') rows = rows.filter(r => Number(r.vs_pivot_pct) >= 0);
+  if (zone === 'below') rows = rows.filter(r => Number(r.vs_pivot_pct) < 0);
+
+  if (sort === 'name') {
+    rows.sort((a, b) => String(a.name || '').localeCompare(String(b.name || '')));
+  } else {
+    const key = sort.replace(/_(asc|desc)$/, '');
+    const dir = sort.endsWith('_asc') ? 1 : -1;
+    rows.sort((a, b) => {
+      const av = Number.isFinite(Number(a[key])) ? Number(a[key]) : -999999;
+      const bv = Number.isFinite(Number(b[key])) ? Number(b[key]) : -999999;
+      return (av - bv) * dir;
+    });
+  }
+  return rows;
+}
+function nifty50RowHtml(row) {
+  return `<tr>
+    <td class="sym">${escapeHtml(row.symbol || '')}<small>${escapeHtml(row.name || '')}</small></td>
+    <td class="num">${num(row.close)}</td>
+    ${pctCell(row.change_pct)}${pctCell(row.week_pct)}${pctCell(row.month_pct)}
+    <td class="num lvl">${num(row.s2)}</td>
+    <td class="num lvl">${num(row.s1)}</td>
+    <td class="num"><strong>${num(row.pivot)}</strong></td>
+    <td class="num lvl">${num(row.r1)}</td>
+    <td class="num lvl">${num(row.r2)}</td>
+    ${pctCell(row.vs_pivot_pct)}
+    <td class="num">${row.rsi === null || row.rsi === undefined ? 'N/A' : Number(row.rsi).toFixed(1)}</td>
+    <td>${zoneTag(row)}</td>
+  </tr>`;
+}
+function renderNifty50() {
+  populateNifty50Sectors();
+  const tbody = document.getElementById('nifty50Rows');
+  if (!tbody) return;
+  const rows = nifty50Filtered();
+  const grouped = (document.getElementById('nifty50View')?.value || 'flat') === 'grouped';
+
+  let html = '';
+  if (!rows.length) {
+    html = '<tr><td colspan="13">No Nifty 50 constituent data available. Check fetch warnings.</td></tr>';
+  } else if (grouped) {
+    const buckets = {};
+    rows.forEach(r => { (buckets[r.sector || 'Other'] = buckets[r.sector || 'Other'] || []).push(r); });
+    html = Object.keys(buckets).sort().map(sector => {
+      const members = buckets[sector];
+      const avg = members.reduce((a, r) => a + (Number(r.change_pct) || 0), 0) / members.length;
+      return `<tr class="grp-head"><td colspan="13">${escapeHtml(sector)} · ${members.length} stocks · avg ${pct(avg)}</td></tr>`
+        + members.map(nifty50RowHtml).join('');
+    }).join('');
+  } else {
+    html = rows.map(nifty50RowHtml).join('');
+  }
+  tbody.innerHTML = html;
+
+  const asOf = document.getElementById('nifty50AsOf');
+  if (asOf) asOf.textContent = nifty50Data().as_of ? `As of ${nifty50Data().as_of}` : 'No data';
+  renderNifty50Breadth();
+  drawSectorRollupChart();
+  drawTimeframeChart(rows);
+}
+function renderNifty50Breadth() {
+  const breadth = nifty50Data().breadth || {};
+  const host = document.getElementById('nifty50Breadth');
+  if (!host) return;
+  const tiles = [
+    ['Advancing', breadth.advancing ?? 'N/A', 'st-good', 'Stocks closing higher'],
+    ['Declining', breadth.declining ?? 'N/A', 'st-bad', 'Stocks closing lower'],
+    ['Above Pivot', breadth.above_pivot ?? 'N/A', 'st-brand', 'Spot at or above daily pivot'],
+    ['Avg Daily', pct(breadth.avg_change_pct), signedTile(breadth.avg_change_pct), 'Index-wide average'],
+    ['Avg Weekly', pct(breadth.avg_week_pct), signedTile(breadth.avg_week_pct), 'Last 5 sessions'],
+    ['Avg Monthly', pct(breadth.avg_month_pct), signedTile(breadth.avg_month_pct), 'Last 21 sessions'],
+  ];
+  host.innerHTML = tiles.map(([label, value, cls, sub]) => `
+    <div class="stat-tile ${cls}">
+      <div class="st-label">${label}</div>
+      <div class="st-value">${value}</div>
+      <div class="st-sub">${escapeHtml(sub)}</div>
+    </div>`).join('');
+
+  const bar = document.getElementById('nifty50BreadthBar');
+  if (bar) {
+    const adv = Number(breadth.advancing || 0);
+    const dec = Number(breadth.declining || 0);
+    const unc = Number(breadth.unchanged || 0);
+    const total = adv + dec + unc || 1;
+    bar.innerHTML = `<i class="adv" style="width:${(adv / total) * 100}%"></i>`
+      + `<i class="unc" style="width:${(unc / total) * 100}%"></i>`
+      + `<i class="dec" style="width:${(dec / total) * 100}%"></i>`;
+    bar.title = `${adv} advancing · ${unc} unchanged · ${dec} declining`;
+  }
+}
+function signedTile(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return 'st-neutral';
+  return n > 0 ? 'st-good' : n < 0 ? 'st-bad' : 'st-neutral';
+}
+function downloadNifty50Csv() {
+  const cols = ['symbol', 'name', 'sector', 'close', 'change_pct', 'week_pct', 'month_pct', 's3', 's2', 's1', 'pivot', 'r1', 'r2', 'r3', 'vs_pivot_pct', 'rsi', 'zone'];
+  const rows = nifty50Filtered();
+  const lines = [cols.join(',')].concat(rows.map(r => cols.map(c => {
+    const v = r[c];
+    return typeof v === 'string' && v.includes(',') ? `"${v}"` : (v ?? '');
+  }).join(',')));
+  downloadText(`nifty50_pivots_${nifty50Data().as_of || 'latest'}.csv`, lines.join('\\n'));
+}
+function drawSectorRollupChart() {
+  const sectors = (nifty50Data().sectors || []).map(s => ({ name: s.sector, change_pct: s.change_pct, close: s.count }));
+  drawBarChart('nifty50SectorChart', sectors, 'name', 'change_pct', 'Average change % by sector');
+}
+function drawTimeframeChart(rows) {
+  const data = (rows || []).slice(0, 12);
+  mountChart('nifty50TimeframeChart', {
+    type: 'bar',
+    data: {
+      labels: data.map(r => r.symbol),
+      datasets: [
+        { label: 'Daily %', data: data.map(r => r.change_pct), backgroundColor: 'rgba(37,99,235,.85)', borderRadius: 4, maxBarThickness: 14 },
+        { label: 'Weekly %', data: data.map(r => r.week_pct), backgroundColor: 'rgba(139,92,246,.8)', borderRadius: 4, maxBarThickness: 14 },
+        { label: 'Monthly %', data: data.map(r => r.month_pct), backgroundColor: 'rgba(6,182,212,.75)', borderRadius: 4, maxBarThickness: 14 },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, border: { display: false }, ticks: { font: { size: 10 }, maxRotation: 60, minRotation: 45 } },
+        y: { grid: { color: C.grid }, border: { display: false }, ticks: { callback: v => v + '%' } }
+      },
+      plugins: {
+        legend: { display: true, position: 'top', labels: { usePointStyle: true, boxWidth: 8, font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y === null ? 'N/A' : ctx.parsed.y.toFixed(2) + '%'}` } }
+      }
+    },
+    plugins: [emptyMessagePlugin('No constituent data available')]
+  });
+}
+
+/* ---------- Index moving averages and indicators ---------- */
+const MA_COLORS = { 20: '#f59e0b', 50: '#8b5cf6', 100: '#06b6d4', 200: '#ef4444' };
+function techData() { return APP.data.index_technicals || {}; }
+function populateTechnicalIndexes() {
+  const select = document.getElementById('technicalIndex');
+  if (!select || select.dataset.filled) return;
+  const keys = Object.keys(techData());
+  select.innerHTML = keys.length
+    ? keys.map(k => `<option value="${escapeHtml(k)}">${escapeHtml(k)}</option>`).join('')
+    : '<option value="">No index data</option>';
+  select.dataset.filled = '1';
+}
+function currentTechnical() {
+  const key = document.getElementById('technicalIndex')?.value;
+  const all = techData();
+  return all[key] || all[Object.keys(all)[0]] || null;
+}
+function renderTechnicals() {
+  populateTechnicalIndexes();
+  const snap = currentTechnical();
+  const head = document.getElementById('technicalHead');
+  const tiles = document.getElementById('technicalIndicators');
+  const ladder = document.getElementById('maLadder');
+  const asOf = document.getElementById('technicalAsOf');
+  const trend = document.getElementById('technicalTrend');
+
+  if (!snap) {
+    if (head) head.innerHTML = '<span class="muted">Index technical data unavailable in this run.</span>';
+    if (tiles) tiles.innerHTML = '';
+    if (ladder) ladder.innerHTML = '';
+    renderIndexPivots();
+    return;
+  }
+
+  if (asOf) asOf.textContent = `As of ${snap.date || 'N/A'}`;
+  if (trend) {
+    trend.textContent = snap.trend?.label || 'N/A';
+    trend.className = 'badge ' + badgeClass(snap.trend?.label);
+  }
+  if (head) {
+    head.innerHTML = `
+      <div>
+        <div class="muted small">${escapeHtml(snap.label || '')} · ${escapeHtml(snap.ticker || '')}</div>
+        <div class="tv">${num(snap.close)}</div>
+      </div>
+      <span class="hero-chip">Daily <b class="${signedClass(snap.change_pct) === 'good' ? 'tone-good' : signedClass(snap.change_pct) === 'bad' ? 'tone-bad' : 'tone-neutral'}">${pct(snap.change_pct)}</b></span>
+      <span class="hero-chip">Weekly <b>${pct(snap.week_pct)}</b></span>
+      <span class="hero-chip">Monthly <b>${pct(snap.month_pct)}</b></span>
+      <span class="hero-chip">52w range <b>${num(snap.year_low)} – ${num(snap.year_high)}</b></span>
+      <span class="hero-chip">${escapeHtml(snap.trend?.note || '')}</span>`;
+  }
+  if (tiles) {
+    tiles.innerHTML = (snap.indicators || []).map(ind => `
+      <div class="ind-tile">
+        <div class="it-name">${escapeHtml(ind.name)}</div>
+        <div class="it-val">${num(ind.value)}</div>
+        <div>${badge(ind.status)}</div>
+        <div class="it-note" style="margin-top:6px">${escapeHtml(ind.note || '')}</div>
+      </div>`).join('');
+  }
+  if (ladder) {
+    ladder.innerHTML = (snap.moving_averages || []).map(ma => {
+      const dist = Number(ma.distance_pct);
+      const width = Number.isFinite(dist) ? Math.min(Math.abs(dist) * 6, 50) : 0;
+      const dir = dist >= 0 ? 'up' : 'down';
+      return `
+      <div class="ma-row">
+        <b>${ma.period} DMA</b>
+        <div>
+          <div class="small muted">SMA ${num(ma.sma)} · EMA ${num(ma.ema)}</div>
+          <div class="ma-track"><i class="${dir}" style="width:${width}%"></i></div>
+        </div>
+        <span class="badge ${dist >= 0 ? 'good' : 'bad'}">${ma.position} ${pct(ma.distance_pct)}</span>
+      </div>`;
+    }).join('') || '<p class="muted">Not enough history for moving averages.</p>';
+  }
+
+  const overlay = document.getElementById('technicalMaOverlay')?.value || 'sma';
+  drawMaChart(snap, overlay);
+  drawRsiChart(snap);
+  drawMacdChart(snap);
+  renderIndexPivots();
+}
+function renderIndexPivots() {
+  const tbody = document.getElementById('indexPivotRows');
+  if (!tbody) return;
+  const entries = Object.values(techData());
+  tbody.innerHTML = entries.map(snap => {
+    const lv = snap.levels || {};
+    return `<tr>
+      <td>${escapeHtml(snap.label || '')}</td>
+      <td class="num">${num(snap.close)}</td>
+      <td class="num lvl">${num(lv.s3)}</td>
+      <td class="num lvl">${num(lv.s2)}</td>
+      <td class="num lvl">${num(lv.s1)}</td>
+      <td class="num"><strong>${num(lv.pivot)}</strong></td>
+      <td class="num lvl">${num(lv.r1)}</td>
+      <td class="num lvl">${num(lv.r2)}</td>
+      <td class="num lvl">${num(lv.r3)}</td>
+      <td>${badge(snap.trend?.label)}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="10">No index technical data available.</td></tr>';
+}
+function seriesLabels(series) {
+  return series.map(p => String(p.date || '').slice(5));
+}
+function drawMaChart(snap, overlay) {
+  const series = snap.series || [];
+  const labels = seriesLabels(series);
+  const datasets = [{
+    label: 'Close',
+    data: series.map(p => p.close),
+    borderColor: C.brand,
+    backgroundColor: ctx => {
+      const { chartArea, ctx: c } = ctx.chart;
+      if (!chartArea) return 'rgba(37,99,235,.10)';
+      const g = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+      g.addColorStop(0, 'rgba(37,99,235,.26)');
+      g.addColorStop(1, 'rgba(37,99,235,.01)');
+      return g;
+    },
+    fill: true,
+    borderWidth: 2.4,
+    tension: 0.2,
+    pointRadius: 0,
+    pointHoverRadius: 5,
+    order: 5
+  }];
+
+  if (overlay === 'bollinger') {
+    datasets.push(
+      { label: 'Upper band', data: series.map(p => p.bb_upper), borderColor: 'rgba(148,163,184,.85)', borderWidth: 1.4, borderDash: [5, 4], pointRadius: 0, fill: false, tension: 0.2 },
+      { label: 'Lower band', data: series.map(p => p.bb_lower), borderColor: 'rgba(148,163,184,.85)', borderWidth: 1.4, borderDash: [5, 4], pointRadius: 0, fill: '-1', backgroundColor: 'rgba(148,163,184,.10)', tension: 0.2 }
+    );
+  } else {
+    Object.keys(MA_COLORS).forEach(period => {
+      const key = 'sma' + period;
+      if (!series.some(p => p[key] !== null && p[key] !== undefined)) return;
+      datasets.push({
+        label: `${period} DMA`,
+        data: series.map(p => p[key]),
+        borderColor: MA_COLORS[period],
+        borderWidth: 1.7,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+        fill: false,
+        tension: 0.2,
+        spanGaps: true
+      });
+    });
+  }
+
+  mountChart('maChart', {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, border: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 10 } },
+        y: { grid: { color: C.grid }, border: { display: false }, ticks: { callback: v => num(v) } }
+      },
+      plugins: {
+        legend: { display: true, position: 'top', labels: { usePointStyle: true, boxWidth: 8, font: { size: 11 } } },
+        tooltip: {
+          callbacks: {
+            title: items => 'Date ' + (series[items[0].dataIndex]?.date || ''),
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y === null ? 'N/A' : num(ctx.parsed.y)}`
+          }
+        }
+      }
+    },
+    plugins: [emptyMessagePlugin('No price history available')]
+  });
+}
+function drawRsiChart(snap) {
+  const series = snap.series || [];
+  mountChart('rsiChart', {
+    type: 'line',
+    data: {
+      labels: seriesLabels(series),
+      datasets: [{
+        label: 'RSI (14)',
+        data: series.map(p => p.rsi),
+        borderColor: '#8b5cf6',
+        backgroundColor: 'rgba(139,92,246,.12)',
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 5,
+        fill: true,
+        tension: 0.25,
+        spanGaps: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, border: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+        y: { min: 0, max: 100, grid: { color: C.grid }, border: { display: false }, ticks: { stepSize: 25 } }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { title: items => 'Date ' + (series[items[0].dataIndex]?.date || '') } }
+      }
+    },
+    plugins: [emptyMessagePlugin('No RSI data available'), rsiBandsPlugin()]
+  });
+}
+function rsiBandsPlugin() {
+  return {
+    id: 'rsiBands',
+    beforeDatasetsDraw(chart) {
+      const { ctx, chartArea, scales } = chart;
+      if (!chartArea || !scales.y) return;
+      ctx.save();
+      ctx.fillStyle = 'rgba(220,38,38,.10)';
+      const top = scales.y.getPixelForValue(100);
+      const seventy = scales.y.getPixelForValue(70);
+      ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, seventy - top);
+      ctx.fillStyle = 'rgba(22,163,74,.10)';
+      const thirty = scales.y.getPixelForValue(30);
+      const bottom = scales.y.getPixelForValue(0);
+      ctx.fillRect(chartArea.left, thirty, chartArea.right - chartArea.left, bottom - thirty);
+      ctx.restore();
+    }
+  };
+}
+function drawMacdChart(snap) {
+  const series = snap.series || [];
+  mountChart('macdChart', {
+    data: {
+      labels: seriesLabels(series),
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Histogram',
+          data: series.map(p => p.hist),
+          backgroundColor: series.map(p => (Number(p.hist) >= 0 ? 'rgba(22,163,74,.55)' : 'rgba(220,38,38,.55)')),
+          borderWidth: 0,
+          maxBarThickness: 6,
+          order: 3
+        },
+        { type: 'line', label: 'MACD', data: series.map(p => p.macd), borderColor: C.brand, borderWidth: 2, pointRadius: 0, fill: false, tension: 0.2, order: 1 },
+        { type: 'line', label: 'Signal', data: series.map(p => p.signal), borderColor: '#f59e0b', borderWidth: 1.6, pointRadius: 0, fill: false, tension: 0.2, order: 2 }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { grid: { display: false }, border: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+        y: { grid: { color: C.grid }, border: { display: false } }
+      },
+      plugins: {
+        legend: { display: true, position: 'top', labels: { usePointStyle: true, boxWidth: 8, font: { size: 11 } } },
+        tooltip: { callbacks: { title: items => 'Date ' + (series[items[0].dataIndex]?.date || '') } }
+      }
+    },
+    plugins: [emptyMessagePlugin('No MACD data available')]
+  });
+}
+
 function renderSignals() {
   const status = document.getElementById('signalStatusFilter').value;
   const rows = (APP.score.components || []).filter(r => status === 'All' || r.status === status);
@@ -1347,7 +1948,7 @@ renderMeetingMode();
   document.getElementById('marketView').textContent = APP.market_view || '';
   document.getElementById('riskNote').textContent = APP.risk_note || '';
   document.getElementById('markdownReport').textContent = APP.markdown || '';
-  renderOICards(); renderGlobal(); renderCommodities(); renderCrypto(); renderCurrency(); renderSectors(); renderSignals(); renderHistory(); renderWarnings();
+  renderOICards(); renderGlobal(); renderCommodities(); renderCrypto(); renderCurrency(); renderSectors(); renderNifty50(); renderTechnicals(); renderSignals(); renderHistory(); renderWarnings();
   renderHeroStats(); renderAiSummary(); renderChecklist(); renderAlerts(); renderLevels(); renderIndicators(); renderFlow(); renderTimeline();
   drawBarChart('globalMiniChart', (APP.data.global_markets || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('sectorMiniChart', ((APP.data.nse_indices || {}).sectors || []).slice(0, 8), 'name', 'change_pct', 'Change %');
@@ -2030,6 +2631,8 @@ const SEARCH_MAP = [
   { k: ['crypto', 'bitcoin', 'btc', 'ether', 'eth', 'solana'], tab: 'crypto' },
   { k: ['currency', 'dxy', 'dollar', 'usd', 'inr', 'eur', 'jpy'], tab: 'currency' },
   { k: ['sector', 'bank', 'it', 'auto', 'pharma', 'fmcg', 'metal'], tab: 'sectors' },
+  { k: ['pivot', 'nifty 50', 'nifty50', 'stock', 'constituent', 'reliance', 'tcs', 'infy', 'hdfc'], tab: 'nifty50' },
+  { k: ['technical', 'moving average', 'dma', 'sma', 'ema', 'rsi', 'macd', 'bollinger', 'indicator'], tab: 'technicals' },
   { k: ['signal', 'score', 'bias'], tab: 'signals' },
   { k: ['history', 'pcr', 'trend'], tab: 'history' },
   { k: ['news', 'headline'], tab: 'news' },
@@ -2079,6 +2682,10 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 ['cryptoSort'].forEach(id => document.getElementById(id).addEventListener('change', renderCrypto));
 ['currencySort'].forEach(id => document.getElementById(id).addEventListener('change', renderCurrency));
 ['sectorSearch','sectorSentimentFilter','sectorSort'].forEach(id => document.getElementById(id).addEventListener(id === 'sectorSearch' ? 'input' : 'change', renderSectors));
+['nifty50Search','nifty50Sector','nifty50Sort','nifty50View','nifty50Zone'].forEach(id =>
+  document.getElementById(id)?.addEventListener(id === 'nifty50Search' ? 'input' : 'change', renderNifty50));
+document.getElementById('nifty50Csv')?.addEventListener('click', downloadNifty50Csv);
+['technicalIndex','technicalMaOverlay'].forEach(id => document.getElementById(id)?.addEventListener('change', renderTechnicals));
 document.getElementById('signalStatusFilter').addEventListener('change', renderSignals);
 document.getElementById('pcrWindow')?.addEventListener('change', renderPcrRolling);
 document.getElementById('copySummaryBtn').addEventListener('click', () => copyText(`${APP.score.bias} | Score ${APP.score.score}\n${APP.market_view}\n${APP.risk_note}`));
@@ -2097,9 +2704,18 @@ function stripMarkdown(text) {
     .replace(/\\s+/g, ' ')
     .trim();
 }
+function speechMarkdown() {
+  // The Nifty 50 pivot table is ~50 rows of levels — listenable as a headline,
+  // not as a read-out, so its tables are dropped from the spoken report.
+  let inPivotSection = false;
+  return String(APP.markdown || '').split('\\n').filter(line => {
+    if (line.startsWith('## ')) inPivotSection = line.includes('Nifty 50 Pivot Table');
+    return !(inPivotSection && line.trim().startsWith('|'));
+  }).join('\\n');
+}
 function getSpeechText() {
   const mode = document.getElementById('ttsMode').value;
-  if (mode === 'full') return stripMarkdown(APP.markdown || '');
+  if (mode === 'full') return stripMarkdown(speechMarkdown());
   return stripMarkdown(`Morning market brief. Market bias is ${APP.score.bias}. Total score is ${APP.score.score}. Confidence is ${APP.score.confidence}. ${APP.market_view || ''} ${APP.risk_note || ''}`);
 }
 function loadVoices() {
@@ -2198,6 +2814,79 @@ def _dashboard_payload(context: dict[str, Any], markdown: str) -> dict[str, Any]
         "risk_note": context.get("risk_note"),
         "markdown": markdown,
     }
+
+
+def _index_technicals_markdown(technicals: dict[str, Any]) -> list[str]:
+    lines = ["## Index Moving Averages & Indicators", ""]
+    if not technicals:
+        lines.append("Index technical data not available in this run.")
+        return lines
+
+    lines.append("| Index | Close | Daily % | Weekly % | Monthly % | 20 DMA | 50 DMA | 100 DMA | 200 DMA | Trend |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|---|")
+    for snapshot in technicals.values():
+        mas = {ma["period"]: ma for ma in snapshot.get("moving_averages", [])}
+        lines.append(
+            f"| {snapshot.get('label')} | {number_text(snapshot.get('close'))} | {pct_text(snapshot.get('change_pct'))} | "
+            f"{pct_text(snapshot.get('week_pct'))} | {pct_text(snapshot.get('month_pct'))} | "
+            + " | ".join(number_text(mas.get(period, {}).get("sma")) for period in (20, 50, 100, 200))
+            + f" | {(snapshot.get('trend') or {}).get('label', 'N/A')} |"
+        )
+    lines.append("")
+
+    for snapshot in technicals.values():
+        lines.append(f"### {snapshot.get('label')} Indicators")
+        lines.append("")
+        for indicator in snapshot.get("indicators", []):
+            lines.append(
+                f"- **{indicator.get('name')}:** {number_text(indicator.get('value'))} "
+                f"({indicator.get('status')}) — {indicator.get('note')}"
+            )
+        levels = snapshot.get("levels", {})
+        lines.append(
+            f"- **Pivot levels:** S2 {number_text(levels.get('s2'))} · S1 {number_text(levels.get('s1'))} · "
+            f"PP {number_text(levels.get('pivot'))} · R1 {number_text(levels.get('r1'))} · R2 {number_text(levels.get('r2'))}"
+        )
+        lines.append("")
+    return lines
+
+
+def _nifty50_markdown(nifty50: dict[str, Any]) -> list[str]:
+    lines = ["## Nifty 50 Pivot Table", ""]
+    rows = nifty50.get("rows", [])
+    if not rows:
+        lines.append("Nifty 50 constituent data not available in this run.")
+        return lines
+
+    breadth = nifty50.get("breadth", {})
+    lines.append(
+        f"Breadth as of {nifty50.get('as_of', 'N/A')}: **{breadth.get('advancing', 0)} advancing / "
+        f"{breadth.get('declining', 0)} declining**, {breadth.get('above_pivot', 0)} of {len(rows)} trading above their daily pivot. "
+        f"Average change: {pct_text(breadth.get('avg_change_pct'))} daily, {pct_text(breadth.get('avg_week_pct'))} weekly, "
+        f"{pct_text(breadth.get('avg_month_pct'))} monthly."
+    )
+    lines.append("")
+    lines.append("| Stock | LTP | Daily % | Weekly % | Monthly % | S2 | S1 | Pivot | R1 | R2 | RSI | Zone |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|")
+    for row in rows:
+        lines.append(
+            f"| {row.get('symbol')} | {number_text(row.get('close'))} | {pct_text(row.get('change_pct'))} | "
+            f"{pct_text(row.get('week_pct'))} | {pct_text(row.get('month_pct'))} | {number_text(row.get('s2'))} | "
+            f"{number_text(row.get('s1'))} | {number_text(row.get('pivot'))} | {number_text(row.get('r1'))} | "
+            f"{number_text(row.get('r2'))} | {number_text(row.get('rsi'))} | {row.get('zone', 'N/A')} |"
+        )
+    lines.append("")
+    lines.append("### Sector Roll-Up")
+    lines.append("")
+    lines.append("| Sector | Stocks | Daily % | Weekly % | Monthly % | Advancing |")
+    lines.append("|---|---:|---:|---:|---:|---:|")
+    for sector in nifty50.get("sectors", []):
+        lines.append(
+            f"| {sector.get('sector')} | {sector.get('count')} | {pct_text(sector.get('change_pct'))} | "
+            f"{pct_text(sector.get('week_pct'))} | {pct_text(sector.get('month_pct'))} | "
+            f"{sector.get('advancing')}/{sector.get('count')} |"
+        )
+    return lines
 
 
 def _market_group_markdown(title: str, rows: list[dict[str, Any]], label: str) -> list[str]:

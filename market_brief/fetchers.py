@@ -24,6 +24,7 @@ from .config import (
     US_MARKETS,
 )
 from .nse_client import NSEClient
+from .technicals import fetch_index_technicals, fetch_nifty50_pivots
 from .utils import safe_get, to_float
 
 
@@ -534,7 +535,8 @@ def build_data_bundle() -> dict[str, Any]:
     fii_dii = fetch_fii_dii(client, warnings)
     nifty_options = fetch_option_chain(client, "NIFTY", warnings, nse_indices.get("nifty_spot"))
     banknifty_options = fetch_option_chain(client, "BANKNIFTY", warnings, nse_indices.get("banknifty_spot"))
-    
+    nifty50 = fetch_nifty50_pivots(warnings)
+    index_technicals = fetch_index_technicals(warnings)
 
     return {
         "global_markets": global_markets,
@@ -547,6 +549,8 @@ def build_data_bundle() -> dict[str, Any]:
             "NIFTY": nifty_options,
             "BANKNIFTY": banknifty_options,
         },
+        "nifty50": nifty50,
+        "index_technicals": index_technicals,
         "market_news": fetch_market_news(limit=10),
         "warnings": warnings,
     }

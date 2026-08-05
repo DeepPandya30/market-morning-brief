@@ -2,11 +2,26 @@ name: Morning Market Report
 
 on:
   schedule:
-    # GitHub Actions cron is UTC. IST = UTC + 5:30.
-    # 02:20 UTC = 07:50 AM IST (Mon-Fri).
-    # Note: GitHub may delay scheduled runs during peak load; a mid-hour
-    # minute (:20) is less contended than the top of the hour.
-    - cron: "20 2 * * 1-5"
+    # GitHub Actions cron is UTC (IST = UTC + 5:30) and scheduled runs are
+    # queued on a best-effort basis. This repo has never had one start on time:
+    # a 01:45 UTC cron fired 06:30-07:45 UTC, and 02:20 UTC fires 04:50-06:20
+    # UTC — a 2.5 to 6 hour backlog. Moving the cron minute does not help.
+    #
+    # So the schedule is fired early and repeatedly, and the "Decide whether to
+    # run" step below gates on the *actual* execution time: the first attempt
+    # that lands between 06:45 and 09:10 IST generates the report and every
+    # other attempt exits in seconds. The early slots cover a delayed queue,
+    # the later ones cover the queue running on time.
+    #
+    # Slots at/after 00:00 UTC use days 1-5 (Mon-Fri IST); the previous-evening
+    # UTC slots use days 0-4, since 22:20 UTC Sunday is 03:50 IST Monday.
+    - cron: "50 21 * * 0-4"   # 03:20 IST — covers a ~4 hour delay
+    - cron: "20 22 * * 0-4"   # 03:50 IST — covers a ~3.5 hour delay
+    - cron: "20 23 * * 0-4"   # 04:50 IST — covers a ~2.5 hour delay
+    - cron: "20 0 * * 1-5"    # 05:50 IST — covers a ~1.5 hour delay
+    - cron: "20 1 * * 1-5"    # 06:50 IST — inside the window if on time
+    - cron: "50 1 * * 1-5"    # 07:20 IST — inside the window if on time
+    - cron: "20 2 * * 1-5"    # 07:50 IST — target time, last chance
 
   workflow_dispatch:
 
@@ -34,21 +49,82 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
 
+      - name: Decide whether to run
+        id: gate
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+
+          IST = timezone(timedelta(hours=5, minutes=30))
+          now = datetime.now(IST)
+          event = os.environ.get("EVENT_NAME", "schedule")
+
+          # Pre-market publish window. Opens early enough for a 7:50 AM brief and
+          # closes just before the 09:15 IST market open, after which a
+          # pre-market report has no value.
+          WINDOW_START = now.replace(hour=6, minute=45, second=0, microsecond=0)
+          WINDOW_END = now.replace(hour=9, minute=10, second=0, microsecond=0)
+
+
+          def decide():
+              if event != "schedule":
+                  return True, f"manual {event} run — gate skipped"
+              if now.weekday() > 4:
+                  return False, f"{now:%A} is not a trading day in IST"
+              if not WINDOW_START <= now <= WINDOW_END:
+                  return False, (
+                      f"{now:%H:%M} IST is outside the "
+                      f"{WINDOW_START:%H:%M}-{WINDOW_END:%H:%M} IST publish window"
+                  )
+              info = Path("docs/build_info.json")
+              if info.exists():
+                  try:
+                      stamp = json.loads(info.read_text(encoding="utf-8"))["generated_at_iso"]
+                      last = datetime.fromisoformat(stamp).astimezone(IST)
+                  except Exception:
+                      last = None
+                  if last is not None and last.date() == now.date():
+                      return False, f"report already published today at {last:%H:%M} IST"
+              return True, f"{now:%H:%M} IST is inside the publish window and no report exists for today"
+
+
+          should_run, reason = decide()
+          verdict = "RUN" if should_run else "SKIP"
+          print(f"{verdict}: {reason}")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              handle.write(f"should_run={'true' if should_run else 'false'}\n")
+
+          summary = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary:
+              with open(summary, "a", encoding="utf-8") as handle:
+                  handle.write(f"### {verdict}\n\n{reason}\n\nChecked at {now:%Y-%m-%d %H:%M:%S} IST.\n")
+          PY
+
       - name: Setup Python
+        if: steps.gate.outputs.should_run == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
       - name: Install dependencies
+        if: steps.gate.outputs.should_run == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install --upgrade -r requirements.txt
 
       - name: Generate morning report
+        if: steps.gate.outputs.should_run == 'true'
         run: |
           python scripts/generate_report.py
 
       - name: Force build timestamp
+        if: steps.gate.outputs.should_run == 'true'
         run: |
           python - <<'PY'
           from datetime import datetime, timezone, timedelta
@@ -98,6 +174,7 @@ jobs:
           PY
 
       - name: Show generated date
+        if: steps.gate.outputs.should_run == 'true'
         run: |
           echo "Latest docs build info:"
           cat docs/build_info.json || true
@@ -110,6 +187,7 @@ jobs:
           ls -la data/raw || true
 
       - name: Commit and push updated dashboard
+        if: steps.gate.outputs.should_run == 'true'
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"

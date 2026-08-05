@@ -3,7 +3,7 @@
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Dashboard-blue?logo=github)](https://DeepPandya30.github.io/market-morning-brief/)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-green?logo=python)
 ![Automation](https://img.shields.io/badge/Automation-GitHub%20Actions-orange?logo=githubactions)
-![Schedule](https://img.shields.io/badge/Runs-Mon--Fri%207%3A50%20AM%20IST-purple)
+![Schedule](https://img.shields.io/badge/Runs-Mon--Fri%20pre--market%20IST-purple)
 ![Status](https://img.shields.io/badge/Purpose-Internal%20Market%20Brief-lightgrey)
 
 A fully automated **pre-market dashboard** for Indian market morning meetings.
@@ -30,7 +30,7 @@ https://DeepPandya30.github.io/market-morning-brief/
 - Historical market bias tracking
 - Charts, filters, copy buttons, markdown download, PDF print option
 - Browser-based text-to-speech for quick morning briefing
-- Scheduled GitHub Action run before 8:00 AM IST
+- Scheduled GitHub Action run before market open, with delay-tolerant retries
 
 ---
 
@@ -44,6 +44,9 @@ https://DeepPandya30.github.io/market-morning-brief/
 - Bank Nifty option-chain support, resistance and PCR
 - India VIX
 - India sector-wise market view
+- Nifty 50 constituent pivot table: classic pivot levels (S3–R3) with daily, weekly and monthly % change
+- Nifty and Bank Nifty moving averages (20 / 50 / 100 / 200 SMA and EMA)
+- Index indicator charts: RSI (14), MACD (12,26,9), Bollinger bands (20,2), ATR (14)
 
 ### 🌎 Global Markets
 
@@ -95,6 +98,8 @@ The interactive dashboard is divided into focused tabs:
 | **Overview** | Quick market summary, bias, score and meeting notes |
 | **Global Markets** | US, Europe and Asia market snapshot with region filter |
 | **Sectors** | Indian sector-wise market movement with search and filters |
+| **Nifty 50** | Constituent pivot table — pivot levels, daily/weekly/monthly % change, RSI, breadth, sector roll-up, CSV export |
+| **Technicals** | Nifty and Bank Nifty moving-average ladder plus RSI, MACD and Bollinger charts |
 | **Signals** | Detailed signal score breakdown |
 | **History** | Historical bias score trend |
 | **Full Report** | Complete markdown report for morning discussion |
@@ -244,17 +249,31 @@ https://DeepPandya30.github.io/market-morning-brief/
 
 ## ⏰ GitHub Action Schedule
 
-The workflow runs **Monday to Friday at 7:50 AM IST**, so the dashboard is ready before the 8:00 AM market meeting.
+The workflow targets **Monday to Friday, 6:45–9:10 AM IST**, so the dashboard is ready before the morning market meeting.
 
-```yaml
-cron: "20 2 * * 1-5"
-```
+GitHub queues scheduled workflows on a best-effort basis, and this repository has consistently seen them start **2.5 to 6 hours late** — a single `cron` at 02:20 UTC (07:50 IST) was actually firing between 04:50 and 06:20 UTC (10:20–11:50 IST). Changing the cron minute does not fix that.
 
-GitHub Actions uses UTC time.
+So the workflow fires **seven schedules** spread from 21:50 UTC to 02:20 UTC, and a gate step decides at *execution* time whether that attempt should do the work:
 
 ```text
-02:20 UTC = 07:50 IST
+RUN   if it is a weekday, the clock is between 06:45 and 09:10 IST,
+      and no report has been published for today yet
+SKIP  otherwise (exits in seconds)
 ```
+
+The early slots absorb a delayed queue; the later ones cover the queue running on time. The first attempt that lands inside the window publishes the report, and every other attempt that day no-ops. Manual `workflow_dispatch` runs always bypass the gate.
+
+```yaml
+- cron: "50 21 * * 0-4"   # 03:20 IST
+- cron: "20 22 * * 0-4"   # 03:50 IST
+- cron: "20 23 * * 0-4"   # 04:50 IST
+- cron: "20 0 * * 1-5"    # 05:50 IST
+- cron: "20 1 * * 1-5"    # 06:50 IST
+- cron: "50 1 * * 1-5"    # 07:20 IST
+- cron: "20 2 * * 1-5"    # 07:50 IST
+```
+
+Every run's Actions summary records the RUN/SKIP verdict and the reason, so the daily behaviour is auditable. If GitHub's backlog ever pushes *every* attempt past 09:10 IST, no report is published that day — trigger it manually in that case.
 
 ---
 
@@ -277,7 +296,7 @@ This is useful when:
 
 ## 🧾 Example Morning Workflow
 
-1. GitHub Action runs at 7:50 AM IST.
+1. GitHub Action runs in the 6:45-9:10 AM IST pre-market window.
 2. Python script fetches market data.
 3. Market signals are scored.
 4. Markdown report is generated.

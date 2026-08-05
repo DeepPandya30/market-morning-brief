@@ -70,6 +70,81 @@ SECTOR_KEYWORDS = {
     "NIFTY OIL & GAS",
 }
 
+# Yahoo Finance tickers for the two index charts (moving averages + indicators).
+INDEX_TECHNICAL_TICKERS = {
+    "NIFTY 50": "^NSEI",
+    "NIFTY BANK": "^NSEBANK",
+}
+
+# Moving averages plotted on the index technical charts and summarised in the
+# MA table. Anything longer than the fetched history is reported as N/A.
+MA_PERIODS = (20, 50, 100, 200)
+
+# Bars kept in the dashboard payload per index. Enough for a 200-DMA overlay to
+# be visible without bloating the embedded JSON.
+INDEX_SERIES_BARS = 140
+
+# NIFTY 50 constituents keyed by NSE symbol -> (display name, sector bucket).
+# NSE rebalances this index twice a year, so this list needs a manual refresh
+# after each reconstitution; fetch_nifty50_pivots() warns for any symbol that
+# returns no data so a stale entry shows up in the run log.
+NIFTY50_CONSTITUENTS = {
+    "ADANIENT": ("Adani Enterprises", "Conglomerate"),
+    "ADANIPORTS": ("Adani Ports", "Infrastructure"),
+    "APOLLOHOSP": ("Apollo Hospitals", "Healthcare"),
+    "ASIANPAINT": ("Asian Paints", "Consumer"),
+    "AXISBANK": ("Axis Bank", "Financials"),
+    "BAJAJ-AUTO": ("Bajaj Auto", "Auto"),
+    "BAJAJFINSV": ("Bajaj Finserv", "Financials"),
+    "BAJFINANCE": ("Bajaj Finance", "Financials"),
+    "BEL": ("Bharat Electronics", "Capital Goods"),
+    "BHARTIARTL": ("Bharti Airtel", "Telecom"),
+    "CIPLA": ("Cipla", "Pharma"),
+    "COALINDIA": ("Coal India", "Energy"),
+    "DRREDDY": ("Dr Reddy's Labs", "Pharma"),
+    "EICHERMOT": ("Eicher Motors", "Auto"),
+    "ETERNAL": ("Eternal (Zomato)", "Consumer"),
+    "GRASIM": ("Grasim Industries", "Materials"),
+    "HCLTECH": ("HCL Technologies", "IT"),
+    "HDFCBANK": ("HDFC Bank", "Financials"),
+    "HDFCLIFE": ("HDFC Life", "Financials"),
+    "HINDALCO": ("Hindalco", "Metals"),
+    "HINDUNILVR": ("Hindustan Unilever", "FMCG"),
+    "ICICIBANK": ("ICICI Bank", "Financials"),
+    "INDIGO": ("InterGlobe Aviation", "Services"),
+    "INFY": ("Infosys", "IT"),
+    "ITC": ("ITC", "FMCG"),
+    "JIOFIN": ("Jio Financial", "Financials"),
+    "JSWSTEEL": ("JSW Steel", "Metals"),
+    "KOTAKBANK": ("Kotak Mahindra Bank", "Financials"),
+    "LT": ("Larsen & Toubro", "Capital Goods"),
+    "M&M": ("Mahindra & Mahindra", "Auto"),
+    "MARUTI": ("Maruti Suzuki", "Auto"),
+    "MAXHEALTH": ("Max Healthcare", "Healthcare"),
+    "NESTLEIND": ("Nestle India", "FMCG"),
+    "NTPC": ("NTPC", "Power"),
+    "ONGC": ("ONGC", "Energy"),
+    "POWERGRID": ("Power Grid", "Power"),
+    "RELIANCE": ("Reliance Industries", "Energy"),
+    "SBILIFE": ("SBI Life", "Financials"),
+    "SBIN": ("State Bank of India", "Financials"),
+    "SHRIRAMFIN": ("Shriram Finance", "Financials"),
+    "SUNPHARMA": ("Sun Pharma", "Pharma"),
+    "TATACONSUM": ("Tata Consumer", "FMCG"),
+    # Tata Motors demerged; the passenger-vehicle entity (TMPV) is the index member.
+    "TMPV": ("Tata Motors Passenger Vehicles", "Auto"),
+    "TATASTEEL": ("Tata Steel", "Metals"),
+    "TCS": ("Tata Consultancy Services", "IT"),
+    "TECHM": ("Tech Mahindra", "IT"),
+    "TITAN": ("Titan Company", "Consumer"),
+    "TRENT": ("Trent", "Consumer"),
+    "ULTRACEMCO": ("UltraTech Cement", "Materials"),
+    "WIPRO": ("Wipro", "IT"),
+}
+
+# Trading sessions used for the rolling % change columns in the pivot table.
+LOOKBACK_SESSIONS = {"week": 5, "month": 21}
+
 NSE_BASE_URL = "https://www.nseindia.com"
 
 NSE_REFERERS = [
