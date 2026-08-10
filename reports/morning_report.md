@@ -1,13 +1,13 @@
-# Morning Market Brief - 07 August 2026
+# Morning Market Brief - 10 August 2026
 
-Generated at: **07 Aug 2026, 03:41 PM IST**
+Generated at: **10 Aug 2026, 08:08 AM IST**
 
 ## Final View
 
-- **Market Bias:** Mild Bullish
-- **Score:** 3
+- **Market Bias:** Bullish
+- **Score:** 6
 - **Confidence:** High
-- **Meeting View:** Market setup is Mild Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,000.
+- **Meeting View:** Market setup is Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,000.
 
 ## Expected Opening
 
@@ -18,52 +18,52 @@ Generated at: **07 Aug 2026, 03:41 PM IST**
 
 | Region | Index | Close | Change % | Date |
 |---|---:|---:|---:|---:|
-| US | Nasdaq | 26,348 | -0.06% | 2026-08-06 |
-| US | Dow Jones | 53,885 | -0.85% | 2026-08-06 |
-| US | S&P 500 | 7,710 | -0.18% | 2026-08-06 |
-| Europe | FTSE 100 | 10,923 | 0.51% | 2026-08-07 |
-| Europe | CAC 40 | 8,727 | 0.32% | 2026-08-07 |
-| Europe | DAX | 26,327 | 0.72% | 2026-08-07 |
-| Asia | Hang Seng | 25,668 | 0.54% | 2026-08-07 |
-| Asia | Nikkei 225 | 65,607 | -0.12% | 2026-08-07 |
+| US | Nasdaq | 26,691 | 1.30% | 2026-08-07 |
+| US | Dow Jones | 54,037 | 0.28% | 2026-08-07 |
+| US | S&P 500 | 7,758 | 0.62% | 2026-08-07 |
+| Europe | FTSE 100 | 10,901 | 0.31% | 2026-08-07 |
+| Europe | CAC 40 | 8,715 | 0.17% | 2026-08-07 |
+| Europe | DAX | 26,319 | 0.69% | 2026-08-07 |
+| Asia | Hang Seng | 25,856 | 0.73% | 2026-08-10 |
+| Asia | Nikkei 225 | 66,938 | 2.03% | 2026-08-10 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,377 | 134.80 | 3.18% | 2026-08-07 |
-| Silver | SI=F | 64.69 | 3.26 | 5.30% | 2026-08-07 |
-| Crude Oil WTI | CL=F | 77.18 | -0.11 | -0.14% | 2026-08-07 |
-| Copper | HG=F | 6.68 | -0.00 | -0.05% | 2026-08-07 |
-| Brent Oil | BZ=F | 82.30 | -0.19 | -0.23% | 2026-08-07 |
-| Natural Gas | NG=F | 2.64 | -0.00 | -0.04% | 2026-08-07 |
+| Gold | GC=F | 4,390 | 49.40 | 1.14% | 2026-08-09 |
+| Silver | SI=F | 63.85 | 0.51 | 0.81% | 2026-08-09 |
+| Crude Oil WTI | CL=F | 78.67 | 0.49 | 0.63% | 2026-08-09 |
+| Copper | HG=F | 6.61 | 0.04 | 0.57% | 2026-08-09 |
+| Brent Oil | BZ=F | 84.37 | 0.82 | 0.98% | 2026-08-09 |
+| Natural Gas | NG=F | 2.73 | 0.06 | 2.40% | 2026-08-09 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 64,785 | 522.62 | 0.81% | 2026-08-07 |
-| Ethereum | ETH-USD | 1,913 | 10.82 | 0.57% | 2026-08-07 |
-| Solana | SOL-USD | 73.59 | 1.01 | 1.40% | 2026-08-07 |
-| Cardano | ADA-USD | 0.20 | 0.00 | 0.51% | 2026-08-07 |
-| Ripple | XRP-USD | 1.03 | 0.00 | 0.13% | 2026-08-07 |
+| Bitcoin | BTC-USD | 64,943 | 38.25 | 0.06% | 2026-08-10 |
+| Ethereum | ETH-USD | 1,915 | -0.18 | -0.01% | 2026-08-10 |
+| Solana | SOL-USD | 76.53 | 0.56 | 0.73% | 2026-08-10 |
+| Cardano | ADA-USD | 0.20 | -0.00 | -1.26% | 2026-08-10 |
+| Ripple | XRP-USD | 1.03 | -0.01 | -0.74% | 2026-08-10 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.34 | -0.00 | -0.21% | 2026-08-07 |
-| EUR/USD | EURUSD=X | 1.15 | -0.00 | -0.22% | 2026-08-07 |
-| USD/CHF | CHF=X | 0.81 | 0.00 | 0.44% | 2026-08-07 |
-| USD/JPY | JPY=X | 158.37 | 0.77 | 0.49% | 2026-08-07 |
-| DXY | DX-Y.NYB | 99.91 | -0.06 | -0.06% | 2026-08-07 |
-| USD/INR | INR=X | 95.20 | 0.12 | 0.13% | 2026-08-07 |
+| GBP/USD | GBPUSD=X | 1.35 | 0.00 | 0.25% | 2026-08-10 |
+| EUR/USD | EURUSD=X | 1.16 | 0.00 | 0.28% | 2026-08-10 |
+| USD/CHF | CHF=X | 0.81 | -0.00 | -0.44% | 2026-08-10 |
+| USD/JPY | JPY=X | 158.25 | -0.16 | -0.10% | 2026-08-10 |
+| DXY | DX-Y.NYB | 99.68 | 0.08 | 0.09% | 2026-08-09 |
+| USD/INR | INR=X | 95.20 | -0.11 | -0.12% | 2026-08-10 |
 
 ## FII / DII Flow
 
-- FII net: **₹-17.86 Cr**
-- DII net: **₹4,013.60 Cr**
-- Combined institutional flow: **₹3,995.74 Cr**
+- FII net: **₹480.24 Cr**
+- DII net: **₹235.56 Cr**
+- Combined institutional flow: **₹715.80 Cr**
 
 ## Open Interest View
 
@@ -110,7 +110,7 @@ Generated at: **07 Aug 2026, 03:41 PM IST**
 
 ## Nifty 50 Pivot Table
 
-Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading above their daily pivot. Average change: -0.17% daily, 0.93% weekly, 3.63% monthly.
+Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading above their daily pivot. Average change: -0.17% daily, 0.92% weekly, 3.63% monthly.
 
 | Stock | LTP | Daily % | Weekly % | Monthly % | S2 | S1 | Pivot | R1 | R2 | RSI | Zone |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
@@ -129,7 +129,7 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 | TMPV | 347.00 | 0.48% | 2.13% | 4.68% | 340.67 | 343.83 | 346.82 | 349.98 | 352.97 | 55.00 | Pivot - R1 |
 | BEL | 401.00 | 0.45% | 3.39% | -1.28% | 396.13 | 398.57 | 400.78 | 403.22 | 405.43 | 49.00 | Pivot - R1 |
 | ONGC | 238.85 | 0.44% | -1.52% | -1.97% | 234.56 | 236.70 | 239.20 | 241.34 | 243.84 | 39.30 | S1 - Pivot |
-| BAJAJ-AUTO | 11,662 | 0.36% | 2.01% | 14.74% | 11,499 | 11,581 | 11,655 | 11,737 | 11,811 | 67.30 | Pivot - R1 |
+| BAJAJ-AUTO | 11,662 | 0.36% | 1.23% | 14.84% | 11,499 | 11,581 | 11,655 | 11,737 | 11,811 | 67.00 | Pivot - R1 |
 | NESTLEIND | 1,540 | 0.33% | 2.01% | 5.25% | 1,505 | 1,522 | 1,538 | 1,555 | 1,571 | 67.10 | Pivot - R1 |
 | POWERGRID | 271.60 | 0.31% | -4.45% | -3.47% | 266.43 | 269.02 | 270.93 | 273.52 | 275.43 | 32.80 | Pivot - R1 |
 | INDIGO | 5,333 | 0.27% | 3.13% | 1.98% | 5,241 | 5,287 | 5,327 | 5,373 | 5,414 | 55.60 | Pivot - R1 |
@@ -171,7 +171,7 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 |---|---:|---:|---:|---:|---:|
 | Materials | 2 | 1.73% | 4.43% | 4.58% | 2/2 |
 | IT | 5 | 1.36% | 1.90% | 14.52% | 5/5 |
-| Auto | 5 | 0.80% | 1.64% | 8.82% | 4/5 |
+| Auto | 5 | 0.80% | 1.48% | 8.84% | 4/5 |
 | Telecom | 1 | 0.61% | -0.61% | 1.49% | 1/1 |
 | Metals | 3 | 0.54% | 3.31% | 5.27% | 1/3 |
 | Energy | 3 | 0.37% | 0.27% | -0.36% | 2/3 |
@@ -191,47 +191,47 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 | Signal | Score | Status | Reason |
 |---|---:|---|---|
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
-| US markets | -1 | Bearish | Average move -0.36% across 3 indices. |
-| Europe markets | 1 | Bullish | Average move 0.51% across 3 indices. |
-| Asia markets | 1 | Bullish | Average move 0.21% across 2 indices. |
-| FII/DII flow | 1 | Bullish | FII net -17.86 Cr, DII net 4013.60 Cr, combined 3995.74 Cr. |
+| US markets | 1 | Bullish | Average move 0.73% across 3 indices. |
+| Europe markets | 1 | Bullish | Average move 0.39% across 3 indices. |
+| Asia markets | 1 | Bullish | Average move 1.38% across 2 indices. |
+| FII/DII flow | 2 | Bullish | FII net 480.24 Cr, DII net 235.56 Cr, combined 715.80 Cr. |
 | Nifty OI | 0 | Neutral | PCR 0.73, support 24000.0, resistance 24600.0. |
 | Bank Nifty OI | 0 | Neutral | PCR 0.89, support 57000.0, resistance 58000.0. |
 | India VIX | 0 | Neutral | India VIX change 0.18%. |
 | Sector breadth | 1 | Bullish | 7 sectors positive and 6 sectors negative. |
-| Global commodities | 0 | Neutral | Crude/Brent average move -0.19%, commodity pressure is limited. |
-| Crypto risk appetite | 0 | Neutral | Major crypto basket average move 0.68% across 5 coins. |
-| Currency pressure | 0 | Neutral | DXY/USDINR pressure average 0.03%; rising dollar/rupee pressure is usually negative for India. |
+| Global commodities | 0 | Neutral | Crude/Brent average move 0.80%, commodity pressure is limited. |
+| Crypto risk appetite | 0 | Neutral | Major crypto basket average move -0.24% across 5 coins. |
+| Currency pressure | 0 | Neutral | DXY/USDINR pressure average -0.02%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
-- Market setup is Mild Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,000.
+- Market setup is Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,000.
 - Bank Nifty levels to monitor: support 57,000, resistance 58,000.
 - Avoid aggressive trades in the first 5–10 minutes if opening gap is large.
 - Confirm direction with Nifty/Bank Nifty holding above support or rejecting near resistance.
 
 ## Important Market News
 
-- **Stock market today: Gift Nifty hints a gap-down start; eight day trading stocks to buy on Friday, 7 August** — LiveMint Markets  
-  https://www.livemint.com/market/stock-market-news/stock-market-today-gift-nifty-hints-a-gap-down-start-eight-day-trading-stocks-to-buy-on-friday-7-august-11786068461100.html
-- **Indian bonds buckle under oil spike, fresh debt sale** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/bonds/indian-bonds-buckle-under-oil-spike-fresh-debt-sale/articleshow/133023421.cms
-- **7 August, 2026 Stock Market Updates: Sensex, Nifty tumble as crude oil prices gain on Mideast risk - India TV News** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi8AFBVV95cUxOZDh4ck8ySzFPUi1vbS12MmxRQm9Bam1kRkR5eTdXZkZKMGJ5QmFNLVhzQjEyZm9mbC1QRFNRM1BPODJxSzZzbEJhNFRGQU1yYWVDVENieFUzeEt2M2dKTkVZVHM1NWxPUDh1ZW1XNmRnR0hUV1RzTzA2blhzVXY4SjZHcEpGaVRoZ3Rkc0d4a3VHbkVKNXR4UTVPZWJiakE1eVd5a3d2Q2pTY25idWt6Ry1kNUNlTERQbmxkOVV5YnBuM3JmNWNvay1UeDEtSkZUdlU2cUF3Q2JQb21OMFFBNXg2ZDhmMWZkUEV0WEJFYmvSAfYBQVVfeXFMTW1BMFprYTFSWi11cmVCLUtPNUZkQk8xQVZtMGt0MTNkSWVmWUMtUzVWUThBUlVCTThjYlpLZVhtTGUzSWFja0N3eUR0UEp6RlBST01ybVBlX2N0RUZuQ050SFlrcXlvSkVEdDZadUphNGpwUEtzQlEtcjhRNnNXWlJFMGJ2S010d21qMjJOLVhjbkFseEg0WFJQTFBTd20zUVJ0ajh0eXZpUGpvVmtkek5oUXpIZG5KQ19PbE5KdHZwX1U3ZkZrazVqWFo4STBrcUJtSG56NlpyZ1VXTUlLcHR4NDZEWWRQQmZyeHBERF9wX1lCTGR3?oc=5
-- **Stock Markets Down: Crude Oil Prices Drag Sensex, Nifty - Rediff MoneyWiz** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMiqAFBVV95cUxNQTlIdnZqRlNMaENVN3VpOWtJaE1NZHdqVWx6SzFORkpOTEQ5a2h2R2djRmhrbkZiWTFqaEdtZ3NkWFZSajg2OVVxV0RGMHg1Zjdrc3piLXJIeEFsRVEyZVNTZUNxdXBVb19QVmdzTnZEUHg2T2gxVldOblBMS0dkVjlqY0hTS2JZUWxLMkxSRVhzZlpFZnFyeE5hRDdMb2ZrZENqUXRyWkTSAa4BQVVfeXFMUEV6VmRqSzJiMXhCd1REVnUxbHJENlEtdDNNb21uYlVjd3JHeU5Vd01ERXBtWHd6TnIwbTJRUTNVU1g2X3ZuWm9qUlZ4U1N6N18zMFhETmg2Q01sbXhlMHpGRWVGb0hsU21LUTU5bG1fdTNDT3k2WUhaenByQmFnbml2SEE4c25tSWxLZ2hmeFM5ZmhTQ3JqUnFQcmpudkxnUDFueWtCdkVJdHkxaUJB?oc=5
-- **Nifty 50, Sensex prediction today: Check how Indian stock market is expected to trade on 7 August** — LiveMint Markets  
-  https://www.livemint.com/market/stock-market-news/nifty-50-sensex-prediction-today-check-how-indian-stock-market-is-expected-to-trade-on-7-august-11786066836775.html
-- **Shares to buy or sell: Chandan Taparia of Motilal Oswal recommends three stocks to buy today - 7 August 2026** — LiveMint Markets  
-  https://www.livemint.com/market/stock-market-news/shares-to-buy-or-sell-chandan-taparia-of-motilal-oswal-recommends-three-stocks-to-buy-today-7-august-2026-11786070755187.html
-- **Rupee opens 6 paise lower at 95.28 against US dollar amid spike in crude oil prices** — LiveMint Markets  
-  https://www.livemint.com/market/stock-market-news/rupee-opens-6-paise-lower-at-95-28-against-us-dollar-amid-spike-in-crude-oil-prices-11786073687343.html
-- **Stock Market Update: Sensex, Nifty Close In Green; RBI Decision, Falling Crude Oil Prices Lift Dalal Street - Dynamite News** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMitwFBVV95cUxPdExCR3F2dVpYMnJCU3ptMlJwWF9rX0V6MGxJeDk3QjVZdTREa0ZkaHdIS183enhkOEJRZ2pLTEk3X2lzdWxNdmNSXzZhVWZrQTlXd19xM3dnNFJmemhNVFJhRnRIS2ZlR3B6XzdBaWwzTGNFcVJ6OGJ3N2I5c2tOdWVvVzIyQWVydWVrWkNmVHNWOVlXekdBd21TdzBveWE5U3hEaVkwbnQ5NUkyNjliX2FNZmpKc1nSAbcBQVVfeXFMT3RMQkdxdnVaWDJyQlN6bTJScFhfa19FejBsSXg5N0I1WXU0RGtGZGh3SEtfN3p4ZDhCUWdqS0xJN19pc3VsTXZjUl82YVVma0E5V3dfcTN3ZzRSZnpoTVRSYUZ0SEtmZUdwel83QWlsM0xjRXFSejhidzdiOXNrTnVlb1cyMkFlcnVla1pDZlRzVjlZV3pHQXdtU3cwb3lhOVN4RGlZMG50OTVJMjY5Yl9hTWZqSnNZ?oc=5
-- **From Gift Nifty to crude oil prices: 7 key things that changed for Indian stock market overnight - livemint.com** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi-AFBVV95cUxOZWs5dXVhREs3ODZYLUtnY1lRblA5SXNCTXA5MVhoc24tSzZTNVdmNEhuNTJINnFOcGJCeHdLelY0YWl2NFY2akRJYzk2Y05Zc0FFcWdGRnpjWVFTV0ExM1lDLVZkVnZBYzVIYnNmREo0eHhLa3VmTlBNV2o5MzRrb3FmRTJXdFoxTXlhdlM0MzM2dTVzQzczaUFsbEFaSUdfTnhZU1RCWUkzdTlCX2Mxa0Z2N1hYZzhDVzM3U0IwbGZiTFU4Wkt1WjV3RlJ4U0gzOERtTWo2UWxNakVKNW45WXBmNFZNYTBNUFY4bHhfNmNwMWpRUWJNRNIB_gFBVV95cUxPSmFMM2xYMWRQTnloT2l0ZTVzNkx6T2g5NkNUNmpTQXBTYVc2VVdiN3g1MXJUTl9EQUpMajNvTzVBQ1lPcFNsTmFOLXFBRnRiQjMtQVBtclR2cm5rSVgxaEg1eUoxYnRldEVEOC1IU2xvVFhReTgzU1NDcG1EWHBKNTZNcGxkT25KZFg1M1pQXzgzdkJyamE1ZEhvS1FhQ0psNWctX3A5WThaUXV5c1hCXzF0Y3pDdEdOSFd1X2hCbkRLclVsTC1YOWFYVWxnUFVyWEE4NXN1U1dXbFpGdDJWbVVpcFVNRWNCVTFxbHRjRE5hNTZSNmJ0UFV2UUlDQQ?oc=5
-- **Nifty, Sensex, Nifty Bank outlook for today: GIFT Nifty down 93 pts; key levels to watch - Business Today** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi3gFBVV95cUxQT05mZVpRQnk2VW93MHBDWHNOQkRvMWIyRGtJRkJoZi1Yb2ZHalFMZ0d0QkNOQ2hGdGVsOUZRMXpvRXJMVk8tUjhpWlhqSFh5c3JDNURWOTNfQlM5em5peHJPWG15Mkl2bG5rVzdyMWJrUWRmcVNrbUZYU2ROdjZVY1FVZlFsS0xOQTcxZnA2UnczbXZNaUxVRVR6NnBVYjRiMXl2dkwtLWNhMEtlaXlIZTZ6STVnQmtTcUZSVDZ1b0ROSjBET0c5V2RLaWRTTjV2YzhSbzE1S0o5YUgxRHfSAeMBQVVfeXFMTlVZY0JadnFOQWhjMjgybzZ4NXpoVnlGd2VPMzlweUpwMmhyeGN3SkhROG1TUWx1cXpPaVczcjRwQzdNUVVvUkE2cDNEa2hGdndQU0tNU3ZhVHFLMll3elRqMXpHdDNQUi01UDB1R2xnZFRoYlRuQUNmTmVvY0RhQXlYVmRjX3I5SnBoSDVyRmthRzhtRjFRWURVbUFfTFNHSThhLWJQQkxlYWszOXZwbV9RbW5TV2hYS0QyZnFJYVh6MDBDNzNGNDJyRkVHdW8xcFFlN09MT09zbkk5SzNEVVFQSkE?oc=5
+- **Will Nifty, Sensex extend losses on Monday? Middle East tensions, Q1 results and 3 other factors to steer D-St this week** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/news/will-nifty-sensex-extend-losses-on-monday-middle-east-tension-q1-results-3-other-factors-to-drive-mood-next-week/articleshow/133061939.cms
+- **Ahead of Market: 10 things that will decide D-Street action on Monday** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/news/sensex-drops-456-points-nifty-falls-65-as-closing-auction-session-creates-divergence/articleshow/133065105.cms
+- **Nifty 50, Sensex prediction today: Check how Indian stock market is expected to trade on 10 August** — LiveMint Markets  
+  https://www.livemint.com/market/nifty-50-sensex-prediction-today-check-how-indian-stock-market-is-expected-to-trade-on-10-august-11786325525882.html
+- **Global Market Today: Asia stocks edge higher, oil up amid Gulf confusion** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-asia-stocks-edge-higher-oil-up-amid-gulf-confusion/articleshow/133077033.cms
+- **Gold price jumps as reopening of Strait of Hormuz buzz dents US Fed rate-hike hopes. Is it the right time to buy gold?** — LiveMint Markets  
+  https://www.livemint.com/market/commodities/gold-rate-today-jumps-as-strait-of-hormuz-reopening-buzz-dents-us-fed-rate-hike-hopes-is-it-the-right-time-to-buy-gold-11786181435240.html
+- **Q1 Results Tracker: Tata Motors, Vodafone Idea among 2,045 companies set to announce earnings this week** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/earnings/q1-results-tracker-tata-motors-vodafone-idea-among-2045-companies-set-to-announce-earnings-this-week/articleshow/133062827.cms
+- **Stocks in news: Titan, SBI, Ola Electric, Astra Microwave and Hindalco** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-titan-sbi-ola-electric-astra-microwave-and-hindalco/articleshow/133071374.cms
+- **From Gift Nifty, US-Iran war to crude oil prices: 7 key things that changed for Indian stock market overnight** — LiveMint Markets  
+  https://www.livemint.com/market/stock-market-news/from-gift-nifty-us-iran-war-to-crude-oil-prices-7-key-things-that-changed-for-indian-stock-market-overnight-11786324109867.html
+- **Dollar near two-month trough as US inflation data awaited** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-near-two-month-trough-as-us-inflation-data-awaited/articleshow/133077479.cms
+- **Stock market today: Gift Nifty hints a flat start; eight day trading stocks to buy on Monday, 10 August** — LiveMint Markets  
+  https://www.livemint.com/market/stock-market-news/stock-market-today-gift-nifty-hints-a-flat-start-eight-day-trading-stocks-to-buy-on-monday-10-august-11786327368428.html
 
 ---
 This report is generated automatically for pre-market discussion. It is not financial advice.
