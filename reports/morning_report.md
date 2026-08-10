@@ -1,6 +1,6 @@
 # Morning Market Brief - 10 August 2026
 
-Generated at: **10 Aug 2026, 08:08 AM IST**
+Generated at: **10 Aug 2026, 08:46 AM IST**
 
 ## Final View
 
@@ -24,39 +24,39 @@ Generated at: **10 Aug 2026, 08:08 AM IST**
 | Europe | FTSE 100 | 10,901 | 0.31% | 2026-08-07 |
 | Europe | CAC 40 | 8,715 | 0.17% | 2026-08-07 |
 | Europe | DAX | 26,319 | 0.69% | 2026-08-07 |
-| Asia | Hang Seng | 25,856 | 0.73% | 2026-08-10 |
-| Asia | Nikkei 225 | 66,938 | 2.03% | 2026-08-10 |
+| Asia | Hang Seng | 25,841 | 0.68% | 2026-08-10 |
+| Asia | Nikkei 225 | 66,931 | 2.02% | 2026-08-10 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,390 | 49.40 | 1.14% | 2026-08-09 |
-| Silver | SI=F | 63.85 | 0.51 | 0.81% | 2026-08-09 |
-| Crude Oil WTI | CL=F | 78.67 | 0.49 | 0.63% | 2026-08-09 |
-| Copper | HG=F | 6.61 | 0.04 | 0.57% | 2026-08-09 |
-| Brent Oil | BZ=F | 84.37 | 0.82 | 0.98% | 2026-08-09 |
-| Natural Gas | NG=F | 2.73 | 0.06 | 2.40% | 2026-08-09 |
+| Gold | GC=F | 4,378 | 37.30 | 0.86% | 2026-08-09 |
+| Silver | SI=F | 63.48 | 0.15 | 0.23% | 2026-08-09 |
+| Crude Oil WTI | CL=F | 78.65 | 0.47 | 0.60% | 2026-08-09 |
+| Copper | HG=F | 6.59 | 0.02 | 0.30% | 2026-08-09 |
+| Brent Oil | BZ=F | 84.27 | 0.72 | 0.86% | 2026-08-09 |
+| Natural Gas | NG=F | 2.73 | 0.07 | 2.59% | 2026-08-09 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 64,943 | 38.25 | 0.06% | 2026-08-10 |
-| Ethereum | ETH-USD | 1,915 | -0.18 | -0.01% | 2026-08-10 |
-| Solana | SOL-USD | 76.53 | 0.56 | 0.73% | 2026-08-10 |
-| Cardano | ADA-USD | 0.20 | -0.00 | -1.26% | 2026-08-10 |
-| Ripple | XRP-USD | 1.03 | -0.01 | -0.74% | 2026-08-10 |
+| Bitcoin | BTC-USD | 64,889 | -15.81 | -0.02% | 2026-08-10 |
+| Ethereum | ETH-USD | 1,914 | -1.80 | -0.09% | 2026-08-10 |
+| Solana | SOL-USD | 76.40 | 0.43 | 0.56% | 2026-08-10 |
+| Cardano | ADA-USD | 0.20 | -0.00 | -1.46% | 2026-08-10 |
+| Ripple | XRP-USD | 1.03 | -0.01 | -0.98% | 2026-08-10 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.35 | 0.00 | 0.25% | 2026-08-10 |
-| EUR/USD | EURUSD=X | 1.16 | 0.00 | 0.28% | 2026-08-10 |
-| USD/CHF | CHF=X | 0.81 | -0.00 | -0.44% | 2026-08-10 |
-| USD/JPY | JPY=X | 158.25 | -0.16 | -0.10% | 2026-08-10 |
-| DXY | DX-Y.NYB | 99.68 | 0.08 | 0.09% | 2026-08-09 |
+| GBP/USD | GBPUSD=X | 1.35 | 0.00 | 0.22% | 2026-08-10 |
+| EUR/USD | EURUSD=X | 1.16 | 0.00 | 0.25% | 2026-08-10 |
+| USD/CHF | CHF=X | 0.81 | -0.00 | -0.41% | 2026-08-10 |
+| USD/JPY | JPY=X | 158.19 | -0.21 | -0.14% | 2026-08-10 |
+| DXY | DX-Y.NYB | 99.71 | 0.11 | 0.11% | 2026-08-09 |
 | USD/INR | INR=X | 95.20 | -0.11 | -0.12% | 2026-08-10 |
 
 ## FII / DII Flow
@@ -110,13 +110,13 @@ Generated at: **10 Aug 2026, 08:08 AM IST**
 
 ## Nifty 50 Pivot Table
 
-Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading above their daily pivot. Average change: -0.17% daily, 0.92% weekly, 3.63% monthly.
+Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading above their daily pivot. Average change: -0.17% daily, 0.96% weekly, 3.74% monthly.
 
 | Stock | LTP | Daily % | Weekly % | Monthly % | S2 | S1 | Pivot | R1 | R2 | RSI | Zone |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | TCS | 2,453 | 3.36% | 3.68% | 19.67% | 2,346 | 2,399 | 2,428 | 2,482 | 2,511 | 63.00 | Pivot - R1 |
-| GRASIM | 3,323 | 3.20% | 7.17% | 4.11% | 3,119 | 3,221 | 3,285 | 3,387 | 3,452 | 64.30 | Pivot - R1 |
-| HINDALCO | 1,060 | 3.17% | 8.74% | 9.98% | 1,003 | 1,031 | 1,045 | 1,074 | 1,088 | 70.30 | Pivot - R1 |
+| GRASIM | 3,323 | 3.20% | 7.03% | 6.00% | 3,119 | 3,221 | 3,285 | 3,387 | 3,452 | 64.00 | Pivot - R1 |
+| HINDALCO | 1,060 | 3.17% | 9.19% | 9.05% | 1,003 | 1,031 | 1,045 | 1,074 | 1,088 | 69.60 | Pivot - R1 |
 | M&M | 3,502 | 2.82% | 3.05% | 13.50% | 3,367 | 3,434 | 3,470 | 3,537 | 3,572 | 68.80 | Pivot - R1 |
 | HCLTECH | 1,357 | 1.62% | 0.72% | 17.92% | 1,310 | 1,333 | 1,351 | 1,374 | 1,392 | 68.20 | Pivot - R1 |
 | SBIN | 1,097 | 1.12% | 6.79% | 7.35% | 1,050 | 1,074 | 1,099 | 1,123 | 1,148 | 70.70 | S1 - Pivot |
@@ -129,11 +129,11 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 | TMPV | 347.00 | 0.48% | 2.13% | 4.68% | 340.67 | 343.83 | 346.82 | 349.98 | 352.97 | 55.00 | Pivot - R1 |
 | BEL | 401.00 | 0.45% | 3.39% | -1.28% | 396.13 | 398.57 | 400.78 | 403.22 | 405.43 | 49.00 | Pivot - R1 |
 | ONGC | 238.85 | 0.44% | -1.52% | -1.97% | 234.56 | 236.70 | 239.20 | 241.34 | 243.84 | 39.30 | S1 - Pivot |
-| BAJAJ-AUTO | 11,662 | 0.36% | 1.23% | 14.84% | 11,499 | 11,581 | 11,655 | 11,737 | 11,811 | 67.00 | Pivot - R1 |
+| BAJAJ-AUTO | 11,662 | 0.36% | 2.01% | 14.74% | 11,499 | 11,581 | 11,655 | 11,737 | 11,811 | 67.30 | Pivot - R1 |
 | NESTLEIND | 1,540 | 0.33% | 2.01% | 5.25% | 1,505 | 1,522 | 1,538 | 1,555 | 1,571 | 67.10 | Pivot - R1 |
 | POWERGRID | 271.60 | 0.31% | -4.45% | -3.47% | 266.43 | 269.02 | 270.93 | 273.52 | 275.43 | 32.80 | Pivot - R1 |
 | INDIGO | 5,333 | 0.27% | 3.13% | 1.98% | 5,241 | 5,287 | 5,327 | 5,373 | 5,414 | 55.60 | Pivot - R1 |
-| ULTRACEMCO | 12,105 | 0.25% | 1.70% | 5.04% | 11,925 | 12,015 | 12,060 | 12,150 | 12,195 | 59.90 | Pivot - R1 |
+| ULTRACEMCO | 12,105 | 0.25% | 2.18% | 6.62% | 11,925 | 12,015 | 12,060 | 12,150 | 12,195 | 59.70 | Pivot - R1 |
 | TECHM | 1,635 | 0.17% | -0.99% | 14.63% | 1,603 | 1,619 | 1,650 | 1,666 | 1,697 | 65.30 | S1 - Pivot |
 | DRREDDY | 1,172 | 0.09% | 2.08% | -7.68% | 1,159 | 1,165 | 1,169 | 1,175 | 1,179 | 38.50 | Pivot - R1 |
 | ITC | 286.10 | 0.07% | 1.81% | 1.44% | 283.83 | 284.97 | 285.53 | 286.67 | 287.23 | 51.80 | Pivot - R1 |
@@ -142,18 +142,18 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 | LT | 4,056 | -0.14% | 2.97% | 4.37% | 4,017 | 4,037 | 4,049 | 4,069 | 4,081 | 61.70 | Pivot - R1 |
 | ADANIENT | 3,020 | -0.20% | 0.35% | -2.06% | 2,986 | 3,003 | 3,021 | 3,038 | 3,056 | 45.80 | S1 - Pivot |
 | MAXHEALTH | 1,070 | -0.22% | -2.59% | -2.84% | 1,056 | 1,063 | 1,074 | 1,081 | 1,091 | 43.30 | S1 - Pivot |
-| MARUTI | 14,037 | -0.31% | -1.38% | 2.25% | 13,735 | 13,886 | 13,962 | 14,113 | 14,189 | 55.10 | Pivot - R1 |
+| MARUTI | 14,037 | -0.31% | -1.06% | 0.62% | 13,735 | 13,886 | 13,962 | 14,113 | 14,189 | 55.70 | Pivot - R1 |
 | SUNPHARMA | 1,945 | -0.31% | -2.29% | 0.32% | 1,910 | 1,928 | 1,942 | 1,960 | 1,974 | 51.90 | Pivot - R1 |
-| SBILIFE | 1,856 | -0.32% | -1.41% | 1.86% | 1,841 | 1,848 | 1,860 | 1,867 | 1,879 | 50.90 | S1 - Pivot |
-| APOLLOHOSP | 8,945 | -0.33% | -0.13% | 1.12% | 8,878 | 8,911 | 8,956 | 8,989 | 9,034 | 55.60 | S1 - Pivot |
+| SBILIFE | 1,856 | -0.32% | -1.17% | 3.72% | 1,841 | 1,848 | 1,860 | 1,867 | 1,879 | 51.40 | S1 - Pivot |
+| APOLLOHOSP | 8,945 | -0.33% | -0.48% | 2.19% | 8,878 | 8,911 | 8,956 | 8,989 | 9,034 | 55.80 | S1 - Pivot |
 | ETERNAL | 315.00 | -0.40% | 4.15% | 7.71% | 311.27 | 313.13 | 315.02 | 316.88 | 318.77 | 67.10 | S1 - Pivot |
 | HDFCBANK | 731.00 | -0.45% | -2.29% | -10.59% | 723.93 | 727.47 | 731.73 | 735.27 | 739.53 | 34.20 | S1 - Pivot |
 | HDFCLIFE | 540.00 | -0.46% | -1.55% | -2.15% | 533.37 | 536.68 | 540.82 | 544.13 | 548.27 | 39.50 | S1 - Pivot |
 | JSWSTEEL | 1,300 | -0.64% | 2.32% | 6.01% | 1,278 | 1,289 | 1,299 | 1,310 | 1,321 | 59.10 | Pivot - R1 |
 | TATACONSUM | 1,082 | -0.71% | -0.07% | -2.20% | 1,070 | 1,076 | 1,084 | 1,090 | 1,098 | 44.80 | S1 - Pivot |
 | NTPC | 342.50 | -0.72% | -1.37% | -0.35% | 339.50 | 341.00 | 344.00 | 345.50 | 348.50 | 42.40 | S1 - Pivot |
-| ASIANPAINT | 2,735 | -0.73% | -0.45% | 2.29% | 2,668 | 2,702 | 2,728 | 2,762 | 2,788 | 53.00 | Pivot - R1 |
-| KOTAKBANK | 390.75 | -0.82% | 0.12% | 3.61% | 384.02 | 387.38 | 391.12 | 394.48 | 398.22 | 51.20 | S1 - Pivot |
+| ASIANPAINT | 2,735 | -0.73% | -0.41% | 2.59% | 2,668 | 2,702 | 2,728 | 2,762 | 2,788 | 53.30 | Pivot - R1 |
+| KOTAKBANK | 390.75 | -0.82% | 0.35% | 5.58% | 384.02 | 387.38 | 391.12 | 394.48 | 398.22 | 51.30 | S1 - Pivot |
 | CIPLA | 1,464 | -0.89% | -0.64% | 1.56% | 1,453 | 1,458 | 1,468 | 1,473 | 1,483 | 56.30 | S1 - Pivot |
 | TATASTEEL | 187.55 | -0.92% | -1.13% | -0.19% | 185.06 | 186.30 | 188.00 | 189.24 | 190.94 | 46.40 | S1 - Pivot |
 | TITAN | 4,941 | -1.14% | 1.35% | 8.46% | 4,833 | 4,887 | 4,945 | 4,999 | 5,057 | 68.30 | S1 - Pivot |
@@ -161,7 +161,7 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 | SHRIRAMFIN | 1,115 | -2.28% | 6.53% | 8.07% | 1,094 | 1,105 | 1,119 | 1,130 | 1,144 | 62.80 | S1 - Pivot |
 | JIOFIN | 256.80 | -2.39% | 0.13% | 10.04% | 252.40 | 254.60 | 259.00 | 261.20 | 265.60 | 59.90 | S1 - Pivot |
 | ICICIBANK | 1,421 | -2.50% | -1.00% | 2.92% | 1,395 | 1,408 | 1,431 | 1,445 | 1,468 | 49.70 | S1 - Pivot |
-| TRENT | 2,997 | -3.54% | -0.30% | 3.20% | 2,909 | 2,953 | 3,030 | 3,074 | 3,151 | 49.70 | S1 - Pivot |
+| TRENT | 2,997 | -3.54% | -0.07% | 2.50% | 2,909 | 2,953 | 3,030 | 3,074 | 3,151 | 49.90 | S1 - Pivot |
 | BAJAJFINSV | 2,009 | -3.70% | -1.00% | 6.01% | 1,954 | 1,981 | 2,016 | 2,043 | 2,078 | 59.50 | S1 - Pivot |
 | BAJFINANCE | 1,078 | -5.84% | -5.54% | 7.39% | 1,050 | 1,064 | 1,088 | 1,102 | 1,127 | 53.10 | S1 - Pivot |
 
@@ -169,11 +169,11 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 
 | Sector | Stocks | Daily % | Weekly % | Monthly % | Advancing |
 |---|---:|---:|---:|---:|---:|
-| Materials | 2 | 1.73% | 4.43% | 4.58% | 2/2 |
+| Materials | 2 | 1.73% | 4.61% | 6.31% | 2/2 |
 | IT | 5 | 1.36% | 1.90% | 14.52% | 5/5 |
-| Auto | 5 | 0.80% | 1.48% | 8.84% | 4/5 |
+| Auto | 5 | 0.80% | 1.70% | 8.50% | 4/5 |
 | Telecom | 1 | 0.61% | -0.61% | 1.49% | 1/1 |
-| Metals | 3 | 0.54% | 3.31% | 5.27% | 1/3 |
+| Metals | 3 | 0.54% | 3.46% | 4.96% | 1/3 |
 | Energy | 3 | 0.37% | 0.27% | -0.36% | 2/3 |
 | Services | 1 | 0.27% | 3.13% | 1.98% | 1/1 |
 | Capital Goods | 2 | 0.15% | 3.18% | 1.54% | 1/2 |
@@ -181,10 +181,10 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 | Infrastructure | 1 | -0.09% | -0.18% | -5.92% | 0/1 |
 | Power | 2 | -0.20% | -2.91% | -1.91% | 1/2 |
 | Conglomerate | 1 | -0.20% | 0.35% | -2.06% | 0/1 |
-| Healthcare | 2 | -0.28% | -1.36% | -0.86% | 0/2 |
+| Healthcare | 2 | -0.28% | -1.53% | -0.32% | 0/2 |
 | Pharma | 3 | -0.37% | -0.28% | -1.93% | 1/3 |
-| Consumer | 4 | -1.45% | 1.19% | 5.42% | 0/4 |
-| Financials | 11 | -1.73% | 0.13% | 2.72% | 1/11 |
+| Consumer | 4 | -1.45% | 1.25% | 5.32% | 0/4 |
+| Financials | 11 | -1.73% | 0.18% | 3.07% | 1/11 |
 
 ## Signal Score Breakdown
 
@@ -193,15 +193,15 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
 | US markets | 1 | Bullish | Average move 0.73% across 3 indices. |
 | Europe markets | 1 | Bullish | Average move 0.39% across 3 indices. |
-| Asia markets | 1 | Bullish | Average move 1.38% across 2 indices. |
+| Asia markets | 1 | Bullish | Average move 1.35% across 2 indices. |
 | FII/DII flow | 2 | Bullish | FII net 480.24 Cr, DII net 235.56 Cr, combined 715.80 Cr. |
 | Nifty OI | 0 | Neutral | PCR 0.73, support 24000.0, resistance 24600.0. |
 | Bank Nifty OI | 0 | Neutral | PCR 0.89, support 57000.0, resistance 58000.0. |
 | India VIX | 0 | Neutral | India VIX change 0.18%. |
 | Sector breadth | 1 | Bullish | 7 sectors positive and 6 sectors negative. |
-| Global commodities | 0 | Neutral | Crude/Brent average move 0.80%, commodity pressure is limited. |
-| Crypto risk appetite | 0 | Neutral | Major crypto basket average move -0.24% across 5 coins. |
-| Currency pressure | 0 | Neutral | DXY/USDINR pressure average -0.02%; rising dollar/rupee pressure is usually negative for India. |
+| Global commodities | 0 | Neutral | Crude/Brent average move 0.73%, commodity pressure is limited. |
+| Crypto risk appetite | 0 | Neutral | Major crypto basket average move -0.40% across 5 coins. |
+| Currency pressure | 0 | Neutral | DXY/USDINR pressure average -0.00%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
@@ -220,10 +220,10 @@ Breadth as of 2026-08-07: **23 advancing / 27 declining**, 27 of 50 trading abov
   https://www.livemint.com/market/nifty-50-sensex-prediction-today-check-how-indian-stock-market-is-expected-to-trade-on-10-august-11786325525882.html
 - **Global Market Today: Asia stocks edge higher, oil up amid Gulf confusion** — Economic Times Markets  
   https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-asia-stocks-edge-higher-oil-up-amid-gulf-confusion/articleshow/133077033.cms
-- **Gold price jumps as reopening of Strait of Hormuz buzz dents US Fed rate-hike hopes. Is it the right time to buy gold?** — LiveMint Markets  
-  https://www.livemint.com/market/commodities/gold-rate-today-jumps-as-strait-of-hormuz-reopening-buzz-dents-us-fed-rate-hike-hopes-is-it-the-right-time-to-buy-gold-11786181435240.html
 - **Q1 Results Tracker: Tata Motors, Vodafone Idea among 2,045 companies set to announce earnings this week** — Economic Times Markets  
   https://economictimes.indiatimes.com/markets/stocks/earnings/q1-results-tracker-tata-motors-vodafone-idea-among-2045-companies-set-to-announce-earnings-this-week/articleshow/133062827.cms
+- **From Gift Nifty, US-Iran war to crude oil prices: 7 key things that changed for Indian stock market overnight - livemint.com** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMiiAJBVV95cUxOd042SFBrOVpjZUIwNmJwbmdQOUxZSmVuN0JPQThGWG1yaEYwZmhJVmdTN1NGWHl5VHlYZ1RpWjhCU0ZxMHN5QUVXd1NlUjlsQTgyWVdQMWVCM0NTblg1b2k2LXlrVncwb2NvUTBPeXVrRzNXNHBPN2NxN1BDQ1V3c1czTzR2b3VNWkNHMnFjbDgybkxGZGhscTd4S19BbHB0M2dJbTV0dkx1SEZITTJiVzRZQUNvaUREYi1DVG9mVlNGZTcwRVVvYUxnaWZDUGtMa2lwMUM3Uk1tOGE5SDJ1ODlJVEVGdC15ZC12V0d0djFtZTFtNjZINFU4dHZvTmJhcHZiNEJhY3XSAY4CQVVfeXFMTTBUekZndEZmM2ZRS3V5NVg5UDVMOFItaGhvOEFzV2d3MHY4VHZrQlF4dlNsWjJIUTE3dXZmRDBaR1dBMV9kNEU1YzJfa3BBcmwxQ1JHaXhlbU95bTB6S0hJVWVkajQ5dVk0UFFOcWx3VXNSTmdreUV3X2t4S3hWaTdTSEh3T2dYUTNfMEsxTWdlMEMyeUprWFE1YThqQi1ucDFnZFpsNU01OGpPRmxlcS1kSW96VzY3NWpWX0VJUVhER0pVLTQ0bzVBVjljUzV6MjJGOXQwb0J2dkg4LTlhUTB1b1VUaUsyMUtXTzNScnpNcUNHbTFrTlkzcXp2bzZmaU9ieEV1anpPWUNCQU9n?oc=5
 - **Stocks in news: Titan, SBI, Ola Electric, Astra Microwave and Hindalco** — Economic Times Markets  
   https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-titan-sbi-ola-electric-astra-microwave-and-hindalco/articleshow/133071374.cms
 - **From Gift Nifty, US-Iran war to crude oil prices: 7 key things that changed for Indian stock market overnight** — LiveMint Markets  
