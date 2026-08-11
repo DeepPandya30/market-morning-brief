@@ -5,6 +5,7 @@ from html import escape
 from pathlib import Path
 from typing import Any
 
+from .config import EVENT_MARKDOWN_LIMIT
 from .utils import money_text, now_ist, number_text, pct_text
 
 
@@ -127,6 +128,7 @@ def render_markdown(context: dict[str, Any]) -> str:
     lines.append("- Avoid aggressive trades in the first 5–10 minutes if opening gap is large.")
     lines.append("- Confirm direction with Nifty/Bank Nifty holding above support or rejecting near resistance.")
     lines.append("")
+    lines.extend(_event_calendar_markdown(data.get("event_calendar", {})))
     lines.append("## Important Market News")
     lines.append("")
     news_rows = data.get("market_news", [])[:10]
@@ -418,6 +420,25 @@ def render_html(context: dict[str, Any]) -> str:
   font-size: 12px;
   color: var(--muted);
 }
+
+/* Corporate event calendar */
+.event-catbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.event-chip { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+  font-size: 12.5px; font-weight: 700; color: var(--muted); background: var(--elev); }
+.event-chip b { color: var(--text); margin-left: 4px; }
+.event-purpose { display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; background: var(--elev-strong); color: var(--muted); white-space: nowrap; }
+.event-purpose.cat-results { background: var(--brand-soft); color: var(--brand); }
+.event-purpose.cat-dividend { background: var(--good-soft); color: var(--good); }
+.event-purpose.cat-buyback { background: var(--good-soft); color: var(--good); }
+.event-purpose.cat-bonus { background: var(--neutral-soft); color: var(--neutral); }
+.event-purpose.cat-fund { background: var(--neutral-soft); color: var(--neutral); }
+.event-purpose.cat-ma { background: var(--bad-soft); color: var(--bad); }
+.n50-tag { display: inline-block; margin-left: 7px; padding: 2px 7px; border-radius: 999px;
+  font-size: 10px; font-weight: 800; letter-spacing: .05em; background: var(--brand-soft); color: var(--brand); }
+tr.is-n50 { background: var(--brand-soft); }
+tr.is-n50 td:first-child { font-weight: 800; }
+.event-desc { color: var(--muted); font-size: 12.5px; line-height: 1.45; max-width: 560px; }
 
 .meeting-mode {
   background: linear-gradient(135deg, #0f172a, #1e3a8a);
@@ -756,6 +777,7 @@ h1 { position: relative; }
     <button class="tab-btn" data-tab="signals">Signals</button>
     <button class="tab-btn" data-tab="history">History</button>
     <button class="tab-btn" data-tab="news">News</button>
+    <button class="tab-btn" data-tab="events">Events</button>
     <button class="tab-btn" data-tab="report">Full Report</button>
     
   </nav>
@@ -1129,6 +1151,43 @@ h1 { position: relative; }
     <div id="newsGrid" class="news-grid"></div>
   </div>
 </section>
+
+  <section id="events" class="panel">
+    <div class="card">
+      <div class="card-head">
+        <h2>🗓️ Corporate Event Calendar</h2>
+        <span id="eventDateBadge" class="badge info">—</span>
+      </div>
+      <p class="muted">
+        NSE board meetings and corporate actions listed for this one date only.
+        Nifty 50 constituents are flagged and sorted to the top — those are the
+        results that can move the index at the open.
+      </p>
+
+      <div id="eventStats" class="hero-stats" style="margin-bottom:14px"></div>
+      <div id="eventCategoryBar" class="event-catbar"></div>
+
+      <div class="controls">
+        <input id="eventSearch" placeholder="Search company, symbol or purpose..." />
+        <select id="eventCategory"><option value="All">All categories</option></select>
+        <select id="eventScope">
+          <option value="all">All companies</option>
+          <option value="nifty50">Nifty 50 only</option>
+        </select>
+        <button class="action-btn secondary" id="eventCsv">Download CSV</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Symbol</th><th>Company</th><th>Purpose</th><th>Details</th></tr>
+          </thead>
+          <tbody id="eventRows"></tbody>
+        </table>
+      </div>
+      <p id="eventCount" class="small muted" style="margin-top:10px"></p>
+    </div>
+  </section>
 
   <section id="report" class="panel">
     <div class="card">
@@ -1938,6 +1997,8 @@ function renderAll() {
   renderPcrRolling();
 populateNewsSources();
 renderNews();
+populateEventCategories();
+renderEventCalendar();
 renderMeetingMode();
   const brandSub = document.getElementById('generatedAt');
   if (brandSub) brandSub.textContent = APP.generated_at ? `Updated ${APP.generated_at}` : 'Pre-market cockpit';
@@ -2188,6 +2249,109 @@ function renderNews() {
       </div>
     </div>
   `).join('') || '<p class="muted">No news found.</p>';
+}
+
+function eventData() {
+  return APP.data.event_calendar || {};
+}
+function eventCategoryClass(category) {
+  const c = String(category || '').toLowerCase();
+  if (c.includes('result')) return 'cat-results';
+  if (c.includes('dividend')) return 'cat-dividend';
+  if (c.includes('buyback')) return 'cat-buyback';
+  if (c.includes('bonus') || c.includes('split')) return 'cat-bonus';
+  if (c.includes('fund')) return 'cat-fund';
+  if (c.includes('m&a') || c.includes('restructur')) return 'cat-ma';
+  return '';
+}
+function populateEventCategories() {
+  const select = document.getElementById('eventCategory');
+  if (!select) return;
+  const current = select.value || 'All';
+  const cats = (eventData().category_counts || []).map(row => row.name);
+  select.innerHTML = '<option value="All">All categories</option>'
+    + cats.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  select.value = cats.includes(current) ? current : 'All';
+}
+function eventsFiltered() {
+  const search = (document.getElementById('eventSearch')?.value || '').toLowerCase().trim();
+  const category = document.getElementById('eventCategory')?.value || 'All';
+  const scope = document.getElementById('eventScope')?.value || 'all';
+
+  let rows = eventData().events || [];
+  if (scope === 'nifty50') rows = rows.filter(row => row.is_nifty50);
+  if (category !== 'All') rows = rows.filter(row => row.category === category);
+  if (search) {
+    rows = rows.filter(row =>
+      String(row.symbol || '').toLowerCase().includes(search) ||
+      String(row.company || '').toLowerCase().includes(search) ||
+      String(row.purpose || '').toLowerCase().includes(search) ||
+      String(row.description || '').toLowerCase().includes(search)
+    );
+  }
+  return rows;
+}
+function renderEventCalendar() {
+  const body = document.getElementById('eventRows');
+  if (!body) return;
+
+  const cal = eventData();
+  const badge = document.getElementById('eventDateBadge');
+  if (badge) {
+    badge.textContent = cal.date_label
+      ? `${cal.date_label}${cal.weekday ? ' · ' + cal.weekday : ''}`
+      : 'Date unavailable';
+  }
+
+  const stats = document.getElementById('eventStats');
+  if (stats) {
+    const top = (cal.category_counts || [])[0] || {};
+    const tiles = [
+      ['Announcements', cal.total ?? 0, 'st-brand', `Companies reporting on ${cal.date_label || 'this date'}`],
+      ['Nifty 50 Names', cal.nifty50_count ?? 0, (cal.nifty50_count ? 'st-good' : 'st-neutral'), 'Index constituents in focus'],
+      ['Top Category', top.count ?? 0, 'st-neutral', top.name ? escapeHtml(top.name) : 'No events listed'],
+    ];
+    stats.innerHTML = tiles.map(([label, value, cls, sub]) => `
+      <div class="stat-tile ${cls}">
+        <div class="st-label">${label}</div>
+        <div class="st-value">${value}</div>
+        <div class="st-sub">${sub}</div>
+      </div>`).join('');
+  }
+
+  const bar = document.getElementById('eventCategoryBar');
+  if (bar) {
+    bar.innerHTML = (cal.category_counts || []).map(row =>
+      `<span class="event-chip">${escapeHtml(row.name)}<b>${row.count}</b></span>`
+    ).join('');
+  }
+
+  const rows = eventsFiltered();
+  body.innerHTML = rows.map(row => `
+    <tr class="${row.is_nifty50 ? 'is-n50' : ''}">
+      <td>${escapeHtml(row.symbol || '-')}${row.is_nifty50 ? '<span class="n50-tag">N50</span>' : ''}</td>
+      <td>${escapeHtml(row.company || '-')}</td>
+      <td><span class="event-purpose ${eventCategoryClass(row.category)}">${escapeHtml(row.purpose || '-')}</span></td>
+      <td><div class="event-desc">${escapeHtml(row.description || '')}</div></td>
+    </tr>`).join('')
+    || `<tr><td colspan="4" class="muted">No events match these filters${cal.total ? '' : ' — nothing is listed for this date (holiday, weekend, or not yet filed)'}.</td></tr>`;
+
+  const count = document.getElementById('eventCount');
+  if (count) {
+    count.textContent = cal.total
+      ? `Showing ${rows.length} of ${cal.total} announcements for ${cal.date_label || 'the selected date'}.`
+      : `No announcements listed for ${cal.date_label || 'the selected date'}.`;
+  }
+}
+function downloadEventCsv() {
+  const cols = ['symbol', 'company', 'purpose', 'category', 'description', 'is_nifty50'];
+  const rows = eventsFiltered();
+  const lines = [cols.join(',')].concat(rows.map(r => cols.map(c => {
+    const v = r[c];
+    const text = v === null || v === undefined ? '' : String(v);
+    return /[",\\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+  }).join(',')));
+  downloadText(`nse_event_calendar_${eventData().date || 'latest'}.csv`, lines.join('\\n'));
 }
 
 function biasTone(bias) {
@@ -2636,6 +2800,7 @@ const SEARCH_MAP = [
   { k: ['signal', 'score', 'bias'], tab: 'signals' },
   { k: ['history', 'pcr', 'trend'], tab: 'history' },
   { k: ['news', 'headline'], tab: 'news' },
+  { k: ['event', 'calendar', 'board meeting', 'result', 'earning', 'dividend', 'buyback', 'bonus', 'split'], tab: 'events' },
   { k: ['report', 'markdown', 'summary'], tab: 'report' },
 ];
 function runSearch(q) {
@@ -2646,6 +2811,7 @@ function runSearch(q) {
     activateTab(hit.tab);
     if (hit.tab === 'sectors') { const box = document.getElementById('sectorSearch'); if (box) { box.value = q; renderSectors(); } }
     if (hit.tab === 'news') { const box = document.getElementById('newsSearch'); if (box) { box.value = q; renderNews(); } }
+    if (hit.tab === 'events') { const box = document.getElementById('eventSearch'); if (box) { box.value = q; renderEventCalendar(); } }
   }
 }
 (function initNav() {
@@ -2685,6 +2851,10 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 ['nifty50Search','nifty50Sector','nifty50Sort','nifty50View','nifty50Zone'].forEach(id =>
   document.getElementById(id)?.addEventListener(id === 'nifty50Search' ? 'input' : 'change', renderNifty50));
 document.getElementById('nifty50Csv')?.addEventListener('click', downloadNifty50Csv);
+document.getElementById('eventSearch')?.addEventListener('input', renderEventCalendar);
+document.getElementById('eventCategory')?.addEventListener('change', renderEventCalendar);
+document.getElementById('eventScope')?.addEventListener('change', renderEventCalendar);
+document.getElementById('eventCsv')?.addEventListener('click', downloadEventCsv);
 ['technicalIndex','technicalMaOverlay'].forEach(id => document.getElementById(id)?.addEventListener('change', renderTechnicals));
 document.getElementById('signalStatusFilter').addEventListener('change', renderSignals);
 document.getElementById('pcrWindow')?.addEventListener('change', renderPcrRolling);
@@ -2705,12 +2875,14 @@ function stripMarkdown(text) {
     .trim();
 }
 function speechMarkdown() {
-  // The Nifty 50 pivot table is ~50 rows of levels — listenable as a headline,
-  // not as a read-out, so its tables are dropped from the spoken report.
-  let inPivotSection = false;
+  // The Nifty 50 pivot table (~50 rows of levels) and the event calendar (dozens
+  // of company filings) are listenable as headlines, not as read-outs, so their
+  // table bodies are dropped from the spoken report while the summary stays.
+  const HEAVY_TABLES = ['Nifty 50 Pivot Table', 'Corporate Event Calendar'];
+  let inHeavySection = false;
   return String(APP.markdown || '').split('\\n').filter(line => {
-    if (line.startsWith('## ')) inPivotSection = line.includes('Nifty 50 Pivot Table');
-    return !(inPivotSection && line.trim().startsWith('|'));
+    if (line.startsWith('## ')) inHeavySection = HEAVY_TABLES.some(t => line.includes(t));
+    return !(inHeavySection && line.trim().startsWith('|'));
   }).join('\\n');
 }
 function getSpeechText() {
@@ -2814,6 +2986,57 @@ def _dashboard_payload(context: dict[str, Any], markdown: str) -> dict[str, Any]
         "risk_note": context.get("risk_note"),
         "markdown": markdown,
     }
+
+
+def _event_calendar_markdown(calendar: dict[str, Any]) -> list[str]:
+    """Corporate event section, scoped to the single date that was fetched."""
+    if not calendar:
+        return ["## Corporate Event Calendar", "", "Event calendar data not available in this run.", ""]
+
+    label = calendar.get("date_label") or calendar.get("date") or "selected date"
+    weekday = calendar.get("weekday")
+    heading = f"## Corporate Event Calendar - {label}"
+    if weekday:
+        heading += f" ({weekday})"
+
+    lines = [heading, ""]
+    events = calendar.get("events", [])
+    if not events:
+        lines.append(f"No NSE board meetings or corporate actions are listed for {label}.")
+        lines.append("")
+        return lines
+
+    total = calendar.get("total", len(events))
+    breakdown = " · ".join(
+        f"{row.get('name')} {row.get('count')}" for row in calendar.get("category_counts", [])
+    )
+    lines.append(f"- **Companies with announcements:** {total}")
+    lines.append(f"- **Nifty 50 constituents:** {calendar.get('nifty50_count', 0)}")
+    if breakdown:
+        lines.append(f"- **Breakdown:** {breakdown}")
+    lines.append("")
+
+    lines.append("| Symbol | Company | Purpose | Details |")
+    lines.append("|---|---|---|---|")
+    for event in events[:EVENT_MARKDOWN_LIMIT]:
+        symbol = event.get("symbol") or "-"
+        if event.get("is_nifty50"):
+            symbol = f"**{symbol}**"
+        details = str(event.get("description") or "").replace("|", "/")
+        if len(details) > 120:
+            details = details[:120].rstrip() + "..."
+        lines.append(
+            f"| {symbol} | {event.get('company') or '-'} | "
+            f"{str(event.get('purpose') or '-').replace('|', '/')} | {details} |"
+        )
+    lines.append("")
+    if total > EVENT_MARKDOWN_LIMIT:
+        lines.append(
+            f"_Showing {EVENT_MARKDOWN_LIMIT} of {total} announcements "
+            "(Nifty 50 names first). Full list is on the dashboard Events tab._"
+        )
+        lines.append("")
+    return lines
 
 
 def _index_technicals_markdown(technicals: dict[str, Any]) -> list[str]:

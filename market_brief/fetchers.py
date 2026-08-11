@@ -5,7 +5,8 @@ from collections.abc import Iterable
 from datetime import datetime
 from typing import Any
 import feedparser
-from datetime import datetime, timezone
+from collections import Counter
+from datetime import date, datetime, timezone
 
 import pandas as pd
 import yfinance as yf
@@ -17,7 +18,10 @@ from .config import (
     CRYPTO_TICKERS,
     CURRENCY_TICKERS,
     EUROPE_MARKETS,
+    EVENT_CALENDAR_REFERER,
+    EVENT_CATEGORY_KEYWORDS,
     GLOBAL_MARKET_TICKERS,
+    NIFTY50_CONSTITUENTS,
     NSE_ENDPOINTS,
     OPTION_CHAIN_REFERERS,
     SECTOR_KEYWORDS,
@@ -25,7 +29,7 @@ from .config import (
 )
 from .nse_client import NSEClient
 from .technicals import fetch_index_technicals, fetch_nifty50_pivots
-from .utils import safe_get, to_float
+from .utils import now_ist, safe_get, to_float
 
 
 def fetch_global_markets(warnings: list[str]) -> list[dict[str, Any]]:
@@ -522,7 +526,144 @@ def _find_dict_rows(raw: Any) -> list[dict[str, Any]]:
     return []
 
 
-def build_data_bundle() -> dict[str, Any]:
+def parse_event_date(value: str | date | None) -> date:
+    """Resolve the calendar date to fetch events for.
+
+    Accepts ISO (2026-08-12), Indian day-first (12-08-2026, 12/08/2026) and
+    month-name forms with or without a year ("12 Aug", "12 August 2026"). A
+    missing year means the current IST year, so "12th august" behaves the way a
+    user typing it in August expects. None/blank means today in IST.
+    """
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
+
+    text = str(value or "").strip()
+    if not text:
+        return now_ist().date()
+
+    for fmt in ("%Y-%m-%d", "%d-%m-%Y", "%d/%m/%Y", "%d-%b-%Y", "%d %b %Y", "%d %B %Y"):
+        try:
+            return datetime.strptime(text, fmt).date()
+        except ValueError:
+            continue
+
+    # Year-less forms: month names only, so there is no DD-MM/MM-DD ambiguity.
+    for fmt in ("%d-%b", "%d %b", "%d-%B", "%d %B"):
+        try:
+            parsed = datetime.strptime(text, fmt)
+            return parsed.replace(year=now_ist().year).date()
+        except ValueError:
+            continue
+
+    raise ValueError(f"unrecognised event date {text!r}; use YYYY-MM-DD or DD-MM-YYYY")
+
+
+def _event_category(purpose: str, description: str) -> str:
+    blob = f"{purpose} {description}".lower()
+    for name, keywords in EVENT_CATEGORY_KEYWORDS:
+        if any(keyword in blob for keyword in keywords):
+            return name
+    return "Other"
+
+
+def fetch_event_calendar(
+    client: NSEClient,
+    warnings: list[str],
+    target_date: str | date | None = None,
+) -> dict[str, Any]:
+    """Fetch NSE corporate-filings board meetings for one specific date.
+
+    The ranged endpoint is asked for a single day, but rows are also filtered
+    locally so a fallback to the unfiltered feed — or an NSE-side range quirk —
+    can never leak another day's events into the dashboard.
+    """
+    try:
+        day = parse_event_date(target_date)
+    except ValueError as exc:
+        warnings.append(f"event_calendar: {exc}; defaulting to today")
+        day = now_ist().date()
+
+    result: dict[str, Any] = {
+        "date": day.isoformat(),
+        "date_label": day.strftime("%d %b %Y"),
+        "weekday": day.strftime("%A"),
+        "source": None,
+        "total": 0,
+        "nifty50_count": 0,
+        "category_counts": [],
+        "purpose_counts": [],
+        "events": [],
+    }
+
+    api_date = day.strftime("%d-%m-%Y")
+    raw = None
+    for endpoint_key, params, label in (
+        ("event_calendar", {"from_date": api_date, "to_date": api_date}, "nse_ranged"),
+        ("event_calendar_all", {}, "nse_full"),
+    ):
+        try:
+            raw = client.get_json(
+                NSE_ENDPOINTS[endpoint_key].format(**params),
+                referer=EVENT_CALENDAR_REFERER,
+            )
+            result["source"] = label
+            break
+        except Exception as exc:
+            warnings.append(f"event_calendar_{label}: {exc}")
+
+    if raw is None:
+        return result
+
+    events: list[dict[str, Any]] = []
+    for row in _find_dict_rows(raw):
+        row_date = _parse_expiry_date(safe_get(row, ["date", "eventDate", "meetingDate"]))
+        if row_date is None or row_date.date() != day:
+            continue
+
+        symbol = str(safe_get(row, ["symbol", "Symbol"], "")).strip().upper()
+        company = str(safe_get(row, ["company", "companyName", "Company Name"], "")).strip()
+        if not symbol and not company:
+            continue
+
+        purpose = str(safe_get(row, ["purpose", "Purpose"], "")).strip() or "Other"
+        description = str(safe_get(row, ["bm_desc", "bmDesc", "description", "details"], "")).strip()
+        events.append(
+            {
+                "symbol": symbol,
+                "company": company or symbol,
+                "purpose": purpose,
+                "category": _event_category(purpose, description),
+                "description": description,
+                "is_nifty50": symbol in NIFTY50_CONSTITUENTS,
+            }
+        )
+
+    # Index heavyweights first — those are the ones that move the market open.
+    events.sort(key=lambda row: (not row["is_nifty50"], row["company"].lower(), row["symbol"]))
+
+    result["events"] = events
+    result["total"] = len(events)
+    result["nifty50_count"] = sum(1 for row in events if row["is_nifty50"])
+    result["category_counts"] = [
+        {"name": name, "count": count}
+        for name, count in Counter(row["category"] for row in events).most_common()
+    ]
+    result["purpose_counts"] = [
+        {"name": name, "count": count}
+        for name, count in Counter(row["purpose"] for row in events).most_common(12)
+    ]
+
+    if not events:
+        warnings.append(
+            f"event_calendar: no events listed for {result['date_label']} "
+            f"({result['weekday']}) — market holiday, weekend, or nothing filed yet"
+        )
+    return result
+
+
+def build_data_bundle(event_date: str | date | None = None) -> dict[str, Any]:
     warnings: list[str] = []
     
     client = NSEClient()
@@ -537,6 +678,7 @@ def build_data_bundle() -> dict[str, Any]:
     banknifty_options = fetch_option_chain(client, "BANKNIFTY", warnings, nse_indices.get("banknifty_spot"))
     nifty50 = fetch_nifty50_pivots(warnings)
     index_technicals = fetch_index_technicals(warnings)
+    event_calendar = fetch_event_calendar(client, warnings, event_date)
 
     return {
         "global_markets": global_markets,
@@ -551,6 +693,7 @@ def build_data_bundle() -> dict[str, Any]:
         },
         "nifty50": nifty50,
         "index_technicals": index_technicals,
+        "event_calendar": event_calendar,
         "market_news": fetch_market_news(limit=10),
         "warnings": warnings,
     }

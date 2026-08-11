@@ -162,7 +162,34 @@ NSE_ENDPOINTS = {
         f"{NSE_BASE_URL}/api/NextApi/apiClient/GetQuoteApi"
         "?functionName=getSymbolDerivativesData&symbol={symbol}"
     ),
+    # Corporate filings event calendar. Dates are DD-MM-YYYY; passing the same
+    # value for from/to returns exactly one day of board meetings.
+    "event_calendar": (
+        f"{NSE_BASE_URL}/api/event-calendar"
+        "?index=equities&from_date={from_date}&to_date={to_date}"
+    ),
+    # Unfiltered feed, used as a fallback when the ranged query fails. It returns
+    # the whole forward window, so callers must filter by date themselves.
+    "event_calendar_all": f"{NSE_BASE_URL}/api/event-calendar",
 }
+
+EVENT_CALENDAR_REFERER = f"{NSE_BASE_URL}/companies-listing/corporate-filings-event-calendar"
+
+# Coarse buckets used to group and colour-code event calendar rows. Matched in
+# order against the NSE "purpose" text, so specific patterns come first and
+# anything unmatched falls through to "Other".
+EVENT_CATEGORY_KEYWORDS = [
+    ("Results", ("financial result", "quarterly result", "audited result", "results")),
+    ("Dividend", ("dividend",)),
+    ("Buyback", ("buy back", "buyback")),
+    ("Bonus / Split", ("bonus", "stock split", "sub-division", "split")),
+    ("Fund Raising", ("fund raising", "raising of funds", "preferential", "rights issue", "debenture")),
+    ("M&A / Restructuring", ("amalgamation", "merger", "demerger", "acquisition", "scheme of arrangement")),
+]
+
+# Rows shown in the markdown report before it truncates. The dashboard Events
+# tab always carries the full list; the report stays readable (and listenable).
+EVENT_MARKDOWN_LIMIT = 25
 
 OPTION_CHAIN_REFERERS = {
     "NIFTY": "https://www.nseindia.com/get-quote/optionchain/NIFTY/NIFTY-50",

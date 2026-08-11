@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import argparse
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -16,10 +18,24 @@ from market_brief.scoring import score_market
 from market_brief.utils import dump_json, ensure_dirs, now_ist
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Generate the morning market brief.")
+    parser.add_argument(
+        "--event-date",
+        default=os.environ.get("MARKET_EVENT_DATE", ""),
+        help=(
+            "Single date to pull the NSE corporate event calendar for, e.g. "
+            "2026-08-12, 12-08-2026 or '12 August'. Defaults to today (IST)."
+        ),
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     ensure_dirs(RAW_DIR, PROCESSED_DIR, REPORTS_DIR, DASHBOARD_DIR, DOCS_DIR, DOCS_DIR / "data")
 
-    data = build_data_bundle()
+    data = build_data_bundle(event_date=args.event_date or None)
     score = score_market(data)
     history = update_history(data, score, PROCESSED_DIR / "history.json")
     context = create_report_context(data, score, history=history)
@@ -40,6 +56,11 @@ def main() -> None:
     )
 
     print(f"Generated report with bias={score['bias']} score={score['score']} confidence={score['confidence']}")
+    calendar = data.get("event_calendar", {})
+    print(
+        f"Event calendar for {calendar.get('date_label')}: "
+        f"{calendar.get('total', 0)} announcements ({calendar.get('nifty50_count', 0)} Nifty 50)"
+    )
     if data.get("warnings"):
         print("Fetch warnings:")
         for warning in data["warnings"]:
