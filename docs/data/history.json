@@ -1345,7 +1345,7 @@
   },
   {
     "date": "2026-08-11",
-    "generated_at": "2026-08-11 08:02:01 IST",
+    "generated_at": "2026-08-11 08:22:22 IST",
     "bias": "Neutral / Range-bound",
     "score": -1,
     "confidence": "High",
@@ -1362,17 +1362,17 @@
     "banknifty_resistance": 58000.0,
     "us_avg_change_pct": -0.16354462439396156,
     "europe_avg_change_pct": -0.06995896086006247,
-    "asia_avg_change_pct": 1.0143823565466283,
+    "asia_avg_change_pct": 0.8684523317235768,
     "top_sector": "NIFTY REALTY",
     "top_sector_change_pct": 1.35,
     "weak_sector": "NIFTY PSU BANK",
     "weak_sector_change_pct": -1.67,
-    "gold_change_pct": 3.4464395752683368,
-    "crude_oil_change_pct": 5.34663633775792,
-    "brent_oil_change_pct": 5.242366359585451,
-    "bitcoin_change_pct": -1.3215190022873695,
+    "gold_change_pct": 3.211461194539241,
+    "crude_oil_change_pct": 5.154769459664578,
+    "brent_oil_change_pct": 5.050859888891182,
+    "bitcoin_change_pct": -1.3574822272693894,
     "ethereum_change_pct": -1.7207036435123235,
-    "dxy_change_pct": 0.20080781194859718,
+    "dxy_change_pct": 0.2118459220770705,
     "usdinr_change_pct": 0.09421924316257412
   }
 ]
