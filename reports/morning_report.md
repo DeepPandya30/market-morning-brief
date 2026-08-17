@@ -1,273 +1,252 @@
-# Morning Market Brief - 14 August 2026
+# Morning Market Brief - 17 August 2026
 
-Generated at: **14 Aug 2026, 07:50 AM IST**
+Generated at: **17 Aug 2026, 07:50 AM IST**
 
 ## Final View
 
-- **Market Bias:** Mild Bullish
-- **Score:** 2
+- **Market Bias:** Neutral / Range-bound
+- **Score:** 1
 - **Confidence:** High
-- **Meeting View:** Market setup is Mild Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,000.
+- **Meeting View:** Market setup is range-bound. Watch Nifty support near 24,000 and resistance near 25,000.
 
 ## Expected Opening
 
 - GIFT Nifty: Not available from current source. Use available global and NSE signals.
-- India VIX: 11.42 (-2.33%)
+- India VIX: 11.32 (-0.85%)
 
 ## Global Market Cues
 
 | Region | Index | Close | Change % | Date |
 |---|---:|---:|---:|---:|
-| US | Nasdaq | 26,803 | 0.81% | 2026-08-13 |
-| US | Dow Jones | 53,840 | 0.13% | 2026-08-13 |
-| US | S&P 500 | 7,799 | 0.65% | 2026-08-13 |
-| Europe | FTSE 100 | 10,773 | -0.56% | 2026-08-13 |
-| Europe | CAC 40 | 8,651 | -0.28% | 2026-08-13 |
-| Europe | DAX | 26,300 | -0.12% | 2026-08-13 |
-| Asia | Hang Seng | 25,242 | -0.61% | 2026-08-14 |
-| Asia | Nikkei 225 | 68,851 | 0.79% | 2026-08-14 |
+| US | Nasdaq | 26,729 | -0.28% | 2026-08-14 |
+| US | Dow Jones | 53,732 | -0.20% | 2026-08-14 |
+| US | S&P 500 | 7,786 | -0.17% | 2026-08-14 |
+| Europe | FTSE 100 | 10,750 | -0.21% | 2026-08-14 |
+| Europe | CAC 40 | 8,637 | -0.16% | 2026-08-14 |
+| Europe | DAX | 26,440 | 0.53% | 2026-08-14 |
+| Asia | Hang Seng | 25,476 | 1.43% | 2026-08-17 |
+| Asia | Nikkei 225 | 68,767 | 0.08% | 2026-08-17 |
 
 ## Global Commodities
 
 | Commodity | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Gold | GC=F | 4,372 | -36.80 | -0.83% | 2026-08-13 |
-| Silver | SI=F | 64.00 | -1.56 | -2.37% | 2026-08-13 |
-| Crude Oil WTI | CL=F | 80.88 | -2.39 | -2.87% | 2026-08-13 |
-| Copper | HG=F | 6.57 | -0.03 | -0.45% | 2026-08-13 |
-| Brent Oil | BZ=F | 86.70 | -2.28 | -2.56% | 2026-08-13 |
-| Natural Gas | NG=F | 2.75 | -0.06 | -2.07% | 2026-08-13 |
+| Gold | GC=F | 4,451 | 70.20 | 1.60% | 2026-08-16 |
+| Silver | SI=F | 65.90 | 0.92 | 1.41% | 2026-08-16 |
+| Crude Oil WTI | CL=F | 82.79 | 0.39 | 0.47% | 2026-08-16 |
+| Copper | HG=F | 6.72 | 0.12 | 1.77% | 2026-08-16 |
+| Brent Oil | BZ=F | 89.18 | 0.66 | 0.75% | 2026-08-16 |
+| Natural Gas | NG=F | 2.66 | -0.07 | -2.52% | 2026-08-16 |
 
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| Bitcoin | BTC-USD | 63,440 | 37.26 | 0.06% | 2026-08-14 |
-| Ethereum | ETH-USD | 1,885 | 7.10 | 0.38% | 2026-08-14 |
-| Solana | SOL-USD | 75.97 | 0.44 | 0.59% | 2026-08-14 |
-| Cardano | ADA-USD | 0.18 | 0.00 | 0.07% | 2026-08-14 |
-| Ripple | XRP-USD | 1.01 | 0.01 | 0.72% | 2026-08-14 |
+| Bitcoin | BTC-USD | 63,017 | -6.92 | -0.01% | 2026-08-17 |
+| Ethereum | ETH-USD | 1,888 | 6.60 | 0.35% | 2026-08-17 |
+| Solana | SOL-USD | 75.00 | -0.27 | -0.36% | 2026-08-17 |
+| Cardano | ADA-USD | 0.18 | -0.00 | -0.50% | 2026-08-17 |
+| Ripple | XRP-USD | 1.00 | -0.00 | -0.36% | 2026-08-17 |
 
 ## Currency Market
 
 | Pair | Ticker | Close | Change | Change % | Date |
 |---|---:|---:|---:|---:|---:|
-| GBP/USD | GBPUSD=X | 1.35 | -0.00 | -0.04% | 2026-08-14 |
-| EUR/USD | EURUSD=X | 1.15 | 0.00 | 0.08% | 2026-08-14 |
-| USD/CHF | CHF=X | 0.81 | 0.00 | 0.12% | 2026-08-14 |
-| USD/JPY | JPY=X | 159.43 | 0.10 | 0.06% | 2026-08-14 |
-| DXY | DX-Y.NYB | 99.91 | -0.10 | -0.10% | 2026-08-13 |
-| USD/INR | INR=X | 95.43 | 0.09 | 0.09% | 2026-08-14 |
+| GBP/USD | GBPUSD=X | 1.36 | 0.01 | 0.43% | 2026-08-17 |
+| EUR/USD | EURUSD=X | 1.16 | 0.01 | 0.50% | 2026-08-17 |
+| USD/CHF | CHF=X | 0.81 | -0.00 | -0.30% | 2026-08-17 |
+| USD/JPY | JPY=X | 158.96 | -0.46 | -0.29% | 2026-08-17 |
+| DXY | DX-Y.NYB | 99.52 | -0.15 | -0.15% | 2026-08-16 |
+| USD/INR | INR=X | 95.42 | 0.01 | 0.01% | 2026-08-17 |
 
 ## FII / DII Flow
 
-- FII net: **₹-510.69 Cr**
-- DII net: **₹4,353.09 Cr**
-- Combined institutional flow: **₹3,842.40 Cr**
+- FII net: **₹508.12 Cr**
+- DII net: **₹356.40 Cr**
+- Combined institutional flow: **₹864.52 Cr**
 
 ## Open Interest View
 
 | Index | Spot | PCR | Support | Resistance | Source |
 |---|---:|---:|---:|---:|---|
-| Nifty | 24,396 | 0.78 | 24,000 | 25,000 | nse_nextapi |
-| Bank Nifty | 57,635 | 0.86 | 57,000 | 58,000 | nse_nextapi |
+| Nifty | 24,366 | 0.88 | 24,000 | 25,000 | nse_nextapi |
+| Bank Nifty | 57,491 | 0.78 | 57,000 | 58,000 | nse_nextapi |
 
 ## Sector View
 
 ### Strong Sectors
-- NIFTY REALTY: 0.97%
-- NIFTY FMCG: 0.84%
-- NIFTY CONSUMER DURABLES: 0.45%
+- NIFTY MEDIA: 0.96%
+- NIFTY CONSUMER DURABLES: 0.76%
+- NIFTY PRIVATE BANK: -0.05%
 
 ### Weak Sectors
-- NIFTY METAL: -1.05%
-- NIFTY PRIVATE BANK: -0.54%
-- NIFTY BANK: -0.43%
+- NIFTY PHARMA: -0.90%
+- NIFTY METAL: -0.71%
+- NIFTY AUTO: -0.63%
 
 ## Index Moving Averages & Indicators
 
 | Index | Close | Daily % | Weekly % | Monthly % | 20 DMA | 50 DMA | 100 DMA | 200 DMA | Trend |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| NIFTY 50 | 24,396 | -0.16% | -0.97% | 1.32% | 24,322 | 24,065 | 23,875 | 24,743 | Mild uptrend |
-| NIFTY BANK | 57,635 | -0.43% | -0.74% | -0.21% | 57,527 | 57,272 | 55,859 | 57,474 | Strong uptrend |
+| NIFTY 50 | 24,366 | -0.12% | -0.83% | 1.22% | 24,323 | 24,084 | 23,881 | 24,736 | Mild uptrend |
+| NIFTY BANK | 57,491 | -0.25% | -0.44% | -0.16% | 57,475 | 57,336 | 55,881 | 57,472 | Strong uptrend |
 
 ### NIFTY 50 Indicators
 
-- **RSI (14):** 53.30 (Neutral) — Overbought above 70, oversold below 30
-- **MACD (12,26,9):** 127.53 (Bearish) — Signal 132.97 · Histogram -5.44
-- **Bollinger (20,2):** 24,322 (Inside bands) — Upper 24888.09 · Lower 23755.29
-- **ATR (14):** 198.58 (Volatility) — 0.81% of spot — expected daily range
-- **Pivot levels:** S2 24,259 · S1 24,328 · PP 24,380 · R1 24,448 · R2 24,500
+- **RSI (14):** 52.20 (Neutral) — Overbought above 70, oversold below 30
+- **MACD (12,26,9):** 112.25 (Bearish) — Signal 128.83 · Histogram -16.58
+- **Bollinger (20,2):** 24,323 (Inside bands) — Upper 24890.01 · Lower 23756.55
+- **ATR (14):** 192.14 (Volatility) — 0.79% of spot — expected daily range
+- **Pivot levels:** S2 24,248 · S1 24,307 · PP 24,356 · R1 24,415 · R2 24,464
 
 ### NIFTY BANK Indicators
 
-- **RSI (14):** 51.50 (Neutral) — Overbought above 70, oversold below 30
-- **MACD (12,26,9):** 139.48 (Bearish) — Signal 148.54 · Histogram -9.07
-- **Bollinger (20,2):** 57,527 (Inside bands) — Upper 58584.08 · Lower 56469.38
-- **ATR (14):** 610.73 (Volatility) — 1.06% of spot — expected daily range
-- **Pivot levels:** S2 57,410 · S1 57,523 · PP 57,661 · R1 57,773 · R2 57,912
+- **RSI (14):** 50.00 (Neutral) — Overbought above 70, oversold below 30
+- **MACD (12,26,9):** 116.77 (Bearish) — Signal 142.19 · Histogram -25.42
+- **Bollinger (20,2):** 57,475 (Inside bands) — Upper 58423.27 · Lower 56527.16
+- **ATR (14):** 588.61 (Volatility) — 1.02% of spot — expected daily range
+- **Pivot levels:** S2 57,217 · S1 57,354 · PP 57,518 · R1 57,655 · R2 57,819
 
 
 ## Nifty 50 Pivot Table
 
-Breadth as of 2026-08-13: **30 advancing / 19 declining**, 36 of 50 trading above their daily pivot. Average change: 0.18% daily, -0.75% weekly, 2.73% monthly.
+Breadth as of 2026-08-14: **10 advancing / 39 declining**, 21 of 50 trading above their daily pivot. Average change: -0.36% daily, -0.97% weekly, 2.06% monthly.
 
 | Stock | LTP | Daily % | Weekly % | Monthly % | S2 | S1 | Pivot | R1 | R2 | RSI | Zone |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| TATACONSUM | 1,090 | 2.69% | 0.05% | 0.46% | 1,044 | 1,067 | 1,081 | 1,104 | 1,118 | 48.90 | Pivot - R1 |
-| TMPV | 349.60 | 1.92% | 1.23% | 4.98% | 338.77 | 344.18 | 347.87 | 353.28 | 356.97 | 56.60 | Pivot - R1 |
-| HINDUNILVR | 2,092 | 1.41% | 0.60% | -0.50% | 2,040 | 2,066 | 2,079 | 2,105 | 2,118 | 46.60 | Pivot - R1 |
-| NTPC | 344.25 | 1.41% | -0.22% | -0.03% | 335.92 | 340.08 | 342.17 | 346.33 | 348.42 | 46.60 | Pivot - R1 |
-| SHRIRAMFIN | 1,132 | 1.35% | -0.76% | 9.53% | 1,110 | 1,121 | 1,135 | 1,146 | 1,160 | 63.10 | S1 - Pivot |
-| ETERNAL | 318.00 | 1.26% | 0.55% | 7.87% | 310.83 | 314.42 | 316.88 | 320.47 | 322.93 | 64.80 | Pivot - R1 |
-| LT | 4,071 | 1.26% | 0.22% | 7.58% | 3,963 | 4,017 | 4,044 | 4,098 | 4,124 | 60.40 | Pivot - R1 |
-| BEL | 410.50 | 1.18% | 2.83% | -0.11% | 399.37 | 404.93 | 408.47 | 414.03 | 417.57 | 58.00 | Pivot - R1 |
-| TCS | 2,375 | 1.08% | 0.08% | 8.49% | 2,318 | 2,347 | 2,361 | 2,389 | 2,403 | 54.20 | Pivot - R1 |
-| ULTRACEMCO | 11,891 | 0.94% | -2.45% | 2.77% | 11,570 | 11,730 | 11,811 | 11,971 | 12,052 | 51.40 | Pivot - R1 |
-| NESTLEIND | 1,507 | 0.92% | -0.86% | 5.60% | 1,486 | 1,496 | 1,506 | 1,517 | 1,526 | 55.80 | Pivot - R1 |
-| TECHM | 1,639 | 0.86% | 0.42% | 9.36% | 1,613 | 1,626 | 1,639 | 1,652 | 1,666 | 63.50 | S1 - Pivot |
-| ITC | 278.50 | 0.85% | -2.59% | 0.67% | 275.23 | 276.87 | 277.68 | 279.32 | 280.13 | 41.30 | Pivot - R1 |
-| M&M | 3,428 | 0.72% | 0.65% | 11.20% | 3,378 | 3,403 | 3,422 | 3,447 | 3,465 | 59.70 | Pivot - R1 |
-| INDIGO | 5,370 | 0.69% | 0.97% | 3.85% | 5,252 | 5,311 | 5,340 | 5,400 | 5,429 | 57.00 | Pivot - R1 |
-| EICHERMOT | 8,049 | 0.61% | 0.78% | 10.57% | 7,904 | 7,976 | 8,013 | 8,085 | 8,122 | 64.40 | Pivot - R1 |
-| MAXHEALTH | 1,013 | 0.58% | -5.51% | -8.11% | 969.77 | 991.53 | 1,015 | 1,036 | 1,059 | 32.00 | S1 - Pivot |
-| ASIANPAINT | 2,756 | 0.57% | 0.02% | 4.34% | 2,708 | 2,732 | 2,744 | 2,767 | 2,779 | 56.20 | Pivot - R1 |
-| DRREDDY | 1,206 | 0.50% | 2.99% | -1.91% | 1,173 | 1,189 | 1,199 | 1,215 | 1,225 | 50.80 | Pivot - R1 |
-| KOTAKBANK | 392.40 | 0.49% | -0.41% | 3.63% | 387.27 | 389.83 | 391.12 | 393.68 | 394.97 | 52.50 | Pivot - R1 |
-| JSWSTEEL | 1,275 | 0.46% | -2.52% | 3.92% | 1,260 | 1,267 | 1,272 | 1,279 | 1,283 | 50.80 | Pivot - R1 |
-| ONGC | 239.90 | 0.36% | 0.88% | -2.95% | 237.08 | 238.49 | 239.52 | 240.93 | 241.96 | 42.50 | Pivot - R1 |
-| HCLTECH | 1,370 | 0.34% | 2.62% | 17.29% | 1,347 | 1,358 | 1,366 | 1,377 | 1,385 | 70.00 | Pivot - R1 |
-| COALINDIA | 410.50 | 0.29% | -1.23% | -3.99% | 405.43 | 407.97 | 409.23 | 411.77 | 413.03 | 34.10 | Pivot - R1 |
-| MARUTI | 13,905 | 0.22% | -1.24% | 3.08% | 13,776 | 13,841 | 13,889 | 13,954 | 14,002 | 50.90 | Pivot - R1 |
-| HDFCLIFE | 538.05 | 0.20% | -0.82% | -5.40% | 530.08 | 534.07 | 536.88 | 540.87 | 543.68 | 39.30 | Pivot - R1 |
-| SUNPHARMA | 1,944 | 0.10% | 0.21% | 0.07% | 1,920 | 1,932 | 1,939 | 1,951 | 1,958 | 51.60 | Pivot - R1 |
-| TRENT | 2,990 | 0.10% | -3.77% | 4.21% | 2,931 | 2,961 | 2,986 | 3,016 | 3,041 | 49.10 | Pivot - R1 |
-| SBIN | 1,083 | 0.09% | -0.18% | 5.14% | 1,067 | 1,075 | 1,081 | 1,089 | 1,095 | 62.10 | Pivot - R1 |
-| APOLLOHOSP | 8,600 | 0.03% | -4.17% | -3.38% | 8,415 | 8,507 | 8,647 | 8,739 | 8,879 | 40.00 | S1 - Pivot |
-| CIPLA | 1,463 | 0.00% | 0.29% | 1.73% | 1,450 | 1,456 | 1,463 | 1,469 | 1,475 | 55.60 | Pivot - R1 |
-| INFY | 1,175 | -0.09% | 0.86% | 9.17% | 1,151 | 1,163 | 1,169 | 1,181 | 1,187 | 60.10 | Pivot - R1 |
-| JIOFIN | 255.60 | -0.18% | -2.85% | 8.04% | 248.27 | 251.93 | 257.67 | 261.33 | 267.07 | 57.70 | S1 - Pivot |
-| BHARTIARTL | 1,939 | -0.30% | -0.46% | 1.08% | 1,907 | 1,923 | 1,947 | 1,963 | 1,986 | 51.80 | S1 - Pivot |
-| BAJFINANCE | 1,091 | -0.31% | -4.72% | 6.81% | 1,077 | 1,084 | 1,090 | 1,096 | 1,102 | 54.60 | Pivot - R1 |
-| BAJAJ-AUTO | 11,661 | -0.33% | 0.35% | 14.71% | 11,530 | 11,595 | 11,673 | 11,738 | 11,816 | 66.10 | S1 - Pivot |
-| SBILIFE | 1,830 | -0.41% | -2.65% | -1.40% | 1,805 | 1,817 | 1,829 | 1,842 | 1,853 | 45.90 | Pivot - R1 |
-| ADANIPORTS | 1,658 | -0.42% | -2.18% | -9.35% | 1,628 | 1,643 | 1,656 | 1,672 | 1,685 | 29.80 | Pivot - R1 |
-| WIPRO | 183.10 | -0.46% | -1.62% | 4.84% | 180.83 | 181.96 | 182.86 | 183.99 | 184.89 | 51.70 | Pivot - R1 |
-| HDFCBANK | 725.00 | -0.55% | -1.27% | -11.09% | 721.67 | 723.33 | 726.17 | 727.83 | 730.67 | 32.00 | S1 - Pivot |
-| BAJAJFINSV | 2,020 | -0.57% | -3.14% | 8.09% | 1,996 | 2,008 | 2,018 | 2,031 | 2,041 | 60.00 | Pivot - R1 |
-| AXISBANK | 1,222 | -0.67% | -2.72% | -6.90% | 1,212 | 1,217 | 1,221 | 1,226 | 1,230 | 37.10 | Pivot - R1 |
-| TITAN | 5,064 | -0.69% | 1.31% | 10.58% | 4,987 | 5,025 | 5,048 | 5,087 | 5,110 | 69.10 | Pivot - R1 |
-| ADANIENT | 2,965 | -0.70% | -2.02% | -5.89% | 2,886 | 2,925 | 2,972 | 3,012 | 3,059 | 39.70 | S1 - Pivot |
-| TATASTEEL | 184.85 | -0.73% | -2.35% | -0.22% | 181.79 | 183.32 | 184.99 | 186.52 | 188.19 | 42.00 | S1 - Pivot |
-| RELIANCE | 1,317 | -0.90% | -0.60% | 1.66% | 1,297 | 1,307 | 1,317 | 1,327 | 1,338 | 52.90 | S1 - Pivot |
-| POWERGRID | 266.60 | -1.06% | -1.53% | -5.02% | 264.27 | 265.43 | 267.22 | 268.38 | 270.17 | 30.10 | S1 - Pivot |
-| GRASIM | 3,257 | -1.54% | 1.15% | 4.62% | 3,154 | 3,206 | 3,252 | 3,304 | 3,351 | 55.00 | Pivot - R1 |
-| ICICIBANK | 1,407 | -1.74% | -3.48% | -0.66% | 1,391 | 1,399 | 1,414 | 1,422 | 1,437 | 44.80 | S1 - Pivot |
-| HINDALCO | 1,046 | -2.99% | 1.87% | 7.38% | 1,020 | 1,033 | 1,053 | 1,066 | 1,086 | 60.30 | S1 - Pivot |
+| APOLLOHOSP | 8,920 | 3.73% | -0.27% | 0.37% | 8,475 | 8,698 | 8,811 | 9,034 | 9,148 | 54.40 | Pivot - R1 |
+| BHARTIARTL | 1,992 | 2.73% | 1.64% | 3.66% | 1,903 | 1,947 | 1,977 | 2,021 | 2,050 | 61.30 | Pivot - R1 |
+| ADANIPORTS | 1,700 | 2.53% | 0.38% | -6.92% | 1,643 | 1,671 | 1,686 | 1,714 | 1,729 | 42.50 | Pivot - R1 |
+| ADANIENT | 3,035 | 2.37% | 0.50% | -3.69% | 2,913 | 2,974 | 3,011 | 3,072 | 3,109 | 49.80 | Pivot - R1 |
+| ICICIBANK | 1,417 | 0.73% | -0.28% | -0.08% | 1,395 | 1,406 | 1,412 | 1,423 | 1,429 | 48.30 | Pivot - R1 |
+| WIPRO | 184.00 | 0.49% | -1.88% | 3.52% | 181.57 | 182.79 | 184.31 | 185.53 | 187.05 | 53.50 | S1 - Pivot |
+| BAJAJ-AUTO | 11,700 | 0.33% | 0.33% | 13.25% | 11,597 | 11,648 | 11,717 | 11,768 | 11,837 | 66.50 | S1 - Pivot |
+| HDFCBANK | 727.00 | 0.28% | -0.55% | -10.85% | 720.60 | 723.80 | 726.70 | 729.90 | 732.80 | 33.70 | Pivot - R1 |
+| ETERNAL | 318.50 | 0.16% | 1.11% | 11.19% | 311.90 | 315.20 | 320.10 | 323.40 | 328.30 | 65.00 | S1 - Pivot |
+| BEL | 410.80 | 0.07% | 2.44% | 0.91% | 406.27 | 408.53 | 410.52 | 412.78 | 414.77 | 58.30 | Pivot - R1 |
+| M&M | 3,428 | 0.00% | -2.10% | 9.96% | 3,360 | 3,394 | 3,412 | 3,446 | 3,464 | 59.70 | Pivot - R1 |
+| INFY | 1,175 | -0.09% | 0.86% | 7.51% | 1,151 | 1,163 | 1,169 | 1,181 | 1,187 | 59.70 | Pivot - R1 |
+| SUNPHARMA | 1,930 | -0.10% | -0.77% | -1.03% | 1,905 | 1,917 | 1,927 | 1,940 | 1,950 | 47.00 | Pivot - R1 |
+| ITC | 278.20 | -0.11% | -2.76% | -0.41% | 275.10 | 276.65 | 277.50 | 279.05 | 279.90 | 40.90 | Pivot - R1 |
+| TITAN | 5,056 | -0.15% | 2.33% | 9.30% | 5,020 | 5,038 | 5,064 | 5,082 | 5,108 | 68.30 | S1 - Pivot |
+| POWERGRID | 266.05 | -0.21% | -2.04% | -5.22% | 264.22 | 265.13 | 266.67 | 267.58 | 269.12 | 30.10 | S1 - Pivot |
+| GRASIM | 3,249 | -0.25% | -2.24% | 3.32% | 3,201 | 3,225 | 3,245 | 3,269 | 3,289 | 54.20 | Pivot - R1 |
+| KOTAKBANK | 391.15 | -0.32% | 0.10% | 3.30% | 387.28 | 389.22 | 391.78 | 393.72 | 396.28 | 50.90 | S1 - Pivot |
+| LT | 4,057 | -0.34% | 0.02% | 7.45% | 4,015 | 4,036 | 4,054 | 4,075 | 4,094 | 58.60 | Pivot - R1 |
+| BAJFINANCE | 1,087 | -0.35% | 0.83% | 4.76% | 1,077 | 1,082 | 1,090 | 1,095 | 1,104 | 53.70 | S1 - Pivot |
+| AXISBANK | 1,217 | -0.36% | -1.66% | -7.23% | 1,205 | 1,211 | 1,215 | 1,221 | 1,225 | 35.90 | Pivot - R1 |
+| TECHM | 1,633 | -0.38% | -0.13% | 8.11% | 1,595 | 1,614 | 1,633 | 1,652 | 1,671 | 61.50 | S1 - Pivot |
+| JSWSTEEL | 1,270 | -0.39% | -2.27% | 4.01% | 1,253 | 1,261 | 1,269 | 1,278 | 1,285 | 49.30 | Pivot - R1 |
+| TRENT | 2,978 | -0.40% | -0.63% | 4.12% | 2,906 | 2,942 | 2,981 | 3,017 | 3,057 | 47.60 | S1 - Pivot |
+| EICHERMOT | 8,066 | -0.41% | 0.58% | 8.73% | 7,967 | 8,017 | 8,080 | 8,130 | 8,193 | 63.90 | S1 - Pivot |
+| HDFCLIFE | 535.85 | -0.41% | -0.77% | -5.59% | 532.75 | 534.30 | 537.15 | 538.70 | 541.55 | 38.00 | S1 - Pivot |
+| MAXHEALTH | 1,009 | -0.46% | -5.74% | -8.53% | 965.73 | 987.17 | 1,003 | 1,024 | 1,039 | 31.40 | Pivot - R1 |
+| DRREDDY | 1,200 | -0.50% | 2.39% | -1.99% | 1,186 | 1,193 | 1,199 | 1,206 | 1,213 | 49.10 | Pivot - R1 |
+| MARUTI | 13,834 | -0.51% | -1.45% | 0.37% | 13,663 | 13,748 | 13,846 | 13,931 | 14,029 | 48.00 | S1 - Pivot |
+| NESTLEIND | 1,499 | -0.52% | -2.66% | 5.05% | 1,484 | 1,492 | 1,504 | 1,511 | 1,523 | 54.30 | S1 - Pivot |
+| RELIANCE | 1,310 | -0.53% | -1.86% | 1.03% | 1,294 | 1,302 | 1,310 | 1,318 | 1,326 | 50.70 | Pivot - R1 |
+| TCS | 2,361 | -0.59% | -3.74% | 7.85% | 2,305 | 2,333 | 2,361 | 2,390 | 2,418 | 53.00 | S1 - Pivot |
+| CIPLA | 1,450 | -0.60% | -0.94% | 1.43% | 1,433 | 1,441 | 1,458 | 1,466 | 1,483 | 50.60 | S1 - Pivot |
+| HINDUNILVR | 2,077 | -0.72% | -0.91% | -1.02% | 2,054 | 2,065 | 2,078 | 2,090 | 2,103 | 44.40 | S1 - Pivot |
+| HCLTECH | 1,360 | -0.73% | 0.25% | 14.54% | 1,332 | 1,346 | 1,360 | 1,374 | 1,389 | 66.60 | S1 - Pivot |
+| TATASTEEL | 183.50 | -0.73% | -2.16% | -1.07% | 178.37 | 180.94 | 182.56 | 185.13 | 186.75 | 39.70 | Pivot - R1 |
+| ULTRACEMCO | 11,619 | -0.74% | -4.01% | -1.29% | 11,524 | 11,571 | 11,635 | 11,682 | 11,746 | 42.90 | S1 - Pivot |
+| BAJAJFINSV | 2,008 | -0.82% | -0.03% | 9.23% | 1,989 | 1,999 | 2,016 | 2,026 | 2,043 | 57.40 | S1 - Pivot |
+| COALINDIA | 407.10 | -0.83% | -1.96% | -4.74% | 402.90 | 405.00 | 407.70 | 409.80 | 412.50 | 31.00 | S1 - Pivot |
+| SHRIRAMFIN | 1,122 | -0.91% | 0.63% | 9.53% | 1,108 | 1,115 | 1,125 | 1,132 | 1,142 | 60.30 | S1 - Pivot |
+| SBILIFE | 1,795 | -0.94% | -3.26% | -2.46% | 1,770 | 1,783 | 1,802 | 1,814 | 1,833 | 39.40 | S1 - Pivot |
+| TATACONSUM | 1,080 | -1.01% | -0.26% | -0.83% | 1,070 | 1,075 | 1,084 | 1,089 | 1,098 | 46.40 | S1 - Pivot |
+| INDIGO | 5,310 | -1.12% | -0.43% | 0.85% | 5,270 | 5,290 | 5,330 | 5,350 | 5,390 | 53.30 | S1 - Pivot |
+| NTPC | 340.00 | -1.23% | -0.73% | -0.72% | 334.23 | 337.12 | 340.38 | 343.27 | 346.53 | 42.30 | S1 - Pivot |
+| SBIN | 1,068 | -1.41% | -2.69% | 3.54% | 1,055 | 1,061 | 1,072 | 1,078 | 1,088 | 56.20 | S1 - Pivot |
+| ONGC | 236.40 | -1.46% | -1.03% | -4.19% | 232.73 | 234.57 | 237.08 | 238.92 | 241.43 | 36.40 | S1 - Pivot |
+| HINDALCO | 1,030 | -1.60% | -2.84% | 6.48% | 1,014 | 1,022 | 1,029 | 1,037 | 1,045 | 55.10 | Pivot - R1 |
+| ASIANPAINT | 2,696 | -2.15% | -1.41% | 0.81% | 2,652 | 2,674 | 2,713 | 2,735 | 2,773 | 45.50 | S1 - Pivot |
+| JIOFIN | 249.05 | -2.56% | -3.02% | 5.69% | 244.68 | 246.87 | 251.23 | 253.42 | 257.78 | 50.10 | S1 - Pivot |
+| TMPV | 334.50 | -4.32% | -3.60% | 0.81% | 325.00 | 329.75 | 333.75 | 338.50 | 342.50 | 43.30 | Pivot - R1 |
 
 ### Sector Roll-Up
 
 | Sector | Stocks | Daily % | Weekly % | Monthly % | Advancing |
 |---|---:|---:|---:|---:|---:|
-| FMCG | 4 | 1.47% | -0.70% | 1.56% | 4/4 |
-| Capital Goods | 2 | 1.22% | 1.53% | 3.73% | 2/2 |
-| Services | 1 | 0.69% | 0.97% | 3.85% | 1/1 |
-| Auto | 5 | 0.63% | 0.35% | 8.91% | 4/5 |
-| IT | 5 | 0.35% | 0.47% | 9.83% | 3/5 |
-| Consumer | 4 | 0.31% | -0.47% | 6.75% | 3/4 |
-| Healthcare | 2 | 0.30% | -4.84% | -5.74% | 2/2 |
-| Pharma | 3 | 0.20% | 1.16% | -0.04% | 2/3 |
-| Power | 2 | 0.17% | -0.88% | -2.52% | 1/2 |
-| Energy | 3 | -0.08% | -0.32% | -1.76% | 2/3 |
-| Financials | 11 | -0.21% | -2.09% | 1.44% | 4/11 |
-| Materials | 2 | -0.30% | -0.65% | 3.70% | 1/2 |
-| Telecom | 1 | -0.30% | -0.46% | 1.08% | 0/1 |
-| Infrastructure | 1 | -0.42% | -2.18% | -9.35% | 0/1 |
-| Conglomerate | 1 | -0.70% | -2.02% | -5.89% | 0/1 |
-| Metals | 3 | -1.09% | -1.00% | 3.69% | 1/3 |
+| Telecom | 1 | 2.73% | 1.64% | 3.66% | 1/1 |
+| Infrastructure | 1 | 2.53% | 0.38% | -6.92% | 1/1 |
+| Conglomerate | 1 | 2.37% | 0.50% | -3.69% | 1/1 |
+| Healthcare | 2 | 1.64% | -3.00% | -4.08% | 1/2 |
+| Capital Goods | 2 | -0.14% | 1.23% | 4.18% | 1/2 |
+| IT | 5 | -0.26% | -0.93% | 8.31% | 1/5 |
+| Pharma | 3 | -0.40% | 0.23% | -0.53% | 0/3 |
+| Materials | 2 | -0.49% | -3.12% | 1.01% | 0/2 |
+| FMCG | 4 | -0.59% | -1.65% | 0.70% | 0/4 |
+| Financials | 11 | -0.64% | -0.97% | 0.89% | 2/11 |
+| Consumer | 4 | -0.64% | 0.35% | 6.36% | 1/4 |
+| Power | 2 | -0.72% | -1.39% | -2.97% | 0/2 |
+| Metals | 3 | -0.91% | -2.42% | 3.14% | 0/3 |
+| Energy | 3 | -0.94% | -1.62% | -2.63% | 0/3 |
+| Auto | 5 | -0.98% | -1.25% | 6.62% | 1/5 |
+| Services | 1 | -1.12% | -0.43% | 0.85% | 0/1 |
 
 ## Signal Score Breakdown
 
 | Signal | Score | Status | Reason |
 |---|---:|---|---|
 | GIFT Nifty | 0 | Unavailable | GIFT Nifty was not available from the fetched index snapshot. |
-| US markets | 1 | Bullish | Average move 0.53% across 3 indices. |
-| Europe markets | -1 | Bearish | Average move -0.32% across 3 indices. |
-| Asia markets | 0 | Neutral | Average move 0.09% across 2 indices. |
-| FII/DII flow | 1 | Bullish | FII net -510.69 Cr, DII net 4353.09 Cr, combined 3842.40 Cr. |
-| Nifty OI | 0 | Neutral | PCR 0.78, support 24000.0, resistance 25000.0. |
-| Bank Nifty OI | 0 | Neutral | PCR 0.86, support 57000.0, resistance 58000.0. |
-| India VIX | 1 | Bullish | India VIX change -2.33%. |
-| Sector breadth | -1 | Bearish | 6 sectors positive and 8 sectors negative. |
-| Global commodities | 1 | Bullish | Crude/Brent average down -2.72%, which is supportive for India market sentiment. |
-| Crypto risk appetite | 0 | Neutral | Major crypto basket average move 0.36% across 5 coins. |
-| Currency pressure | 0 | Neutral | DXY/USDINR pressure average -0.01%; rising dollar/rupee pressure is usually negative for India. |
+| US markets | -1 | Bearish | Average move -0.22% across 3 indices. |
+| Europe markets | 0 | Neutral | Average move 0.06% across 3 indices. |
+| Asia markets | 1 | Bullish | Average move 0.75% across 2 indices. |
+| FII/DII flow | 2 | Bullish | FII net 508.12 Cr, DII net 356.40 Cr, combined 864.52 Cr. |
+| Nifty OI | 0 | Neutral | PCR 0.88, support 24000.0, resistance 25000.0. |
+| Bank Nifty OI | 0 | Neutral | PCR 0.78, support 57000.0, resistance 58000.0. |
+| India VIX | 0 | Neutral | India VIX change -0.85%. |
+| Sector breadth | -1 | Bearish | 2 sectors positive and 12 sectors negative. |
+| Global commodities | 0 | Neutral | Crude/Brent average move 0.61%, commodity pressure is limited. |
+| Crypto risk appetite | 0 | Neutral | Major crypto basket average move -0.18% across 5 coins. |
+| Currency pressure | 0 | Neutral | DXY/USDINR pressure average -0.07%; rising dollar/rupee pressure is usually negative for India. |
 
 ## Discussion Plan
 
-- Market setup is Mild Bullish. Prefer buy-on-dip only if Nifty sustains above support near 24,000.
+- Market setup is range-bound. Watch Nifty support near 24,000 and resistance near 25,000.
 - Bank Nifty levels to monitor: support 57,000, resistance 58,000.
 - Avoid aggressive trades in the first 5–10 minutes if opening gap is large.
 - Confirm direction with Nifty/Bank Nifty holding above support or rejecting near resistance.
 
-## Corporate Event Calendar - 14 Aug 2026 (Friday)
+## Corporate Event Calendar - 17 Aug 2026 (Monday)
 
-- **Companies with announcements:** 263
+- **Companies with announcements:** 6
 - **Nifty 50 constituents:** 0
-- **Breakdown:** Results 252 · Fund Raising 7 · Other 3 · Buyback 1
+- **Breakdown:** Fund Raising 3 · Results 3
 
 | Symbol | Company | Purpose | Details |
 |---|---|---|---|
-| 3MINDIA | 3M India Limited | Financial Results/Other business matters | To consider and approve the financial results for the period ended Jun 30, 2026 and other business matters |
-| AAATECH | Aaa Technologies Limited | Financial Results/Other business matters | To consider and approve the financial results for the period ended Jun 30, 2026 and other business matters |
-| AAREYDRUGS | Aarey Drugs & Pharmaceuticals Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| AASTHA | Aastha Spintex Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| ABHISHEK | Abhishek Corporation Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| ABMINTLLTD | ABM International Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| ADVANIHOTR | Advani Hotels & Resorts (India) Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| AHLADA | Ahlada Engineers Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| AHLUCONT | Ahluwalia Contracts (India) Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| AIROLAM | Airo Lam limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| AJOONI | Ajooni Biotech Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| AKASH | Akash Infra Projects Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| AKSHOPTFBR | Aksh Optifibre Limited | Financial Results/Other business matters | To consider and approve the financial results for the period ended Jun 30, 2026 and other business matters |
-| ALGOQUANT | Algoquant Fintech Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| ALKEM | Alkem Laboratories Limited | Financial Results | Notice of meeting of the Board of Directors of Alkem Laboratories Limited ( the Company ) |
-| AGL | Allcargo Global Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| ALPA | Alpa Laboratories Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| ALPINETEX | Alpine Texworld Limited | Financial Results | A meeting of the Board of Directors of the Company is scheduled to be held on Friday, August 14, 2026, inter alia, to co... |
-| AMBICAAGAR | Ambica Agarbathies & Aroma industries Limited | Financial Results | AMBICAAGAR : 14-Aug-2026 :  The Company has informed the Exchange that a Board meeting to be held on August 12, 2026 has... |
-| AMNPLST | Amines & Plasticizers Limited | Financial Results | Intimation of Board Meeting scheduled to be held on Friday, August 14, 2026 inter-alia to consider, approve and take on... |
-| ASIL | Amit Spinning Industries Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-| ANIKINDS | Anik Industries Limited | Financial Results/Other business matters | To consider and approve the financial results for the period ended Jun 30, 2026 and other business matters |
-| ANTGRAPHIC | Antarctica Limited | Financial Results/Other business matters | To consider and approve the financial results for the period ended Jun 30, 2026 and other business matters |
-| ANURAS | Anupam Rasayan India Limited | Financial Results | To consider and approve the Unaudited Financial Results (Standalone and Consolidated for the quarter ended Jun 30, 2026 |
-| PARKHOTELS | Apeejay Surrendra Park Hotels Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
-
-_Showing 25 of 263 announcements (Nifty 50 names first). Full list is on the dashboard Events tab._
+| ATALREAL | Atal Realtech Limited | Fund Raising/Other business matters | To consider Fund Raising and other business matters |
+| CAPINVIT | Capital Infra Trust | Fund Raising/Other business matters | To consider Fund Raising and other business matters |
+| FCL | Fineotex Chemical Limited | Fund Raising/Other business matters | To consider Fund Raising and other business matters |
+| INDOMIM | INDO-MIM Limited | Financial Results/Other business matters | To consider and approve the financial results for the period ended Jun 30, 2026 and other business matters |
+| SRPL | Shree Ram Proteins Limited | Financial Results | To consider and approve the financial results for the period ended Jun 30, 2026 |
+| SRPL | Shree Ram Proteins Limited | Financial Results | SRPL : 17-Aug-2026 :  The Company has informed the Exchange that a Board meeting to be held on July 31, 2026 has been re... |
 
 ## Important Market News
 
-- **Indian Stock Market Outlook Next Week: Can Sensex, Nifty Hit Fresh Highs? Q1 Earnings, FII, Crude Oil in Focus - Goodreturns** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi3gFBVV95cUxNcHNXazJwRlJyWHgzV0RpdlY2QW9hNHhfeENLZWYzd3puVnBOd1N1NjNnRF9ZMGRYeEhxLVVWMWxHQ0xoQ0FpcHBFenlxX29taGJhb2VtLUdPTnVIaHdlRXNSa0lrNERrSF93dVU4bmRUZ1NWYVc4OWF6al9ONkI0bjhkYllKUlAybDlfM3FKb3Q1c2RIUWlXb3RUbTJlMXF5OXg4UnBEZUlGdVpBdVAtemplVXpiWlMxVzVEbGFvVElHcXJMa2p2LTJGUlg3UGNlRWdLOHNHVVVQeXdzUHc?oc=5
-- **Top Gainers & Losers on 13 August: Apar Industries, Hindalco, Ather Energy, Force Motors, CUB among top losers** — LiveMint Markets  
-  https://www.livemint.com/market/stock-market-news/top-gainers-losers-on-13-august-apar-industries-hindalco-ather-energy-force-motors-cub-among-top-losers-11786615201243.html
-- **Rupee slips, muted price action sinks volatility expectations to five-month low** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/forex/rupee-slips-muted-price-action-sinks-volatility-expectations-to-five-month-low/articleshow/133208793.cms
-- **D-Street poised for a cautious opening as GIFT Nifty signals a muted start** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/stocks/news/pre-market-action-heres-the-trade-setup-for-todays-session/articleshow/133218802.cms
-- **Rupee holds steady at 95.44 amidst RBI intervention** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/forex/forex-news/indian-rupee-holds-steady-at-95-44-amidst-rbi-intervention-and-market-watch/articleshow/133226829.cms
-- **Geopolitical uncertainty, elevated crude keep Indian markets mixed; Sensex up, Nifty down - Rediff** — Google News - India Markets  
-  https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUHByQzlmTnFaR1R0OWVGOFJaMDNOV1Q1d0VCQTdCTndkWFQzU0c4bHdIZVhTWEthTS1RTkFCWE1vWjVKS2s3YUdDZ2ptOHNmU1p5UVJZcHpPQ3NhQzBvRGw5VjFLZEtUdGdKbDFMZW91a0h0VlctQkJ6YjRtYUhjNDNZNW80a1hiZUdVUTlLR3lpdWdCUVl0U0FRM1E5anBSWTJ5NE0ySy02SS00V3FNb2RLVjJfLUxjVzBmTEt6RHNPQnpLWTIzOTZLY3ZfNHFlQzZjLTduSkd6aFRTb3kyU2g0Vzdad9IB5gFBVV95cUxOUHByQzlmTnFaR1R0OWVGOFJaMDNOV1Q1d0VCQTdCTndkWFQzU0c4bHdIZVhTWEthTS1RTkFCWE1vWjVKS2s3YUdDZ2ptOHNmU1p5UVJZcHpPQ3NhQzBvRGw5VjFLZEtUdGdKbDFMZW91a0h0VlctQkJ6YjRtYUhjNDNZNW80a1hiZUdVUTlLR3lpdWdCUVl0U0FRM1E5anBSWTJ5NE0ySy02SS00V3FNb2RLVjJfLUxjVzBmTEt6RHNPQnpLWTIzOTZLY3ZfNHFlQzZjLTduSkd6aFRTb3kyU2g0Vzdadw?oc=5
-- **Indian bonds mirror gains in Treasuries as oil slips** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/bonds/indian-bonds-mirror-gains-in-treasuries-as-oil-slips/articleshow/133211927.cms
-- **US stocks: S&P 500 hits intraday record as tech stocks rally, crude oil prices fall** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/us-stocks-sp-500-hits-intraday-record-as-tech-stocks-rally-crude-oil-prices-fall/articleshow/133214216.cms
-- **US Dollar Fell, Metals Showed Mixed Performance, LME Aluminum and Crude Oil Fell over 2%, Precious Metals Pulled Back, Gold and Silver Fell over 1% [Overnight Market] - Shanghai Metals Market** — Google News - Global Markets  
-  https://news.google.com/rss/articles/CBMi_AFBVV95cUxQMGhMQmJ2aVhJRW9DX1BQRlBtSDJCa1ZLQjc2MDlnX0JRdzgzSWpPNERNOEt2azhQc0Q1X0VtY2hDY2dTYy1RQzNiOW1fZ1E0U3plbTJlQlJwV3R6b2o5NjBiRmxNTW16RXhwb2hFeXlwbHhOMEhsX2ZMZk9XSVBPcDc4TU03WWZaRksxaG1nTUJjcGhkakFfT2JHSGoweHZQQzRiZXFtX3U0dmNNTkFnQVJpcjhYZGVHOXJaaGVZUXAzTktla3hrejhWUDh5MnhaSEthTmFLNG4ySFhoMENTb2YtWGJFMmtzcHVzZlpuYmlkMTQwbWFxeEpRUG0?oc=5
-- **Stocks in news: Indigo Paints, LG Electronics India, Tata Motors PV, Honasa Consumer, Ashok Leyland, Physicswallah** — Economic Times Markets  
-  https://economictimes.indiatimes.com/markets/stocks/news/for-friday-stocks-in-news-indigo-paints-lg-electronics-india-tata-motors-pv-honasa-consumer-ashok-leyland-and-physicswallah-in-focus/articleshow/133219198.cms
+- **D-St set for a negative opening as GIFT Nifty signals weak start** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/news/pre-market-action-heres-the-trade-setup-for-todays-session/articleshow/133280296.cms
+- **Rupee faces pressure as RBI defends 95.45 against dollar amid rising crude oil prices** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-faces-pressure-as-rbi-defends-95-45-against-dollar-amid-rising-crude-oil-prices/articleshow/133284217.cms
+- **Will Sensex, Nifty continue to bleed on Monday? 4 factors which will drive D-Street action this week** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/stocks/news/will-sensex-nifty-continue-to-bleed-on-monday-4-factors-which-will-drive-d-street-action-this-week/articleshow/133270103.cms
+- **From Gift Nifty to Japan's Q2 GDP, oil prices: 7 key things that changed for Indian stock market overnight** — LiveMint Markets  
+  https://www.livemint.com/market/stock-market-news/from-gift-nifty-to-japans-q2-gdp-oil-prices-7-key-things-that-changed-for-indian-stock-market-overnight-11786928889550.html
+- **Gold rises on weaker dollar as inflation data cements rate-hold bets** — Economic Times Markets  
+  https://economictimes.indiatimes.com/markets/commodities/news/gold-rises-on-weaker-dollar-as-inflation-data-cements-rate-hold-bets/articleshow/133256537.cms
+- **NIFTY50 this week: Crude oil prices, US Fed minutes, FIIs activity among key market triggers to watch - upstox.com** — Google News - Global Markets  
+  https://news.google.com/rss/articles/CBMi8gFBVV95cUxPek5WV3M4bjU2OExSS3ZTS1I1ZnB5X2JsZ25RRk02ZFJLaUJadDlqMlZXUEpCY3J0VFJ2SUI0cXRUaXdVUlhqdy1taUthdk42U0pkaG1pNzlsREFwT1lDaXJTUGE0TlBESjg3M01xUkNpbmJqTFVROTNTcUh4bmVvbFAya2ZCWHVodWt5Y25keTYyRVFUWXFXYzdmcXFGYk1hNkZjbWZ1Sk5JQ3lVcTB6alhhTXNlVG5qODl2RS1lSmZTaG1GbXBJd1F5aFA1MWk2VWFMRkFvU3hVODlZSk1hS25TWGdVV2NnbDk2cGVpM0hLZw?oc=5
+- **Sensex, Nifty in focus: Hormuz tensions, crude oil, Fed minutes among key triggers - Moneycontrol.com** — Google News - India Markets  
+  https://news.google.com/rss/articles/CBMi4AFBVV95cUxNekwxTlJTM2hSbjZ1XzljdEZHMWxZbGRseXJXd0FwcVlnS0xqZmM3LXR0cVBpazFLc1ByakhlaDNuX2hhZjBzcUY3WmhNSkk0OXUxYnZEUnJQMnpZU0pxNDB5NklQZmN3MU9McWpJQTBDN1lmZnhmaHNSWVRJRVhrcHowdV90ZUR4SnlvdV8xdm5RZzg3cWFQU051LXNZSFRHcElneUlqeFpCM0ZGeVNZSnpDV1JNNDRwQ0FGb1NmMHUxY3JaRkdmTmkxa0dvRm9Ea1pHX1FHd0s0Y2hLVVNYc9IB4AFBVV95cUxNekwxTlJTM2hSbjZ1XzljdEZHMWxZbGRseXJXd0FwcVlnS0xqZmM3LXR0cVBpazFLc1ByakhlaDNuX2hhZjBzcUY3WmhNSkk0OXUxYnZEUnJQMnpZU0pxNDB5NklQZmN3MU9McWpJQTBDN1lmZnhmaHNSWVRJRVhrcHowdV90ZUR4SnlvdV8xdm5RZzg3cWFQU051LXNZSFRHcElneUlqeFpCM0ZGeVNZSnpDV1JNNDRwQ0FGb1NmMHUxY3JaRkdmTmkxa0dvRm9Ea1pHX1FHd0s0Y2hLVVNYcw?oc=5
+- **Sensex, Nifty in focus: Hormuz tensions, crude oil, Fed minutes among key triggers - Moneycontrol.com** — Google News - Global Markets  
+  https://news.google.com/rss/articles/CBMi2wFBVV95cUxPMFdGaWJfa1MzeHk1ekhrTUw5TTB2UFUzdjd6UXNGR1lIcDZWR3dMWUVWUGt3ZUVVUmVZTW9qMEJSNmZOTkhaV01wSkpEc01NeEdIdlJVYl83UEdydUZsbmR1aXpKeTcxS0hYRHJ0OG1haWdnQUlkdy1KSU5CUFh2S3RJcWxYdTdSWFNacldidWlHTmZuUzVWQmJqRjVHQlFqWHF5OFk3SGFRRnFISjNNelpSRERfQXdsLXlaNFU2QUZnVzFrQ0J2NzBjdWlCSW4zQ2RWdWR4ZVlvLTDSAeABQVVfeXFMTXpMMU5SUzNoUm42dV85Y3RGRzFsWWxkbHlyV3dBcHFZZ0tMamZjNy10dHFQaWsxS3NQcmpIZWgzbl9oYWYwc3FGN1poTUpJNDl1MWJ2RFJyUDJ6WVNKcTQweTZJUGZjdzFPTHFqSUEwQzdZZmZ4ZmhzUllUSUVYa3B6MHVfdGVEeEp5b3VfMXZuUWc4N3FhUFNOdS1zWUhUR3BJZ3lJanhaQjNGRnlTWUp6Q1dSTTQ0cENBRm9TZjB1MWNyWkZHZk5pMWtHb0ZvRGtaR19RR3dLNGNoS1VTWHM?oc=5
+- **Week Ahead On D-Street: US Fed Minutes, FPI Inflows, Crude Oil Prices, US-Iran Conflict To Drive Sensex, Nifty - NDTV Profit** — Google News - Global Markets  
+  https://news.google.com/rss/articles/CBMi0wFBVV95cUxPMll2NmRPaGJZRHVCdS1IYzdrU0I5ZDRjZWFBeTVGcGdQVTlDbUdnelE1b1Nta3hfVm92YTljNGh6X1BUWE9JbFY2UlJWQ3RJYWNhRjhEa1dqX0dfM3hEQ0hIUnFxX00zYVVBV2NmdVYwUnJBY1FOMUpkRVJaMVZ1bEQ2UzlUMnd5amhKN0FSdk5md0V6OW44TEQ2N0piVVFkbERrVnJMbmhNNFpTNmtfZGg3TmtKQVZFT1AzREJTNEtKV0lFeVpKaVhSaUJDeE1kRXhB0gHbAUFVX3lxTE0wMFFRakhyRDVROTlET0psQnl3MGZnVUpLY25ETXVEMjQ1NXJSVkVXWTBzZlpvT3BnVjd2VGo1VW9QaTFqb1p4OUF3NVE3aE1idnctRzM3R1N5OVItdzhxWjZHM29KTkt0QV9RXzFpXzloTGFXSFhJd1plWlJUeGxLaWVUa0lUdW1uNGoxYkpLX0cwcUVzdl83eFgweTdHc3M2NFZNYVNuNTlvbXRsNFo1bU9vcHpmcE5DNjdRS2JtM1R6aE1GZWdkSk91YnNmZVMxaTJFRURPZFM3OA?oc=5
+- **US-Iran war to crude oil prices: Top five triggers that may dictate the Indian stock market this week** — LiveMint Markets  
+  https://www.livemint.com/market/stock-market-news/usiran-war-to-crude-oil-prices-top-five-triggers-that-may-dictate-the-indian-stock-market-this-week-11786846871492.html
 
 ---
 This report is generated automatically for pre-market discussion. It is not financial advice.
