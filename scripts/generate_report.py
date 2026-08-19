@@ -11,7 +11,14 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from market_brief.config import DASHBOARD_DIR, DOCS_DIR, PROCESSED_DIR, RAW_DIR, REPORTS_DIR
+from market_brief.config import (
+    DASHBOARD_DIR,
+    DOCS_DIR,
+    NG_STORAGE_SIDECAR_NAME,
+    PROCESSED_DIR,
+    RAW_DIR,
+    REPORTS_DIR,
+)
 from market_brief.fetchers import build_data_bundle
 from market_brief.render import create_report_context, save_outputs
 from market_brief.scoring import score_market
@@ -47,6 +54,11 @@ def main() -> None:
     dump_json(PROCESSED_DIR / "latest_summary.json", latest_summary)
     dump_json(DOCS_DIR / "data" / "latest_summary.json", latest_summary)
     dump_json(DOCS_DIR / "data" / "history.json", history)
+    # Side-car so the Thursday-evening gas refresh can republish this one
+    # section without regenerating the whole morning brief.
+    natural_gas = data.get("natural_gas") or {}
+    dump_json(DOCS_DIR / "data" / NG_STORAGE_SIDECAR_NAME, natural_gas)
+    dump_json(DASHBOARD_DIR / "data" / NG_STORAGE_SIDECAR_NAME, natural_gas)
 
     save_outputs(
         context,
@@ -60,6 +72,12 @@ def main() -> None:
     print(
         f"Event calendar for {calendar.get('date_label')}: "
         f"{calendar.get('total', 0)} announcements ({calendar.get('nifty50_count', 0)} Nifty 50)"
+    )
+    gas = data.get("natural_gas") or {}
+    print(
+        f"Natural gas storage week ending {gas.get('week_ending_label') or 'n/a'}: "
+        f"{(gas.get('total') or {}).get('stocks')} Bcf "
+        f"({(gas.get('signal') or {}).get('label', 'no read')})"
     )
     if data.get("warnings"):
         print("Fetch warnings:")

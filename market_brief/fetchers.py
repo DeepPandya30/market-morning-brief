@@ -22,11 +22,14 @@ from .config import (
     EVENT_CATEGORY_KEYWORDS,
     GLOBAL_MARKET_TICKERS,
     NIFTY50_CONSTITUENTS,
+    NG_STORAGE_CACHE_NAME,
     NSE_ENDPOINTS,
     OPTION_CHAIN_REFERERS,
+    PROCESSED_DIR,
     SECTOR_KEYWORDS,
     US_MARKETS,
 )
+from .eia import fetch_natural_gas_storage
 from .nse_client import NSEClient
 from .technicals import fetch_index_technicals, fetch_nifty50_pivots
 from .utils import now_ist, safe_get, to_float
@@ -679,6 +682,12 @@ def build_data_bundle(event_date: str | date | None = None) -> dict[str, Any]:
     nifty50 = fetch_nifty50_pivots(warnings)
     index_technicals = fetch_index_technicals(warnings)
     event_calendar = fetch_event_calendar(client, warnings, event_date)
+    # Weekly, not daily: EIA publishes Thursday 20:00 IST, so most mornings
+    # this re-reads the same release. Cached so a failed fetch keeps the
+    # last good print on the dashboard instead of blanking the section.
+    natural_gas = fetch_natural_gas_storage(
+        warnings, cache_path=PROCESSED_DIR / NG_STORAGE_CACHE_NAME
+    )
 
     return {
         "global_markets": global_markets,
@@ -694,6 +703,7 @@ def build_data_bundle(event_date: str | date | None = None) -> dict[str, Any]:
         "nifty50": nifty50,
         "index_technicals": index_technicals,
         "event_calendar": event_calendar,
+        "natural_gas": natural_gas,
         "market_news": fetch_market_news(limit=10),
         "warnings": warnings,
     }

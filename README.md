@@ -61,6 +61,21 @@ https://DeepPandya30.github.io/market-morning-brief/
 - Crude Oil WTI
 - Brent Oil
 - Copper
+- Natural Gas
+
+### ⛽ US Natural Gas Storage (EIA Weekly)
+
+Working gas in underground storage across the Lower 48, from the [EIA Weekly Natural Gas Storage Report](https://www.eia.gov/naturalgas/reports.php#/T202):
+
+- Total Lower 48 stocks and the weekly build/draw
+- Per-region breakdown (East, Midwest, Mountain, Pacific, South Central + Salt/Nonsalt splits)
+- Comparison against the same week last year and the 5-year average
+- This week's net change against the 5-year norm for the same week
+- Seasonal chart against the 5-year min/max band, 3-year trajectory, weekly net-change history
+- A bullish / bearish read for gas prices derived from the storage surplus or deficit
+
+> Released every **Thursday at 10:30 a.m. eastern (08:00 PM IST)** for the week ending the
+> previous Friday, so this section updates once a week rather than daily.
 
 ### ₿ Crypto Market
 
@@ -97,6 +112,7 @@ The interactive dashboard is divided into focused tabs:
 |---|---|
 | **Overview** | Quick market summary, bias, score and meeting notes |
 | **Global Markets** | US, Europe and Asia market snapshot with region filter |
+| **Natural Gas** | EIA weekly storage report — regional stocks, 5-year seasonal band, build/draw history, CSV export |
 | **Sectors** | Indian sector-wise market movement with search and filters |
 | **Nifty 50** | Constituent pivot table — pivot levels, daily/weekly/monthly % change, RSI, breadth, sector roll-up, CSV export |
 | **Technicals** | Nifty and Bank Nifty moving-average ladder plus RSI, MACD and Bollinger charts |
@@ -150,18 +166,21 @@ market-morning-brief/
 │
 ├── .github/
 │   └── workflows/
-│       └── morning-brief.yml
+│       ├── morning-report.yml
+│       └── natural-gas-weekly.yml
 │
 ├── data/
 │   └── processed/
 │       ├── latest_summary.json
-│       └── history.json
+│       ├── history.json
+│       └── natural_gas_storage.json
 │
 ├── docs/
 │   ├── index.html
 │   └── data/
 │       ├── latest_summary.json
-│       └── history.json
+│       ├── history.json
+│       └── natural_gas.json
 │
 ├── reports/
 │   └── morning_report.md
@@ -170,7 +189,8 @@ market-morning-brief/
 │   └── index.html
 │
 ├── scripts/
-│   └── generate_report.py
+│   ├── generate_report.py
+│   └── update_natural_gas.py
 │
 ├── requirements.txt
 └── README.md
@@ -214,6 +234,8 @@ data/processed/latest_summary.json
 data/processed/history.json
 docs/data/latest_summary.json
 docs/data/history.json
+docs/data/natural_gas.json
+data/processed/natural_gas_storage.json
 ```
 
 ### File Purpose
@@ -226,6 +248,8 @@ docs/data/history.json
 | `docs/data/history.json` | Historical trend data |
 | `data/processed/latest_summary.json` | Local processed latest summary |
 | `data/processed/history.json` | Local processed historical summary |
+| `docs/data/natural_gas.json` | EIA storage side-car the dashboard refreshes from |
+| `data/processed/natural_gas_storage.json` | Cached EIA report, reused if a fetch fails |
 
 ---
 
@@ -274,6 +298,37 @@ The early slots absorb a delayed queue; the later ones cover the queue running o
 ```
 
 Every run's Actions summary records the RUN/SKIP verdict and the reason, so the daily behaviour is auditable. If GitHub's backlog ever pushes *every* attempt past 09:10 IST, no report is published that day — trigger it manually in that case.
+
+---
+
+## ⛽ Natural Gas Weekly Schedule
+
+The EIA storage report lands **Thursday 10:30 a.m. eastern = 20:00 IST**, roughly twelve hours
+after the morning brief has already published. Rather than regenerate the whole brief in the
+evening — which would replace a pre-market snapshot with stale intraday index and flow data — a
+second workflow refreshes only the gas section:
+
+```text
+.github/workflows/natural-gas-weekly.yml  ->  scripts/update_natural_gas.py
+```
+
+It runs on four Thursday-evening slots (21:10, 22:00, 00:00 and 03:00 IST) to absorb GitHub's
+scheduling backlog. Every slot passes `--require-new`, so whichever one first sees a newer week
+does the commit and the rest exit as no-ops in seconds.
+
+Each successful run:
+
+1. writes `data/processed/natural_gas_storage.json` (the fetch cache)
+2. publishes `docs/data/natural_gas.json` (the side-car the live page fetches)
+3. patches the `natural_gas` branch of the payload embedded in the published HTML
+
+The dashboard prefers the side-car and falls back to the embedded payload, so the fresh number
+appears on Thursday night without waiting for Friday's brief — and the page still renders correctly
+if the side-car cannot be reached. The daily pipeline also fetches EIA on every run, so a missed
+Thursday is picked up by the next morning's brief regardless.
+
+To force a republish without waiting for a new release, run the workflow manually with
+**Force = true**.
 
 ---
 

@@ -76,6 +76,8 @@ def render_markdown(context: dict[str, Any]) -> str:
     lines.append("")
     lines.extend(_market_group_markdown("Global Commodities", data.get("commodities", []), "Commodity"))
     lines.append("")
+    lines.extend(_natural_gas_markdown(data.get("natural_gas", {})))
+    lines.append("")
     lines.extend(_market_group_markdown("Crypto Currency", data.get("crypto", []), "Coin"))
     lines.append("")
     lines.extend(_market_group_markdown("Currency Market", data.get("currencies", []), "Pair"))
@@ -440,6 +442,28 @@ tr.is-n50 { background: var(--brand-soft); }
 tr.is-n50 td:first-child { font-weight: 800; }
 .event-desc { color: var(--muted); font-size: 12.5px; line-height: 1.45; max-width: 560px; }
 
+/* Natural gas storage --------------------------------------------------- */
+.gas-signal { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
+  border: 1px solid var(--line); border-left: 5px solid var(--line);
+  border-radius: 12px; padding: 12px 16px; margin-bottom: 14px; background: var(--elev); }
+.gas-signal.tone-good { border-left-color: var(--good); background: var(--good-soft); }
+.gas-signal.tone-bad { border-left-color: var(--bad); background: var(--bad-soft); }
+.gas-signal.tone-neutral { border-left-color: var(--neutral); background: var(--neutral-soft); }
+.gas-signal-label { font-weight: 800; font-size: 15px; }
+.gas-signal.tone-good .gas-signal-label { color: var(--good); }
+.gas-signal.tone-bad .gas-signal-label { color: var(--bad); }
+.gas-signal.tone-neutral .gas-signal-label { color: var(--neutral); }
+.gas-signal-note { color: var(--muted); font-size: 13px; line-height: 1.5; }
+.gas-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.gas-meta span { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+  font-size: 12.5px; font-weight: 700; color: var(--muted); background: var(--elev); }
+.gas-meta span b { color: var(--text); margin-left: 5px; }
+.gas-meta a { color: var(--brand); text-decoration: none; font-weight: 700; }
+/* Salt / Nonsalt are splits of South Central, not peers of it. */
+tr.gas-sub td:first-child { padding-left: 26px; color: var(--muted); font-weight: 600; }
+tr.gas-total { background: var(--elev); }
+tr.gas-total td { font-weight: 800; border-top: 2px solid var(--line); }
+
 .meeting-mode {
   background: linear-gradient(135deg, #0f172a, #1e3a8a);
   color: white;
@@ -769,6 +793,7 @@ h1 { position: relative; }
     <button class="tab-btn active" data-tab="overview">Overview</button>
     <button class="tab-btn" data-tab="global">Global Markets</button>
     <button class="tab-btn" data-tab="commodities">Commodities</button>
+    <button class="tab-btn" data-tab="natgas">Natural Gas</button>
     <button class="tab-btn" data-tab="crypto">Crypto</button>
     <button class="tab-btn" data-tab="currency">Currency</button>
     <button class="tab-btn" data-tab="sectors">Sectors</button>
@@ -891,6 +916,65 @@ h1 { position: relative; }
       </div>
       <div class="chart-box"><canvas id="commodityChart"></canvas></div>
       <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Commodity</th><th>Ticker</th><th>Close</th><th>Change</th><th>Change %</th><th>Date</th></tr></thead><tbody id="commodityRows"></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="natgas" class="panel">
+    <div class="card">
+      <div class="card-head">
+        <h2>US Natural Gas Storage</h2>
+        <span id="gasWeekBadge" class="badge info">—</span>
+      </div>
+      <p class="muted">
+        EIA Weekly Natural Gas Storage Report — working gas in underground
+        storage across the Lower 48. Published every Thursday at 10:30 a.m.
+        eastern time (08:00 PM IST) for the week ending the previous Friday, so
+        this section updates once a week, not daily.
+      </p>
+
+      <div id="gasStats" class="hero-stats" style="margin-bottom:14px"></div>
+      <div id="gasSignal" class="gas-signal"></div>
+
+      <div class="gas-meta" id="gasMeta"></div>
+
+      <div class="controls">
+        <label>Chart
+          <select id="gasChartMode">
+            <option value="seasonal">Seasonal vs 5-year band</option>
+            <option value="trajectory">Storage trajectory (3 years)</option>
+            <option value="netchange">Weekly net change</option>
+          </select>
+        </label>
+        <label>Regions
+          <select id="gasRegionScope">
+            <option value="all">All regions</option>
+            <option value="main">Main regions only</option>
+          </select>
+        </label>
+        <button class="action-btn secondary" id="gasCsv">Download CSV</button>
+      </div>
+
+      <div class="chart-box"><canvas id="gasChart"></canvas></div>
+
+      <div class="table-wrap" style="margin-top:14px">
+        <table>
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Stocks (Bcf)</th>
+              <th>Prior Week</th>
+              <th>Net Change</th>
+              <th>vs Year Ago</th>
+              <th>vs 5-Yr Avg</th>
+            </tr>
+          </thead>
+          <tbody id="gasRows"></tbody>
+        </table>
+      </div>
+
+      <div class="chart-box" style="margin-top:18px"><canvas id="gasRegionChart"></canvas></div>
+
+      <p id="gasFootnote" class="small muted" style="margin-top:10px"></p>
     </div>
   </section>
 
@@ -1999,6 +2083,7 @@ populateNewsSources();
 renderNews();
 populateEventCategories();
 renderEventCalendar();
+renderNaturalGas();
 renderMeetingMode();
   const brandSub = document.getElementById('generatedAt');
   if (brandSub) brandSub.textContent = APP.generated_at ? `Updated ${APP.generated_at}` : 'Pre-market cockpit';
@@ -2352,6 +2437,268 @@ function downloadEventCsv() {
     return /[",\\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
   }).join(',')));
   downloadText(`nse_event_calendar_${eventData().date || 'latest'}.csv`, lines.join('\\n'));
+}
+
+/* ---------- EIA weekly natural gas storage ---------- */
+
+// The gas report lands Thursday 20:00 IST, hours after the morning brief was
+// generated and its payload frozen. A separate weekly job republishes
+// data/natural_gas.json, so the page prefers that side-car when it can reach
+// it and falls back to the embedded payload otherwise (offline / file://).
+let GAS_OVERRIDE = null;
+
+function gasData() {
+  return GAS_OVERRIDE || APP.data.natural_gas || {};
+}
+function gasRegions() {
+  const scope = document.getElementById('gasRegionScope')?.value || 'all';
+  const rows = gasData().regions || [];
+  return scope === 'main' ? rows.filter(r => !r.is_subregion) : rows;
+}
+function gasBcf(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return 'N/A';
+  return fmt.format(Number(value)) + ' Bcf';
+}
+function gasSignedBcf(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return 'N/A';
+  const n = Number(value);
+  return (n > 0 ? '+' : '') + fmt.format(n) + ' Bcf';
+}
+
+function renderNaturalGas() {
+  const body = document.getElementById('gasRows');
+  if (!body) return;
+
+  const gas = gasData();
+  const total = gas.total || {};
+  const stats = gas.stats || {};
+  const signal = gas.signal || {};
+
+  const badgeEl = document.getElementById('gasWeekBadge');
+  if (badgeEl) {
+    badgeEl.textContent = gas.week_ending_label
+      ? `Week ending ${gas.week_ending_label}`
+      : 'Report unavailable';
+    badgeEl.className = 'badge ' + (gas.week_ending_label ? 'info' : 'neutral');
+  }
+
+  const statsEl = document.getElementById('gasStats');
+  if (statsEl) {
+    const change = total.net_change;
+    const changeWord = change === null || change === undefined
+      ? 'No change reported'
+      : (Number(change) >= 0 ? 'Injection into storage' : 'Withdrawal from storage');
+    // A surplus to the 5-year average is bearish for gas prices, so the tone
+    // on these tiles is deliberately inverted relative to a price change.
+    const surplus = Number(total.five_year_pct ?? 0);
+    const tiles = [
+      ['Working Gas, Lower 48', gasBcf(total.stocks), 'st-brand',
+        gas.week_ending_label ? `Week ending ${escapeHtml(gas.week_ending_label)}` : 'Latest EIA print'],
+      ['Weekly Net Change', gasSignedBcf(change),
+        change === null || change === undefined ? 'st-neutral' : (Number(change) >= 0 ? 'st-good' : 'st-bad'),
+        changeWord],
+      ['vs 5-Year Average', pct(total.five_year_pct),
+        surplus > 0 ? 'st-bad' : (surplus < 0 ? 'st-good' : 'st-neutral'),
+        surplus > 0 ? 'Surplus — bearish for gas' : (surplus < 0 ? 'Deficit — bullish for gas' : 'In line with the norm')],
+      ['vs Year Ago', pct(total.year_ago_pct),
+        Number(total.year_ago_pct ?? 0) > 0 ? 'st-bad' : (Number(total.year_ago_pct ?? 0) < 0 ? 'st-good' : 'st-neutral'),
+        stats.period_high ? `3-yr range ${fmt.format(stats.period_low)}–${fmt.format(stats.period_high)} Bcf` : 'Same week last year'],
+    ];
+    statsEl.innerHTML = tiles.map(([label, value, cls, sub]) => `
+      <div class="stat-tile ${cls}">
+        <div class="st-label">${label}</div>
+        <div class="st-value">${value}</div>
+        <div class="st-sub">${sub}</div>
+      </div>`).join('');
+  }
+
+  const signalEl = document.getElementById('gasSignal');
+  if (signalEl) {
+    signalEl.className = 'gas-signal tone-' + (signal.tone || 'neutral');
+    signalEl.innerHTML = signal.label
+      ? `<span class="gas-signal-label">${escapeHtml(signal.label)}</span>
+         <span class="gas-signal-note">${escapeHtml(signal.note || '')}</span>`
+      : '<span class="gas-signal-note">Storage read unavailable for this week.</span>';
+  }
+
+  const metaEl = document.getElementById('gasMeta');
+  if (metaEl) {
+    const chips = [];
+    if (gas.released_label) chips.push(`Released<b>${escapeHtml(gas.released_label)}</b>`);
+    if (gas.season) chips.push(`Season<b>${escapeHtml(gas.season)}</b>`);
+    if (gas.change_vs_norm !== null && gas.change_vs_norm !== undefined) {
+      const d = Number(gas.change_vs_norm);
+      chips.push(`vs 5-yr norm this week<b>${(d > 0 ? '+' : '') + fmt.format(d)} Bcf</b>`);
+    }
+    if (gas.next_release_ist_label) {
+      const days = gas.days_to_next_release;
+      const when = days === 0 ? 'today' : (days === 1 ? 'tomorrow' : (days > 1 ? `in ${days} days` : 'overdue'));
+      chips.push(`Next release<b>${escapeHtml(gas.next_release_ist_label)} (${when})</b>`);
+    }
+    if (gas.from_cache) chips.push('Source<b>cached — live EIA fetch failed</b>');
+    metaEl.innerHTML = chips.map(c => `<span>${c}</span>`).join('')
+      + `<span><a href="${escapeHtml(gas.report_url || 'https://ir.eia.gov/ngs/ngs.html')}" target="_blank" rel="noopener">Official EIA report ↗</a></span>`;
+  }
+
+  const rows = gasRegions();
+  body.innerHTML = rows.map(row => {
+    const cls = row.is_total ? 'gas-total' : (row.is_subregion ? 'gas-sub' : '');
+    return `
+    <tr class="${cls}">
+      <td>${escapeHtml(row.name || '-')}</td>
+      <td>${gasBcf(row.stocks)}</td>
+      <td>${gasBcf(row.prior_stocks)}</td>
+      <td class="${signedClass(row.net_change)}">${gasSignedBcf(row.net_change)}</td>
+      <td class="${signedClass(row.year_ago_pct)}">${pct(row.year_ago_pct)}</td>
+      <td class="${signedClass(row.five_year_pct)}">${pct(row.five_year_pct)}</td>
+    </tr>`;
+  }).join('')
+    || '<tr><td colspan="6" class="muted">EIA storage report not available — the next Thursday release will populate this table.</td></tr>';
+
+  const foot = document.getElementById('gasFootnote');
+  if (foot) {
+    foot.textContent = gas.week_ending_label
+      ? `Source: US Energy Information Administration, Weekly Natural Gas Storage Report. `
+        + `Salt and Nonsalt are sub-regions of South Central and are already counted in its total. `
+        + `Figures for week ending ${gas.week_ending_label}.`
+      : 'Source: US Energy Information Administration, Weekly Natural Gas Storage Report.';
+  }
+
+  drawGasChart();
+  drawGasRegionChart();
+}
+
+function drawGasChart() {
+  const mode = document.getElementById('gasChartMode')?.value || 'seasonal';
+  const gas = gasData();
+
+  if (mode === 'seasonal') {
+    const s = gas.seasonal || {};
+    // The band is drawn as a min series plus a stacked-looking max fill, so the
+    // 5-year envelope reads as shaded area rather than two stray lines.
+    mountChart('gasChart', {
+      type: 'line',
+      data: {
+        labels: s.labels || [],
+        datasets: [
+          { label: '5-yr max', data: s.max || [], borderColor: 'rgba(148,163,184,.35)', borderWidth: 1,
+            pointRadius: 0, fill: '+1', backgroundColor: 'rgba(148,163,184,.14)' },
+          { label: '5-yr min', data: s.min || [], borderColor: 'rgba(148,163,184,.35)', borderWidth: 1,
+            pointRadius: 0, fill: false },
+          { label: s.average_label || '5-yr average', data: s.average || [], borderColor: C.flat,
+            borderWidth: 2, borderDash: [6, 4], pointRadius: 0, fill: false, tension: .25 },
+          { label: String(s.year_ago_year || 'Last year'), data: s.year_ago || [], borderColor: C.brand2,
+            borderWidth: 1.6, pointRadius: 0, fill: false, tension: .25 },
+          { label: String(s.current_year || 'This year'), data: s.current || [], borderColor: C.up,
+            borderWidth: 3, pointRadius: 0, fill: false, tension: .25, spanGaps: false },
+        ]
+      },
+      options: gasChartOptions('Working gas in storage by week of year (Bcf)', 'Bcf'),
+      plugins: [emptyMessagePlugin('Seasonal comparison needs the EIA history workbook.')]
+    });
+    return;
+  }
+
+  const history = gas.history || [];
+  if (mode === 'netchange') {
+    const values = history.map(r => r.net_change);
+    mountChart('gasChart', {
+      type: 'bar',
+      data: {
+        labels: history.map(r => String(r.week_ending || '')),
+        datasets: [{
+          label: 'Weekly net change (Bcf)',
+          data: values,
+          backgroundColor: values.map(barFill),
+          borderColor: values.map(barEdge),
+          borderWidth: 1,
+          maxBarThickness: 8
+        }]
+      },
+      options: gasChartOptions('Weekly net change — builds above zero, draws below (Bcf)', 'Bcf'),
+      plugins: [emptyMessagePlugin('Net change history needs the EIA history workbook.')]
+    });
+    return;
+  }
+
+  mountChart('gasChart', {
+    type: 'line',
+    data: {
+      labels: history.map(r => String(r.week_ending || '')),
+      datasets: [{
+        label: 'Working gas, Lower 48 (Bcf)',
+        data: history.map(r => r.total),
+        borderColor: C.brand,
+        backgroundColor: 'rgba(37,99,235,.12)',
+        borderWidth: 2.2,
+        pointRadius: 0,
+        fill: true,
+        tension: .25
+      }]
+    },
+    options: gasChartOptions('Working gas in underground storage, Lower 48 (Bcf)', 'Bcf'),
+    plugins: [emptyMessagePlugin('Storage history needs the EIA history workbook.')]
+  });
+}
+
+function gasChartOptions(title, unit) {
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    scales: {
+      x: { grid: { display: false }, border: { display: false },
+        ticks: { autoSkip: true, maxTicksLimit: 14, maxRotation: 0, font: { size: 11 } } },
+      y: { grid: { color: C.grid, drawBorder: false }, border: { display: false },
+        ticks: { callback: v => fmt.format(v) } }
+    },
+    plugins: {
+      legend: { display: true, position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, padding: 14, font: { size: 11 } } },
+      title: { display: true, text: title, align: 'start', font: { size: 13, weight: '700' }, color: '#94a3b8', padding: { bottom: 10 } },
+      tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${fmt.format(ctx.parsed.y)} ${unit}` } }
+    }
+  };
+}
+
+function drawGasRegionChart() {
+  const rows = gasRegions().filter(r => !r.is_total && r.five_year_pct !== null && r.five_year_pct !== undefined);
+  drawBarChart('gasRegionChart', rows.map(r => ({
+    name: r.name,
+    change_pct: r.five_year_pct,
+    close: r.stocks,
+    change: r.net_change,
+    status: Number(r.five_year_pct) > 0 ? 'Surplus to 5-yr average' : 'Deficit to 5-yr average'
+  })), 'name', 'change_pct', 'Regional stocks vs 5-year average (%)');
+}
+
+function downloadGasCsv() {
+  const gas = gasData();
+  const cols = ['name', 'stocks', 'prior_stocks', 'net_change', 'implied_flow',
+    'year_ago_stocks', 'year_ago_pct', 'five_year_stocks', 'five_year_pct'];
+  const lines = [cols.join(',')].concat((gas.regions || []).map(r => cols.map(c => {
+    const v = r[c];
+    const text = v === null || v === undefined ? '' : String(v);
+    return /[",\\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+  }).join(',')));
+  downloadText(`eia_natural_gas_storage_${gas.week_ending || 'latest'}.csv`, lines.join('\\n'));
+}
+
+// Pulls the side-car written by the Thursday-evening workflow. Any failure is
+// silent by design: the embedded payload is already rendered and is valid, just
+// possibly a few hours behind.
+function refreshNaturalGasSidecar() {
+  if (!window.fetch || location.protocol === 'file:') return;
+  fetch('data/natural_gas.json', { cache: 'no-store' })
+    .then(res => (res.ok ? res.json() : null))
+    .then(data => {
+      if (!data || !data.week_ending) return;
+      const current = APP.data.natural_gas || {};
+      // Only take over when the side-car is genuinely a newer week.
+      if (current.week_ending && data.week_ending <= current.week_ending) return;
+      GAS_OVERRIDE = data;
+      renderNaturalGas();
+    })
+    .catch(() => {});
 }
 
 function biasTone(bias) {
@@ -2855,6 +3202,9 @@ document.getElementById('eventSearch')?.addEventListener('input', renderEventCal
 document.getElementById('eventCategory')?.addEventListener('change', renderEventCalendar);
 document.getElementById('eventScope')?.addEventListener('change', renderEventCalendar);
 document.getElementById('eventCsv')?.addEventListener('click', downloadEventCsv);
+['gasChartMode','gasRegionScope'].forEach(id =>
+  document.getElementById(id)?.addEventListener('change', renderNaturalGas));
+document.getElementById('gasCsv')?.addEventListener('click', downloadGasCsv);
 ['technicalIndex','technicalMaOverlay'].forEach(id => document.getElementById(id)?.addEventListener('change', renderTechnicals));
 document.getElementById('signalStatusFilter').addEventListener('change', renderSignals);
 document.getElementById('pcrWindow')?.addEventListener('change', renderPcrRolling);
@@ -2958,6 +3308,7 @@ window.addEventListener('resize', () => setTimeout(renderAll, 100));
 renderAll();
 renderHero();
 playEntrance();
+refreshNaturalGasSidecar();
 </script>
 </body>
 </html>""".replace("__APP_DATA__", payload_json)
@@ -2986,6 +3337,71 @@ def _dashboard_payload(context: dict[str, Any], markdown: str) -> dict[str, Any]
         "risk_note": context.get("risk_note"),
         "markdown": markdown,
     }
+
+
+def _bcf_text(value: Any) -> str:
+    """Storage volumes are reported as whole Bcf, so no decimals are shown."""
+    if value is None:
+        return "N/A"
+    return f"{float(value):,.0f}"
+
+
+def _natural_gas_markdown(gas: dict[str, Any]) -> list[str]:
+    """EIA weekly natural gas storage section.
+
+    Weekly rather than daily, so the heading always names the week the numbers
+    cover — otherwise a Monday reader would assume Friday's data.
+    """
+    heading = "## US Natural Gas Storage (EIA Weekly)"
+    if not gas or not gas.get("regions"):
+        return [heading, "", "EIA storage report not available in this run.", ""]
+
+    total = gas.get("total") or {}
+    signal = gas.get("signal") or {}
+    lines = [heading, ""]
+
+    week = gas.get("week_ending_label") or "the latest week"
+    released = gas.get("released_label")
+    lines.append(f"- **Week Ending:** {week}" + (f" (released {released})" if released else ""))
+    lines.append(f"- **Working Gas, Lower 48:** {_bcf_text(total.get('stocks'))} Bcf")
+
+    change = total.get("net_change")
+    if change is not None:
+        word = "build" if change >= 0 else "draw"
+        lines.append(f"- **Weekly Net Change:** {_bcf_text(abs(change))} Bcf {word}")
+
+    vs_norm = gas.get("change_vs_norm")
+    if vs_norm is not None:
+        lines.append(
+            f"- **vs 5-Year Norm for This Week:** {_bcf_text(abs(vs_norm))} Bcf "
+            f"{'larger' if vs_norm > 0 else 'smaller'} than average"
+        )
+
+    lines.append(f"- **vs Year Ago:** {pct_text(total.get('year_ago_pct'))}")
+    lines.append(f"- **vs 5-Year Average:** {pct_text(total.get('five_year_pct'))}")
+    if gas.get("season"):
+        lines.append(f"- **Season:** {gas['season']} season")
+    if signal.get("label"):
+        lines.append(f"- **Read:** {signal['label']} — {signal.get('note', '')}")
+    if gas.get("next_release_ist_label"):
+        lines.append(f"- **Next Release:** {gas['next_release_ist_label']}")
+    if gas.get("from_cache"):
+        lines.append("- **Note:** live EIA fetch failed this run; showing the last cached release.")
+
+    lines.append("")
+    lines.append("| Region | Stocks (Bcf) | Net Change | vs Year Ago | vs 5-Yr Avg |")
+    lines.append("| --- | --- | --- | --- | --- |")
+    for row in gas.get("regions", []):
+        # Salt / Nonsalt are splits of South Central, indented so the table does
+        # not read as if they were separate regions being double-counted.
+        name = f"— {row.get('name')}" if row.get("is_subregion") else str(row.get("name"))
+        lines.append(
+            f"| {name} | {_bcf_text(row.get('stocks'))} | "
+            f"{_bcf_text(row.get('net_change'))} | "
+            f"{pct_text(row.get('year_ago_pct'))} | {pct_text(row.get('five_year_pct'))} |"
+        )
+    lines.append("")
+    return lines
 
 
 def _event_calendar_markdown(calendar: dict[str, Any]) -> list[str]:

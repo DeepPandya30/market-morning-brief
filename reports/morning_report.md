@@ -38,6 +38,30 @@ Generated at: **19 Aug 2026, 07:50 AM IST**
 | Brent Oil | BZ=F | 91.95 | 1.08 | 1.19% | 2026-08-18 |
 | Natural Gas | NG=F | 2.78 | 0.09 | 3.49% | 2026-08-18 |
 
+## US Natural Gas Storage (EIA Weekly)
+
+- **Week Ending:** 07 Aug 2026 (released 13 Aug 2026)
+- **Working Gas, Lower 48:** 3,153 Bcf
+- **Weekly Net Change:** 36 Bcf build
+- **vs 5-Year Norm for This Week:** 6 Bcf larger than average
+- **vs Year Ago:** -0.80%
+- **vs 5-Year Average:** 6.70%
+- **Season:** Injection season
+- **Read:** Bearish for Gas — Lower 48 stocks are 6.7% above the 5-year average; this week was a 36 Bcf build; 6 Bcf larger than the 5-year norm for this week.
+- **Next Release:** 20 Aug 2026, 08:00 PM IST
+
+| Region | Stocks (Bcf) | Net Change | vs Year Ago | vs 5-Yr Avg |
+| --- | --- | --- | --- | --- |
+| East | 693 | 15 | 2.80% | 5.00% |
+| Midwest | 829 | 20 | 4.50% | 7.10% |
+| Mountain | 239 | 2 | -5.20% | 14.40% |
+| Pacific | 300 | -4 | -1.60% | 13.60% |
+| South Central | 1,093 | 3 | -5.20% | 4.30% |
+| — Salt | 286 | -6 | -3.10% | 10.00% |
+| — Nonsalt | 807 | 9 | -5.90% | 2.50% |
+| Total | 3,153 | 36 | -0.80% | 6.70% |
+
+
 ## Crypto Currency
 
 | Coin | Ticker | Close | Change | Change % | Date |

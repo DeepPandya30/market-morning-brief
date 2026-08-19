@@ -257,3 +257,65 @@ NEWS_KEYWORDS = [
     "dii",
     "earnings",
 ]
+
+# ---------------------------------------------------------------------------
+# EIA Weekly Natural Gas Storage Report (WNGSR)
+# ---------------------------------------------------------------------------
+# Published every Thursday at 10:30 a.m. eastern time (20:00 IST) for the week
+# ending the previous Friday. Both endpoints below are the plain-text mirrors
+# EIA maintains for automated consumers, so neither needs an API key. The
+# human-facing report referenced from the dashboard lives at NG_STORAGE_REPORT_URL.
+#
+# ir.eia.gov/ngs/wngsr.html returns HTTP 403 to non-browser agents; the .csv and
+# .xls mirrors do not, which is why those two are used here.
+NG_STORAGE_REPORT_URL = "https://ir.eia.gov/ngs/ngs.html"
+NG_STORAGE_LANDING_URL = "https://www.eia.gov/naturalgas/reports.php#/T202"
+
+# Current week only: per-region stocks, net change, and the year-ago / 5-year
+# comparisons that the report headlines.
+NG_STORAGE_CSV_URL = "https://ir.eia.gov/ngs/wngsr.csv"
+
+# Full weekly history back to Jan 2010, two sheets: end-of-week stocks
+# ("html_report_history") and weekly net changes ("weekly_net_changes"). Used
+# for the trajectory chart and the 5-year seasonal band.
+NG_STORAGE_HISTORY_URL = "https://ir.eia.gov/ngs/ngshistory.xls"
+
+# EIA's five-region structure plus the two South Central sub-regions. Order is
+# the order the report prints them in, which the dashboard table preserves.
+NG_STORAGE_REGIONS = (
+    "East",
+    "Midwest",
+    "Mountain",
+    "Pacific",
+    "South Central",
+    "Salt",
+    "Nonsalt",
+    "Total",
+)
+
+# South Central is reported both as a total and split into salt-dome and
+# non-salt storage. The split rows are indented in the source and are shown as
+# child rows in the dashboard rather than as peers.
+NG_STORAGE_SUBREGIONS = frozenset({"Salt", "Nonsalt"})
+
+# Weeks of end-of-week stocks kept in the dashboard payload. Three years is
+# enough to see the current trajectory against two prior cycles without
+# bloating the embedded JSON.
+NG_STORAGE_HISTORY_WEEKS = 157
+
+# Years averaged for the seasonal comparison band. EIA itself headlines a
+# 5-year average, so the chart uses the same window for consistency.
+NG_STORAGE_SEASONAL_YEARS = 5
+
+# Injection season runs April through October; withdrawal season is the rest.
+# Used to label whether a build or a draw is the seasonal norm.
+NG_INJECTION_MONTHS = frozenset({4, 5, 6, 7, 8, 9, 10})
+
+# Cache written after every successful fetch. A failed EIA fetch falls back to
+# this file so one bad morning cannot blank the dashboard section.
+NG_STORAGE_CACHE_NAME = "natural_gas_storage.json"
+
+# Side-car published next to the dashboard. The Thursday-evening workflow
+# rewrites only this file, so the gas section refreshes without regenerating
+# the whole morning brief.
+NG_STORAGE_SIDECAR_NAME = "natural_gas.json"
