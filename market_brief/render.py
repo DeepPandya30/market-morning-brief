@@ -243,7 +243,6 @@ def render_html(context: dict[str, Any]) -> str:
     .metric { font-size: 30px; font-weight: 800; letter-spacing: -.02em; }
     .muted { color: var(--muted); }
     .small { font-size: 13px; }
-    .summary { font-size: 17px; line-height: 1.55; }
     .badge { border-radius: 999px; padding: 5px 9px; display: inline-block; font-weight: 700; font-size: 12px; }
     .badge.good { background: var(--good-soft); color: var(--good); }
     .badge.bad { background: var(--bad-soft); color: var(--bad); }
@@ -253,10 +252,6 @@ def render_html(context: dict[str, Any]) -> str:
     .controls input, .controls select { padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: white; min-width: 170px; }
     .action-btn { border: 0; background: var(--dark); color: white; padding: 10px 13px; border-radius: 10px; cursor: pointer; }
     .action-btn.secondary { background: var(--brand); }
-    .action-btn.danger { background: #b91c1c; }
-    .tts-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; align-items: center; margin-top: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: #f8fafc; }
-    .tts-panel label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted); font-weight: 700; }
-    .tts-panel select, .tts-panel input { min-width: 0; width: 100%; }
     .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
     table { width: 100%; border-collapse: collapse; font-size: 14px; background: white; }
     th, td { padding: 10px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
@@ -616,14 +611,12 @@ h1 { position: relative; }
     .action-btn { background: var(--elev); border: 1px solid var(--line); color: var(--text); font-weight: 600; transition: all .18s ease; }
     .action-btn:hover { background: var(--elev-strong); transform: translateY(-1px); }
     .action-btn.secondary { background: var(--brand); border-color: var(--brand); color: #fff; }
-    .action-btn.danger { background: var(--bad); border-color: var(--bad); color: #fff; }
     .table-wrap { border-color: var(--line); }
     table { background: transparent; color: var(--text); }
     th { background: var(--elev); color: var(--muted); border-color: var(--line); font-weight: 700; }
     td { border-color: var(--line); }
     tr:hover td { background: var(--elev); }
     .chart-box { background: var(--input-bg); border-color: var(--line); box-shadow: inset 0 0 0 1px rgba(255,255,255,.02); }
-    .tts-panel { background: var(--elev); border-color: var(--line); }
     .news-card { background: var(--input-bg); border-color: var(--line); }
     .pcr-mini-card { background: var(--elev); }
     .hero-chip { background: var(--elev); border-color: var(--line); color: var(--text); }
@@ -645,28 +638,6 @@ h1 { position: relative; }
     .summary-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
     .summary-list li { display: flex; gap: 11px; align-items: flex-start; font-size: 15.5px; line-height: 1.45; }
     .summary-list li .dot { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; margin-top: 8px; background: var(--brand); }
-
-    /* Checklist + progress */
-    .progress { height: 8px; border-radius: 999px; background: var(--elev); overflow: hidden; margin-bottom: 14px; }
-    .progress span { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--brand), var(--good)); transition: width .5s cubic-bezier(.22,1,.36,1); }
-    .chip-strong { font-weight: 800; font-size: 14px; color: var(--good); }
-    .checklist { display: grid; gap: 8px; }
-    .check-item { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; transition: all .16s ease; user-select: none; }
-    .check-item:hover { background: var(--elev); }
-    .check-item.done { background: var(--good-soft); border-color: var(--good); }
-    .check-box { width: 18px; height: 18px; border-radius: 6px; border: 2px solid var(--muted); display: grid; place-items: center; font-size: 12px; color: #fff; flex: 0 0 auto; }
-    .check-item.done .check-box { background: var(--good); border-color: var(--good); }
-    .check-item.done .check-label { text-decoration: line-through; color: var(--muted); }
-    .check-label { font-size: 14.5px; }
-
-    /* Alerts */
-    .alerts { display: grid; gap: 9px; }
-    .alert { display: flex; gap: 11px; align-items: flex-start; padding: 11px 13px; border-radius: 11px; border: 1px solid var(--line); background: var(--elev); font-size: 14px; }
-    .alert .ic { font-size: 16px; line-height: 1.2; }
-    .alert.warn { border-color: var(--neutral); background: var(--neutral-soft); }
-    .alert.bad { border-color: var(--bad); background: var(--bad-soft); }
-    .alert.good { border-color: var(--good); background: var(--good-soft); }
-    .alert b { font-weight: 700; }
 
     /* Levels */
     .levels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
@@ -707,6 +678,16 @@ h1 { position: relative; }
     .tl-step .tl-t { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
     .tl-step .tl-v { font-size: 17px; font-weight: 800; margin-top: 4px; }
     .tl-step .tl-s { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    /* Regional cells list each index instead of averaging them: a mean across
+       Nasdaq/Dow/S&P (or FTSE/CAC/DAX) blends different baskets into a number
+       that matches none of them. */
+    .tl-step.multi { flex: 1 1 200px; min-width: 185px; }
+    .tl-step .tl-list { display: grid; gap: 3px; margin-top: 6px; }
+    .tl-step .tl-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 12.5px; line-height: 1.35; }
+    .tl-step .tl-n { color: var(--muted); font-weight: 600; white-space: nowrap; }
+    .tl-step .tl-p { font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .tl-step .tl-p.up { color: var(--good); }
+    .tl-step .tl-p.down { color: var(--bad); }
     .tl-step.pred { background: var(--brand-soft); border-color: var(--brand); }
     .tl-arrow { display: grid; place-items: center; color: var(--muted); font-size: 18px; }
     @media (max-width: 760px) { .tl-arrow { transform: rotate(90deg); } .timeline { flex-direction: column; } }
@@ -827,50 +808,6 @@ h1 { position: relative; }
       <div id="marketTimeline" class="timeline"></div>
     </div>
 
-    <h3 class="section-title">✅ Pre-Market Prep</h3>
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-head"><h2>Trading Checklist</h2><span id="checklistPct" class="chip-strong">0%</span></div>
-        <div class="progress"><span id="checklistProgress"></span></div>
-        <div id="checklist" class="checklist"></div>
-      </div>
-      <div class="card">
-        <div class="card-head"><h2>🚨 Alerts</h2></div>
-        <div id="alertsPanel" class="alerts"></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Meeting Summary</h2>
-      <p id="marketView" class="summary"></p>
-      <p id="riskNote" class="summary muted"></p>
-      <div class="controls">
-        <button class="action-btn secondary" id="copySummaryBtn">Copy meeting summary</button>
-        <button class="action-btn" id="printBtn">Print / Save PDF</button>
-      </div>
-      <div class="tts-panel" aria-label="Text to speech controls">
-        <label>Voice
-          <select id="ttsVoice"><option value="">Default voice</option></select>
-        </label>
-        <label>Speed
-          <select id="ttsRate">
-            <option value="0.85">Slow</option>
-            <option value="1" selected>Normal</option>
-            <option value="1.15">Fast</option>
-          </select>
-        </label>
-        <label>Read mode
-          <select id="ttsMode">
-            <option value="summary" selected>Meeting summary</option>
-            <option value="full">Full report</option>
-          </select>
-        </label>
-        <button class="action-btn secondary" id="speakBtn">Listen</button>
-        <button class="action-btn" id="pauseSpeakBtn">Pause / Resume</button>
-        <button class="action-btn danger" id="stopSpeakBtn">Stop</button>
-      </div>
-      <p id="ttsStatus" class="small muted"></p>
-    </div>
     <div class="grid-2">
       <div class="card"><h2>Global Snapshot</h2><div class="chart-box mini"><canvas id="globalMiniChart"></canvas></div></div>
       <div class="card"><h2>Sector Snapshot</h2><div class="chart-box mini"><canvas id="sectorMiniChart"></canvas></div></div>
@@ -2091,11 +2028,9 @@ renderMeetingMode();
   if (navUpd) navUpd.textContent = APP.generated_at ? `Updated ${APP.generated_at}` : 'Updated —';
   const footUpd = document.getElementById('footerUpdated');
   if (footUpd) footUpd.textContent = APP.generated_at ? `Last update ${APP.generated_at}` : 'Last update —';
-  document.getElementById('marketView').textContent = APP.market_view || '';
-  document.getElementById('riskNote').textContent = APP.risk_note || '';
   document.getElementById('markdownReport').textContent = APP.markdown || '';
   renderOICards(); renderGlobal(); renderCommodities(); renderCrypto(); renderCurrency(); renderSectors(); renderNifty50(); renderTechnicals(); renderSignals(); renderHistory(); renderWarnings();
-  renderHeroStats(); renderAiSummary(); renderChecklist(); renderAlerts(); renderLevels(); renderIndicators(); renderFlow(); renderTimeline();
+  renderHeroStats(); renderAiSummary(); renderLevels(); renderIndicators(); renderFlow(); renderTimeline();
   drawBarChart('globalMiniChart', (APP.data.global_markets || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('sectorMiniChart', ((APP.data.nse_indices || {}).sectors || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('commodityMiniChart', (APP.data.commodities || []).slice(0, 8), 'name', 'change_pct', 'Change %');
@@ -2872,10 +2807,27 @@ function renderHeroStats() {
     </div>`).join('');
 }
 
-function regionAvg(region) {
-  const rows = (APP.data.global_markets || []).filter(r => r.region === region && r.change_pct !== null && r.change_pct !== undefined);
+// Indices inside a region track different baskets — Nasdaq is not Dow, DAX is
+// not FTSE — so a mean across them reads as one cue while describing none of
+// them. Report each index, and summarise direction by breadth instead.
+function regionRows(region) {
+  return (APP.data.global_markets || [])
+    .filter(r => r.region === region && Number.isFinite(Number(r.change_pct)))
+    .sort((a, b) => Number(b.change_pct) - Number(a.change_pct));
+}
+function regionBreadth(region) {
+  const rows = regionRows(region);
   if (!rows.length) return null;
-  return sum(rows.map(r => r.change_pct)) / rows.length;
+  const up = rows.filter(r => Number(r.change_pct) > 0).length;
+  const down = rows.filter(r => Number(r.change_pct) < 0).length;
+  const lead = down > up ? rows[rows.length - 1] : rows[0];
+  const dir = up > down ? 'up' : down > up ? 'down' : 'mixed';
+  let text;
+  if (down === rows.length) text = `all ${rows.length} lower`;
+  else if (up === rows.length) text = `all ${rows.length} higher`;
+  else if (dir === 'mixed') text = `mixed (${up} up, ${down} down)`;
+  else text = down > up ? `${down} of ${rows.length} lower` : `${up} of ${rows.length} higher`;
+  return { rows, up, down, dir, lead, text };
 }
 function findAsset(list, name) { return (list || []).find(r => r.name === name) || {}; }
 
@@ -2891,9 +2843,16 @@ function renderAiSummary() {
   const bt = biasTone(bias);
   const bullets = [];
   bullets.push({ tone: bt.color, text: `Market bias is <b>${escapeHtml(bias)}</b> (${escapeHtml(APP.score.confidence || 'N/A')} confidence, score ${morningScore()}/100).` });
-  const us = regionAvg('US'), asia = regionAvg('Asia');
-  if (us !== null) bullets.push({ tone: us >= 0 ? '#22C55E' : '#EF4444', text: `US markets closed ${us >= 0 ? 'higher' : 'lower'} (${pct(us)} avg) — ${us >= 0 ? 'supportive' : 'a drag'} for the open.` });
-  if (asia !== null) bullets.push({ tone: asia >= 0 ? '#22C55E' : '#EF4444', text: `Asian peers are ${asia >= 0 ? 'green' : 'red'} (${pct(asia)} avg) this morning.` });
+  const usB = regionBreadth('US'), asiaB = regionBreadth('Asia');
+  if (usB) {
+    const tone = usB.dir === 'up' ? '#22C55E' : usB.dir === 'down' ? '#EF4444' : '#F59E0B';
+    const read = usB.dir === 'up' ? 'supportive' : usB.dir === 'down' ? 'a drag' : 'an unclear cue';
+    bullets.push({ tone, text: `US closed ${usB.text} — <b>${escapeHtml(usB.lead.name)} ${pct(usB.lead.change_pct)}</b>; ${read} for the open.` });
+  }
+  if (asiaB) {
+    const tone = asiaB.dir === 'up' ? '#22C55E' : asiaB.dir === 'down' ? '#EF4444' : '#F59E0B';
+    bullets.push({ tone, text: `Asian peers ${asiaB.text} this morning — <b>${escapeHtml(asiaB.lead.name)} ${pct(asiaB.lead.change_pct)}</b>.` });
+  }
   const sorted = [...sectors].sort((a, b) => Number(b.change_pct || 0) - Number(a.change_pct || 0));
   if (sorted.length) {
     const top = sorted[0];
@@ -2907,69 +2866,6 @@ function renderAiSummary() {
   if (news && news.title) bullets.push({ tone: '#F59E0B', text: `Top headline: ${escapeHtml(news.title)}` });
   el.innerHTML = bullets.slice(0, 5).map(b => `
     <li><span class="dot" style="background:${b.tone}"></span><span>${b.text}</span></li>`).join('');
-}
-
-const CHECKLIST_ITEMS = ['Global Markets', 'India VIX', 'FII / DII', 'Option Chain', 'PCR', 'Support / Resistance', 'Major News', 'Sector Performance'];
-function checklistKey() { return 'mmb_check_' + (APP.date || 'today'); }
-function loadChecklist() { try { return new Set(JSON.parse(localStorage.getItem(checklistKey()) || '[]')); } catch (e) { return new Set(); } }
-function saveChecklist(set) { try { localStorage.setItem(checklistKey(), JSON.stringify([...set])); } catch (e) {} }
-function updateChecklistProgress(set) {
-  const pct = Math.round(set.size / CHECKLIST_ITEMS.length * 100);
-  const bar = document.getElementById('checklistProgress');
-  const lbl = document.getElementById('checklistPct');
-  if (bar) bar.style.width = pct + '%';
-  if (lbl) lbl.textContent = pct + '% Complete';
-}
-function renderChecklist() {
-  const el = document.getElementById('checklist');
-  if (!el) return;
-  const done = loadChecklist();
-  el.innerHTML = CHECKLIST_ITEMS.map(name => `
-    <div class="check-item ${done.has(name) ? 'done' : ''}" role="checkbox" tabindex="0" aria-checked="${done.has(name)}" data-item="${escapeHtml(name)}">
-      <span class="check-box">${done.has(name) ? '✓' : ''}</span>
-      <span class="check-label">${escapeHtml(name)}</span>
-    </div>`).join('');
-  updateChecklistProgress(done);
-  const toggle = node => {
-    const set = loadChecklist();
-    const name = node.dataset.item;
-    if (set.has(name)) set.delete(name); else set.add(name);
-    saveChecklist(set);
-    node.classList.toggle('done', set.has(name));
-    node.setAttribute('aria-checked', set.has(name));
-    node.querySelector('.check-box').textContent = set.has(name) ? '✓' : '';
-    updateChecklistProgress(set);
-  };
-  el.querySelectorAll('.check-item').forEach(node => {
-    node.addEventListener('click', () => toggle(node));
-    node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(node); } });
-  });
-}
-
-function renderAlerts() {
-  const el = document.getElementById('alertsPanel');
-  if (!el) return;
-  const nse = APP.data.nse_indices || {};
-  const vix = nse.india_vix || {};
-  const flow = APP.data.fii_dii || {};
-  const nifty = (APP.data.option_chains || {}).NIFTY || {};
-  const crude = findAsset(APP.data.commodities, 'Crude Oil WTI').close ? findAsset(APP.data.commodities, 'Crude Oil WTI') : findAsset(APP.data.commodities, 'Brent Oil');
-  const dxy = findAsset(APP.data.currencies, 'DXY');
-  const alerts = [];
-  const vixLast = Number(vix.last), vixChg = Number(vix.change_pct);
-  if (Number.isFinite(vixLast) && vixLast >= 18) alerts.push({ cls: 'bad', ic: '⚠️', text: `<b>India VIX ${num(vix.last)}</b> — elevated volatility, trade smaller size.` });
-  else if (Number.isFinite(vixChg) && vixChg >= 5) alerts.push({ cls: 'warn', ic: '⚠️', text: `<b>India VIX rising ${pct(vix.change_pct)}</b> — expect wider swings.` });
-  const pcrv = Number(nifty.pcr);
-  if (Number.isFinite(pcrv) && pcrv < 0.7) alerts.push({ cls: 'warn', ic: '📉', text: `<b>Nifty PCR ${num(nifty.pcr)}</b> — below 0.70, caution / possible oversold bounce.` });
-  else if (Number.isFinite(pcrv) && pcrv > 1.3) alerts.push({ cls: 'warn', ic: '📈', text: `<b>Nifty PCR ${num(nifty.pcr)}</b> — above 1.30, market may be complacent.` });
-  if (Number(flow.fii_net || 0) < -1000) alerts.push({ cls: 'bad', ic: '🏦', text: `<b>Heavy FII selling</b> (${money(flow.fii_net)}) — bearish pressure on index.` });
-  if (crude && Number(crude.close) >= 90) alerts.push({ cls: 'warn', ic: '🛢️', text: `<b>Crude above $90</b> (${num(crude.close)}) — inflation / OMC pressure.` });
-  else if (crude && Number(crude.change_pct) >= 3) alerts.push({ cls: 'warn', ic: '🛢️', text: `<b>Crude spiking ${pct(crude.change_pct)}</b> — watch energy-sensitive names.` });
-  if (dxy && Number(dxy.change_pct) >= 0.5) alerts.push({ cls: 'warn', ic: '💵', text: `<b>Dollar strengthening ${pct(dxy.change_pct)}</b> — pressure on EM equities.` });
-  const us = regionAvg('US');
-  if (us !== null && us <= -1) alerts.push({ cls: 'bad', ic: '🌎', text: `<b>US markets fell</b> (${pct(us)} avg) — cautious global cue.` });
-  if (!alerts.length) alerts.push({ cls: 'good', ic: '✅', text: 'No major alerts — calm pre-market setup.' });
-  el.innerHTML = alerts.map(a => `<div class="alert ${a.cls}"><span class="ic">${a.ic}</span><span>${a.text}</span></div>`).join('');
 }
 
 function renderLevels() {
@@ -3041,16 +2937,41 @@ function shortDate(iso) {
   const m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   return p[2] + ' ' + (m[parseInt(p[1], 10) - 1] || '');
 }
+// NSE serves the last *completed* session, so a weekend/holiday run — or a
+// re-run before the next session settles — records the same figures under a new
+// run date. Collapsing those repeats keeps one row per trading session, so the
+// 5- and 22-session nets stop double-counting a single day's flow.
+function fiiDiiSessions() {
+  const rows = (APP.history || []).filter(h => h.date && (h.fii_net !== null || h.dii_net !== null));
+  // Prefer the session date NSE stamps on the payload. Entries written before
+  // that field existed fall back to collapsing *consecutive* runs that repeat
+  // the same nets — a genuine repeat is always adjacent, so two distinct
+  // sessions that happen to match later in the series are still counted twice.
+  const out = [];
+  rows.forEach(row => {
+    const prev = out[out.length - 1];
+    const stamp = row.fii_dii_date || null;
+    const repeat = prev && (
+      (stamp && prev.session === stamp) ||
+      (!stamp && !prev.session && prev.fii_net === row.fii_net && prev.dii_net === row.dii_net)
+    );
+    if (repeat) { out[out.length - 1] = { ...row, session: stamp || prev.session }; return; }
+    out.push({ ...row, session: stamp });
+  });
+  return out;
+}
 function renderFlow() {
   const el = document.getElementById('flowCards');
   if (!el) return;
   const flow = APP.data.fii_dii || {};
-  const hist = (APP.history || []).filter(h => h.date);
+  const hist = fiiDiiSessions();
   const lastN = (key, n) => hist.slice(-n).map(h => h[key]);
-  const dataDate = hist.length ? hist[hist.length - 1].date : null;
-  const prevDate = hist.length >= 2 ? hist[hist.length - 2].date : null;
-  const yFii = hist.length >= 2 ? hist[hist.length - 2].fii_net : null;
-  const yDii = hist.length >= 2 ? hist[hist.length - 2].dii_net : null;
+  const latest = hist.length ? hist[hist.length - 1] : null;
+  const dataDate = flow.data_date || (latest ? latest.session || latest.date : null);
+  const prior = hist.length >= 2 ? hist[hist.length - 2] : null;
+  const prevDate = prior ? prior.session || prior.date : null;
+  const yFii = prior ? prior.fii_net : null;
+  const yDii = prior ? prior.dii_net : null;
   const dLbl = dataDate ? shortDate(dataDate) : 'last close';
   const pLbl = prevDate ? shortDate(prevDate) : '—';
   const toneVal = v => `<b class="${Number(v || 0) >= 0 ? 'ind-interp good' : 'ind-interp bad'}">${money(v)}</b>`;
@@ -3079,22 +3000,38 @@ function renderTimeline() {
   const el = document.getElementById('marketTimeline');
   if (!el) return;
   const nse = APP.data.nse_indices || {};
-  const us = regionAvg('US'), asia = regionAvg('Asia'), eu = regionAvg('Europe');
   const gift = nse.gift_nifty;
   const bias = APP.score.bias || 'Neutral';
   const bt = biasTone(bias);
+  const region = (title, name) => {
+    const b = regionBreadth(name);
+    if (!b) return { t: title, v: 'N/A', s: 'no data' };
+    return {
+      t: title,
+      list: b.rows.map(r => ({ name: r.name, change_pct: r.change_pct })),
+      s: b.text,
+    };
+  };
   const steps = [
     { t: 'Yesterday Close', v: num(nse.nifty_spot), s: 'Nifty spot' },
-    { t: 'US Market', v: us === null ? 'N/A' : pct(us), s: us === null ? 'no data' : (us >= 0 ? 'positive cue' : 'negative cue') },
-    { t: 'Europe', v: eu === null ? 'N/A' : pct(eu), s: eu === null ? 'no data' : (eu >= 0 ? 'positive' : 'negative') },
-    { t: 'Asian Market', v: asia === null ? 'N/A' : pct(asia), s: asia === null ? 'no data' : (asia >= 0 ? 'positive' : 'negative') },
+    region('US Market', 'US'),
+    region('Europe', 'Europe'),
+    region('Asian Market', 'Asia'),
     { t: 'Gift Nifty', v: gift === null || gift === undefined ? 'N/A' : num(gift), s: 'gap indicator' },
     { t: 'Opening Prediction', v: escapeHtml(bias), s: (APP.score.confidence || '') + ' confidence', pred: true },
   ];
+  const body = st => {
+    if (!st.list) return `<div class="tl-v"${st.pred ? ` style="color:${bt.color}"` : ''}>${st.v}</div>`;
+    return `<div class="tl-list">` + st.list.map(r => {
+      const v = Number(r.change_pct);
+      return `<div class="tl-row"><span class="tl-n">${escapeHtml(r.name)}</span>` +
+        `<span class="tl-p ${v > 0 ? 'up' : v < 0 ? 'down' : ''}">${pct(r.change_pct)}</span></div>`;
+    }).join('') + `</div>`;
+  };
   el.innerHTML = steps.map((st, i) => `
-    <div class="tl-step ${st.pred ? 'pred' : ''}"${st.pred ? ` style="border-color:${bt.color}"` : ''}>
+    <div class="tl-step ${st.pred ? 'pred' : ''} ${st.list ? 'multi' : ''}"${st.pred ? ` style="border-color:${bt.color}"` : ''}>
       <div class="tl-t">${st.t}</div>
-      <div class="tl-v"${st.pred ? ` style="color:${bt.color}"` : ''}>${st.v}</div>
+      ${body(st)}
       <div class="tl-s">${st.s}</div>
     </div>${i < steps.length - 1 ? '<div class="tl-arrow">→</div>' : ''}`).join('');
 }
@@ -3208,102 +3145,9 @@ document.getElementById('gasCsv')?.addEventListener('click', downloadGasCsv);
 ['technicalIndex','technicalMaOverlay'].forEach(id => document.getElementById(id)?.addEventListener('change', renderTechnicals));
 document.getElementById('signalStatusFilter').addEventListener('change', renderSignals);
 document.getElementById('pcrWindow')?.addEventListener('change', renderPcrRolling);
-document.getElementById('copySummaryBtn').addEventListener('click', () => copyText(`${APP.score.bias} | Score ${APP.score.score}\n${APP.market_view}\n${APP.risk_note}`));
 document.getElementById('copyReportBtn').addEventListener('click', () => copyText(APP.markdown || ''));
 document.getElementById('downloadReportBtn').addEventListener('click', () => downloadText('morning_market_brief.md', APP.markdown || ''));
-document.getElementById('printBtn').addEventListener('click', () => window.print());
 
-let availableVoices = [];
-let currentUtterance = null;
-function stripMarkdown(text) {
-  return String(text || '')
-    .replace(/```[\\s\\S]*?```/g, ' ')
-    .replace(/`([^`]+)`/g, '$1')
-    .replace(/[#*_|>-]+/g, ' ')
-    .replace(/\\[(.*?)\\]\\(.*?\\)/g, '$1')
-    .replace(/\\s+/g, ' ')
-    .trim();
-}
-function speechMarkdown() {
-  // The Nifty 50 pivot table (~50 rows of levels) and the event calendar (dozens
-  // of company filings) are listenable as headlines, not as read-outs, so their
-  // table bodies are dropped from the spoken report while the summary stays.
-  const HEAVY_TABLES = ['Nifty 50 Pivot Table', 'Corporate Event Calendar'];
-  let inHeavySection = false;
-  return String(APP.markdown || '').split('\\n').filter(line => {
-    if (line.startsWith('## ')) inHeavySection = HEAVY_TABLES.some(t => line.includes(t));
-    return !(inHeavySection && line.trim().startsWith('|'));
-  }).join('\\n');
-}
-function getSpeechText() {
-  const mode = document.getElementById('ttsMode').value;
-  if (mode === 'full') return stripMarkdown(speechMarkdown());
-  return stripMarkdown(`Morning market brief. Market bias is ${APP.score.bias}. Total score is ${APP.score.score}. Confidence is ${APP.score.confidence}. ${APP.market_view || ''} ${APP.risk_note || ''}`);
-}
-function loadVoices() {
-  if (!('speechSynthesis' in window)) return;
-  availableVoices = window.speechSynthesis.getVoices() || [];
-  const voiceSelect = document.getElementById('ttsVoice');
-  const current = voiceSelect.value;
-  const preferred = availableVoices
-    .map((voice, idx) => ({ voice, idx }))
-    .filter(item => /en-IN|en-GB|en-US/i.test(item.voice.lang || '') || /English/i.test(item.voice.name || ''));
-  const choices = preferred.length ? preferred : availableVoices.map((voice, idx) => ({ voice, idx }));
-  voiceSelect.innerHTML = '<option value="">Default voice</option>' + choices.map(item => `<option value="${item.idx}">${escapeHtml(item.voice.name)} (${escapeHtml(item.voice.lang)})</option>`).join('');
-  voiceSelect.value = current || '';
-}
-function setTtsStatus(message) {
-  const el = document.getElementById('ttsStatus');
-  if (el) el.textContent = message || '';
-}
-function speakReport() {
-  if (!('speechSynthesis' in window)) {
-    setTtsStatus('Text to speech is not supported in this browser. Try Chrome, Edge, or Safari.');
-    return;
-  }
-  window.speechSynthesis.cancel();
-  const text = getSpeechText();
-  if (!text) {
-    setTtsStatus('No text available to read.');
-    return;
-  }
-  currentUtterance = new SpeechSynthesisUtterance(text);
-  currentUtterance.rate = Number(document.getElementById('ttsRate').value || 1);
-  currentUtterance.pitch = 1;
-  const selectedVoiceIndex = document.getElementById('ttsVoice').value;
-  if (selectedVoiceIndex !== '' && availableVoices[Number(selectedVoiceIndex)]) {
-    currentUtterance.voice = availableVoices[Number(selectedVoiceIndex)];
-  }
-  currentUtterance.onstart = () => setTtsStatus('Reading report...');
-  currentUtterance.onend = () => setTtsStatus('Finished reading.');
-  currentUtterance.onerror = () => setTtsStatus('Speech stopped or blocked by browser. Click Listen again.');
-  window.speechSynthesis.speak(currentUtterance);
-}
-function toggleSpeechPause() {
-  if (!('speechSynthesis' in window)) return;
-  if (window.speechSynthesis.paused) {
-    window.speechSynthesis.resume();
-    setTtsStatus('Reading report...');
-  } else if (window.speechSynthesis.speaking) {
-    window.speechSynthesis.pause();
-    setTtsStatus('Paused.');
-  }
-}
-function stopSpeech() {
-  if (!('speechSynthesis' in window)) return;
-  window.speechSynthesis.cancel();
-  setTtsStatus('Stopped.');
-}
-if ('speechSynthesis' in window) {
-  loadVoices();
-  window.speechSynthesis.onvoiceschanged = loadVoices;
-} else {
-  setTtsStatus('Text to speech is not supported in this browser.');
-}
-document.getElementById('speakBtn').addEventListener('click', speakReport);
-document.getElementById('pauseSpeakBtn').addEventListener('click', toggleSpeechPause);
-document.getElementById('stopSpeakBtn').addEventListener('click', stopSpeech);
-window.addEventListener('beforeunload', stopSpeech);
 window.addEventListener('resize', () => setTimeout(renderAll, 100));
 renderAll();
 renderHero();

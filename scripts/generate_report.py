@@ -129,6 +129,9 @@ def build_history_entry(data: dict[str, Any], score: dict[str, Any]) -> dict[str
         "confidence": score.get("confidence"),
         "fii_net": flow.get("fii_net"),
         "dii_net": flow.get("dii_net"),
+        # The NSE session these figures belong to, which is not the run date on
+        # weekends, holidays, or a re-run before the next session settles.
+        "fii_dii_date": flow.get("data_date"),
         "combined_flow": _sum_optional(flow.get("fii_net"), flow.get("dii_net")),
         "gift_nifty_change_pct": (nse.get("gift_nifty") or {}).get("change_pct"),
         "india_vix_change_pct": (nse.get("india_vix") or {}).get("change_pct"),

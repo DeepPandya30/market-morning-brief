@@ -1,6 +1,6 @@
-# Morning Market Brief - 19 August 2026
+# Morning Market Brief - 26 August 2026
 
-Generated at: **19 Aug 2026, 07:50 AM IST**
+Generated at: **26 Aug 2026, 11:06 PM IST**
 
 ## Final View
 
