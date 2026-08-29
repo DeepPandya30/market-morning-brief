@@ -29,6 +29,15 @@ on:
     - cron: "20 1 * * 1-5"    # ~06:50 IST — fallback
     - cron: "20 2 * * 1-5"    # ~07:50 IST — last-chance fallback
 
+  # GitHub only promises scheduled runs on a best-effort basis, and on
+  # 2026-08-27/28 every slot above arrived 4-12 hours late, so the job started
+  # long past the publish window and nothing was published on either day. A
+  # repository_dispatch is delivered in seconds because it never enters the
+  # schedule backlog, so an external cron (which fires at 07:45 IST) is the
+  # reliable trigger and the schedule above is now only the fallback.
+  repository_dispatch:
+    types: [morning-report]
+
   workflow_dispatch:
     inputs:
       event_date:
@@ -104,14 +113,22 @@ jobs:
 
 
           def decide():
-              if event != "schedule":
-                  return True, 0, f"manual {event} run — publishing now"
+              # A human clicking "Run workflow" has already decided the report
+              # is wanted, so nothing is second-guessed.
+              if event == "workflow_dispatch":
+                  return True, 0, "manual run — publishing now"
+
               if now.weekday() > 4:
                   return False, 0, f"{now:%A} is not a trading day in IST"
 
               last = published_today()
               if last is not None:
                   return False, 0, f"report already published today at {last:%H:%M} IST"
+
+              # The external cron already fires at the right moment, so a
+              # dispatch never sleeps — it publishes on arrival.
+              if event == "repository_dispatch":
+                  return True, 0, f"external trigger at {now:%H:%M} IST — publishing now"
 
               if now > LATEST:
                   return False, 0, (
@@ -218,7 +235,7 @@ jobs:
         if: steps.recheck.outputs.should_run == 'true'
         env:
           # Blank on scheduled runs, so the event calendar defaults to today IST.
-          MARKET_EVENT_DATE: ${{ inputs.event_date }}
+          MARKET_EVENT_DATE: ${{ inputs.event_date || github.event.client_payload.event_date }}
         run: |
           python scripts/generate_report.py
 
@@ -297,5 +314,14 @@ jobs:
             echo "No generated dashboard changes found"
           else
             git commit -m "Update morning market report"
-            git push origin main
+            for attempt in 1 2 3; do
+              if git push origin main; then
+                exit 0
+              fi
+              echo "Push $attempt rejected — rebasing onto origin/main and retrying"
+              git fetch origin main
+              git rebase origin/main
+            done
+            echo "::error::Could not push the updated dashboard after 3 attempts"
+            exit 1
           fi
