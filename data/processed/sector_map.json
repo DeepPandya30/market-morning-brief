@@ -1,5 +1,8 @@
 {
   "AARTIDRUGS": "Pharma",
+  "ANMOL": "Energy",
+  "ATAM": "Capital Goods",
+  "CANFINHOME": "Financials",
   "FMGOETZE": "Auto",
   "GENUSPOWER": "Capital Goods",
   "GESHIP": "Infrastructure",
@@ -7,5 +10,11 @@
   "GSS": "IT",
   "MAHESHWARI": "Services",
   "MAXESTATES": "Realty",
-  "ONEPOINT": "Services"
+  "NGIL": "FMCG",
+  "ONEPOINT": "Services",
+  "SETCO": "Auto",
+  "STEELCITY": "Financials",
+  "SUPREMEENG": "Metals",
+  "VOEPL": "IT",
+  "WEWIN": "IT"
 }
