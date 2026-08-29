@@ -435,6 +435,10 @@ def render_html(context: dict[str, Any]) -> str:
   font-size: 10px; font-weight: 800; letter-spacing: .05em; background: var(--brand-soft); color: var(--brand); }
 tr.is-n50 { background: var(--brand-soft); }
 tr.is-n50 td:first-child { font-weight: 800; }
+.event-sector { display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; background: var(--elev-strong); color: var(--text); white-space: nowrap; }
+.event-sector.sec-unknown { color: var(--muted); font-weight: 600; }
+.event-chip.chip-sector { border-style: dashed; }
 .event-desc { color: var(--muted); font-size: 12.5px; line-height: 1.45; max-width: 560px; }
 
 /* Natural gas storage --------------------------------------------------- */
@@ -537,6 +541,10 @@ h1 { position: relative; }
 .hero-chip { background: #f1f5f9; border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 13px; font-weight: 600; display: inline-flex; gap: 6px; align-items: center; }
 .hero-chip b { font-weight: 800; }
 .tone-good { color: var(--good); } .tone-bad { color: var(--bad); } .tone-neutral { color: var(--neutral); }
+/* History table institutional-flow cells: sign is read at a glance, so the
+   number carries the colour rather than a separate badge. */
+.flow-num { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.flow-num.tone-flat { color: var(--muted); font-weight: 600; }
 
 /* Entrance reveal (staggered) */
 .reveal { opacity: 0; transform: translateY(16px); }
@@ -1114,7 +1122,7 @@ h1 { position: relative; }
       <h2>Historical Bias Trend</h2>
       <p class="muted">This chart grows automatically after each successful GitHub Action run.</p>
       <div class="chart-box"><canvas id="historyChart"></canvas></div>
-      <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Date</th><th>Bias</th><th>Score</th><th>Confidence</th><th>FII Net</th><th>DII Net</th><th>Nifty PCR</th><th>Top Sector</th></tr></thead><tbody id="historyRows"></tbody></table></div>
+      <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Date</th><th>Bias</th><th>Score</th><th>Confidence</th><th>FII Net</th><th>DII Net</th><th>Combined</th><th>Nifty PCR</th><th>Top Sector</th></tr></thead><tbody id="historyRows"></tbody></table></div>
     </div>
     <div class="card">
   <h2 id="pcrHeading">5-Day Rolling Put-Call Ratio</h2>
@@ -1182,15 +1190,18 @@ h1 { position: relative; }
       <p class="muted">
         NSE board meetings and corporate actions listed for this one date only.
         Nifty 50 constituents are flagged and sorted to the top — those are the
-        results that can move the index at the open.
+        results that can move the index at the open — and every company is
+        tagged with its sector so a cluster of filings in one sector is obvious.
       </p>
 
       <div id="eventStats" class="hero-stats" style="margin-bottom:14px"></div>
       <div id="eventCategoryBar" class="event-catbar"></div>
+      <div id="eventSectorBar" class="event-catbar"></div>
 
       <div class="controls">
         <input id="eventSearch" placeholder="Search company, symbol or purpose..." />
         <select id="eventCategory"><option value="All">All categories</option></select>
+        <select id="eventSector"><option value="All">All sectors</option></select>
         <select id="eventScope">
           <option value="all">All companies</option>
           <option value="nifty50">Nifty 50 only</option>
@@ -1201,7 +1212,7 @@ h1 { position: relative; }
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Symbol</th><th>Company</th><th>Purpose</th><th>Details</th></tr>
+            <tr><th>Symbol</th><th>Company</th><th>Sector</th><th>Purpose</th><th>Details</th></tr>
           </thead>
           <tbody id="eventRows"></tbody>
         </table>
@@ -1992,11 +2003,29 @@ function renderSignals() {
   `).join('') || '<tr><td colspan="4">No signals available</td></tr>';
   drawScoreChart('signalChart', APP.score.components || []);
 }
+// Buying (net positive) reads green, selling red; a missing session stays grey
+// so an absent value is never mistaken for a flat one.
+function flowCell(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return '<span class="flow-num tone-flat">N/A</span>';
+  }
+  const n = Number(value);
+  const tone = n > 0 ? 'tone-good' : n < 0 ? 'tone-bad' : 'tone-flat';
+  // Sign leads the currency symbol so a negative reads "-₹1,234 Cr", not "₹-1,234 Cr".
+  const sign = n > 0 ? '+' : n < 0 ? '-' : '';
+  return `<span class="flow-num ${tone}">${sign}${money(Math.abs(n))}</span>`;
+}
+function combinedFlow(row) {
+  if (row.fii_net === null || row.fii_net === undefined) {
+    if (row.dii_net === null || row.dii_net === undefined) return null;
+  }
+  return Number(row.fii_net || 0) + Number(row.dii_net || 0);
+}
 function renderHistory() {
   const rows = APP.history || [];
   document.getElementById('historyRows').innerHTML = rows.slice().reverse().map(r => `
-    <tr><td>${escapeHtml(r.date)}</td><td>${badge(r.bias)}</td><td>${num(r.score)}</td><td>${escapeHtml(r.confidence || '')}</td><td>${money(r.fii_net)}</td><td>${money(r.dii_net)}</td><td>${num(r.nifty_pcr)}</td><td>${escapeHtml(r.top_sector || 'N/A')}</td></tr>
-  `).join('') || '<tr><td colspan="8">History will appear after workflow runs.</td></tr>';
+    <tr><td>${escapeHtml(r.date)}</td><td>${badge(r.bias)}</td><td>${num(r.score)}</td><td>${escapeHtml(r.confidence || '')}</td><td>${flowCell(r.fii_net)}</td><td>${flowCell(r.dii_net)}</td><td>${flowCell(combinedFlow(r))}</td><td>${num(r.nifty_pcr)}</td><td>${escapeHtml(r.top_sector || 'N/A')}</td></tr>
+  `).join('') || '<tr><td colspan="9">History will appear after workflow runs.</td></tr>';
   drawLineChart('historyChart', rows);
 }
 function renderWarnings() {
@@ -2019,6 +2048,7 @@ function renderAll() {
 populateNewsSources();
 renderNews();
 populateEventCategories();
+populateEventSectors();
 renderEventCalendar();
 renderNaturalGas();
 renderMeetingMode();
@@ -2293,19 +2323,31 @@ function populateEventCategories() {
     + cats.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
   select.value = cats.includes(current) ? current : 'All';
 }
+function populateEventSectors() {
+  const select = document.getElementById('eventSector');
+  if (!select) return;
+  const current = select.value || 'All';
+  const sectors = (eventData().sector_counts || []).map(row => row.name);
+  select.innerHTML = '<option value="All">All sectors</option>'
+    + sectors.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  select.value = sectors.includes(current) ? current : 'All';
+}
 function eventsFiltered() {
   const search = (document.getElementById('eventSearch')?.value || '').toLowerCase().trim();
   const category = document.getElementById('eventCategory')?.value || 'All';
+  const sector = document.getElementById('eventSector')?.value || 'All';
   const scope = document.getElementById('eventScope')?.value || 'all';
 
   let rows = eventData().events || [];
   if (scope === 'nifty50') rows = rows.filter(row => row.is_nifty50);
   if (category !== 'All') rows = rows.filter(row => row.category === category);
+  if (sector !== 'All') rows = rows.filter(row => (row.sector || 'Unclassified') === sector);
   if (search) {
     rows = rows.filter(row =>
       String(row.symbol || '').toLowerCase().includes(search) ||
       String(row.company || '').toLowerCase().includes(search) ||
       String(row.purpose || '').toLowerCase().includes(search) ||
+      String(row.sector || '').toLowerCase().includes(search) ||
       String(row.description || '').toLowerCase().includes(search)
     );
   }
@@ -2326,10 +2368,12 @@ function renderEventCalendar() {
   const stats = document.getElementById('eventStats');
   if (stats) {
     const top = (cal.category_counts || [])[0] || {};
+    const topSector = (cal.sector_counts || []).find(row => row.name !== 'Unclassified') || {};
     const tiles = [
       ['Announcements', cal.total ?? 0, 'st-brand', `Companies reporting on ${cal.date_label || 'this date'}`],
       ['Nifty 50 Names', cal.nifty50_count ?? 0, (cal.nifty50_count ? 'st-good' : 'st-neutral'), 'Index constituents in focus'],
       ['Top Category', top.count ?? 0, 'st-neutral', top.name ? escapeHtml(top.name) : 'No events listed'],
+      ['Busiest Sector', topSector.count ?? 0, 'st-neutral', topSector.name ? escapeHtml(topSector.name) : 'No sector data'],
     ];
     stats.innerHTML = tiles.map(([label, value, cls, sub]) => `
       <div class="stat-tile ${cls}">
@@ -2346,15 +2390,23 @@ function renderEventCalendar() {
     ).join('');
   }
 
+  const sectorBar = document.getElementById('eventSectorBar');
+  if (sectorBar) {
+    sectorBar.innerHTML = (cal.sector_counts || []).map(row =>
+      `<span class="event-chip chip-sector">${escapeHtml(row.name)}<b>${row.count}</b></span>`
+    ).join('');
+  }
+
   const rows = eventsFiltered();
   body.innerHTML = rows.map(row => `
     <tr class="${row.is_nifty50 ? 'is-n50' : ''}">
       <td>${escapeHtml(row.symbol || '-')}${row.is_nifty50 ? '<span class="n50-tag">N50</span>' : ''}</td>
       <td>${escapeHtml(row.company || '-')}</td>
+      <td><span class="event-sector ${(row.sector && row.sector !== 'Unclassified') ? '' : 'sec-unknown'}">${escapeHtml(row.sector || 'Unclassified')}</span></td>
       <td><span class="event-purpose ${eventCategoryClass(row.category)}">${escapeHtml(row.purpose || '-')}</span></td>
       <td><div class="event-desc">${escapeHtml(row.description || '')}</div></td>
     </tr>`).join('')
-    || `<tr><td colspan="4" class="muted">No events match these filters${cal.total ? '' : ' — nothing is listed for this date (holiday, weekend, or not yet filed)'}.</td></tr>`;
+    || `<tr><td colspan="5" class="muted">No events match these filters${cal.total ? '' : ' — nothing is listed for this date (holiday, weekend, or not yet filed)'}.</td></tr>`;
 
   const count = document.getElementById('eventCount');
   if (count) {
@@ -2364,7 +2416,7 @@ function renderEventCalendar() {
   }
 }
 function downloadEventCsv() {
-  const cols = ['symbol', 'company', 'purpose', 'category', 'description', 'is_nifty50'];
+  const cols = ['symbol', 'company', 'sector', 'purpose', 'category', 'description', 'is_nifty50'];
   const rows = eventsFiltered();
   const lines = [cols.join(',')].concat(rows.map(r => cols.map(c => {
     const v = r[c];
@@ -2984,12 +3036,17 @@ function renderFlow() {
       <div class="flow-row"><span>22-session net</span>${toneVal(sum(lastN(key, 22)))}</div>
     </div>`;
   const combinedToday = Number(flow.fii_net || 0) + Number(flow.dii_net || 0);
+  // Combined windows are summed off the same de-duplicated sessions the FII and
+  // DII cards use, so the three cards always cover the identical span.
+  const combinedNet = n => sum(hist.slice(-n).map(h => Number(h.fii_net || 0) + Number(h.dii_net || 0)));
   el.innerHTML =
     card('FII / FPI', flow.fii_net, yFii, 'fii_net') +
     card('DII', flow.dii_net, yDii, 'dii_net') +
     `<div class="flow-card">
       <div class="fh"><span>Combined</span><span class="muted small">${dLbl}</span></div>
       <div class="flow-row"><span>Net (FII + DII)</span>${toneVal(combinedToday)}</div>
+      <div class="flow-row"><span>5-session net</span>${toneVal(combinedNet(5))}</div>
+      <div class="flow-row"><span>22-session net</span>${toneVal(combinedNet(22))}</div>
       <div class="flow-row"><span>Read</span><b>${combinedToday >= 0 ? 'Net buying' : 'Net selling'}</b></div>
       <div class="flow-row"><span>Bias impact</span><b class="${combinedToday >= 0 ? 'ind-interp good' : 'ind-interp bad'}">${combinedToday >= 0 ? 'Supportive' : 'Bearish'}</b></div>
       <div class="flow-row"><span>Source</span><span class="muted small">${escapeHtml((flow.source || 'N/A')).toUpperCase()} · provisional</span></div>
@@ -3137,6 +3194,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 document.getElementById('nifty50Csv')?.addEventListener('click', downloadNifty50Csv);
 document.getElementById('eventSearch')?.addEventListener('input', renderEventCalendar);
 document.getElementById('eventCategory')?.addEventListener('change', renderEventCalendar);
+document.getElementById('eventSector')?.addEventListener('change', renderEventCalendar);
 document.getElementById('eventScope')?.addEventListener('change', renderEventCalendar);
 document.getElementById('eventCsv')?.addEventListener('click', downloadEventCsv);
 ['gasChartMode','gasRegionScope'].forEach(id =>
@@ -3271,13 +3329,19 @@ def _event_calendar_markdown(calendar: dict[str, Any]) -> list[str]:
         f"{row.get('name')} {row.get('count')}" for row in calendar.get("category_counts", [])
     )
     lines.append(f"- **Companies with announcements:** {total}")
+    sector_spread = " · ".join(
+        f"{row.get('name')} {row.get('count')}"
+        for row in calendar.get("sector_counts", [])[:8]
+    )
     lines.append(f"- **Nifty 50 constituents:** {calendar.get('nifty50_count', 0)}")
     if breakdown:
         lines.append(f"- **Breakdown:** {breakdown}")
+    if sector_spread:
+        lines.append(f"- **Sectors in focus:** {sector_spread}")
     lines.append("")
 
-    lines.append("| Symbol | Company | Purpose | Details |")
-    lines.append("|---|---|---|---|")
+    lines.append("| Symbol | Company | Sector | Purpose | Details |")
+    lines.append("|---|---|---|---|---|")
     for event in events[:EVENT_MARKDOWN_LIMIT]:
         symbol = event.get("symbol") or "-"
         if event.get("is_nifty50"):
@@ -3287,13 +3351,15 @@ def _event_calendar_markdown(calendar: dict[str, Any]) -> list[str]:
             details = details[:120].rstrip() + "..."
         lines.append(
             f"| {symbol} | {event.get('company') or '-'} | "
+            f"{str(event.get('sector') or '-').replace('|', '/')} | "
             f"{str(event.get('purpose') or '-').replace('|', '/')} | {details} |"
         )
     lines.append("")
     if total > EVENT_MARKDOWN_LIMIT:
         lines.append(
             f"_Showing {EVENT_MARKDOWN_LIMIT} of {total} announcements "
-            "(Nifty 50 names first). Full list is on the dashboard Events tab._"
+            "(Nifty 50 names first, then grouped by sector). "
+            "Full list is on the dashboard Events tab._"
         )
         lines.append("")
     return lines

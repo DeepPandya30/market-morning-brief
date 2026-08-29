@@ -27,10 +27,12 @@ from .config import (
     OPTION_CHAIN_REFERERS,
     PROCESSED_DIR,
     SECTOR_KEYWORDS,
+    SECTOR_UNKNOWN,
     US_MARKETS,
 )
 from .eia import fetch_natural_gas_storage
 from .nse_client import NSEClient
+from .sectors import resolve_sectors, sector_counts
 from .technicals import fetch_index_technicals, fetch_nifty50_pivots
 from .utils import now_ist, safe_get, to_float
 
@@ -640,6 +642,7 @@ def fetch_event_calendar(
         "total": 0,
         "nifty50_count": 0,
         "category_counts": [],
+        "sector_counts": [],
         "purpose_counts": [],
         "events": [],
     }
@@ -687,12 +690,28 @@ def fetch_event_calendar(
             }
         )
 
-    # Index heavyweights first — those are the ones that move the market open.
-    events.sort(key=lambda row: (not row["is_nifty50"], row["company"].lower(), row["symbol"]))
+    # The NSE feed carries no industry field, so sectors are resolved separately
+    # (cached constituent list -> on-disk map -> Yahoo profile).
+    sectors = resolve_sectors([row["symbol"] for row in events], warnings)
+    for row in events:
+        row["sector"] = sectors.get(row["symbol"], SECTOR_UNKNOWN)
+
+    # Index heavyweights first — those are the ones that move the market open —
+    # then grouped by sector so related announcements read together.
+    events.sort(
+        key=lambda row: (
+            not row["is_nifty50"],
+            row["sector"] == SECTOR_UNKNOWN,
+            row["sector"].lower(),
+            row["company"].lower(),
+            row["symbol"],
+        )
+    )
 
     result["events"] = events
     result["total"] = len(events)
     result["nifty50_count"] = sum(1 for row in events if row["is_nifty50"])
+    result["sector_counts"] = sector_counts(events)
     result["category_counts"] = [
         {"name": name, "count": count}
         for name, count in Counter(row["category"] for row in events).most_common()

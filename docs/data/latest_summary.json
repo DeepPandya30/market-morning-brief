@@ -8340,7 +8340,8 @@
           "purpose": "Other business matters",
           "category": "Other",
           "description": "To Consider and approve the draft Notice of 32nd Annual General Meeting, Director s Report, to fix the date of the Annual General Meeting of the Company and any other item with the permission of chairperson",
-          "is_nifty50": false
+          "is_nifty50": false,
+          "sector": "IT"
         },
         {
           "symbol": "GSS",
@@ -8348,7 +8349,8 @@
           "purpose": "Other business matters",
           "category": "Other",
           "description": "To consider and approve the Date, Time, Notice, Director s Report etc. of the 23rd Annual General Meeting of the Company and other business matters",
-          "is_nifty50": false
+          "is_nifty50": false,
+          "sector": "IT"
         },
         {
           "symbol": "MAXESTATES",
@@ -8356,7 +8358,8 @@
           "purpose": "Fund Raising",
           "category": "Fund Raising",
           "description": "To consider and approve the issue of equity shares of the Company by way of preferential issue, in accordance with the applicable laws and shall be subject to such regulatory/ statutory approvals, as may be required, including the approval of the shareholders of the Company",
-          "is_nifty50": false
+          "is_nifty50": false,
+          "sector": "Realty"
         },
         {
           "symbol": "ONEPOINT",
@@ -8364,7 +8367,22 @@
           "purpose": "Fund Raising/Other business matters",
           "category": "Fund Raising",
           "description": "To consider Fund Raising and other business matters",
-          "is_nifty50": false
+          "is_nifty50": false,
+          "sector": "Services"
+        }
+      ],
+      "sector_counts": [
+        {
+          "name": "IT",
+          "count": 2
+        },
+        {
+          "name": "Realty",
+          "count": 1
+        },
+        {
+          "name": "Services",
+          "count": 1
         }
       ]
     },

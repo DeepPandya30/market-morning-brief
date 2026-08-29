@@ -187,6 +187,55 @@ EVENT_CATEGORY_KEYWORDS = [
     ("M&A / Restructuring", ("amalgamation", "merger", "demerger", "acquisition", "scheme of arrangement")),
 ]
 
+# ---------------------------------------------------------------------------
+# Event calendar sector tagging
+#
+# The NSE event-calendar feed carries no industry field, and NSE's own
+# quote/stockIndices endpoints are blocked from datacenter IPs (the same reason
+# technicals.py uses yfinance). Sectors are therefore resolved from Yahoo
+# Finance company profiles and cached on disk so a symbol is only ever looked
+# up once — repeat runs read the cache and make no network calls at all.
+SECTOR_CACHE_PATH = PROCESSED_DIR / "sector_map.json"
+
+# Yahoo profiles are one HTTP call per symbol (~1.3s), so a busy results day is
+# capped: anything beyond the cap stays "Unclassified" this run and is picked up
+# by the next one once the cache has warmed.
+SECTOR_LOOKUP_MAX_NEW = 120
+SECTOR_LOOKUP_WORKERS = 8
+
+# Yahoo's GICS-style sectors mapped onto the same bucket vocabulary used by
+# NIFTY50_CONSTITUENTS, so the Events tab and the Nifty 50 tab speak one
+# taxonomy instead of two.
+YF_SECTOR_BUCKETS = {
+    "Technology": "IT",
+    "Financial Services": "Financials",
+    "Healthcare": "Healthcare",
+    "Consumer Cyclical": "Consumer",
+    "Consumer Defensive": "FMCG",
+    "Energy": "Energy",
+    "Basic Materials": "Materials",
+    "Industrials": "Capital Goods",
+    "Real Estate": "Realty",
+    "Utilities": "Power",
+    "Communication Services": "Telecom",
+}
+
+# Industry-text overrides applied before the sector mapping above, because
+# Yahoo's top-level sector is too coarse for the buckets this dashboard uses
+# (drug makers are "Healthcare", car makers are "Consumer Cyclical", steel is
+# "Basic Materials"). Matched in order against the lowercased industry name.
+YF_INDUSTRY_OVERRIDES = [
+    ("Pharma", ("drug", "pharma", "biotech")),
+    ("Auto", ("auto", "vehicle", "tyre", "tire")),
+    ("Metals", ("steel", "metal", "copper", "aluminum", "aluminium", "gold", "silver", "mining", "coking coal")),
+    ("Infrastructure", ("engineering & construction", "infrastructure", "airport", "railroad", "marine shipping")),
+    ("Media", ("entertainment", "broadcasting", "publishing", "advertising")),
+    ("Power", ("utilities", "power", "renewable")),
+    ("Services", ("business services", "consulting", "staffing", "logistics")),
+]
+
+SECTOR_UNKNOWN = "Unclassified"
+
 # Rows shown in the markdown report before it truncates. The dashboard Events
 # tab always carries the full list; the report stays readable (and listenable).
 EVENT_MARKDOWN_LIMIT = 25

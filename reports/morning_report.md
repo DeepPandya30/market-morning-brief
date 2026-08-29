@@ -1,6 +1,6 @@
-# Morning Market Brief - 28 August 2026
+# Morning Market Brief - 29 August 2026
 
-Generated at: **28 Aug 2026, 08:54 AM IST**
+Generated at: **29 Aug 2026, 06:44 PM IST**
 
 ## Final View
 
@@ -239,13 +239,14 @@ Breadth as of 2026-08-27: **19 advancing / 31 declining**, 12 of 50 trading abov
 - **Companies with announcements:** 4
 - **Nifty 50 constituents:** 0
 - **Breakdown:** Other 2 · Fund Raising 2
+- **Sectors in focus:** IT 2 · Realty 1 · Services 1
 
-| Symbol | Company | Purpose | Details |
-|---|---|---|---|
-| GOLDTECH | AION-TECH SOLUTIONS LIMITED | Other business matters | To Consider and approve the draft Notice of 32nd Annual General Meeting, Director s Report, to fix the date of the Annua... |
-| GSS | GSS Infotech Limited | Other business matters | To consider and approve the Date, Time, Notice, Director s Report etc. of the 23rd Annual General Meeting of the Company... |
-| MAXESTATES | Max Estates Limited | Fund Raising | To consider and approve the issue of equity shares of the Company by way of preferential issue, in accordance with the a... |
-| ONEPOINT | One Point One Solutions Limited | Fund Raising/Other business matters | To consider Fund Raising and other business matters |
+| Symbol | Company | Sector | Purpose | Details |
+|---|---|---|---|---|
+| GOLDTECH | AION-TECH SOLUTIONS LIMITED | IT | Other business matters | To Consider and approve the draft Notice of 32nd Annual General Meeting, Director s Report, to fix the date of the Annua... |
+| GSS | GSS Infotech Limited | IT | Other business matters | To consider and approve the Date, Time, Notice, Director s Report etc. of the 23rd Annual General Meeting of the Company... |
+| MAXESTATES | Max Estates Limited | Realty | Fund Raising | To consider and approve the issue of equity shares of the Company by way of preferential issue, in accordance with the a... |
+| ONEPOINT | One Point One Solutions Limited | Services | Fund Raising/Other business matters | To consider Fund Raising and other business matters |
 
 ## Important Market News
 
