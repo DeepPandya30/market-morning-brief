@@ -77,6 +77,7 @@ def render_markdown(context: dict[str, Any]) -> str:
     lines.extend(_market_group_markdown("Global Commodities", data.get("commodities", []), "Commodity"))
     lines.append("")
     lines.extend(_natural_gas_markdown(data.get("natural_gas", {})))
+    lines.extend(_petroleum_markdown(data.get("petroleum", {})))
     lines.append("")
     lines.extend(_market_group_markdown("Crypto Currency", data.get("crypto", []), "Coin"))
     lines.append("")
@@ -783,6 +784,7 @@ h1 { position: relative; }
     <button class="tab-btn" data-tab="global">Global Markets</button>
     <button class="tab-btn" data-tab="commodities">Commodities</button>
     <button class="tab-btn" data-tab="natgas">Natural Gas</button>
+    <button class="tab-btn" data-tab="crude">Crude Oil</button>
     <button class="tab-btn" data-tab="crypto">Crypto</button>
     <button class="tab-btn" data-tab="currency">Currency</button>
     <button class="tab-btn" data-tab="sectors">Sectors</button>
@@ -920,6 +922,74 @@ h1 { position: relative; }
       <div class="chart-box" style="margin-top:18px"><canvas id="gasRegionChart"></canvas></div>
 
       <p id="gasFootnote" class="small muted" style="margin-top:10px"></p>
+    </div>
+  </section>
+
+  <section id="crude" class="panel">
+    <div class="card">
+      <div class="card-head">
+        <h2>US Crude Oil Inventories</h2>
+        <span id="crudeWeekBadge" class="badge info">—</span>
+      </div>
+      <p class="muted">
+        EIA Weekly Petroleum Status Report — crude, product and refinery numbers
+        for the week ending the previous Friday. The data tables land Wednesday
+        10:30 a.m. eastern and the Highlights write-up at 1:00 p.m. eastern
+        (about 11:00 PM IST), so a Wednesday-morning brief carries the previous
+        week and the new one is picked up the same evening.
+      </p>
+
+      <div id="crudeStats" class="hero-stats" style="margin-bottom:14px"></div>
+      <div id="crudeSignal" class="gas-signal"></div>
+
+      <div class="gas-meta" id="crudeMeta"></div>
+
+      <div class="controls">
+        <label>Chart
+          <select id="crudeChartMode">
+            <option value="weekly">Weekly stock change</option>
+            <option value="levels">Stock levels vs year ago</option>
+          </select>
+        </label>
+        <button class="action-btn secondary" id="crudeCsv">Download CSV</button>
+      </div>
+
+      <div class="chart-box"><canvas id="crudeChart"></canvas></div>
+
+      <div class="table-wrap" style="margin-top:14px">
+        <table>
+          <thead>
+            <tr>
+              <th>Stock</th>
+              <th>Million Barrels</th>
+              <th>Prior Week</th>
+              <th>Weekly Change</th>
+              <th>Year Ago</th>
+              <th>vs Year Ago</th>
+            </tr>
+          </thead>
+          <tbody id="crudeRows"></tbody>
+        </table>
+      </div>
+
+      <h3 class="section-title" style="margin-top:22px">Supply, Refining &amp; Demand</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Measure</th>
+              <th>This Week</th>
+              <th>Prior Week</th>
+              <th>Change</th>
+              <th>4-Week Avg</th>
+              <th>Year Ago</th>
+            </tr>
+          </thead>
+          <tbody id="crudeActivityRows"></tbody>
+        </table>
+      </div>
+
+      <p id="crudeFootnote" class="small muted" style="margin-top:10px"></p>
     </div>
   </section>
 
@@ -2051,6 +2121,7 @@ populateEventCategories();
 populateEventSectors();
 renderEventCalendar();
 renderNaturalGas();
+renderCrudeOil();
 renderMeetingMode();
   const brandSub = document.getElementById('generatedAt');
   if (brandSub) brandSub.textContent = APP.generated_at ? `Updated ${APP.generated_at}` : 'Pre-market cockpit';
@@ -2670,6 +2741,234 @@ function downloadGasCsv() {
   downloadText(`eia_natural_gas_storage_${gas.week_ending || 'latest'}.csv`, lines.join('\\n'));
 }
 
+
+/* ---------- EIA weekly petroleum status (crude oil) ---------- */
+
+// Released Wednesday 1:00 p.m. eastern (about 23:00 IST), long after the
+// morning brief froze its payload, so the page prefers the side-car the
+// Wednesday-evening job republishes and falls back to the embedded payload.
+let CRUDE_OVERRIDE = null;
+
+function crudeData() {
+  return CRUDE_OVERRIDE || APP.data.petroleum || {};
+}
+function mmbbl(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return 'N/A';
+  return fmt.format(Number(value)) + ' MMbbl';
+}
+function signedMmbbl(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return 'N/A';
+  const n = Number(value);
+  return (n > 0 ? '+' : '') + fmt.format(n) + ' MMbbl';
+}
+// Activity rows mix thousand-barrels-a-day counts with a utilisation
+// percentage, so each row carries its own unit.
+function crudeUnit(value, unit, signed) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return 'N/A';
+  const n = Number(value);
+  // A change in a percentage is percentage points, not a percentage of it.
+  const suffix = unit === '%' ? (signed ? ' pt' : '%') : ' kb/d';
+  const body = unit === '%' ? n.toFixed(1) + suffix : fmt.format(n) + suffix;
+  return signed && n > 0 ? '+' + body : body;
+}
+
+function renderCrudeOil() {
+  const body = document.getElementById('crudeRows');
+  if (!body) return;
+
+  const crude = crudeData();
+  const lookup = crude.by_key || {};
+  const stats = crude.stats || {};
+  const signal = crude.signal || {};
+  const commercial = lookup.crude_commercial || {};
+
+  const badgeEl = document.getElementById('crudeWeekBadge');
+  if (badgeEl) {
+    badgeEl.textContent = crude.week_ending_label
+      ? `Week ending ${crude.week_ending_label}`
+      : 'Report unavailable';
+    badgeEl.className = 'badge ' + (crude.week_ending_label ? 'info' : 'neutral');
+  }
+
+  const statsEl = document.getElementById('crudeStats');
+  if (statsEl) {
+    const change = stats.crude_change;
+    // India imports most of its crude, so a build — which points to softer oil
+    // — is the green case here, the opposite of a producer's read.
+    const changeTone = change === null || change === undefined
+      ? 'st-neutral' : (Number(change) >= 0 ? 'st-good' : 'st-bad');
+    const changeWord = change === null || change === undefined
+      ? 'No change reported'
+      : (Number(change) >= 0 ? 'Build — softer crude helps India' : 'Draw — costlier crude for India');
+    const util = stats.refinery_utilization;
+    const tiles = [
+      ['Commercial Crude Stocks', mmbbl(stats.crude_stocks), 'st-brand',
+        crude.week_ending_label ? `Week ending ${escapeHtml(crude.week_ending_label)}` : 'Latest EIA print'],
+      ['Weekly Change', signedMmbbl(change), changeTone, changeWord],
+      ['Cushing (WTI Hub)', mmbbl(stats.cushing_stocks),
+        Number(stats.cushing_change ?? 0) >= 0 ? 'st-good' : 'st-bad',
+        `${signedMmbbl(stats.cushing_change)} on the week`],
+      ['Refinery Utilisation', util === null || util === undefined ? 'N/A' : Number(util).toFixed(1) + '%',
+        'st-neutral',
+        stats.production ? `US output ${fmt.format(stats.production)} kb/d` : 'Refinery runs'],
+    ];
+    statsEl.innerHTML = tiles.map(([label, value, cls, sub]) => `
+      <div class="stat-tile ${cls}">
+        <div class="st-label">${label}</div>
+        <div class="st-value">${value}</div>
+        <div class="st-sub">${sub}</div>
+      </div>`).join('');
+  }
+
+  const signalEl = document.getElementById('crudeSignal');
+  if (signalEl) {
+    signalEl.className = 'gas-signal tone-' + (signal.tone || 'neutral');
+    signalEl.innerHTML = signal.label
+      ? `<span class="gas-signal-label">${escapeHtml(signal.label)}</span>
+         <span class="gas-signal-note">${escapeHtml(signal.note || '')}</span>`
+      : '<span class="gas-signal-note">Crude read unavailable for this week.</span>';
+  }
+
+  const metaEl = document.getElementById('crudeMeta');
+  if (metaEl) {
+    const chips = [];
+    if (crude.released_label) chips.push(`Released<b>${escapeHtml(crude.released_label)}</b>`);
+    if (crude.prior_week_ending_label) chips.push(`Prior week<b>${escapeHtml(crude.prior_week_ending_label)}</b>`);
+    if (commercial.year_ago_pct !== null && commercial.year_ago_pct !== undefined) {
+      chips.push(`Crude vs year ago<b>${pct(commercial.year_ago_pct)}</b>`);
+    }
+    if (crude.next_release_ist_label) {
+      const days = crude.days_to_next_release;
+      const when = days === 0 ? 'today' : (days === 1 ? 'tomorrow' : (days > 1 ? `in ${days} days` : 'overdue'));
+      chips.push(`Next release<b>${escapeHtml(crude.next_release_ist_label)} (${when})</b>`);
+    }
+    if (crude.from_cache) chips.push('Source<b>cached — live EIA fetch failed</b>');
+    metaEl.innerHTML = chips.map(c => `<span>${c}</span>`).join('')
+      + `<span><a href="${escapeHtml(crude.highlights_url || 'https://www.eia.gov/petroleum/supply/weekly/')}" target="_blank" rel="noopener">WPSR Highlights ↗</a></span>`;
+  }
+
+  body.innerHTML = (crude.stocks || []).map(row => `
+    <tr class="${row.key === 'total_ex_spr' ? 'gas-total' : ''}">
+      <td>${escapeHtml(row.name || '-')}</td>
+      <td>${mmbbl(row.stocks)}</td>
+      <td>${mmbbl(row.prior)}</td>
+      <td class="${signedClass(row.change)}">${signedMmbbl(row.change)}</td>
+      <td>${mmbbl(row.year_ago)}</td>
+      <td class="${signedClass(row.year_ago_pct)}">${pct(row.year_ago_pct)}</td>
+    </tr>`).join('')
+    || '<tr><td colspan="6" class="muted">EIA petroleum report not available — the next Wednesday release will populate this table.</td></tr>';
+
+  const activity = document.getElementById('crudeActivityRows');
+  if (activity) {
+    activity.innerHTML = (crude.activity || []).map(row => `
+      <tr>
+        <td>${escapeHtml(row.name || '-')}</td>
+        <td>${crudeUnit(row.value, row.unit)}</td>
+        <td>${crudeUnit(row.prior, row.unit)}</td>
+        <td class="${signedClass(row.change)}">${crudeUnit(row.change, row.unit, true)}</td>
+        <td>${crudeUnit(row.four_week_avg, row.unit)}</td>
+        <td>${crudeUnit(row.year_ago, row.unit)}</td>
+      </tr>`).join('')
+      || '<tr><td colspan="6" class="muted">Supply and refining detail not available for this week.</td></tr>';
+  }
+
+  const foot = document.getElementById('crudeFootnote');
+  if (foot) {
+    foot.textContent = crude.week_ending_label
+      ? 'Source: US Energy Information Administration, Weekly Petroleum Status Report (Table 9). '
+        + 'Stocks are million barrels; supply, trade and demand are thousand barrels per day. '
+        + `Figures for week ending ${crude.week_ending_label}.`
+      : 'Source: US Energy Information Administration, Weekly Petroleum Status Report.';
+  }
+
+  drawCrudeChart();
+}
+
+function drawCrudeChart() {
+  const mode = document.getElementById('crudeChartMode')?.value || 'weekly';
+  const crude = crudeData();
+  // SPR moves on policy rather than on the week's supply and demand, and its
+  // level dwarfs the rest, so it is left out of both charts.
+  const rows = (crude.stocks || []).filter(r => r.key !== 'spr' && r.key !== 'total_ex_spr');
+  const labels = rows.map(r => r.name);
+
+  if (mode === 'weekly') {
+    const values = rows.map(r => r.change);
+    mountChart('crudeChart', {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Weekly change (MMbbl)',
+          data: values,
+          backgroundColor: values.map(barFill),
+          borderColor: values.map(barEdge),
+          borderWidth: 1.5,
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false }, border: { display: false }, ticks: { maxRotation: 30, minRotation: 0 } },
+          y: { grid: { color: C.grid }, border: { display: false }, title: { display: true, text: 'Million barrels' } }
+        },
+        plugins: { legend: { display: false } }
+      },
+      plugins: [emptyMessagePlugin('No EIA petroleum data available')]
+    });
+    return;
+  }
+
+  mountChart('crudeChart', {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'This week', data: rows.map(r => r.stocks), backgroundColor: 'rgba(37,99,235,.75)', borderRadius: 6 },
+        { label: 'Year ago', data: rows.map(r => r.year_ago), backgroundColor: 'rgba(148,163,184,.55)', borderRadius: 6 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { grid: { display: false }, border: { display: false }, ticks: { maxRotation: 30, minRotation: 0 } },
+        y: { grid: { color: C.grid }, border: { display: false }, title: { display: true, text: 'Million barrels' } }
+      },
+      plugins: { legend: { display: true, position: 'top', labels: { usePointStyle: true, boxWidth: 8 } } }
+    },
+    plugins: [emptyMessagePlugin('No EIA petroleum data available')]
+  });
+}
+
+function downloadCrudeCsv() {
+  const crude = crudeData();
+  const lines = ['section,measure,unit,this_week,prior_week,change,year_ago'];
+  (crude.stocks || []).forEach(r => {
+    lines.push(['stocks', `"${r.name}"`, 'MMbbl', r.stocks, r.prior, r.change, r.year_ago].join(','));
+  });
+  (crude.activity || []).forEach(r => {
+    lines.push(['activity', `"${r.name}"`, r.unit, r.value, r.prior, r.change, r.year_ago].join(','));
+  });
+  downloadText(`eia_petroleum_status_${crude.week_ending || 'latest'}.csv`, lines.join('\\n'));
+}
+
+// Same contract as the gas side-car: silent on failure, and only takes over
+// when the file is genuinely a newer week than the embedded payload.
+function refreshPetroleumSidecar() {
+  if (!window.fetch || location.protocol === 'file:') return;
+  fetch('data/petroleum.json', { cache: 'no-store' })
+    .then(res => (res.ok ? res.json() : null))
+    .then(data => {
+      if (!data || !data.week_ending) return;
+      const current = APP.data.petroleum || {};
+      if (current.week_ending && data.week_ending <= current.week_ending) return;
+      CRUDE_OVERRIDE = data;
+      renderCrudeOil();
+    })
+    .catch(() => {});
+}
+
 // Pulls the side-car written by the Thursday-evening workflow. Any failure is
 // silent by design: the embedded payload is already rendered and is valid, just
 // possibly a few hours behind.
@@ -3199,6 +3498,8 @@ document.getElementById('eventScope')?.addEventListener('change', renderEventCal
 document.getElementById('eventCsv')?.addEventListener('click', downloadEventCsv);
 ['gasChartMode','gasRegionScope'].forEach(id =>
   document.getElementById(id)?.addEventListener('change', renderNaturalGas));
+document.getElementById('crudeChartMode')?.addEventListener('change', drawCrudeChart);
+document.getElementById('crudeCsv')?.addEventListener('click', downloadCrudeCsv);
 document.getElementById('gasCsv')?.addEventListener('click', downloadGasCsv);
 ['technicalIndex','technicalMaOverlay'].forEach(id => document.getElementById(id)?.addEventListener('change', renderTechnicals));
 document.getElementById('signalStatusFilter').addEventListener('change', renderSignals);
@@ -3211,6 +3512,7 @@ renderAll();
 renderHero();
 playEntrance();
 refreshNaturalGasSidecar();
+refreshPetroleumSidecar();
 </script>
 </body>
 </html>""".replace("__APP_DATA__", payload_json)
@@ -3363,6 +3665,103 @@ def _event_calendar_markdown(calendar: dict[str, Any]) -> list[str]:
         )
         lines.append("")
     return lines
+
+
+def _mmbbl_text(value: Any) -> str:
+    if value is None:
+        return "N/A"
+    return f"{float(value):,.1f}"
+
+
+def _kbd_text(value: Any) -> str:
+    if value is None:
+        return "N/A"
+    return f"{float(value):,.0f}"
+
+
+def _petroleum_markdown(crude: dict[str, Any]) -> list[str]:
+    """EIA Weekly Petroleum Status Report — the crude oil highlights.
+
+    Released Wednesday 1:00 p.m. eastern (23:00 IST), so a Wednesday-morning
+    brief carries the previous week's report and Thursday's carries the new
+    one. The heading always names the week the numbers cover.
+    """
+    heading = "## US Crude Oil Inventories (EIA Weekly Petroleum Status)"
+    if not crude or not crude.get("stocks"):
+        return [heading, "", "EIA petroleum status report not available in this run.", ""]
+
+    lookup = crude.get("by_key") or {}
+    signal = crude.get("signal") or {}
+    lines = [heading, ""]
+
+    week = crude.get("week_ending_label") or "the latest week"
+    released = crude.get("released_label")
+    lines.append(f"- **Week Ending:** {week}" + (f" (released {released})" if released else ""))
+
+    commercial = lookup.get("crude_commercial") or {}
+    change = commercial.get("change")
+    lines.append(
+        f"- **Commercial Crude Stocks:** {_mmbbl_text(commercial.get('stocks'))} million barrels"
+    )
+    if change is not None:
+        word = "build" if change >= 0 else "draw"
+        lines.append(
+            f"- **Weekly Change:** {_mmbbl_text(abs(change))} million barrel {word} "
+            f"({pct_text(commercial.get('pct_change'))})"
+        )
+    lines.append(f"- **vs Year Ago:** {pct_text(commercial.get('year_ago_pct'))}")
+
+    for key, label in (
+        ("cushing", "Cushing (WTI Delivery Point)"),
+        ("gasoline", "Gasoline Stocks"),
+        ("distillate", "Distillate Stocks"),
+        ("spr", "Strategic Petroleum Reserve"),
+    ):
+        row = lookup.get(key) or {}
+        if row.get("stocks") is None:
+            continue
+        lines.append(
+            f"- **{label}:** {_mmbbl_text(row.get('stocks'))} million barrels "
+            f"({_signed_text(row.get('change'), 1)} on the week)"
+        )
+
+    utilization = lookup.get("refinery_utilization") or {}
+    if utilization.get("value") is not None:
+        lines.append(
+            f"- **Refinery Utilisation:** {utilization['value']:.1f}% "
+            f"({_signed_text(utilization.get('change'), 1)} pt)"
+        )
+    production = lookup.get("production") or {}
+    if production.get("value") is not None:
+        lines.append(
+            f"- **US Crude Production:** {_kbd_text(production.get('value'))} kb/d "
+            f"({_signed_text(production.get('change'), 0)} kb/d)"
+        )
+
+    if signal.get("label"):
+        lines.append(f"- **Read:** {signal['label']} — {signal.get('note', '')}")
+    if crude.get("next_release_ist_label"):
+        lines.append(f"- **Next Release:** {crude['next_release_ist_label']}")
+    if crude.get("from_cache"):
+        lines.append("- **Note:** live EIA fetch failed this run; showing the last cached release.")
+
+    lines.append("")
+    lines.append("| Stock | Million Barrels | Weekly Change | vs Year Ago |")
+    lines.append("| --- | --- | --- | --- |")
+    for row in crude.get("stocks", []):
+        lines.append(
+            f"| {row.get('name')} | {_mmbbl_text(row.get('stocks'))} | "
+            f"{_signed_text(row.get('change'), 1)} | {pct_text(row.get('year_ago_pct'))} |"
+        )
+    lines.append("")
+    return lines
+
+
+def _signed_text(value: Any, digits: int = 1) -> str:
+    """Signed number for the markdown tables, where colour is not available."""
+    if value is None:
+        return "N/A"
+    return f"{float(value):+,.{digits}f}"
 
 
 def _index_technicals_markdown(technicals: dict[str, Any]) -> list[str]:

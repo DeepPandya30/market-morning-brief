@@ -25,6 +25,7 @@ from .config import (
     NG_STORAGE_CACHE_NAME,
     NSE_ENDPOINTS,
     OPTION_CHAIN_REFERERS,
+    PETROLEUM_CACHE_NAME,
     PROCESSED_DIR,
     SECTOR_KEYWORDS,
     SECTOR_UNKNOWN,
@@ -32,6 +33,7 @@ from .config import (
 )
 from .eia import fetch_natural_gas_storage
 from .nse_client import NSEClient
+from .petroleum import fetch_petroleum_status
 from .sectors import resolve_sectors, sector_counts
 from .technicals import fetch_index_technicals, fetch_nifty50_pivots
 from .utils import now_ist, safe_get, to_float
@@ -751,6 +753,9 @@ def build_data_bundle(event_date: str | date | None = None) -> dict[str, Any]:
     natural_gas = fetch_natural_gas_storage(
         warnings, cache_path=PROCESSED_DIR / NG_STORAGE_CACHE_NAME
     )
+    petroleum = fetch_petroleum_status(
+        warnings, cache_path=PROCESSED_DIR / PETROLEUM_CACHE_NAME
+    )
 
     return {
         "global_markets": global_markets,
@@ -767,6 +772,7 @@ def build_data_bundle(event_date: str | date | None = None) -> dict[str, Any]:
         "index_technicals": index_technicals,
         "event_calendar": event_calendar,
         "natural_gas": natural_gas,
+        "petroleum": petroleum,
         "market_news": fetch_market_news(limit=10),
         "warnings": warnings,
     }

@@ -368,3 +368,68 @@ NG_STORAGE_CACHE_NAME = "natural_gas_storage.json"
 # rewrites only this file, so the gas section refreshes without regenerating
 # the whole morning brief.
 NG_STORAGE_SIDECAR_NAME = "natural_gas.json"
+
+# ---------------------------------------------------------------------------
+# EIA Weekly Petroleum Status Report (WPSR)
+# ---------------------------------------------------------------------------
+# Released every Wednesday: the data tables at 10:30 a.m. eastern and the
+# Highlights write-up at 1:00 p.m. eastern (23:00 IST on the same Wednesday,
+# 22:30 IST while the US is on daylight time). When Monday is a federal
+# holiday the whole release slips one day to Thursday.
+#
+# That is hours after the 07:50 IST morning brief has published, so — exactly
+# like the natural gas report — the daily pipeline renders the most recent
+# available release and a separate Wednesday-evening job refreshes only this
+# section once the new week is out.
+PETROLEUM_LANDING_URL = "https://www.eia.gov/petroleum/supply/weekly/"
+PETROLEUM_HIGHLIGHTS_URL = "https://www.eia.gov/petroleum/supply/weekly/pdf/highlights.pdf"
+
+# Table 9 (U.S. and PAD District Weekly Estimates) is the one file that carries
+# every number the Highlights leads with — stocks, production, refinery runs,
+# trade and demand — so a single download covers the whole section. Columns are
+# week, prior week, year ago, two years ago, then the two four-week averages.
+PETROLEUM_TABLE_URL = "https://ir.eia.gov/wpsr/table9.csv"
+
+# The file is Windows-encoded: en-dashes in the "no data" cells are 0x96, which
+# is not valid UTF-8, so decoding has to fall back rather than replace.
+PETROLEUM_ENCODINGS = ("utf-8-sig", "cp1252")
+
+# Stock levels shown in the dashboard table, in report order. Keyed by the
+# (section, row) pair Table 9 uses, because names such as "Commercial" appear
+# under both Stocks and Imports.
+PETROLEUM_STOCK_ROWS = (
+    ("crude_commercial", "Stocks (Million Barrels)", "Commercial", "Crude Oil (commercial, ex-SPR)"),
+    ("cushing", "Stocks (Million Barrels)", "Cushing, Oklahoma", "Cushing, Oklahoma (WTI delivery)"),
+    ("crude_total", "Stocks (Million Barrels)", "Crude Oil (including SPR)", "Crude Oil (including SPR)"),
+    ("spr", "Stocks (Million Barrels)", "SPR", "Strategic Petroleum Reserve"),
+    ("gasoline", "Stocks (Million Barrels)", "Total Motor Gasoline", "Total Motor Gasoline"),
+    ("distillate", "Stocks (Million Barrels)", "Distillate Fuel Oil", "Distillate Fuel Oil"),
+    ("jet_fuel", "Stocks (Million Barrels)", "Kerosene-Type Jet Fuel", "Kerosene-Type Jet Fuel"),
+    ("propane", "Stocks (Million Barrels)", "Propane/Propylene", "Propane / Propylene"),
+    ("total_ex_spr", "Stocks (Million Barrels)", "Total Stocks (Excluding SPR)", "Total Stocks (excluding SPR)"),
+)
+
+# Supply, refining, trade and demand rows. Everything here is thousand barrels
+# per day except refinery utilisation, which is a percentage.
+PETROLEUM_ACTIVITY_ROWS = (
+    ("production", "Crude Oil Production", "Domestic Production", "US Crude Production", "kb/d"),
+    ("refinery_utilization", "Refiner Inputs and Utilization", "Percent Utilization", "Refinery Utilisation", "%"),
+    ("refinery_inputs", "Refiner Inputs and Utilization", "Crude Oil Inputs", "Refinery Crude Inputs", "kb/d"),
+    ("crude_imports", "Imports", "Total Crude Oil Incl SPR", "Crude Imports", "kb/d"),
+    ("crude_exports", "Exports", "Crude Oil", "Crude Exports", "kb/d"),
+    ("crude_net_imports", "Net Imports (Incl SPR)", "Crude Oil", "Crude Net Imports", "kb/d"),
+    ("products_supplied", "Product Supplied", "Total Product Supplied", "Total Products Supplied", "kb/d"),
+    ("gasoline_demand", "Product Supplied", "Finished Motor Gasoline", "Gasoline Demand", "kb/d"),
+    ("distillate_demand", "Product Supplied", "Distillate Fuel Oil", "Distillate Demand", "kb/d"),
+)
+
+# A build this size or larger is treated as a directional move rather than
+# noise. EIA's own weekly crude prints swing a few hundred thousand barrels on
+# survey timing alone, so anything under a million barrels reads as flat.
+PETROLEUM_BUILD_THRESHOLD_MMBBL = 1.0
+
+# Cache written after every successful fetch; a failed fetch falls back to it.
+PETROLEUM_CACHE_NAME = "petroleum_status.json"
+
+# Side-car the Wednesday-evening workflow rewrites on its own.
+PETROLEUM_SIDECAR_NAME = "petroleum.json"

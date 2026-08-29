@@ -1,6 +1,6 @@
 # Morning Market Brief - 29 August 2026
 
-Generated at: **29 Aug 2026, 06:44 PM IST**
+Generated at: **29 Aug 2026, 10:26 PM IST**
 
 ## Final View
 
@@ -60,6 +60,33 @@ Generated at: **29 Aug 2026, 06:44 PM IST**
 | — Salt | 248 | -20 | -9.20% | 2.10% |
 | — Nonsalt | 813 | 1 | -4.80% | 3.20% |
 | Total | 3,184 | 15 | -0.90% | 5.50% |
+
+## US Crude Oil Inventories (EIA Weekly Petroleum Status)
+
+- **Week Ending:** 21 Aug 2026 (released 26 Aug 2026)
+- **Commercial Crude Stocks:** 428.9 million barrels
+- **Weekly Change:** 0.1 million barrel build (0.02%)
+- **vs Year Ago:** 2.54%
+- **Cushing (WTI Delivery Point):** 22.4 million barrels (+1.2 on the week)
+- **Gasoline Stocks:** 206.8 million barrels (-2.5 on the week)
+- **Distillate Stocks:** 103.4 million barrels (-2.2 on the week)
+- **Strategic Petroleum Reserve:** 289.7 million barrels (-3.7 on the week)
+- **Refinery Utilisation:** 97.4% (+0.2 pt)
+- **US Crude Production:** 13,843 kb/d (+13 kb/d)
+- **Read:** Little changed — Commercial crude stocks moved +0.1 million barrels — too small to move the oil price on its own; gasoline -2.5 and distillate -2.2 million barrels; refineries running at 97.4% (+0.2 pt on the week).
+- **Next Release:** 02 Sep 2026, 11:00 PM IST
+
+| Stock | Million Barrels | Weekly Change | vs Year Ago |
+| --- | --- | --- | --- |
+| Crude Oil (commercial, ex-SPR) | 428.9 | +0.1 | 2.54% |
+| Cushing, Oklahoma (WTI delivery) | 22.4 | +1.2 | -0.90% |
+| Crude Oil (including SPR) | 718.6 | -3.6 | -12.63% |
+| Strategic Petroleum Reserve | 289.7 | -3.7 | -28.32% |
+| Total Motor Gasoline | 206.8 | -2.5 | -6.97% |
+| Distillate Fuel Oil | 103.4 | -2.2 | -9.50% |
+| Kerosene-Type Jet Fuel | 45.7 | -0.5 | 4.83% |
+| Propane / Propylene | 109.5 | +2.5 | 17.76% |
+| Total Stocks (excluding SPR) | 1,245.4 | +0.1 | -1.06% |
 
 
 ## Crypto Currency

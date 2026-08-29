@@ -15,6 +15,7 @@ from market_brief.config import (
     DASHBOARD_DIR,
     DOCS_DIR,
     NG_STORAGE_SIDECAR_NAME,
+    PETROLEUM_SIDECAR_NAME,
     PROCESSED_DIR,
     RAW_DIR,
     REPORTS_DIR,
@@ -59,6 +60,10 @@ def main() -> None:
     natural_gas = data.get("natural_gas") or {}
     dump_json(DOCS_DIR / "data" / NG_STORAGE_SIDECAR_NAME, natural_gas)
     dump_json(DASHBOARD_DIR / "data" / NG_STORAGE_SIDECAR_NAME, natural_gas)
+    # Same side-car arrangement for the Wednesday-evening crude oil refresh.
+    petroleum = data.get("petroleum") or {}
+    dump_json(DOCS_DIR / "data" / PETROLEUM_SIDECAR_NAME, petroleum)
+    dump_json(DASHBOARD_DIR / "data" / PETROLEUM_SIDECAR_NAME, petroleum)
 
     save_outputs(
         context,
@@ -72,6 +77,12 @@ def main() -> None:
     print(
         f"Event calendar for {calendar.get('date_label')}: "
         f"{calendar.get('total', 0)} announcements ({calendar.get('nifty50_count', 0)} Nifty 50)"
+    )
+    crude = data.get("petroleum") or {}
+    print(
+        f"Crude oil week ending {crude.get('week_ending_label') or 'n/a'}: "
+        f"commercial stocks {(crude.get('stats') or {}).get('crude_stocks')} MMbbl "
+        f"({(crude.get('signal') or {}).get('label', 'no read')})"
     )
     gas = data.get("natural_gas") or {}
     print(
