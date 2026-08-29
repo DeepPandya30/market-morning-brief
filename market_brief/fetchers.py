@@ -194,6 +194,7 @@ def fetch_fii_dii(client: NSEClient, warnings: list[str]) -> dict[str, Any]:
     parsed_rows = []
     fii_net = None
     dii_net = None
+    session_dates = []
     for row in rows:
         category = str(safe_get(row, ["category", "Category", "investorType", "name"], "")).upper()
         buy = to_float(safe_get(row, ["buyValue", "buy", "grossBuy", "Buy Value", "gross_purchase"], None))
@@ -203,7 +204,12 @@ def fetch_fii_dii(client: NSEClient, warnings: list[str]) -> dict[str, Any]:
             net = buy - sell
         if not category or net is None:
             continue
-        clean = {"category": category, "buy": buy, "sell": sell, "net": net}
+        session = parse_fii_dii_session_date(
+            safe_get(row, ["date", "Date", "tradeDate", "reportDate", "trade_date"], None)
+        )
+        if session:
+            session_dates.append(session)
+        clean = {"category": category, "buy": buy, "sell": sell, "net": net, "date": session}
         parsed_rows.append(clean)
         if "FII" in category or "FPI" in category:
             fii_net = net
@@ -212,7 +218,45 @@ def fetch_fii_dii(client: NSEClient, warnings: list[str]) -> dict[str, Any]:
 
     if fii_net is None and dii_net is None:
         warnings.append(f"fii_dii: could not parse FII/DII net values from {source} payload")
-    return {"source": source, "fii_net": fii_net, "dii_net": dii_net, "rows": parsed_rows}
+    # NSE always serves the *last completed* session, so a weekend/holiday run —
+    # or a re-run before the next session settles — hands back the same figures
+    # again. Carrying the session date lets the rolling nets count it once.
+    data_date = max(session_dates) if session_dates else None
+    if data_date is None and (fii_net is not None or dii_net is not None):
+        warnings.append(
+            f"fii_dii: {source} payload carried no session date; rolling nets fall back to value dedupe"
+        )
+    return {
+        "source": source,
+        "data_date": data_date,
+        "fii_net": fii_net,
+        "dii_net": dii_net,
+        "rows": parsed_rows,
+    }
+
+
+def parse_fii_dii_session_date(value: Any) -> str | None:
+    """Normalise the trading date NSE stamps on an FII/DII row to ISO.
+
+    NSE has shipped this field as "18-Aug-2026", "18-Aug-2026 00:00:00" and
+    plain ISO across revisions, so accept each rather than pinning one format.
+    Returns None when the payload carries no usable date.
+    """
+    if isinstance(value, datetime):
+        return value.date().isoformat()
+    if isinstance(value, date):
+        return value.isoformat()
+    text = str(value or "").strip()
+    if not text:
+        return None
+    if " " in text and ":" in text:
+        text = text.split(" ")[0]
+    for fmt in ("%d-%b-%Y", "%d-%B-%Y", "%Y-%m-%d", "%d-%m-%Y", "%d/%m/%Y", "%d %b %Y", "%d %B %Y"):
+        try:
+            return datetime.strptime(text, fmt).date().isoformat()
+        except ValueError:
+            continue
+    return None
 
 
 def fetch_option_chain(
