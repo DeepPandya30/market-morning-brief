@@ -1,6 +1,6 @@
 {
   "score": {
-    "score": 1,
+    "score": -1,
     "bias": "Neutral / Range-bound",
     "confidence": "High",
     "components": [
@@ -12,21 +12,21 @@
       },
       {
         "name": "US markets",
-        "score": 1,
-        "status": "Bullish",
-        "reason": "Average move 0.93% across 3 indices."
+        "score": -1,
+        "status": "Bearish",
+        "reason": "Average move -0.44% across 3 indices."
       },
       {
         "name": "Europe markets",
-        "score": 1,
-        "status": "Bullish",
-        "reason": "Average move 0.66% across 3 indices."
+        "score": -1,
+        "status": "Bearish",
+        "reason": "Average move -0.27% across 3 indices."
       },
       {
         "name": "Asia markets",
-        "score": -1,
-        "status": "Bearish",
-        "reason": "Average move -0.72% across 2 indices."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Average move 0.22% across 2 indices."
       },
       {
         "name": "FII/DII flow",
@@ -62,19 +62,19 @@
         "name": "Global commodities",
         "score": -1,
         "status": "Bearish",
-        "reason": "Crude/Brent average up 2.21%, which can pressure India inflation and import costs."
+        "reason": "Crude/Brent average up 2.52%, which can pressure India inflation and import costs."
       },
       {
         "name": "Crypto risk appetite",
-        "score": 0,
-        "status": "Neutral",
-        "reason": "Major crypto basket average move -0.67% across 5 coins."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Major crypto basket average move 2.93% across 5 coins."
       },
       {
         "name": "Currency pressure",
-        "score": 0,
-        "status": "Neutral",
-        "reason": "DXY/USDINR pressure average -0.05%; rising dollar/rupee pressure is usually negative for India."
+        "score": -1,
+        "status": "Bearish",
+        "reason": "DXY/USDINR pressure average 0.51%; rising dollar/rupee pressure is usually negative for India."
       }
     ]
   },
@@ -84,73 +84,73 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26333.0390625,
-        "change": 251.318359375,
-        "change_pct": 0.9635804410131886,
-        "date": "2026-09-11"
+        "close": 26186.4140625,
+        "change": -146.625,
+        "change_pct": -0.5568100197322221,
+        "date": "2026-09-14"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 52573.2890625,
-        "change": 509.1875,
-        "change_pct": 0.9780011269161137,
-        "date": "2026-09-11"
+        "close": 52421.19921875,
+        "change": -152.08984375,
+        "change_pct": -0.28929109527310165,
+        "date": "2026-09-14"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7656.97998046875,
-        "change": 65.27978515625,
-        "change_pct": 0.8598836028398098,
-        "date": "2026-09-11"
+        "close": 7619.97998046875,
+        "change": -37.0,
+        "change_pct": -0.48321923388044313,
+        "date": "2026-09-14"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
-        "close": 10650.400390625,
-        "change": 41.5,
-        "change_pct": 0.39118097514303385,
-        "date": "2026-09-11"
+        "close": 10697.599609375,
+        "change": 47.19921875,
+        "change_pct": 0.44316849150147486,
+        "date": "2026-09-14"
       },
       {
         "name": "CAC 40",
         "ticker": "^FCHI",
         "region": "Europe",
-        "close": 8179.77001953125,
-        "change": 63.01025390625,
-        "change_pct": 0.7762981254305749,
-        "date": "2026-09-11"
+        "close": 8117.77978515625,
+        "change": -61.990234375,
+        "change_pct": -0.7578481329790787,
+        "date": "2026-09-14"
       },
       {
         "name": "DAX",
         "ticker": "^GDAXI",
         "region": "Europe",
-        "close": 25568.560546875,
-        "change": 207.41015625,
-        "change_pct": 0.8178262935843447,
-        "date": "2026-09-11"
+        "close": 25440.810546875,
+        "change": -127.75,
+        "change_pct": -0.4996370435707365,
+        "date": "2026-09-14"
       },
       {
         "name": "Hang Seng",
         "ticker": "^HSI",
         "region": "Asia",
-        "close": 24710.560546875,
-        "change": -95.0703125,
-        "change_pct": -0.3832610145614147,
-        "date": "2026-09-14"
+        "close": 24837.76953125,
+        "change": -79.830078125,
+        "change_pct": -0.32037627771723537,
+        "date": "2026-09-15"
       },
       {
         "name": "Nikkei 225",
         "ticker": "^N225",
         "region": "Asia",
-        "close": 63331.30859375,
-        "change": -680.03125,
-        "change_pct": -1.0623605937009573,
-        "date": "2026-09-14"
+        "close": 63981.48828125,
+        "change": 488.5,
+        "change_pct": 0.7693762937036908,
+        "date": "2026-09-15"
       }
     ],
     "commodities": [
@@ -158,55 +158,55 @@
         "name": "Gold",
         "ticker": "GC=F",
         "group": "Commodities",
-        "close": 4394.2001953125,
-        "change": 28.0,
-        "change_pct": 0.6412898801585063,
-        "date": "2026-09-13"
+        "close": 4347.2001953125,
+        "change": -61.69970703125,
+        "change_pct": -1.3994354237539104,
+        "date": "2026-09-14"
       },
       {
         "name": "Silver",
         "ticker": "SI=F",
         "group": "Commodities",
-        "close": 64.76499938964844,
-        "change": 0.21099853515625,
-        "change_pct": 0.32685586077282924,
-        "date": "2026-09-13"
+        "close": 63.900001525878906,
+        "change": -0.6539993286132812,
+        "change_pct": -1.0131042537354533,
+        "date": "2026-09-14"
       },
       {
         "name": "Crude Oil WTI",
         "ticker": "CL=F",
         "group": "Commodities",
-        "close": 102.29000091552734,
-        "change": 2.2399978637695312,
-        "change_pct": 2.238878356266253,
-        "date": "2026-09-13"
+        "close": 102.79000091552734,
+        "change": 2.7399978637695312,
+        "change_pct": 2.7386284659602427,
+        "date": "2026-09-14"
       },
       {
         "name": "Copper",
         "ticker": "HG=F",
         "group": "Commodities",
-        "close": 6.480999946594238,
-        "change": 0.011499881744384766,
-        "change_pct": 0.17775533857501646,
-        "date": "2026-09-13"
+        "close": 6.389999866485596,
+        "change": -0.07950019836425781,
+        "change_pct": -1.2288460865190962,
+        "date": "2026-09-14"
       },
       {
         "name": "Brent Oil",
         "ticker": "BZ=F",
         "group": "Commodities",
-        "close": 106.9000015258789,
-        "change": 2.2900009155273438,
-        "change_pct": 2.189084124047638,
-        "date": "2026-09-13"
+        "close": 107.01000213623047,
+        "change": 2.4000015258789062,
+        "change_pct": 2.294237177971507,
+        "date": "2026-09-14"
       },
       {
         "name": "Natural Gas",
         "ticker": "NG=F",
         "group": "Commodities",
-        "close": 2.880000114440918,
-        "change": 0.04900002479553223,
-        "change_pct": 1.7308379810637882,
-        "date": "2026-09-13"
+        "close": 2.875999927520752,
+        "change": 0.04499983787536621,
+        "change_pct": 1.5895385535294329,
+        "date": "2026-09-14"
       }
     ],
     "crypto": [
@@ -214,46 +214,46 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 77292.4296875,
-        "change": 21.9609375,
-        "change_pct": 0.02842086744814784,
-        "date": "2026-09-14"
+        "close": 77905.0390625,
+        "change": 1066.8828125,
+        "change_pct": 1.3884804953268253,
+        "date": "2026-09-15"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 2498.929931640625,
-        "change": -27.0146484375,
-        "change_pct": -1.0694869812489893,
-        "date": "2026-09-14"
+        "close": 2518.340087890625,
+        "change": 41.3193359375,
+        "change_pct": 1.6681061676580546,
+        "date": "2026-09-15"
       },
       {
         "name": "Solana",
         "ticker": "SOL-USD",
         "group": "Crypto",
-        "close": 100.44999694824219,
-        "change": -1.3355941772460938,
-        "change_pct": -1.3121642881647966,
-        "date": "2026-09-14"
+        "close": 102.23999786376953,
+        "change": 2.9942245483398438,
+        "change_pct": 3.0169794121341518,
+        "date": "2026-09-15"
       },
       {
         "name": "Cardano",
         "ticker": "ADA-USD",
         "group": "Crypto",
-        "close": 0.20677000284194946,
-        "change": -0.0006479918956756592,
-        "change_pct": -0.3124087167535011,
-        "date": "2026-09-14"
+        "close": 0.20788000524044037,
+        "change": 0.004278004169464111,
+        "change_pct": 2.101160178662874,
+        "date": "2026-09-15"
       },
       {
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.3573999404907227,
-        "change": -0.009160041809082031,
-        "change_pct": -0.6702992863633002,
-        "date": "2026-09-14"
+        "close": 1.4277000427246094,
+        "change": 0.08708703517913818,
+        "change_pct": 6.496060734080587,
+        "date": "2026-09-15"
       }
     ],
     "currencies": [
@@ -261,55 +261,55 @@
         "name": "GBP/USD",
         "ticker": "GBPUSD=X",
         "group": "Currency",
-        "close": 1.351698398590088,
-        "change": 0.0007669925689697266,
-        "change_pct": 0.05677509350594938,
-        "date": "2026-09-14"
+        "close": 1.348726749420166,
+        "change": -0.0038492679595947266,
+        "change_pct": -0.2845879203929411,
+        "date": "2026-09-15"
       },
       {
         "name": "EUR/USD",
         "ticker": "EURUSD=X",
         "group": "Currency",
-        "close": 1.1590172052383423,
-        "change": -0.0019780397415161133,
-        "change_pct": -0.17037449120219517,
-        "date": "2026-09-14"
+        "close": 1.154068112373352,
+        "change": -0.0053253173828125,
+        "change_pct": -0.45931926524134975,
+        "date": "2026-09-15"
       },
       {
         "name": "USD/CHF",
         "ticker": "CHF=X",
         "group": "Currency",
-        "close": 0.8173400163650513,
-        "change": 0.004119992256164551,
-        "change_pct": 0.5066270054871277,
-        "date": "2026-09-14"
+        "close": 0.8179900050163269,
+        "change": 0.001340031623840332,
+        "change_pct": 0.16408885905838452,
+        "date": "2026-09-15"
       },
       {
         "name": "USD/JPY",
         "ticker": "JPY=X",
         "group": "Currency",
-        "close": 153.8719940185547,
-        "change": -0.6100006103515625,
-        "change_pct": -0.3948684193370849,
-        "date": "2026-09-14"
+        "close": 154.79400634765625,
+        "change": 1.3700103759765625,
+        "change_pct": 0.8929570418889693,
+        "date": "2026-09-15"
       },
       {
         "name": "DXY",
         "ticker": "DX-Y.NYB",
         "group": "Currency",
-        "close": 99.177001953125,
-        "change": 0.05699920654296875,
-        "change_pct": 0.05750525117386991,
-        "date": "2026-09-13"
+        "close": 99.5999984741211,
+        "change": 0.4799957275390625,
+        "change_pct": 0.48425717739965884,
+        "date": "2026-09-14"
       },
       {
         "name": "USD/INR",
         "ticker": "INR=X",
         "group": "Currency",
         "close": 95.54000091552734,
-        "change": -0.15450286865234375,
-        "change_pct": -0.16145427641361187,
-        "date": "2026-09-13"
+        "change": 0.5072021484375,
+        "change_pct": 0.5337127339378599,
+        "date": "2026-09-15"
       }
     ],
     "nse_indices": {
@@ -3148,7 +3148,7 @@
           "change_pct": 0.2,
           "week_pct": -3.34,
           "month_pct": -13.87,
-          "rsi": 28.8,
+          "rsi": 28.9,
           "volume": 7683193.0,
           "pivot": 300.67,
           "r1": 304.83,
@@ -3498,7 +3498,7 @@
           "change_pct": -0.48,
           "week_pct": 0.27,
           "month_pct": -3.15,
-          "rsi": 44.7,
+          "rsi": 44.6,
           "volume": 4968535.0,
           "pivot": 333.75,
           "r1": 335.9,
@@ -3873,7 +3873,7 @@
           "change_pct": -1.12,
           "week_pct": -0.85,
           "month_pct": -0.78,
-          "rsi": 50.7,
+          "rsi": 50.8,
           "volume": 515990.0,
           "pivot": 3283.77,
           "r1": 3300.53,
@@ -4331,14 +4331,14 @@
           {
             "period": 100,
             "sma": 23988.1,
-            "ema": 24121.34,
+            "ema": 24121.36,
             "distance_pct": -2.46,
             "position": "Below"
           },
           {
             "period": 200,
             "sma": 24550.08,
-            "ema": 24324.28,
+            "ema": 24327.54,
             "distance_pct": -4.69,
             "position": "Below"
           }
@@ -6376,14 +6376,14 @@
           {
             "period": 100,
             "sma": 56533.15,
-            "ema": 57007.8,
+            "ema": 57007.85,
             "distance_pct": 0.13,
             "position": "Above"
           },
           {
             "period": 200,
             "sma": 57373.56,
-            "ema": 56770.5,
+            "ema": 56778.64,
             "distance_pct": -1.34,
             "position": "Below"
           }
@@ -8394,60 +8394,82 @@
       }
     },
     "event_calendar": {
-      "date": "2026-09-14",
-      "date_label": "14 Sep 2026",
-      "weekday": "Monday",
+      "date": "2026-09-15",
+      "date_label": "15 Sep 2026",
+      "weekday": "Tuesday",
       "source": "nse_ranged",
-      "total": 2,
+      "total": 4,
       "nifty50_count": 0,
       "category_counts": [
         {
-          "name": "Fund Raising",
-          "count": 1
+          "name": "Results",
+          "count": 2
         },
         {
-          "name": "Results",
-          "count": 1
+          "name": "Dividend",
+          "count": 2
         }
       ],
       "sector_counts": [
         {
-          "name": "Auto",
-          "count": 1
+          "name": "Financials",
+          "count": 2
         },
         {
           "name": "Capital Goods",
+          "count": 1
+        },
+        {
+          "name": "Media",
           "count": 1
         }
       ],
       "purpose_counts": [
         {
-          "name": "Fund Raising",
-          "count": 1
+          "name": "Financial Results",
+          "count": 2
         },
         {
-          "name": "Financial Results",
-          "count": 1
+          "name": "Dividend",
+          "count": 2
         }
       ],
       "events": [
-        {
-          "symbol": "UNOMINDA",
-          "company": "UNO Minda Limited",
-          "purpose": "Fund Raising",
-          "category": "Fund Raising",
-          "description": "Uno Minda Limited has informed the exchange that the Board Meeting of the Company is scheduled to be held on Monday, September 14, 2026, to consider and approve the raising of funds through issue of Listed Non-Convertible Debentures in one or more tranches, subject to requisite approvals.",
-          "is_nifty50": false,
-          "sector": "Auto"
-        },
         {
           "symbol": "CMICABLES",
           "company": "CMI Limited",
           "purpose": "Financial Results",
           "category": "Results",
-          "description": "To consider and approve the financial results for the period ended September 30, 2025",
+          "description": "To consider and approve the financial results for the period ended December 31, 2025",
           "is_nifty50": false,
           "sector": "Capital Goods"
+        },
+        {
+          "symbol": "BAJAJHLDNG",
+          "company": "Bajaj Holdings & Investment Limited",
+          "purpose": "Dividend",
+          "category": "Dividend",
+          "description": "Bajaj Holdings & Investment Limited has informed the Exchange regarding prior intimation of Board Meeting, which is to be held on Tuesday, 15 September 2026, to consider and approve declaration of Interim Dividend for FY2027",
+          "is_nifty50": false,
+          "sector": "Financials"
+        },
+        {
+          "symbol": "MAHSCOOTER",
+          "company": "Maharashtra Scooters Limited",
+          "purpose": "Dividend",
+          "category": "Dividend",
+          "description": "Maharashtra Scooters Limited has informed Exchange regarding prior intimation of Board Meeting, which is to be held on Tuesday, 15 September 2026, to consider and approve declaration of Interim Dividend for FY2027",
+          "is_nifty50": false,
+          "sector": "Financials"
+        },
+        {
+          "symbol": "SUNSHINE",
+          "company": "Sunshine Pictures Limited",
+          "purpose": "Financial Results",
+          "category": "Results",
+          "description": "To consider and approve the un-audited financial results for the period ended Jun 30, 2026",
+          "is_nifty50": false,
+          "sector": "Media"
         }
       ]
     },
@@ -8456,8 +8478,8 @@
       "title": "Working Gas in Underground Storage, Lower 48",
       "report_url": "https://ir.eia.gov/ngs/ngs.html",
       "landing_url": "https://www.eia.gov/naturalgas/reports.php#/T202",
-      "fetched_at": "14 Sep 2026, 07:50 AM IST",
-      "fetched_at_iso": "2026-09-14T07:50:24.228662+05:30",
+      "fetched_at": "15 Sep 2026, 07:50 AM IST",
+      "fetched_at_iso": "2026-09-15T07:50:35.512342+05:30",
       "released_at": "2026-09-10",
       "released_label": "10 Sep 2026",
       "week_ending": "2026-09-04",
@@ -10413,7 +10435,7 @@
       "prior_week_ending": "2026-08-28",
       "prior_week_ending_label": "28 Aug 2026",
       "next_release_ist_label": "17 Sep 2026, 08:00 PM IST",
-      "days_to_next_release": 3,
+      "days_to_next_release": 2,
       "is_overdue": false,
       "change_vs_norm": -25.6
     },
@@ -10423,8 +10445,8 @@
       "landing_url": "https://www.eia.gov/petroleum/supply/weekly/",
       "highlights_url": "https://www.eia.gov/petroleum/supply/weekly/pdf/highlights.pdf",
       "table_url": "https://ir.eia.gov/wpsr/table9.csv",
-      "fetched_at": "14 Sep 2026, 07:50 AM IST",
-      "fetched_at_iso": "2026-09-14T07:50:24.567907+05:30",
+      "fetched_at": "15 Sep 2026, 07:50 AM IST",
+      "fetched_at_iso": "2026-09-15T07:50:36.174057+05:30",
       "week_ending": "2026-09-04",
       "week_ending_label": "04 Sep 2026",
       "prior_week_ending": "2026-08-28",
@@ -10437,7 +10459,7 @@
       "next_release": "2026-09-16",
       "next_release_label": "16 Sep 2026",
       "next_release_ist_label": "16 Sep 2026, 11:00 PM IST",
-      "days_to_next_release": 2,
+      "days_to_next_release": 1,
       "is_overdue": false,
       "stocks": [
         {
@@ -10881,83 +10903,83 @@
     },
     "market_news": [
       {
-        "title": "F&O Talk: Nifty has slipped below its crucial support, says Sudeep Shah; picks 5 stocks for next week",
-        "link": "https://economictimes.indiatimes.com/markets/expert-view/fo-talk-nifty-has-slipped-below-its-crucial-support-says-sudeep-shah-picks-5-stocks-for-next-week/articleshow/134119208.cms",
-        "summary": "After a turbulent trading day, Indian stock indices bounced back significantly as oil prices and bond yields eased. The Sensex and Nifty ended with modest declines, having experienced deeper dips earlier. Previous climbs...",
-        "published": "Sat, 12 Sep 2026 14:15:44 +0530",
-        "source": "Economic Times Markets",
-        "relevance_score": 6
-      },
-      {
-        "title": "Weekly Market Outlook: Can Nifty find its footing as crude, Fed policy drive markets?",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/weekly-market-outlook-can-nifty-find-its-footing-as-crude-fed-policy-drive-markets/articleshow/134178071.cms",
-        "summary": "Indian equities enter a holiday-shortened week with the Nifty at a crucial support zone after five consecutive weekly declines. The US Fed’s policy decision, FOMC projections, crude oil prices, global bond yields and for...",
-        "published": "Sun, 13 Sep 2026 10:05:56 +0530",
-        "source": "Economic Times Markets",
+        "title": "From US Fed rate decision to crude oil - 3 factors that may dictate Sensex, Nifty 50 this week - livemint.com",
+        "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQQzkyVEdVcEtYNGlWMnR4U3dkQ19lRTdKUVZPUV9hYmtxYjRsaDV1N2JEYlJRWWVUeFVlNFJ4T2xqeWJtMk1NVk5xTUZqUjQ0SWM1cHFTeDFuOVNGMG1mQ0tQZlBDR0lsRFJXa3NDSE13bHBseV9rck0xQ1ZtdGlIUkhCV1RrWFhtTmpjVmJTV0FNSEF5MWJrMkp4X2VJTFFyNGdrWWtjWHB2Uzl4bTBmTkZGZXRMaF9VWmZJdHg2MzQ2UHJya21PUjBNVHFBVVV3LW5UZ0J6X21fMjV2LWxQSUdjbzdnNkVoS3AydXprTkdTUVnSAfgBQVVfeXFMT1dyTmxmbVBublJ0XzE2Ml9od2x1OVZzZE5UajhuSEw0d25USEJjQ3FmRWhEWWxQR09uSm1FYUl2TU1NR1lwdzI3T2hiUVNDTDY4SXNoYXMzcmNKbklwTlVPcTRtV1dnTzdiX0wzS0hTcEVlSTRheFdvVnAzZ3hWM0tEMWIxSFd2Z3IyaUhkcmJNSUlldGdOQkVFbWJXTjhpMXlYQ0dSenl5Q3hobzVmdElCSlppMjRZV0RsWnRScFgwOV9GMWNvTEdKTFVXQ2QxS0FiYXctWnQzdDQ2dFpydkpZOTdOblZnX2gtMDgyRUotdmFJaEhVWEI?oc=5",
+        "summary": "From US Fed rate decision to crude oil - 3 factors that may dictate Sensex, Nifty 50 this week livemint.com",
+        "published": "Mon, 14 Sep 2026 04:12:16 GMT",
+        "source": "Google News - India Markets",
         "relevance_score": 5
       },
       {
-        "title": "Fed, crude, dollar and Iran war: 4 factors that could move gold next week - The Times of India",
-        "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdV9IV0tKMVVCcENVTWJkaTB4ejFRRTVjRGhvdnlOTU1kdlFDT25rQ1dsX3ZVOUZQMlpkMGp6Zi04a01yb3JrUmViNktZdHJKTXZSbWM5enh5UHhBX0d2S2NyeUJLMnFWWEE0eXJrc3NjMDM2UWpzeFFCUG1uQkVUUXFJRGJsZks0Mi03ZGpSS01pTGhnWDlzXzZSS1hsZUg4VG1vemljU0Fqd1RGWnhndFpYa1JwVGpLLVh3X3o0UWZKdlBrX09wS2VYVWRqQ3NocWU4MlRTejI5TV9EaEJKZktIM0FocXJjTFl1WNIB8gFBVV95cUxPT3R5WS1JNzhHclpnWnJicEthTkNBVzBHb0dLMHVpNXczN0ducWFicGVvSzNITk96SHVQSnhyLU8zR2JFT0VTc2IxQzk1TlNHOE1vSC16TjlYd2NIOE5wSlpzd2ZUaEI0RjgwSTg2Y2lieFdpUmh4UldUTDU3R0k1R2F6dUhXR0ZzR1B1NmZucENSb2ZOb0RFb19hQ3BEc1VXLUpkYWw0VGJwaUgwV3dqY2FjSVhNVHpYMEViWEU0R2xuYmZQVEw0NmhxR0JlZk8yaFlGWVh6TDg1OWdXQXdEaEJLNGFSd0JXSU5jQjd2b2RKdw?oc=5",
-        "summary": "Fed, crude, dollar and Iran war: 4 factors that could move gold next week The Times of India",
-        "published": "Sun, 13 Sep 2026 16:28:00 GMT",
-        "source": "Google News - Global Markets",
+        "title": "Sensex, Nifty Closed Today: US Fed Decision, Inflation Data To Crude Price; Key Factors To Drive Makret This Week - The Daily Jagran",
+        "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNUVh6anlVZW1Ia0h0aXdGOEJvTC1KdW1IYThqSkRLYTdhR29jNWV6MXRTMUlxTVZfVUZ2STZSUzItc3ZlWXlwRHZCY1B4ZUp1U2pSRGNtNVZJVnNLcHhiZk1manF0Nks1eDFOV2pvaW00QlI4N3BBamwwbDJqUW41WXdGeUZZWXhwYjU3UWRUWFF6WUJ3Z0xRTWxfTk54ZjhrMHZkdlZKQUNFaEtWVW96SHI2TVk3TzZQQ0puRFJzREpfM3hPbzEzdktvSnFpVU1fWU1oWUYxUU9qX1JfaTVTemxfZ9IB6gFBVV95cUxNcGo1RV95TzNZVkI5MWtEMHhTS1NwNUdKV2VrYUxIdnVoNlQ3WWg4NUI3MjNtYUJlaXdMNjBOamFrOGlqTlpzZnY3SVQ2cHdVLTlzOUhaQktzVWx5bzFfd05aLXJUTXVyZURUelBtSjBKbXlnMnpkQXV0RXBwYlZxZUtqZmhmRzl6cklZSG1kQjVyMzJJa3dlb1BUSG42VVJUUlZJbXY0SDE3c3ZhdzVOTHFkSE1sVDdZR3NJWnpybUlkcWV3UGUyeFVmWTl6ZkswVUhoZWpCSHgyTW9vM0Q5VXUtSzAzWUtpalE?oc=5",
+        "summary": "Sensex, Nifty Closed Today: US Fed Decision, Inflation Data To Crude Price; Key Factors To Drive Makret This Week The Daily Jagran",
+        "published": "Mon, 14 Sep 2026 05:36:00 GMT",
+        "source": "Google News - India Markets",
         "relevance_score": 5
       },
       {
-        "title": "Gold price today, September 14: Bullion slips as rising oil prices fuel inflation fears ahead of Fed meeting - ET Now",
-        "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQdGNPdGgyMG5VNVZ6RWNZWk1sOGswQ2Z3VU8zOGhQXzh4RnpsaF9UTkFsY3lQR1M3UXBuZUpVNjNYWkt4RlhGbWNuZlhWM05iOHRpdzNkLVFJczVfejF5RGh2Mkx1WHlGdW5jbVJHNVd0VEVtTTlrQV92WWtycGR2cVdFNjRnRVR3RzBua1RkN2IwbzJpbDJ0NlpBTm8yckJDdm10Y2FKeUdYcmJKQW1vWGlQbS01ZmpvelYzVDk2X3BhaUU2SV9Sc0hheE51LWY1NTFzWjBNd24yeEJFeUdHS2xmNlQxSkE4a2E3OHd5a9IB9AFBVV95cUxNbkduZnotaEVDQVpndkFjRml6RDN2VDVZQVpDZkVBWVE3QmpQUmFFMHlCblRWRFBXdnhMSE95Y293Y0IwQm1uajItOW1zRGZFVnBoclUzYm9WR3dRYXpyRmM0WTdQdU4ybzBZcW8wMml0Y3hPZG9kdGFIbmw5WWNRdWhVLU9uNWVZUDBDMWdmLUh4TWN2c2hsNjMwYm9ZdnptNjJsa0xBMy1jN3dNY0xqTkE4aTI5eVhUY3FNMHBuTng4aFNmR1lGY3EwSnA3NlAyRU5aR0twbHdEdzhqVFdvY3AzWm9wUjg5TzFqY1kzdmRkS1Z2?oc=5",
-        "summary": "Gold price today, September 14: Bullion slips as rising oil prices fuel inflation fears ahead of Fed meeting ET Now",
-        "published": "Mon, 14 Sep 2026 00:42:42 GMT",
-        "source": "Google News - Global Markets",
-        "relevance_score": 4
-      },
-      {
-        "title": "Gold slips as hotter US inflation lifts Fed hike bets, oil stokes price pressures - Investing.com",
-        "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNbnFQbDFvakY4S18wZTMwTV9Ia0Fjc1lrZkVxYndNN3FTYjBmMHh1UV9HelI2TXRTcHMzU2hVWVdxcERES2d6Yzl4TzNnQ0ZDY1ZDaUtaclZUbjZxVnhPeEticVhzX3RVVUlJQXpCVmthWlNDMkZYS2FYWlc0VGtUSmZKY2tlV0xhUkpydEFVUk55TXV6RVJnaW9kOXc0Y04yVy10Sy1iV0FndlJXSlczSGM2ZG95dzE2ZlVCalBwdEh3LXhteTZOTmFndGplek9tOHc?oc=5",
-        "summary": "Gold slips as hotter US inflation lifts Fed hike bets, oil stokes price pressures Investing.com",
-        "published": "Mon, 14 Sep 2026 01:41:33 GMT",
-        "source": "Google News - Global Markets",
-        "relevance_score": 4
-      },
-      {
-        "title": "FII flows are returning, but durability will depend on US yields and crude price",
-        "link": "https://www.livemint.com/market/indian-equities-nifty-outlook-bond-yields-rbi-policy-crude-oil-foreign-flows-11789274201331.html",
-        "summary": "Despite a flat index and global macroeconomic headwinds like high US yields and crude prices, India's stock market environment remains structurally healthy due to strong earnings growth and reasonable valuations, says Ji...",
-        "published": "Mon, 14 Sep 2026 06:01:02 +0530",
+        "title": "US market prediction today: S&P 500, Nasdaq futures fall up to 1.8% as AI fears hit Nvidia, Intel",
+        "link": "https://www.livemint.com/market/us-market-prediction-today-s-p-500-nasdaq-futures-fall-up-to-1-8-as-ai-fears-hit-nvidia-intel-11789383055242.html",
+        "summary": "US stock futures fell on Monday as AI slowdown warnings from Anthropic's Dario Amodei hit chip stocks, Brent crude jumped 4% to $108.65 on Middle East tensions, and traders priced in a 90% chance of a Fed rate hike on We...",
+        "published": "Mon, 14 Sep 2026 17:26:47 +0530",
         "source": "LiveMint Markets",
+        "relevance_score": 5
+      },
+      {
+        "title": "Indian Stock Markets Shut For Ganesh Chaturthi; Fed, Oil Keep Gold Volatile - BW Businessworld",
+        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMloyT0RWekZqV3VfS1R0VXFiUFNrV29ZSnZfT2hsTDRQdE9maTlreFNPYS04TEJfeTU5NHh4YjBzMjNLNWVRVzRka2F4SlJ6R0xyNGF1WlBpTTlEb2N0NW9hajQxeFMwWGQ3eWZxbTRiWUJuMUFWbjh6djJ0RWU3WlBGS0NUV3RvOWFHLUxoN2xnT05xSURqX19mcUhtbFpPZ2RmeDhfOURKUHduTGFtRmo4OXpjQ3ZZ?oc=5",
+        "summary": "Indian Stock Markets Shut For Ganesh Chaturthi; Fed, Oil Keep Gold Volatile BW Businessworld",
+        "published": "Mon, 14 Sep 2026 02:30:05 GMT",
+        "source": "Google News - Global Markets",
         "relevance_score": 4
       },
       {
-        "title": "Oversold Nifty could see a short-term rebound: Analysts",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/market-outlook-analysts-pick-key-levels-and-stocks-to-watch/articleshow/134230304.cms",
-        "summary": "Indian stock indices, Sensex and Nifty, have extended their losing streak for a fifth week. Analysts suggest the indices have entered oversold territory, indicating a potential short-term rebound. Traders are advised to...",
-        "published": "Mon, 14 Sep 2026 07:21:02 +0530",
+        "title": "Some up, some down! What's happening in Nikkei, Kospi, Taiwan? Oil on boil, rude crude impacting gold - Latest update - Livemint",
+        "link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNRC1hN2F0ajYzWk0xYUxZbG9tLUhTRldrSnZ3M0FnV2IydnQ0UWhWbEpTR2ZxeXhMZk9fbHJYSGppeTRlUnpuWGtZRE9FdlhOTXd2clN0SnF5TS1XcllpMWplNmdyTDNUT2xhb3UtSlBtRm9KQjUyQXozUFcwR2xCekk2c3dRRGduRWNHRWpiUnFFZVRVeWVUOUFPNFdZbXVtWVU5cDlRWE1SZTgzNUxxcnhQRlRfbmVjdEpxb0ZVRFZaUG00RW9MWFgwVW9GSTQyd3ctOEI5R2pCZ3F2YnlXNHdPN2RDWmhoWjc5OEIwekVCWDRpUXZwVEl6ZXZkb2x6ZVk0VjRwT1pKd9IBjwJBVV95cUxPVldVdk0wM1JCVVlNdXh3d2N6NEJ2U0xyX2pwNDNDMUdxU3k5MDRJNXdvWks2dGhBMHpRVXgtY3lrMWd4RUc5cFpLMjVueGhLQzc0SC0tVWJnVm8waUEzX3FjbXFOX29odkdwNGh1ZzFIeUgycFZ4TVM5M2Y3Z3FFQ0FUWkRvVXNfWHpoZmFVMXkyamJDTnVqUU16TVFBN1BvSHNEZkJNQ3B1Zml2dXRWdlA5Q2FNMy1PQjNQYlFrLXFwUkZZd1ExLVFXSjR5RTdvSU81WDhEcmRpYXhUZmwzOFU0Q0tXTVRHcDU4QXB3dVdCTWtiMlByWXNncXFoQVF0Z3BjSmV4WUhPell1ellv?oc=5",
+        "summary": "Some up, some down! What's happening in Nikkei, Kospi, Taiwan? Oil on boil, rude crude impacting gold - Latest update Livemint",
+        "published": "Mon, 14 Sep 2026 05:30:18 GMT",
+        "source": "Google News - Global Markets",
+        "relevance_score": 4
+      },
+      {
+        "title": "US Market: Goldman Sachs expects Fed to hike rates amid inflation fears",
+        "link": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/us-market-goldman-sachs-expects-fed-to-hike-rates-amid-inflation-fears/articleshow/134232349.cms",
+        "summary": "Goldman Sachs now expects the US Federal Reserve to raise interest rates by 25 basis points in September, reversing its earlier pause forecast. Rising oil prices, stronger producer inflation and shifting market expectati...",
+        "published": "Mon, 14 Sep 2026 09:55:12 +0530",
         "source": "Economic Times Markets",
         "relevance_score": 4
       },
       {
-        "title": "Dollar steady, yen near 7-month high ahead of Fed, BOJ meetings",
-        "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-steady-yen-near-7-month-high-ahead-of-fed-boj-meetings/articleshow/134230598.cms",
-        "summary": "The dollar maintained its stability as the yen approached a peak not seen in seven months this week. With key policymakers weighing potential interest rate hikes from both the Federal Reserve and the Bank of Japan, inves...",
-        "published": "Mon, 14 Sep 2026 07:24:05 +0530",
-        "source": "Economic Times Markets",
+        "title": "Gold slides Rs 500 as oil surge, strong US dollar weigh on bullion - bfsi.economictimes.indiatimes.com",
+        "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPSVR2aUEyYUYwRHFBX0dCQngxa2JBb1FZVnY2cGFtcF9UUl9qaXpzRWM0eXIzUEhfQkJGOThERDhYSVZLV083VXlrWDRTbW9jSWtDOFVMTk1HdHdHVnk2bGg1bEtQYW0ycm5sMlRQeEFoX1RMc3U5TkFVUXJzT0tCSTFmSUdNTmxDN3J4LXQ1aUoySWdBZDNhbjlTTU1Hc25VX0hOSGJyc0hXaHhOWkg1SnB2alhtazVZLVNkdmlvb2FqZXRZc0lxY2p6RjMwQS04aWpONXJtaELSAd4BQVVfeXFMUGxqR25wOUw5V09yVkx5dHFJUWg1dEpBdnkwb1BFSUhoanMwRjhaUFlhLVFKYVBWcHlERWN0ekRMWDVlcEk2d044MWtwcVpxaUpqcTMzQVVfRWhKNk5IT3NXQ2F3cjFSdFVkMWduVlliMXVMMjBxQUNLc05zV0hhUnVSd29OeFAtNm42bF9rVlZUZUhMVU56QUR1RGV3b1FzbERhRHhZR1JVWUFaa3h2bzVGVVRQQnc5dkN2NW1BcjR6MkFVZ3R3YWhIX2ZhaDh0dDRrdFNkc1Q4czYtUUx3?oc=5",
+        "summary": "Gold slides Rs 500 as oil surge, strong US dollar weigh on bullion bfsi.economictimes.indiatimes.com",
+        "published": "Mon, 14 Sep 2026 12:19:40 GMT",
+        "source": "Google News - Global Markets",
         "relevance_score": 4
       },
       {
-        "title": "Gold prices dip as oil-driven inflation concerns weigh",
-        "link": "https://economictimes.indiatimes.com/markets/commodities/news/gold-prices-dip-as-oil-driven-inflation-concerns-weigh/articleshow/134230613.cms",
-        "summary": "Gold prices witnessed a slight decline, primarily driven by surging oil prices, raising inflation worries among traders. With an 86% probability of a US interest rate hike on the horizon, consumer prices saw a notable ri...",
-        "published": "Mon, 14 Sep 2026 07:27:22 +0530",
-        "source": "Economic Times Markets",
+        "title": "Gold Prices Retreat Below $4,300-Mark as Middle East Oil Risks Stoke Inflation Fears - NiftyTrader",
+        "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE94YjBncG15bzVoZlN6YXhuVVRiU3hvM2tMSm56M0l1THVPRHhLelNsY3hjYk1WUnJ6S0JyeHVYNlpwbnRoeEtoVmluY2RickpfR1FzajhPYXZHSXU4b3FVVXpZeld1S3p6RDJXVnFQYjkyZS0xbUcxcC1VWQ?oc=5",
+        "summary": "Gold Prices Retreat Below $4,300-Mark as Middle East Oil Risks Stoke Inflation Fears NiftyTrader",
+        "published": "Mon, 14 Sep 2026 13:35:59 GMT",
+        "source": "Google News - Global Markets",
         "relevance_score": 4
       },
       {
-        "title": "5 world market themes for the week ahead",
-        "link": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/5-world-market-themes-for-the-week-ahead/articleshow/134107158.cms",
-        "summary": "With the Federal Reserve and the Bank of Japan set to make pivotal interest rate decisions against a backdrop of escalating energy prices, global financial markets brace for change. Meanwhile, BRICS leaders convene in In...",
-        "published": "Sat, 12 Sep 2026 09:38:31 +0530",
-        "source": "Economic Times Markets",
+        "title": "Why is US Stock Market Down Today? Dow Jones Falls 300 Points, S&P 500 Drops 0.80%, Nasdaq Slips 1.20% as Oil Surges, Treasury Yields Hit, Chip Slide & Fed Rate Hike — Check What Investors Should Know - sundayguardianlive.com",
+        "link": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxNUlNyNFkxT3RuRHFpNW1ad1hpcEhrdDFXYnVOT09iUFVIajBBTThRZi1XTUhXeEp3SE9mdmRzSzIxZlNHWFNTR1pVSDlJQjlWWmxKaXhadHZEWnJXWU13WDh6WE5LZC1fam45WHVXbWxOWEhzOFNMVHVOVzYzSmZtUmNQelZvMGdZYVJhT2FqMlMxY2xRMmJEYS1RTFl3ZTIzQjZMSUd6dG9aNG96am5YLWhvVUpqdzlTM2VLRnk0WGdVcFBGMktuYmhIRTRUekVBb3hra29nMGwzdFlOV1EtSUlHX2dXUjJ5NUszNGkzcm55RWxURkxNY1hBVm13X1MydkV6T3VBbHVpcTlXQzNSUkM1VnE3QXppemJSYnhsVVk1LUtXcm00ZW1oeHRxVGJ3ZDBSRlpqWEQzY2RTT3JwUGxSSmw2WDRPUGJKYy1YWFBCUnZK0gHaAkFVX3lxTFBfaklJLWRBaFY2d0I4RHJXX2ZyQ18tbDI1SjlreTZVSmstSlBhanBNMFlqZ0VZTGYwczNfVU1vbFhNOEdGTV94OGNKVkRGV1pqUmZCVUo2a3RsdEpBOEx0OTNEazZpWkFZWjF5NmthSDlDTGFYdXZZdnUza3hVc3dORkVwZ25QLWFQcTNRVDdPMmFRQU9zQUVkZjVZbjItSHJpdFF1ejE0T3Z3Zy1GRXEzQzJpWTQxZWxuR1JSeW9TMDZuSDFxR3pmcFBoeUpiRXdObzRmaV9tWTZOanFMQWNsc2EzeHJ0dlBYdjBDWEVuMnFnLUJ3NWNqcnNSWEUwQkdSUlJ5NzEzVnJlMkdzdHJQNlQxT2s5c2FMTEhqZkxzTlNjRnZQd19sWUlwdmlkSm5RSG43RENNVS1FQWJXeEVPU05ZQm5JTVBOMlRQU2ZVV2ttTnNWZDI3VUE?oc=5",
+        "summary": "Why is US Stock Market Down Today? Dow Jones Falls 300 Points, S&P 500 Drops 0.80%, Nasdaq Slips 1.20% as Oil Surges, Treasury Yields Hit, Chip Slide & Fed Rate Hike — Check What Investors Should Know sundayguardianlive....",
+        "published": "Mon, 14 Sep 2026 16:16:46 GMT",
+        "source": "Google News - Global Markets",
+        "relevance_score": 4
+      },
+      {
+        "title": "Stock Market prediction today: Sensex, Nifty outlook for Tue | Kospi, Taiwan Index, Nikkei cues to watch | 15 Sept",
+        "link": "https://www.livemint.com/market/stock-market-news/stock-market-prediction-tomorrow-sensex-nifty-outlook-for-tue-kospi-taiwan-index-nikkei-cues-to-watch-15-sept-11789387045689.html",
+        "summary": "Indian stock market indices Sensex and Nifty 50 are expected to open flat as global markets face declines, particularly in AI stocks. Rising tensions in the Middle East and the upcoming US Federal Reserve meeting further...",
+        "published": "Mon, 14 Sep 2026 18:20:37 +0530",
+        "source": "LiveMint Markets",
         "relevance_score": 4
       }
     ],
@@ -13118,6 +13140,39 @@
       "ethereum_change_pct": -1.0694869812489893,
       "dxy_change_pct": 0.05750525117386991,
       "usdinr_change_pct": -0.16145427641361187
+    },
+    {
+      "date": "2026-09-15",
+      "generated_at": "2026-09-15 07:50:37 IST",
+      "bias": "Neutral / Range-bound",
+      "score": -1,
+      "confidence": "High",
+      "fii_net": -930.9,
+      "dii_net": 1968.17,
+      "fii_dii_date": "2026-09-11",
+      "combined_flow": 1037.27,
+      "gift_nifty_change_pct": null,
+      "india_vix_change_pct": 4.0,
+      "nifty_pcr": 1.0566351213365988,
+      "nifty_support": 23300.0,
+      "nifty_resistance": 24000.0,
+      "banknifty_pcr": 0.9124394129916457,
+      "banknifty_support": 56000.0,
+      "banknifty_resistance": 57500.0,
+      "us_avg_change_pct": -0.44310678296192224,
+      "europe_avg_change_pct": -0.27143889501611346,
+      "asia_avg_change_pct": 0.2245000079932277,
+      "top_sector": "NIFTY PRIVATE BANK",
+      "top_sector_change_pct": 0.48,
+      "weak_sector": "NIFTY REALTY",
+      "weak_sector_change_pct": -2.7,
+      "gold_change_pct": -1.3994354237539104,
+      "crude_oil_change_pct": 2.7386284659602427,
+      "brent_oil_change_pct": 2.294237177971507,
+      "bitcoin_change_pct": 1.3884804953268253,
+      "ethereum_change_pct": 1.6681061676580546,
+      "dxy_change_pct": 0.48425717739965884,
+      "usdinr_change_pct": 0.5337127339378599
     }
   ]
 }
