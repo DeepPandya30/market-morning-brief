@@ -474,11 +474,16 @@ h1 { position: relative; }
     .st-good { --tint: var(--good); } .st-bad { --tint: var(--bad); } .st-neutral { --tint: var(--neutral); } .st-brand { --tint: var(--brand); }
     .st-good .st-value { color: var(--good); } .st-bad .st-value { color: var(--bad); } .st-neutral .st-value { color: var(--neutral); }
 
-    /* AI summary */
-    .ai-card { background: linear-gradient(135deg, rgba(37,99,235,.10), var(--card) 55%); border-color: rgba(37,99,235,.3); }
-    .summary-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-    .summary-list li { display: flex; gap: 11px; align-items: flex-start; font-size: 15.5px; line-height: 1.45; }
-    .summary-list li .dot { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; margin-top: 8px; background: var(--brand); }
+    /* AI summary — compact */
+    .ai-card { background: linear-gradient(135deg, rgba(37,99,235,.10), var(--card) 55%); border-color: rgba(37,99,235,.3); padding: 13px 15px; margin-bottom: 14px; }
+    .ai-card .card-head { margin-bottom: 9px; }
+    .ai-card .card-head h2 { font-size: 15px; }
+    .ai-card .badge { font-size: 10.5px; padding: 2px 8px; }
+    .summary-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px 22px; }
+    .summary-list li { display: flex; gap: 8px; align-items: flex-start; font-size: 12.8px; line-height: 1.38; color: var(--muted); }
+    .summary-list li b { color: var(--text); }
+    .summary-list li .dot { flex: 0 0 auto; width: 6px; height: 6px; border-radius: 50%; margin-top: 5px; background: var(--brand); }
+    @media (min-width: 1000px) { .summary-list { grid-template-columns: 1fr 1fr; } }
 
     /* Levels */
     .levels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
@@ -586,7 +591,6 @@ h1 { position: relative; }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-  <meta name="dashboard-build-time" content="18 Sep 2026, 07:50:33 AM IST">
 </head>
 <body>
 <nav class="navbar" aria-label="Primary">
@@ -860,7 +864,7 @@ h1 { position: relative; }
 
   <section id="sectors" class="panel">
     <div class="card">
-      <h2>India Sector View</h2>
+      <div class="card-head"><h2>Sector Heatmap</h2><span class="badge info">Sorted by change %</span></div>
       <div class="controls">
         <input id="sectorSearch" placeholder="Search sector..." />
         <select id="sectorSentimentFilter">
@@ -874,18 +878,19 @@ h1 { position: relative; }
           <option value="name">Name A to Z</option>
         </select>
       </div>
-      <div class="chart-box tall"><canvas id="sectorChart"></canvas></div>
-      <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Sector</th><th>Last</th><th>Change</th><th>Change %</th></tr></thead><tbody id="sectorRows"></tbody></table></div>
+      <div class="heatmap-legend">
+        <span class="swatch"><span class="box" style="background:#bbf7d0"></span>Strong up (&ge;1.5%)</span>
+        <span class="swatch"><span class="box" style="background:#dcfce7"></span>Up</span>
+        <span class="swatch"><span class="box" style="background:#fef3c7"></span>Flat</span>
+        <span class="swatch"><span class="box" style="background:#fee2e2"></span>Down</span>
+        <span class="swatch"><span class="box" style="background:#fecaca"></span>Strong down (&le;-1.5%)</span>
+      </div>
+      <div id="sectorHeatmap" class="heatmap-grid"></div>
     </div>
-    <h3>Sector Heatmap</h3>
-    <div class="heatmap-legend">
-      <span class="swatch"><span class="box" style="background:#bbf7d0"></span>Strong up (&ge;1.5%)</span>
-      <span class="swatch"><span class="box" style="background:#dcfce7"></span>Up</span>
-      <span class="swatch"><span class="box" style="background:#fef3c7"></span>Flat</span>
-      <span class="swatch"><span class="box" style="background:#fee2e2"></span>Down</span>
-      <span class="swatch"><span class="box" style="background:#fecaca"></span>Strong down (&le;-1.5%)</span>
+    <div class="card">
+      <div class="card-head"><h2>India Sector View</h2></div>
+      <div class="table-wrap"><table><thead><tr><th>Sector</th><th>Last</th><th>Change</th><th>Change %</th></tr></thead><tbody id="sectorRows"></tbody></table></div>
     </div>
-<div id="sectorHeatmap" class="heatmap-grid"></div>
   </section>
 
   <section id="nifty50" class="panel">
@@ -1456,7 +1461,6 @@ function renderSectors() {
   document.getElementById('sectorRows').innerHTML = rows.map(r => `
     <tr><td>${escapeHtml(r.name)}</td><td>${num(r.last)}</td><td>${num(r.change)}</td><td>${badge(pct(r.change_pct))}</td></tr>
   `).join('') || '<tr><td colspan="4">No sector data available</td></tr>';
-  drawBarChart('sectorChart', rows, 'name', 'change_pct', 'Sector change %');
 }
 /* ---------- Nifty 50 pivot table ---------- */
 function nifty50Data() {
