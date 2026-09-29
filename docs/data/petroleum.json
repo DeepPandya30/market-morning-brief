@@ -4,8 +4,8 @@
   "landing_url": "https://www.eia.gov/petroleum/supply/weekly/",
   "highlights_url": "https://www.eia.gov/petroleum/supply/weekly/pdf/highlights.pdf",
   "table_url": "https://ir.eia.gov/wpsr/table9.csv",
-  "fetched_at": "28 Sep 2026, 07:50 AM IST",
-  "fetched_at_iso": "2026-09-28T07:50:24.952268+05:30",
+  "fetched_at": "29 Sep 2026, 07:50 AM IST",
+  "fetched_at_iso": "2026-09-29T07:50:27.376231+05:30",
   "week_ending": "2026-09-18",
   "week_ending_label": "18 Sep 2026",
   "prior_week_ending": "2026-09-11",
@@ -18,7 +18,7 @@
   "next_release": "2026-09-30",
   "next_release_label": "30 Sep 2026",
   "next_release_ist_label": "30 Sep 2026, 11:00 PM IST",
-  "days_to_next_release": 2,
+  "days_to_next_release": 1,
   "is_overdue": false,
   "stocks": [
     {
