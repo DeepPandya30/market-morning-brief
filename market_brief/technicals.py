@@ -17,6 +17,8 @@ import yfinance as yf
 from .config import (
     INDEX_SERIES_BARS,
     INDEX_TECHNICAL_TICKERS,
+    INDIA_VIX_LOOKBACK,
+    INDIA_VIX_TICKER,
     LOOKBACK_SESSIONS,
     MA_PERIODS,
     NIFTY50_CONSTITUENTS,
@@ -316,11 +318,16 @@ def _index_snapshot(label: str, ticker: str, frame: pd.DataFrame) -> dict[str, A
         },
     ]
 
+    day_open = _round(frame["Open"].iloc[-1]) if "Open" in frame.columns else None
     snapshot = {
         "label": label,
         "ticker": ticker,
         "date": str(frame.index[-1].date()),
         "close": _round(close),
+        "open": day_open,
+        # The overnight gap, which is the part of the session a pre-market
+        # brief is actually calling.
+        "gap_pct": _round((day_open - prev_close) / prev_close * 100 if day_open and prev_close else None),
         "change": _round(close - prev_close),
         "change_pct": _round((close - prev_close) / prev_close * 100 if prev_close else None),
         "week_pct": _round(_change_pct(closes, LOOKBACK_SESSIONS["week"])),
@@ -418,3 +425,50 @@ def _chart_series(
             point[f"sma{period}"] = _round(values.iloc[idx])
         series.append(point)
     return series
+
+
+def fetch_vix_regime(warnings: list[str]) -> dict[str, Any]:
+    """India VIX today against its own trailing range.
+
+    A fixed "VIX < 15" threshold is a constant in a low-volatility regime, so the
+    bias model prefers a percentile read. Returns an empty dict when the series
+    cannot be fetched, which makes the model fall back to absolute thresholds.
+    """
+    try:
+        frame = yf.download(
+            INDIA_VIX_TICKER,
+            period=INDIA_VIX_LOOKBACK,
+            interval="1d",
+            progress=False,
+            auto_adjust=False,
+        )
+    except Exception as exc:
+        warnings.append(f"vix_regime: {exc}")
+        return {}
+
+    if frame is None or frame.empty or "Close" not in frame.columns:
+        warnings.append("vix_regime: no India VIX history returned")
+        return {}
+
+    closes = frame["Close"]
+    # A single-ticker download can still come back column-wise as a frame.
+    if isinstance(closes, pd.DataFrame):
+        closes = closes.iloc[:, 0]
+    closes = closes.dropna()
+    if len(closes) < 60:
+        warnings.append(f"vix_regime: only {len(closes)} sessions of India VIX history")
+        return {}
+
+    level = float(closes.iloc[-1])
+    percentile = float((closes <= level).sum()) / len(closes) * 100
+    return {
+        "ticker": INDIA_VIX_TICKER,
+        "date": str(closes.index[-1].date()),
+        "level": _round(level),
+        "percentile": _round(percentile, 1),
+        "low": _round(closes.min()),
+        "high": _round(closes.max()),
+        "median": _round(closes.median()),
+        "sessions": int(len(closes)),
+        "lookback": INDIA_VIX_LOOKBACK,
+    }

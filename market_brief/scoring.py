@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from .bias_model import score_core_bias
 from .config import ASIA_MARKETS, EUROPE_MARKETS, US_MARKETS
 
 
@@ -34,6 +35,9 @@ def score_market(data: dict[str, Any]) -> dict[str, Any]:
         "bias": bias,
         "confidence": confidence,
         "components": components,
+        # The hand-specified five-factor model, reported alongside the broad
+        # composite rather than folded into it so the two reads stay comparable.
+        "core_model": score_core_bias(data),
     }
 
 

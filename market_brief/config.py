@@ -80,6 +80,16 @@ INDEX_TECHNICAL_TICKERS = {
 # MA table. Anything longer than the fetched history is reported as N/A.
 MA_PERIODS = (20, 50, 100, 200)
 
+# India VIX history, used to judge today's level against its own recent regime
+# rather than a fixed threshold. NSE's VIX series is only on Yahoo under the
+# bare caret symbol -- the ".NS" suffixed variants 404.
+INDIA_VIX_TICKER = "^INDIAVIX"
+INDIA_VIX_LOOKBACK = "1y"
+# Percentile bands for the regime read: calm in the bottom third of the
+# trailing range, fearful in the top third.
+VIX_CALM_PERCENTILE = 33.0
+VIX_FEAR_PERCENTILE = 67.0
+
 # Bars kept in the dashboard payload per index. Enough for a 200-DMA overlay to
 # be visible without bloating the embedded JSON.
 INDEX_SERIES_BARS = 140
