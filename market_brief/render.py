@@ -53,6 +53,12 @@ def render_markdown(context: dict[str, Any]) -> str:
     lines.append(f"- **Market Bias:** {score['bias']}")
     lines.append(f"- **Score:** {score['score']}")
     lines.append(f"- **Confidence:** {score['confidence']}")
+    core = score.get("core_model") or {}
+    if core:
+        lines.append(
+            f"- **Core 5-Factor Model:** {core.get('bias')} "
+            f"({_signed_score(core.get('score'))} of {core.get('max_score'):g}, {core.get('confidence')} confidence)"
+        )
     lines.append(f"- **Meeting View:** {context['market_view']}")
     lines.append("")
     lines.append("## Expected Opening")
@@ -117,6 +123,7 @@ def render_markdown(context: dict[str, Any]) -> str:
     lines.append("")
     lines.extend(_nifty50_markdown(data.get("nifty50", {})))
     lines.append("")
+    lines.extend(_core_model_markdown(score.get("core_model") or {}))
     lines.append("## Signal Score Breakdown")
     lines.append("")
     lines.append("| Signal | Score | Status | Reason |")
@@ -185,6 +192,7 @@ def render_html(context: dict[str, Any]) -> str:
       --bg-grad: radial-gradient(1200px 600px at 12% -8%, rgba(37,99,235,.14), transparent 60%), radial-gradient(1000px 500px at 100% 0%, rgba(34,197,94,.06), transparent 55%), #0B0F19;
       --card: #111827;
       --elev: rgba(255,255,255,.045);
+      --heat-empty: rgba(148,163,184,.14);
       --elev-strong: rgba(255,255,255,.08);
       --input-bg: #0e1526;
       --text: #F9FAFB;
@@ -207,6 +215,7 @@ def render_html(context: dict[str, Any]) -> str:
       --bg-grad: radial-gradient(1200px 600px at 12% -8%, rgba(37,99,235,.10), transparent 60%), #f5f7fb;
       --card: #ffffff;
       --elev: #f1f5f9;
+      --heat-empty: #e9edf3;
       --elev-strong: #e2e8f0;
       --input-bg: #ffffff;
       --text: #172033;
@@ -355,6 +364,49 @@ def render_html(context: dict[str, Any]) -> str:
   color: #7f1d1d;
 }
 
+/* Calendar activity heatmap — one cell per session, GitHub-contributions style */
+.cal-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 12px; margin: 10px 0 16px; }
+.cal-stat { background: var(--elev); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; text-align: center; }
+.cal-stat .k { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+.cal-stat .v { font-size: 19px; font-weight: 800; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.cal-stat .v.good { color: var(--good); }
+.cal-stat .v.bad { color: var(--bad); }
+.cal-series { margin-bottom: 22px; }
+.cal-series-title { font-weight: 800; font-size: 14.5px; margin: 0 0 2px; }
+.cal-wrap { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 6px; }
+.cal-month { flex: 0 0 auto; }
+.cal-month .m { font-size: 11.5px; color: var(--muted); font-weight: 700; margin-bottom: 5px; text-align: center; }
+.cal-weeks { display: flex; flex-direction: column; gap: 2px; }
+.cal-week { display: flex; gap: 2px; }
+.cal-day { width: 13px; height: 13px; border-radius: 2px; background: var(--heat-empty); transition: transform .12s ease; }
+.cal-day.has { cursor: pointer; }
+.cal-day.has:hover { transform: scale(1.35); }
+.cal-legend { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12px; color: var(--muted); margin-top: 6px; }
+.cal-legend i { width: 13px; height: 13px; border-radius: 2px; display: inline-block; }
+.cal-tip { position: fixed; z-index: 120; pointer-events: none; opacity: 0; transition: opacity .1s ease;
+  background: rgba(15,23,42,.97); color: #e2e8f0; border: 1px solid rgba(148,163,184,.25);
+  border-radius: 10px; padding: 10px 12px; font-size: 12.5px; min-width: 196px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.38); }
+.cal-tip.on { opacity: 1; }
+.cal-tip .d { font-weight: 800; color: #fff; font-size: 13px; margin-bottom: 6px; }
+.cal-tip .r { display: flex; justify-content: space-between; gap: 18px; padding: 2px 0; font-variant-numeric: tabular-nums; }
+.cal-tip .r span { color: #94a3b8; }
+.cal-tip .r b { font-weight: 700; }
+.cal-tip .r b.good { color: #4ade80; }
+.cal-tip .r b.bad { color: #f87171; }
+.cal-tip .r b.flat { color: #cbd5e1; }
+.cal-tip .s { margin-top: 7px; padding-top: 6px; border-top: 1px solid rgba(148,163,184,.2); font-weight: 700; }
+
+/* Diverging intensity bands: s = selling (red), b = buying (green) */
+.hc-s4 { background: #b91c1c; }
+.hc-s3 { background: #ef4444; }
+.hc-s2 { background: #fca5a5; }
+.hc-s1 { background: #fee2e2; }
+.hc-b1 { background: #dcfce7; }
+.hc-b2 { background: #86efac; }
+.hc-b3 { background: #22c55e; }
+.hc-b4 { background: #15803d; }
+
 .pcr-summary-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -362,6 +414,19 @@ def render_html(context: dict[str, Any]) -> str:
   margin-bottom: 14px;
 }
 
+.core-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.core-summary strong { color: var(--text); }
+.core-score { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+.core-score.good { color: var(--good); }
+.core-score.bad { color: var(--bad); }
+.core-score.neutral { color: #b45309; }
+.muted-cell { color: var(--muted); }
 .pcr-mini-card {
   background: #f8fafc;
   border: 1px solid var(--line);
@@ -685,6 +750,10 @@ h1 { position: relative; }
     .flow-row { display: flex; justify-content: space-between; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14px; }
     .flow-row:first-of-type { border-top: 0; }
     .flow-row b { font-variant-numeric: tabular-nums; }
+    .flow-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 10px; font-size: 12.5px; color: var(--muted); }
+    .flow-legend span { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+    .flow-legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+    .flow-legend i.line { height: 3px; border-radius: 2px; width: 16px; }
 
     /* Timeline */
     .timeline { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; }
@@ -817,6 +886,23 @@ h1 { position: relative; }
 
     <h3 class="section-title">🏦 FII / DII Activity <span class="muted" style="font-size:13px;font-weight:500">· provisional, last completed session (₹ Cr)</span></h3>
     <div id="flowCards" class="flow-grid"></div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="card-head">
+        <h2>Day-wise FII / DII Activity</h2>
+        <div class="controls" style="margin:0">
+          <select id="flowRangeFilter" aria-label="Sessions to show">
+            <option value="10">Last 10 sessions</option>
+            <option value="22" selected>Last 22 sessions</option>
+            <option value="60">Last 60 sessions</option>
+            <option value="0">All sessions</option>
+          </select>
+        </div>
+      </div>
+      <div id="flowChartLegend" class="flow-legend"></div>
+      <div class="chart-box tall"><canvas id="flowHistoryChart"></canvas></div>
+      <p class="muted small" style="margin:10px 2px 0">Bars above the line are net buying, below it net selling. Hover a session for the gross buy and sell legs.</p>
+    </div>
 
     <div class="card" style="margin-top:18px">
       <div class="card-head"><h2>🕒 Market Timeline</h2></div>
@@ -1176,6 +1262,14 @@ h1 { position: relative; }
   </section>
 
   <section id="signals" class="panel">
+    <div class="card" style="margin-bottom:18px">
+      <div class="card-head">
+        <h2>Core Bias Model (5 Factor)</h2>
+        <span id="coreModelBias" class="badge info">N/A</span>
+      </div>
+      <div id="coreModelSummary" class="core-summary"></div>
+      <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Factor</th><th>Raw</th><th>Weight</th><th>Weighted</th><th>Status</th><th>Rule Applied</th><th>Reading</th></tr></thead><tbody id="coreModelRows"></tbody></table></div>
+    </div>
     <div class="card">
       <h2>Signal Score Breakdown</h2>
       <div class="controls">
@@ -1195,10 +1289,15 @@ h1 { position: relative; }
 
   <section id="history" class="panel">
     <div class="card">
-      <h2>Historical Bias Trend</h2>
-      <p class="muted">This chart grows automatically after each successful GitHub Action run.</p>
-      <div class="chart-box"><canvas id="historyChart"></canvas></div>
-      <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Date</th><th>Bias</th><th>Score</th><th>Confidence</th><th>FII Net</th><th>DII Net</th><th>Combined</th><th>Nifty PCR</th><th>Top Sector</th></tr></thead><tbody id="historyRows"></tbody></table></div>
+      <div class="card-head">
+        <h2>📅 <span id="calHeatYearLabel">Activity</span> Heatmap</h2>
+        <div class="controls" style="margin:0">
+          <select id="calHeatYear" aria-label="Year"></select>
+        </div>
+      </div>
+      <p class="muted">One cell per completed NSE session, shaded by how hard each side bought or sold. Hover a day for the exact figures.</p>
+      <div id="calHeatmap"></div>
+      <div class="table-wrap" style="margin-top:18px"><table><thead><tr><th>Date</th><th>Bias</th><th>Score</th><th>Confidence</th><th>FII Net</th><th>DII Net</th><th>Combined</th><th>Nifty PCR</th><th>Top Sector</th></tr></thead><tbody id="historyRows"></tbody></table></div>
     </div>
     <div class="card">
   <h2 id="pcrHeading">5-Day Rolling Put-Call Ratio</h2>
@@ -1341,6 +1440,12 @@ function money(value) {
   if (value === null || value === undefined || Number.isNaN(Number(value))) return 'N/A';
   return '₹' + fmt.format(Number(value)) + ' Cr';
 }
+function moneySigned(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return 'N/A';
+  const n = Number(value);
+  // "-₹1,234 Cr", not "₹-1,234 Cr" — same convention as flowCell().
+  return (n < 0 ? '-' : '') + money(Math.abs(n));
+}
 function badgeClass(status) {
   if (!status) return 'info';
   const s = String(status).toLowerCase();
@@ -1351,6 +1456,12 @@ function badgeClass(status) {
 }
 function badge(text) {
   return `<span class="badge ${badgeClass(text)}">${text || 'N/A'}</span>`;
+}
+function signedNum(value) {
+  const n = Number(value || 0);
+  if (!n) return '0';
+  // parseFloat drops the trailing zero so a weight of 1.5 does not read "1.50".
+  return (n > 0 ? '+' : '') + parseFloat(n.toFixed(2));
 }
 function signedClass(value) {
   const n = Number(value || 0);
@@ -1499,57 +1610,6 @@ function drawBarChart(canvasId, rows, labelKey, valueKey, title) {
 function drawScoreChart(canvasId, rows) {
   drawBarChart(canvasId, (rows || []).map(r => ({ name: r.name, score: r.score, status: r.status })), 'name', 'score', 'Signal score by component');
 }
-function drawLineChart(canvasId, history) {
-  const data = (history || []).filter(r => r.score !== null && r.score !== undefined).slice(-60);
-  const labels = data.map(r => String(r.date || '').slice(5));
-  const values = data.map(r => Number(r.score));
-  mountChart(canvasId, {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [{
-        label: 'Signal score',
-        data: values,
-        borderColor: C.brand,
-        backgroundColor: ctx => {
-          const { chartArea, ctx: c } = ctx.chart;
-          if (!chartArea) return 'rgba(37,99,235,.12)';
-          const g = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-          g.addColorStop(0, 'rgba(37,99,235,.28)');
-          g.addColorStop(1, 'rgba(37,99,235,.01)');
-          return g;
-        },
-        fill: true,
-        tension: 0.34,
-        pointRadius: data.length > 30 ? 0 : 3,
-        pointHoverRadius: 6,
-        pointBackgroundColor: values.map(v => v >= 0 ? C.up : C.down),
-        pointBorderColor: '#fff',
-        borderWidth: 2.5
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      scales: {
-        x: { grid: { display: false }, border: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
-        y: { grid: { color: C.grid, drawBorder: false }, border: { display: false }, suggestedMin: -6, suggestedMax: 6 }
-      },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            title: items => 'Date ' + (data[items[0].dataIndex]?.date || ''),
-            label: ctx => 'Score: ' + ctx.parsed.y.toFixed(2)
-          }
-        }
-      }
-    },
-    plugins: [emptyMessagePlugin('History will appear after multiple daily workflow runs.')]
-  });
-}
-
 function renderMetrics() {
   const nse = APP.data.nse_indices || {};
   const flow = APP.data.fii_dii || {};
@@ -2070,6 +2130,44 @@ function drawMacdChart(snap) {
   });
 }
 
+function renderCoreModel() {
+  const core = APP.score.core_model || {};
+  const factors = core.factors || [];
+  const biasEl = document.getElementById('coreModelBias');
+  const summaryEl = document.getElementById('coreModelSummary');
+  const rowsEl = document.getElementById('coreModelRows');
+  if (!biasEl || !summaryEl || !rowsEl) return;
+
+  if (!factors.length) {
+    biasEl.textContent = 'N/A';
+    biasEl.className = 'badge info';
+    summaryEl.innerHTML = '<span>Core bias model not available in this run.</span>';
+    rowsEl.innerHTML = '<tr><td colspan="7">No factors available</td></tr>';
+    return;
+  }
+
+  const total = Number(core.score || 0);
+  biasEl.textContent = core.bias || 'N/A';
+  biasEl.className = 'badge ' + badgeClass(core.bias);
+  summaryEl.innerHTML = `
+    <span class="core-score ${signedClass(total)}">${signedNum(total)} / ${core.max_score}</span>
+    <span><strong>${core.bullish_count}</strong> bullish · <strong>${core.bearish_count}</strong> bearish · <strong>${core.neutral_count}</strong> neutral</span>
+    <span>Factors with data: <strong>${core.available} of ${core.total_factors}</strong></span>
+    <span>Confidence: <strong>${escapeHtml(core.confidence)}</strong></span>
+  `;
+  rowsEl.innerHTML = factors.map(f => `
+    <tr>
+      <td>${escapeHtml(f.name)}</td>
+      <td class="${signedClass(f.score)}">${signedNum(f.score)}</td>
+      <td class="muted-cell">&times;${Number(f.weight)}</td>
+      <td class="${signedClass(f.weighted)}"><strong>${signedNum(f.weighted)}</strong></td>
+      <td>${badge(f.status)}</td>
+      <td>${escapeHtml(f.rule)}</td>
+      <td>${escapeHtml(f.reason)}</td>
+    </tr>
+  `).join('');
+}
+
 function renderSignals() {
   const status = document.getElementById('signalStatusFilter').value;
   const rows = (APP.score.components || []).filter(r => status === 'All' || r.status === status);
@@ -2096,12 +2194,193 @@ function combinedFlow(row) {
   }
   return Number(row.fii_net || 0) + Number(row.dii_net || 0);
 }
+
+/* ================= Calendar activity heatmap (FII / DII) ================= */
+const CAL_MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const CAL_DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+// Bands come from the series' own quantiles rather than fixed rupee cut-offs, so
+// the scale stays readable whether the window is a quiet month or a violent one.
+function heatScale(values) {
+  const asc = (a, b) => a - b;
+  const pos = values.filter(v => v > 0).sort(asc);
+  const neg = values.filter(v => v < 0).map(Math.abs).sort(asc);
+  const q = (arr, p) => arr.length ? arr[Math.min(arr.length - 1, Math.floor(arr.length * p))] : Infinity;
+  return { pos: [q(pos, .25), q(pos, .5), q(pos, .75)], neg: [q(neg, .25), q(neg, .5), q(neg, .75)] };
+}
+function heatBand(value, scale) {
+  const n = Number(value);
+  if (!Number.isFinite(n) || n === 0) return '';
+  if (n < 0) {
+    const a = Math.abs(n);
+    return a >= scale.neg[2] ? 'hc-s4' : a >= scale.neg[1] ? 'hc-s3' : a >= scale.neg[0] ? 'hc-s2' : 'hc-s1';
+  }
+  return n >= scale.pos[2] ? 'hc-b4' : n >= scale.pos[1] ? 'hc-b3' : n >= scale.pos[0] ? 'hc-b2' : 'hc-b1';
+}
+// Spells out how strong a day was, so the colour is never the only cue.
+const BAND_LABEL = {
+  'hc-b4': 'Heavy buying', 'hc-b3': 'Strong buying', 'hc-b2': 'Moderate buying', 'hc-b1': 'Light buying',
+  'hc-s1': 'Light selling', 'hc-s2': 'Moderate selling', 'hc-s3': 'Strong selling', 'hc-s4': 'Heavy selling',
+};
+function calTipEl() {
+  let el = document.getElementById('calTip');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'calTip';
+    el.className = 'cal-tip';
+    document.body.appendChild(el);
+  }
+  return el;
+}
+function calTipRow(label, value) {
+  const n = Number(value);
+  const tone = !Number.isFinite(n) ? 'flat' : n > 0 ? 'good' : n < 0 ? 'bad' : 'flat';
+  // The sign is the point of this tooltip, so positives carry an explicit "+".
+  const text = Number.isFinite(n) ? (n > 0 ? '+' : '') + moneySigned(n) : 'N/A';
+  return `<div class="r"><span>${escapeHtml(label)}</span><b class="${tone}">${text}</b></div>`;
+}
+function calTipShow(cell, event) {
+  const el = calTipEl();
+  const v = Number(cell.dataset.v);
+  const intensity = cell.dataset.i || '';
+  const tone = v > 0 ? 'good' : v < 0 ? 'bad' : 'flat';
+  el.innerHTML = `<div class="d">${escapeHtml(cell.dataset.d)}</div>`
+    + calTipRow(cell.dataset.k + ' net', cell.dataset.v)
+    + calTipRow(cell.dataset.ok + ' net', cell.dataset.ov === '' ? NaN : cell.dataset.ov)
+    + calTipRow('Combined', cell.dataset.c)
+    + (intensity ? `<div class="s"><span class="${tone === 'good' ? 'ind-interp good' : tone === 'bad' ? 'ind-interp bad' : ''}">${escapeHtml(intensity)}</span></div>` : '');
+  el.classList.add('on');
+  calTipMove(event);
+}
+function calTipMove(event) {
+  const el = calTipEl();
+  const pad = 14;
+  const box = el.getBoundingClientRect();
+  let x = event.clientX + pad;
+  let y = event.clientY + pad;
+  if (x + box.width > window.innerWidth - 8) x = event.clientX - box.width - pad;
+  if (y + box.height > window.innerHeight - 8) y = event.clientY - box.height - pad;
+  el.style.left = Math.max(8, x) + 'px';
+  el.style.top = Math.max(8, y) + 'px';
+}
+function calTipHide() {
+  calTipEl().classList.remove('on');
+}
+function calKey(year, month, day) {
+  return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+function calMonthHtml(year, month, byDate, key, scale) {
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  // Monday-first columns, so the trading week reads left to right.
+  const lead = (new Date(year, month, 1).getDay() + 6) % 7;
+  const slots = [];
+  for (let i = 0; i < lead; i++) slots.push(null);
+  for (let d = 1; d <= daysInMonth; d++) slots.push(d);
+  while (slots.length % 7) slots.push(null);
+
+  let weeks = '';
+  for (let i = 0; i < slots.length; i += 7) {
+    const cells = slots.slice(i, i + 7).map(day => {
+      if (day === null) return '<div class="cal-day"></div>';
+      const row = byDate[calKey(year, month, day)];
+      const value = row ? row[key] : null;
+      if (!row || value === null || value === undefined) return '<div class="cal-day"></div>';
+      const band = heatBand(value, scale);
+      const when = `${CAL_DAYS[new Date(year, month, day).getDay()]}, ${String(day).padStart(2, '0')} ${CAL_MONTHS[month]} ${year}`;
+      const other = key === 'fii_net' ? 'dii_net' : 'fii_net';
+      const self = key === 'fii_net' ? 'FII' : 'DII';
+      const otherLabel = key === 'fii_net' ? 'DII' : 'FII';
+      const combined = Number(row.fii_net || 0) + Number(row.dii_net || 0);
+      const attrs = [
+        `data-d="${escapeHtml(when)}"`,
+        `data-k="${self}"`, `data-v="${value}"`,
+        `data-ok="${otherLabel}"`, `data-ov="${row[other] === null || row[other] === undefined ? '' : row[other]}"`,
+        `data-c="${combined}"`, `data-i="${BAND_LABEL[band] || ''}"`,
+      ].join(' ');
+      return `<div class="cal-day has ${band}" ${attrs}></div>`;
+    }).join('');
+    weeks += `<div class="cal-week">${cells}</div>`;
+  }
+  return `<div class="cal-month"><div class="m">${CAL_MONTHS[month]}</div><div class="cal-weeks">${weeks}</div></div>`;
+}
+function calSeriesHtml(title, key, rows, year, byDate) {
+  const values = rows.map(r => r[key]).filter(v => v !== null && v !== undefined).map(Number);
+  const scale = heatScale(values);
+  const buying = values.filter(v => v > 0);
+  const selling = values.filter(v => v < 0);
+  const months = [...new Set(rows.map(r => Number(r._date.slice(5, 7)) - 1))].sort((a, b) => a - b);
+  const stat = (k, v, tone) => `<div class="cal-stat"><div class="k">${k}</div><div class="v ${tone || ''}">${v}</div></div>`;
+  return `
+    <div class="cal-series">
+      <p class="cal-series-title">${escapeHtml(title)}</p>
+      <div class="cal-stats">
+        ${stat('Buying days', buying.length, 'good')}
+        ${stat('Selling days', selling.length, 'bad')}
+        ${stat('Net buy sum', money(sum(buying)), 'good')}
+        ${stat('Net sold sum', money(Math.abs(sum(selling))), 'bad')}
+      </div>
+      <div class="cal-wrap">${months.map(m => calMonthHtml(year, m, byDate, key, scale)).join('')}</div>
+    </div>`;
+}
+function renderActivityHeatmap() {
+  const host = document.getElementById('calHeatmap');
+  const picker = document.getElementById('calHeatYear');
+  if (!host || !picker) return;
+
+  // Keyed on the session NSE stamped, not the day the brief ran.
+  const sessions = fiiDiiSessions()
+    .map(r => ({ ...r, _date: r.session || r.date }))
+    .filter(r => /^\\d{4}-\\d{2}-\\d{2}$/.test(r._date || ''));
+
+  const years = [...new Set(sessions.map(r => r._date.slice(0, 4)))].sort().reverse();
+  if (!years.length) {
+    picker.innerHTML = '';
+    host.innerHTML = '<p class="muted">Activity heatmap will appear once FII/DII history is collected.</p>';
+    return;
+  }
+  if (picker.options.length !== years.length) {
+    picker.innerHTML = years.map(y => `<option value="${y}">${y}</option>`).join('');
+  }
+  const year = years.includes(picker.value) ? picker.value : years[0];
+  picker.value = year;
+  const label = document.getElementById('calHeatYearLabel');
+  if (label) label.textContent = year + ' Activity';
+
+  const rows = sessions.filter(r => r._date.startsWith(year));
+  const byDate = {};
+  rows.forEach(r => { byDate[r._date] = r; });
+
+  if (!host.dataset.tipBound) {
+    host.addEventListener('mouseover', e => {
+      const cell = e.target.closest('.cal-day.has');
+      if (cell) calTipShow(cell, e);
+    });
+    host.addEventListener('mousemove', e => {
+      if (e.target.closest('.cal-day.has')) calTipMove(e);
+    });
+    host.addEventListener('mouseout', e => {
+      const to = e.relatedTarget && e.relatedTarget.closest ? e.relatedTarget.closest('.cal-day.has') : null;
+      if (!to) calTipHide();
+    });
+    host.dataset.tipBound = '1';
+  }
+
+  host.innerHTML =
+    calSeriesHtml('FII / FPI Activity', 'fii_net', rows, Number(year), byDate) +
+    calSeriesHtml('DII Activity', 'dii_net', rows, Number(year), byDate) +
+    `<div class="cal-legend"><span>Selling</span>
+      <i class="hc-s4"></i><i class="hc-s3"></i><i class="hc-s2"></i><i class="hc-s1"></i>
+      <i style="background:var(--heat-empty)"></i>
+      <i class="hc-b1"></i><i class="hc-b2"></i><i class="hc-b3"></i><i class="hc-b4"></i>
+      <span>Buying</span></div>`;
+}
+
 function renderHistory() {
   const rows = APP.history || [];
   document.getElementById('historyRows').innerHTML = rows.slice().reverse().map(r => `
     <tr><td>${escapeHtml(r.date)}</td><td>${badge(r.bias)}</td><td>${num(r.score)}</td><td>${escapeHtml(r.confidence || '')}</td><td>${flowCell(r.fii_net)}</td><td>${flowCell(r.dii_net)}</td><td>${flowCell(combinedFlow(r))}</td><td>${num(r.nifty_pcr)}</td><td>${escapeHtml(r.top_sector || 'N/A')}</td></tr>
   `).join('') || '<tr><td colspan="9">History will appear after workflow runs.</td></tr>';
-  drawLineChart('historyChart', rows);
+  renderActivityHeatmap();
 }
 function renderWarnings() {
   const warnings = APP.warnings || [];
@@ -2135,7 +2414,7 @@ renderMeetingMode();
   const footUpd = document.getElementById('footerUpdated');
   if (footUpd) footUpd.textContent = APP.generated_at ? `Last update ${APP.generated_at}` : 'Last update —';
   document.getElementById('markdownReport').textContent = APP.markdown || '';
-  renderOICards(); renderGlobal(); renderCommodities(); renderCrypto(); renderCurrency(); renderSectors(); renderNifty50(); renderTechnicals(); renderSignals(); renderHistory(); renderWarnings();
+  renderOICards(); renderGlobal(); renderCommodities(); renderCrypto(); renderCurrency(); renderSectors(); renderNifty50(); renderTechnicals(); renderCoreModel(); renderSignals(); renderHistory(); renderWarnings();
   renderHeroStats(); renderAiSummary(); renderLevels(); renderIndicators(); renderFlow(); renderTimeline();
   drawBarChart('globalMiniChart', (APP.data.global_markets || []).slice(0, 8), 'name', 'change_pct', 'Change %');
   drawBarChart('sectorMiniChart', ((APP.data.nse_indices || {}).sectors || []).slice(0, 8), 'name', 'change_pct', 'Change %');
@@ -3316,6 +3595,93 @@ function fiiDiiSessions() {
   });
   return out;
 }
+
+/* Day-wise institutional flow: one bar pair per completed NSE session. */
+const FLOW_COLORS = { fii: '#2563eb', dii: '#7c3aed', net: '#f59e0b' };
+
+function drawFlowHistory() {
+  const canvas = document.getElementById('flowHistoryChart');
+  if (!canvas) return;
+  const select = document.getElementById('flowRangeFilter');
+  const limit = select ? Number(select.value || 22) : 22;
+  const all = fiiDiiSessions();
+  const rows = limit > 0 ? all.slice(-limit) : all;
+
+  const legend = document.getElementById('flowChartLegend');
+  if (legend) {
+    legend.innerHTML = `
+      <span><i style="background:${FLOW_COLORS.fii}"></i>FII / FPI net</span>
+      <span><i style="background:${FLOW_COLORS.dii}"></i>DII net</span>
+      <span><i class="line" style="background:${FLOW_COLORS.net}"></i>Combined net</span>
+      <span>${rows.length} of ${all.length} sessions</span>`;
+  }
+
+  // The session NSE stamped the figures with, not the day the brief ran.
+  const labels = rows.map(r => shortDate(r.session || r.date));
+  const fii = rows.map(r => (r.fii_net === null || r.fii_net === undefined) ? null : Number(r.fii_net));
+  const dii = rows.map(r => (r.dii_net === null || r.dii_net === undefined) ? null : Number(r.dii_net));
+  const net = rows.map((r, i) => (fii[i] === null && dii[i] === null) ? null : Number(fii[i] || 0) + Number(dii[i] || 0));
+
+  const side = v => (v === null || v === undefined) ? 'no data' : Number(v) > 0 ? 'net buying' : Number(v) < 0 ? 'net selling' : 'flat';
+  const leg = (row, who) => {
+    const buy = row[who + '_buy'];
+    const sell = row[who + '_sell'];
+    if (buy === null || buy === undefined || sell === null || sell === undefined) return null;
+    return `bought ${moneySigned(buy)}, sold ${moneySigned(sell)}`;
+  };
+
+  mountChart('flowHistoryChart', {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'FII / FPI net', data: fii, backgroundColor: FLOW_COLORS.fii + 'cc', borderColor: FLOW_COLORS.fii,
+          borderWidth: 1, borderRadius: 4, borderSkipped: false, maxBarThickness: 18, order: 2 },
+        { label: 'DII net', data: dii, backgroundColor: FLOW_COLORS.dii + 'cc', borderColor: FLOW_COLORS.dii,
+          borderWidth: 1, borderRadius: 4, borderSkipped: false, maxBarThickness: 18, order: 2 },
+        { label: 'Combined net', data: net, type: 'line', borderColor: FLOW_COLORS.net, backgroundColor: FLOW_COLORS.net,
+          borderWidth: 2, pointRadius: 2, pointHoverRadius: 5, tension: 0.25, order: 1 }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { stacked: false, grid: { display: false }, border: { display: false },
+             ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 12 } },
+        y: { grid: { color: C.grid }, border: { display: false },
+             ticks: { callback: v => moneySigned(v) } }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: items => 'Session ' + (rows[items[0].dataIndex] ? (rows[items[0].dataIndex].session || rows[items[0].dataIndex].date) : ''),
+            label: ctx => {
+              const v = ctx.parsed.y;
+              if (v === null || v === undefined) return ctx.dataset.label + ': no data';
+              return `${ctx.dataset.label}: ${moneySigned(v)} (${side(v)})`;
+            },
+            afterBody: items => {
+              const row = rows[items[0].dataIndex];
+              if (!row) return [];
+              const out = [];
+              const f = leg(row, 'fii');
+              const d = leg(row, 'dii');
+              if (f) out.push('FII ' + f);
+              if (d) out.push('DII ' + d);
+              if (!out.length) out.push('Gross buy/sell not recorded for this session');
+              return out;
+            }
+          }
+        }
+      }
+    },
+    plugins: [emptyMessagePlugin('No FII/DII history available')]
+  });
+}
+
 function renderFlow() {
   const el = document.getElementById('flowCards');
   if (!el) return;
@@ -3355,6 +3721,7 @@ function renderFlow() {
       <div class="flow-row"><span>Bias impact</span><b class="${combinedToday >= 0 ? 'ind-interp good' : 'ind-interp bad'}">${combinedToday >= 0 ? 'Supportive' : 'Bearish'}</b></div>
       <div class="flow-row"><span>Source</span><span class="muted small">${escapeHtml((flow.source || 'N/A')).toUpperCase()} · provisional</span></div>
     </div>`;
+  drawFlowHistory();
 }
 
 function renderTimeline() {
@@ -3509,6 +3876,8 @@ document.getElementById('gasCsv')?.addEventListener('click', downloadGasCsv);
 ['technicalIndex','technicalMaOverlay'].forEach(id => document.getElementById(id)?.addEventListener('change', renderTechnicals));
 document.getElementById('signalStatusFilter').addEventListener('change', renderSignals);
 document.getElementById('pcrWindow')?.addEventListener('change', renderPcrRolling);
+document.getElementById('flowRangeFilter')?.addEventListener('change', drawFlowHistory);
+document.getElementById('calHeatYear')?.addEventListener('change', renderActivityHeatmap);
 document.getElementById('copyReportBtn').addEventListener('click', () => copyText(APP.markdown || ''));
 document.getElementById('downloadReportBtn').addEventListener('click', () => downloadText('morning_market_brief.md', APP.markdown || ''));
 
@@ -3532,6 +3901,48 @@ def save_outputs(context: dict[str, Any], report_path: Path, dashboard_path: Pat
     report_path.write_text(markdown, encoding="utf-8")
     dashboard_path.write_text(html, encoding="utf-8")
     docs_path.write_text(html, encoding="utf-8")
+
+
+def _signed_score(value: Any) -> str:
+    """Signed score text, with a bare "0" rather than a misleading "+0".
+
+    Weighted factor scores are fractional, so trailing zeros are trimmed rather
+    than rounded away -- "+1.5" must not render as "+2".
+    """
+    number = float(value or 0)
+    if not number:
+        return "0"
+    return f"{number:+g}"
+
+
+def _core_model_markdown(core: dict[str, Any]) -> list[str]:
+    """The five-factor core bias model: one table row per rule that fired."""
+    heading = "## Core Bias Model (5 Factor)"
+    if not core or not core.get("factors"):
+        return [heading, "", "Core bias model not available in this run.", ""]
+
+    lines = [heading, ""]
+    lines.append(
+        f"- **Model Bias:** {core.get('bias')} "
+        f"(**{_signed_score(core.get('score'))}** of a possible {core.get('max_score'):g})"
+    )
+    lines.append(
+        f"- **Factors scored:** {core.get('available')} of {core.get('total_factors')} "
+        f"— {core.get('bullish_count')} bullish, {core.get('bearish_count')} bearish, "
+        f"{core.get('neutral_count')} neutral"
+    )
+    lines.append(f"- **Confidence:** {core.get('confidence')}")
+    lines.append("")
+    lines.append("| Factor | Raw | Weight | Weighted | Status | Rule Applied | Reading |")
+    lines.append("|---|---:|---:|---:|---|---|---|")
+    for factor in core["factors"]:
+        lines.append(
+            f"| {factor['name']} | {_signed_score(factor['score'])} "
+            f"| x{factor['weight']:g} | {_signed_score(factor['weighted'])} | {factor['status']} "
+            f"| {factor['rule']} | {factor['reason']} |"
+        )
+    lines.append("")
+    return lines
 
 
 def _dashboard_payload(context: dict[str, Any], markdown: str) -> dict[str, Any]:

@@ -35,7 +35,7 @@ from .eia import fetch_natural_gas_storage
 from .nse_client import NSEClient
 from .petroleum import fetch_petroleum_status
 from .sectors import resolve_sectors, sector_counts
-from .technicals import fetch_index_technicals, fetch_nifty50_pivots
+from .technicals import fetch_index_technicals, fetch_nifty50_pivots, fetch_vix_regime
 from .utils import now_ist, safe_get, to_float
 
 
@@ -746,6 +746,7 @@ def build_data_bundle(event_date: str | date | None = None) -> dict[str, Any]:
     banknifty_options = fetch_option_chain(client, "BANKNIFTY", warnings, nse_indices.get("banknifty_spot"))
     nifty50 = fetch_nifty50_pivots(warnings)
     index_technicals = fetch_index_technicals(warnings)
+    vix_regime = fetch_vix_regime(warnings)
     event_calendar = fetch_event_calendar(client, warnings, event_date)
     # Weekly, not daily: EIA publishes Thursday 20:00 IST, so most mornings
     # this re-reads the same release. Cached so a failed fetch keeps the
@@ -770,6 +771,7 @@ def build_data_bundle(event_date: str | date | None = None) -> dict[str, Any]:
         },
         "nifty50": nifty50,
         "index_technicals": index_technicals,
+        "vix_regime": vix_regime,
         "event_calendar": event_calendar,
         "natural_gas": natural_gas,
         "petroleum": petroleum,
