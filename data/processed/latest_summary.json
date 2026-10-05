@@ -1,7 +1,7 @@
 {
   "score": {
-    "score": -6,
-    "bias": "Bearish",
+    "score": 2,
+    "bias": "Mild Bullish",
     "confidence": "High",
     "components": [
       {
@@ -12,21 +12,21 @@
       },
       {
         "name": "US markets",
-        "score": 0,
-        "status": "Neutral",
-        "reason": "Average move 0.09% across 3 indices."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Average move 0.80% across 3 indices."
       },
       {
         "name": "Europe markets",
-        "score": -1,
-        "status": "Bearish",
-        "reason": "Average move -1.44% across 3 indices."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Average move 0.76% across 3 indices."
       },
       {
         "name": "Asia markets",
-        "score": -1,
-        "status": "Bearish",
-        "reason": "Average move -1.86% across 2 indices."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Average move 1.06% across 2 indices."
       },
       {
         "name": "FII/DII flow",
@@ -60,21 +60,21 @@
       },
       {
         "name": "Global commodities",
-        "score": 0,
-        "status": "Neutral",
-        "reason": "Crude/Brent average move 0.62%, commodity pressure is limited."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Crude/Brent average down -1.09%, which is supportive for India market sentiment."
       },
       {
         "name": "Crypto risk appetite",
-        "score": 0,
-        "status": "Neutral",
-        "reason": "Major crypto basket average move 1.07% across 5 coins."
+        "score": 1,
+        "status": "Bullish",
+        "reason": "Major crypto basket average move 3.42% across 5 coins."
       },
       {
         "name": "Currency pressure",
-        "score": -1,
-        "status": "Bearish",
-        "reason": "DXY/USDINR pressure average 0.49%; rising dollar/rupee pressure is usually negative for India."
+        "score": 0,
+        "status": "Neutral",
+        "reason": "DXY/USDINR pressure average 0.11%; rising dollar/rupee pressure is usually negative for India."
       }
     ]
   },
@@ -84,73 +84,73 @@
         "name": "Nasdaq",
         "ticker": "^IXIC",
         "region": "US",
-        "close": 26871.595703125,
-        "change": 10.53515625,
-        "change_pct": 0.03922092439952321,
-        "date": "2026-10-01"
+        "close": 27190.859375,
+        "change": 319.259765625,
+        "change_pct": 1.1880936388826524,
+        "date": "2026-10-02"
       },
       {
         "name": "Dow Jones",
         "ticker": "^DJI",
         "region": "US",
-        "close": 50926.55859375,
-        "change": 20.5078125,
-        "change_pct": 0.04028560885252083,
-        "date": "2026-10-01"
+        "close": 51176.9609375,
+        "change": 250.40234375,
+        "change_pct": 0.4916930392793728,
+        "date": "2026-10-02"
       },
       {
         "name": "S&P 500",
         "ticker": "^GSPC",
         "region": "US",
-        "close": 7666.4501953125,
-        "change": 14.91015625,
-        "change_pct": 0.19486477459283946,
-        "date": "2026-10-01"
+        "close": 7722.72021484375,
+        "change": 56.27001953125,
+        "change_pct": 0.7339775006384989,
+        "date": "2026-10-02"
       },
       {
         "name": "FTSE 100",
         "ticker": "^FTSE",
         "region": "Europe",
-        "close": 10428.2998046875,
-        "change": -177.7001953125,
-        "change_pct": -1.6754685584810483,
-        "date": "2026-10-01"
+        "close": 10462.0,
+        "change": 33.7001953125,
+        "change_pct": 0.3231609748825195,
+        "date": "2026-10-02"
       },
       {
         "name": "CAC 40",
         "ticker": "^FCHI",
         "region": "Europe",
-        "close": 7835.31005859375,
-        "change": -129.19970703125,
-        "change_pct": -1.6221928383951363,
-        "date": "2026-10-01"
+        "close": 7897.18994140625,
+        "change": 61.8798828125,
+        "change_pct": 0.7897566573594658,
+        "date": "2026-10-02"
       },
       {
         "name": "DAX",
         "ticker": "^GDAXI",
         "region": "Europe",
-        "close": 24939.349609375,
-        "change": -259.83984375,
-        "change_pct": -1.0311436573519501,
-        "date": "2026-10-01"
+        "close": 25231.19921875,
+        "change": 291.849609375,
+        "change_pct": 1.1702374518431318,
+        "date": "2026-10-02"
       },
       {
         "name": "Hang Seng",
         "ticker": "^HSI",
         "region": "Asia",
-        "close": 23890.759765625,
-        "change": -722.509765625,
-        "change_pct": -2.935448152094026,
-        "date": "2026-10-02"
+        "close": 23917.509765625,
+        "change": -54.779296875,
+        "change_pct": -0.22851091413164876,
+        "date": "2026-10-05"
       },
       {
         "name": "Nikkei 225",
         "ticker": "^N225",
         "region": "Asia",
-        "close": 68421.796875,
-        "change": -534.921875,
-        "change_pct": -0.7757356856542713,
-        "date": "2026-10-02"
+        "close": 69910.7421875,
+        "change": 1601.28125,
+        "change_pct": 2.3441573510074956,
+        "date": "2026-10-05"
       }
     ],
     "commodities": [
@@ -158,55 +158,55 @@
         "name": "Gold",
         "ticker": "GC=F",
         "group": "Commodities",
-        "close": 4185.89990234375,
-        "change": -0.80029296875,
-        "change_pct": -0.01911512483377772,
-        "date": "2026-10-01"
+        "close": 4188.60009765625,
+        "change": 26.30029296875,
+        "change_pct": 0.6318692598531978,
+        "date": "2026-10-04"
       },
       {
         "name": "Silver",
         "ticker": "SI=F",
         "group": "Commodities",
-        "close": 60.95000076293945,
-        "change": 0.8520011901855469,
-        "change_pct": 1.4176864392202015,
-        "date": "2026-10-01"
+        "close": 61.744998931884766,
+        "change": 1.7679977416992188,
+        "change_pct": 2.947792831610475,
+        "date": "2026-10-04"
       },
       {
         "name": "Crude Oil WTI",
         "ticker": "CL=F",
         "group": "Commodities",
-        "close": 92.68000030517578,
-        "change": 2.2600021362304688,
-        "change_pct": 2.4994494381738055,
-        "date": "2026-10-01"
+        "close": 89.94000244140625,
+        "change": -1.1699981689453125,
+        "change_pct": -1.2841599836542883,
+        "date": "2026-10-04"
       },
       {
         "name": "Copper",
         "ticker": "HG=F",
         "group": "Commodities",
-        "close": 6.5329999923706055,
-        "change": -0.026000022888183594,
-        "change_pct": -0.39640223856833984,
-        "date": "2026-10-01"
+        "close": 6.61899995803833,
+        "change": 0.1269998550415039,
+        "change_pct": 1.9562515869782324,
+        "date": "2026-10-04"
       },
       {
         "name": "Brent Oil",
         "ticker": "BZ=F",
         "group": "Commodities",
-        "close": 102.2300033569336,
-        "change": -1.2999954223632812,
-        "change_pct": -1.2556702769161476,
-        "date": "2026-10-01"
+        "close": 101.33999633789062,
+        "change": -0.910003662109375,
+        "change_pct": -0.8899791316473106,
+        "date": "2026-10-04"
       },
       {
         "name": "Natural Gas",
         "ticker": "NG=F",
         "group": "Commodities",
-        "close": 2.933000087738037,
-        "change": -0.09299993515014648,
-        "change_pct": -3.073362010796753,
-        "date": "2026-10-01"
+        "close": 3.0350000858306885,
+        "change": 0.0,
+        "change_pct": 0.0,
+        "date": "2026-10-04"
       }
     ],
     "crypto": [
@@ -214,46 +214,46 @@
         "name": "Bitcoin",
         "ticker": "BTC-USD",
         "group": "Crypto",
-        "close": 84927.96875,
-        "change": 1374.1171875,
-        "change_pct": 1.6445886835894479,
-        "date": "2026-10-02"
+        "close": 86562.953125,
+        "change": 1799.375,
+        "change_pct": 2.1228162375902535,
+        "date": "2026-10-05"
       },
       {
         "name": "Ethereum",
         "ticker": "ETH-USD",
         "group": "Crypto",
-        "close": 2714.139892578125,
-        "change": 30.46044921875,
-        "change_pct": 1.1350256191782813,
-        "date": "2026-10-02"
+        "close": 2733.06005859375,
+        "change": 45.8046875,
+        "change_pct": 1.704515618154923,
+        "date": "2026-10-05"
       },
       {
         "name": "Solana",
         "ticker": "SOL-USD",
         "group": "Crypto",
-        "close": 119.7699966430664,
-        "change": 1.7751846313476562,
-        "change_pct": 1.5044599004669394,
-        "date": "2026-10-02"
+        "close": 121.41999816894531,
+        "change": 1.7749404907226562,
+        "change_pct": 1.4835050650368187,
+        "date": "2026-10-05"
       },
       {
         "name": "Cardano",
         "ticker": "ADA-USD",
         "group": "Crypto",
-        "close": 0.24751000106334686,
-        "change": 0.0009170025587081909,
-        "change_pct": 0.37186885445611756,
-        "date": "2026-10-02"
+        "close": 0.266759991645813,
+        "change": 0.022551998496055603,
+        "change_pct": 9.23475034751458,
+        "date": "2026-10-05"
       },
       {
         "name": "Ripple",
         "ticker": "XRP-USD",
         "group": "Crypto",
-        "close": 1.4987000226974487,
-        "change": 0.010306000709533691,
-        "change_pct": 0.6924242208235214,
-        "date": "2026-10-02"
+        "close": 1.5246000289916992,
+        "change": 0.03809797763824463,
+        "change_pct": 2.5629280231101306,
+        "date": "2026-10-05"
       }
     ],
     "currencies": [
@@ -261,55 +261,55 @@
         "name": "GBP/USD",
         "ticker": "GBPUSD=X",
         "group": "Currency",
-        "close": 1.3198009729385376,
-        "change": -0.006634950637817383,
-        "change_pct": -0.5002089071840076,
-        "date": "2026-10-02"
+        "close": 1.3221042156219482,
+        "change": 0.002146482467651367,
+        "change_pct": 0.1626175152231525,
+        "date": "2026-10-05"
       },
       {
         "name": "EUR/USD",
         "ticker": "EURUSD=X",
         "group": "Currency",
-        "close": 1.12447988986969,
-        "change": -0.008240938186645508,
-        "change_pct": -0.7275347978536197,
-        "date": "2026-10-02"
+        "close": 1.1218308210372925,
+        "change": -0.0031551122665405273,
+        "change_pct": -0.2804579304627095,
+        "date": "2026-10-05"
       },
       {
         "name": "USD/CHF",
         "ticker": "CHF=X",
         "group": "Currency",
-        "close": 0.8311300277709961,
-        "change": -0.0045299530029296875,
-        "change_pct": -0.5420808830326401,
-        "date": "2026-10-02"
+        "close": 0.8298599720001221,
+        "change": -0.000670015811920166,
+        "change_pct": -0.08067328353612654,
+        "date": "2026-10-05"
       },
       {
         "name": "USD/JPY",
         "ticker": "JPY=X",
         "group": "Currency",
-        "close": 157.92999267578125,
-        "change": 0.3719940185546875,
-        "change_pct": 0.23609973579568924,
-        "date": "2026-10-02"
+        "close": 157.80799865722656,
+        "change": -0.1190032958984375,
+        "change_pct": -0.07535335593450915,
+        "date": "2026-10-05"
       },
       {
         "name": "DXY",
         "ticker": "DX-Y.NYB",
         "group": "Currency",
-        "close": 102.03600311279297,
-        "change": 0.5860061645507812,
-        "change_pct": 0.5776305393579757,
-        "date": "2026-10-01"
+        "close": 102.0770034790039,
+        "change": 0.147003173828125,
+        "change_pct": 0.14421973254979034,
+        "date": "2026-10-04"
       },
       {
         "name": "USD/INR",
         "ticker": "INR=X",
         "group": "Currency",
-        "close": 96.30500030517578,
-        "change": 0.377899169921875,
-        "change_pct": 0.39394411532258256,
-        "date": "2026-10-02"
+        "close": 96.30000305175781,
+        "change": 0.07520294189453125,
+        "change_pct": 0.0781533885325502,
+        "date": "2026-10-05"
       }
     ],
     "nse_indices": {
@@ -3266,6 +3266,31 @@
           "zone": "Pivot - R1"
         },
         {
+          "symbol": "SBILIFE",
+          "name": "SBI Life",
+          "sector": "Financials",
+          "date": "2026-10-01",
+          "close": 1721.6,
+          "prev_close": 1696.4,
+          "high": 1730.3,
+          "low": 1674.8,
+          "change": 25.2,
+          "change_pct": 1.49,
+          "week_pct": -1.9,
+          "month_pct": 0.1,
+          "rsi": 46.6,
+          "volume": 3329860.0,
+          "pivot": 1708.9,
+          "r1": 1743.0,
+          "r2": 1764.4,
+          "r3": 1798.5,
+          "s1": 1687.5,
+          "s2": 1653.4,
+          "s3": 1632.0,
+          "vs_pivot_pct": 0.74,
+          "zone": "Pivot - R1"
+        },
+        {
           "symbol": "MAXHEALTH",
           "name": "Max Healthcare",
           "sector": "Healthcare",
@@ -3516,6 +3541,31 @@
           "zone": "Pivot - R1"
         },
         {
+          "symbol": "CIPLA",
+          "name": "Cipla",
+          "sector": "Pharma",
+          "date": "2026-10-01",
+          "close": 1344.0,
+          "prev_close": 1346.0,
+          "high": 1359.4,
+          "low": 1333.4,
+          "change": -2.0,
+          "change_pct": -0.15,
+          "week_pct": -3.93,
+          "month_pct": -4.87,
+          "rsi": 34.8,
+          "volume": 921789.0,
+          "pivot": 1345.6,
+          "r1": 1357.8,
+          "r2": 1371.6,
+          "r3": 1383.8,
+          "s1": 1331.8,
+          "s2": 1319.6,
+          "s3": 1305.8,
+          "vs_pivot_pct": -0.12,
+          "zone": "S1 - Pivot"
+        },
+        {
           "symbol": "NESTLEIND",
           "name": "Nestle India",
           "sector": "FMCG",
@@ -3641,6 +3691,31 @@
           "zone": "S1 - Pivot"
         },
         {
+          "symbol": "SUNPHARMA",
+          "name": "Sun Pharma",
+          "sector": "Pharma",
+          "date": "2026-10-01",
+          "close": 1801.0,
+          "prev_close": 1816.6,
+          "high": 1828.7,
+          "low": 1792.6,
+          "change": -15.6,
+          "change_pct": -0.86,
+          "week_pct": -2.64,
+          "month_pct": -6.77,
+          "rsi": 36.7,
+          "volume": 2314700.0,
+          "pivot": 1807.43,
+          "r1": 1822.27,
+          "r2": 1843.53,
+          "r3": 1858.37,
+          "s1": 1786.17,
+          "s2": 1771.33,
+          "s3": 1750.07,
+          "vs_pivot_pct": -0.36,
+          "zone": "S1 - Pivot"
+        },
+        {
           "symbol": "BHARTIARTL",
           "name": "Bharti Airtel",
           "sector": "Telecom",
@@ -3728,7 +3803,7 @@
           "change_pct": -1.16,
           "week_pct": -3.43,
           "month_pct": -10.19,
-          "rsi": 32.0,
+          "rsi": 32.1,
           "volume": 5698769.0,
           "pivot": 947.18,
           "r1": 957.07,
@@ -3739,31 +3814,6 @@
           "s3": 919.77,
           "vs_pivot_pct": 0.12,
           "zone": "Pivot - R1"
-        },
-        {
-          "symbol": "GRASIM",
-          "name": "Grasim Industries",
-          "sector": "Materials",
-          "date": "2026-09-30",
-          "close": 3061.9,
-          "prev_close": 3100.0,
-          "high": 3112.3,
-          "low": 3046.4,
-          "change": -38.1,
-          "change_pct": -1.23,
-          "week_pct": -3.97,
-          "month_pct": -7.36,
-          "rsi": 34.1,
-          "volume": 448156.0,
-          "pivot": 3073.53,
-          "r1": 3100.67,
-          "r2": 3139.43,
-          "r3": 3166.57,
-          "s1": 3034.77,
-          "s2": 3007.63,
-          "s3": 2968.87,
-          "vs_pivot_pct": -0.38,
-          "zone": "S1 - Pivot"
         },
         {
           "symbol": "BEL",
@@ -4041,31 +4091,6 @@
           "zone": "S1 - Pivot"
         },
         {
-          "symbol": "SBILIFE",
-          "name": "SBI Life",
-          "sector": "Financials",
-          "date": "2026-09-30",
-          "close": 1696.4,
-          "prev_close": 1735.0,
-          "high": 1729.5,
-          "low": 1681.0,
-          "change": -38.6,
-          "change_pct": -2.22,
-          "week_pct": -3.61,
-          "month_pct": -2.47,
-          "rsi": 41.3,
-          "volume": 1813203.0,
-          "pivot": 1702.3,
-          "r1": 1723.6,
-          "r2": 1750.8,
-          "r3": 1772.1,
-          "s1": 1675.1,
-          "s2": 1653.8,
-          "s3": 1626.6,
-          "vs_pivot_pct": -0.35,
-          "zone": "S1 - Pivot"
-        },
-        {
           "symbol": "ULTRACEMCO",
           "name": "UltraTech Cement",
           "sector": "Materials",
@@ -4103,7 +4128,7 @@
           "change_pct": -2.28,
           "week_pct": -4.45,
           "month_pct": -4.59,
-          "rsi": 34.6,
+          "rsi": 34.7,
           "volume": 10976701.0,
           "pivot": 255.3,
           "r1": 258.25,
@@ -4163,56 +4188,6 @@
           "s2": 308.47,
           "s3": 303.88,
           "vs_pivot_pct": -0.4,
-          "zone": "S1 - Pivot"
-        },
-        {
-          "symbol": "CIPLA",
-          "name": "Cipla",
-          "sector": "Pharma",
-          "date": "2026-09-30",
-          "close": 1346.0,
-          "prev_close": 1379.3,
-          "high": 1384.0,
-          "low": 1346.0,
-          "change": -33.3,
-          "change_pct": -2.41,
-          "week_pct": -2.68,
-          "month_pct": -5.41,
-          "rsi": 35.2,
-          "volume": 1063964.0,
-          "pivot": 1358.67,
-          "r1": 1371.33,
-          "r2": 1396.67,
-          "r3": 1409.33,
-          "s1": 1333.33,
-          "s2": 1320.67,
-          "s3": 1295.33,
-          "vs_pivot_pct": -0.93,
-          "zone": "S1 - Pivot"
-        },
-        {
-          "symbol": "SUNPHARMA",
-          "name": "Sun Pharma",
-          "sector": "Pharma",
-          "date": "2026-09-30",
-          "close": 1816.6,
-          "prev_close": 1865.0,
-          "high": 1863.6,
-          "low": 1814.2,
-          "change": -48.4,
-          "change_pct": -2.6,
-          "week_pct": -2.6,
-          "month_pct": -5.83,
-          "rsi": 39.1,
-          "volume": 2401495.0,
-          "pivot": 1831.47,
-          "r1": 1848.73,
-          "r2": 1880.87,
-          "r3": 1898.13,
-          "s1": 1799.33,
-          "s2": 1782.07,
-          "s3": 1749.93,
-          "vs_pivot_pct": -0.81,
           "zone": "S1 - Pivot"
         },
         {
@@ -4313,6 +4288,31 @@
           "s2": 6662.67,
           "s3": 6485.33,
           "vs_pivot_pct": -0.7,
+          "zone": "S1 - Pivot"
+        },
+        {
+          "symbol": "GRASIM",
+          "name": "Grasim Industries",
+          "sector": "Materials",
+          "date": "2026-10-01",
+          "close": 2962.0,
+          "prev_close": 3061.9,
+          "high": 3045.0,
+          "low": 2944.4,
+          "change": -99.9,
+          "change_pct": -3.26,
+          "week_pct": -6.46,
+          "month_pct": -10.1,
+          "rsi": 27.8,
+          "volume": 1385746.0,
+          "pivot": 2983.8,
+          "r1": 3023.2,
+          "r2": 3084.4,
+          "r3": 3123.8,
+          "s1": 2922.6,
+          "s2": 2883.2,
+          "s3": 2822.0,
+          "vs_pivot_pct": -0.73,
           "zone": "S1 - Pivot"
         },
         {
@@ -4461,10 +4461,10 @@
         {
           "sector": "Financials",
           "count": 11,
-          "change_pct": -0.61,
-          "week_pct": -1.62,
-          "month_pct": -5.57,
-          "advancing": 4
+          "change_pct": -0.27,
+          "week_pct": -1.46,
+          "month_pct": -5.34,
+          "advancing": 5
         },
         {
           "sector": "Telecom",
@@ -4472,6 +4472,14 @@
           "change_pct": -0.9,
           "week_pct": -3.05,
           "month_pct": -6.53,
+          "advancing": 0
+        },
+        {
+          "sector": "Pharma",
+          "count": 3,
+          "change_pct": -1.06,
+          "week_pct": -2.03,
+          "month_pct": -2.45,
           "advancing": 0
         },
         {
@@ -4523,14 +4531,6 @@
           "advancing": 1
         },
         {
-          "sector": "Materials",
-          "count": 2,
-          "change_pct": -1.74,
-          "week_pct": -3.55,
-          "month_pct": -6.68,
-          "advancing": 0
-        },
-        {
           "sector": "Power",
           "count": 2,
           "change_pct": -2.33,
@@ -4539,11 +4539,11 @@
           "advancing": 0
         },
         {
-          "sector": "Pharma",
-          "count": 3,
-          "change_pct": -2.39,
-          "week_pct": -1.6,
-          "month_pct": -2.31,
+          "sector": "Materials",
+          "count": 2,
+          "change_pct": -2.75,
+          "week_pct": -4.79,
+          "month_pct": -8.04,
           "advancing": 0
         },
         {
@@ -4572,13 +4572,13 @@
         }
       ],
       "breadth": {
-        "advancing": 13,
-        "declining": 37,
+        "advancing": 14,
+        "declining": 36,
         "unchanged": 0,
-        "above_pivot": 16,
-        "avg_change_pct": -1.28,
-        "avg_week_pct": -3.19,
-        "avg_month_pct": -6.24
+        "above_pivot": 17,
+        "avg_change_pct": -1.16,
+        "avg_week_pct": -3.23,
+        "avg_month_pct": -6.25
       }
     },
     "index_technicals": {
@@ -4611,14 +4611,14 @@
           {
             "period": 100,
             "sma": 23851.82,
-            "ema": 23875.95,
+            "ema": 23875.92,
             "distance_pct": -5.99,
             "position": "Below"
           },
           {
             "period": 200,
             "sma": 24355.76,
-            "ema": 24175.49,
+            "ema": 24171.62,
             "distance_pct": -7.94,
             "position": "Below"
           }
@@ -6656,14 +6656,14 @@
           {
             "period": 100,
             "sma": 56532.3,
-            "ema": 56670.16,
+            "ema": 56670.1,
             "distance_pct": -3.68,
             "position": "Below"
           },
           {
             "period": 200,
             "sma": 57129.55,
-            "ema": 56634.33,
+            "ema": 56626.62,
             "distance_pct": -4.69,
             "position": "Below"
           }
@@ -8674,24 +8674,113 @@
       }
     },
     "event_calendar": {
-      "date": "2026-10-02",
-      "date_label": "02 Oct 2026",
-      "weekday": "Friday",
+      "date": "2026-10-05",
+      "date_label": "05 Oct 2026",
+      "weekday": "Monday",
       "source": "nse_ranged",
-      "total": 0,
+      "total": 5,
       "nifty50_count": 0,
-      "category_counts": [],
-      "sector_counts": [],
-      "purpose_counts": [],
-      "events": []
+      "category_counts": [
+        {
+          "name": "Results",
+          "count": 3
+        },
+        {
+          "name": "Fund Raising",
+          "count": 2
+        }
+      ],
+      "sector_counts": [
+        {
+          "name": "Auto",
+          "count": 1
+        },
+        {
+          "name": "Capital Goods",
+          "count": 1
+        },
+        {
+          "name": "Consumer",
+          "count": 1
+        },
+        {
+          "name": "Infrastructure",
+          "count": 1
+        },
+        {
+          "name": "Power",
+          "count": 1
+        }
+      ],
+      "purpose_counts": [
+        {
+          "name": "Financial Results",
+          "count": 3
+        },
+        {
+          "name": "Fund Raising",
+          "count": 1
+        },
+        {
+          "name": "Fund Raising/Other business matters",
+          "count": 1
+        }
+      ],
+      "events": [
+        {
+          "symbol": "OLAELEC",
+          "company": "Ola Electric Mobility Limited",
+          "purpose": "Fund Raising",
+          "category": "Fund Raising",
+          "description": "The Board Meeting is scheduled on Monday, October 05, 2026 or after the date of receipt of in-principle approval from the stock exchanges where the securities of the Company are listed or such other regulatory authorities as may be required, whichever is later, inter alia, to consider, discuss and decide various matters in connection with the Rights Issue.",
+          "is_nifty50": false,
+          "sector": "Auto"
+        },
+        {
+          "symbol": "RENTOMOJO",
+          "company": "Rentomojo Limited",
+          "purpose": "Financial Results",
+          "category": "Results",
+          "description": "To consider and approve the financial results for the period ended Jun 30, 2026",
+          "is_nifty50": false,
+          "sector": "Capital Goods"
+        },
+        {
+          "symbol": "DPABHUSHAN",
+          "company": "D. P. Abhushan Limited",
+          "purpose": "Fund Raising/Other business matters",
+          "category": "Fund Raising",
+          "description": "Board Meeting Intimation for Considering Raising Of Funds By Issuance Of Equity Shares And/Or Warrants, By Way Of A Private Placement Through A Preferential Issue",
+          "is_nifty50": false,
+          "sector": "Consumer"
+        },
+        {
+          "symbol": "LCCPROJECT",
+          "company": "LCC Projects Limited",
+          "purpose": "Financial Results",
+          "category": "Results",
+          "description": "To consider and approve the Standalone and Consolidated un-audited financial results along with the Limited Review Report for the quarter ended June 30, 2026",
+          "is_nifty50": false,
+          "sector": "Infrastructure"
+        },
+        {
+          "symbol": "STEAMHOUSE",
+          "company": "Steamhouse India Limited",
+          "purpose": "Financial Results",
+          "category": "Results",
+          "description": "To consider and approve the financial results for the period ended Jun 30, 2026",
+          "is_nifty50": false,
+          "sector": "Power"
+        }
+      ]
     },
     "natural_gas": {
       "source": "eia_wngsr",
       "title": "Working Gas in Underground Storage, Lower 48",
       "report_url": "https://ir.eia.gov/ngs/ngs.html",
       "landing_url": "https://www.eia.gov/naturalgas/reports.php#/T202",
-      "fetched_at": "02 Oct 2026, 07:50 AM IST",
-      "fetched_at_iso": "2026-10-02T07:50:28.570121+05:30",
+      "fetched_at": "05 Oct 2026, 07:50 AM IST",
+      "fetched_at_iso": "2026-10-05T07:50:29.999822+05:30",
       "released_at": "2026-10-01",
       "released_label": "01 Oct 2026",
       "week_ending": "2026-09-25",
@@ -10647,7 +10736,7 @@
       "prior_week_ending": "2026-09-18",
       "prior_week_ending_label": "18 Sep 2026",
       "next_release_ist_label": "08 Oct 2026, 08:00 PM IST",
-      "days_to_next_release": 6,
+      "days_to_next_release": 3,
       "is_overdue": false,
       "change_vs_norm": -24.0
     },
@@ -10657,8 +10746,8 @@
       "landing_url": "https://www.eia.gov/petroleum/supply/weekly/",
       "highlights_url": "https://www.eia.gov/petroleum/supply/weekly/pdf/highlights.pdf",
       "table_url": "https://ir.eia.gov/wpsr/table9.csv",
-      "fetched_at": "02 Oct 2026, 07:50 AM IST",
-      "fetched_at_iso": "2026-10-02T07:50:29.315792+05:30",
+      "fetched_at": "05 Oct 2026, 07:50 AM IST",
+      "fetched_at_iso": "2026-10-05T07:50:31.117338+05:30",
       "week_ending": "2026-09-25",
       "week_ending_label": "25 Sep 2026",
       "prior_week_ending": "2026-09-18",
@@ -10671,7 +10760,7 @@
       "next_release": "2026-10-07",
       "next_release_label": "07 Oct 2026",
       "next_release_ist_label": "07 Oct 2026, 11:00 PM IST",
-      "days_to_next_release": 5,
+      "days_to_next_release": 2,
       "is_overdue": false,
       "stocks": [
         {
@@ -11115,89 +11204,87 @@
     },
     "market_news": [
       {
-        "title": "US 10-year yield at 24-year high rattles Nifty, rupee and bond markets. Why is India hit hard?",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/us-10-year-yield-at-24-year-high-rattles-nifty-rupee-and-bond-markets-why-is-india-hit-hard/articleshow/134613973.cms",
-        "summary": "The US 10-year Treasury yield surged to a 24-year high, triggering a global bond sell-off and pressuring Indian equities, bonds and the rupee. Higher US borrowing costs are raising concerns over FII outflows, currency we...",
-        "published": "Thu, 01 Oct 2026 14:42:14 +0530",
+        "title": "Will Nifty, Sensex plunge for 9th straight week? TCS Q2, RBI MPC among 4 factors to drive Dalal Street from Monday",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/will-nifty-sensex-plunge-for-9th-straight-week-tcs-q2-4-factors-to-drive-dalal-street-from-monday/articleshow/134669285.cms",
+        "summary": "India's stock market has faced a challenging downturn, marking eight weeks of losses, the longest in 25 years. Driving this trend are soaring oil prices and rising US bond yields. The sell-off by foreign institutional in...",
+        "published": "Sun, 04 Oct 2026 09:14:26 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 8
+      },
+      {
+        "title": "Stocks in news: HDFC Bank, Infosys, Yes Bank, Hindustan Zinc and RVNL",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-hdfc-bank-infosys-yes-bank-hindustan-zinc-and-rvnl/articleshow/134678258.cms",
+        "summary": "Indian equities continued their downward trend due to rising global bond yields and high crude oil prices. The Nifty 50 fell by 198.50 points, while the BSE Sensex decreased by 570.59 points. Key companies like HDFC Bank...",
+        "published": "Mon, 05 Oct 2026 06:00:00 +0530",
         "source": "Economic Times Markets",
         "relevance_score": 7
       },
       {
-        "title": "Sensex, Nifty open lower as FII selling offsets relief from softer crude - India Today",
-        "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQOXQ3ZE9vS0tTaHZ6TzlYeFgwWk5LdEF3Uk5CRm9DNlpZTHlyRTdQNkQ1WXdvUDFBXzhlak91ZklEdTR1QWtyb0NDVmhoaVU3VmxpNkdwX2hacmtJMzlSS0tjY2FEd2Z5VDhjR3pqQmt4RGwtS3R0ZEJsYk80OUlvenVxdjNBYmRVYmpLak12eEYtOUJtcnJkRmtuNkxwcnJGaXVCZzVlUHlUT0htbHQ5RmZ0eHJsWXNJYXprNjk5NVcxeTBtVzZ6blBXVVdNWkUz0gHWAUFVX3lxTE5waTdRTVFxZGJFV0V4ZENlMExpOUJ2TF9GWDc0SGRfV0JnRno1emxLVHUycDNwNkdBdHdCUm1aQmNLazVXRVpBaTg3N2NBUGp4aE1BSlNJdjZoRjhSZF8waTVmU044ZHRPLURGaUZ1bjNPcTg2YjNYT1dhTmQ5T1VtTUc5TDZKVldfVjRWQUpMTkU2S0NCaXh6andhTU02cEhFbkwyTlpLOXp5cE5LNndQZ2VGYUdhQ1pOZFFDMUNqaUhvQk54RlZCMHlQalRZakRXckFPZkE?oc=5",
-        "summary": "Sensex, Nifty open lower as FII selling offsets relief from softer crude India Today",
-        "published": "Thu, 01 Oct 2026 04:09:29 GMT",
-        "source": "Google News - India Markets",
-        "relevance_score": 6
-      },
-      {
-        "title": "Sensex, Nifty end lower as auto stocks, crude oil and FII selling weigh on markets - India Today",
-        "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNdDZfSlVteHpHZ2xGOWFfcnFyQ083X2RDYnJwRkFYQ29MLVJ1Qmc2TkV6NHlRQ0E4al94dU5kbDdfVHFqUmlCTW5IWFRNOXd5ejRONjJMZ0t1enFrcVJxTjNTMm03eE5QR1hZYTdjVDdCVFp4Qy1OZGZVVGhaWGlReEpqcEJ3OURqNEtzenRNaFpra1o4QjRNUjFPeHVSaFU4R2pkWm5OLUgtYTlTUEhsSEhOZVFXTFg5WWV1NlZqcjZfYWU1WGFVUGl3UUJMaknSAdQBQVVfeXFMT0ZETlZZX3JpeWRJb2JYTm9tSXA3WEVRQjJILUp2dGRxdzFiMUhsT2JnSlZkV2F0OFJyYlBoTTRMNnZVWTc1S1NLbXRzd2xHTllNckJoYlh3U0M5Ym5jdGN1dW5ZZVJsRTY2Z2d2anFaTjQyckdRVlM2OFNEakFUQ0x5a0tqTHdLRnZmZXNaVHZzVTFFT1ZuSHlDN0xZVkIwWUJXXzh3Z0w4LWZXWDdPVUlSRU5KRGE1QXlyeFNTSDBpZEJtZE5aSXpTM0lBZXFUem1WV0k?oc=5",
-        "summary": "Sensex, Nifty end lower as auto stocks, crude oil and FII selling weigh on markets India Today",
-        "published": "Thu, 01 Oct 2026 10:04:24 GMT",
-        "source": "Google News - India Markets",
-        "relevance_score": 6
-      },
-      {
-        "title": "Market wrap: Infosys, HDFC Bank, Bajaj Auto, Maruti Suzuki among top gainers and losers on Nifty and Sensex on Thursday",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-infosys-hdfc-bank-bajaj-auto-maruti-suzuki-among-top-gainers-and-losers-on-nifty-and-sensex-on-thursday/articleshow/134617786.cms",
-        "summary": "Indian equities extended their decline as elevated crude oil prices and multi-year high bond yields intensified concerns over the 2026–27 economic outlook. Nifty fell 0.88% and Sensex 0.79%, while broader markets weakene...",
-        "published": "Thu, 01 Oct 2026 17:15:56 +0530",
+        "title": "RBI likely to hike repo rate by 25 bps to 5.50% in October policy: ET Poll",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-likely-to-hike-repo-rate-by-25-bps-to-5-50-in-october-policy-et-poll/articleshow/134683262.cms",
+        "summary": "On Monday, the Reserve Bank of India's Monetary Policy Committee will hold important meetings. Analysts are anticipating a 25 basis points increase in the key interest rate, raising it to 5.50%. The surge in inflation is...",
+        "published": "Mon, 05 Oct 2026 05:30:00 +0530",
         "source": "Economic Times Markets",
         "relevance_score": 6
       },
       {
-        "title": "Stock market holiday today: Are NSE, BSE closed for Gandhi Jayanti? Check 2026 holiday list",
-        "link": "https://economictimes.indiatimes.com/markets/stocks/news/stock-market-holiday-today-are-nse-bse-closed-for-gandhi-jayanti-check-2026-holiday-list/articleshow/134630179.cms",
-        "summary": "Indian stock markets will remain closed on October 2 for Gandhi Jayanti, with trading resuming next week. MCX and NCDEX will also remain shut. The market holiday comes after the Sensex and Nifty extended losses on Thursd...",
-        "published": "Fri, 02 Oct 2026 07:27:42 +0530",
-        "source": "Economic Times Markets",
-        "relevance_score": 5
-      },
-      {
-        "title": "RBI rate hike expected in October? What it means for Sensex, Nifty | Experts decode",
-        "link": "https://www.livemint.com/market/stock-market-news/rbi-rate-hike-expected-in-october-what-it-mean-for-sensex-nifty-experts-decode-11790847271851.html",
-        "summary": "RBI MPC meeting October 2026: The central bank is set to announce its policy decision on October 7. The outcome of the meeting will be closely watched by investors and market participants for cues on the RBI’s interest-r...",
-        "published": "Thu, 01 Oct 2026 15:33:39 +0530",
+        "title": "Capex is happening across sectors but will intensify once external issues ease: Abakkus Asset's Sunil Singhania",
+        "link": "https://www.livemint.com/market/capex-is-happening-across-sectors-but-will-intensify-once-external-issues-ease-abakkus-assets-sunil-singhania-11791093171709.html",
+        "summary": "Chairman and managing director at Abakkus Asset Manager Pvt. Ltd, Sunil Singhania, said near-term market sentiment is being weighed down by West Asia war, which is keeping oil prices, inflation concerns and bond yields e...",
+        "published": "Mon, 05 Oct 2026 06:00:42 +0530",
         "source": "LiveMint Markets",
         "relevance_score": 5
       },
       {
-        "title": "Gold Gains As Softer US Inflation Supports Expectations Of Steady Fed Rates Now By Kedia Advisory - Investing.com India",
-        "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPME55b2NGZTloZWRyd2dXMU9hZ21iZWpTRE9RSWpacWhpX2g5dDI2ZnBoX0tXZXV4RzNZbU80dTRCQXBIdktzU09SMmpRTU1yZUprUG9tQjBYdXpXalpfdUE1eF9ocjdUQkxLSU5nSXBnN0k3QXE3azN0RGxKMVhjeWw3LTFwai12Q3pqXzZOdWZ6QzBlcmY0MzhSaEtDemRDYkdjWjFtVmZ5eGZsS3VQVHMyZ09ua3NHbDlSYnNmb1U2VFBKaWdvUmxjVk1zNjQ?oc=5",
-        "summary": "Gold Gains As Softer US Inflation Supports Expectations Of Steady Fed Rates Now By Kedia Advisory Investing.com India",
-        "published": "Thu, 01 Oct 2026 03:56:38 GMT",
+        "title": "Bleak Winter! Why analysts are hinting at painful October even after 8 weeks of Nifty correction?",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/bleak-winter-why-analysts-are-hinting-at-painful-october-even-after-8-weeks-of-nifty-correction/articleshow/134651765.cms",
+        "summary": "The global backdrop remains the biggest problem. US yields above 5%, a firm dollar, higher crude prices and rupee weakness make India more vulnerable.",
+        "published": "Sat, 03 Oct 2026 09:45:48 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 5
+      },
+      {
+        "title": "Stock market prediction for tomorrow, 5 Oct Monday: Sensex, Nifty outlook; Dow Jones, Nasdaq, Kospi, Nikkei, Taiwan cues - Livemint",
+        "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxPYkxfU0JHSkR0ejBHT0tWQmgybWFxb0xVMGRSUDN3VnV2dDJCZnhzZ3hVaVVBM2ZDa3ppRDFiQ1A3cUN3QU55cDlNRktTemJmbDZTTmVKT3VSa0NqdHgtcVByQlJDenQzN3UtMzA5NXNtV3k2V1hrbDVMdGdYcnZ3QmJvX0txLTFqbjhhaWpnR1VGRU8tcnBYaWo5MWcyU01lYjlWNjh5c3NCVmFxZmwyanM3WHdBZWl4aVZHN0FkZk1NNGpUaUplQ2poR01IZXNuTVRUZXo4cDhaUjY3NnNnd194Ni1Ob2RMWnVnTkZMTlBkd3NFWkYzYk80QzVvVFRqUm5xVWltQXoxaVBNU0FtTFhmc0TSAZQCQVVfeXFMT2JMX1NCR0pEdHowR09LVkJoMm1hcW9MVTBkUlAzd1Z1dnQyQmZ4c2d4VWlVQTNmQ2t6aUQxYkNQN3FDd0FOeXA5TUZLU3piZmw2U05lSk91UmtDanR4LXFQckJSQ3p0Mzd1LTMwOTVzbVd5NldYa2w1THRnWHJ2d0Jib19LcS0xam44YWlqZ0dVRkVPLXJwWGlqOTFnMlNNZWI5VjY4eXNzQlZhcWZsMmpzN1h3QWVpeGlWRzdBZGZNTTRqVGlKZUNqaEdNSGVzbk1UVGV6OHA4WlI2NzZzZ3dfeDYtTm9kTFp1Z05GTE5QZHdzRVpGM2JPNEM1b1RUalJucVVpbUF6MWlQTVNBbUxYZnNE?oc=5",
+        "summary": "Stock market prediction for tomorrow, 5 Oct Monday: Sensex, Nifty outlook; Dow Jones, Nasdaq, Kospi, Nikkei, Taiwan cues Livemint",
+        "published": "Sun, 04 Oct 2026 04:39:44 GMT",
         "source": "Google News - Global Markets",
-        "relevance_score": 4
+        "relevance_score": 5
       },
       {
-        "title": "Stock market fails to hold gains: Sensex declines 215 points, Nifty down 107.25 points - Telegraph India",
-        "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPZHYyNVNOOHlDOEpFOWhZMUpodFA4cC1pejBLRjlGRTIxVmZ0VE1LWExRRmpycFVfMmExUGVIOVVMUm1xbzRHMjBBcE5sUmdBdklaMGNDRHRXdWNkSEVLaWJkMHpDcFZBdFVqS2FmMHRjdFhudXFWQ19qM2w1TXJCT3BfVHNnVnd3c3Y2TTJ6NVVZN1l5VG8tYjd6c2h4RlR1aU9uUFB4YlY1VlpXV3RKdUNKVTZZejNYWXVnVlEyYzVrWV9ET1lkV0NuRnBtVF9iaEHSAdcBQVVfeXFMTUxSX3d2MG50WXMwNW12aHFtZ0tpWnJrYlFkNjV4TmhRekZRUUNHZk1tZlF6WWZZYURpQUpPV0pnWnZzY2RTTFZ0NXJGNzdjcHkwa04wMjNVLUhUd2lncnBfSk9kS0VzTEFmckJEb0FTYUJQZFNBTUJEdW9xRy1saGNjUmRuYzlTZVJidjBFN2NzRHZuVkJtT194SGxnWWtIMFFianZqdTRyOEFBbm1XQW1xWkhfcm9jOHMtMk5sMXhFaUd5OVNBcTVqX3lXLVRIcG4zV3dQc1U?oc=5",
-        "summary": "Stock market fails to hold gains: Sensex declines 215 points, Nifty down 107.25 points Telegraph India",
-        "published": "Thu, 01 Oct 2026 04:15:31 GMT",
+        "title": "Sensex, Nifty, Bank Nifty prediction: What will happen in the Indian stock market on Monday? 3 reasons tell the scene - Livemint",
+        "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNd0NvRVRSTDduVC1XRTZSdGF4N25IeTIzSVVRX2FTOVdyakkxTkd4aU9ZWDgzM2tiTDI4dG9meHNRbmJQNEtiOFdrd0R4ZzhGYUlMaC1pbkFkLTM1UXdydnpvYWxaanE5Z2MtRkpvV01ZeV91YkFuYkVPdXVLT1hYdTNvNER4WWtkcmlUVV93dEtUSldpRmFPbUp4YjUway1BcDJuQVJfS21tcWtLSE9vX051N1I4enFFanFrY0hmUFhSeW5ZSE5wVThybElpTFFGT202QllJdnVPUm0xMFV0Nm9HM3BJZDRlSnNjRXdrbi11N3plak83N0ZhN1Fhd01kWloxcW5MekFIZEZNbmRZOdIBlgJBVV95cUxOUm1GN0VHQ201M1JmT3JES3FLOVA3UkM2X1RjOS1zMGs3MlNkcmFjOWNTUTZWUU5MN2FtRFFUVThDTjhOQm5ZNVJSSFFnRWZ1Mk94dUx5NmhDX2VIMjhHZTgweTBCQURQdkNEVHhGMDM1eXBmRDZfcnRzOFFXanNZQ3NSRHB1aVkwM3h6N05TaEZDcTNmZzlURjF6R1BaRlIxTVhzQjJnRmowb3h2UWpWU2laSmgyY2ZUNjNTc1EwVjNvSzlicFRmQ1Nzbk9hTDI2UjN4QXVCQXItYVhrYi1xNjhNeERVb1kyam8xeXFhTHRLZHI3V0RreFdMbXhlRDlyOWNKWnFGanlib1hxYzhiNnZsMVg1Zw?oc=5",
+        "summary": "Sensex, Nifty, Bank Nifty prediction: What will happen in the Indian stock market on Monday? 3 reasons tell the scene Livemint",
+        "published": "Sun, 04 Oct 2026 11:18:12 GMT",
         "source": "Google News - India Markets",
-        "relevance_score": 4
+        "relevance_score": 5
       },
       {
-        "title": "Indian Stock Markets Decline: FII Outflows, Global Borrowing Costs Impact Nifty, Sensex - Rediff",
-        "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQM1pXM1d2Ql96Sy1lcmRJelNiVnkwa0N0Y3REQWNrTFRvOWw4S2o4UEFTNjZpRS0wbEE3MnVseVVLYVAwVzA2RU1UUG5UeV9uZUN5LV9MbGN5aWZUMlpYbnJtY0tHV3lXTHBvbVN4LVk3bkhVb3B4ektFMHQyU2ZycFNwWXk3a3A1X1EtSDBOR0ZKNWNwelBNOXhyVm5YMTJGRzFualJfTHRVSFZHaTVqcnBTYlpmQXFFQUZzTEpVOVJ1NDhqMjBXNklyUVlQWUp6S3ZINERlZlFSdVk?oc=5",
-        "summary": "Indian Stock Markets Decline: FII Outflows, Global Borrowing Costs Impact Nifty, Sensex Rediff",
-        "published": "Thu, 01 Oct 2026 04:54:43 GMT",
-        "source": "Google News - India Markets",
-        "relevance_score": 4
+        "title": "Rate cut cycle near turning point. What lies ahead for Indian bonds?",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/rate-cut-cycle-near-turning-point-what-lies-ahead-for-indian-bonds/articleshow/134671117.cms",
+        "summary": "The RBI is expected to signal monetary tightening at its October policy meeting as stronger economic growth, rising oil prices and elevated US Treasury yields fuel inflation concerns. Higher domestic rates could support...",
+        "published": "Sun, 04 Oct 2026 12:37:02 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 5
       },
       {
-        "title": "Why stock market was down today? Rs 6 lakh crore wiped out; Sensex, Nifty suffer worst losing streak in - The Times of India",
-        "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPNWxfbDM3Qjd4Tm13aUg3T2R4ZFhjMElFdHIyQldHcVltX0ZtZXdsakJOT3U3ekFfT3VWZ0RDem5ZR2JIXzJsSlBuUDR4SzA4bTJkWVg5WkluaVFVWTBUYzJwbnFnTUhOempLeFluOEdnVUgwcGpvM2N1d0Z1TWVoaEhPR2RSMVluWG9KVUduWHJkMG9tTkoxcHdrcFkzV255N3BZemFHRVJTT3VGXzktYWdGX3YwQ2haMnp4cmdycDZmM2N3dmdqWmtaWkRYam5NVTlLZF9fdlVYMDBGWXZyWVJaWklfMUJ0a0EwY3QtNm5QSkpqOE44dmVWdzJ0MlpIQVA1UERwVl9teHpEY1dvctIBlgJBVV95cUxQckQ3bm4wX25ncVFVQVhkQjAzV2dka25EUGRINzhjSkhNOWptUTVFeUt0MWdCZkVWWHI2VG9mLXNKc2tHeWxtMXN4RlJ2dDYxMFJRQ2RrQzdkdkR1Vy16QVJtZUtJZWpRTVl5SmtOcjhSUmZrOFdFZGd3QUY0TDUzNlN5eDFuaEVKZF96dURyV3JyOVpYQ1V0SERONjBHek9VVHlod3NDZjJPY3VrcFBjc2ozUGgxbXQ2SHhMMGhpZVBjdmRpWVZxclRaQmduLXhuZEhLNzgxVnRYemxkelVXUV9DQVF0QjhUQ1JRS1NCZUlyOUZkTUw2WG5VaXhMZUNRSDNUYlJQY2xYbUJKX0RtdlV0Y0RKUQ?oc=5",
-        "summary": "Why stock market was down today? Rs 6 lakh crore wiped out; Sensex, Nifty suffer worst losing streak in The Times of India",
-        "published": "Thu, 01 Oct 2026 09:20:00 GMT",
-        "source": "Google News - India Markets",
-        "relevance_score": 4
+        "title": "What will bring foreign investors back to Indian stock market? 5 things that should go right",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/what-will-bring-foreign-investors-back-to-indian-stock-market-5-things-that-should-go-right/articleshow/134671265.cms",
+        "summary": "FPIs sold more than Rs 25,000 crore of Indian equities in September as surging US bond yields, elevated crude prices and a weaker rupee reduced India’s appeal. Cooling yields and oil, currency stability, strong Q2 earnin...",
+        "published": "Sun, 04 Oct 2026 12:44:52 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 5
+      },
+      {
+        "title": "RBI may hike repo rate by 25 bps as inflation and oil risks mount: Sunil Sanghai",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-may-hike-repo-rate-by-25-bps-as-inflation-and-oil-risks-mount-sunil-sanghai/articleshow/134672762.cms",
+        "summary": "The RBI could raise the repo rate by 25 basis points in October and signal further tightening as inflation, elevated crude prices and a narrowing rate gap with the US pressure the rupee. Strong reserves and a manageable...",
+        "published": "Sun, 04 Oct 2026 15:10:04 +0530",
+        "source": "Economic Times Markets",
+        "relevance_score": 5
       }
     ],
-    "warnings": [
-      "event_calendar: no events listed for 02 Oct 2026 (Friday) — market holiday, weekend, or nothing filed yet"
-    ]
+    "warnings": []
   },
   "history": [
     {
@@ -13816,6 +13903,39 @@
       "ethereum_change_pct": 1.1350256191782813,
       "dxy_change_pct": 0.5776305393579757,
       "usdinr_change_pct": 0.39394411532258256
+    },
+    {
+      "date": "2026-10-05",
+      "generated_at": "2026-10-05 07:50:32 IST",
+      "bias": "Mild Bullish",
+      "score": 2,
+      "confidence": "High",
+      "fii_net": -9484.22,
+      "dii_net": 10041.84,
+      "fii_dii_date": "2026-10-01",
+      "combined_flow": 557.6200000000008,
+      "gift_nifty_change_pct": null,
+      "india_vix_change_pct": 7.04,
+      "nifty_pcr": 0.6850992541472488,
+      "nifty_support": 22000.0,
+      "nifty_resistance": 23000.0,
+      "banknifty_pcr": 0.8569529294265665,
+      "banknifty_support": 52000.0,
+      "banknifty_resistance": 58000.0,
+      "us_avg_change_pct": 0.8045880596001748,
+      "europe_avg_change_pct": 0.7610516946950391,
+      "asia_avg_change_pct": 1.0578232184379235,
+      "top_sector": "NIFTY IT",
+      "top_sector_change_pct": 2.17,
+      "weak_sector": "NIFTY AUTO",
+      "weak_sector_change_pct": -3.46,
+      "gold_change_pct": 0.6318692598531978,
+      "crude_oil_change_pct": -1.2841599836542883,
+      "brent_oil_change_pct": -0.8899791316473106,
+      "bitcoin_change_pct": 2.1228162375902535,
+      "ethereum_change_pct": 1.704515618154923,
+      "dxy_change_pct": 0.14421973254979034,
+      "usdinr_change_pct": 0.0781533885325502
     }
   ]
 }
