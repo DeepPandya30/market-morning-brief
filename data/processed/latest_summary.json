@@ -9946,125 +9946,125 @@
       "title": "Working Gas in Underground Storage, Lower 48",
       "report_url": "https://ir.eia.gov/ngs/ngs.html",
       "landing_url": "https://www.eia.gov/naturalgas/reports.php#/T202",
-      "fetched_at": "29 Oct 2026, 07:55 AM IST",
-      "fetched_at_iso": "2026-10-29T07:55:03.919411+05:30",
-      "released_at": "2026-10-22",
-      "released_label": "22 Oct 2026",
-      "week_ending": "2026-10-16",
-      "week_ending_label": "16 Oct 2026",
-      "next_release": "2026-10-29",
-      "next_release_label": "29 Oct 2026",
+      "fetched_at": "30 Oct 2026, 02:03 AM IST",
+      "fetched_at_iso": "2026-10-30T02:03:10.342972+05:30",
+      "released_at": "2026-10-29",
+      "released_label": "29 Oct 2026",
+      "week_ending": "2026-10-23",
+      "week_ending_label": "23 Oct 2026",
+      "next_release": "2026-11-05",
+      "next_release_label": "05 Nov 2026",
       "season": "Injection",
       "regions": [
         {
           "name": "East",
           "is_total": false,
           "is_subregion": false,
-          "stocks": 900.0,
-          "prior_stocks": 884.0,
-          "net_change": 16.0,
-          "implied_flow": 16.0,
-          "year_ago_stocks": 897.0,
-          "year_ago_pct": 0.3,
-          "five_year_stocks": 876.0,
-          "five_year_pct": 2.7,
-          "fill_pct": 102.7
+          "stocks": 913.0,
+          "prior_stocks": 900.0,
+          "net_change": 13.0,
+          "implied_flow": 13.0,
+          "year_ago_stocks": 911.0,
+          "year_ago_pct": 0.2,
+          "five_year_stocks": 892.0,
+          "five_year_pct": 2.4,
+          "fill_pct": 102.4
         },
         {
           "name": "Midwest",
           "is_total": false,
           "is_subregion": false,
-          "stocks": 1065.0,
-          "prior_stocks": 1037.0,
-          "net_change": 28.0,
-          "implied_flow": 28.0,
-          "year_ago_stocks": 1056.0,
-          "year_ago_pct": 0.9,
-          "five_year_stocks": 1044.0,
-          "five_year_pct": 2.0,
-          "fill_pct": 102.0
+          "stocks": 1088.0,
+          "prior_stocks": 1065.0,
+          "net_change": 23.0,
+          "implied_flow": 23.0,
+          "year_ago_stocks": 1081.0,
+          "year_ago_pct": 0.6,
+          "five_year_stocks": 1068.0,
+          "five_year_pct": 1.9,
+          "fill_pct": 101.9
         },
         {
           "name": "Mountain",
           "is_total": false,
           "is_subregion": false,
-          "stocks": 257.0,
-          "prior_stocks": 255.0,
-          "net_change": 2.0,
-          "implied_flow": 2.0,
-          "year_ago_stocks": 282.0,
-          "year_ago_pct": -8.9,
-          "five_year_stocks": 246.0,
-          "five_year_pct": 4.5,
-          "fill_pct": 104.5
+          "stocks": 258.0,
+          "prior_stocks": 257.0,
+          "net_change": 1.0,
+          "implied_flow": 1.0,
+          "year_ago_stocks": 285.0,
+          "year_ago_pct": -9.5,
+          "five_year_stocks": 248.0,
+          "five_year_pct": 4.0,
+          "fill_pct": 104.0
         },
         {
           "name": "Pacific",
           "is_total": false,
           "is_subregion": false,
           "stocks": 297.0,
-          "prior_stocks": 294.0,
-          "net_change": 3.0,
-          "implied_flow": 3.0,
-          "year_ago_stocks": 310.0,
-          "year_ago_pct": -4.2,
-          "five_year_stocks": 279.0,
-          "five_year_pct": 6.5,
-          "fill_pct": 106.5
+          "prior_stocks": 297.0,
+          "net_change": 0.0,
+          "implied_flow": 0.0,
+          "year_ago_stocks": 315.0,
+          "year_ago_pct": -5.7,
+          "five_year_stocks": 281.0,
+          "five_year_pct": 5.7,
+          "fill_pct": 105.7
         },
         {
           "name": "South Central",
           "is_total": false,
           "is_subregion": false,
-          "stocks": 1125.0,
-          "prior_stocks": 1097.0,
-          "net_change": 28.0,
-          "implied_flow": 28.0,
-          "year_ago_stocks": 1250.0,
-          "year_ago_pct": -10.0,
-          "five_year_stocks": 1165.0,
-          "five_year_pct": -3.4,
-          "fill_pct": 96.6
+          "stocks": 1168.0,
+          "prior_stocks": 1125.0,
+          "net_change": 43.0,
+          "implied_flow": 43.0,
+          "year_ago_stocks": 1278.0,
+          "year_ago_pct": -8.6,
+          "five_year_stocks": 1196.0,
+          "five_year_pct": -2.3,
+          "fill_pct": 97.7
         },
         {
           "name": "Salt",
           "is_total": false,
           "is_subregion": true,
-          "stocks": 251.0,
-          "prior_stocks": 236.0,
-          "net_change": 15.0,
-          "implied_flow": 15.0,
-          "year_ago_stocks": 318.0,
-          "year_ago_pct": -21.1,
-          "five_year_stocks": 295.0,
-          "five_year_pct": -14.9,
-          "fill_pct": 85.1
+          "stocks": 274.0,
+          "prior_stocks": 251.0,
+          "net_change": 23.0,
+          "implied_flow": 23.0,
+          "year_ago_stocks": 334.0,
+          "year_ago_pct": -18.0,
+          "five_year_stocks": 310.0,
+          "five_year_pct": -11.6,
+          "fill_pct": 88.4
         },
         {
           "name": "Nonsalt",
           "is_total": false,
           "is_subregion": true,
-          "stocks": 875.0,
-          "prior_stocks": 861.0,
-          "net_change": 14.0,
-          "implied_flow": 14.0,
-          "year_ago_stocks": 933.0,
-          "year_ago_pct": -6.2,
-          "five_year_stocks": 871.0,
-          "five_year_pct": 0.5,
-          "fill_pct": 100.5
+          "stocks": 894.0,
+          "prior_stocks": 875.0,
+          "net_change": 19.0,
+          "implied_flow": 19.0,
+          "year_ago_stocks": 945.0,
+          "year_ago_pct": -5.4,
+          "five_year_stocks": 886.0,
+          "five_year_pct": 0.9,
+          "fill_pct": 100.9
         },
         {
           "name": "Total",
           "is_total": true,
           "is_subregion": false,
-          "stocks": 3644.0,
-          "prior_stocks": 3567.0,
-          "net_change": 77.0,
-          "implied_flow": 77.0,
-          "year_ago_stocks": 3796.0,
-          "year_ago_pct": -4.0,
-          "five_year_stocks": 3609.0,
+          "stocks": 3724.0,
+          "prior_stocks": 3644.0,
+          "net_change": 80.0,
+          "implied_flow": 80.0,
+          "year_ago_stocks": 3871.0,
+          "year_ago_pct": -3.8,
+          "five_year_stocks": 3686.0,
           "five_year_pct": 1.0,
           "fill_pct": 101.0
         }
@@ -10073,22 +10073,17 @@
         "name": "Total",
         "is_total": true,
         "is_subregion": false,
-        "stocks": 3644.0,
-        "prior_stocks": 3567.0,
-        "net_change": 77.0,
-        "implied_flow": 77.0,
-        "year_ago_stocks": 3796.0,
-        "year_ago_pct": -4.0,
-        "five_year_stocks": 3609.0,
+        "stocks": 3724.0,
+        "prior_stocks": 3644.0,
+        "net_change": 80.0,
+        "implied_flow": 80.0,
+        "year_ago_stocks": 3871.0,
+        "year_ago_pct": -3.8,
+        "five_year_stocks": 3686.0,
         "five_year_pct": 1.0,
         "fill_pct": 101.0
       },
       "history": [
-        {
-          "week_ending": "2023-10-20",
-          "total": 3700.0,
-          "net_change": 74.0
-        },
         {
           "week_ending": "2023-10-27",
           "total": 3779.0,
@@ -10868,13 +10863,14 @@
           "week_ending": "2026-10-16",
           "total": 3644.0,
           "net_change": 77.0
+        },
+        {
+          "week_ending": "2026-10-23",
+          "total": 3724.0,
+          "net_change": 80.0
         }
       ],
       "net_change_history": [
-        {
-          "week_ending": "2023-10-20",
-          "net_change": 74.0
-        },
         {
           "week_ending": "2023-10-27",
           "net_change": 79.0
@@ -11498,6 +11494,10 @@
         {
           "week_ending": "2026-10-16",
           "net_change": 77.0
+        },
+        {
+          "week_ending": "2026-10-23",
+          "net_change": 80.0
         }
       ],
       "seasonal": {
@@ -11653,7 +11653,7 @@
           3500.0,
           3567.0,
           3644.0,
-          null,
+          3724.0,
           null,
           null,
           null,
@@ -11882,17 +11882,17 @@
           3529.0,
           3476.0
         ],
-        "net_change_norm": 75.6
+        "net_change_norm": 80.4
       },
       "signal": {
         "label": "Balanced",
         "tone": "neutral",
-        "note": "Lower 48 stocks are 1.0% above the 5-year average; this week was a 77 Bcf build; 1 Bcf larger than the 5-year norm for this week."
+        "note": "Lower 48 stocks are 1.0% above the 5-year average; this week was a 80 Bcf build; 0 Bcf smaller than the 5-year norm for this week."
       },
       "stats": {
-        "stocks": 3644.0,
-        "net_change": 77.0,
-        "year_ago_pct": -4.0,
+        "stocks": 3724.0,
+        "net_change": 80.0,
+        "year_ago_pct": -3.8,
         "five_year_pct": 1.0,
         "fill_pct": 101.0,
         "weeks_of_history": 157,
@@ -11900,12 +11900,12 @@
         "period_low": 1698.0
       },
       "from_cache": false,
-      "prior_week_ending": "2026-10-09",
-      "prior_week_ending_label": "09 Oct 2026",
-      "next_release_ist_label": "29 Oct 2026, 08:00 PM IST",
-      "days_to_next_release": 0,
+      "prior_week_ending": "2026-10-16",
+      "prior_week_ending_label": "16 Oct 2026",
+      "next_release_ist_label": "05 Nov 2026, 08:00 PM IST",
+      "days_to_next_release": 6,
       "is_overdue": false,
-      "change_vs_norm": 1.4
+      "change_vs_norm": -0.4
     },
     "petroleum": {
       "source": "eia_wpsr",
