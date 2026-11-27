@@ -3,8 +3,8 @@
   "title": "Working Gas in Underground Storage, Lower 48",
   "report_url": "https://ir.eia.gov/ngs/ngs.html",
   "landing_url": "https://www.eia.gov/naturalgas/reports.php#/T202",
-  "fetched_at": "26 Nov 2026, 08:33 AM IST",
-  "fetched_at_iso": "2026-11-26T08:33:44.670967+05:30",
+  "fetched_at": "27 Nov 2026, 08:14 AM IST",
+  "fetched_at_iso": "2026-11-27T08:14:10.245849+05:30",
   "released_at": "2026-11-25",
   "released_label": "25 Nov 2026",
   "week_ending": "2026-11-20",
@@ -1960,7 +1960,7 @@
   "prior_week_ending": "2026-11-13",
   "prior_week_ending_label": "13 Nov 2026",
   "next_release_ist_label": "03 Dec 2026, 08:00 PM IST",
-  "days_to_next_release": 7,
+  "days_to_next_release": 6,
   "is_overdue": false,
   "change_vs_norm": 4.8
 }
